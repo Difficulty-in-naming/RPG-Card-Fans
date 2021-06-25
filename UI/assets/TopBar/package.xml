@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="wg6ewwqq">
+  <resources>
+    <component id="pz5g0" name="Component1.xml" path="/"/>
+    <image id="pz5g1" name="bar.png" path="/Texture/"/>
+    <image id="pz5g2" name="key_slots.png" path="/"/>
+    <component id="pz5g3" name="Health.xml" path="/"/>
+    <component id="pz5g4" name="Gold.xml" path="/"/>
+    <component id="pz5g5" name="Potion.xml" path="/"/>
+    <image id="pz5g6" name="ascension.png" path="/Texture/" scale9grid="0,0,-28,-23"/>
+    <image id="pz5g7" name="map.png" path="/Texture/" scale9grid="0,0,-12,-12"/>
+    <image id="pz5g8" name="settings.png" path="/Texture/" scale9grid="0,0,-9,-11"/>
+    <image id="pz5g9" name="deck.png" path="/Texture/" scale9grid="0,0,-5,-13"/>
+    <component id="pz5ga" name="Map.xml" path="/"/>
+    <component id="pz5gb" name="Deck.xml" path="/"/>
+    <component id="pz5gc" name="Settings.xml" path="/"/>
+    <image id="pz5gd" name="key_green.png" path="/Texture/"/>
+    <image id="pz5ge" name="key_red.png" path="/Texture/"/>
+    <image id="pz5gf" name="key_blue.png" path="/Texture/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

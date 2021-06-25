@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="59,51" extention="Button">
+  <controller name="button" pages="2,up,4,over" selected="0">
+    <action type="play_transition" fromPage="2" toPage="" transition="t0"/>
+    <action type="play_transition" fromPage="4" toPage="" transition="t1"/>
+  </controller>
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5g9" fileName="Texture/deck.png" xy="0,0" pivot="0.5,0.5" filter="color" filterData="0,0,0,0">
+      <gearLook controller="button" pages="4" values="1,-15,0,0" default="1,0,0,0" tween="true" duration=".2"/>
+    </image>
+    <text id="n1_pz5g" name="Number" xy="34,22" size="24,29" fontSize="20" color="#ffffff" strokeColor="#000000" strokeSize="2" text="11"/>
+  </displayList>
+  <Button/>
+  <transition name="t0">
+    <item time="0" type="ColorFilter" target="n0_pz5g" value="0.1,0,0,0"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="ColorFilter" target="n0_pz5g" value="0,0,0,0"/>
+  </transition>
+</component>

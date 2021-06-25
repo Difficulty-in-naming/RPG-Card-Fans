@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="61,40" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="3"/>
+  <displayList>
+    <text id="n0_pz5g" name="title" xy="1,1" size="60,39" fontSize="28" color="#00ff00" align="center" strokeColor="#000000" strokeSize="3" text="进阶">
+      <gearColor controller="button" pages="2,3" values="#ebc54f,#000000|#ebc54f,#000000" default="#00ff00,#000000"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Button/>
+</component>

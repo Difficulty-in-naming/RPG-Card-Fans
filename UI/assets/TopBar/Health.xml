@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="175,33" extention="Button">
+  <controller name="button" pages="2,up,4,over" selected="1"/>
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5gu" fileName="Texture/panelHeart.png" pkg="rduitwm2" xy="0,0" pivot="0.5,0.5" scale="1.1,1.1">
+      <gearSize controller="button" pages="4" values="38,32,1.1,1.1" default="38,32,1,1"/>
+    </image>
+    <text id="n2_pz5g" name="Health" xy="50,1" size="125,32" fontSize="22" color="#fb6361" vars="true" strokeColor="#000000" strokeSize="2" text="生命：{Health=75/75}"/>
+  </displayList>
+  <Button/>
+</component>

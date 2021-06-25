@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="274,81" extention="Button" initName="Confirm">
+  <controller name="button" pages="0,up,6,down,2,over" selected="0">
+    <action type="play_transition" fromPage="0" toPage="" transition="t1"/>
+    <action type="play_transition" fromPage="" toPage="0" transition="t2"/>
+  </controller>
+  <displayList>
+    <image id="n2_kefb" name="n2" src="pz5gg" fileName="Button/Texture/confirmButtonOutline.png" xy="0,5"/>
+    <image id="n0_kefb" name="n0" src="pz5gh" fileName="Button/Texture/confirmButton.png" xy="3,8" filter="color" filterData="0,0,0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n3_kefb" name="title" xy="87,23" size="68,44" fontSize="32" color="#ebc54f" strokeColor="#000000" strokeSize="2" shadowColor="#000000" shadowOffset="2,2" text="返回">
+      <gearLook controller="button" pages="0,6" values="1,0,0,0|1,0,1,0" default="1,0,0,0"/>
+    </text>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n2_kefb" tween="true" startValue="0.4" endValue="1" duration="12" ease="Cubic.Out" repeat="-1" yoyo="true"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="ColorFilter" target="n0_kefb" tween="true" startValue="0,0,0,0" endValue="0,-0.4,0,0" duration="6"/>
+  </transition>
+  <transition name="t2">
+    <item time="0" type="ColorFilter" target="n0_kefb" tween="true" startValue="0,-0.4,0,0" endValue="0,0,0,0" duration="6"/>
+  </transition>
+  <transition name="Enter" autoPlay="true">
+    <item time="0" type="XY" tween="true" startValue="275,0,1.004,0" endValue="0,0" duration="12" ease="Expo.Out"/>
+  </transition>
+</component>

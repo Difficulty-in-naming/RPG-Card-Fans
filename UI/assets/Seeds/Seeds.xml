@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="345,390">
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5gx" fileName="Panel/Texture/confirm.png" pkg="rduitwm2" xy="1,1"/>
+    <text id="n1_pz5g" name="n1" xy="108,62" size="134,36" fontSize="26" color="#ebc54f" strokeColor="#003300" strokeSize="2" text="输入新种子"/>
+    <component id="n2_pz5g" name="n2" src="pz5g12" fileName="Input/Input.xml" pkg="rduitwm2" xy="29,168"/>
+    <component id="n3_pz5g" name="n3" src="pz5g15" fileName="Button/YesButton.xml" pkg="rduitwm2" xy="-1,293"/>
+    <component id="n4_pz5g" name="n4" src="pz5g17" fileName="Button/NoButton.xml" pkg="rduitwm2" xy="206,293"/>
+  </displayList>
+</component>

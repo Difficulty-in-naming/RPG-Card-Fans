@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="154,52" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0">
+    <action type="play_transition" fromPage="" toPage="4,5" transition="t0"/>
+    <action type="play_transition" fromPage="4,5" toPage="" transition="t1"/>
+  </controller>
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5g13" fileName="Button/Texture/no.png" xy="0,0" filter="color" filterData="0,0,0,0"/>
+    <text id="n1_pz5g" name="n1" xy="45,9" size="48,32" fontSize="22" color="#ebc54f" strokeColor="#4d4a44" strokeSize="2" text="取消">
+      <gearColor controller="button" pages="3,4,5" values="#ffffff,#4d4a44|#ffffff,#4d4a44|#ffffff,#4d4a44" default="#ebc54f,#4d4a44"/>
+    </text>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".95"/>
+  <transition name="t0">
+    <item time="0" type="ColorFilter" target="n0_pz5g" value="0.04,0,0,0"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="ColorFilter" target="n0_pz5g" value="0,0,0,0"/>
+  </transition>
+</component>

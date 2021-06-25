@@ -1,0 +1,26 @@
+{
+  "font": "ui://rduitwm2kefb1",
+  "fontSize": 32,
+  "textColor": "#000000",
+  "fontAdjustment": false,
+  "colorScheme": [
+    "自定义颜色 #FF0000",
+    "金色 #EBC54F",
+    "描边 #4D4A44"
+  ],
+  "fontSizeScheme": [
+    "自定义字体大小 30"
+  ],
+  "fontScheme": [
+    "默认字体"
+  ],
+  "scrollBars": {
+    "horizontal": "",
+    "vertical": "",
+    "defaultDisplay": "visible"
+  },
+  "tipsRes": "",
+  "buttonClickSound": "",
+  "pivot": "default",
+  "fileName": "Common"
+}

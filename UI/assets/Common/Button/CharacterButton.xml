@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,200" extention="Button">
+  <controller name="button" pages="2,up,3,down" selected="1">
+    <action type="play_transition" fromPage="2" toPage="" transition="t1"/>
+    <action type="play_transition" fromPage="3" toPage="" transition="t2"/>
+  </controller>
+  <displayList>
+    <image id="n1_kefb" name="n1" src="kefbf" fileName="Button/Character/highlightButton2.png" xy="0,0" size="200,200" color="#ffcc00">
+      <gearDisplay controller="button" pages="3"/>
+    </image>
+    <loader id="n0_kefb" name="icon" xy="20,20" pivot="0.5,0.5" size="160,160" aspect="true" filter="color" filterData="0,0,0,0" url="ui://rduitwm2kefbd" fill="scale"/>
+  </displayList>
+  <Button mode="Radio"/>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n1_kefb" tween="true" startValue="0.5" endValue="1" duration="12" ease="Cubic.Out" repeat="-1" yoyo="true"/>
+  </transition>
+  <transition name="t1">
+    <item time="0" type="ColorFilter" target="n0_kefb" value="0,0.2,0,0"/>
+  </transition>
+  <transition name="t2">
+    <item time="0" type="ColorFilter" target="n0_kefb" value="0,0,0,0"/>
+  </transition>
+</component>

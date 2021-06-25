@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="152,50" extention="Button">
+  <controller name="button" pages="2,up,4,over" selected="0"/>
+  <displayList>
+    <image id="n1_kefb" name="n1" src="kefb4" fileName="Button/Texture/menu_option_highlight.png" xy="-33,-27" alpha="0">
+      <gearLook controller="button" pages="2" values="0,0,0,0" default="1,0,0,0" tween="true"/>
+    </image>
+    <text id="n0_kefb" name="title" xy="0,0" size="152,50" fontSize="37" color="#fef5e1" leading="0" strokeColor="#4d4a44" strokeSize="2" faceDilate="0.15" text="开始游戏">
+      <gearXY controller="button" pages="2,4" values="0,0,0,0|10,0,0.065,0" tween="true" ease="Sine.InOut" positionsInPercent="true"/>
+    </text>
+  </displayList>
+  <Button/>
+  <relation target="n0_kefb" sidePair="width-width"/>
+</component>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="r0i72pqo">
+  <resources>
+    <component id="kefb0" name="MainMenuPanel.xml" path="/"/>
+    <image id="kefb1" name="menuPanelFrame.png" path="/Button/Texture/"/>
+    <image id="kefb2" name="menuPanel.png" path="/Button/Texture/"/>
+    <image id="kefb3" name="menuPanel2.png" path="/Button/Texture/"/>
+    <image id="kefb4" name="menuPanel3.png" path="/Button/Texture/"/>
+    <image id="kefb5" name="menuPanel4.png" path="/Button/Texture/"/>
+    <component id="kefb6" name="Button1.xml" path="/Button/"/>
+    <image id="kefb7" name="card.jpg" path="/Texture/"/>
+    <image id="kefb8" name="charstat.jpg" path="/Texture/"/>
+    <image id="kefb9" name="credits.jpg" path="/Texture/"/>
+    <image id="kefba" name="daily.jpg" path="/Texture/"/>
+    <image id="kefbb" name="gamesettings.jpg" path="/Texture/"/>
+    <image id="kefbc" name="history.jpg" path="/Texture/"/>
+    <image id="kefbd" name="input_settings.jpg" path="/Texture/"/>
+    <image id="kefbe" name="leaderboards.jpg" path="/Texture/"/>
+    <image id="kefbf" name="lock.png" path="/Texture/"/>
+    <image id="kefbg" name="loop.jpg" path="/Texture/"/>
+    <image id="kefbh" name="potion.jpg" path="/Texture/"/>
+    <image id="kefbi" name="relics.jpg" path="/Texture/"/>
+    <image id="kefbj" name="standard.jpg" path="/Texture/"/>
+    <component id="kefbl" name="SelectCharacter.xml" path="/"/>
+    <image id="pz5gm" name="捕获.PNG" path="/"/>
+    <image id="pz5gn" name="watcherPortrait.jpg" path="/Character/"/>
+    <image id="pz5go" name="defectPortrait.jpg" path="/Character/"/>
+    <image id="pz5gp" name="ironcladPortrait.jpg" path="/Character/"/>
+    <image id="pz5gq" name="silentPortrait.jpg" path="/Character/"/>
+    <image id="pz5gr" name="QQ截图20210625081115.png" path="/"/>
+    <image id="pz5gt" name="crackedOrb.png" path="/" scale9grid="0,0,-77,-78"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

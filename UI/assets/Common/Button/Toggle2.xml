@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="123,39" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,6,selectedOver" selected="2"/>
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5gn" fileName="Button/Toggle/toggleButtonBase.png" xy="12,9"/>
+    <image id="n1_pz5g" name="n1" src="pz5gm" fileName="Button/Toggle/toggleButtonOverlay2.png" xy="10,9">
+      <gearDisplay controller="button" pages="3,6"/>
+    </image>
+    <text id="n2_pz5g" name="title" xy="63,0" size="60,39" fontSize="28" color="#00ff00" strokeColor="#000000" strokeSize="3" text="进阶">
+      <gearColor controller="button" pages="2,3,4,6" values="#ebc54f,#000000|#ebc54f,#4d4a44|#00ff00,#000000|#00ff00,#000000"/>
+    </text>
+  </displayList>
+  <Button mode="Check"/>
+</component>

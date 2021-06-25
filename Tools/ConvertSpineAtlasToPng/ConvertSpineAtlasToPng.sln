@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertSpineAtlasToPng", "ConvertSpineAtlasToPng\ConvertSpineAtlasToPng.csproj", "{01F30CC4-6FB3-45A5-AAAF-A6F7CD4870DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01F30CC4-6FB3-45A5-AAAF-A6F7CD4870DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F30CC4-6FB3-45A5-AAAF-A6F7CD4870DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F30CC4-6FB3-45A5-AAAF-A6F7CD4870DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F30CC4-6FB3-45A5-AAAF-A6F7CD4870DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

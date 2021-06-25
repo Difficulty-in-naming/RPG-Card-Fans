@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5g1" fileName="Texture/bar.png" xy="0,0"/>
+    <image id="n1_pz5g" name="n1" src="pz5g2" fileName="key_slots.png" xy="19,0"/>
+    <text id="n2_pz5g" name="PlayerName" xy="101,11" size="154,42" fontSize="30" color="#ffffff" shadowColor="#000000" shadowOffset="1,1" text="哈哈哈哈哈"/>
+    <text id="n3_pz5g" name="ClassName" xy="275,20" size="84,29" fontSize="20" color="#999999" shadowColor="#000000" shadowOffset="1,1" text="铁甲战士"/>
+    <component id="n5_pz5g" name="Health" src="pz5g3" fileName="Health.xml" xy="389,16"/>
+    <component id="n6_pz5g" name="Gold" src="pz5g4" fileName="Gold.xml" xy="589,15"/>
+    <list id="n8_pz5g" name="PotionList" xy="775,14" size="200,42" layout="row" colGap="10" defaultItem="ui://wg6ewwqqpz5g5">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <image id="n9_pz5g" name="n9" src="pz5g6" fileName="Texture/ascension.png" xy="1214,11"/>
+    <text id="n10_pz5g" name="AdvanceLevel" xy="1257,19" size="24,29" fontSize="20" color="#ebc54f" shadowColor="#000000" shadowOffset="1,1" text="20"/>
+    <component id="n11_pz5g" name="Map" src="pz5ga" fileName="Map.xml" xy="1722,6"/>
+    <component id="n13_pz5g" name="Deck" src="pz5gb" fileName="Deck.xml" xy="1782,7"/>
+    <component id="n14_pz5g" name="Settings" src="pz5gc" fileName="Settings.xml" xy="1851,6"/>
+    <list id="n15_pz5g" name="RelicList" xy="40,84" size="392,60" overflow="scroll"/>
+  </displayList>
+</component>
