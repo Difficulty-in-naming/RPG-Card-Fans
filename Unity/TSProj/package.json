@@ -1,0 +1,10 @@
+{
+  "name": "tsproj",
+  "version": "1.0.0",
+  "description": "ts project",
+  "author": {
+    "name": "温恂"
+  },
+  "icon": "",
+  "main": "Test.js"
+}

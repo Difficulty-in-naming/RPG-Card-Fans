@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1469">
+  <displayList>
+    <image id="n2_kefb" name="n2" src="kefbl" fileName="Texture/title/jpg/sky.png" xy="0,-2">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_kefb" name="n1" src="kefbk" fileName="Texture/title/mg3Bot.png" xy="0,327">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n0_kefb" name="n0" src="kefbj" fileName="Texture/title/mg2.png" xy="0,675">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n3_kefb" name="n3" src="kefbm" fileName="Texture/title2/mg3Top.png" xy="0,-3">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n8_kefb" name="n8" src="kefbr" fileName="Texture/title4/mg1.png" xy="0,1191">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n12_kefb" name="n12" src="kefb1" fileName="Texture/title5/fg.png" xy="624,866">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n13_kefb" name="n13" xy="645,113" pivot="0.5,0.5" size="639,550" url="ui://r56y0bvskefb5" align="center" vAlign="middle" fill="scale">
+      <relation target="" sidePair="width-width%,height-height%,center-center,top-top"/>
+    </loader>
+    <component id="n15_kefb" name="Start" src="kefb0" fileName="Button/MainMenuButton.xml" pkg="rduitwm2" xy="128,985" group="n20_kefb"/>
+    <component id="n16_kefb" name="Compendium" src="kefb0" fileName="Button/MainMenuButton.xml" pkg="rduitwm2" xy="128,1067" group="n20_kefb">
+      <Button title="百科大全"/>
+    </component>
+    <component id="n17_kefb" name="Statistics" src="kefb0" fileName="Button/MainMenuButton.xml" pkg="rduitwm2" xy="128,1149" group="n20_kefb">
+      <Button title="统计内容"/>
+    </component>
+    <component id="n18_kefb" name="Settings" src="kefb0" fileName="Button/MainMenuButton.xml" pkg="rduitwm2" xy="128,1231" size="78,50" group="n20_kefb">
+      <Button title="设定"/>
+    </component>
+    <component id="n19_kefb" name="Exit" src="kefb0" fileName="Button/MainMenuButton.xml" pkg="rduitwm2" xy="128,1313" size="78,50" group="n20_kefb">
+      <Button title="退出"/>
+    </component>
+    <group id="n20_kefb" name="n20" xy="128,985" size="152,378" advanced="true">
+      <relation target="" sidePair="left-left,bottom-bottom"/>
+    </group>
+  </displayList>
+  <transition name="Background" autoPlay="true" autoPlayRepeat="-1"/>
+  <transition name="Logo">
+    <item time="0" type="XY" target="n13_kefb" tween="true" startValue="-,-569,0.31,-0.387" endValue="-,53.36,0,0.049" duration="30" ease="Sine.InOut"/>
+  </transition>
+  <transition name="MainMenuEnter">
+    <item time="0" type="XY" target="n20_kefb" tween="true" startValue="-192,-,-0.1,0.534" endValue="208,-" duration="24" ease="Back.Out"/>
+  </transition>
+</component>

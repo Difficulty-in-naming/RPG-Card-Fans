@@ -1,0 +1,20 @@
+{
+    "name": "Panthea.Common",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.demigiant.dotween",
+            "expression": "",
+            "define": "PANTHEA_COMMON_DOTWEEN_SUPPORT"
+        }
+    ],
+    "noEngineReferences": false
+}

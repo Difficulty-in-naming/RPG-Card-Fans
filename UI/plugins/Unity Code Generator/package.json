@@ -1,0 +1,11 @@
+{
+  "name": "Unity Code Generator",
+  "displayName": "Unity Code Generator",
+  "description": "用于生成Unity UI代码的插件",
+  "version": "0.02",
+  "author": {
+    "name": "温恂"
+  },
+  "icon": "",
+  "main": "main.js"
+}

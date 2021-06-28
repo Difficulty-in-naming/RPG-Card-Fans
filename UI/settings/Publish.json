@@ -1,5 +1,5 @@
 {
-  "path": "",
+  "path": "../Unity/Assets/StreamingAssets/Mod/SlayTheSpire/Res",
   "branchPath": "",
   "fileExtension": "bytes",
   "packageCount": 2,
@@ -9,12 +9,12 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": true,
-    "codePath": "",
-    "classNamePrefix": "UI_",
-    "memberNamePrefix": "m_",
-    "packageName": null,
+    "codePath": "../Unity/TSProj/src/Mod/SlayTheSpire/UI/View/",
+    "classNamePrefix": "View_",
+    "memberNamePrefix": "",
+    "packageName": "ModTheSpire",
     "ignoreNoname": true,
-    "getMemberByName": false,
+    "getMemberByName": true,
     "codeType": ""
   },
   "includeHighResolution": 0,

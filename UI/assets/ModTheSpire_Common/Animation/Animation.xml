@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <loader id="n0_s4b8" name="Container" xy="0,0" size="1920,1080" touchable="false" url="ui://ucagdrsinru7j5" align="center" vAlign="middle" clearOnPublish="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+  </displayList>
+  <transition name="Fall">
+    <item time="0" type="XY" target="n0_s4b8" tween="true" startValue="0,-1080,0,-1" endValue="0,0,0,0" duration="12" ease="Back.Out"/>
+  </transition>
+  <transition name="Rise">
+    <item time="0" type="XY" target="n0_s4b8" tween="true" startValue="0,0,0,0" endValue="0,-1080,0,-1" duration="12" ease="Back.In"/>
+  </transition>
+  <transition name="ScaleToZero">
+    <item time="0" type="Pivot" target="n0_s4b8" value="0.5,0.5"/>
+    <item time="0" type="Scale" target="n0_s4b8" tween="true" startValue="1,1" endValue="0,0" duration="12" ease="Back.In"/>
+    <item time="12" type="Pivot" target="n0_s4b8" value="0,0"/>
+  </transition>
+  <transition name="ScaleToNormal">
+    <item time="0" type="Pivot" target="n0_s4b8" value="0.5,0.5"/>
+    <item time="0" type="Scale" target="n0_s4b8" tween="true" startValue="0,0" endValue="1,1" duration="12" ease="Back.Out"/>
+    <item time="12" type="Pivot" target="n0_s4b8" value="0,0"/>
+  </transition>
+  <transition name="FadeIn">
+    <item time="0" type="Alpha" target="n0_s4b8" tween="true" startValue="0" endValue="1" duration="12" ease="Sine.InOut"/>
+  </transition>
+  <transition name="FadeOut">
+    <item time="0" type="Alpha" target="n0_s4b8" tween="true" startValue="1" endValue="0" duration="12" ease="Sine.InOut"/>
+  </transition>
+</component>

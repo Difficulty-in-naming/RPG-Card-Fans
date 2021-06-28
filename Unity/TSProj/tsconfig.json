@@ -1,0 +1,19 @@
+{
+  
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "jsx": "react",
+      "sourceMap": true,
+      //"inlineSourceMap": true,
+      "baseUrl": "./src/",
+      "typeRoots": [
+        "../Assets/ThirdParty/Puerts/Typing",
+        "../Assets/Gen/Typing",
+        "./node_modules/@types"
+      ],
+      "outDir": "../Assets/StreamingAssets"
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
+  }

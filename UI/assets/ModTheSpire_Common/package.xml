@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rduitwm2">
+  <resources>
+    <component id="kefb0" name="MainMenuButton.xml" path="/Button/" exported="true"/>
+    <font id="kefb1" name="SourceHanSansHWSC-Bold.otf" path="/Font/" renderMode="" samplePointSize="16"/>
+    <font id="kefb2" name="SourceHanSansHWSC-Regular.otf" path="/Font/" renderMode="" samplePointSize="16"/>
+    <font id="kefb3" name="SourceHanSansHWSC-Bold-TMP.otf" path="/Font/" renderMode="sdfaa" samplePointSize="60"/>
+    <image id="kefb4" name="menu_option_highlight.png" path="/Button/Texture/"/>
+    <image id="kefb5" name="cancelButton.png" path="/Button/Texture/" scale9grid="0,0,-246,-175"/>
+    <component id="kefb7" name="CancelButton.xml" path="/Button/" exported="true"/>
+    <image id="kefb8" name="cancelButtonOutline.png" path="/Button/Texture/" scale9grid="0,0,-243,-169"/>
+    <component id="kefb9" name="CharacterButton.xml" path="/Button/" exported="true"/>
+    <image id="kefba" name="silentButton.png" path="/Button/Character/" scale9grid="0,0,-49,-49"/>
+    <image id="kefbb" name="watcherButton.png" path="/Button/Character/" scale9grid="0,0,-50,-50"/>
+    <image id="kefbc" name="crowbotButton.png" path="/Button/Character/" scale9grid="0,0,-49,-49"/>
+    <image id="kefbd" name="defectButton.png" path="/Button/Character/" scale9grid="0,0,-50,-50"/>
+    <image id="kefbe" name="ironcladButton.png" path="/Button/Character/" scale9grid="0,0,-49,-49"/>
+    <image id="kefbf" name="highlightButton2.png" path="/Button/Character/" scale9grid="0,0,-13,-13"/>
+    <image id="pz5gg" name="confirmButtonOutline.png" path="/Button/Texture/" scale9grid="0,0,-238,-180"/>
+    <image id="pz5gh" name="confirmButton.png" path="/Button/Texture/" scale9grid="0,0,-241,-186"/>
+    <component id="pz5gi" name="ConfirmButton.xml" path="/Button/" exported="true"/>
+    <image id="pz5gj" name="checkbox.png" path="/Button/Toggle/" scale9grid="0,0,-19,-19"/>
+    <component id="pz5gk" name="Toggle.xml" path="/Button/" exported="true"/>
+    <image id="pz5gl" name="tick.png" path="/Button/Toggle/" scale9grid="0,0,-1,-23"/>
+    <image id="pz5gm" name="toggleButtonOverlay2.png" path="/Button/Toggle/" scale9grid="0,0,-4,-10"/>
+    <image id="pz5gn" name="toggleButtonBase.png" path="/Button/Toggle/" scale9grid="0,0,-4,-9"/>
+    <component id="pz5go" name="Toggle2.xml" path="/Button/" exported="true"/>
+    <image id="pz5gp" name="tinyLeftArrow.png" path="/Button/Arrow/" scale9grid="0,0,-20,-19"/>
+    <image id="pz5gq" name="tinyRightArrow.png" path="/Button/Arrow/" scale9grid="0,0,-19,-19"/>
+    <component id="pz5gs" name="LeftButton.xml" path="/Button/" exported="true"/>
+    <component id="pz5gt" name="RightButton.xml" path="/Button/" exported="true"/>
+    <image id="pz5gu" name="panelHeart.png" path="/Texture/" exported="true" scale9grid="0,0,-26,-32"/>
+    <image id="pz5gv" name="panelGoldBag.png" path="/Texture/" exported="true" scale9grid="0,0,-16,-26"/>
+    <component id="pz5gw" name="FontButton.xml" path="/Button/" exported="true"/>
+    <image id="pz5gx" name="confirm.png" path="/Panel/Texture/" exported="true" scale9grid="0,0,-16,-25"/>
+    <image id="pz5gz" name="nameBox.png" path="/Input/Texture/" scale9grid="0,0,-28,-230"/>
+    <component id="pz5g12" name="Input.xml" path="/Input/" exported="true"/>
+    <image id="pz5g13" name="no.png" path="/Button/Texture/" scale9grid="0,0,-18,-21"/>
+    <image id="pz5g14" name="yes.png" path="/Button/Texture/" scale9grid="0,0,-19,-22"/>
+    <component id="pz5g15" name="YesButton.xml" path="/Button/" exported="true"/>
+    <component id="pz5g17" name="NoButton.xml" path="/Button/" exported="true"/>
+    <image id="pz5g18" name="potion_placeholder.png" path="/Texture/" exported="true" scale9grid="0,0,-23,-27"/>
+    <component id="k9kc19" name="Animation.xml" path="/Animation/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>
