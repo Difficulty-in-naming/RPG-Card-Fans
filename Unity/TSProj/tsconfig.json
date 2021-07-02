@@ -3,7 +3,7 @@
     "compilerOptions": {
       "target": "esnext",
       "module": "commonjs",
-      "jsx": "react",
+      //"jsx": "react",
       "sourceMap": true,
       //"inlineSourceMap": true,
       "baseUrl": "./src/",
@@ -12,8 +12,13 @@
         "../Assets/Gen/Typing",
         "./node_modules/@types"
       ],
+/*      "rootDirs": [
+        "../Assets/ThirdParty/Puerts/Typing",
+        "../Assets/Gen/Typing",
+        "./node_modules/@types"
+      ],*/
       "outDir": "../Assets/StreamingAssets"
     },
-    "include": ["src"],
+    "include": ["src","../Assets/Gen/Typing/","../Assets/ThirdParty/Puerts/Typing/"],
     "exclude": ["node_modules", "dist"]
   }

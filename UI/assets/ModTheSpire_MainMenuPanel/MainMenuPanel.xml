@@ -4,14 +4,17 @@
     <graph id="n5_kefb" name="n5" xy="-184,-157" size="2371,1382" type="rect" lineSize="0" lineColor="#4f000000" fillColor="#b2000000">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
-    <list id="n3_kefb" name="List" xy="0,0" size="1920,1080" layout="row" overflow="scroll" colGap="-30" defaultItem="ui://r0i72pqokefb6" align="center">
-      <relation target="" sidePair="top-top"/>
+    <list id="n3_kefb" name="List" xy="0,166" size="1920,720" layout="row" colGap="65" defaultItem="ui://r0i72pqokefb6" align="center" autoClearItems="true">
+      <relation target="" sidePair="middle-middle"/>
       <item/>
       <item/>
       <item/>
     </list>
-    <component id="n4_kefb" name="Cancel" src="kefb7" fileName="Button/CancelButton.xml" pkg="rduitwm2" xy="0,800">
+    <component id="n4_kefb" name="Cancel" src="kefb7" fileName="Button/CancelButton.xml" pkg="rduitwm2" xy="0,840">
       <relation target="" sidePair="left-left,bottom-bottom"/>
     </component>
   </displayList>
+  <transition name="Close">
+    <item time="0" type="Alpha" tween="true" startValue="1" endValue="0" duration="3" ease="Sine.InOut"/>
+  </transition>
 </component>

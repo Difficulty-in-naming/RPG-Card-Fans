@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="52,52" extention="Button">
-  <controller name="button" pages="2,up,4,over" selected="0">
+  <controller name="button" pages="2,up,5,down,4,over,6,selectedOver" selected="1">
     <action type="play_transition" fromPage="2" toPage="" transition="t0"/>
     <action type="play_transition" fromPage="4" toPage="" transition="t1"/>
   </controller>
@@ -9,11 +9,12 @@
       <gearLook controller="button" pages="4" values="1,-15,0,0" default="1,0,0,0" tween="true" duration=".2"/>
     </image>
   </displayList>
-  <Button/>
+  <Button mode="Check"/>
   <transition name="t0">
     <item time="0" type="ColorFilter" target="n0_pz5g" value="0.1,0,0,0"/>
   </transition>
   <transition name="t1">
     <item time="0" type="ColorFilter" target="n0_pz5g" value="0,0,0,0"/>
+    <item time="0" type="Sound" value="ui://qeik3u1qmdv91,100"/>
   </transition>
 </component>

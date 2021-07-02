@@ -4,11 +4,11 @@ exports.genCode = void 0;
 const csharp_1 = require("csharp");
 const CodeWriter_1 = require("./CodeWriter");
 function genCode(handler) {
-    let settings = handler.project.GetSettings("Publish").codeGeneration;
+    let globalsettings = handler.project.GetSettings("Publish");
+    let settings = globalsettings.codeGeneration;
     let codePkgName = handler.ToFilename(handler.pkg.name); //convert chinese to pinyin, remove special chars etc.
     let exportCodePath = handler.exportCodePath + '/' + codePkgName;
     let namespaceName = codePkgName;
-    console.log(handler.project.name);
     let isMonoGame = handler.project.type == csharp_1.FairyEditor.ProjectType.MonoGame;
     console.log('Export To Path' + exportCodePath);
     if (settings.packageName)
@@ -19,11 +19,11 @@ function genCode(handler) {
     let getMemberByName = settings.getMemberByName;
     let classCnt = classes.Count;
     let writer = new CodeWriter_1.default();
-    writer.writeln('import {UI} from "../../../../Core/Module/UI/UIKit";');
+    writer.writeln('import {UI} from "../../../../../Core/Module/UI/UIKit";');
     writer.writeln('import ViewInfo = UI.ViewInfo;');
     writer.writeln('import UIKit = UI.UIKit;');
     writer.writeln('import UIBase = UI.UIBase;');
-    writer.writeln('import {FairyGUI} from "csharp"');
+    writer.writeln('import {FairyGUI} from "csharp";');
     for (let i = 0; i < classCnt; i++) {
         let classInfo = classes.get_Item(i);
         let members = classInfo.members;
@@ -37,7 +37,7 @@ function genCode(handler) {
         writer.writeln('public static Url = new ViewInfo("%s","%s")', codePkgName, classInfo.resName);
         writer.writeln('public static CreatePanel(...args) : UIBase');
         writer.startBlock();
-        writer.writeln('let url : string = this.Url + "_" + this.name;');
+        writer.writeln('let url : string = this.Url.toString() + "." + this.name;');
         writer.writeln('let panel : UIBase = UIKit.Inst().Get(url);');
         writer.writeln('if(!panel)');
         writer.startBlock();
@@ -50,6 +50,17 @@ function genCode(handler) {
         writer.startBlock();
         writer.writeln("return UIKit.Inst().CreateInstance(this.Url);");
         writer.endBlock();
+        writer.writeln("public static GetInstance() : UIBase");
+        writer.startBlock();
+        writer.writeln('let url : string = %s.Url.toString() + "." + (this).name;', classInfo.className);
+        writer.writeln("return UIKit.Inst().Get(url);");
+        writer.endBlock();
+        writer.writeln("public CloseMySelf()");
+        writer.startBlock();
+        writer.writeln('let url : string = %s.Url.toString() + "." + (<any>this).constructor.name;', classInfo.className);
+        writer.writeln("UIKit.Inst().Destroy(url);");
+        writer.endBlock();
+        writer.writeln("//不要主动调用这个方法或者修改这个方法");
         writer.writeln("public Construct()");
         writer.startBlock();
         for (let j = 0; j < memberCnt; j++) {

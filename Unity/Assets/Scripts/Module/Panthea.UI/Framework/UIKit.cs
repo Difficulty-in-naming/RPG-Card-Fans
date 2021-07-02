@@ -18,7 +18,7 @@ namespace Panthea.UI
                 object asset = null;
                 if (type == typeof(Texture))
                 {
-                    asset = await ResourcesManager.LoadTexture(dirName + "/" + name + extension);
+                    asset = ResourcesManager.LoadTexture(dirName + "/" + name + extension);
                 }
                 else if (type == typeof(AudioClip))
                 {

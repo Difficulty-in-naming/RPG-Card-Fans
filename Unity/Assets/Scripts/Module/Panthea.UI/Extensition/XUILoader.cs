@@ -78,7 +78,7 @@ public class XUILoader: GLoader
         }
 
         Texture texture;
-        texture = await AssetsKit.Inst.Load<Texture>(url);
+        texture = ResourcesManager.LoadTexture(Application.persistentDataPath + "/" +url);
         if (texture == null)
         {
             texture = Resources.Load<Texture>(url);

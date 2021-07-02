@@ -2,48 +2,55 @@ import * as core from 'csharp';
 import {UI} from "./Core/Module/UI/UIKit";
 import UIKit = UI.UIKit;
 import {Log} from "./Core/Module/Log/Log";
+import {ObserverMessageKit} from "./Core/ObserverMessageKit";
+import QueueMessageKit from "./Core/QueueMessageKit";
+import {TimeKit} from "./Core/Utils/TimeKit";
 export interface UnityBridge {
     OnUpdate();
     OnDestroy();
 }
 
-export default class MainEntry{
-    BindTo: any;
-    private static BridgeList : Set<UnityBridge> = new Set<UnityBridge>();
-    constructor(bindTo:any){
-        this.BindTo = bindTo;
-        this.BindTo.JsUpdate = MainEntry.onUpdate;
-        this.BindTo.JsOnDestroy = MainEntry.onDestroy;
+export class MainEntry{
+    private static inst: MainEntry;
+    public static Inst(): MainEntry {
+        if (!MainEntry.inst) {
+            MainEntry.inst = new MainEntry();
+        }
+        return MainEntry.inst;
     }
+    private constructor() {
+        core.GameEntry.Inst.RegisterUpdate(()=>this.onUpdate());
+        //core.GameEntry.Inst.RegisterDestory(()=>this.onDestroy());
+    }    
+    
+    private BridgeList : Set<UnityBridge> = new Set<UnityBridge>();
 
-    public static RegisterEntry(bridge:UnityBridge)
+    public RegisterEntry(bridge:UnityBridge)
     {
-        MainEntry.BridgeList.add(bridge);
+        this.BridgeList.add(bridge);
     }
     
-    public static RemoveEntry(bridge:UnityBridge){
-        MainEntry.BridgeList.delete(bridge);
+    public RemoveEntry(bridge:UnityBridge){
+        this.BridgeList.delete(bridge);
     }
     
-    private static onUpdate()
+    private onUpdate()
     {
-        MainEntry.BridgeList.forEach(value => {
+        TimeKit.Update();
+        this.BridgeList.forEach(value => {
             value.OnUpdate();
-        })
+        });
         UIKit.Inst().OnUpdate();
+        QueueMessageKit.Inst()
     }
 
-    private static onDestroy()
+/*    private onDestroy()
     {
-        MainEntry.BridgeList.forEach(value => {
+        this.BridgeList.forEach(value => {
             value.OnDestroy();
-        })
-        UIKit.Inst().OnDestroy();
-    }
+        });
+        (<UIKit>UIKit.Inst()).OnDestroy();
+    }*/
 }
 
-export function init(monoBehaviour: core.UnityEngine.MonoBehaviour): void
-{
-    new MainEntry(monoBehaviour);
-}
-
+MainEntry.Inst();

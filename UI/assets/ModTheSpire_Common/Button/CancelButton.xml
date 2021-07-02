@@ -13,7 +13,7 @@
       <gearLook controller="button" pages="0,6" values="1,0,0,0|1,0,1,0" default="1,0,0,0"/>
     </text>
   </displayList>
-  <Button downEffect="dark" downEffectValue=".8"/>
+  <Button sound="ui://qeik3u1qmdv90" downEffect="dark" downEffectValue=".8"/>
   <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
     <item time="0" type="Alpha" target="n2_kefb" tween="true" startValue="0.4" endValue="1" duration="12" ease="Cubic.Out" repeat="-1" yoyo="true"/>
   </transition>

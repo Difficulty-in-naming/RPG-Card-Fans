@@ -791,6 +791,12 @@ declare module 'csharp' {
         }
         
         
+        class UInt16 extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>, System.IFormattable{
+            
+            
+        }
+        
+        
         class MarshalByRefObject extends System.Object{
             
             
@@ -2285,7 +2291,133 @@ declare module 'csharp' {
         
         /** Representation of RGBA colors. */
         class Color extends System.ValueType implements System.IEquatable$1<UnityEngine.Color>, System.IFormattable{
+            /** Red component of the color. */
+            public r: number;/** Green component of the color. */
+            public g: number;/** Blue component of the color. */
+            public b: number;/** Alpha component of the color (0 is transparent, 1 is opaque). */
+            public a: number;/** Solid red. RGBA is (1, 0, 0, 1). */
+            public static get red(): UnityEngine.Color;
             
+            /** Solid green. RGBA is (0, 1, 0, 1). */
+            public static get green(): UnityEngine.Color;
+            
+            /** Solid blue. RGBA is (0, 0, 1, 1). */
+            public static get blue(): UnityEngine.Color;
+            
+            /** Solid white. RGBA is (1, 1, 1, 1). */
+            public static get white(): UnityEngine.Color;
+            
+            /** Solid black. RGBA is (0, 0, 0, 1). */
+            public static get black(): UnityEngine.Color;
+            
+            /** Yellow. RGBA is (1, 0.92, 0.016, 1), but the color is nice to look at! */
+            public static get yellow(): UnityEngine.Color;
+            
+            /** Cyan. RGBA is (0, 1, 1, 1). */
+            public static get cyan(): UnityEngine.Color;
+            
+            /** Magenta. RGBA is (1, 0, 1, 1). */
+            public static get magenta(): UnityEngine.Color;
+            
+            /** Gray. RGBA is (0.5, 0.5, 0.5, 1). */
+            public static get gray(): UnityEngine.Color;
+            
+            /** English spelling for gray. RGBA is the same (0.5, 0.5, 0.5, 1). */
+            public static get grey(): UnityEngine.Color;
+            
+            /** Completely transparent. RGBA is (0, 0, 0, 0). */
+            public static get clear(): UnityEngine.Color;
+            
+            /** The grayscale value of the color. (Read Only) */
+            public get grayscale(): number;
+            
+            /** A linear value of an sRGB color. */
+            public get linear(): UnityEngine.Color;
+            
+            /** A version of the color that has had the gamma curve applied. */
+            public get gamma(): UnityEngine.Color;
+            
+            /** Returns the maximum color component value: Max(r,g,b). */
+            public get maxColorComponent(): number;
+            
+            
+            
+            public ToString():string;
+            /** Returns a formatted string of this color. * @param format A numeric format string.
+             * @param formatProvider An object that specifies culture-specific formatting.
+             */
+            public ToString($format: string):string;
+            /** Returns a formatted string of this color. * @param format A numeric format string.
+             * @param formatProvider An object that specifies culture-specific formatting.
+             */
+            public ToString($format: string, $formatProvider: System.IFormatProvider):string;
+            
+            public Equals($other: any):boolean;
+            
+            public Equals($other: UnityEngine.Color):boolean;
+            
+            public static op_Addition($a: UnityEngine.Color, $b: UnityEngine.Color):UnityEngine.Color;
+            
+            public static op_Subtraction($a: UnityEngine.Color, $b: UnityEngine.Color):UnityEngine.Color;
+            
+            public static op_Multiply($a: UnityEngine.Color, $b: UnityEngine.Color):UnityEngine.Color;
+            
+            public static op_Multiply($a: UnityEngine.Color, $b: number):UnityEngine.Color;
+            
+            public static op_Multiply($b: number, $a: UnityEngine.Color):UnityEngine.Color;
+            
+            public static op_Division($a: UnityEngine.Color, $b: number):UnityEngine.Color;
+            
+            public static op_Equality($lhs: UnityEngine.Color, $rhs: UnityEngine.Color):boolean;
+            
+            public static op_Inequality($lhs: UnityEngine.Color, $rhs: UnityEngine.Color):boolean;
+            /** Linearly interpolates between colors a and b by t. * @param a Color a.
+             * @param b Color b.
+             * @param t Float for combining a and b.
+             */
+            public static Lerp($a: UnityEngine.Color, $b: UnityEngine.Color, $t: number):UnityEngine.Color;
+            /** Linearly interpolates between colors a and b by t. */
+            public static LerpUnclamped($a: UnityEngine.Color, $b: UnityEngine.Color, $t: number):UnityEngine.Color;
+            
+            public static op_Implicit($c: UnityEngine.Color):UnityEngine.Vector4;
+            
+            public static op_Implicit($v: UnityEngine.Vector4):UnityEngine.Color;
+            
+            public get_Item($index: number):number;
+            
+            public set_Item($index: number, $value: number):void;
+            /** Calculates the hue, saturation and value of an RGB input color. * @param rgbColor An input color.
+             * @param H Output variable for hue.
+             * @param S Output variable for saturation.
+             * @param V Output variable for value.
+             */
+            public static RGBToHSV($rgbColor: UnityEngine.Color, $H: $Ref<number>, $S: $Ref<number>, $V: $Ref<number>):void;
+            /** Creates an RGB colour from HSV input.
+             * @param H Hue [0..1].
+             * @param S Saturation [0..1].
+             * @param V Brightness value [0..1].
+             * @param hdr Output HDR colours. If true, the returned colour will not be clamped to [0..1].
+             * @returns An opaque colour with HSV matching the input. 
+             */
+            public static HSVToRGB($H: number, $S: number, $V: number):UnityEngine.Color;
+            /** Creates an RGB colour from HSV input.
+             * @param H Hue [0..1].
+             * @param S Saturation [0..1].
+             * @param V Brightness value [0..1].
+             * @param hdr Output HDR colours. If true, the returned colour will not be clamped to [0..1].
+             * @returns An opaque colour with HSV matching the input. 
+             */
+            public static HSVToRGB($H: number, $S: number, $V: number, $hdr: boolean):UnityEngine.Color;
+            
+            public constructor($r: number, $g: number, $b: number, $a: number);
+            
+            public constructor($r: number, $g: number, $b: number);
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+            public constructor();
             
         }
         
@@ -2736,11 +2868,635 @@ declare module 'csharp' {
             
         }
         
-        /** A class you can derive from if you want to create objects that don't need to be attached to game objects. */
-        class ScriptableObject extends UnityEngine.Object{
+        /** A collection of common math functions. */
+        class Mathf extends System.ValueType{
+            /** The well-known 3.14159265358979... value (Read Only). */
+            public static PI: number;/** A representation of positive infinity (Read Only). */
+            public static Infinity: number;/** A representation of negative infinity (Read Only). */
+            public static NegativeInfinity: number;/** Degrees-to-radians conversion constant (Read Only). */
+            public static Deg2Rad: number;/** Radians-to-degrees conversion constant (Read Only). */
+            public static Rad2Deg: number;/** A tiny floating point value (Read Only). */
+            public static Epsilon: number;
+            /** Returns the closest power of two value. */
+            public static ClosestPowerOfTwo($value: number):number;
+            /** Returns true if the value is power of two. */
+            public static IsPowerOfTwo($value: number):boolean;
+            /** Returns the next power of two that is equal to, or greater than, the argument. */
+            public static NextPowerOfTwo($value: number):number;
+            /** Converts the given value from gamma (sRGB) to linear color space. */
+            public static GammaToLinearSpace($value: number):number;
+            /** Converts the given value from linear to gamma (sRGB) color space. */
+            public static LinearToGammaSpace($value: number):number;
+            /** Convert a color temperature in Kelvin to RGB color.
+             * @param kelvin Temperature in Kelvin. Range 1000 to 40000 Kelvin.
+             * @returns Correlated Color Temperature as floating point RGB color. 
+             */
+            public static CorrelatedColorTemperatureToRGB($kelvin: number):UnityEngine.Color;
+            /** Encode a floating point value into a 16-bit representation.
+             * @param val The floating point value to convert.
+             * @returns The converted half-precision float, stored in a 16-bit unsigned integer. 
+             */
+            public static FloatToHalf($val: number):number;
+            /** Convert a half precision float to a 32-bit floating point value.
+             * @param val The half precision value to convert.
+             * @returns The decoded 32-bit float. 
+             */
+            public static HalfToFloat($val: number):number;
+            /** Generate 2D Perlin noise.
+             * @param x X-coordinate of sample point.
+             * @param y Y-coordinate of sample point.
+             * @returns Value between 0.0 and 1.0. (Return value might be slightly below 0.0 or beyond 1.0.) 
+             */
+            public static PerlinNoise($x: number, $y: number):number;
+            /** Returns the sine of angle f.
+             * @param f The input angle, in radians.
+             * @returns The return value between -1 and +1. 
+             */
+            public static Sin($f: number):number;
+            /** Returns the cosine of angle f.
+             * @param f The input angle, in radians.
+             * @returns The return value between -1 and 1. 
+             */
+            public static Cos($f: number):number;
+            /** Returns the tangent of angle f in radians. */
+            public static Tan($f: number):number;
+            /** Returns the arc-sine of f - the angle in radians whose sine is f. */
+            public static Asin($f: number):number;
+            /** Returns the arc-cosine of f - the angle in radians whose cosine is f. */
+            public static Acos($f: number):number;
+            /** Returns the arc-tangent of f - the angle in radians whose tangent is f. */
+            public static Atan($f: number):number;
+            /** Returns the angle in radians whose Tan is y/x. */
+            public static Atan2($y: number, $x: number):number;
+            /** Returns square root of f. */
+            public static Sqrt($f: number):number;
+            /** Returns the absolute value of f. */
+            public static Abs($f: number):number;
+            /** Returns the absolute value of value. */
+            public static Abs($value: number):number;
+            /** Returns the smallest of two or more values. */
+            public static Min($a: number, $b: number):number;
+            /** Returns the smallest of two or more values. */
+            public static Min(...values: number[]):number;
+            /** Returns the smallest of two or more values. */
+            public static Min($a: number, $b: number):number;
+            /** Returns the smallest of two or more values. */
+            public static Min(...values: number[]):number;
+            /** Returns largest of two or more values. */
+            public static Max($a: number, $b: number):number;
+            /** Returns largest of two or more values. */
+            public static Max(...values: number[]):number;
+            /** Returns the largest of two or more values. */
+            public static Max($a: number, $b: number):number;
+            /** Returns the largest of two or more values. */
+            public static Max(...values: number[]):number;
+            /** Returns f raised to power p. */
+            public static Pow($f: number, $p: number):number;
+            /** Returns e raised to the specified power. */
+            public static Exp($power: number):number;
+            /** Returns the logarithm of a specified number in a specified base. */
+            public static Log($f: number, $p: number):number;
+            /** Returns the natural (base e) logarithm of a specified number. */
+            public static Log($f: number):number;
+            /** Returns the base 10 logarithm of a specified number. */
+            public static Log10($f: number):number;
+            /** Returns the smallest integer greater to or equal to f. */
+            public static Ceil($f: number):number;
+            /** Returns the largest integer smaller than or equal to f. */
+            public static Floor($f: number):number;
+            /** Returns f rounded to the nearest integer. */
+            public static Round($f: number):number;
+            /** Returns the smallest integer greater to or equal to f. */
+            public static CeilToInt($f: number):number;
+            /** Returns the largest integer smaller to or equal to f. */
+            public static FloorToInt($f: number):number;
+            /** Returns f rounded to the nearest integer. */
+            public static RoundToInt($f: number):number;
+            /** Returns the sign of f. */
+            public static Sign($f: number):number;
+            /** Clamps the given value between the given minimum float and maximum float values.  Returns the given value if it is within the min and max range.
+             * @param value The floating point value to restrict inside the range defined by the min and max values.
+             * @param min The minimum floating point value to compare against.
+             * @param max The maximum floating point value to compare against.
+             * @returns The float result between the min and max values. 
+             */
+            public static Clamp($value: number, $min: number, $max: number):number;
+            /** Clamps the given value between a range defined by the given minimum integer and maximum integer values. Returns the given value if it is within min and max.
+             * @param value The integer point value to restrict inside the min-to-max range
+             * @param min The minimum integer point value to compare against.
+             * @param max The maximum  integer point value to compare against.
+             * @returns The int result between min and max values. 
+             */
+            public static Clamp($value: number, $min: number, $max: number):number;
+            /** Clamps value between 0 and 1 and returns value. */
+            public static Clamp01($value: number):number;
+            /** Linearly interpolates between a and b by t.
+             * @param a The start value.
+             * @param b The end value.
+             * @param t The interpolation value between the two floats.
+             * @returns The interpolated float result between the two float values. 
+             */
+            public static Lerp($a: number, $b: number, $t: number):number;
+            /** Linearly interpolates between a and b by t with no limit to t.
+             * @param a The start value.
+             * @param b The end value.
+             * @param t The interpolation between the two floats.
+             * @returns The float value as a result from the linear interpolation. 
+             */
+            public static LerpUnclamped($a: number, $b: number, $t: number):number;
+            /** Same as Lerp but makes sure the values interpolate correctly when they wrap around 360 degrees. */
+            public static LerpAngle($a: number, $b: number, $t: number):number;
+            /** Moves a value current towards target. * @param current The current value.
+             * @param target The value to move towards.
+             * @param maxDelta The maximum change that should be applied to the value.
+             */
+            public static MoveTowards($current: number, $target: number, $maxDelta: number):number;
+            /** Same as MoveTowards but makes sure the values interpolate correctly when they wrap around 360 degrees. */
+            public static MoveTowardsAngle($current: number, $target: number, $maxDelta: number):number;
+            /** Interpolates between min and max with smoothing at the limits. */
+            public static SmoothStep($from: number, $to: number, $t: number):number;
+            
+            public static Gamma($value: number, $absmax: number, $gamma: number):number;
+            /** Compares two floating point values and returns true if they are similar. */
+            public static Approximately($a: number, $b: number):boolean;
+            /** Gradually changes a value towards a desired goal over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDamp($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number):number;
+            /** Gradually changes a value towards a desired goal over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDamp($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number):number;
+            /** Gradually changes a value towards a desired goal over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDamp($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number, $deltaTime: number):number;
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDampAngle($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number):number;
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDampAngle($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number):number;
+            /** Gradually changes an angle given in degrees towards a desired goal angle over time. * @param current The current position.
+             * @param target The position we are trying to reach.
+             * @param currentVelocity The current velocity, this value is modified by the function every time you call it.
+             * @param smoothTime Approximately the time it will take to reach the target. A smaller value will reach the target faster.
+             * @param maxSpeed Optionally allows you to clamp the maximum speed.
+             * @param deltaTime The time since the last call to this function. By default Time.deltaTime.
+             */
+            public static SmoothDampAngle($current: number, $target: number, $currentVelocity: $Ref<number>, $smoothTime: number, $maxSpeed: number, $deltaTime: number):number;
+            /** Loops the value t, so that it is never larger than length and never smaller than 0. */
+            public static Repeat($t: number, $length: number):number;
+            /** PingPong returns a value that will increment and decrement between the value 0 and length. */
+            public static PingPong($t: number, $length: number):number;
+            /** Calculates the linear parameter t that produces the interpolant value within the range [a, b].
+             * @param a Start value.
+             * @param b End value.
+             * @param value Value between start and end.
+             * @returns Percentage of value between start and end. 
+             */
+            public static InverseLerp($a: number, $b: number, $value: number):number;
+            /** Calculates the shortest difference between two given angles given in degrees. */
+            public static DeltaAngle($current: number, $target: number):number;
+            
+        }
+        
+        /** General functionality for all renderers. */
+        class Renderer extends UnityEngine.Component{
+            /** The bounding volume of the renderer (Read Only). */
+            public get bounds(): UnityEngine.Bounds;
+            
+            /** Makes the rendered 3D object visible if enabled. */
+            public get enabled(): boolean;
+            public set enabled(value: boolean);
+            /** Is this renderer visible in any camera? (Read Only) */
+            public get isVisible(): boolean;
+            
+            /** Does this object cast shadows? */
+            public get shadowCastingMode(): UnityEngine.Rendering.ShadowCastingMode;
+            public set shadowCastingMode(value: UnityEngine.Rendering.ShadowCastingMode);
+            /** Does this object receive shadows? */
+            public get receiveShadows(): boolean;
+            public set receiveShadows(value: boolean);
+            /** Allows turning off rendering for a specific component. */
+            public get forceRenderingOff(): boolean;
+            public set forceRenderingOff(value: boolean);
+            /** Specifies the mode for motion vector rendering. */
+            public get motionVectorGenerationMode(): UnityEngine.MotionVectorGenerationMode;
+            public set motionVectorGenerationMode(value: UnityEngine.MotionVectorGenerationMode);
+            /** The light probe interpolation type. */
+            public get lightProbeUsage(): UnityEngine.Rendering.LightProbeUsage;
+            public set lightProbeUsage(value: UnityEngine.Rendering.LightProbeUsage);
+            /** Should reflection probes be used for this Renderer? */
+            public get reflectionProbeUsage(): UnityEngine.Rendering.ReflectionProbeUsage;
+            public set reflectionProbeUsage(value: UnityEngine.Rendering.ReflectionProbeUsage);
+            /** Determines which rendering layer this renderer lives on. */
+            public get renderingLayerMask(): number;
+            public set renderingLayerMask(value: number);
+            /** This value sorts renderers by priority. Lower values are rendered first and higher values are rendered last. */
+            public get rendererPriority(): number;
+            public set rendererPriority(value: number);
+            /** Describes how this renderer is updated for ray tracing. */
+            public get rayTracingMode(): UnityEngine.Experimental.Rendering.RayTracingMode;
+            public set rayTracingMode(value: UnityEngine.Experimental.Rendering.RayTracingMode);
+            /** Name of the Renderer's sorting layer. */
+            public get sortingLayerName(): string;
+            public set sortingLayerName(value: string);
+            /** Unique ID of the Renderer's sorting layer. */
+            public get sortingLayerID(): number;
+            public set sortingLayerID(value: number);
+            /** Renderer's order within a sorting layer. */
+            public get sortingOrder(): number;
+            public set sortingOrder(value: number);
+            /** Controls if dynamic occlusion culling should be performed for this renderer. */
+            public get allowOcclusionWhenDynamic(): boolean;
+            public set allowOcclusionWhenDynamic(value: boolean);
+            /** Has this renderer been statically batched with any other renderers? */
+            public get isPartOfStaticBatch(): boolean;
+            
+            /** Matrix that transforms a point from world space into local space (Read Only). */
+            public get worldToLocalMatrix(): UnityEngine.Matrix4x4;
+            
+            /** Matrix that transforms a point from local space into world space (Read Only). */
+            public get localToWorldMatrix(): UnityEngine.Matrix4x4;
+            
+            /** If set, the Renderer will use the Light Probe Proxy Volume component attached to the source GameObject. */
+            public get lightProbeProxyVolumeOverride(): UnityEngine.GameObject;
+            public set lightProbeProxyVolumeOverride(value: UnityEngine.GameObject);
+            /** If set, Renderer will use this Transform's position to find the light or reflection probe. */
+            public get probeAnchor(): UnityEngine.Transform;
+            public set probeAnchor(value: UnityEngine.Transform);
+            /** The index of the baked lightmap applied to this renderer. */
+            public get lightmapIndex(): number;
+            public set lightmapIndex(value: number);
+            /** The index of the realtime lightmap applied to this renderer. */
+            public get realtimeLightmapIndex(): number;
+            public set realtimeLightmapIndex(value: number);
+            /** The UV scale & offset used for a lightmap. */
+            public get lightmapScaleOffset(): UnityEngine.Vector4;
+            public set lightmapScaleOffset(value: UnityEngine.Vector4);
+            /** The UV scale & offset used for a realtime lightmap. */
+            public get realtimeLightmapScaleOffset(): UnityEngine.Vector4;
+            public set realtimeLightmapScaleOffset(value: UnityEngine.Vector4);
+            /** Returns all the instantiated materials of this object. */
+            public get materials(): System.Array$1<UnityEngine.Material>;
+            public set materials(value: System.Array$1<UnityEngine.Material>);
+            /** Returns the first instantiated Material assigned to the renderer. */
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            /** The shared material of this object. */
+            public get sharedMaterial(): UnityEngine.Material;
+            public set sharedMaterial(value: UnityEngine.Material);
+            /** All the shared materials of this object. */
+            public get sharedMaterials(): System.Array$1<UnityEngine.Material>;
+            public set sharedMaterials(value: System.Array$1<UnityEngine.Material>);
+            
+            
+            public HasPropertyBlock():boolean;
+            /** Lets you set or clear per-renderer or per-material parameter overrides. * @param properties Property block with values you want to override.
+             * @param materialIndex The index of the Material you want to override the parameters of. The index ranges from 0 to Renderer.sharedMaterial.Length-1.
+             */
+            public SetPropertyBlock($properties: UnityEngine.MaterialPropertyBlock):void;
+            /** Lets you set or clear per-renderer or per-material parameter overrides. * @param properties Property block with values you want to override.
+             * @param materialIndex The index of the Material you want to override the parameters of. The index ranges from 0 to Renderer.sharedMaterial.Length-1.
+             */
+            public SetPropertyBlock($properties: UnityEngine.MaterialPropertyBlock, $materialIndex: number):void;
+            /** Get per-Renderer or per-Material property block. * @param properties Material parameters to retrieve.
+             * @param materialIndex The index of the Material you want to get overridden parameters from. The index ranges from 0 to Renderer.sharedMaterials.Length-1.
+             */
+            public GetPropertyBlock($properties: UnityEngine.MaterialPropertyBlock):void;
+            /** Get per-Renderer or per-Material property block. * @param properties Material parameters to retrieve.
+             * @param materialIndex The index of the Material you want to get overridden parameters from. The index ranges from 0 to Renderer.sharedMaterials.Length-1.
+             */
+            public GetPropertyBlock($properties: UnityEngine.MaterialPropertyBlock, $materialIndex: number):void;
+            
+            public GetMaterials($m: System.Collections.Generic.List$1<UnityEngine.Material>):void;
+            
+            public GetSharedMaterials($m: System.Collections.Generic.List$1<UnityEngine.Material>):void;
+            
+            public GetClosestReflectionProbes($result: System.Collections.Generic.List$1<UnityEngine.Rendering.ReflectionProbeBlendInfo>):void;
+            
+            public constructor();
+            
+        }
+        
+        /** Represents an axis aligned bounding box. */
+        class Bounds extends System.ValueType implements System.IEquatable$1<UnityEngine.Bounds>, System.IFormattable{
             
             
         }
+        
+        /** A block of material values to apply. */
+        class MaterialPropertyBlock extends System.Object{
+            /** Is the material property block empty? (Read Only) */
+            public get isEmpty(): boolean;
+            
+            
+            
+            public Clear():void;
+            /** Set a float property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The float value to set.
+             */
+            public SetFloat($name: string, $value: number):void;
+            /** Set a float property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The float value to set.
+             */
+            public SetFloat($nameID: number, $value: number):void;
+            /** Adds a property to the block. If an int property with the given name already exists, the old value is replaced. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The int value to set.
+             */
+            public SetInt($name: string, $value: number):void;
+            /** Adds a property to the block. If an int property with the given name already exists, the old value is replaced. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The int value to set.
+             */
+            public SetInt($nameID: number, $value: number):void;
+            /** Set a vector property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Vector4 value to set.
+             */
+            public SetVector($name: string, $value: UnityEngine.Vector4):void;
+            /** Set a vector property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Vector4 value to set.
+             */
+            public SetVector($nameID: number, $value: UnityEngine.Vector4):void;
+            /** Set a color property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Color value to set.
+             */
+            public SetColor($name: string, $value: UnityEngine.Color):void;
+            /** Set a color property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Color value to set.
+             */
+            public SetColor($nameID: number, $value: UnityEngine.Color):void;
+            /** Set a matrix property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The matrix value to set.
+             */
+            public SetMatrix($name: string, $value: UnityEngine.Matrix4x4):void;
+            /** Set a matrix property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The matrix value to set.
+             */
+            public SetMatrix($nameID: number, $value: UnityEngine.Matrix4x4):void;
+            /** Set a buffer property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The ComputeBuffer or GraphicsBuffer to set.
+             */
+            public SetBuffer($name: string, $value: UnityEngine.ComputeBuffer):void;
+            /** Set a buffer property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The ComputeBuffer or GraphicsBuffer to set.
+             */
+            public SetBuffer($nameID: number, $value: UnityEngine.ComputeBuffer):void;
+            /** Set a buffer property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The ComputeBuffer or GraphicsBuffer to set.
+             */
+            public SetBuffer($name: string, $value: UnityEngine.GraphicsBuffer):void;
+            /** Set a buffer property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The ComputeBuffer or GraphicsBuffer to set.
+             */
+            public SetBuffer($nameID: number, $value: UnityEngine.GraphicsBuffer):void;
+            /** Set a texture property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Texture to set.
+             * @param element Optional parameter that specifies the type of data to set from the RenderTexture.
+             */
+            public SetTexture($name: string, $value: UnityEngine.Texture):void;
+            /** Set a texture property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Texture to set.
+             * @param element Optional parameter that specifies the type of data to set from the RenderTexture.
+             */
+            public SetTexture($nameID: number, $value: UnityEngine.Texture):void;
+            /** Set a texture property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Texture to set.
+             * @param element Optional parameter that specifies the type of data to set from the RenderTexture.
+             */
+            public SetTexture($name: string, $value: UnityEngine.RenderTexture, $element: UnityEngine.Rendering.RenderTextureSubElement):void;
+            /** Set a texture property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param value The Texture to set.
+             * @param element Optional parameter that specifies the type of data to set from the RenderTexture.
+             */
+            public SetTexture($nameID: number, $value: UnityEngine.RenderTexture, $element: UnityEngine.Rendering.RenderTextureSubElement):void;
+            /** Sets a ComputeBuffer or GraphicsBuffer as a named constant buffer for the MaterialPropertyBlock. * @param name The name of the constant buffer to override.
+             * @param value The buffer to override the constant buffer values with.
+             * @param offset Offset in bytes from the beginning of the buffer to bind. Must be a multiple of SystemInfo.constantBufferOffsetAlignment, or 0 if that value is 0.
+             * @param size The number of bytes to bind.
+             * @param nameID The shader property ID of the constant buffer to override.
+             */
+            public SetConstantBuffer($name: string, $value: UnityEngine.ComputeBuffer, $offset: number, $size: number):void;
+            /** Sets a ComputeBuffer or GraphicsBuffer as a named constant buffer for the MaterialPropertyBlock. * @param name The name of the constant buffer to override.
+             * @param value The buffer to override the constant buffer values with.
+             * @param offset Offset in bytes from the beginning of the buffer to bind. Must be a multiple of SystemInfo.constantBufferOffsetAlignment, or 0 if that value is 0.
+             * @param size The number of bytes to bind.
+             * @param nameID The shader property ID of the constant buffer to override.
+             */
+            public SetConstantBuffer($nameID: number, $value: UnityEngine.ComputeBuffer, $offset: number, $size: number):void;
+            /** Sets a ComputeBuffer or GraphicsBuffer as a named constant buffer for the MaterialPropertyBlock. * @param name The name of the constant buffer to override.
+             * @param value The buffer to override the constant buffer values with.
+             * @param offset Offset in bytes from the beginning of the buffer to bind. Must be a multiple of SystemInfo.constantBufferOffsetAlignment, or 0 if that value is 0.
+             * @param size The number of bytes to bind.
+             * @param nameID The shader property ID of the constant buffer to override.
+             */
+            public SetConstantBuffer($name: string, $value: UnityEngine.GraphicsBuffer, $offset: number, $size: number):void;
+            /** Sets a ComputeBuffer or GraphicsBuffer as a named constant buffer for the MaterialPropertyBlock. * @param name The name of the constant buffer to override.
+             * @param value The buffer to override the constant buffer values with.
+             * @param offset Offset in bytes from the beginning of the buffer to bind. Must be a multiple of SystemInfo.constantBufferOffsetAlignment, or 0 if that value is 0.
+             * @param size The number of bytes to bind.
+             * @param nameID The shader property ID of the constant buffer to override.
+             */
+            public SetConstantBuffer($nameID: number, $value: UnityEngine.GraphicsBuffer, $offset: number, $size: number):void;
+            
+            public SetFloatArray($name: string, $values: System.Collections.Generic.List$1<number>):void;
+            
+            public SetFloatArray($nameID: number, $values: System.Collections.Generic.List$1<number>):void;
+            /** Set a float array property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param values The array to set.
+             */
+            public SetFloatArray($name: string, $values: System.Array$1<number>):void;
+            /** Set a float array property. * @param name The name of the property.
+             * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param values The array to set.
+             */
+            public SetFloatArray($nameID: number, $values: System.Array$1<number>):void;
+            
+            public SetVectorArray($name: string, $values: System.Collections.Generic.List$1<UnityEngine.Vector4>):void;
+            
+            public SetVectorArray($nameID: number, $values: System.Collections.Generic.List$1<UnityEngine.Vector4>):void;
+            /** Set a vector array property. * @param nameID The name of the property.
+             * @param values The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The array to set.
+             */
+            public SetVectorArray($name: string, $values: System.Array$1<UnityEngine.Vector4>):void;
+            /** Set a vector array property. * @param nameID The name of the property.
+             * @param values The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The array to set.
+             */
+            public SetVectorArray($nameID: number, $values: System.Array$1<UnityEngine.Vector4>):void;
+            
+            public SetMatrixArray($name: string, $values: System.Collections.Generic.List$1<UnityEngine.Matrix4x4>):void;
+            
+            public SetMatrixArray($nameID: number, $values: System.Collections.Generic.List$1<UnityEngine.Matrix4x4>):void;
+            /** Set a matrix array property. * @param name The name of the property.
+             * @param values The name ID of the property retrieved by Shader.PropertyToID.
+             * @param nameID The array to set.
+             */
+            public SetMatrixArray($name: string, $values: System.Array$1<UnityEngine.Matrix4x4>):void;
+            /** Set a matrix array property. * @param name The name of the property.
+             * @param values The name ID of the property retrieved by Shader.PropertyToID.
+             * @param nameID The array to set.
+             */
+            public SetMatrixArray($nameID: number, $values: System.Array$1<UnityEngine.Matrix4x4>):void;
+            /** Get a float from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetFloat($name: string):number;
+            /** Get a float from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetFloat($nameID: number):number;
+            /** Get an int from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetInt($name: string):number;
+            /** Get an int from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetInt($nameID: number):number;
+            /** Get a vector from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetVector($name: string):UnityEngine.Vector4;
+            /** Get a vector from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetVector($nameID: number):UnityEngine.Vector4;
+            /** Get a color from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetColor($name: string):UnityEngine.Color;
+            /** Get a color from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetColor($nameID: number):UnityEngine.Color;
+            /** Get a matrix from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetMatrix($name: string):UnityEngine.Matrix4x4;
+            /** Get a matrix from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetMatrix($nameID: number):UnityEngine.Matrix4x4;
+            /** Get a texture from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetTexture($name: string):UnityEngine.Texture;
+            /** Get a texture from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetTexture($nameID: number):UnityEngine.Texture;
+            /** Get a float array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetFloatArray($name: string):System.Array$1<number>;
+            /** Get a float array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetFloatArray($nameID: number):System.Array$1<number>;
+            /** Get a vector array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetVectorArray($name: string):System.Array$1<UnityEngine.Vector4>;
+            /** Get a vector array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetVectorArray($nameID: number):System.Array$1<UnityEngine.Vector4>;
+            /** Get a matrix array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetMatrixArray($name: string):System.Array$1<UnityEngine.Matrix4x4>;
+            /** Get a matrix array from the property block. * @param nameID The name ID of the property retrieved by Shader.PropertyToID.
+             * @param name The name of the property.
+             */
+            public GetMatrixArray($nameID: number):System.Array$1<UnityEngine.Matrix4x4>;
+            
+            public GetFloatArray($name: string, $values: System.Collections.Generic.List$1<number>):void;
+            
+            public GetFloatArray($nameID: number, $values: System.Collections.Generic.List$1<number>):void;
+            
+            public GetVectorArray($name: string, $values: System.Collections.Generic.List$1<UnityEngine.Vector4>):void;
+            
+            public GetVectorArray($nameID: number, $values: System.Collections.Generic.List$1<UnityEngine.Vector4>):void;
+            
+            public GetMatrixArray($name: string, $values: System.Collections.Generic.List$1<UnityEngine.Matrix4x4>):void;
+            
+            public GetMatrixArray($nameID: number, $values: System.Collections.Generic.List$1<UnityEngine.Matrix4x4>):void;
+            
+            public CopySHCoefficientArraysFrom($lightProbes: System.Collections.Generic.List$1<UnityEngine.Rendering.SphericalHarmonicsL2>):void;
+            /** This function converts and copies the entire source array into 7 Vector4 property arrays named unity_SHAr, unity_SHAg, unity_SHAb, unity_SHBr, unity_SHBg, unity_SHBb and unity_SHC for use with instanced rendering. * @param lightProbes The array of SH values to copy from.
+             */
+            public CopySHCoefficientArraysFrom($lightProbes: System.Array$1<UnityEngine.Rendering.SphericalHarmonicsL2>):void;
+            
+            public CopySHCoefficientArraysFrom($lightProbes: System.Collections.Generic.List$1<UnityEngine.Rendering.SphericalHarmonicsL2>, $sourceStart: number, $destStart: number, $count: number):void;
+            /** This function converts and copies the source array into 7 Vector4 property arrays named unity_SHAr, unity_SHAg, unity_SHAb, unity_SHBr, unity_SHBg, unity_SHBb and unity_SHC with the specified source and destination range for use with instanced rendering. * @param lightProbes The array of SH values to copy from.
+             * @param sourceStart The index of the first element in the source array to copy from.
+             * @param destStart The index of the first element in the destination MaterialPropertyBlock array to copy to.
+             * @param count The number of elements to copy.
+             */
+            public CopySHCoefficientArraysFrom($lightProbes: System.Array$1<UnityEngine.Rendering.SphericalHarmonicsL2>, $sourceStart: number, $destStart: number, $count: number):void;
+            
+            public CopyProbeOcclusionArrayFrom($occlusionProbes: System.Collections.Generic.List$1<UnityEngine.Vector4>):void;
+            /** This function copies the entire source array into a Vector4 property array named unity_ProbesOcclusion for use with instanced rendering. * @param occlusionProbes The array of probe occlusion values to copy from.
+             */
+            public CopyProbeOcclusionArrayFrom($occlusionProbes: System.Array$1<UnityEngine.Vector4>):void;
+            
+            public CopyProbeOcclusionArrayFrom($occlusionProbes: System.Collections.Generic.List$1<UnityEngine.Vector4>, $sourceStart: number, $destStart: number, $count: number):void;
+            /** This function copies the source array into a Vector4 property array named unity_ProbesOcclusion with the specified source and destination range for use with instanced rendering. * @param occlusionProbes The array of probe occlusion values to copy from.
+             * @param sourceStart The index of the first element in the source array to copy from.
+             * @param destStart The index of the first element in the destination MaterialPropertyBlock array to copy to.
+             * @param count The number of elements to copy.
+             */
+            public CopyProbeOcclusionArrayFrom($occlusionProbes: System.Array$1<UnityEngine.Vector4>, $sourceStart: number, $destStart: number, $count: number):void;
+            
+            public constructor();
+            
+        }
+        
+        /** The type of motion vectors that should be generated. */
+        enum MotionVectorGenerationMode{ Camera = 0, Object = 1, ForceNoMotion = 2 }
         
         /** The material class. */
         class Material extends UnityEngine.Object{
@@ -2748,14 +3504,32 @@ declare module 'csharp' {
             
         }
         
-        /** A Camera is a device through which the player views the world. */
-        class Camera extends UnityEngine.Behaviour{
+        /** GPU data buffer, mostly for use with compute shaders. */
+        class ComputeBuffer extends System.Object implements System.IDisposable{
+            
+            
+        }
+        
+        /** GPU graphics data buffer, for working with data such as vertex and index buffers. */
+        class GraphicsBuffer extends System.Object implements System.IDisposable{
             
             
         }
         
         /** Render textures are textures that can be rendered to. */
         class RenderTexture extends UnityEngine.Texture{
+            
+            
+        }
+        
+        /** A class you can derive from if you want to create objects that don't need to be attached to game objects. */
+        class ScriptableObject extends UnityEngine.Object{
+            
+            
+        }
+        
+        /** A Camera is a device through which the player views the world. */
+        class Camera extends UnityEngine.Behaviour{
             
             
         }
@@ -2811,20 +3585,8 @@ declare module 'csharp' {
             
         }
         
-        /** General functionality for all renderers. */
-        class Renderer extends UnityEngine.Component{
-            
-            
-        }
-        
         /** A class that allows creating or modifying meshes from scripts. */
         class Mesh extends UnityEngine.Object{
-            
-            
-        }
-        
-        /** A block of material values to apply. */
-        class MaterialPropertyBlock extends System.Object{
             
             
         }
@@ -2855,6 +3617,60 @@ declare module 'csharp' {
         
         /** AssetBundles let you stream additional assets via the UnityWebRequest class and instantiate them at runtime. AssetBundles are created via BuildPipeline.BuildAssetBundle. */
         class AssetBundle extends UnityEngine.Object{
+            
+            
+        }
+        
+        /** The runtime representation of the AnimatorController. Use this representation to change the Animator Controller during runtime. */
+        class RuntimeAnimatorController extends UnityEngine.Object{
+            
+            
+        }
+        
+        /** Collider for 2D physics representing an arbitrary polygon defined by its vertices. */
+        class PolygonCollider2D extends UnityEngine.Collider2D{
+            
+            
+        }
+        
+        /** Parent class for collider types used with 2D gameplay. */
+        class Collider2D extends UnityEngine.Behaviour{
+            
+            
+        }
+        
+        /** Rigidbody physics component for 2D sprites. */
+        class Rigidbody2D extends UnityEngine.Component{
+            
+            
+        }
+        
+        /** Control of an object's position through physics simulation. */
+        class Rigidbody extends UnityEngine.Component{
+            
+            
+        }
+        
+        /** A component that will render to the screen after all normal rendering has completed when attached to a Canvas. Designed for GUI application. */
+        class CanvasRenderer extends UnityEngine.Component{
+            
+            
+        }
+        
+        /** This enum controls the mode under which the sprite will interact with the masking system. */
+        enum SpriteMaskInteraction{ None = 0, VisibleInsideMask = 1, VisibleOutsideMask = 2 }
+        
+        /** Base class to derive custom property attributes from. Use this to create custom attributes for script variables. */
+        class PropertyAttribute extends System.Attribute implements System.Runtime.InteropServices._Attribute{
+            
+            
+        }
+        
+        /** Color space for player settings. */
+        enum ColorSpace{ Uninitialized = -1, Gamma = 0, Linear = 1 }
+        
+        /** Interface to control the Mecanim animation system. */
+        class Animator extends UnityEngine.Behaviour{
             
             
         }
@@ -3312,14 +4128,44 @@ declare module 'csharp' {
         /** Use this format to create either Textures or RenderTextures from scripts. */
         enum GraphicsFormat{ None = 0, R8_SRGB = 1, R8G8_SRGB = 2, R8G8B8_SRGB = 3, R8G8B8A8_SRGB = 4, R8_UNorm = 5, R8G8_UNorm = 6, R8G8B8_UNorm = 7, R8G8B8A8_UNorm = 8, R8_SNorm = 9, R8G8_SNorm = 10, R8G8B8_SNorm = 11, R8G8B8A8_SNorm = 12, R8_UInt = 13, R8G8_UInt = 14, R8G8B8_UInt = 15, R8G8B8A8_UInt = 16, R8_SInt = 17, R8G8_SInt = 18, R8G8B8_SInt = 19, R8G8B8A8_SInt = 20, R16_UNorm = 21, R16G16_UNorm = 22, R16G16B16_UNorm = 23, R16G16B16A16_UNorm = 24, R16_SNorm = 25, R16G16_SNorm = 26, R16G16B16_SNorm = 27, R16G16B16A16_SNorm = 28, R16_UInt = 29, R16G16_UInt = 30, R16G16B16_UInt = 31, R16G16B16A16_UInt = 32, R16_SInt = 33, R16G16_SInt = 34, R16G16B16_SInt = 35, R16G16B16A16_SInt = 36, R32_UInt = 37, R32G32_UInt = 38, R32G32B32_UInt = 39, R32G32B32A32_UInt = 40, R32_SInt = 41, R32G32_SInt = 42, R32G32B32_SInt = 43, R32G32B32A32_SInt = 44, R16_SFloat = 45, R16G16_SFloat = 46, R16G16B16_SFloat = 47, R16G16B16A16_SFloat = 48, R32_SFloat = 49, R32G32_SFloat = 50, R32G32B32_SFloat = 51, R32G32B32A32_SFloat = 52, B8G8R8_SRGB = 56, B8G8R8A8_SRGB = 57, B8G8R8_UNorm = 58, B8G8R8A8_UNorm = 59, B8G8R8_SNorm = 60, B8G8R8A8_SNorm = 61, B8G8R8_UInt = 62, B8G8R8A8_UInt = 63, B8G8R8_SInt = 64, B8G8R8A8_SInt = 65, R4G4B4A4_UNormPack16 = 66, B4G4R4A4_UNormPack16 = 67, R5G6B5_UNormPack16 = 68, B5G6R5_UNormPack16 = 69, R5G5B5A1_UNormPack16 = 70, B5G5R5A1_UNormPack16 = 71, A1R5G5B5_UNormPack16 = 72, E5B9G9R9_UFloatPack32 = 73, B10G11R11_UFloatPack32 = 74, A2B10G10R10_UNormPack32 = 75, A2B10G10R10_UIntPack32 = 76, A2B10G10R10_SIntPack32 = 77, A2R10G10B10_UNormPack32 = 78, A2R10G10B10_UIntPack32 = 79, A2R10G10B10_SIntPack32 = 80, A2R10G10B10_XRSRGBPack32 = 81, A2R10G10B10_XRUNormPack32 = 82, R10G10B10_XRSRGBPack32 = 83, R10G10B10_XRUNormPack32 = 84, A10R10G10B10_XRSRGBPack32 = 85, A10R10G10B10_XRUNormPack32 = 86, RGB_DXT1_SRGB = 96, RGBA_DXT1_SRGB = 96, RGB_DXT1_UNorm = 97, RGBA_DXT1_UNorm = 97, RGBA_DXT3_SRGB = 98, RGBA_DXT3_UNorm = 99, RGBA_DXT5_SRGB = 100, RGBA_DXT5_UNorm = 101, R_BC4_UNorm = 102, R_BC4_SNorm = 103, RG_BC5_UNorm = 104, RG_BC5_SNorm = 105, RGB_BC6H_UFloat = 106, RGB_BC6H_SFloat = 107, RGBA_BC7_SRGB = 108, RGBA_BC7_UNorm = 109, RGB_PVRTC_2Bpp_SRGB = 110, RGB_PVRTC_2Bpp_UNorm = 111, RGB_PVRTC_4Bpp_SRGB = 112, RGB_PVRTC_4Bpp_UNorm = 113, RGBA_PVRTC_2Bpp_SRGB = 114, RGBA_PVRTC_2Bpp_UNorm = 115, RGBA_PVRTC_4Bpp_SRGB = 116, RGBA_PVRTC_4Bpp_UNorm = 117, RGB_ETC_UNorm = 118, RGB_ETC2_SRGB = 119, RGB_ETC2_UNorm = 120, RGB_A1_ETC2_SRGB = 121, RGB_A1_ETC2_UNorm = 122, RGBA_ETC2_SRGB = 123, RGBA_ETC2_UNorm = 124, R_EAC_UNorm = 125, R_EAC_SNorm = 126, RG_EAC_UNorm = 127, RG_EAC_SNorm = 128, RGBA_ASTC4X4_SRGB = 129, RGBA_ASTC4X4_UNorm = 130, RGBA_ASTC5X5_SRGB = 131, RGBA_ASTC5X5_UNorm = 132, RGBA_ASTC6X6_SRGB = 133, RGBA_ASTC6X6_UNorm = 134, RGBA_ASTC8X8_SRGB = 135, RGBA_ASTC8X8_UNorm = 136, RGBA_ASTC10X10_SRGB = 137, RGBA_ASTC10X10_UNorm = 138, RGBA_ASTC12X12_SRGB = 139, RGBA_ASTC12X12_UNorm = 140, RGBA_ASTC4X4_UFloat = 145, RGBA_ASTC5X5_UFloat = 146, RGBA_ASTC6X6_UFloat = 147, RGBA_ASTC8X8_UFloat = 148, RGBA_ASTC10X10_UFloat = 149, RGBA_ASTC12X12_UFloat = 150 }
         
+        /** Indicates how a Renderer is updated. */
+        enum RayTracingMode{ Off = 0, Static = 1, DynamicTransform = 2, DynamicGeometry = 3 }
+        
         
     }
     namespace UnityEngine.Rendering {
         /** Texture "dimension" (type). */
         enum TextureDimension{ Unknown = -1, None = 0, Any = 1, Tex2D = 2, Tex3D = 3, Cube = 4, Tex2DArray = 5, CubeArray = 6 }
         
+        /** How shadows are cast from this object. */
+        enum ShadowCastingMode{ Off = 0, On = 1, TwoSided = 2, ShadowsOnly = 3 }
+        
+        /** Light probe interpolation type. */
+        enum LightProbeUsage{ Off = 0, BlendProbes = 1, UseProxyVolume = 2, CustomProvided = 4 }
+        
+        /** Reflection Probe usage. */
+        enum ReflectionProbeUsage{ Off = 0, BlendProbes = 1, BlendProbesAndSkybox = 2, Simple = 3 }
+        
+        /** ReflectionProbeBlendInfo contains information required for blending probes. */
+        class ReflectionProbeBlendInfo extends System.ValueType{
+            
+            
+        }
+        
+        /** Types of data that you can encapsulate within a render texture. */
+        enum RenderTextureSubElement{ Color = 0, Depth = 1, Stencil = 2, Default = 3 }
+        
+        /** Spherical harmonics up to the second order (3 bands, 9 coefficients). */
+        class SphericalHarmonicsL2 extends System.ValueType implements System.IEquatable$1<UnityEngine.Rendering.SphericalHarmonicsL2>{
+            
+            
+        }
+        
         /** Blend mode for controlling the blending. */
         enum BlendMode{ Zero = 0, One = 1, DstColor = 2, SrcColor = 3, OneMinusDstColor = 4, SrcAlpha = 5, OneMinusSrcColor = 6, DstAlpha = 7, OneMinusDstAlpha = 8, SrcAlphaSaturate = 9, OneMinusSrcAlpha = 10 }
+        
+        /** Depth or stencil comparison function. */
+        enum CompareFunction{ Disabled = 0, Never = 1, Less = 2, Equal = 3, LessEqual = 4, Greater = 5, NotEqual = 6, GreaterEqual = 7, Always = 8 }
         
         
     }
@@ -4301,6 +5147,38 @@ declare module 'csharp' {
             public static LoadPackage($path: string):void;
             
             public constructor();
+            
+        }
+        
+        
+    }
+    
+        
+        class GameEntry extends UnityEngine.MonoBehaviour{
+            
+            public isDebug: boolean;
+            public debugPort: number;
+            public jsEnv: Puerts.JsEnv;
+            public JsUpdate: System.Action;
+            public JsOnDestroy: System.Action;
+            public static get Inst(): GameEntry;
+            
+            
+            
+            public RegisterUpdate($action: System.Action):void;
+            
+            public RegisterDestory($action: System.Action):void;
+            
+            public constructor();
+            
+        }
+        
+        
+    
+    namespace Puerts {
+        
+        class JsEnv extends System.Object implements System.IDisposable{
+            
             
         }
         
@@ -15328,6 +16206,2044 @@ declare module 'csharp' {
         
         
         enum ConfigKey{ DefaultFont = 0, ButtonSound = 1, ButtonSoundVolumeScale = 2, HorizontalScrollBar = 3, VerticalScrollBar = 4, DefaultScrollStep = 5, DefaultScrollBarDisplay = 6, DefaultScrollTouchEffect = 7, DefaultScrollBounceEffect = 8, TouchScrollSensitivity = 9, WindowModalWaiting = 10, GlobalModalWaiting = 11, PopupMenu = 12, PopupMenu_seperator = 13, LoaderErrorSign = 14, TooltipsWin = 15, DefaultComboBoxVisibleItemCount = 16, TouchDragSensitivity = 17, ClickDragSensitivity = 18, ModalLayerColor = 19, RenderingTextBrighterOnDesktop = 20, AllowSoftnessOnTopOrLeftSide = 21, InputCaretSize = 22, InputHighlightColor = 23, EnhancedTextOutlineEffect = 24, DepthSupportForPaintingMode = 25, RichTextRowVerticalAlign = 26, Branch = 27, PleaseSelect = 100 }
+        
+        
+    }
+    namespace Spine.Unity {
+        
+        class AnimationReferenceAsset extends UnityEngine.ScriptableObject implements Spine.Unity.IHasSkeletonDataAsset{
+            
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            public get Animation(): Spine.Animation;
+            
+            
+            
+            public Initialize():void;
+            
+            public static op_Implicit($asset: Spine.Unity.AnimationReferenceAsset):Spine.Animation;
+            
+            public constructor();
+            
+            public static op_Implicit($exists: UnityEngine.Object):boolean;
+            
+        }
+        
+        
+        interface IHasSkeletonDataAsset{
+            
+            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            
+        }
+        
+        
+        class SkeletonDataAsset extends UnityEngine.ScriptableObject{
+            
+            public atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>;
+            public scale: number;
+            public skeletonJSON: UnityEngine.TextAsset;
+            public skeletonDataModifiers: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataModifierAsset>;
+            public fromAnimation: System.Array$1<string>;
+            public toAnimation: System.Array$1<string>;
+            public duration: System.Array$1<number>;
+            public defaultMix: number;
+            public controller: UnityEngine.RuntimeAnimatorController;
+            public get IsLoaded(): boolean;
+            
+            
+            
+            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAsset: Spine.Unity.AtlasAssetBase, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
+            
+            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
+            
+            public Clear():void;
+            
+            public GetAnimationStateData():Spine.AnimationStateData;
+            
+            public GetSkeletonData($quiet: boolean):Spine.SkeletonData;
+            
+            public FillStateData():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class AtlasAssetBase extends UnityEngine.ScriptableObject{
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get IsLoaded(): boolean;
+            
+            
+            
+            public Clear():void;
+            
+            public GetAtlas():Spine.Atlas;
+            
+        }
+        
+        
+        class EventDataReferenceAsset extends UnityEngine.ScriptableObject{
+            
+            public get EventData(): Spine.EventData;
+            
+            
+            
+            public Initialize():void;
+            
+            public static op_Implicit($asset: Spine.Unity.EventDataReferenceAsset):Spine.EventData;
+            
+            public constructor();
+            
+            public static op_Implicit($exists: UnityEngine.Object):boolean;
+            
+        }
+        
+        
+        class RegionlessAttachmentLoader extends System.Object implements Spine.AttachmentLoader{
+            
+            
+            public NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
+            
+            public NewMeshAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.MeshAttachment;
+            
+            public NewBoundingBoxAttachment($skin: Spine.Skin, $name: string):Spine.BoundingBoxAttachment;
+            
+            public NewPathAttachment($skin: Spine.Skin, $name: string):Spine.PathAttachment;
+            
+            public NewPointAttachment($skin: Spine.Skin, $name: string):Spine.PointAttachment;
+            
+            public NewClippingAttachment($skin: Spine.Skin, $name: string):Spine.ClippingAttachment;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonDataModifierAsset extends UnityEngine.ScriptableObject{
+            
+            
+            public Apply($skeletonData: Spine.SkeletonData):void;
+            
+        }
+        
+        
+        class SkeletonDataCompatibility extends System.Object{
+            
+            
+            public static GetVersionInfo($asset: UnityEngine.TextAsset):Spine.Unity.SkeletonDataCompatibility.VersionInfo;
+            
+            public static GetCompatibilityProblemInfo($fileVersion: Spine.Unity.SkeletonDataCompatibility.VersionInfo):Spine.Unity.SkeletonDataCompatibility.CompatibilityProblemInfo;
+            
+            public static DisplayCompatibilityProblem($descriptionString: string, $spineJson: UnityEngine.TextAsset):void;
+            
+        }
+        
+        
+        class SpineAtlasAsset extends Spine.Unity.AtlasAssetBase{
+            
+            public atlasFile: UnityEngine.TextAsset;
+            public materials: System.Array$1<UnityEngine.Material>;
+            public get IsLoaded(): boolean;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $materialPropertySource: UnityEngine.Material, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $shader: UnityEngine.Shader, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public GenerateMesh($name: string, $mesh: UnityEngine.Mesh, $material: $Ref<UnityEngine.Material>, $scale?: number):UnityEngine.Mesh;
+            
+            public constructor();
+            
+        }
+        
+        
+        class MaterialsTextureLoader extends System.Object implements Spine.TextureLoader{
+            
+            
+            public Load($page: Spine.AtlasPage, $path: string):void;
+            
+            public Unload($texture: any):void;
+            
+            public constructor($atlasAsset: Spine.Unity.SpineAtlasAsset);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSpriteAtlasAsset extends Spine.Unity.AtlasAssetBase{
+            
+            public spriteAtlasFile: UnityEngine.U2D.SpriteAtlas;
+            public materials: System.Array$1<UnityEngine.Material>;
+            public updateRegionsInPlayMode: boolean;
+            public get IsLoaded(): boolean;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            public get RegionsNeedLoading(): boolean;
+            
+            
+            
+            public static CreateRuntimeInstance($spriteAtlasFile: UnityEngine.U2D.SpriteAtlas, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineSpriteAtlasAsset;
+            
+            public static UpdateByStartingEditorPlayMode():void;
+            
+            public static AnySpriteAtlasNeedsRegionsLoaded():boolean;
+            
+            public static UpdateWhenEditorPlayModeStarted():void;
+            
+            public LoadRegionsInEditorPlayMode():void;
+            
+            public static AccessPackedTextureEditor($spriteAtlas: UnityEngine.U2D.SpriteAtlas):UnityEngine.Texture2D;
+            
+            public static AccessPackedTexture($sprites: System.Array$1<UnityEngine.Sprite>):UnityEngine.Texture2D;
+            
+            public static AccessPackedSprites($spriteAtlas: UnityEngine.U2D.SpriteAtlas):System.Array$1<UnityEngine.Sprite>;
+            
+            public constructor();
+            
+        }
+        
+        
+        class BoneFollower extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public boneName: string;
+            public followXYPosition: boolean;
+            public followZPosition: boolean;
+            public followBoneRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followLocalScale: boolean;
+            public initializeOnAwake: boolean;
+            public valid: boolean;
+            public bone: Spine.Bone;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
+            
+            
+            public SetBone($name: string):boolean;
+            
+            public Awake():void;
+            
+            public HandleRebuildRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer):void;
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRenderer extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent{
+            
+            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            public initialSkinName: string;
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public updateWhenInvisible: Spine.Unity.UpdateMode;
+            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
+            public zSpacing: number;
+            public useClipping: boolean;
+            public immutableTriangles: boolean;
+            public pmaVertexColors: boolean;
+            public clearStateOnDisable: boolean;
+            public tintBlack: boolean;
+            public singleSubmesh: boolean;
+            public fixDrawOrder: boolean;
+            public addNormals: boolean;
+            public calculateTangents: boolean;
+            public maskInteraction: UnityEngine.SpriteMaskInteraction;
+            public maskMaterials: Spine.Unity.SkeletonRenderer.SpriteMaskInteractionMaterials;
+            public static STENCIL_COMP_PARAM_ID: number;
+            public static STENCIL_COMP_MASKINTERACTION_NONE: UnityEngine.Rendering.CompareFunction;
+            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_INSIDE: UnityEngine.Rendering.CompareFunction;
+            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_OUTSIDE: UnityEngine.Rendering.CompareFunction;
+            public disableRenderingOnOverride: boolean;
+            public valid: boolean;
+            public skeleton: Spine.Skeleton;
+            public static SUBMESH_DUMMY_PARAM_ID: number;
+            public get EditorSkipSkinSync(): boolean;
+            public set EditorSkipSkinSync(value: boolean);
+            
+            public get UpdateMode(): Spine.Unity.UpdateMode;
+            public set UpdateMode(value: Spine.Unity.UpdateMode);
+            
+            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>;
+            
+            
+            public get CustomSlotMaterials(): System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            
+            public add_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
+            
+            public remove_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
+            
+            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public add_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public remove_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public SetMeshSettings($settings: Spine.Unity.MeshGenerator.Settings):void;
+            
+            public Awake():void;
+            
+            public ClearState():void;
+            
+            public EnsureMeshGeneratorCapacity($minimumVertexCount: number):void;
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public LateUpdate():void;
+            
+            public OnBecameVisible():void;
+            
+            public OnBecameInvisible():void;
+            
+            public FindAndApplySeparatorSlots($startsWith: string, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
+            
+            public FindAndApplySeparatorSlots($slotNamePredicate: System.Func$2<string, boolean>, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
+            
+            public ReapplySeparatorSlotNames():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface ISkeletonComponent{
+            
+            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            Skeleton: Spine.Skeleton;
+            
+        }
+        
+        
+        class BoneFollowerGraphic extends UnityEngine.MonoBehaviour{
+            
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public initializeOnAwake: boolean;
+            public boneName: string;
+            public followBoneRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followLocalScale: boolean;
+            public followXYPosition: boolean;
+            public followZPosition: boolean;
+            public bone: Spine.Bone;
+            public valid: boolean;
+            public get SkeletonGraphic(): Spine.Unity.SkeletonGraphic;
+            public set SkeletonGraphic(value: Spine.Unity.SkeletonGraphic);
+            
+            
+            public SetBone($name: string):boolean;
+            
+            public Awake():void;
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonGraphic extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable, Spine.Unity.ISkeletonAnimation{
+            
+            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            public initialSkinName: string;
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public startingAnimation: string;
+            public startingLoop: boolean;
+            public timeScale: number;
+            public freeze: boolean;
+            public updateWhenInvisible: Spine.Unity.UpdateMode;
+            public unscaledTime: boolean;
+            public allowMultipleCanvasRenderers: boolean;
+            public canvasRenderers: System.Collections.Generic.List$1<UnityEngine.CanvasRenderer>;
+            public static SeparatorPartGameObjectName: string;
+            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
+            public enableSeparatorSlots: boolean;
+            public updateSeparatorPartLocation: boolean;
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            public get UpdateMode(): Spine.Unity.UpdateMode;
+            public set UpdateMode(value: Spine.Unity.UpdateMode);
+            
+            public get SeparatorParts(): System.Collections.Generic.List$1<UnityEngine.Transform>;
+            
+            
+            public get CustomTextureOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Texture>;
+            
+            
+            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Material>;
+            
+            
+            public get OverrideTexture(): UnityEngine.Texture;
+            public set OverrideTexture(value: UnityEngine.Texture);
+            
+            public get mainTexture(): UnityEngine.Texture;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            public set Skeleton(value: Spine.Skeleton);
+            
+            public get SkeletonData(): Spine.SkeletonData;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            public get AnimationState(): Spine.AnimationState;
+            
+            
+            public get MeshGenerator(): Spine.Unity.MeshGenerator;
+            
+            
+            
+            public static NewSkeletonGraphicGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $parent: UnityEngine.Transform, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
+            
+            public static AddSkeletonGraphicComponent($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
+            
+            public Update():void;
+            
+            public Update($deltaTime: number):void;
+            
+            public LateUpdate():void;
+            
+            public OnBecameVisible():void;
+            
+            public OnBecameInvisible():void;
+            
+            public ReapplySeparatorSlotNames():void;
+            
+            public add_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public remove_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public GetLastMesh():UnityEngine.Mesh;
+            
+            public MatchRectTransformWithBounds():boolean;
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public Clear():void;
+            
+            public TrimRenderers():void;
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public UpdateMesh():void;
+            
+            public HasMultipleSubmeshInstructions():boolean;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        interface IAnimationStateComponent{
+            
+            AnimationState: Spine.AnimationState;
+            
+        }
+        
+        
+        interface ISkeletonAnimation{
+            
+            Skeleton: Spine.Skeleton;
+            
+            add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class BoundingBoxFollower extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public slotName: string;
+            public isTrigger: boolean;
+            public clearStateOnDisable: boolean;
+            public colliderTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, UnityEngine.PolygonCollider2D>;
+            public nameTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, string>;
+            public get Slot(): Spine.Slot;
+            
+            
+            public get CurrentAttachment(): Spine.BoundingBoxAttachment;
+            
+            
+            public get CurrentAttachmentName(): string;
+            
+            
+            public get CurrentCollider(): UnityEngine.PolygonCollider2D;
+            
+            
+            public get IsTrigger(): boolean;
+            
+            
+            
+            public Initialize($overwrite?: boolean):void;
+            
+            public ClearState():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class PointFollower extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonRenderer, Spine.Unity.IHasSkeletonComponent{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public slotName: string;
+            public pointAttachmentName: string;
+            public followRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followSkeletonZPosition: boolean;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            
+            
+            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface IHasSkeletonRenderer{
+            
+            SkeletonRenderer: Spine.Unity.SkeletonRenderer;
+            
+        }
+        
+        
+        interface IHasSkeletonComponent{
+            
+            SkeletonComponent: Spine.Unity.ISkeletonComponent;
+            
+        }
+        
+        
+        class SkeletonMecanimRootMotion extends Spine.Unity.SkeletonRootMotionBase{
+            
+            public mecanimLayerFlags: number;
+            public get SkeletonMecanim(): Spine.Unity.SkeletonMecanim;
+            
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRootMotionBase extends UnityEngine.MonoBehaviour{
+            
+            public transformPositionX: boolean;
+            public transformPositionY: boolean;
+            public rigidBody2D: UnityEngine.Rigidbody2D;
+            public rigidBody: UnityEngine.Rigidbody;
+            public get UsesRigidbody(): boolean;
+            
+            
+            
+            public SetRootMotionBone($name: string):void;
+            
+        }
+        
+        
+        class SkeletonMecanim extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.ISkeletonAnimation{
+            
+            public get Translator(): Spine.Unity.SkeletonMecanim.MecanimTranslator;
+            
+            
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public Update():void;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class SkeletonRootMotion extends Spine.Unity.SkeletonRootMotionBase{
+            
+            public animationTrackFlags: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimation extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, Spine.Unity.ISkeletonAnimation{
+            
+            public state: Spine.AnimationState;
+            public loop: boolean;
+            public timeScale: number;
+            public get AnimationState(): Spine.AnimationState;
+            
+            
+            public get AnimationName(): string;
+            public set AnimationName(value: string);
+            
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public static AddToGameObject($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
+            
+            public static NewSkeletonAnimationGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
+            
+            public Update($deltaTime: number):void;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        type UpdateBonesDelegate = (animated: Spine.Unity.ISkeletonAnimation) => void;
+        var UpdateBonesDelegate: {new (func: (animated: Spine.Unity.ISkeletonAnimation) => void): UpdateBonesDelegate;}
+        
+        
+        enum UpdateMode{ Nothing = 0, OnlyAnimationStatus = 1, EverythingExceptMesh = 2, FullUpdate = 3 }
+        
+        
+        class MeshGenerator extends System.Object{
+            
+            public settings: Spine.Unity.MeshGenerator.Settings;
+            public get VertexCount(): number;
+            
+            
+            public get Buffers(): Spine.Unity.MeshGeneratorBuffers;
+            
+            
+            
+            public static GenerateSingleSubmeshInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $material: UnityEngine.Material):void;
+            
+            public static RequiresMultipleSubmeshesByDrawOrder($skeleton: Spine.Skeleton):boolean;
+            
+            public static GenerateSkeletonRendererInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $customSlotMaterials: System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>, $separatorSlots: System.Collections.Generic.List$1<Spine.Slot>, $generateMeshOverride: boolean, $immutableTriangles?: boolean):void;
+            
+            public static TryReplaceMaterials($workingSubmeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $customMaterialOverride: System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>):void;
+            
+            public Begin():void;
+            
+            public AddSubmesh($instruction: Spine.Unity.SubmeshInstruction, $updateTriangles?: boolean):void;
+            
+            public BuildMesh($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
+            
+            public BuildMeshWithArrays($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
+            
+            public ScaleVertexData($scale: number):void;
+            
+            public FillVertexData($mesh: UnityEngine.Mesh):void;
+            
+            public FillLateVertexData($mesh: UnityEngine.Mesh):void;
+            
+            public FillTriangles($mesh: UnityEngine.Mesh):void;
+            
+            public EnsureVertexCapacity($minimumVertexCount: number, $inlcudeTintBlack?: boolean, $includeTangents?: boolean, $includeNormals?: boolean):void;
+            
+            public TrimExcess():void;
+            
+            public static FillMeshLocal($mesh: UnityEngine.Mesh, $regionAttachment: Spine.RegionAttachment):void;
+            
+            public static FillMeshLocal($mesh: UnityEngine.Mesh, $meshAttachment: Spine.MeshAttachment, $skeletonData: Spine.SkeletonData):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        type MeshGeneratorDelegate = (buffers: Spine.Unity.MeshGeneratorBuffers) => void;
+        var MeshGeneratorDelegate: {new (func: (buffers: Spine.Unity.MeshGeneratorBuffers) => void): MeshGeneratorDelegate;}
+        
+        
+        class MeshGeneratorBuffers extends System.ValueType{
+            
+            public vertexCount: number;
+            public vertexBuffer: System.Array$1<UnityEngine.Vector3>;
+            public uvBuffer: System.Array$1<UnityEngine.Vector2>;
+            public colorBuffer: System.Array$1<UnityEngine.Color32>;
+            public meshGenerator: Spine.Unity.MeshGenerator;
+            
+        }
+        
+        
+        class SkeletonPartsRenderer extends UnityEngine.MonoBehaviour{
+            
+            public get MeshGenerator(): Spine.Unity.MeshGenerator;
+            
+            
+            public get MeshRenderer(): UnityEngine.MeshRenderer;
+            
+            
+            public get MeshFilter(): UnityEngine.MeshFilter;
+            
+            
+            
+            public ClearMesh():void;
+            
+            public RenderParts($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
+            
+            public SetPropertyBlock($block: UnityEngine.MaterialPropertyBlock):void;
+            
+            public static NewPartsRendererGameObject($parent: UnityEngine.Transform, $name: string, $sortingOrder?: number):Spine.Unity.SkeletonPartsRenderer;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SubmeshInstruction extends System.ValueType{
+            
+            public skeleton: Spine.Skeleton;
+            public startSlot: number;
+            public endSlot: number;
+            public material: UnityEngine.Material;
+            public forceSeparate: boolean;
+            public preActiveClippingSlotSource: number;
+            public rawTriangleCount: number;
+            public rawVertexCount: number;
+            public rawFirstVertexIndex: number;
+            public hasClipping: boolean;
+            public get SlotCount(): number;
+            
+            
+            
+        }
+        
+        
+        class SkeletonRenderSeparator extends UnityEngine.MonoBehaviour{
+            
+            public static DefaultSortingOrderIncrement: number;
+            public copyPropertyBlock: boolean;
+            public copyMeshRendererFlags: boolean;
+            public partsRenderers: System.Collections.Generic.List$1<Spine.Unity.SkeletonPartsRenderer>;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
+            
+            
+            public static AddToSkeletonRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer, $sortingLayerID?: number, $extraPartsRenderers?: number, $sortingOrderIncrement?: number, $baseSortingOrder?: number, $addMinimumPartsRenderers?: boolean):Spine.Unity.SkeletonRenderSeparator;
+            
+            public AddPartsRenderer($sortingOrderIncrement?: number, $name?: string):Spine.Unity.SkeletonPartsRenderer;
+            
+            public OnEnable():void;
+            
+            public OnDisable():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRendererInstruction extends System.Object{
+            
+            public submeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>;
+            public immutableTriangles: boolean;
+            public hasActiveClipping: boolean;
+            public rawVertexCount: number;
+            public attachments: Spine.ExposedList$1<Spine.Attachment>;
+            
+            public Clear():void;
+            
+            public Dispose():void;
+            
+            public SetWithSubset($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
+            
+            public Set($other: Spine.Unity.SkeletonRendererInstruction):void;
+            
+            public static GeometryNotEqual($a: Spine.Unity.SkeletonRendererInstruction, $b: Spine.Unity.SkeletonRendererInstruction):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonGraphicCustomMaterials extends UnityEngine.MonoBehaviour{
+            
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRendererCustomMaterials extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            
+            public constructor();
+            
+        }
+        
+        
+        class ActivateBasedOnFlipDirection extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public activeOnNormalX: UnityEngine.GameObject;
+            public activeOnFlippedX: UnityEngine.GameObject;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowLocationRigidbody extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowLocationRigidbody2D extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            public followFlippedX: boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowSkeletonUtilityRootRotation extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtility extends UnityEngine.MonoBehaviour{
+            
+            public boneRoot: UnityEngine.Transform;
+            public flipBy180DegreeRotation: boolean;
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public skeletonAnimation: Spine.Unity.ISkeletonAnimation;
+            public boneComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityBone>;
+            public constraintComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityConstraint>;
+            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            public get PositionScale(): number;
+            
+            
+            
+            public static AddBoundingBoxGameObject($skeleton: Spine.Skeleton, $skinName: string, $slotName: string, $attachmentName: string, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static AddBoundingBoxGameObject($name: string, $box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static AddBoundingBoxAsComponent($box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $gameObject: UnityEngine.GameObject, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static SetColliderPointsLocal($collider: UnityEngine.PolygonCollider2D, $slot: Spine.Slot, $box: Spine.BoundingBoxAttachment):void;
+            
+            public static GetBoundingBoxBounds($boundingBox: Spine.BoundingBoxAttachment, $depth?: number):UnityEngine.Bounds;
+            
+            public static AddBoneRigidbody2D($gameObject: UnityEngine.GameObject, $isKinematic?: boolean, $gravityScale?: number):UnityEngine.Rigidbody2D;
+            
+            public add_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
+            
+            public remove_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
+            
+            public ResubscribeEvents():void;
+            
+            public RegisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
+            
+            public UnregisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
+            
+            public RegisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
+            
+            public UnregisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
+            
+            public CollectBones():void;
+            
+            public GetBoneRoot():UnityEngine.Transform;
+            
+            public SpawnRoot($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnHierarchy($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnBoneRecursively($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnBone($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtilityBone extends UnityEngine.MonoBehaviour{
+            
+            public boneName: string;
+            public parentReference: UnityEngine.Transform;
+            public mode: Spine.Unity.SkeletonUtilityBone.Mode;
+            public position: boolean;
+            public rotation: boolean;
+            public scale: boolean;
+            public zPosition: boolean;
+            public overrideAlpha: number;
+            public hierarchy: Spine.Unity.SkeletonUtility;
+            public bone: Spine.Bone;
+            public transformLerpComplete: boolean;
+            public valid: boolean;
+            public get IncompatibleTransformMode(): boolean;
+            
+            
+            
+            public Reset():void;
+            
+            public DoUpdate($phase: Spine.Unity.SkeletonUtilityBone.UpdatePhase):void;
+            
+            public static BoneTransformModeIncompatible($bone: Spine.Bone):boolean;
+            
+            public AddBoundingBox($skinName: string, $slotName: string, $attachmentName: string):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtilityConstraint extends UnityEngine.MonoBehaviour{
+            
+            
+            public DoUpdate():void;
+            
+        }
+        
+        
+        class MeshRendererBuffers extends System.Object implements System.IDisposable{
+            
+            
+            public Initialize():void;
+            
+            public GetUpdatedSharedMaterialsArray():System.Array$1<UnityEngine.Material>;
+            
+            public MaterialsChangedInLastUpdate():boolean;
+            
+            public UpdateSharedMaterials($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>):void;
+            
+            public GetNextMesh():Spine.Unity.MeshRendererBuffers.SmartMesh;
+            
+            public Clear():void;
+            
+            public Dispose():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineMesh extends System.Object{
+            
+            
+            public static NewSkeletonMesh():UnityEngine.Mesh;
+            
+        }
+        
+        
+        class BlendModeMaterialsAsset extends Spine.Unity.SkeletonDataModifierAsset{
+            
+            public multiplyMaterialTemplate: UnityEngine.Material;
+            public screenMaterialTemplate: UnityEngine.Material;
+            public additiveMaterialTemplate: UnityEngine.Material;
+            public applyAdditiveMaterial: boolean;
+            
+            public static ApplyMaterials($skeletonData: Spine.SkeletonData, $multiplyTemplate: UnityEngine.Material, $screenTemplate: UnityEngine.Material, $additiveTemplate: UnityEngine.Material, $includeAdditiveSlots: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAttributeBase extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
+            
+            public dataField: string;
+            public startsWith: string;
+            public includeNone: boolean;
+            public fallbackToTextField: boolean;
+            
+        }
+        
+        
+        class SpineBone extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public static GetBone($boneName: string, $renderer: Spine.Unity.SkeletonRenderer):Spine.Bone;
+            
+            public static GetBoneData($boneName: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.BoneData;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSlot extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public containsBoundingBoxes: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $containsBoundingBoxes?: boolean, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAnimation extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineEvent extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public audioOnly: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $audioOnly?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineIkConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineTransformConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpinePathConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSkin extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public defaultAsEmptyString: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $defaultAsEmptyString?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAttachment extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public returnAttachmentPath: boolean;
+            public currentSkinOnly: boolean;
+            public placeholdersOnly: boolean;
+            public skinField: string;
+            public slotField: string;
+            
+            public static GetHierarchy($fullPath: string):Spine.Unity.SpineAttachment.Hierarchy;
+            
+            public static GetAttachment($attachmentPath: string, $skeletonData: Spine.SkeletonData):Spine.Attachment;
+            
+            public static GetAttachment($attachmentPath: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Attachment;
+            
+            public constructor($currentSkinOnly?: boolean, $returnAttachmentPath?: boolean, $placeholdersOnly?: boolean, $slotField?: string, $dataField?: string, $skinField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAtlasRegion extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
+            
+            public atlasAssetField: string;
+            
+            public constructor($atlasAssetField?: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        class MaterialChecks extends System.Object{
+            
+            public static kPMANotSupportedLinearMessage: string;
+            public static kZSpacingRequiredMessage: string;
+            public static kZSpacingRecommendedMessage: string;
+            public static kAddNormalsRequiredMessage: string;
+            
+            public static IsMaterialSetupProblematic($renderer: Spine.Unity.SkeletonRenderer, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsMaterialSetupProblematic($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsZSpacingRequired($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsColorSpaceSupported($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static UsesSpineShader($material: UnityEngine.Material):boolean;
+            
+            public static IsTextureSetupProblematic($material: UnityEngine.Material, $colorSpace: UnityEngine.ColorSpace, $sRGBTexture: boolean, $mipmapEnabled: boolean, $alphaIsTransparency: boolean, $texturePath: string, $materialPath: string, $errorMessage: $Ref<string>):boolean;
+            
+            public static EnablePMAAtMaterial($material: UnityEngine.Material, $enablePMA: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonExtensions extends System.Object{
+            
+            
+            public static GetColor($s: Spine.Skeleton):UnityEngine.Color;
+            
+            public static GetColor($a: Spine.RegionAttachment):UnityEngine.Color;
+            
+            public static GetColor($a: Spine.MeshAttachment):UnityEngine.Color;
+            
+            public static GetColor($s: Spine.Slot):UnityEngine.Color;
+            
+            public static GetColorTintBlack($s: Spine.Slot):UnityEngine.Color;
+            
+            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color):void;
+            
+            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color):void;
+            
+            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color):void;
+            
+            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color):void;
+            
+            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color32):void;
+            
+            public static SetLocalScale($skeleton: Spine.Skeleton, $scale: UnityEngine.Vector2):void;
+            
+            public static GetMatrix4x4($bone: Spine.Bone):UnityEngine.Matrix4x4;
+            
+            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector2):void;
+            
+            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector3):void;
+            
+            public static GetLocalPosition($bone: Spine.Bone):UnityEngine.Vector2;
+            
+            public static GetSkeletonSpacePosition($bone: Spine.Bone):UnityEngine.Vector2;
+            
+            public static GetSkeletonSpacePosition($bone: Spine.Bone, $boneLocal: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform, $positionScale: number):UnityEngine.Vector3;
+            
+            public static GetQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
+            
+            public static GetLocalQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
+            
+            public static GetLocalScale($skeleton: Spine.Skeleton):UnityEngine.Vector2;
+            
+            public static GetWorldToLocalMatrix($bone: Spine.Bone, $ia: $Ref<number>, $ib: $Ref<number>, $ic: $Ref<number>, $id: $Ref<number>):void;
+            
+            public static WorldToLocal($bone: Spine.Bone, $worldPosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static SetPositionSkeletonSpace($bone: Spine.Bone, $skeletonSpacePosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static GetMaterial($a: Spine.Attachment):UnityEngine.Material;
+            
+            public static GetLocalVertices($va: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            public static GetWorldVertices($a: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            public static GetWorldPosition($attachment: Spine.PointAttachment, $slot: Spine.Slot, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            public static GetWorldPosition($attachment: Spine.PointAttachment, $bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+        }
+        
+        
+        class WaitForSpineAnimation extends System.Object implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineAnimationComplete extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean):Spine.Unity.WaitForSpineAnimationComplete;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean);
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineAnimationEnd extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineAnimationEnd;
+            
+            public constructor($trackEntry: Spine.TrackEntry);
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineEvent extends System.Object implements System.Collections.IEnumerator{
+            
+            public get WillUnsubscribeAfterFiring(): boolean;
+            public set WillUnsubscribeAfterFiring(value: boolean);
+            
+            
+            public NowWaitFor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
+            
+            public NowWaitFor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
+            
+            public constructor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventName: string, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineTrackEntryEnd extends System.Object implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineTrackEntryEnd;
+            
+            public constructor($trackEntry: Spine.TrackEntry);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimationFixedTimestep extends UnityEngine.MonoBehaviour{
+            
+            public skeletonAnimation: Spine.Unity.SkeletonAnimation;
+            public frameDeltaTime: number;
+            public maxFrameSkip: number;
+            public frameskipMeshUpdate: boolean;
+            public timeOffset: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimationMulti extends UnityEngine.MonoBehaviour{
+            
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public initialAnimation: string;
+            public initialLoop: boolean;
+            public skeletonDataAssets: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataAsset>;
+            public meshGeneratorSettings: Spine.Unity.MeshGenerator.Settings;
+            public get AnimationSkeletonTable(): System.Collections.Generic.Dictionary$2<Spine.Animation, Spine.Unity.SkeletonAnimation>;
+            
+            
+            public get AnimationNameTable(): System.Collections.Generic.Dictionary$2<string, Spine.Animation>;
+            
+            
+            public get CurrentSkeletonAnimation(): Spine.Unity.SkeletonAnimation;
+            
+            
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public FindAnimation($animationName: string):Spine.Animation;
+            
+            public SetAnimation($animationName: string, $loop: boolean):Spine.TrackEntry;
+            
+            public SetAnimation($animation: Spine.Animation, $loop: boolean):Spine.TrackEntry;
+            
+            public SetEmptyAnimation($mixDuration: number):void;
+            
+            public ClearAnimation():void;
+            
+            public GetCurrent():Spine.TrackEntry;
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace Spine {
+        
+        class Animation extends System.Object{
+            
+            
+        }
+        
+        
+        class Atlas extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<Spine.AtlasRegion>{
+            
+            
+        }
+        
+        
+        class AtlasRegion extends System.Object{
+            
+            
+        }
+        
+        
+        class EventData extends System.Object{
+            
+            
+        }
+        
+        
+        interface AttachmentLoader{
+            
+            
+        }
+        
+        
+        class RegionAttachment extends Spine.Attachment implements Spine.IHasRendererObject{
+            
+            
+        }
+        
+        
+        interface RegionAttachment {
+            
+            GetColor():UnityEngine.Color;
+            
+            SetColor($color: UnityEngine.Color):void;
+            
+            SetColor($color: UnityEngine.Color32):void;
+            
+        }
+        
+        
+        class Attachment extends System.Object{
+            
+            
+        }
+        
+        
+        interface Attachment {
+            
+            GetMaterial():UnityEngine.Material;
+            
+        }
+        
+        
+        interface IHasRendererObject{
+            
+            
+        }
+        
+        
+        class Skin extends System.Object{
+            
+            
+        }
+        
+        
+        class MeshAttachment extends Spine.VertexAttachment implements Spine.IHasRendererObject{
+            
+            
+        }
+        
+        
+        interface MeshAttachment {
+            
+            GetColor():UnityEngine.Color;
+            
+            SetColor($color: UnityEngine.Color):void;
+            
+            SetColor($color: UnityEngine.Color32):void;
+            
+        }
+        
+        
+        class VertexAttachment extends Spine.Attachment{
+            
+            
+        }
+        
+        
+        interface VertexAttachment {
+            
+            GetLocalVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            GetWorldVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+        }
+        
+        
+        class BoundingBoxAttachment extends Spine.VertexAttachment{
+            
+            
+        }
+        
+        
+        class PathAttachment extends Spine.VertexAttachment{
+            
+            
+        }
+        
+        
+        class PointAttachment extends Spine.Attachment{
+            
+            
+        }
+        
+        
+        interface PointAttachment {
+            
+            GetWorldPosition($slot: Spine.Slot, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+        }
+        
+        
+        class ClippingAttachment extends Spine.VertexAttachment{
+            
+            
+        }
+        
+        
+        class AnimationStateData extends System.Object{
+            
+            
+        }
+        
+        
+        class SkeletonData extends System.Object{
+            
+            
+        }
+        
+        
+        interface TextureLoader{
+            
+            
+        }
+        
+        
+        class AtlasPage extends System.Object{
+            
+            
+        }
+        
+        
+        class Bone extends System.Object implements Spine.IUpdatable{
+            
+            
+        }
+        
+        
+        interface Bone {
+            
+            GetMatrix4x4():UnityEngine.Matrix4x4;
+            
+            SetLocalPosition($position: UnityEngine.Vector2):void;
+            
+            SetLocalPosition($position: UnityEngine.Vector3):void;
+            
+            GetLocalPosition():UnityEngine.Vector2;
+            
+            GetSkeletonSpacePosition():UnityEngine.Vector2;
+            
+            GetSkeletonSpacePosition($boneLocal: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            GetWorldPosition($spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            GetWorldPosition($spineGameObjectTransform: UnityEngine.Transform, $positionScale: number):UnityEngine.Vector3;
+            
+            GetQuaternion():UnityEngine.Quaternion;
+            
+            GetLocalQuaternion():UnityEngine.Quaternion;
+            
+            GetWorldToLocalMatrix($ia: $Ref<number>, $ib: $Ref<number>, $ic: $Ref<number>, $id: $Ref<number>):void;
+            
+            WorldToLocal($worldPosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            SetPositionSkeletonSpace($skeletonSpacePosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+        }
+        
+        
+        interface IUpdatable{
+            
+            
+        }
+        
+        
+        class Slot extends System.Object{
+            
+            
+        }
+        
+        
+        interface Slot {
+            
+            GetColor():UnityEngine.Color;
+            
+            GetColorTintBlack():UnityEngine.Color;
+            
+            SetColor($color: UnityEngine.Color):void;
+            
+            SetColor($color: UnityEngine.Color32):void;
+            
+        }
+        
+        
+        class AnimationState extends System.Object{
+            
+            
+        }
+        
+        
+        class Skeleton extends System.Object{
+            
+            
+        }
+        
+        
+        interface Skeleton {
+            
+            GetColor():UnityEngine.Color;
+            
+            SetColor($color: UnityEngine.Color):void;
+            
+            SetColor($color: UnityEngine.Color32):void;
+            
+            SetLocalScale($scale: UnityEngine.Vector2):void;
+            
+            GetLocalScale():UnityEngine.Vector2;
+            
+        }
+        
+        
+        class ExposedList$1<T> extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<T>{
+            
+            
+        }
+        
+        
+        class BoneData extends System.Object{
+            
+            
+        }
+        
+        
+        class TrackEntry extends System.Object implements Spine.Pool$1.IPoolable<Spine.TrackEntry>{
+            
+            
+        }
+        
+        
+        enum MixBlend{ Setup = 0, First = 1, Replace = 2, Add = 3 }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonDataCompatibility {
+        
+        class VersionInfo extends System.Object{
+            
+            public rawVersion: string;
+            public version: System.Array$1<number>;
+            public sourceType: Spine.Unity.SkeletonDataCompatibility.SourceType;
+            
+            public constructor();
+            
+        }
+        
+        
+        class CompatibilityProblemInfo extends System.Object{
+            
+            public actualVersion: Spine.Unity.SkeletonDataCompatibility.VersionInfo;
+            public compatibleVersions: System.Array$1<System.Array$1<number>>;
+            
+            public DescriptionString():string;
+            
+            public constructor();
+            
+        }
+        
+        
+        enum SourceType{ Json = 0, Binary = 1 }
+        
+        
+    }
+    namespace UnityEngine.U2D {
+        /** Sprite Atlas is an asset created within Unity. It is part of the built-in sprite packing solution. */
+        class SpriteAtlas extends UnityEngine.Object{
+            
+            
+        }
+        
+        
+    }
+    namespace UnityEngine.UI {
+        
+        class MaskableGraphic extends UnityEngine.UI.Graphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
+            
+            
+        }
+        
+        
+        class Graphic extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.UI.ICanvasElement{
+            
+            
+        }
+        
+        
+        interface ICanvasElement{
+            
+            
+        }
+        
+        
+        interface IMaterialModifier{
+            
+            
+        }
+        
+        
+        interface IMaskable{
+            
+            
+        }
+        
+        
+        interface IClippable{
+            
+            
+        }
+        
+        
+        enum CanvasUpdate{ Prelayout = 0, Layout = 1, PostLayout = 2, PreRender = 3, LatePreRender = 4, MaxUpdateValue = 5 }
+        
+        
+    }
+    namespace UnityEngine.EventSystems {
+        
+        class UIBehaviour extends UnityEngine.MonoBehaviour{
+            
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonGraphic {
+        
+        type SkeletonRendererDelegate = (skeletonGraphic: Spine.Unity.SkeletonGraphic) => void;
+        var SkeletonRendererDelegate: {new (func: (skeletonGraphic: Spine.Unity.SkeletonGraphic) => void): SkeletonRendererDelegate;}
+        
+        
+    }
+    namespace Spine.Unity.SkeletonMecanim {
+        
+        class MecanimTranslator extends System.Object{
+            
+            public autoReset: boolean;
+            public useCustomMixMode: boolean;
+            public layerMixModes: System.Array$1<Spine.Unity.SkeletonMecanim.MecanimTranslator.MixMode>;
+            public layerBlendModes: System.Array$1<Spine.MixBlend>;
+            public get Animator(): UnityEngine.Animator;
+            
+            
+            public get MecanimLayerCount(): number;
+            
+            
+            public get MecanimLayerNames(): System.Array$1<string>;
+            
+            
+            
+            public add_OnClipApplied($value: Spine.Unity.SkeletonMecanim.MecanimTranslator.OnClipAppliedDelegate):void;
+            
+            public remove_OnClipApplied($value: Spine.Unity.SkeletonMecanim.MecanimTranslator.OnClipAppliedDelegate):void;
+            
+            public Initialize($animator: UnityEngine.Animator, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):void;
+            
+            public Apply($skeleton: Spine.Skeleton):void;
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonRenderer {
+        
+        class SpriteMaskInteractionMaterials extends System.Object{
+            
+            public materialsMaskDisabled: System.Array$1<UnityEngine.Material>;
+            public materialsInsideMask: System.Array$1<UnityEngine.Material>;
+            public materialsOutsideMask: System.Array$1<UnityEngine.Material>;
+            public get AnyMaterialCreated(): boolean;
+            
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        type InstructionDelegate = (instruction: Spine.Unity.SkeletonRendererInstruction) => void;
+        var InstructionDelegate: {new (func: (instruction: Spine.Unity.SkeletonRendererInstruction) => void): InstructionDelegate;}
+        
+        
+        type SkeletonRendererDelegate = (skeletonRenderer: Spine.Unity.SkeletonRenderer) => void;
+        var SkeletonRendererDelegate: {new (func: (skeletonRenderer: Spine.Unity.SkeletonRenderer) => void): SkeletonRendererDelegate;}
+        
+        
+    }
+    namespace Spine.Unity.MeshGenerator {
+        
+        class Settings extends System.ValueType{
+            
+            public useClipping: boolean;
+            public zSpacing: number;
+            public pmaVertexColors: boolean;
+            public tintBlack: boolean;
+            public calculateTangents: boolean;
+            public addNormals: boolean;
+            public immutableTriangles: boolean;
+            public static get Default(): Spine.Unity.MeshGenerator.Settings;
+            
+            
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonUtility {
+        
+        type SkeletonUtilityDelegate = () => void;
+        var SkeletonUtilityDelegate: {new (func: () => void): SkeletonUtilityDelegate;}
+        
+        
+    }
+    namespace Spine.Unity.SkeletonUtilityBone {
+        
+        enum Mode{ Follow = 0, Override = 1 }
+        
+        
+        enum UpdatePhase{ Local = 0, World = 1, Complete = 2 }
+        
+        
+    }
+    namespace Spine.Unity.MeshRendererBuffers {
+        
+        class SmartMesh extends System.Object implements System.IDisposable{
+            
+            public mesh: UnityEngine.Mesh;
+            public instructionUsed: Spine.Unity.SkeletonRendererInstruction;
+            
+            public Clear():void;
+            
+            public Dispose():void;
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.SpineAttachment {
+        
+        class Hierarchy extends System.ValueType{
+            
+            public skin: string;
+            public slot: string;
+            public name: string;
+            
+            public constructor($fullPath: string);
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace Spine.Pool$1 {
+        
+        interface IPoolable<T>{
+            
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.WaitForSpineAnimation {
+        
+        enum AnimationEventTypes{ Start = 1, Interrupt = 2, End = 4, Dispose = 8, Complete = 16 }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonMecanim.MecanimTranslator {
+        
+        enum MixMode{ AlwaysMix = 0, MixNext = 1, Hard = 2 }
+        
+        
+        type OnClipAppliedDelegate = (clip: Spine.Animation, layerIndex: number, weight: number, time: number, lastTime: number, playsBackward: boolean) => void;
+        var OnClipAppliedDelegate: {new (func: (clip: Spine.Animation, layerIndex: number, weight: number, time: number, lastTime: number, playsBackward: boolean) => void): OnClipAppliedDelegate;}
+        
+        
+    }
+    namespace Spine.Unity.SkeletonGraphicCustomMaterials {
+        
+        class AtlasMaterialOverride extends System.ValueType implements System.IEquatable$1<Spine.Unity.SkeletonGraphicCustomMaterials.AtlasMaterialOverride>{
+            
+            public overrideEnabled: boolean;
+            public originalTexture: UnityEngine.Texture;
+            public replacementMaterial: UnityEngine.Material;
+            
+            public Equals($other: Spine.Unity.SkeletonGraphicCustomMaterials.AtlasMaterialOverride):boolean;
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+        }
+        
+        
+        class AtlasTextureOverride extends System.ValueType implements System.IEquatable$1<Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride>{
+            
+            public overrideEnabled: boolean;
+            public originalTexture: UnityEngine.Texture;
+            public replacementTexture: UnityEngine.Texture;
+            
+            public Equals($other: Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride):boolean;
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity.SkeletonRendererCustomMaterials {
+        
+        class SlotMaterialOverride extends System.ValueType implements System.IEquatable$1<Spine.Unity.SkeletonRendererCustomMaterials.SlotMaterialOverride>{
+            
+            public overrideDisabled: boolean;
+            public slotName: string;
+            public material: UnityEngine.Material;
+            
+            public Equals($other: Spine.Unity.SkeletonRendererCustomMaterials.SlotMaterialOverride):boolean;
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+        }
+        
+        
+        class AtlasMaterialOverride extends System.ValueType implements System.IEquatable$1<Spine.Unity.SkeletonRendererCustomMaterials.AtlasMaterialOverride>{
+            
+            public overrideDisabled: boolean;
+            public originalMaterial: UnityEngine.Material;
+            public replacementMaterial: UnityEngine.Material;
+            
+            public Equals($other: Spine.Unity.SkeletonRendererCustomMaterials.AtlasMaterialOverride):boolean;
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+        }
         
         
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,128" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over" selected="0"/>
+  <displayList>
+    <image id="n0_mdv9" name="n0" src="mdv918" fileName="Texture/discard.png" xy="0,0" pivot="0.5,0.5" size="128,128">
+      <gearSize controller="button" pages="3,4" values="150,150,1,1|150,150,1,1" default="128,128,1,1" tween="true" ease="Cubic.Out" duration=".2"/>
+    </image>
+    <image id="n1_mdv9" name="n1" src="mdv91a" fileName="Texture/countCircle.png" xy="-53,28"/>
+    <text id="n2_mdv9" name="title" xy="-10,64" pivot="0.5,0.5" size="42,52" fontSize="38" color="#ffffff" align="center" vAlign="middle" text="99"/>
+  </displayList>
+  <Button/>
+</component>

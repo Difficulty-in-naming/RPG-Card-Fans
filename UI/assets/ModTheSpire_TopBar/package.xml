@@ -18,5 +18,5 @@
     <image id="pz5ge" name="key_red.png" path="/Texture/"/>
     <image id="pz5gf" name="key_blue.png" path="/Texture/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="ModTheSpire_TopBar" genCode="true"/>
 </packageDescription>

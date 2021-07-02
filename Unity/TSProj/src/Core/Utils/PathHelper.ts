@@ -22,22 +22,32 @@ export default class PathHelper {
     }
 
     //获取文件名称
-    static GetFileName(filePath : string) : string
+    public static GetFileName(filePath : string) : string
     {
         return filePath.split('/').pop();
     }
     
     //获取无扩展名称文件名
-    static GetFileNameWithoutExtension(filePath : string) : string
+    public static GetFileNameWithoutExtension(filePath : string) : string
     {
         return this.RemoveFileExtension(this.GetFileName(filePath));
     }
 
     //获取文件夹路径
-    static GetDirPath(filePath : string) : string
+    public static GetDirPath(filePath : string) : string
     {
         filePath = this.FormatFilePath(filePath);
         filePath = filePath.substring(0,filePath.lastIndexOf('/'));
         return filePath;
+    }
+    
+    public static GetModName(filePath : string) : string
+    {
+        filePath = this.FormatFilePath(filePath);
+        let split = filePath.split('/');
+        if(split.length > 0) {
+            return split[1];
+        }
+        return "";
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="qmow4f55">
+  <resources>
+    <component id="mdv90" name="Component1.xml" path="/" exported="true"/>
+    <image id="mdv91" name="deck.png" path="/Texture/"/>
+    <image id="mdv9w" name="energyRedVFX.png" path="/Texture/red/"/>
+    <image id="mdv9x" name="layer1.png" path="/Texture/red/"/>
+    <image id="mdv9y" name="layer1d.png" path="/Texture/red/"/>
+    <image id="mdv9z" name="layer2.png" path="/Texture/red/"/>
+    <image id="mdv910" name="layer2d.png" path="/Texture/red/"/>
+    <image id="mdv911" name="layer3.png" path="/Texture/red/"/>
+    <image id="mdv912" name="layer3d.png" path="/Texture/red/"/>
+    <image id="mdv913" name="layer4.png" path="/Texture/red/"/>
+    <image id="mdv914" name="layer4d.png" path="/Texture/red/"/>
+    <image id="mdv915" name="layer5.png" path="/Texture/red/"/>
+    <image id="mdv916" name="layer5d.png" path="/Texture/red/"/>
+    <image id="mdv917" name="layer6.png" path="/Texture/red/"/>
+    <image id="mdv918" name="discard.png" path="/Texture/"/>
+    <component id="mdv919" name="DeckButton.xml" path="/"/>
+    <image id="mdv91a" name="countCircle.png" path="/Texture/"/>
+    <component id="mdv91b" name="DiscardButton.xml" path="/"/>
+    <image id="mdv91c" name="endTurnButton.png" path="/Texture/EndTurnButton/"/>
+    <image id="mdv91d" name="endTurnButtonGlow.png" path="/Texture/EndTurnButton/"/>
+    <image id="mdv91e" name="endTurnHover.png" path="/Texture/EndTurnButton/"/>
+    <component id="mdv91f" name="Button.xml" path="/Texture/EndTurnButton/" exported="true"/>
+    <component id="mdv91g" name="Button2.xml" path="/Texture/EndTurnButton/" exported="true"/>
+    <component id="mdv91j" name="Component2.xml" path="/Texture/red/"/>
+  </resources>
+  <publish name="ModTheSpire_Combat"/>
+</packageDescription>

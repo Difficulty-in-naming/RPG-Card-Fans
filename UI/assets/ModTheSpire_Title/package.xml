@@ -33,5 +33,5 @@
     <image id="kefbt" name="midCloud12.png" path="/Texture/title4/"/>
     <image id="kefbu" name="topCloud3.png" path="/Texture/title4/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="ModTheSpire_Title" genCode="true"/>
 </packageDescription>

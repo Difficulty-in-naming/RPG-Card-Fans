@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="7jdrar2v">
+  <resources>
+    <component id="kefbl" name="SelectCharacter.xml" path="/" exported="true"/>
+    <image id="kefbf" name="highlightButton2.png" path="/Character/" scale9grid="0,0,-13,-13"/>
+    <component id="kefb9" name="CharacterButton.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="ModTheSpire_SelectCharacter" genCode="true"/>
+</packageDescription>

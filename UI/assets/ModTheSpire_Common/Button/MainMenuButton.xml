@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="152,50" extention="Button">
-  <controller name="button" pages="2,up,5,down,4,over" selected="1"/>
+<component size="132,45" extention="Button">
+  <controller name="button" pages="2,up,5,down,4,over" selected="0"/>
   <displayList>
-    <image id="n1_kefb" name="n1" src="kefb4" fileName="Button/Texture/menu_option_highlight.png" xy="-33,-27">
-      <gearLook controller="button" pages="2" values="0,0,0,0" default="1,0,0,0" tween="true"/>
+    <image id="n1_kefb" name="n1" src="kefb4" fileName="Button/Texture/menu_option_highlight.png" xy="-70,-19" size="358,80" alpha="0">
+      <gearXY controller="button" pages="2,5,4" values="-70,-19|-39,-19|-39,-19" tween="true" ease="Circ.Out" duration=".2"/>
+      <gearLook controller="button" pages="2,5,4" values="0,0,0,0|0.9,0,0,0|0.9,0,0,0" tween="true" ease="Circ.Out" duration=".2"/>
     </image>
-    <text id="n0_kefb" name="title" xy="10,0" size="152,50" fontSize="37" color="#fef5e1" leading="0" strokeColor="#4d4a44" strokeSize="2" faceDilate="0.15" text="开始游戏">
-      <gearXY controller="button" pages="2,5,4" values="0,0,0,0|10,0,0.066,0|10,0,0.065,0" tween="true" ease="Sine.InOut" positionsInPercent="true"/>
+    <text id="n0_kefb" name="title" xy="0,0" size="132,44" font="ui://rduitwm2kefb3" fontSize="32" color="#fef5e1" leading="0" strokeColor="#4d4a44" strokeSize="0.2" faceDilate="0.15" text="开始游戏">
+      <gearXY controller="button" pages="2,5,4" values="0,0|10,0|25,0" tween="true" ease="Circ.Out" duration=".2"/>
       <relation target="" sidePair=""/>
     </text>
   </displayList>
-  <Button/>
-  <relation target="n0_kefb" sidePair="width-width"/>
+  <Button sound="ui://qeik3u1qmdv92"/>
+  <transition name="Hover">
+    <item time="0" type="Sound" value="ui://qeik3u1qmdv91,100"/>
+  </transition>
+  <customProperty target="aaa" propertyId="0"/>
 </component>

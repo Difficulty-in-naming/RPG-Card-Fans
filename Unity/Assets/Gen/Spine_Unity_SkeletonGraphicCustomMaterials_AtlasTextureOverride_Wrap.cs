@@ -1,0 +1,193 @@
+﻿using System;
+
+namespace PuertsStaticWrap
+{
+    public static class Spine_Unity_SkeletonGraphicCustomMaterials_AtlasTextureOverride_Wrap
+    {
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
+        private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
+        {
+            try
+            {
+                
+                
+                {
+                    
+                    
+                    
+                    
+                    {
+                        
+                        var result = new Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride();
+                        
+                        
+                        return Puerts.Utils.GetObjectPtr((int)data, typeof(Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride), result);
+                    }
+                }
+                
+                
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+            return IntPtr.Zero;
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void M_Equals(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                
+                
+                {
+                    
+                    var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                    
+                    
+                    
+                    {
+                        
+                        var Arg0 = argHelper0.Get<Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride>(false);
+                        var result = obj.Equals(Arg0);
+                        
+                        Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
+                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
+                    }
+                }
+                
+                
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_overrideEnabled(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var result = obj.overrideEnabled;
+                Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void S_overrideEnabled(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                obj.overrideEnabled = argHelper.GetBoolean(false);
+                Puerts.Utils.SetSelf((int)data, self, obj);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_originalTexture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var result = obj.originalTexture;
+                Puerts.ResultHelper.Set((int)data, isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void S_originalTexture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                obj.originalTexture = argHelper.Get<UnityEngine.Texture>(false);
+                Puerts.Utils.SetSelf((int)data, self, obj);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_replacementTexture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var result = obj.replacementTexture;
+                Puerts.ResultHelper.Set((int)data, isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void S_replacementTexture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = (Spine.Unity.SkeletonGraphicCustomMaterials.AtlasTextureOverride)Puerts.Utils.GetSelf((int)data, self);
+                var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                obj.replacementTexture = argHelper.Get<UnityEngine.Texture>(false);
+                Puerts.Utils.SetSelf((int)data, self, obj);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        
+        
+        public static Puerts.TypeRegisterInfo GetRegisterInfo()
+        {
+            return new Puerts.TypeRegisterInfo()
+            {
+                BlittableCopy = false,
+                Constructor = Constructor,
+                Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                    { new Puerts.MethodKey {Name = "Equals", IsStatic = false},  M_Equals },
+                    
+                },
+                Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
+                    {"overrideEnabled", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_overrideEnabled, Setter = S_overrideEnabled} },
+                    {"originalTexture", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_originalTexture, Setter = S_originalTexture} },
+                    {"replacementTexture", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_replacementTexture, Setter = S_replacementTexture} },
+                    
+                }
+            };
+        }
+        
+    }
+}

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DG.Tweening;
 using Manager;
 using Panthea.UI;
 using UnityEngine;
@@ -43,7 +44,11 @@ public class PuertsConfig
                 typeof(DownloadHandlerTexture),
                 typeof(UnityWebRequestTexture),
                 typeof(DownloadHandler),
-                
+                typeof(Mathf),
+                typeof(UnityEngine.Renderer),
+                typeof(UnityEngine.MaterialPropertyBlock),
+                typeof(UnityEngine.Color),
+
                 //System
                 typeof(System.IO.DirectoryInfo),
                 typeof(System.IO.FileInfo),
@@ -52,12 +57,16 @@ public class PuertsConfig
                 typeof(System.Text.Encoding),
                 typeof(Array),
                 
-                typeof(UIKit)
+                //ThirdParty
+                
+                typeof(UIKit),
+                typeof(GameEntry)
             };
 
             List<string> namespaces = new List<string>()
             {
                 "FairyGUI",
+                "Spine.Unity"
             };
 
             Assembly[] ass = AppDomain.CurrentDomain.GetAssemblies();
@@ -85,7 +94,10 @@ public class PuertsConfig
             {
                 typeof(Vector3),
                 typeof(Vector2),
-                typeof(string[])
+                typeof(float),
+                typeof(double),
+                typeof(int),
+                typeof(long),
             };
         }
     }

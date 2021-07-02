@@ -9,11 +9,12 @@
       <gearLook controller="button" pages="4" values="1,90,0,0" default="1,0,0,0" tween="true" duration=".2"/>
     </image>
   </displayList>
-  <Button/>
+  <Button sound="ui://qeik3u1qmdv92"/>
   <transition name="t0">
     <item time="0" type="ColorFilter" target="n0_pz5g" value="0.1,0,0,0"/>
   </transition>
   <transition name="t1">
     <item time="0" type="ColorFilter" target="n0_pz5g" value="0,0,0,0"/>
+    <item time="0" type="Sound" value="ui://qeik3u1qmdv91,100"/>
   </transition>
 </component>

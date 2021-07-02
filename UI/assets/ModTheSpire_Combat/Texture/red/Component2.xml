@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,128">
+  <controller name="IsEnable" pages="0,True,1,False" selected="0"/>
+  <displayList>
+    <image id="n0_mdv9" name="Layer1" src="mdv9x" fileName="Texture/red/layer1.png" xy="0,0"/>
+    <image id="n1_mdv9" name="Layer1D" src="mdv9y" fileName="Texture/red/layer1d.png" xy="0,0">
+      <gearDisplay controller="IsEnable" pages="1"/>
+    </image>
+    <image id="n2_mdv9" name="Layer2" src="mdv9z" fileName="Texture/red/layer2.png" xy="0,0"/>
+    <image id="n3_mdv9" name="Layer2D" src="mdv910" fileName="Texture/red/layer2d.png" xy="0,0">
+      <gearDisplay controller="IsEnable" pages="1"/>
+    </image>
+    <image id="n4_mdv9" name="Layer3" src="mdv911" fileName="Texture/red/layer3.png" xy="0,0"/>
+    <image id="n5_mdv9" name="Layer3D" src="mdv912" fileName="Texture/red/layer3d.png" xy="0,0">
+      <gearDisplay controller="IsEnable" pages="1"/>
+    </image>
+    <image id="n6_mdv9" name="Layer4" src="mdv913" fileName="Texture/red/layer4.png" xy="0,0"/>
+    <image id="n7_mdv9" name="Layer4D" src="mdv914" fileName="Texture/red/layer4d.png" xy="0,0">
+      <gearDisplay controller="IsEnable" pages="1"/>
+    </image>
+    <image id="n8_mdv9" name="Layer5" src="mdv915" fileName="Texture/red/layer5.png" xy="0,0"/>
+    <image id="n9_mdv9" name="Layer5D" src="mdv916" fileName="Texture/red/layer5d.png" xy="0,0">
+      <gearDisplay controller="IsEnable" pages="1"/>
+    </image>
+    <image id="n10_mdv9" name="n10" src="mdv917" fileName="Texture/red/layer6.png" xy="0,0"/>
+  </displayList>
+</component>

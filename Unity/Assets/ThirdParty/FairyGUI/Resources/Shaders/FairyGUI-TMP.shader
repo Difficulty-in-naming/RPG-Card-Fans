@@ -126,8 +126,8 @@ SubShader {
 		#include "UnityUI.cginc"
 		//#include "Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc"
 		//#include "Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc"
-		#include "Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc"
-		#include "Assets/TextMesh Pro/Shaders/TMPro.cginc"
+		#include "Assets/ThirdParty/TextMesh Pro/Shaders/TMPro_Properties.cginc"
+		#include "Assets/ThirdParty/TextMesh Pro/Shaders/TMPro.cginc"
 
 		struct vertex_t {
 			UNITY_VERTEX_INPUT_INSTANCE_ID
@@ -180,11 +180,11 @@ SubShader {
 			float4 vert = input.position;
 			vert.x += _VertexOffsetX;
 			vert.y += _VertexOffsetY;
-
 			float4 vPosition = UnityObjectToClipPos(vert);
 
 			float2 pixelSize = vPosition.w;
 			pixelSize /= float2(_ScaleX, _ScaleY) * abs(mul((float2x2)UNITY_MATRIX_P, _ScreenParams.xy));
+			
 			float scale = rsqrt(dot(pixelSize, pixelSize));
 			scale *= abs(input.texcoord1.y) * _GradientScale * (_Sharpness + 1);
 			if (UNITY_MATRIX_P[3][3] == 0) scale = lerp(abs(scale) * (1 - _PerspectiveFilter), scale, abs(dot(UnityObjectToWorldNormal(input.normal.xyz), normalize(WorldSpaceViewDir(vert)))));
@@ -274,7 +274,6 @@ SubShader {
 			
 			faceColor *= tex2D(_FaceTex, input.textures.xy + float2(_FaceUVSpeedX, _FaceUVSpeedY) * _Time.y);
 			outlineColor *= tex2D(_OutlineTex, input.textures.zw + float2(_OutlineUVSpeedX, _OutlineUVSpeedY) * _Time.y);
-
 			faceColor = GetColor(sd, faceColor, outlineColor, outline, softness);
 
 		#if BEVEL_ON

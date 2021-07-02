@@ -1,5 +1,4 @@
-﻿import {MainEntry, UnityBridge} from "../../../MainEntry";
-import {FairyGUI,UnityEngine,System,Panthea} from 'csharp'
+﻿import {FairyGUI,UnityEngine,System,Panthea} from 'csharp'
 import IOHelper from "../../Utils/IOHelper";
 
 export namespace UI {
@@ -10,6 +9,9 @@ export namespace UI {
             this.pkg = pkg;
             this.name = name;
         }
+        public toString(){
+            return this.pkg + "." + this.name;
+        }
     }
     export class UIBase{
         View :FairyGUI.GComponent;
@@ -18,26 +20,27 @@ export namespace UI {
         OnDisable(){}
         OnUpdate(){}
         Construct(){}
+        CloseMySelf(){}
     }
     export class UIKit {
         private static inst: UIKit;
-        private Stack : Array<UIBase> = new Array<UIBase>();
-        private UIMap : Map<string,UIBase> = new Map<string, UIBase>();
         public static Inst(): UIKit {
             if (!UIKit.inst) {
                 UIKit.inst = new UIKit();
             }
             return UIKit.inst;
         }
+        private Stack : Array<UIBase> = new Array<UIBase>();
+        private UIMap : Map<string,UIBase> = new Map<string, UIBase>();
 
         private constructor() {
             FairyGUI.GRoot.inst.SetContentScaleFactor(1920, 1080, FairyGUI.UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
             FairyGUI.UIConfig.defaultFont = "SourceHanSansHWSC-Bold";
             //暂时屏蔽TMP
-            //let font = new FairyGUI.TMPFont();
-            //font.name = "MSFont"; //这个名字要和编辑器里字体资源的名字一致
-            //font.fontAsset = UnityEngine.Resources.Load("Fonts/SourceHanSansHWSC-Bold-TMP");
-            //FairyGUI.FontManager.RegisterFont(font, "MSFont");
+            let font = new FairyGUI.TMPFont();
+            font.name = "MTSFont-Bold"; //这个名字要和编辑器里字体资源的名字一致
+            font.fontAsset = UnityEngine.Resources.Load("Fonts/SourceHanSansHWSC-Bold-TMP");
+            FairyGUI.FontManager.RegisterFont(font, "MTSFont-Bold");
             let files = IOHelper.GetFiles(UnityEngine.Application.persistentDataPath, "*_fui.bytes", System.IO.SearchOption.AllDirectories);
             files.forEach(value => {
                 //找到了UI文件.开始加载
@@ -67,6 +70,15 @@ export namespace UI {
                 return this.UIMap.get(key);
             }
             return null;
+        }
+        
+        public Destroy(key: string,pool : boolean = false)
+        {
+            let ui = this.Get(key);
+            if(!pool) {
+                this.UIMap.delete(key);
+                ui.View.Dispose();
+            }
         }
 
         OnDestroy() {
