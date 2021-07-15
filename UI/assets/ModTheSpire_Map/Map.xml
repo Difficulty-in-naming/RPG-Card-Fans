@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_cq11" name="Scroll" src="cq110" fileName="ScrollPage.xml" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="center-center"/>
+    </component>
+    <image id="n1_cq11" name="n1" src="cq117" fileName="Texture/legend2.png" xy="1406,160" group="n7_cq11"/>
+    <text id="n2_cq11" name="Title" xy="1614,374" size="76,49" group="n7_cq11" fontSize="36" shadowColor="#999999" shadowOffset="4,4" text="图例"/>
+    <list id="n6_cq11" name="List" xy="1549,441" size="278,330" group="n7_cq11" lineGap="10" defaultItem="ui://x4jxa6ndcq111h">
+      <item title="不明" icon="ui://x4jxa6ndcq1119"/>
+      <item title="商人" icon="ui://x4jxa6ndcq1112"/>
+      <item title="财宝" icon="ui://x4jxa6ndcq1115"/>
+      <item title="篝火" icon="ui://x4jxa6ndcq11z"/>
+      <item title="怪物" icon="ui://x4jxa6ndcq111c"/>
+      <item title="精英" icon="ui://x4jxa6ndcq1117"/>
+    </list>
+    <group id="n7_cq11" name="n7" xy="1406,160" size="512,800" advanced="true">
+      <relation target="" sidePair="center-center"/>
+    </group>
+  </displayList>
+</component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="129,31">
+  <displayList>
+    <image id="n0_st1o" name="n0" src="st1o1" fileName="Texture/spike.png" xy="1,1" pivot="0.5,0.5" scale="0.01,0.01" alpha="0.75" blend="add"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n0_st1o" tween="true" startValue="0.75" endValue="0.5" duration="6" ease="Linear"/>
+    <item time="0" type="Scale" target="n0_st1o" tween="true" startValue="0.01,0.01" endValue="1,1" duration="6"/>
+    <item time="0" type="XY" target="n0_st1o" label="StartPosition" tween="true" startValue="1,1" endValue="1,1" duration="18" label2="EndPosition" ease="Linear"/>
+    <item time="6" type="Alpha" target="n0_st1o" tween="true" startValue="0.5" endValue="1" duration="6"/>
+    <item time="6" type="Scale" target="n0_st1o" tween="true" startValue="1,1" endValue="0,0" duration="12"/>
+    <item time="12" type="Alpha" target="n0_st1o" tween="true" startValue="1" endValue="1" duration="6"/>
+  </transition>
+</component>

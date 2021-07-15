@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="512,512" pivot="0.5,0.5" opaque="false" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0">
+    <action type="play_transition" fromPage="" toPage="4" transition="Hover"/>
+    <action type="play_transition" fromPage="" toPage="2" transition="Default"/>
+    <action type="play_transition" fromPage="" toPage="3,5" transition="Down"/>
+  </controller>
+  <displayList>
+    <loader id="n2_cq11" name="outline" xy="0,0" size="512,512" url="ui://x4jxa6ndcq11l">
+      <gearDisplay controller="button" pages="3,4"/>
+    </loader>
+    <loader id="n0_cq11" name="icon" xy="0,0" size="512,512" url="ui://x4jxa6ndcq11v" color="#575757"/>
+    <image id="n8_cq11" name="n8" src="cq119" fileName="Texture/circle1.png" xy="0,0" size="512,512" visible="false"/>
+    <image id="n9_cq11" name="n9" src="cq11a" fileName="Texture/circle2.png" xy="0,0" size="512,512" visible="false"/>
+    <image id="n10_cq11" name="n10" src="cq11b" fileName="Texture/circle3.png" xy="0,0" size="512,512" visible="false"/>
+    <image id="n11_cq11" name="n11" src="cq11c" fileName="Texture/circle4.png" xy="0,0" size="512,512" visible="false"/>
+    <image id="n12_cq11" name="n12" src="cq118" fileName="Texture/circle5.png" xy="0,0" size="512,512" visible="false"/>
+  </displayList>
+  <Button mode="Radio"/>
+  <transition name="Default">
+    <item time="0" type="Color" target="n0_cq11" tween="true" startValue="#000000" endValue="#575757" duration="6" ease="Linear"/>
+  </transition>
+  <transition name="Hover">
+    <item time="0" type="Color" target="n0_cq11" value="#000000"/>
+  </transition>
+  <transition name="Down" autoPlayRepeat="-1">
+    <item time="0" type="Visible" target="n8_cq11" value="true"/>
+    <item time="1" type="Visible" target="n9_cq11" value="true"/>
+    <item time="2" type="Visible" target="n10_cq11" value="true"/>
+    <item time="3" type="Visible" target="n11_cq11" value="true"/>
+    <item time="4" type="Visible" target="n12_cq11" value="true"/>
+  </transition>
+</component>

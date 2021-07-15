@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="249,325">
+  <displayList>
+    <image id="n1_fq7p" name="n1" src="gh7d1o" fileName="Card/Texture/bg_attack_colorless.png" pkg="rduitwm2" xy="24,24" scale="0.37,0.37" alpha="0.265" blend="multiply" filter="color" filterData="-1,-1,-1,-1" color="#000000"/>
+    <component id="n0_fq7p" name="Inner" src="gh7d1l" fileName="Card/Card.xml" pkg="rduitwm2" xy="0,0" scale="0.37,0.37"/>
+  </displayList>
+</component>

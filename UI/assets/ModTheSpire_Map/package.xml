@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="x4jxa6nd">
+  <resources>
+    <component id="cq110" name="ScrollPage.xml" path="/" exported="true"/>
+    <image id="cq111" name="mapBot.png" path="/Texture/" exported="true"/>
+    <image id="cq112" name="mapMid.png" path="/Texture/" exported="true"/>
+    <image id="cq113" name="mapMid2.png" path="/Texture/" exported="true"/>
+    <image id="cq114" name="mapTop.png" path="/Texture/" exported="true"/>
+    <image id="cq115" name="mapBlend.png" path="/Texture/" exported="true"/>
+    <image id="cq116" name="mapBlend2.png" path="/Texture/" exported="true"/>
+    <image id="cq117" name="legend2.png" path="/Texture/" exported="true"/>
+    <image id="cq118" name="circle5.png" path="/Texture/" exported="true"/>
+    <image id="cq119" name="circle1.png" path="/Texture/" exported="true"/>
+    <image id="cq11a" name="circle2.png" path="/Texture/" exported="true"/>
+    <image id="cq11b" name="circle3.png" path="/Texture/" exported="true"/>
+    <image id="cq11c" name="circle4.png" path="/Texture/" exported="true"/>
+    <image id="cq11d" name="automaton.png" path="/Texture/bossOutline/"/>
+    <image id="cq11e" name="awakened.png" path="/Texture/bossOutline/"/>
+    <image id="cq11f" name="champ.png" path="/Texture/bossOutline/"/>
+    <image id="cq11g" name="collector.png" path="/Texture/bossOutline/"/>
+    <image id="cq11h" name="donu.png" path="/Texture/bossOutline/"/>
+    <image id="cq11i" name="guardian.png" path="/Texture/bossOutline/"/>
+    <image id="cq11j" name="heart.png" path="/Texture/bossOutline/"/>
+    <image id="cq11k" name="hexaghost.png" path="/Texture/bossOutline/"/>
+    <image id="cq11l" name="slime.png" path="/Texture/bossOutline/"/>
+    <image id="cq11m" name="timeeater.png" path="/Texture/bossOutline/"/>
+    <image id="cq11n" name="automaton.png" path="/Texture/boss/"/>
+    <image id="cq11o" name="awakened.png" path="/Texture/boss/"/>
+    <image id="cq11p" name="champ.png" path="/Texture/boss/"/>
+    <image id="cq11q" name="collector.png" path="/Texture/boss/"/>
+    <image id="cq11r" name="donu.png" path="/Texture/boss/"/>
+    <image id="cq11s" name="guardian.png" path="/Texture/boss/"/>
+    <image id="cq11t" name="heart.png" path="/Texture/boss/"/>
+    <image id="cq11u" name="hexaghost.png" path="/Texture/boss/"/>
+    <image id="cq11v" name="slime.png" path="/Texture/boss/"/>
+    <image id="cq11w" name="timeeater.png" path="/Texture/boss/"/>
+    <component id="cq11x" name="BossRoom.xml" path="/" exported="true"/>
+    <image id="cq11z" name="rest.png" path="/Texture/" exported="true"/>
+    <image id="cq1110" name="restOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq1111" name="selectBox.png" path="/Texture/" exported="true"/>
+    <image id="cq1112" name="shop.png" path="/Texture/" exported="true"/>
+    <image id="cq1113" name="shop_blood.png" path="/Texture/" exported="true"/>
+    <image id="cq1114" name="shopOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq1115" name="chest.png" path="/Texture/" exported="true"/>
+    <image id="cq1116" name="chestOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq1117" name="elite.png" path="/Texture/" exported="true"/>
+    <image id="cq1118" name="eliteOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq1119" name="event.png" path="/Texture/" exported="true"/>
+    <image id="cq111a" name="eventOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq111b" name="mapShrineIcon.png" path="/Texture/" exported="true"/>
+    <image id="cq111c" name="monster.png" path="/Texture/" exported="true"/>
+    <image id="cq111d" name="monsterOutline.png" path="/Texture/" exported="true"/>
+    <image id="cq111e" name="purgeWellIcon.png" path="/Texture/" exported="true"/>
+    <component id="cq111f" name="NormalRoom.xml" path="/" exported="true"/>
+    <component id="cq111g" name="Map.xml" path="/" exported="true"/>
+    <component id="cq111h" name="DescLabel.xml" path="/" exported="true"/>
+    <image id="cq111i" name="dot1.png" path="/Texture/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

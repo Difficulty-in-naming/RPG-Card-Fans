@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="qmow4f55">
   <resources>
-    <component id="mdv90" name="Component1.xml" path="/" exported="true"/>
+    <component id="mdv90" name="Combat.xml" path="/" exported="true"/>
     <image id="mdv91" name="deck.png" path="/Texture/"/>
     <image id="mdv9w" name="energyRedVFX.png" path="/Texture/red/"/>
     <image id="mdv9x" name="layer1.png" path="/Texture/red/"/>
@@ -19,12 +19,14 @@
     <component id="mdv919" name="DeckButton.xml" path="/"/>
     <image id="mdv91a" name="countCircle.png" path="/Texture/"/>
     <component id="mdv91b" name="DiscardButton.xml" path="/"/>
-    <image id="mdv91c" name="endTurnButton.png" path="/Texture/EndTurnButton/"/>
+    <image id="mdv91c" name="endTurnButton.png" path="/Texture/EndTurnButton/" scale9grid="0,0,-18,-143"/>
     <image id="mdv91d" name="endTurnButtonGlow.png" path="/Texture/EndTurnButton/"/>
     <image id="mdv91e" name="endTurnHover.png" path="/Texture/EndTurnButton/"/>
     <component id="mdv91f" name="Button.xml" path="/Texture/EndTurnButton/" exported="true"/>
     <component id="mdv91g" name="Button2.xml" path="/Texture/EndTurnButton/" exported="true"/>
     <component id="mdv91j" name="Component2.xml" path="/Texture/red/"/>
+    <component id="b53e1k" name="ExhaustButton.xml" path="/"/>
+    <component id="myaq1l" name="UnitWrap.xml" path="/"/>
   </resources>
-  <publish name="ModTheSpire_Combat"/>
+  <publish name="ModTheSpire_Combat" genCode="true"/>
 </packageDescription>

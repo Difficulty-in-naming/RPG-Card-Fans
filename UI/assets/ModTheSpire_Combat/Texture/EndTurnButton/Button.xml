@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="223,98" extention="Button" bgColorEnabled="true" bgColor="#000000">
+<component size="223,98" opaque="false" extention="Button" bgColorEnabled="true" bgColor="#000000">
   <controller name="button" pages="2,up,3,down,4,over,6,disabled" selected="0"/>
   <displayList>
-    <image id="n7_mdv9" name="n7" src="mdv91e" fileName="Texture/EndTurnButton/endTurnHover.png" xy="-18,-81">
+    <image id="n7_mdv9" name="n7" src="mdv91e" fileName="Texture/EndTurnButton/endTurnHover.png" xy="-18,-81" size="256,256">
       <gearDisplay controller="button" pages="4"/>
       <gearXY controller="button" pages="3,4" values="-18,-79|-18,-83" default="-18,-81"/>
+      <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <loader id="n0_mdv9" name="icon" xy="-18,-81" size="256,256" url="ui://qmow4f55mdv91c">
+    <loader id="n0_mdv9" name="icon" xy="-7,-8" size="238,113" url="ui://qmow4f55mdv91c" fill="scaleFree">
       <gearDisplay controller="button" pages="2,3,4,5"/>
-      <gearXY controller="button" pages="3,4" values="-18,-79|-18,-83" default="-18,-81"/>
+      <gearXY controller="button" pages="2,3,4" values="-7,-8|-7,-10|-7,-8" default="-18,-81"/>
+      <relation target="" sidePair="width-width,height-height"/>
     </loader>
-    <image id="n4_mdv9" name="n4" src="mdv91d" fileName="Texture/EndTurnButton/endTurnButtonGlow.png" xy="-18,-81" alpha="0.3">
+    <image id="n4_mdv9" name="n4" src="mdv91d" fileName="Texture/EndTurnButton/endTurnButtonGlow.png" xy="-18,-81" size="256,256" alpha="0.3">
       <gearDisplay controller="button" pages="4"/>
       <gearXY controller="button" pages="3,4" values="-18,-79|-18,-83" default="-18,-81"/>
+      <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <image id="n5_mdv9" name="n5" src="mdv91c" fileName="Texture/EndTurnButton/endTurnButton.png" xy="-18,-81" grayed="true">
+    <image id="n5_mdv9" name="n5" src="mdv91c" fileName="Texture/EndTurnButton/endTurnButton.png" xy="-18,-81" size="238,113" grayed="true">
       <gearDisplay controller="button" pages="6"/>
-      <gearXY controller="button" pages="3,4" values="-18,-79|-18,-83" default="-18,-81"/>
+      <gearXY controller="button" pages="3,4,6" values="-18,-79|-18,-83|-7,-8" default="-18,-81"/>
+      <relation target="" sidePair="width-width,height-height"/>
     </image>
     <text id="n1_mdv9" name="title" xy="44,25" size="132,44" fontSize="32" color="#dfd9c7" strokeColor="#4d4a44" strokeSize="3" text="结束回合">
-      <gearXY controller="button" pages="3,4" values="44,27|44,23" default="44,25"/>
+      <gearXY controller="button" pages="2,3,4" values="44,25|44,27|44,23" default="44,25"/>
       <gearColor controller="button" pages="2,3,4,6" values="#dfd9c7,#4d4a44|#d95755,#4d4a44|#ebc54f,#4d4a44|#dfd9c7,#4d4a44"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
     </text>
   </displayList>
   <Button/>

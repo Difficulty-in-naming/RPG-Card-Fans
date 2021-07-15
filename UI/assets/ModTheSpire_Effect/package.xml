@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="pvapz9l6">
+  <resources>
+    <component id="st1o2s" name="PowerExpireTextEffect.xml" path="/Combat/" exported="true"/>
+    <component id="pt7b2q" name="TextAboveEffect.xml" path="/Combat/" exported="true"/>
+    <component id="st1o0" name="FlyingSpikeEffect.xml" path="/Combat/" exported="true"/>
+    <image id="st1o1" name="spike.png" path="/Texture/" exported="true"/>
+    <component id="st1o2" name="PowerBuffEffect.xml" path="/Combat/" exported="true"/>
+    <component id="st1o4" name="PowerDebuffEffect.xml" path="/Combat/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

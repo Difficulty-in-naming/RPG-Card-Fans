@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" overflow="scroll" scrollBar="hidden">
+  <displayList>
+    <image id="n4_cq11" name="n4" src="cq114" fileName="Texture/mapTop.png" xy="0,0"/>
+    <component id="n0_cq11" name="Boss" src="cq11x" fileName="BossRoom.xml" xy="704,130"/>
+    <image id="n5_cq11" name="n5" src="cq112" fileName="Texture/mapMid.png" xy="0,1080"/>
+    <image id="n7_cq11" name="n7" src="cq115" fileName="Texture/mapBlend.png" xy="2,832"/>
+    <image id="n8_cq11" name="n8" src="cq111" fileName="Texture/mapBot.png" xy="0,2160"/>
+    <image id="n9_cq11" name="n9" src="cq115" fileName="Texture/mapBlend.png" xy="5,1930"/>
+  </displayList>
+</component>

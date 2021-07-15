@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="hwgbk08v">
+  <resources>
+    <component id="cc7c0" name="BottomScene.xml" path="/" exported="true"/>
+    <image id="cc7c1" name="event.png" path="/Texture/scene3/"/>
+    <image id="cc7c2" name="bg.png" path="/Texture/scene/"/>
+    <image id="cc7c3" name="campfireKindling.png" path="/Texture/scene/mod/"/>
+    <image id="cc7c4" name="ceiling.png" path="/Texture/scene/mod/"/>
+    <image id="cc7c5" name="fg.png" path="/Texture/scene/mod/"/>
+    <image id="cc7c6" name="mg.png" path="/Texture/scene/mod/"/>
+    <image id="cc7c7" name="campfire.png" path="/Texture/scene2/"/>
+    <image id="cc7c8" name="campfireGlow.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7c9" name="ceilingMod1.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7ca" name="ceilingMod2.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7cb" name="ceilingMod3.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7cc" name="ceilingMod4.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7cd" name="ceilingMod5.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7ce" name="ceilingMod6.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7cf" name="midWall.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7cg" name="mod1.png" path="/Texture/scene2/mod/"/>
+    <image id="cc7ch" name="mod2.png" path="/Texture/scene2/mod/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

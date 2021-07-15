@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="890,77" extention="Button">
+  <controller name="button" pages="2,up,3,down,6,over,4,disabled" selected="0"/>
+  <displayList>
+    <image id="n0_cc7c" name="n0" src="cc7c2g" fileName="Button/Event/enabledButton.png" xy="0,0" pivot="0.5,0.5" size="890,77" filter="color" filterData="0,0,0,0" color="#999999">
+      <gearSize controller="button" pages="3" values="871,77,1,1" default="890,77,1,1"/>
+      <gearColor controller="button" pages="2" values="#999999" default="#ffffff"/>
+    </image>
+    <image id="n1_cc7c" name="n1" src="cc7c2h" fileName="Button/Event/disabledButton.png" xy="0,0">
+      <gearDisplay controller="button" pages="4"/>
+    </image>
+    <text id="n2_cc7c" name="n2" xy="47,16" size="100,44" fontSize="32" color="#ffffff" shadowColor="#3f3f3f" shadowOffset="3,3" text="[对话]"/>
+  </displayList>
+  <Button/>
+</component>

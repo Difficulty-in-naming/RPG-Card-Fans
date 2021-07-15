@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="0yihslg9">
+  <resources>
+    <component id="fq7p0" name="MasterDeckView.xml" path="/" exported="true"/>
+    <image id="fq7p1" name="selectBox.png" path="/Texture/" scale="9grid" scale9grid="50,38,100,10"/>
+    <image id="fq7p2" name="colorTabBar.png" path="/Texture/"/>
+    <component id="fq7p3" name="TitleButton.xml" path="/"/>
+    <image id="fq7p4" name="filterArrow.png" path="/"/>
+    <image id="fq7p6" name="bg_attack_colorless.png" path="/Texture/"/>
+    <image id="fq7p7" name="armaments.png" path="/Texture/"/>
+    <image id="fq7p9" name="banner_common.png" path="/Texture/"/>
+    <image id="fq7pa" name="card_red_orb.png" path="/Texture/"/>
+    <font id="fq7pb" name="SourceHanSansHWSC-Bold-TMP.otf" path="/" renderMode="sdfaa" samplePointSize="36"/>
+    <component id="fq7pc" name="Card.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

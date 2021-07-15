@@ -2,10 +2,10 @@
 <component size="152,38" extention="Button">
   <controller name="button" pages="2,up,4,over" selected="0"/>
   <displayList>
-    <image id="n0_pz5g" name="n0" src="pz5gv" fileName="Texture/panelGoldBag.png" pkg="rduitwm2" xy="0,0" pivot="0.5,0.5">
+    <image id="n0_pz5g" name="n0" src="pz5gv" fileName="Texture/panelGoldBag.png" pkg="rduitwm2" xy="5,3" pivot="0.5,0.5" size="38,32">
       <gearSize controller="button" pages="4" values="38,32,1.1,1.1" default="38,32,1,1"/>
     </image>
-    <text id="n3_pz5g" name="Gold" xy="54,1" size="92,32" fontSize="22" color="#ebc54f" vars="true" strokeColor="#000000" text="金币：{Gold=99}"/>
+    <text id="n3_pz5g" name="Gold" xy="54,1" size="92,32" font="ui://rduitwm2kefb3" fontSize="22" color="#ebc54f" vars="true" strokeColor="#333333" strokeSize="0.2" shadowColor="#333333" shadowOffset="0.5,0.5" faceDilate="0.15" text="金币：{Gold=99}"/>
   </displayList>
   <Button/>
 </component>

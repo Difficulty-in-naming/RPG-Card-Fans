@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="320,150" extention="Label">
+  <displayList>
+    <image id="n0_fq7p" name="n0" src="fq7p25" fileName="Tip/Texture/tip.png" xy="0,0" size="320,149">
+      <relation target="n2_fq7p" sidePair="bottomext-bottom"/>
+    </image>
+    <text id="n1_fq7p" name="Name" xy="26,19" size="56,36" restrictSize="0,268,0,0" fontSize="26" color="#ebc54f" leading="0" shadowColor="#333333" shadowOffset="2,2" text="格挡"/>
+    <text id="n2_fq7p" name="Desc" xy="26,64" size="268,63" restrictSize="0,268,0,0" fontSize="24" color="#ffffff" leading="0" shadowColor="#333333" shadowOffset="2,2" autoClearText="true" text="持续到下回合开始前，阻挡伤害。">
+      <relation target="n1_fq7p" sidePair="top-bottom"/>
+    </text>
+  </displayList>
+</component>

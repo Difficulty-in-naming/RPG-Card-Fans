@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="64,65">
+  <displayList>
+    <image id="n1_pz5g" name="n1" src="pz5g2" fileName="key_slots.png" xy="0,1"/>
+    <image id="n16_fq7p" name="Green" src="pz5gd" fileName="Texture/key_green.png" xy="0,1" visible="false"/>
+    <image id="n18_fq7p" name="Blue" src="pz5gf" fileName="Texture/key_blue.png" xy="0,0" visible="false"/>
+    <image id="n17_fq7p" name="Red" src="pz5ge" fileName="Texture/key_red.png" xy="0,0" visible="false"/>
+  </displayList>
+</component>

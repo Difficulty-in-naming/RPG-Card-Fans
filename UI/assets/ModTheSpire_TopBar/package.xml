@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="wg6ewwqq">
   <resources>
-    <component id="pz5g0" name="Component1.xml" path="/"/>
+    <component id="pz5g0" name="TopBar.xml" path="/" exported="true"/>
     <image id="pz5g1" name="bar.png" path="/Texture/"/>
     <image id="pz5g2" name="key_slots.png" path="/"/>
     <component id="pz5g3" name="Health.xml" path="/"/>
@@ -17,6 +17,7 @@
     <image id="pz5gd" name="key_green.png" path="/Texture/"/>
     <image id="pz5ge" name="key_red.png" path="/Texture/"/>
     <image id="pz5gf" name="key_blue.png" path="/Texture/"/>
+    <component id="fq7pg" name="KeySlots.xml" path="/"/>
   </resources>
   <publish name="ModTheSpire_TopBar" genCode="true"/>
 </packageDescription>

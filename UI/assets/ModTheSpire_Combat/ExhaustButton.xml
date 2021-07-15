@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="45,44" extention="Button">
+  <displayList>
+    <image id="n2_b53e" name="n2" src="mdv91a" fileName="Texture/countCircle.png" xy="-40,-40" alpha="0.66" color="#000000"/>
+    <text id="n3_b53e" name="title" xy="8,5" pivot="0.5,0.5" size="32,39" fontSize="28" color="#ee82ee" align="center" vAlign="middle" text="99"/>
+  </displayList>
+  <Button/>
+</component>

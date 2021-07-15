@@ -8,7 +8,7 @@
     <image id="kefb4" name="menu_option_highlight.png" path="/Button/Texture/"/>
     <image id="kefb5" name="cancelButton.png" path="/Button/Texture/" scale9grid="0,0,-246,-175"/>
     <component id="kefb7" name="CancelButton.xml" path="/Button/" exported="true"/>
-    <image id="kefb8" name="cancelButtonOutline.png" path="/Button/Texture/" scale9grid="0,0,-243,-169"/>
+    <image id="kefb8" name="cancelButtonOutline.png" path="/Button/Texture/" exported="true" scale9grid="0,0,-243,-169"/>
     <image id="pz5gg" name="confirmButtonOutline.png" path="/Button/Texture/" scale9grid="0,0,-238,-180"/>
     <image id="pz5gh" name="confirmButton.png" path="/Button/Texture/" scale9grid="0,0,-241,-186"/>
     <component id="pz5gi" name="ConfirmButton.xml" path="/Button/" exported="true"/>
@@ -34,26 +34,37 @@
     <component id="pz5g17" name="NoButton.xml" path="/Button/" exported="true"/>
     <image id="pz5g18" name="potion_placeholder.png" path="/Texture/" exported="true" scale9grid="0,0,-23,-27"/>
     <component id="k9kc19" name="Animation.xml" path="/Animation/" exported="true"/>
-    <image id="mdv91a" name="scrollBarTrackTop.png" path="/ScrollBar/Texture/"/>
-    <image id="mdv91b" name="scrollBarTrackBottom.png" path="/ScrollBar/Texture/"/>
-    <image id="mdv91c" name="scrollBarTrackHorizontalMid.png" path="/ScrollBar/Texture/"/>
-    <image id="mdv91d" name="scrollBarTrackLeft.png" path="/ScrollBar/Texture/"/>
-    <image id="mdv91e" name="scrollBarTrackMid.png" path="/ScrollBar/Texture/"/>
-    <image id="mdv91f" name="scrollBarTrackRight.png" path="/ScrollBar/Texture/"/>
     <image id="mdv91g" name="scrollBarTrain.png" path="/ScrollBar/Texture/"/>
     <image id="mdv91h" name="scrollBarHorizontalTrain.png" path="/ScrollBar/Texture/"/>
     <component id="gh7d1l" name="Card.xml" path="/Card/" exported="true"/>
-    <image id="gh7d1m" name="bg_power_colorless.png" path="/Card/Texture/"/>
-    <image id="gh7d1n" name="bg_skill_colorless.png" path="/Card/Texture/"/>
-    <image id="gh7d1o" name="bg_attack_colorless.png" path="/Card/Texture/"/>
-    <image id="gh7d1p" name="barricade.png" path="/Card/Texture/"/>
-    <image id="gh7d1q" name="anger.png" path="/Card/Texture/"/>
-    <image id="gh7d1r" name="armaments.png" path="/Card/Texture/"/>
-    <image id="gh7d1s" name="frame_power_common.png" path="/Card/Texture/"/>
-    <image id="gh7d1t" name="banner_common.png" path="/Card/Texture/"/>
-    <image id="gh7d1u" name="card_red_orb.png" path="/Card/Texture/"/>
-    <image id="gh7d1v" name="frame_skill_common.png" path="/Card/Texture/"/>
-    <image id="gh7d1w" name="frame_attack_common.png" path="/Card/Texture/"/>
+    <image id="gh7d1m" name="bg_power_colorless.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1n" name="bg_skill_colorless.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1o" name="bg_attack_colorless.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1p" name="barricade.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1q" name="anger.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1r" name="armaments.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1s" name="frame_power_common.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1t" name="banner_common.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1u" name="card_red_orb.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1v" name="frame_skill_common.png" path="/Card/Texture/" exported="true"/>
+    <image id="gh7d1w" name="frame_attack_common.png" path="/Card/Texture/" exported="true"/>
+    <image id="fq7p1y" name="scrollBarTrackH.png" path="/ScrollBar/Texture/" scale="9grid" scale9grid="25,12,50,24"/>
+    <component id="fq7p1z" name="ScrollBar_H.xml" path="/ScrollBar/" exported="true"/>
+    <component id="fq7p20" name="ScrollBar_V.xml" path="/ScrollBar/" exported="true"/>
+    <image id="fq7p21" name="scrollBarTrackV.png" path="/ScrollBar/Texture/" scale="9grid" scale9grid="12,25,24,50"/>
+    <image id="fq7p25" name="tip.png" path="/Tip/Texture/" scale="9grid" scale9grid="71,27,195,38"/>
+    <component id="fq7p26" name="Tooltips.xml" path="/Tip/" exported="true"/>
+    <component id="sdig27" name="RelicIcon.xml" path="/"/>
+    <image id="cc7c2g" name="enabledButton.png" path="/Button/Event/"/>
+    <image id="cc7c2h" name="disabledButton.png" path="/Button/Event/"/>
+    <component id="cc7c2i" name="EventButton.xml" path="/Button/"/>
+    <image id="cc7c2j" name="speechBubble3.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2k" name="dialogDot.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2l" name="dialogPanel.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2m" name="largeCircle.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2n" name="largeCircle2.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2o" name="smallCircle.png" path="/Dialog/Texture/" exported="true"/>
+    <image id="cc7c2p" name="speechBubble2.png" path="/Dialog/Texture/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

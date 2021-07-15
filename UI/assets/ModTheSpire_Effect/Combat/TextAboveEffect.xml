@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="111,50" extention="Label">
+  <displayList>
+    <text id="n0_pt7b" name="n0" xy="-1,1" size="112,49" font="ui://rduitwm2kefb3" fontSize="36" color="#ffffff" strokeColor="#4d4d4d" strokeSize="0.2" shadowColor="#737373" shadowOffset="0.7,0.7" faceDilate="0.15" autoClearText="true" text="你好！"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" target="n0_pt7b" tween="true" startValue="1" endValue="0" duration="150" ease="Cubic.In"/>
+    <item time="0" type="Color" target="n0_pt7b" label="FromColor" tween="true" startValue="#ffffff" endValue="#ffffff" duration="150"/>
+    <item time="0" type="XY" target="n0_pt7b" tween="true" startValue="-1,1" endValue="-1,-99" duration="150" ease="Linear"/>
+  </transition>
+</component>

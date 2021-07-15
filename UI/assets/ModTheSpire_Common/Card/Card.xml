@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="600,839">
-  <controller name="c1" pages="0,Attack,1,Skill,2,Power" selected="0"/>
+<component size="675,881">
+  <controller name="c1" pages="0,attack,1,skill,2,power,5,none" selected="2"/>
   <displayList>
-    <loader id="n1_gh7d" name="Bg" xy="0,0" size="600,839" url="ui://rduitwm2gh7d1o" fill="scaleFree"/>
-    <loader id="n4_gh7d" name="icon" xy="51,94" size="500,380" url="ui://rduitwm2gh7d1r"/>
-    <loader id="n5_gh7d" name="Frame" xy="43,120" size="523,369" url="ui://rduitwm2gh7d1v">
-      <gearXY controller="c1" pages="0,1,2" values="43,120|43,120|36,8"/>
+    <loader id="n1_gh7d" name="Bg" xy="40,40" size="600,839" url="ui://rduitwm2gh7d1o" fill="scaleFree"/>
+    <loader id="n4_gh7d" name="icon" xy="91,134" size="500,380" url="ui://rduitwm2gh7d1r"/>
+    <loader id="n5_gh7d" name="Frame" xy="77,49" size="523,369" url="ui://rduitwm2gh7d1s">
+      <gearDisplay controller="c1" pages="0,1,2"/>
+      <gearXY controller="c1" pages="0,1,2" values="83,160|83,160|77,49" default="83,160"/>
+      <gearIcon controller="c1" pages="0,2" values="ui://rduitwm2gh7d1w|ui://rduitwm2gh7d1s" default="ui://rduitwm2gh7d1v"/>
     </loader>
-    <loader id="n3_gh7d" name="Banner" xy="-25,20" size="648,153" url="ui://rduitwm2gh7d1t" align="center"/>
-    <loader id="n2_gh7d" name="Orb" xy="-39,-38" size="143,140" url="ui://rduitwm2gh7d1u"/>
-    <text id="n6_gh7d" name="Type" xy="277,441" size="60,39" fontSize="28" color="#003333" shadowColor="#999999" shadowOffset="2,2" text="技能"/>
-    <text id="n7_gh7d" name="Desc" xy="72,584" pivot="0.5,0.5" size="455,108" restrictSize="0,467,0,0" fontSize="41" color="#fef5e1" align="center" vAlign="middle" shadowColor="#333333" shadowOffset="2,2" text="格挡不再在你的回合开始时消失"/>
-    <text id="n9_gh7d" name="Energy" xy="10,-22" pivot="0.5,0.5" size="44,104" font="ui://rduitwm2kefb3" fontSize="80" color="#fef5e1" align="center" strokeColor="#4d4a44" strokeSize="0.222" faceDilate="0.15" text="2"/>
-    <graph id="n11_gh7d" name="NameHolder" xy="304,66" pivot="0.5,0.5" size="0,0" lineSize="0"/>
+    <loader id="n3_gh7d" name="Banner" xy="15,60" size="648,153" url="ui://rduitwm2gh7d1t" align="center"/>
+    <loader id="n2_gh7d" name="Orb" xy="1,2" size="143,140" url="ui://rduitwm2gh7d1u"/>
+    <text id="n6_gh7d" name="Type" xy="317,481" size="60,39" fontSize="28" color="#003333" shadowColor="#999999" shadowOffset="2,2" text="技能"/>
+    <text id="n7_gh7d" name="Desc" xy="112,624" pivot="0.5,0.5" size="455,108" restrictSize="0,467,0,0" fontSize="41" color="#fef5e1" align="center" vAlign="middle" shadowColor="#333333" shadowOffset="2,2" text="格挡不再在你的回合开始时消失"/>
+    <text id="n9_gh7d" name="Energy" xy="50,18" pivot="0.5,0.5" size="44,104" font="ui://rduitwm2kefb3" fontSize="80" color="#fef5e1" align="center" strokeColor="#4d4a44" strokeSize="0.222" faceDilate="0.15" text="2"/>
+    <text id="n12_fq7p" name="Name" xy="297,75" size="96,62" font="ui://rduitwm2kefb3" fontSize="46" color="#ebc54f" strokeColor="#3f3f3f" strokeSize="0.2" faceDilate="0.15" text="武装"/>
   </displayList>
 </component>

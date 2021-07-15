@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <controller name="c1" pages="0,,1,,2," selected="0"/>
+  <displayList>
+    <graph id="n0_fq7p" name="n0" xy="-174,-167" size="2280,1415" type="rect" lineSize="0" fillColor="#d8000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <image id="n1_fq7p" name="n1" src="fq7p2" fileName="Texture/colorTabBar.png" xy="296,126" group="n11_fq7p" color="#990000"/>
+    <list id="n6_fq7p" name="Menu" xy="626,157" size="659,39" group="n11_fq7p" layout="row" colGap="150" defaultItem="ui://0yihslg9fq7p3" selectionController="c1">
+      <item title="获得顺序" name="获得顺序"/>
+      <item title="类型" name="类型"/>
+      <item title="耗能" name="耗能"/>
+    </list>
+    <list id="n7_fq7p" name="List" xy="308,237" size="1442,692" group="n11_fq7p" layout="flow_hz" overflow="scroll" lineGap="27" colGap="17" defaultItem="ui://0yihslg9fq7pc" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <group id="n11_fq7p" name="n11" xy="296,126" size="1454,803" advanced="true"/>
+    <graph id="n10_fq7p" name="n10" xy="736,957" size="468,56" type="rect" lineSize="0" fillColor="#ff000000">
+      <relation target="n9_fq7p" sidePair="width-width"/>
+    </graph>
+    <text id="n9_fq7p" name="desc" xy="744,964" pivot="0.5,0.5" size="452,44" fontSize="32" color="#fef5e1" align="center" vAlign="middle" text="这些牌将会出现在每一场战斗中"/>
+  </displayList>
+  <transition name="Enter">
+    <item time="0" type="Alpha" target="n0_fq7p" tween="true" startValue="0.3" endValue="1" duration="12" ease="Circ.Out"/>
+    <item time="0" type="XY" target="n11_fq7p" tween="true" startValue="296,296" endValue="296,126" duration="12" ease="Circ.Out"/>
+  </transition>
+</component>

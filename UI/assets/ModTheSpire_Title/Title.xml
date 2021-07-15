@@ -13,6 +13,9 @@
     <image id="n22_epwg" name="n22" src="kefbs" fileName="Texture/title4/mg3BotGlow.png" xy="0,1140">
       <relation target="" sidePair="width-width"/>
     </image>
+    <component id="n23_fyc6" name="DustHolder" src="fyc6v" fileName="Holder.xml" xy="0,1080"/>
+    <component id="n24_fyc6" name="MidCloudHolder" src="fyc6v" fileName="Holder.xml" xy="0,1080"/>
+    <component id="n25_fyc6" name="TopCloudHolder" src="fyc6v" fileName="Holder.xml" xy="0,1080"/>
     <loader id="n13_kefb" name="n13" xy="645,265" pivot="0.5,0.5" size="639,549" url="ui://r56y0bvskefb5" align="center" vAlign="middle" fill="scale">
       <relation target="" sidePair="width-width%,height-height%,center-center,top-top"/>
     </loader>
@@ -33,11 +36,10 @@
       <relation target="" sidePair="left-left,bottom-bottom"/>
     </group>
   </displayList>
-  <transition name="Background" autoPlay="true" autoPlayRepeat="-1"/>
   <transition name="Logo">
-    <item time="0" type="XY" target="n13_kefb" tween="true" startValue="-,-569,0.31,-0.387" endValue="-,53.36,0,0.049" duration="30" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n13_kefb" tween="true" startValue="-,-569,0.31,-0.387" endValue="-,265,0,0.245" duration="30" ease="Sine.InOut"/>
   </transition>
   <transition name="MainMenuEnter">
-    <item time="0" type="XY" target="n20_kefb" tween="true" startValue="-192,-,-0.1,0.534" endValue="208,-" duration="24" ease="Back.Out"/>
+    <item time="0" type="XY" target="n20_kefb" tween="true" startValue="-192,-,-0.1,0.534" endValue="154,-" duration="12" ease="Back.Out"/>
   </transition>
 </component>

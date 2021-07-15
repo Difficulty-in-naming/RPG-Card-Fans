@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="112,49" pivot="0.5,0.5" extention="Label">
+  <displayList>
+    <text id="n1_st1o" name="title" xy="0,0" size="112,49" font="ui://rduitwm2kefb3" fontSize="36" color="#ffffff" strokeColor="#4d4d4d" strokeSize="0.2" shadowColor="#737373" shadowOffset="0.7,0.7" faceDilate="0.15" autoClearText="true" text="力量+1"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" tween="true" startValue="1" endValue="0" duration="120" ease="Expo.In"/>
+    <item time="0" type="Color" target="n1_st1o" tween="true" startValue="#ff6563" endValue="#ffffff" duration="120" ease="Quad.In"/>
+    <item time="0" type="XY" tween="true" startValue="0,0" endValue="-,-80" duration="120" ease="Expo.Out"/>
+  </transition>
+</component>

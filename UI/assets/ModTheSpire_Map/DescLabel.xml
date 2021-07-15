@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="156,46" extention="Label">
+  <displayList>
+    <text id="n3_cq11" name="title" xy="67,2" size="68,44" font="ui://rduitwm2kefb2" fontSize="32" shadowColor="#999999" shadowOffset="4,4" text="不明"/>
+    <loader id="n4_cq11" name="icon" xy="-21,-18" size="128,128" scale="0.65,0.65" url="ui://x4jxa6ndcq1119" color="#000000"/>
+  </displayList>
+</component>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="154,40" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over" selected="2">
+    <action type="play_transition" fromPage="" toPage="4" transition="Hover"/>
+  </controller>
+  <controller name="SortingType" pages="0,,1," selected="0"/>
+  <displayList>
+    <text id="n0_fq7p" name="title" xy="1,1" size="116,39" font="ui://rduitwm2kefb3" fontSize="28" color="#ebc54f" strokeColor="#3f3f3f" strokeSize="0.2" faceDilate="0.15" text="获得顺序">
+      <gearColor controller="button" pages="3,4" values="#ebc54f,#3f3f3f|#ebc54f,#3f3f3f" default="#fef5e1,#3f3f3f"/>
+    </text>
+    <image id="n1_fq7p" name="n1" src="fq7p4" fileName="filterArrow.png" xy="122,4" pivot="0.5,0.5" color="#ebc54f">
+      <gearDisplay controller="SortingType" pages="0"/>
+      <gearColor controller="button" pages="2" values="#ffffff" default="#ebc54f"/>
+      <relation target="n0_fq7p" sidePair="right-right"/>
+    </image>
+    <image id="n2_fq7p" name="n2" src="fq7p4" fileName="filterArrow.png" xy="121,5" pivot="0.5,0.5" rotation="180" color="#ebc54f">
+      <gearDisplay controller="SortingType" pages="1"/>
+      <gearColor controller="button" pages="2" values="#ffffff" default="#ebc54f"/>
+      <relation target="n0_fq7p" sidePair="right-right"/>
+    </image>
+  </displayList>
+  <Button mode="Radio" sound="ui://qeik3u1qmdv92"/>
+  <relation target="n0_fq7p" sidePair="width-width"/>
+  <transition name="Hover">
+    <item time="0" type="Sound" value="ui://qeik3u1qmdv91,100"/>
+  </transition>
+</component>

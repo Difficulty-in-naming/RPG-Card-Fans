@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="49,100" extention="ScrollBar">
+  <displayList>
+    <image id="n2_fq7p" name="bar1" src="fq7p21" fileName="ScrollBar/Texture/scrollBarTrackV.png" xy="0,0" size="49,100">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <graph id="n3_fq7p" name="bar" xy="7,23" size="36,54" lineSize="0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <image id="n1_fq7p" name="grip" src="mdv91g" fileName="ScrollBar/Texture/scrollBarTrain.png" xy="5,20"/>
+  </displayList>
+  <ScrollBar fixedGripSize="true"/>
+</component>

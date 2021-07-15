@@ -32,6 +32,7 @@
     <image id="kefbs" name="mg3BotGlow.png" path="/Texture/title4/"/>
     <image id="kefbt" name="midCloud12.png" path="/Texture/title4/"/>
     <image id="kefbu" name="topCloud3.png" path="/Texture/title4/"/>
+    <component id="fyc6v" name="Holder.xml" path="/"/>
   </resources>
   <publish name="ModTheSpire_Title" genCode="true"/>
 </packageDescription>
