@@ -32,7 +32,12 @@ function genCode(handler) {
         let memberCnt = members.Count;
         for (let j = 0; j < memberCnt; j++) {
             let memberInfo = members.get_Item(j);
-            writer.writeln('public %s : FairyGUI.%s;', memberInfo.varName, memberInfo.type);
+            if (memberInfo.type.startsWith("View_")) {
+                memberInfo.type = "GComponent";
+                writer.writeln('public %s : FairyGUI.%s;', memberInfo.varName, memberInfo.type);
+            }
+            else
+                writer.writeln('public %s : FairyGUI.%s;', memberInfo.varName, memberInfo.type);
         }
         writer.writeln('public static Url = new ViewInfo("%s","%s")', codePkgName, classInfo.resName);
         writer.writeln('public static CreatePanel(...args) : UIBase');

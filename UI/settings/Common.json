@@ -10,21 +10,25 @@
     "警告 #D95755",
     "变灰 #DFD9C7",
     "蓝色 #33ccff",
-    "淡白色 #FEF5E1"
+    "淡白色 #FEF6E2",
+    "灰色 #3F3F3F",
+    "紫色 #EE82EE",
+    "生命值 #FA8072"
   ],
   "fontSizeScheme": [
     "自定义字体大小 30"
   ],
   "fontScheme": [
-    "默认字体"
+    "默认字体",
+    "TMP默认字体 ui://rduitwm2kefb3"
   ],
   "scrollBars": {
-    "horizontal": "",
-    "vertical": "",
+    "horizontal": "ui://rduitwm2fq7p1z",
+    "vertical": "ui://rduitwm2fq7p20",
     "defaultDisplay": "visible"
   },
-  "tipsRes": "",
-  "buttonClickSound": "",
+  "tipsRes": "ui://rduitwm2fq7p26",
+  "buttonClickSound": "ui://qeik3u1qmdv92",
   "pivot": "default",
   "fileName": "Common"
 }

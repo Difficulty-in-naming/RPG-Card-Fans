@@ -1,26 +1,25 @@
 ﻿import Color from "../DataDefine/Color";
-import * as core from 'csharp'
-import {Mathf} from "../../../../Core/Module/Math/Mathf";
-import {AEffect} from "./AEffect";
-export default class TintEffect extends AEffect
+import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
+import {TimeKit} from "Core/Utils/TimeKit";
+export default class TintEffect extends AbstractEffect
 {
-    private From : Color;
+    public From : Color = Color.White.Clone();
     private To : Color;
     private Lerp : number;
-    public Value : Color;
-    public TintEffect(from: Color,to: Color, lerp: number)
+    public ChangeColor(to: Color, lerp: number = 3)
     {
-        this.From = from;
         this.To = to;
         this.Lerp = lerp;
-        this.Value = from;
     }
     
-    public async Update()
+    public FadeOut(){
+        this.To.A = 0;
+        this.Lerp = 3;
+    }
+    
+    public Update()
     {
-        this.Value.RGB[0] = Mathf.Lerp(this.From.RGB[0],this.To.RGB[0],this.Lerp);
-        this.Value.RGB[1] = Mathf.Lerp(this.From.RGB[1],this.To.RGB[1],this.Lerp);
-        this.Value.RGB[2] = Mathf.Lerp(this.From.RGB[2],this.To.RGB[2],this.Lerp);
+        this.From = this.From.Lerp(this.To,TimeKit.DeltaTime * this.Lerp);
         return true;
     }
 }

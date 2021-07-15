@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Manager;
 using Panthea.UI;
+using Spine;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -22,6 +25,7 @@ public class PuertsConfig
             var list =  new List<Type>()
             {
                 typeof(byte[]),
+                typeof(string[]),
                 typeof(Vector3),
                 typeof(Vector2),
                 typeof(Time),
@@ -48,6 +52,8 @@ public class PuertsConfig
                 typeof(UnityEngine.Renderer),
                 typeof(UnityEngine.MaterialPropertyBlock),
                 typeof(UnityEngine.Color),
+                typeof(Screen),
+                typeof(Input),
 
                 //System
                 typeof(System.IO.DirectoryInfo),
@@ -58,14 +64,18 @@ public class PuertsConfig
                 typeof(Array),
                 
                 //ThirdParty
+                typeof(UniTask),
                 
                 typeof(UIKit),
-                typeof(GameEntry)
+                typeof(GameEntry),
+                typeof(MediaManager),
+                typeof(ResourcesManager),
             };
 
             List<string> namespaces = new List<string>()
             {
                 "FairyGUI",
+                "Spine",
                 "Spine.Unity"
             };
 
@@ -74,14 +84,22 @@ public class PuertsConfig
                              where !(assembly.ManifestModule is System.Reflection.Emit.ModuleBuilder)
                              from type in assembly.GetExportedTypes()
                              where type.Namespace != null && namespaces.Contains(type.Namespace) && !isExcluded(type)
-                                   && type.BaseType != typeof(MulticastDelegate) && !type.IsEnum
                              select type));
+            if (list.Remove(typeof(TransformMode)))
+            {
+                Log.Print("删除成功");
+            }
+            
             return list;
         }
     }
 
     static bool isExcluded(Type type)
     {
+        if (type == typeof(TransformMode))
+            return true;
+        if (type == typeof(SkeletonExtensions2))
+            return true;
         return false;
     }
 
@@ -98,6 +116,9 @@ public class PuertsConfig
                 typeof(double),
                 typeof(int),
                 typeof(long),
+                typeof(Color),
+                typeof(Color32),
+                typeof(Vector4)
             };
         }
     }
@@ -106,7 +127,9 @@ public class PuertsConfig
     static bool Filter(MemberInfo memberInfo)
     {
         return memberInfo.Name == "runInEditMode" ||
-            memberInfo.Name == "get_runInEditMode" ||
-            memberInfo.Name == "set_runInEditMode";
+               memberInfo.Name == "get_runInEditMode" ||
+               memberInfo.Name == "set_runInEditMode" || 
+               memberInfo.Name.Contains("InheritsRotation") ||
+               memberInfo.Name.Contains("InheritsScale");
     }
 }

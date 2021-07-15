@@ -1,4 +1,4 @@
-﻿import {AEffect} from "./AEffect";
+﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
 import {TimeKit} from "../../../../Core/Utils/TimeKit";
 
 export default class EffectKit{
@@ -10,28 +10,51 @@ export default class EffectKit{
         return EffectKit.inst;
     }
     private waiting : boolean;
-    private RunningEffect : Array<AEffect> = new Array<AEffect>();
-    
-    public Play(effect: AEffect)
+    private AsyncEffect : Array<AbstractEffect> = new Array<AbstractEffect>();
+    private SyncEffect : Array<AbstractEffect> = new Array<AbstractEffect>();
+    public Play(effect: AbstractEffect, sync:boolean = true)
     {
-        this.RunningEffect.push(effect);
+        if(sync)
+            this.SyncEffect.push(effect);
+        else
+            this.AsyncEffect.push(effect);
     }
-    
-    public async Update(){
-        if(this.waiting)
-            return;
-        for (let i = this.RunningEffect.length - 1; i >= 0; i--) {
-            let node = this.RunningEffect[i];
-            this.waiting = true; 
-            let result = await node.Update();
-            this.waiting = false;
-            if(!result)
-            {
-                node.Duration+=TimeKit.DeltaTime;
+
+    public Update(){
+        for (let i = this.AsyncEffect.length - 1; i >= 0; i--) {
+            let node = this.AsyncEffect[i];
+            try{
+                let result = node.Update();
+                if(!node.IsDone)
+                {
+                    node.Duration+=TimeKit.DeltaTime;
+                    break;
+                }
+                else
+                {
+                    this.AsyncEffect.splice(i,1);
+                }
             }
-            else
-            {
-                this.RunningEffect.splice(i,1);
+            catch{
+                this.AsyncEffect.splice(i,1);
+            }
+        }
+
+        for (let i = this.SyncEffect.length - 1; i >= 0; i--) {
+            let node = this.SyncEffect[i];
+            try{
+                let result = node.Update();
+                if(!node.IsDone)
+                {
+                    node.Duration+=TimeKit.DeltaTime;
+                }
+                else
+                {
+                    this.SyncEffect.splice(i,1);
+                }
+            }
+            catch{
+                this.SyncEffect.splice(i,1);
             }
         }
     }

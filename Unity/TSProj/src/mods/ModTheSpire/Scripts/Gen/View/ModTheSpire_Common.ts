@@ -5,6 +5,43 @@ import ViewInfo = UI.ViewInfo;
 import UIKit = UI.UIKit;
 import UIBase = UI.UIBase;
 import {FairyGUI} from "csharp";
+export class View_Tooltips extends UIBase
+{
+    public Name : FairyGUI.GTextField;
+    public Desc : FairyGUI.GTextField;
+    public static Url = new ViewInfo("ModTheSpire_Common","Tooltips")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_Tooltips.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_Tooltips.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.Name = this.View.GetChild("Name") as FairyGUI.GTextField;
+        this.Desc = this.View.GetChild("Desc") as FairyGUI.GTextField;
+    }
+}
 export class View_Card extends UIBase
 {
     public c1 : FairyGUI.Controller;
@@ -16,7 +53,7 @@ export class View_Card extends UIBase
     public Type : FairyGUI.GTextField;
     public Desc : FairyGUI.GTextField;
     public Energy : FairyGUI.GTextField;
-    public NameHolder : FairyGUI.GGraph;
+    public Name : FairyGUI.GTextField;
     public static Url = new ViewInfo("ModTheSpire_Common","Card")
     public static CreatePanel(...args) : UIBase
     {
@@ -55,7 +92,7 @@ export class View_Card extends UIBase
         this.Type = this.View.GetChild("Type") as FairyGUI.GTextField;
         this.Desc = this.View.GetChild("Desc") as FairyGUI.GTextField;
         this.Energy = this.View.GetChild("Energy") as FairyGUI.GTextField;
-        this.NameHolder = this.View.GetChild("NameHolder") as FairyGUI.GGraph;
+        this.Name = this.View.GetChild("Name") as FairyGUI.GTextField;
     }
 }
 export class View_Animation extends UIBase
@@ -143,8 +180,8 @@ export class View_MainMenuButton extends UIBase
 export class View_CancelButton extends UIBase
 {
     public t0 : FairyGUI.Transition;
-    public t1 : FairyGUI.Transition;
-    public t2 : FairyGUI.Transition;
+    public Hover : FairyGUI.Transition;
+    public Up : FairyGUI.Transition;
     public Enter : FairyGUI.Transition;
     public static Url = new ViewInfo("ModTheSpire_Common","CancelButton")
     public static CreatePanel(...args) : UIBase
@@ -176,8 +213,8 @@ export class View_CancelButton extends UIBase
     public Construct()
     {
         this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
-        this.t1 = this.View.GetTransition("t1") as FairyGUI.Transition;
-        this.t2 = this.View.GetTransition("t2") as FairyGUI.Transition;
+        this.Hover = this.View.GetTransition("Hover") as FairyGUI.Transition;
+        this.Up = this.View.GetTransition("Up") as FairyGUI.Transition;
         this.Enter = this.View.GetTransition("Enter") as FairyGUI.Transition;
     }
 }
@@ -403,5 +440,56 @@ export class View_RightButton extends UIBase
     {
         this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
         this.t1 = this.View.GetTransition("t1") as FairyGUI.Transition;
+    }
+}
+export class View_UnitWrap extends UIBase
+{
+    public Wrap : FairyGUI.GGraph;
+    public Loader : FairyGUI.GLoader;
+    public SlowAttack : FairyGUI.Transition;
+    public FastShake : FairyGUI.Transition;
+    public Hop : FairyGUI.Transition;
+    public Jump : FairyGUI.Transition;
+    public FastAttack : FairyGUI.Transition;
+    public SlowShake : FairyGUI.Transition;
+    public Stagger : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_Common","UnitWrap")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_UnitWrap.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_UnitWrap.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.Wrap = this.View.GetChild("Wrap") as FairyGUI.GGraph;
+        this.Loader = this.View.GetChild("Loader") as FairyGUI.GLoader;
+        this.SlowAttack = this.View.GetTransition("SlowAttack") as FairyGUI.Transition;
+        this.FastShake = this.View.GetTransition("FastShake") as FairyGUI.Transition;
+        this.Hop = this.View.GetTransition("Hop") as FairyGUI.Transition;
+        this.Jump = this.View.GetTransition("Jump") as FairyGUI.Transition;
+        this.FastAttack = this.View.GetTransition("FastAttack") as FairyGUI.Transition;
+        this.SlowShake = this.View.GetTransition("SlowShake") as FairyGUI.Transition;
+        this.Stagger = this.View.GetTransition("Stagger") as FairyGUI.Transition;
     }
 }

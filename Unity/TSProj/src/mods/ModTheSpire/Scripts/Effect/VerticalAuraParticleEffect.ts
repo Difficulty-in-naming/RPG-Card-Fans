@@ -1,12 +1,12 @@
 ﻿import Color from "../DataDefine/Color";
-import {AEffect} from "./AEffect";
-import {Mathf} from "../../../../Core/Module/Math/Mathf";
+import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
+import {Mathf} from "Core/Module/Math/Mathf";
 import { FairyGUI, UnityEngine } from "csharp";
 import UIHelper from "../UI/UIHelper";
-import {TimeKit} from "../../../../Core/Utils/TimeKit";
-import Tween from "../../../../Core/Module/Tween";
+import {TimeKit} from "Core/Utils/TimeKit";
+import Tween from "Core/Module/Tween";
 import {basePath} from "../FileHelper";
-export class VerticalAuraParticleEffect extends AEffect
+export class VerticalAuraParticleEffect extends AbstractEffect
 {
     private Vy: number;
     private Loader : FairyGUI.GLoader;
@@ -19,6 +19,7 @@ export class VerticalAuraParticleEffect extends AEffect
 
         let color = c.Clone().Random(-0.1,0.1);
         this.Loader.url = basePath + "Res/Vfx/combat/verticalAura.png";
+        this.Loader.touchable = false;
         this.Loader.scale = new UnityEngine.Vector2(scale,scale);
         this.Loader.SetPivot(0.5,0.5,true);
         this.Loader.SetPosition(x + Mathf.RandomRange(-200,200),y + Mathf.RandomRange(-200,200),0)
@@ -34,15 +35,17 @@ export class VerticalAuraParticleEffect extends AEffect
                 this.Tween = new Tween.Tween({a:this.Loader.color.a}).to({a:0}, 800).easing(Tween.Easing.Sinusoidal.InOut)
                     .onUpdate(object => {
                         this.Loader.alpha = object.a;
+                    }).onComplete(()=>{
+                        this.Loader.Dispose();
                     })
                     .start()
             });
     }
 
-    async Update(): Promise<boolean> 
+    Update()
     {
         let y = this.Vy * TimeKit.DeltaTime;
         this.Loader.y += y;
-        return !this.Tween.isPlaying();
+        this.IsDone = !this.Tween.isPlaying();
     }
 }

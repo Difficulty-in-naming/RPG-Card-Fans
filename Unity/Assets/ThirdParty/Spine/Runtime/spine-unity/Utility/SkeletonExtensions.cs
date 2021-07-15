@@ -451,18 +451,6 @@ namespace Spine {
 			return a is IHasRendererObject;
 		}
 
-		#region Transform Modes
-		public static bool InheritsRotation (this TransformMode mode) {
-			const int RotationBit = 0;
-			return ((int)mode & (1U << RotationBit)) == 0;
-		}
-
-		public static bool InheritsScale (this TransformMode mode) {
-			const int ScaleBit = 1;
-			return ((int)mode & (1U << ScaleBit)) == 0;
-		}
-		#endregion
-
 		#region Posing
 		internal static void SetPropertyToSetupPose (this Skeleton skeleton, int propertyID) {
 			int tt = propertyID >> 24;

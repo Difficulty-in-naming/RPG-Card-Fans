@@ -27,9 +27,11 @@ public class ResourcesManager
         var get = TryGetRes(path);
         if (get != null)
             return (Texture2D)get;
-        var tex = new Texture2D(0,0, TextureFormat.ARGB32, false);
+        var tex = new Texture2D(0,0);
+        tex.alphaIsTransparency = true;
         var bytes = File.ReadAllBytes(path);
-        tex.LoadImage(bytes,true);
+        tex.LoadRawTextureData(bytes);
+        tex.Apply(false, false);
         Cache[path] = tex;
         return tex;
     }

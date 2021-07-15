@@ -4,9 +4,10 @@ namespace PuertsStaticWrap
 {
     public static class UnityEngine_Color_Wrap
     {
+        static UnityEngine.Color HeapValue;
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
-        private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
+        unsafe private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
@@ -30,10 +31,13 @@ namespace PuertsStaticWrap
                         var Arg1 = argHelper1.GetFloat(false);
                         var Arg2 = argHelper2.GetFloat(false);
                         var Arg3 = argHelper3.GetFloat(false);
-                        var result = new UnityEngine.Color(Arg0,Arg1,Arg2,Arg3);
+                        HeapValue = new UnityEngine.Color(Arg0,Arg1,Arg2,Arg3);
                         
                         
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Color), result);
+                        fixed (UnityEngine.Color* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     }
                 }
                 
@@ -53,10 +57,13 @@ namespace PuertsStaticWrap
                         var Arg0 = argHelper0.GetFloat(false);
                         var Arg1 = argHelper1.GetFloat(false);
                         var Arg2 = argHelper2.GetFloat(false);
-                        var result = new UnityEngine.Color(Arg0,Arg1,Arg2);
+                        HeapValue = new UnityEngine.Color(Arg0,Arg1,Arg2);
                         
                         
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Color), result);
+                        fixed (UnityEngine.Color* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     }
                 }
                 
@@ -68,10 +75,13 @@ namespace PuertsStaticWrap
                     
                     {
                         
-                        var result = new UnityEngine.Color();
+                        HeapValue = new UnityEngine.Color();
                         
                         
-                        return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Color), result);
+                        fixed (UnityEngine.Color* result = &HeapValue)
+                        {
+                            return new IntPtr(result);
+                        }
                     }
                 }
                 
@@ -85,11 +95,11 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_ToString(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_ToString(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 
                 if (paramLen == 0)
                 {
@@ -99,10 +109,10 @@ namespace PuertsStaticWrap
                     
                     {
                         
-                        var result = obj.ToString();
+                        var result = (*obj).ToString();
                         
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 }
@@ -117,10 +127,10 @@ namespace PuertsStaticWrap
                     {
                         
                         var Arg0 = argHelper0.GetString(false);
-                        var result = obj.ToString(Arg0);
+                        var result = (*obj).ToString(Arg0);
                         
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 }
@@ -138,10 +148,10 @@ namespace PuertsStaticWrap
                         
                         var Arg0 = argHelper0.GetString(false);
                         var Arg1 = argHelper1.Get<System.IFormatProvider>(false);
-                        var result = obj.ToString(Arg0,Arg1);
+                        var result = (*obj).ToString(Arg0,Arg1);
                         
                         Puerts.PuertsDLL.ReturnString(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 }
@@ -155,11 +165,11 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_GetHashCode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_GetHashCode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 
                 
                 {
@@ -169,10 +179,10 @@ namespace PuertsStaticWrap
                     
                     {
                         
-                        var result = obj.GetHashCode();
+                        var result = (*obj).GetHashCode();
                         
                         Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         
                     }
                 }
@@ -186,11 +196,11 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void M_Equals(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void M_Equals(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 
                 if (paramLen == 1)
                 {
@@ -202,20 +212,20 @@ namespace PuertsStaticWrap
                     {
                         
                         var Arg0 = argHelper0.Get<System.Object>(false);
-                        var result = obj.Equals(Arg0);
+                        var result = (*obj).Equals(Arg0);
                         
                         Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                     if (argHelper0.IsMatch(Puerts.JsValueType.NativeObject, typeof(UnityEngine.Color), false, false))
                     {
                         
                         var Arg0 = argHelper0.Get<UnityEngine.Color>(false);
-                        var result = obj.Equals(Arg0);
+                        var result = (*obj).Equals(Arg0);
                         
                         Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
-                        Puerts.Utils.SetSelf((int)data, self, obj);
+                        
                         return;
                     }
                 }
@@ -600,12 +610,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_grayscale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_grayscale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.grayscale;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).grayscale;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -617,12 +627,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_linear(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_linear(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.linear;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).linear;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
             catch (Exception e)
@@ -634,12 +644,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_gamma(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_gamma(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.gamma;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).gamma;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
             catch (Exception e)
@@ -651,12 +661,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_maxColorComponent(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_maxColorComponent(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.maxColorComponent;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).maxColorComponent;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -668,12 +678,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_r(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_r(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.r;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).r;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -683,14 +693,14 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_r(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_r(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
-                obj.r = argHelper.GetFloat(false);
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).r = argHelper.GetFloat(false);
+                
             }
             catch (Exception e)
             {
@@ -700,12 +710,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_g(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_g(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.g;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).g;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -715,14 +725,14 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_g(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_g(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
-                obj.g = argHelper.GetFloat(false);
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).g = argHelper.GetFloat(false);
+                
             }
             catch (Exception e)
             {
@@ -732,12 +742,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_b(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_b(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.b;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).b;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -747,14 +757,14 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_b(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_b(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
-                obj.b = argHelper.GetFloat(false);
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).b = argHelper.GetFloat(false);
+                
             }
             catch (Exception e)
             {
@@ -764,12 +774,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_a(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void G_a(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
-                var result = obj.a;
+                var obj = (UnityEngine.Color*)self;
+                var result = (*obj).a;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
             catch (Exception e)
@@ -779,14 +789,14 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_a(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void S_a(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
-                obj.a = argHelper.GetFloat(false);
-                Puerts.Utils.SetSelf((int)data, self, obj);
+                (*obj).a = argHelper.GetFloat(false);
+                
             }
             catch (Exception e)
             {
@@ -796,17 +806,17 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void GetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void GetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var keyHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 
                 if (keyHelper.IsMatch(Puerts.JsValueType.Number, null, false, false))
                 {
                     var key = keyHelper.GetInt32(false);
-                    var result = obj[key];
+                    var result = (*obj)[key];
                     Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
                     return;
                 }
@@ -819,18 +829,18 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void SetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        unsafe private static void SetItem(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                var obj = (UnityEngine.Color)Puerts.Utils.GetSelf((int)data, self);
+                var obj = (UnityEngine.Color*)self;
                 var keyHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 var valueHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 1);
                 
                 if (keyHelper.IsMatch(Puerts.JsValueType.Number, null, false, false))
                 {
                     var key = keyHelper.GetInt32(false);
-                    obj[key] = valueHelper.GetFloat(false);
+                    (*obj)[key] = valueHelper.GetFloat(false);
                     return;
                 }
                 
@@ -1059,7 +1069,7 @@ namespace PuertsStaticWrap
         {
             return new Puerts.TypeRegisterInfo()
             {
-                BlittableCopy = false,
+                BlittableCopy = true,
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
@@ -1104,6 +1114,35 @@ namespace PuertsStaticWrap
                     
                 }
             };
+        }
+        
+        unsafe private static UnityEngine.Color StaticGetter(int jsEnvIdx, IntPtr isolate, Puerts.IGetValueFromJs getValueApi, IntPtr value, bool isByRef)
+        {
+            UnityEngine.Color* result = (UnityEngine.Color*)getValueApi.GetNativeObject(isolate, value, isByRef);
+            return result == null ? default(UnityEngine.Color) : *result;
+        }
+
+        unsafe private static void StaticSetter(int jsEnvIdx, IntPtr isolate, Puerts.ISetValueToJs setValueApi, IntPtr value, UnityEngine.Color val)
+        {
+            HeapValue = val;
+            fixed (UnityEngine.Color* result = &HeapValue)
+            {
+                var typeId = Puerts.JsEnv.jsEnvs[jsEnvIdx].GetTypeId(typeof(UnityEngine.Color));
+                setValueApi.SetNativeObject(isolate, value, typeId, new IntPtr(result));
+            }
+        }
+        
+        public static void InitBlittableCopy(Puerts.JsEnv jsEnv)
+        {
+            Puerts.StaticTranslate<UnityEngine.Color>.ReplaceDefault(StaticSetter, StaticGetter);
+            int jsEnvIdx = jsEnv.Index;
+            jsEnv.RegisterGeneralGetSet(typeof(UnityEngine.Color), (IntPtr isolate, Puerts.IGetValueFromJs getValueApi, IntPtr value, bool isByRef) =>
+            {
+                return StaticGetter(jsEnvIdx, isolate, getValueApi, value, isByRef);
+            }, (IntPtr isolate, Puerts.ISetValueToJs setValueApi, IntPtr value, object obj) => 
+            {
+                StaticSetter(jsEnvIdx, isolate, setValueApi, value, (UnityEngine.Color)obj);
+            });
         }
         
     }

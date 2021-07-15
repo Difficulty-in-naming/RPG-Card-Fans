@@ -1,7 +1,17 @@
 ﻿import {View_SelectCharacter} from "../../Gen/View/ModTheSpire_SelectCharacter";
 import {UI_SelectGameMode} from "./UI_SelectGameMode";
-import AbstractPlayer, {AllPlayer} from "../../Character/AbstractPlayer";
-import {FairyGUI} from 'csharp'
+import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
+import {ShakeDur, ShakeIntensity, ShakeScreen} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
+import { Mathf } from "Core/Module/Math/Mathf";
+import {FadeScreenEffect} from "mods/ModTheSpire/Scripts/Effect/FadeScreenEffect";
+import {UI_Title} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title";
+import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
+import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+import Rand from "Core/Module/RandomGenerator";
+import UI_TopBar from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_TopBar";
+import {AllPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
+import {UI_BottomScene} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_BottomScene";
+
 export class UI_SelectCharacter extends View_SelectCharacter
 {
     OnEnable(...args) {
@@ -27,6 +37,7 @@ export class UI_SelectCharacter extends View_SelectCharacter
             item.icon = value.CharSelectButton;
             item.data = value;
             item.onClick.Add(()=>{
+                this.SelectCharTitle.visible = false;
                 this.CharBg.visible = true;
                 this.AdvanceSettings.visible = true;
                 this.CharBg.icon = value.Portrait;
@@ -42,6 +53,24 @@ export class UI_SelectCharacter extends View_SelectCharacter
                     this.RelicDesc.text = relic.Desc;
                 }
                 this.Confirm.visible = true;
+                this.Confirm.GetTransition("Enter").Play();
+                this.Confirm.onClick.Set(()=>{
+                    this.View.touchable = false;
+                    this.Confirm.GetTransition("Enter").PlayReverse();
+                    new FadeScreenEffect(true,()=>{
+                        this.CloseMySelf();
+                        //UI_SelectGameMode.GetInstance()?.CloseMySelf();
+                        UI_Title.GetInstance()?.CloseMySelf();
+                        DungeonManager.NewGame(
+                            value,
+                            Mathf.Floor(Mathf.RandomRange(-50000000,50000001)).toString()
+                        );
+                        UI_TopBar.CreatePanel();
+                        UI_BottomScene.CreatePanel();
+                    });
+                })
+                let rotation = Mathf.Floor(Mathf.RandomRange(0,2));
+                EffectKit.Inst().Play(new ShakeScreen(ShakeIntensity.MED, ShakeDur.SHORT,{Vertical: rotation == 0,Horizontal: rotation == 1}))
             })
         })
     }

@@ -9,6 +9,7 @@ export class View_MainMenuPanel extends UIBase
 {
     public List : FairyGUI.GList;
     public Cancel : FairyGUI.GButton;
+    public Confirm : FairyGUI.GButton;
     public Close : FairyGUI.Transition;
     public static Url = new ViewInfo("ModTheSpire_MainMenuPanel","MainMenuPanel")
     public static CreatePanel(...args) : UIBase
@@ -41,6 +42,7 @@ export class View_MainMenuPanel extends UIBase
     {
         this.List = this.View.GetChild("List") as FairyGUI.GList;
         this.Cancel = this.View.GetChild("Cancel") as FairyGUI.GButton;
+        this.Confirm = this.View.GetChild("Confirm") as FairyGUI.GButton;
         this.Close = this.View.GetTransition("Close") as FairyGUI.Transition;
     }
 }

@@ -2,6 +2,7 @@
 import {View_MainMenuPanel} from "../../Gen/View/ModTheSpire_MainMenuPanel";
 import {LocalizationProperty} from "../../Gen/DB/Localization";
 import {UI_SelectCharacter} from "./UI_SelectCharacter";
+import {UI_Title} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title";
 
 export class UI_SelectGameMode extends View_MainMenuPanel
 {
@@ -10,7 +11,8 @@ export class UI_SelectGameMode extends View_MainMenuPanel
         this.InitList();
         
         this.Cancel.onClick.Add(()=>this.Close.Play(1,0,()=>{
-            this.CloseMySelf()
+            this.CloseMySelf();
+            (<UI_Title>UI_Title.GetInstance()).MainMenuEnter.Play();
         }));
     }
     

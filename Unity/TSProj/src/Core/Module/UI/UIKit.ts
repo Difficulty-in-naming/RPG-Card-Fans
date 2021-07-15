@@ -75,7 +75,7 @@ export namespace UI {
         public Destroy(key: string,pool : boolean = false)
         {
             let ui = this.Get(key);
-            if(!pool) {
+            if(!pool && ui) {
                 this.UIMap.delete(key);
                 ui.View.Dispose();
             }

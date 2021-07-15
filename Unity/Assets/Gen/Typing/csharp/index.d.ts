@@ -12,7 +12,7 @@ declare module 'csharp' {
         }
     }
     
-    interface $Task<T> {}
+    type $Task<T> = System.Threading.Tasks.Task$1<T>
     
     namespace System {
         
@@ -237,6 +237,12 @@ declare module 'csharp' {
         }
         
         
+        class String extends System.Object implements System.ICloneable, System.Collections.IEnumerable, System.IComparable, System.IComparable$1<string>, System.IConvertible, System.IEquatable$1<string>, System.Collections.Generic.IEnumerable$1<number>{
+            
+            
+        }
+        
+        
         class Single extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>, System.IFormattable{
             
             
@@ -244,18 +250,6 @@ declare module 'csharp' {
         
         
         class Boolean extends System.ValueType implements System.IComparable, System.IComparable$1<boolean>, System.IConvertible, System.IEquatable$1<boolean>{
-            
-            
-        }
-        
-        
-        class String extends System.Object implements System.ICloneable, System.Collections.IEnumerable, System.IComparable, System.IComparable$1<string>, System.IConvertible, System.IEquatable$1<string>, System.Collections.Generic.IEnumerable$1<number>{
-            
-            
-        }
-        
-        
-        class Char extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>{
             
             
         }
@@ -730,6 +724,12 @@ declare module 'csharp' {
         var MulticastDelegate: {new (func: (...args:any[]) => any): MulticastDelegate;}
         
         
+        class Char extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>{
+            
+            
+        }
+        
+        
         type Func$2<T, TResult> = (arg: T) => TResult;
         
         
@@ -818,19 +818,95 @@ declare module 'csharp' {
         type Predicate$1<T> = (obj: T) => boolean;
         
         
-        class Nullable$1<T> extends System.ValueType{
+        class TimeSpan extends System.ValueType implements System.IComparable, System.IComparable$1<System.TimeSpan>, System.IEquatable$1<System.TimeSpan>, System.IFormattable{
             
             
         }
         
         
-        type Action$2<T1, T2> = (arg1: T1, arg2: T2) => void;
+        class Exception extends System.Object implements System.Runtime.InteropServices._Exception, System.Runtime.Serialization.ISerializable{
+            
+            
+        }
+        
+        
+        class ValueTuple$2<T1, T2> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$2<T1, T2>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$2<T1, T2>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        interface IValueTupleInternal extends System.Runtime.CompilerServices.ITuple{
+            
+            
+        }
+        
+        
+        class ValueTuple$3<T1, T2, T3> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$3<T1, T2, T3>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$3<T1, T2, T3>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$4<T1, T2, T3, T4> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$4<T1, T2, T3, T4>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$4<T1, T2, T3, T4>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$5<T1, T2, T3, T4, T5> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$5<T1, T2, T3, T4, T5>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$5<T1, T2, T3, T4, T5>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$6<T1, T2, T3, T4, T5, T6> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$6<T1, T2, T3, T4, T5, T6>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$6<T1, T2, T3, T4, T5, T6>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$7<T1, T2, T3, T4, T5, T6, T7> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$7<T1, T2, T3, T4, T5, T6, T7>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$7<T1, T2, T3, T4, T5, T6, T7>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$1<T1> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$1<T1>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$1<T1>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
+        
+        
+        class ValueTuple$8<T1, T2, T3, T4, T5, T6, T7, TRest> extends System.ValueType implements System.Runtime.CompilerServices.ITuple, System.IComparable, System.IComparable$1<System.ValueTuple$8<T1, T2, T3, T4, T5, T6, T7, TRest>>, System.IValueTupleInternal, System.Collections.IStructuralComparable, System.IEquatable$1<System.ValueTuple$8<T1, T2, T3, T4, T5, T6, T7, TRest>>, System.Collections.IStructuralEquatable{
+            
+            
+        }
         
         
         class Int16 extends System.ValueType implements System.IComparable, System.IComparable$1<number>, System.IConvertible, System.IEquatable$1<number>, System.IFormattable{
             
             
         }
+        
+        
+        interface IAsyncResult{
+            
+            
+        }
+        
+        
+        class Nullable$1<T> extends System.ValueType{
+            
+            
+        }
+        
+        
+        type AsyncCallback = (ar: System.IAsyncResult) => void;
+        var AsyncCallback: {new (func: (ar: System.IAsyncResult) => void): AsyncCallback;}
+        
+        
+        type Action$2<T1, T2> = (arg1: T1, arg2: T2) => void;
         
         
     }
@@ -948,6 +1024,12 @@ declare module 'csharp' {
         
         
         interface IComparer$1<T>{
+            
+            
+        }
+        
+        
+        interface IEqualityComparer$1<T>{
             
             
         }
@@ -3522,6 +3604,261 @@ declare module 'csharp' {
             
         }
         
+        /** Access to display information. */
+        class Screen extends System.Object{
+            /** The current width of the screen window in pixels (Read Only). */
+            public static get width(): number;
+            
+            /** The current height of the screen window in pixels (Read Only). */
+            public static get height(): number;
+            
+            /** The current DPI of the screen / device (Read Only). */
+            public static get dpi(): number;
+            
+            /** The current screen resolution (Read Only). */
+            public static get currentResolution(): UnityEngine.Resolution;
+            
+            /** All full-screen resolutions supported by the monitor (Read Only). */
+            public static get resolutions(): System.Array$1<UnityEngine.Resolution>;
+            
+            /** Is the game running full-screen? */
+            public static get fullScreen(): boolean;
+            public static set fullScreen(value: boolean);
+            /** Set this property to one of the values in FullScreenMode to change the display mode of your application. */
+            public static get fullScreenMode(): UnityEngine.FullScreenMode;
+            public static set fullScreenMode(value: UnityEngine.FullScreenMode);
+            /** Returns the safe area of the screen in pixels (Read Only). */
+            public static get safeArea(): UnityEngine.Rect;
+            
+            /** Returns a list of screen areas that are not functional for displaying content (Read Only). */
+            public static get cutouts(): System.Array$1<UnityEngine.Rect>;
+            
+            /** Allow auto-rotation to portrait? */
+            public static get autorotateToPortrait(): boolean;
+            public static set autorotateToPortrait(value: boolean);
+            /** Allow auto-rotation to portrait, upside down? */
+            public static get autorotateToPortraitUpsideDown(): boolean;
+            public static set autorotateToPortraitUpsideDown(value: boolean);
+            /** Allow auto-rotation to landscape left? */
+            public static get autorotateToLandscapeLeft(): boolean;
+            public static set autorotateToLandscapeLeft(value: boolean);
+            /** Allow auto-rotation to landscape right? */
+            public static get autorotateToLandscapeRight(): boolean;
+            public static set autorotateToLandscapeRight(value: boolean);
+            /** Specifies logical orientation of the screen. */
+            public static get orientation(): UnityEngine.ScreenOrientation;
+            public static set orientation(value: UnityEngine.ScreenOrientation);
+            /** A power saving setting, allowing the screen to dim some time after the last active user interaction. */
+            public static get sleepTimeout(): number;
+            public static set sleepTimeout(value: number);
+            /** The current brightness of the screen. */
+            public static get brightness(): number;
+            public static set brightness(value: number);
+            
+            /** Switches the screen resolution. */
+            public static SetResolution($width: number, $height: number, $fullscreenMode: UnityEngine.FullScreenMode, $preferredRefreshRate: number):void;
+            
+            public static SetResolution($width: number, $height: number, $fullscreenMode: UnityEngine.FullScreenMode):void;
+            /** Switches the screen resolution. */
+            public static SetResolution($width: number, $height: number, $fullscreen: boolean, $preferredRefreshRate: number):void;
+            /** Switches the screen resolution. */
+            public static SetResolution($width: number, $height: number, $fullscreen: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        /** Represents a display resolution. */
+        class Resolution extends System.ValueType{
+            
+            
+        }
+        
+        /** Platform agnostic fullscreen mode. Not all platforms support all modes. */
+        enum FullScreenMode{ ExclusiveFullScreen = 0, FullScreenWindow = 1, MaximizedWindow = 2, Windowed = 3 }
+        
+        /** A 2D Rectangle defined by X and Y position, width and height. */
+        class Rect extends System.ValueType implements System.IEquatable$1<UnityEngine.Rect>, System.IFormattable{
+            
+            
+        }
+        
+        /** Describes screen orientation. */
+        enum ScreenOrientation{ Unknown = 0, Portrait = 1, PortraitUpsideDown = 2, LandscapeLeft = 3, LandscapeRight = 4, AutoRotation = 5, Landscape = 3 }
+        
+        /** Interface into the Input system. */
+        class Input extends System.Object{
+            /** Enables/Disables mouse simulation with touches. By default this option is enabled. */
+            public static get simulateMouseWithTouches(): boolean;
+            public static set simulateMouseWithTouches(value: boolean);
+            /** Is any key or mouse button currently held down? (Read Only) */
+            public static get anyKey(): boolean;
+            
+            /** Returns true the first frame the user hits any key or mouse button. (Read Only) */
+            public static get anyKeyDown(): boolean;
+            
+            /** Returns the keyboard input entered this frame. (Read Only) */
+            public static get inputString(): string;
+            
+            /** The current mouse position in pixel coordinates. (Read Only). */
+            public static get mousePosition(): UnityEngine.Vector3;
+            
+            /** The current mouse scroll delta. (Read Only) */
+            public static get mouseScrollDelta(): UnityEngine.Vector2;
+            
+            /** Controls enabling and disabling of IME input composition. */
+            public static get imeCompositionMode(): UnityEngine.IMECompositionMode;
+            public static set imeCompositionMode(value: UnityEngine.IMECompositionMode);
+            /** The current IME composition string being typed by the user. */
+            public static get compositionString(): string;
+            
+            /** Does the user have an IME keyboard input source selected? */
+            public static get imeIsSelected(): boolean;
+            
+            /** The current text input position used by IMEs to open windows. */
+            public static get compositionCursorPos(): UnityEngine.Vector2;
+            public static set compositionCursorPos(value: UnityEngine.Vector2);
+            /** Indicates if a mouse device is detected. */
+            public static get mousePresent(): boolean;
+            
+            /** Number of touches. Guaranteed not to change throughout the frame. (Read Only) */
+            public static get touchCount(): number;
+            
+            /** Bool value which let's users check if touch pressure is supported. */
+            public static get touchPressureSupported(): boolean;
+            
+            /** Returns true when Stylus Touch is supported by a device or platform. */
+            public static get stylusTouchSupported(): boolean;
+            
+            /** Returns whether the device on which application is currently running supports touch input. */
+            public static get touchSupported(): boolean;
+            
+            /** Property indicating whether the system handles multiple touches. */
+            public static get multiTouchEnabled(): boolean;
+            public static set multiTouchEnabled(value: boolean);
+            /** Device physical orientation as reported by OS. (Read Only) */
+            public static get deviceOrientation(): UnityEngine.DeviceOrientation;
+            
+            /** Last measured linear acceleration of a device in three-dimensional space. (Read Only) */
+            public static get acceleration(): UnityEngine.Vector3;
+            
+            /** This property controls if input sensors should be compensated for screen orientation. */
+            public static get compensateSensors(): boolean;
+            public static set compensateSensors(value: boolean);
+            /** Number of acceleration measurements which occurred during last frame. */
+            public static get accelerationEventCount(): number;
+            
+            /** Should  Back button quit the application?
+            Only usable on Android, Windows Phone or Windows Tablets. */
+            public static get backButtonLeavesApp(): boolean;
+            public static set backButtonLeavesApp(value: boolean);
+            /** Property for accessing device location (handheld devices only). (Read Only) */
+            public static get location(): UnityEngine.LocationService;
+            
+            /** Property for accessing compass (handheld devices only). (Read Only) */
+            public static get compass(): UnityEngine.Compass;
+            
+            /** Returns default gyroscope. */
+            public static get gyro(): UnityEngine.Gyroscope;
+            
+            /** Returns list of objects representing status of all touches during last frame. (Read Only) (Allocates temporary variables). */
+            public static get touches(): System.Array$1<UnityEngine.Touch>;
+            
+            /** Returns list of acceleration measurements which occurred during the last frame. (Read Only) (Allocates temporary variables). */
+            public static get accelerationEvents(): System.Array$1<UnityEngine.AccelerationEvent>;
+            
+            
+            /** Returns the value of the virtual axis identified by axisName. */
+            public static GetAxis($axisName: string):number;
+            /** Returns the value of the virtual axis identified by axisName with no smoothing filtering applied. */
+            public static GetAxisRaw($axisName: string):number;
+            /** Returns true while the virtual button identified by buttonName is held down.
+             * @param buttonName The name of the button such as Jump.
+             * @returns True when an axis has been pressed and not released. 
+             */
+            public static GetButton($buttonName: string):boolean;
+            /** Returns true during the frame the user pressed down the virtual button identified by buttonName. */
+            public static GetButtonDown($buttonName: string):boolean;
+            /** Returns true the first frame the user releases the virtual button identified by buttonName. */
+            public static GetButtonUp($buttonName: string):boolean;
+            /** Returns whether the given mouse button is held down. */
+            public static GetMouseButton($button: number):boolean;
+            /** Returns true during the frame the user pressed the given mouse button. */
+            public static GetMouseButtonDown($button: number):boolean;
+            /** Returns true during the frame the user releases the given mouse button. */
+            public static GetMouseButtonUp($button: number):boolean;
+            
+            public static ResetInputAxes():void;
+            /** Determine whether a particular joystick model has been preconfigured by Unity. (Linux-only).
+             * @param joystickName The name of the joystick to check (returned by Input.GetJoystickNames).
+             * @returns True if the joystick layout has been preconfigured; false otherwise. 
+             */
+            public static IsJoystickPreconfigured($joystickName: string):boolean;
+            
+            public static GetJoystickNames():System.Array$1<string>;
+            /** Call Input.GetTouch to obtain a Touch struct.
+             * @param index The touch input on the device screen.
+             * @returns Touch details in the struct. 
+             */
+            public static GetTouch($index: number):UnityEngine.Touch;
+            /** Returns specific acceleration measurement which occurred during last frame. (Does not allocate temporary variables). */
+            public static GetAccelerationEvent($index: number):UnityEngine.AccelerationEvent;
+            /** Returns true while the user holds down the key identified by the key KeyCode enum parameter. */
+            public static GetKey($key: UnityEngine.KeyCode):boolean;
+            /** Returns true while the user holds down the key identified by name. */
+            public static GetKey($name: string):boolean;
+            /** Returns true during the frame the user releases the key identified by the key KeyCode enum parameter. */
+            public static GetKeyUp($key: UnityEngine.KeyCode):boolean;
+            /** Returns true during the frame the user releases the key identified by name. */
+            public static GetKeyUp($name: string):boolean;
+            /** Returns true during the frame the user starts pressing down the key identified by the key KeyCode enum parameter. */
+            public static GetKeyDown($key: UnityEngine.KeyCode):boolean;
+            /** Returns true during the frame the user starts pressing down the key identified by name. */
+            public static GetKeyDown($name: string):boolean;
+            
+            public constructor();
+            
+        }
+        
+        /** Structure describing the status of a finger touching the screen. */
+        class Touch extends System.ValueType{
+            
+            
+        }
+        
+        /** Structure describing acceleration status of the device. */
+        class AccelerationEvent extends System.ValueType{
+            
+            
+        }
+        
+        /** Key codes returned by Event.keyCode. These map directly to a physical key on the keyboard. */
+        enum KeyCode{ None = 0, Backspace = 8, Delete = 127, Tab = 9, Clear = 12, Return = 13, Pause = 19, Escape = 27, Space = 32, Keypad0 = 256, Keypad1 = 257, Keypad2 = 258, Keypad3 = 259, Keypad4 = 260, Keypad5 = 261, Keypad6 = 262, Keypad7 = 263, Keypad8 = 264, Keypad9 = 265, KeypadPeriod = 266, KeypadDivide = 267, KeypadMultiply = 268, KeypadMinus = 269, KeypadPlus = 270, KeypadEnter = 271, KeypadEquals = 272, UpArrow = 273, DownArrow = 274, RightArrow = 275, LeftArrow = 276, Insert = 277, Home = 278, End = 279, PageUp = 280, PageDown = 281, F1 = 282, F2 = 283, F3 = 284, F4 = 285, F5 = 286, F6 = 287, F7 = 288, F8 = 289, F9 = 290, F10 = 291, F11 = 292, F12 = 293, F13 = 294, F14 = 295, F15 = 296, Alpha0 = 48, Alpha1 = 49, Alpha2 = 50, Alpha3 = 51, Alpha4 = 52, Alpha5 = 53, Alpha6 = 54, Alpha7 = 55, Alpha8 = 56, Alpha9 = 57, Exclaim = 33, DoubleQuote = 34, Hash = 35, Dollar = 36, Percent = 37, Ampersand = 38, Quote = 39, LeftParen = 40, RightParen = 41, Asterisk = 42, Plus = 43, Comma = 44, Minus = 45, Period = 46, Slash = 47, Colon = 58, Semicolon = 59, Less = 60, Equals = 61, Greater = 62, Question = 63, At = 64, LeftBracket = 91, Backslash = 92, RightBracket = 93, Caret = 94, Underscore = 95, BackQuote = 96, A = 97, B = 98, C = 99, D = 100, E = 101, F = 102, G = 103, H = 104, I = 105, J = 106, K = 107, L = 108, M = 109, N = 110, O = 111, P = 112, Q = 113, R = 114, S = 115, T = 116, U = 117, V = 118, W = 119, X = 120, Y = 121, Z = 122, LeftCurlyBracket = 123, Pipe = 124, RightCurlyBracket = 125, Tilde = 126, Numlock = 300, CapsLock = 301, ScrollLock = 302, RightShift = 303, LeftShift = 304, RightControl = 305, LeftControl = 306, RightAlt = 307, LeftAlt = 308, LeftCommand = 310, LeftApple = 310, LeftWindows = 311, RightCommand = 309, RightApple = 309, RightWindows = 312, AltGr = 313, Help = 315, Print = 316, SysReq = 317, Break = 318, Menu = 319, Mouse0 = 323, Mouse1 = 324, Mouse2 = 325, Mouse3 = 326, Mouse4 = 327, Mouse5 = 328, Mouse6 = 329, JoystickButton0 = 330, JoystickButton1 = 331, JoystickButton2 = 332, JoystickButton3 = 333, JoystickButton4 = 334, JoystickButton5 = 335, JoystickButton6 = 336, JoystickButton7 = 337, JoystickButton8 = 338, JoystickButton9 = 339, JoystickButton10 = 340, JoystickButton11 = 341, JoystickButton12 = 342, JoystickButton13 = 343, JoystickButton14 = 344, JoystickButton15 = 345, JoystickButton16 = 346, JoystickButton17 = 347, JoystickButton18 = 348, JoystickButton19 = 349, Joystick1Button0 = 350, Joystick1Button1 = 351, Joystick1Button2 = 352, Joystick1Button3 = 353, Joystick1Button4 = 354, Joystick1Button5 = 355, Joystick1Button6 = 356, Joystick1Button7 = 357, Joystick1Button8 = 358, Joystick1Button9 = 359, Joystick1Button10 = 360, Joystick1Button11 = 361, Joystick1Button12 = 362, Joystick1Button13 = 363, Joystick1Button14 = 364, Joystick1Button15 = 365, Joystick1Button16 = 366, Joystick1Button17 = 367, Joystick1Button18 = 368, Joystick1Button19 = 369, Joystick2Button0 = 370, Joystick2Button1 = 371, Joystick2Button2 = 372, Joystick2Button3 = 373, Joystick2Button4 = 374, Joystick2Button5 = 375, Joystick2Button6 = 376, Joystick2Button7 = 377, Joystick2Button8 = 378, Joystick2Button9 = 379, Joystick2Button10 = 380, Joystick2Button11 = 381, Joystick2Button12 = 382, Joystick2Button13 = 383, Joystick2Button14 = 384, Joystick2Button15 = 385, Joystick2Button16 = 386, Joystick2Button17 = 387, Joystick2Button18 = 388, Joystick2Button19 = 389, Joystick3Button0 = 390, Joystick3Button1 = 391, Joystick3Button2 = 392, Joystick3Button3 = 393, Joystick3Button4 = 394, Joystick3Button5 = 395, Joystick3Button6 = 396, Joystick3Button7 = 397, Joystick3Button8 = 398, Joystick3Button9 = 399, Joystick3Button10 = 400, Joystick3Button11 = 401, Joystick3Button12 = 402, Joystick3Button13 = 403, Joystick3Button14 = 404, Joystick3Button15 = 405, Joystick3Button16 = 406, Joystick3Button17 = 407, Joystick3Button18 = 408, Joystick3Button19 = 409, Joystick4Button0 = 410, Joystick4Button1 = 411, Joystick4Button2 = 412, Joystick4Button3 = 413, Joystick4Button4 = 414, Joystick4Button5 = 415, Joystick4Button6 = 416, Joystick4Button7 = 417, Joystick4Button8 = 418, Joystick4Button9 = 419, Joystick4Button10 = 420, Joystick4Button11 = 421, Joystick4Button12 = 422, Joystick4Button13 = 423, Joystick4Button14 = 424, Joystick4Button15 = 425, Joystick4Button16 = 426, Joystick4Button17 = 427, Joystick4Button18 = 428, Joystick4Button19 = 429, Joystick5Button0 = 430, Joystick5Button1 = 431, Joystick5Button2 = 432, Joystick5Button3 = 433, Joystick5Button4 = 434, Joystick5Button5 = 435, Joystick5Button6 = 436, Joystick5Button7 = 437, Joystick5Button8 = 438, Joystick5Button9 = 439, Joystick5Button10 = 440, Joystick5Button11 = 441, Joystick5Button12 = 442, Joystick5Button13 = 443, Joystick5Button14 = 444, Joystick5Button15 = 445, Joystick5Button16 = 446, Joystick5Button17 = 447, Joystick5Button18 = 448, Joystick5Button19 = 449, Joystick6Button0 = 450, Joystick6Button1 = 451, Joystick6Button2 = 452, Joystick6Button3 = 453, Joystick6Button4 = 454, Joystick6Button5 = 455, Joystick6Button6 = 456, Joystick6Button7 = 457, Joystick6Button8 = 458, Joystick6Button9 = 459, Joystick6Button10 = 460, Joystick6Button11 = 461, Joystick6Button12 = 462, Joystick6Button13 = 463, Joystick6Button14 = 464, Joystick6Button15 = 465, Joystick6Button16 = 466, Joystick6Button17 = 467, Joystick6Button18 = 468, Joystick6Button19 = 469, Joystick7Button0 = 470, Joystick7Button1 = 471, Joystick7Button2 = 472, Joystick7Button3 = 473, Joystick7Button4 = 474, Joystick7Button5 = 475, Joystick7Button6 = 476, Joystick7Button7 = 477, Joystick7Button8 = 478, Joystick7Button9 = 479, Joystick7Button10 = 480, Joystick7Button11 = 481, Joystick7Button12 = 482, Joystick7Button13 = 483, Joystick7Button14 = 484, Joystick7Button15 = 485, Joystick7Button16 = 486, Joystick7Button17 = 487, Joystick7Button18 = 488, Joystick7Button19 = 489, Joystick8Button0 = 490, Joystick8Button1 = 491, Joystick8Button2 = 492, Joystick8Button3 = 493, Joystick8Button4 = 494, Joystick8Button5 = 495, Joystick8Button6 = 496, Joystick8Button7 = 497, Joystick8Button8 = 498, Joystick8Button9 = 499, Joystick8Button10 = 500, Joystick8Button11 = 501, Joystick8Button12 = 502, Joystick8Button13 = 503, Joystick8Button14 = 504, Joystick8Button15 = 505, Joystick8Button16 = 506, Joystick8Button17 = 507, Joystick8Button18 = 508, Joystick8Button19 = 509 }
+        
+        /** Controls IME input. */
+        enum IMECompositionMode{ Auto = 0, On = 1, Off = 2 }
+        
+        /** Describes physical orientation of the device as determined by the OS. */
+        enum DeviceOrientation{ Unknown = 0, Portrait = 1, PortraitUpsideDown = 2, LandscapeLeft = 3, LandscapeRight = 4, FaceUp = 5, FaceDown = 6 }
+        
+        /** Interface into location functionality. */
+        class LocationService extends System.Object{
+            
+            
+        }
+        
+        /** Interface into compass functionality. */
+        class Compass extends System.Object{
+            
+            
+        }
+        
+        /** Interface into the Gyroscope. */
+        class Gyroscope extends System.Object{
+            
+            
+        }
+        
         /** A class you can derive from if you want to create objects that don't need to be attached to game objects. */
         class ScriptableObject extends UnityEngine.Object{
             
@@ -3536,12 +3873,6 @@ declare module 'csharp' {
         
         /** RenderMode for the Canvas. */
         enum RenderMode{ ScreenSpaceOverlay = 0, ScreenSpaceCamera = 1, WorldSpace = 2 }
-        
-        /** A 2D Rectangle defined by X and Y position, width and height. */
-        class Rect extends System.ValueType implements System.IEquatable$1<UnityEngine.Rect>, System.IFormattable{
-            
-            
-        }
         
         /** A base class of all colliders. */
         class Collider extends UnityEngine.Component{
@@ -3608,9 +3939,6 @@ declare module 'csharp' {
             
             
         }
-        
-        /** Key codes returned by Event.keyCode. These map directly to a physical key on the keyboard. */
-        enum KeyCode{ None = 0, Backspace = 8, Delete = 127, Tab = 9, Clear = 12, Return = 13, Pause = 19, Escape = 27, Space = 32, Keypad0 = 256, Keypad1 = 257, Keypad2 = 258, Keypad3 = 259, Keypad4 = 260, Keypad5 = 261, Keypad6 = 262, Keypad7 = 263, Keypad8 = 264, Keypad9 = 265, KeypadPeriod = 266, KeypadDivide = 267, KeypadMultiply = 268, KeypadMinus = 269, KeypadPlus = 270, KeypadEnter = 271, KeypadEquals = 272, UpArrow = 273, DownArrow = 274, RightArrow = 275, LeftArrow = 276, Insert = 277, Home = 278, End = 279, PageUp = 280, PageDown = 281, F1 = 282, F2 = 283, F3 = 284, F4 = 285, F5 = 286, F6 = 287, F7 = 288, F8 = 289, F9 = 290, F10 = 291, F11 = 292, F12 = 293, F13 = 294, F14 = 295, F15 = 296, Alpha0 = 48, Alpha1 = 49, Alpha2 = 50, Alpha3 = 51, Alpha4 = 52, Alpha5 = 53, Alpha6 = 54, Alpha7 = 55, Alpha8 = 56, Alpha9 = 57, Exclaim = 33, DoubleQuote = 34, Hash = 35, Dollar = 36, Percent = 37, Ampersand = 38, Quote = 39, LeftParen = 40, RightParen = 41, Asterisk = 42, Plus = 43, Comma = 44, Minus = 45, Period = 46, Slash = 47, Colon = 58, Semicolon = 59, Less = 60, Equals = 61, Greater = 62, Question = 63, At = 64, LeftBracket = 91, Backslash = 92, RightBracket = 93, Caret = 94, Underscore = 95, BackQuote = 96, A = 97, B = 98, C = 99, D = 100, E = 101, F = 102, G = 103, H = 104, I = 105, J = 106, K = 107, L = 108, M = 109, N = 110, O = 111, P = 112, Q = 113, R = 114, S = 115, T = 116, U = 117, V = 118, W = 119, X = 120, Y = 121, Z = 122, LeftCurlyBracket = 123, Pipe = 124, RightCurlyBracket = 125, Tilde = 126, Numlock = 300, CapsLock = 301, ScrollLock = 302, RightShift = 303, LeftShift = 304, RightControl = 305, LeftControl = 306, RightAlt = 307, LeftAlt = 308, LeftCommand = 310, LeftApple = 310, LeftWindows = 311, RightCommand = 309, RightApple = 309, RightWindows = 312, AltGr = 313, Help = 315, Print = 316, SysReq = 317, Break = 318, Menu = 319, Mouse0 = 323, Mouse1 = 324, Mouse2 = 325, Mouse3 = 326, Mouse4 = 327, Mouse5 = 328, Mouse6 = 329, JoystickButton0 = 330, JoystickButton1 = 331, JoystickButton2 = 332, JoystickButton3 = 333, JoystickButton4 = 334, JoystickButton5 = 335, JoystickButton6 = 336, JoystickButton7 = 337, JoystickButton8 = 338, JoystickButton9 = 339, JoystickButton10 = 340, JoystickButton11 = 341, JoystickButton12 = 342, JoystickButton13 = 343, JoystickButton14 = 344, JoystickButton15 = 345, JoystickButton16 = 346, JoystickButton17 = 347, JoystickButton18 = 348, JoystickButton19 = 349, Joystick1Button0 = 350, Joystick1Button1 = 351, Joystick1Button2 = 352, Joystick1Button3 = 353, Joystick1Button4 = 354, Joystick1Button5 = 355, Joystick1Button6 = 356, Joystick1Button7 = 357, Joystick1Button8 = 358, Joystick1Button9 = 359, Joystick1Button10 = 360, Joystick1Button11 = 361, Joystick1Button12 = 362, Joystick1Button13 = 363, Joystick1Button14 = 364, Joystick1Button15 = 365, Joystick1Button16 = 366, Joystick1Button17 = 367, Joystick1Button18 = 368, Joystick1Button19 = 369, Joystick2Button0 = 370, Joystick2Button1 = 371, Joystick2Button2 = 372, Joystick2Button3 = 373, Joystick2Button4 = 374, Joystick2Button5 = 375, Joystick2Button6 = 376, Joystick2Button7 = 377, Joystick2Button8 = 378, Joystick2Button9 = 379, Joystick2Button10 = 380, Joystick2Button11 = 381, Joystick2Button12 = 382, Joystick2Button13 = 383, Joystick2Button14 = 384, Joystick2Button15 = 385, Joystick2Button16 = 386, Joystick2Button17 = 387, Joystick2Button18 = 388, Joystick2Button19 = 389, Joystick3Button0 = 390, Joystick3Button1 = 391, Joystick3Button2 = 392, Joystick3Button3 = 393, Joystick3Button4 = 394, Joystick3Button5 = 395, Joystick3Button6 = 396, Joystick3Button7 = 397, Joystick3Button8 = 398, Joystick3Button9 = 399, Joystick3Button10 = 400, Joystick3Button11 = 401, Joystick3Button12 = 402, Joystick3Button13 = 403, Joystick3Button14 = 404, Joystick3Button15 = 405, Joystick3Button16 = 406, Joystick3Button17 = 407, Joystick3Button18 = 408, Joystick3Button19 = 409, Joystick4Button0 = 410, Joystick4Button1 = 411, Joystick4Button2 = 412, Joystick4Button3 = 413, Joystick4Button4 = 414, Joystick4Button5 = 415, Joystick4Button6 = 416, Joystick4Button7 = 417, Joystick4Button8 = 418, Joystick4Button9 = 419, Joystick4Button10 = 420, Joystick4Button11 = 421, Joystick4Button12 = 422, Joystick4Button13 = 423, Joystick4Button14 = 424, Joystick4Button15 = 425, Joystick4Button16 = 426, Joystick4Button17 = 427, Joystick4Button18 = 428, Joystick4Button19 = 429, Joystick5Button0 = 430, Joystick5Button1 = 431, Joystick5Button2 = 432, Joystick5Button3 = 433, Joystick5Button4 = 434, Joystick5Button5 = 435, Joystick5Button6 = 436, Joystick5Button7 = 437, Joystick5Button8 = 438, Joystick5Button9 = 439, Joystick5Button10 = 440, Joystick5Button11 = 441, Joystick5Button12 = 442, Joystick5Button13 = 443, Joystick5Button14 = 444, Joystick5Button15 = 445, Joystick5Button16 = 446, Joystick5Button17 = 447, Joystick5Button18 = 448, Joystick5Button19 = 449, Joystick6Button0 = 450, Joystick6Button1 = 451, Joystick6Button2 = 452, Joystick6Button3 = 453, Joystick6Button4 = 454, Joystick6Button5 = 455, Joystick6Button6 = 456, Joystick6Button7 = 457, Joystick6Button8 = 458, Joystick6Button9 = 459, Joystick6Button10 = 460, Joystick6Button11 = 461, Joystick6Button12 = 462, Joystick6Button13 = 463, Joystick6Button14 = 464, Joystick6Button15 = 465, Joystick6Button16 = 466, Joystick6Button17 = 467, Joystick6Button18 = 468, Joystick6Button19 = 469, Joystick7Button0 = 470, Joystick7Button1 = 471, Joystick7Button2 = 472, Joystick7Button3 = 473, Joystick7Button4 = 474, Joystick7Button5 = 475, Joystick7Button6 = 476, Joystick7Button7 = 477, Joystick7Button8 = 478, Joystick7Button9 = 479, Joystick7Button10 = 480, Joystick7Button11 = 481, Joystick7Button12 = 482, Joystick7Button13 = 483, Joystick7Button14 = 484, Joystick7Button15 = 485, Joystick7Button16 = 486, Joystick7Button17 = 487, Joystick7Button18 = 488, Joystick7Button19 = 489, Joystick8Button0 = 490, Joystick8Button1 = 491, Joystick8Button2 = 492, Joystick8Button3 = 493, Joystick8Button4 = 494, Joystick8Button5 = 495, Joystick8Button6 = 496, Joystick8Button7 = 497, Joystick8Button8 = 498, Joystick8Button9 = 499, Joystick8Button10 = 500, Joystick8Button11 = 501, Joystick8Button12 = 502, Joystick8Button13 = 503, Joystick8Button14 = 504, Joystick8Button15 = 505, Joystick8Button16 = 506, Joystick8Button17 = 507, Joystick8Button18 = 508, Joystick8Button19 = 509 }
         
         /** Types of modifier key that can be active during a keystroke event. */
         enum EventModifiers{ None = 0, Shift = 1, Control = 2, Alt = 4, Command = 8, Numeric = 16, CapsLock = 32, FunctionKey = 64 }
@@ -3868,6 +4196,12 @@ declare module 'csharp' {
         
         
         interface _PropertyInfo{
+            
+            
+        }
+        
+        
+        interface _Exception{
             
             
         }
@@ -5139,6 +5473,279 @@ declare module 'csharp' {
         
         
     }
+    namespace Cysharp.Threading.Tasks {
+        
+        class UniTask extends System.ValueType{
+            
+            public static CompletedTask: Cysharp.Threading.Tasks.UniTask;
+            public get Status(): Cysharp.Threading.Tasks.UniTaskStatus;
+            
+            
+            
+            public static ToCoroutine($taskFactory: System.Func$1<Cysharp.Threading.Tasks.UniTask>):System.Collections.IEnumerator;
+            
+            public static Yield():Cysharp.Threading.Tasks.YieldAwaitable;
+            
+            public static Yield($timing: Cysharp.Threading.Tasks.PlayerLoopTiming):Cysharp.Threading.Tasks.YieldAwaitable;
+            
+            public static Yield($cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Yield($timing: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static NextFrame():Cysharp.Threading.Tasks.UniTask;
+            
+            public static NextFrame($timing: Cysharp.Threading.Tasks.PlayerLoopTiming):Cysharp.Threading.Tasks.UniTask;
+            
+            public static NextFrame($cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static NextFrame($timing: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WaitForEndOfFrame():Cysharp.Threading.Tasks.YieldAwaitable;
+            
+            public static WaitForEndOfFrame($cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WaitForFixedUpdate():Cysharp.Threading.Tasks.YieldAwaitable;
+            
+            public static WaitForFixedUpdate($cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static DelayFrame($delayFrameCount: number, $delayTiming?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Delay($millisecondsDelay: number, $ignoreTimeScale?: boolean, $delayTiming?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Delay($delayTimeSpan: System.TimeSpan, $ignoreTimeScale?: boolean, $delayTiming?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Delay($millisecondsDelay: number, $delayType: Cysharp.Threading.Tasks.DelayType, $delayTiming?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Delay($delayTimeSpan: System.TimeSpan, $delayType: Cysharp.Threading.Tasks.DelayType, $delayTiming?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static FromException($ex: System.Exception):Cysharp.Threading.Tasks.UniTask;
+            
+            public static FromCanceled($cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Create($factory: System.Func$1<Cysharp.Threading.Tasks.UniTask>):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Lazy($factory: System.Func$1<Cysharp.Threading.Tasks.UniTask>):Cysharp.Threading.Tasks.AsyncLazy;
+            
+            public static Void($asyncAction: System.Func$1<Cysharp.Threading.Tasks.UniTaskVoid>):void;
+            
+            public static Void($asyncAction: System.Func$2<System.Threading.CancellationToken, Cysharp.Threading.Tasks.UniTaskVoid>, $cancellationToken: System.Threading.CancellationToken):void;
+            
+            public static Action($asyncAction: System.Func$1<Cysharp.Threading.Tasks.UniTaskVoid>):System.Action;
+            
+            public static Action($asyncAction: System.Func$2<System.Threading.CancellationToken, Cysharp.Threading.Tasks.UniTaskVoid>, $cancellationToken: System.Threading.CancellationToken):System.Action;
+            
+            public static UnityAction($asyncAction: System.Func$1<Cysharp.Threading.Tasks.UniTaskVoid>):UnityEngine.Events.UnityAction;
+            
+            public static UnityAction($asyncAction: System.Func$2<System.Threading.CancellationToken, Cysharp.Threading.Tasks.UniTaskVoid>, $cancellationToken: System.Threading.CancellationToken):UnityEngine.Events.UnityAction;
+            
+            public static Defer($factory: System.Func$1<Cysharp.Threading.Tasks.UniTask>):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Never($cancellationToken: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Run($action: System.Action, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Run($action: System.Action$1<any>, $state: any, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Run($action: System.Func$1<Cysharp.Threading.Tasks.UniTask>, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static Run($action: System.Func$2<any, Cysharp.Threading.Tasks.UniTask>, $state: any, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static RunOnThreadPool($action: System.Action, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static RunOnThreadPool($action: System.Action$1<any>, $state: any, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static RunOnThreadPool($action: System.Func$1<Cysharp.Threading.Tasks.UniTask>, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static RunOnThreadPool($action: System.Func$2<any, Cysharp.Threading.Tasks.UniTask>, $state: any, $configureAwait?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static SwitchToMainThread($cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable;
+            
+            public static SwitchToMainThread($timing: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.SwitchToMainThreadAwaitable;
+            
+            public static ReturnToMainThread($cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.ReturnToMainThread;
+            
+            public static ReturnToMainThread($timing: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.ReturnToMainThread;
+            
+            public static Post($action: System.Action, $timing?: Cysharp.Threading.Tasks.PlayerLoopTiming):void;
+            
+            public static SwitchToThreadPool():Cysharp.Threading.Tasks.SwitchToThreadPoolAwaitable;
+            
+            public static SwitchToTaskPool():Cysharp.Threading.Tasks.SwitchToTaskPoolAwaitable;
+            
+            public static SwitchToSynchronizationContext($synchronizationContext: System.Threading.SynchronizationContext, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.SwitchToSynchronizationContextAwaitable;
+            
+            public static ReturnToSynchronizationContext($synchronizationContext: System.Threading.SynchronizationContext, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.ReturnToSynchronizationContext;
+            
+            public static ReturnToCurrentSynchronizationContext($dontPostWhenSameContext?: boolean, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.ReturnToSynchronizationContext;
+            
+            public static WaitUntil($predicate: System.Func$1<boolean>, $timing?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WaitWhile($predicate: System.Func$1<boolean>, $timing?: Cysharp.Threading.Tasks.PlayerLoopTiming, $cancellationToken?: System.Threading.CancellationToken):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WaitUntilCanceled($cancellationToken: System.Threading.CancellationToken, $timing?: Cysharp.Threading.Tasks.PlayerLoopTiming):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WhenAll(...tasks: Cysharp.Threading.Tasks.UniTask[]):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WhenAll($tasks: System.Collections.Generic.IEnumerable$1<Cysharp.Threading.Tasks.UniTask>):Cysharp.Threading.Tasks.UniTask;
+            
+            public static WhenAny(...tasks: Cysharp.Threading.Tasks.UniTask[]):Cysharp.Threading.Tasks.UniTask$1<number>;
+            
+            public static WhenAny($tasks: System.Collections.Generic.IEnumerable$1<Cysharp.Threading.Tasks.UniTask>):Cysharp.Threading.Tasks.UniTask$1<number>;
+            
+            public GetAwaiter():Cysharp.Threading.Tasks.UniTask.Awaiter;
+            
+            public SuppressCancellationThrow():Cysharp.Threading.Tasks.UniTask$1<boolean>;
+            
+            public Preserve():Cysharp.Threading.Tasks.UniTask;
+            
+            public AsAsyncUnitUniTask():Cysharp.Threading.Tasks.UniTask$1<Cysharp.Threading.Tasks.AsyncUnit>;
+            
+            public constructor($source: Cysharp.Threading.Tasks.IUniTaskSource, $token: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class YieldAwaitable extends System.ValueType{
+            
+            
+        }
+        
+        
+        enum PlayerLoopTiming{ Initialization = 0, LastInitialization = 1, EarlyUpdate = 2, LastEarlyUpdate = 3, FixedUpdate = 4, LastFixedUpdate = 5, PreUpdate = 6, LastPreUpdate = 7, Update = 8, LastUpdate = 9, PreLateUpdate = 10, LastPreLateUpdate = 11, PostLateUpdate = 12, LastPostLateUpdate = 13, TimeUpdate = 14, LastTimeUpdate = 15 }
+        
+        
+        enum DelayType{ DeltaTime = 0, UnscaledDeltaTime = 1, Realtime = 2 }
+        
+        
+        class UniTask$1<T> extends System.ValueType{
+            
+            
+        }
+        
+        
+        class AsyncLazy extends System.Object{
+            
+            
+        }
+        
+        
+        class AsyncLazy$1<T> extends System.Object{
+            
+            
+        }
+        
+        
+        class UniTaskVoid extends System.ValueType{
+            
+            
+        }
+        
+        
+        class SwitchToMainThreadAwaitable extends System.ValueType{
+            
+            
+        }
+        
+        
+        class ReturnToMainThread extends System.ValueType{
+            
+            
+        }
+        
+        
+        class SwitchToThreadPoolAwaitable extends System.ValueType{
+            
+            
+        }
+        
+        
+        class SwitchToTaskPoolAwaitable extends System.ValueType{
+            
+            
+        }
+        
+        
+        class SwitchToSynchronizationContextAwaitable extends System.ValueType{
+            
+            
+        }
+        
+        
+        class ReturnToSynchronizationContext extends System.ValueType{
+            
+            
+        }
+        
+        
+        enum UniTaskStatus{ Pending = 0, Succeeded = 1, Faulted = 2, Canceled = 3 }
+        
+        
+        class AsyncUnit extends System.ValueType implements System.IEquatable$1<Cysharp.Threading.Tasks.AsyncUnit>{
+            
+            
+        }
+        
+        
+        interface IUniTaskSource{
+            
+            
+        }
+        
+        
+    }
+    namespace System.Threading {
+        
+        class CancellationToken extends System.ValueType{
+            
+            
+        }
+        
+        
+        class SynchronizationContext extends System.Object{
+            
+            
+        }
+        
+        
+        interface IThreadPoolWorkItem{
+            
+            
+        }
+        
+        
+    }
+    namespace System.Runtime.CompilerServices {
+        
+        interface ITuple{
+            
+            
+        }
+        
+        
+        interface INotifyCompletion{
+            
+            
+        }
+        
+        
+        interface ICriticalNotifyCompletion extends System.Runtime.CompilerServices.INotifyCompletion{
+            
+            
+        }
+        
+        
+    }
+    namespace Cysharp.Threading.Tasks.UniTask {
+        
+        class Awaiter extends System.ValueType implements System.Runtime.CompilerServices.INotifyCompletion, System.Runtime.CompilerServices.ICriticalNotifyCompletion{
+            
+            
+        }
+        
+        
+    }
     namespace Panthea.UI {
         
         class UIKit extends System.Object{
@@ -5156,7 +5763,8 @@ declare module 'csharp' {
         
         class GameEntry extends UnityEngine.MonoBehaviour{
             
-            public isDebug: boolean;
+            public IsDeveloper: boolean;
+            public DebugScript: boolean;
             public debugPort: number;
             public jsEnv: Puerts.JsEnv;
             public JsUpdate: System.Action;
@@ -5174,6 +5782,81 @@ declare module 'csharp' {
         }
         
         
+        class MediaManager extends System.Object{
+            
+            public static get SoundEffectVolume(): number;
+            public static set SoundEffectVolume(value: number);
+            
+            public static get MusicVolume(): number;
+            public static set MusicVolume(value: number);
+            
+            public static get PlayPitch(): number;
+            public static set PlayPitch(value: number);
+            
+            
+            public static Init():void;
+            
+            public static SetAlias($alias: string, $id: number):void;
+            
+            public static GetIdByAlias($alias: string):number;
+            
+            public static RemoveMap($alias: string):void;
+            
+            public static PlayVoice($path: string, $loop?: boolean, $pitch?: number, $end?: MediaManager.OnEnd):System.Threading.Tasks.Task$1<number>;
+            
+            public static PlayVoice($clip: UnityEngine.AudioClip, $loop?: boolean, $end?: MediaManager.OnEnd):number;
+            
+            public static PauseVoice($id: number):void;
+            
+            public static ResumeVoice($id: number):void;
+            
+            public static ResumeVoice($fileName: string):void;
+            
+            public static StopVoice($id: number):void;
+            
+            public static PauseAllVoice():void;
+            
+            public static ResumeAllVoice():void;
+            
+            public static StopAllVoice():void;
+            
+            public static SetVoicePitch($id: number):void;
+            
+            public static PlayMusic($name: string, $loop?: boolean):System.Threading.Tasks.Task;
+            
+            public static SetMusicPitch($pitch: number):void;
+            
+            public static PauseMusic():void;
+            
+            public static ResumeMusic():void;
+            
+            public static StopMusic():void;
+            
+            public static PlayMusic():void;
+            
+        }
+        
+        
+        class ResourcesManager extends System.Object{
+            
+            
+            public static LoadTexture($path: string):UnityEngine.Texture2D;
+            
+            public static LoadTextureAsync($path: string):System.Threading.Tasks.Task$1<UnityEngine.Texture>;
+            
+            public static LoadAudioClip($path: string):System.Threading.Tasks.Task$1<UnityEngine.AudioClip>;
+            
+            public static LoadSpine($atlasPath: string, $skeletonPath: string, ...texturePath: string[]):Spine.Unity.SkeletonDataAsset;
+            
+            public static LoadText($path: string):string;
+            
+            public static LoadData($path: string):System.Array$1<number>;
+            
+            public constructor();
+            
+        }
+        
+        
     
     namespace Puerts {
         
@@ -5184,15 +5867,712 @@ declare module 'csharp' {
         
         
     }
-    namespace FairyGUI {
+    namespace System.Threading.Tasks {
         
-        class TMPFont extends FairyGUI.BaseFont{
+        class Task$1<TResult> extends System.Threading.Tasks.Task implements System.IAsyncResult, System.Threading.IThreadPoolWorkItem, System.IDisposable{
             
-            public get fontAsset(): TMPro.TMP_FontAsset;
-            public set fontAsset(value: TMPro.TMP_FontAsset);
             
-            public get fontWeight(): TMPro.FontWeight;
-            public set fontWeight(value: TMPro.FontWeight);
+        }
+        
+        
+        class Task extends System.Object implements System.IAsyncResult, System.Threading.IThreadPoolWorkItem, System.IDisposable{
+            
+            
+        }
+        
+        
+    }
+    namespace MediaManager {
+        
+        type OnEnd = (data: MediaManager.Callback) => void;
+        var OnEnd: {new (func: (data: MediaManager.Callback) => void): OnEnd;}
+        
+        
+        class Callback extends System.Object{
+            
+            
+        }
+        
+        
+    }
+    namespace Spine.Unity {
+        
+        class SkeletonDataAsset extends UnityEngine.ScriptableObject{
+            
+            public atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>;
+            public scale: number;
+            public skeletonJSON: UnityEngine.TextAsset;
+            public skeletonDataModifiers: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataModifierAsset>;
+            public fromAnimation: System.Array$1<string>;
+            public toAnimation: System.Array$1<string>;
+            public duration: System.Array$1<number>;
+            public defaultMix: number;
+            public controller: UnityEngine.RuntimeAnimatorController;
+            public get IsLoaded(): boolean;
+            
+            
+            
+            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAsset: Spine.Unity.AtlasAssetBase, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
+            
+            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
+            
+            public Clear():void;
+            
+            public GetAnimationStateData():Spine.AnimationStateData;
+            
+            public GetSkeletonData($quiet: boolean):Spine.SkeletonData;
+            
+            public FillStateData():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimation extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, Spine.Unity.ISkeletonAnimation{
+            
+            public state: Spine.AnimationState;
+            public loop: boolean;
+            public timeScale: number;
+            public get AnimationState(): Spine.AnimationState;
+            
+            
+            public get AnimationName(): string;
+            public set AnimationName(value: string);
+            
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public static AddToGameObject($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
+            
+            public static NewSkeletonAnimationGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
+            
+            public Update($deltaTime: number):void;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class SkeletonRenderer extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent{
+            
+            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            public initialSkinName: string;
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public updateWhenInvisible: Spine.Unity.UpdateMode;
+            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
+            public zSpacing: number;
+            public useClipping: boolean;
+            public immutableTriangles: boolean;
+            public pmaVertexColors: boolean;
+            public clearStateOnDisable: boolean;
+            public tintBlack: boolean;
+            public singleSubmesh: boolean;
+            public fixDrawOrder: boolean;
+            public addNormals: boolean;
+            public calculateTangents: boolean;
+            public maskInteraction: UnityEngine.SpriteMaskInteraction;
+            public maskMaterials: Spine.Unity.SkeletonRenderer.SpriteMaskInteractionMaterials;
+            public static STENCIL_COMP_PARAM_ID: number;
+            public static STENCIL_COMP_MASKINTERACTION_NONE: UnityEngine.Rendering.CompareFunction;
+            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_INSIDE: UnityEngine.Rendering.CompareFunction;
+            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_OUTSIDE: UnityEngine.Rendering.CompareFunction;
+            public disableRenderingOnOverride: boolean;
+            public valid: boolean;
+            public skeleton: Spine.Skeleton;
+            public static SUBMESH_DUMMY_PARAM_ID: number;
+            public get EditorSkipSkinSync(): boolean;
+            public set EditorSkipSkinSync(value: boolean);
+            
+            public get UpdateMode(): Spine.Unity.UpdateMode;
+            public set UpdateMode(value: Spine.Unity.UpdateMode);
+            
+            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>;
+            
+            
+            public get CustomSlotMaterials(): System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            
+            public add_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
+            
+            public remove_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
+            
+            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public add_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public remove_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
+            
+            public SetMeshSettings($settings: Spine.Unity.MeshGenerator.Settings):void;
+            
+            public Awake():void;
+            
+            public ClearState():void;
+            
+            public EnsureMeshGeneratorCapacity($minimumVertexCount: number):void;
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public LateUpdate():void;
+            
+            public OnBecameVisible():void;
+            
+            public OnBecameInvisible():void;
+            
+            public FindAndApplySeparatorSlots($startsWith: string, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
+            
+            public FindAndApplySeparatorSlots($slotNamePredicate: System.Func$2<string, boolean>, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
+            
+            public ReapplySeparatorSlotNames():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface IHasSkeletonDataAsset{
+            
+            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            
+        }
+        
+        
+        interface ISkeletonComponent{
+            
+            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            Skeleton: Spine.Skeleton;
+            
+        }
+        
+        
+        interface IAnimationStateComponent{
+            
+            AnimationState: Spine.AnimationState;
+            
+        }
+        
+        
+        interface ISkeletonAnimation{
+            
+            Skeleton: Spine.Skeleton;
+            
+            add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class AnimationReferenceAsset extends UnityEngine.ScriptableObject implements Spine.Unity.IHasSkeletonDataAsset{
+            
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            public get Animation(): Spine.Animation;
+            
+            
+            
+            public Initialize():void;
+            
+            public static op_Implicit($asset: Spine.Unity.AnimationReferenceAsset):Spine.Animation;
+            
+            public constructor();
+            
+            public static op_Implicit($exists: UnityEngine.Object):boolean;
+            
+        }
+        
+        
+        class AtlasAssetBase extends UnityEngine.ScriptableObject{
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get IsLoaded(): boolean;
+            
+            
+            
+            public Clear():void;
+            
+            public GetAtlas():Spine.Atlas;
+            
+        }
+        
+        
+        class EventDataReferenceAsset extends UnityEngine.ScriptableObject{
+            
+            public get EventData(): Spine.EventData;
+            
+            
+            
+            public Initialize():void;
+            
+            public static op_Implicit($asset: Spine.Unity.EventDataReferenceAsset):Spine.EventData;
+            
+            public constructor();
+            
+            public static op_Implicit($exists: UnityEngine.Object):boolean;
+            
+        }
+        
+        
+        class RegionlessAttachmentLoader extends System.Object implements Spine.AttachmentLoader{
+            
+            
+            public NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
+            
+            public NewMeshAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.MeshAttachment;
+            
+            public NewBoundingBoxAttachment($skin: Spine.Skin, $name: string):Spine.BoundingBoxAttachment;
+            
+            public NewPathAttachment($skin: Spine.Skin, $name: string):Spine.PathAttachment;
+            
+            public NewPointAttachment($skin: Spine.Skin, $name: string):Spine.PointAttachment;
+            
+            public NewClippingAttachment($skin: Spine.Skin, $name: string):Spine.ClippingAttachment;
+            
+            public constructor();
+            
+            public NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
+            
+            public NewMeshAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.MeshAttachment;
+            
+            public NewBoundingBoxAttachment($skin: Spine.Skin, $name: string):Spine.BoundingBoxAttachment;
+            
+            public NewPathAttachment($skin: Spine.Skin, $name: string):Spine.PathAttachment;
+            
+            public NewPointAttachment($skin: Spine.Skin, $name: string):Spine.PointAttachment;
+            
+            public NewClippingAttachment($skin: Spine.Skin, $name: string):Spine.ClippingAttachment;
+            
+        }
+        
+        
+        class SkeletonDataModifierAsset extends UnityEngine.ScriptableObject{
+            
+            
+            public Apply($skeletonData: Spine.SkeletonData):void;
+            
+        }
+        
+        
+        class SkeletonDataCompatibility extends System.Object{
+            
+            
+            public static GetVersionInfo($asset: UnityEngine.TextAsset):Spine.Unity.SkeletonDataCompatibility.VersionInfo;
+            
+            public static GetCompatibilityProblemInfo($fileVersion: Spine.Unity.SkeletonDataCompatibility.VersionInfo):Spine.Unity.SkeletonDataCompatibility.CompatibilityProblemInfo;
+            
+            public static DisplayCompatibilityProblem($descriptionString: string, $spineJson: UnityEngine.TextAsset):void;
+            
+        }
+        
+        
+        class SpineAtlasAsset extends Spine.Unity.AtlasAssetBase{
+            
+            public atlasFile: UnityEngine.TextAsset;
+            public materials: System.Array$1<UnityEngine.Material>;
+            public get IsLoaded(): boolean;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $materialPropertySource: UnityEngine.Material, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $shader: UnityEngine.Shader, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
+            
+            public GenerateMesh($name: string, $mesh: UnityEngine.Mesh, $material: $Ref<UnityEngine.Material>, $scale?: number):UnityEngine.Mesh;
+            
+            public constructor();
+            
+        }
+        
+        
+        class MaterialsTextureLoader extends System.Object implements Spine.TextureLoader{
+            
+            
+            public Load($page: Spine.AtlasPage, $path: string):void;
+            
+            public Unload($texture: any):void;
+            
+            public constructor($atlasAsset: Spine.Unity.SpineAtlasAsset);
+            
+            public Load($page: Spine.AtlasPage, $path: string):void;
+            
+            public Unload($texture: any):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSpriteAtlasAsset extends Spine.Unity.AtlasAssetBase{
+            
+            public spriteAtlasFile: UnityEngine.U2D.SpriteAtlas;
+            public materials: System.Array$1<UnityEngine.Material>;
+            public updateRegionsInPlayMode: boolean;
+            public get IsLoaded(): boolean;
+            
+            
+            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
+            
+            
+            public get MaterialCount(): number;
+            
+            
+            public get PrimaryMaterial(): UnityEngine.Material;
+            
+            
+            public get RegionsNeedLoading(): boolean;
+            
+            
+            
+            public static CreateRuntimeInstance($spriteAtlasFile: UnityEngine.U2D.SpriteAtlas, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineSpriteAtlasAsset;
+            
+            public static UpdateByStartingEditorPlayMode():void;
+            
+            public static AnySpriteAtlasNeedsRegionsLoaded():boolean;
+            
+            public static UpdateWhenEditorPlayModeStarted():void;
+            
+            public LoadRegionsInEditorPlayMode():void;
+            
+            public static AccessPackedTextureEditor($spriteAtlas: UnityEngine.U2D.SpriteAtlas):UnityEngine.Texture2D;
+            
+            public static AccessPackedTexture($sprites: System.Array$1<UnityEngine.Sprite>):UnityEngine.Texture2D;
+            
+            public static AccessPackedSprites($spriteAtlas: UnityEngine.U2D.SpriteAtlas):System.Array$1<UnityEngine.Sprite>;
+            
+            public constructor();
+            
+        }
+        
+        
+        class BoneFollower extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public boneName: string;
+            public followXYPosition: boolean;
+            public followZPosition: boolean;
+            public followBoneRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followLocalScale: boolean;
+            public initializeOnAwake: boolean;
+            public valid: boolean;
+            public bone: Spine.Bone;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
+            
+            
+            public SetBone($name: string):boolean;
+            
+            public Awake():void;
+            
+            public HandleRebuildRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer):void;
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class BoneFollowerGraphic extends UnityEngine.MonoBehaviour{
+            
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public initializeOnAwake: boolean;
+            public boneName: string;
+            public followBoneRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followLocalScale: boolean;
+            public followXYPosition: boolean;
+            public followZPosition: boolean;
+            public bone: Spine.Bone;
+            public valid: boolean;
+            public get SkeletonGraphic(): Spine.Unity.SkeletonGraphic;
+            public set SkeletonGraphic(value: Spine.Unity.SkeletonGraphic);
+            
+            
+            public SetBone($name: string):boolean;
+            
+            public Awake():void;
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonGraphic extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable, Spine.Unity.ISkeletonAnimation{
+            
+            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
+            public initialSkinName: string;
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public startingAnimation: string;
+            public startingLoop: boolean;
+            public timeScale: number;
+            public freeze: boolean;
+            public updateWhenInvisible: Spine.Unity.UpdateMode;
+            public unscaledTime: boolean;
+            public allowMultipleCanvasRenderers: boolean;
+            public canvasRenderers: System.Collections.Generic.List$1<UnityEngine.CanvasRenderer>;
+            public static SeparatorPartGameObjectName: string;
+            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
+            public enableSeparatorSlots: boolean;
+            public updateSeparatorPartLocation: boolean;
+            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            
+            
+            public get UpdateMode(): Spine.Unity.UpdateMode;
+            public set UpdateMode(value: Spine.Unity.UpdateMode);
+            
+            public get SeparatorParts(): System.Collections.Generic.List$1<UnityEngine.Transform>;
+            
+            
+            public get CustomTextureOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Texture>;
+            
+            
+            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Material>;
+            
+            
+            public get OverrideTexture(): UnityEngine.Texture;
+            public set OverrideTexture(value: UnityEngine.Texture);
+            
+            public get mainTexture(): UnityEngine.Texture;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            public set Skeleton(value: Spine.Skeleton);
+            
+            public get SkeletonData(): Spine.SkeletonData;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            public get AnimationState(): Spine.AnimationState;
+            
+            
+            public get MeshGenerator(): Spine.Unity.MeshGenerator;
+            
+            
+            
+            public static NewSkeletonGraphicGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $parent: UnityEngine.Transform, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
+            
+            public static AddSkeletonGraphicComponent($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
+            
+            public Update():void;
+            
+            public Update($deltaTime: number):void;
+            
+            public LateUpdate():void;
+            
+            public OnBecameVisible():void;
+            
+            public OnBecameInvisible():void;
+            
+            public ReapplySeparatorSlotNames():void;
+            
+            public add_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public remove_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
+            
+            public GetLastMesh():UnityEngine.Mesh;
+            
+            public MatchRectTransformWithBounds():boolean;
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
+            
+            public Clear():void;
+            
+            public TrimRenderers():void;
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public UpdateMesh():void;
+            
+            public HasMultipleSubmeshInstructions():boolean;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class BoundingBoxFollower extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public slotName: string;
+            public isTrigger: boolean;
+            public clearStateOnDisable: boolean;
+            public colliderTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, UnityEngine.PolygonCollider2D>;
+            public nameTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, string>;
+            public get Slot(): Spine.Slot;
+            
+            
+            public get CurrentAttachment(): Spine.BoundingBoxAttachment;
+            
+            
+            public get CurrentAttachmentName(): string;
+            
+            
+            public get CurrentCollider(): UnityEngine.PolygonCollider2D;
+            
+            
+            public get IsTrigger(): boolean;
+            
+            
+            
+            public Initialize($overwrite?: boolean):void;
+            
+            public ClearState():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class PointFollower extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonRenderer, Spine.Unity.IHasSkeletonComponent{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public slotName: string;
+            public pointAttachmentName: string;
+            public followRotation: boolean;
+            public followSkeletonFlip: boolean;
+            public followSkeletonZPosition: boolean;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            
+            
+            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            
+            public Initialize():void;
+            
+            public LateUpdate():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface IHasSkeletonRenderer{
+            
+            SkeletonRenderer: Spine.Unity.SkeletonRenderer;
+            
+        }
+        
+        
+        interface IHasSkeletonComponent{
+            
+            SkeletonComponent: Spine.Unity.ISkeletonComponent;
+            
+        }
+        
+        
+        class SkeletonMecanimRootMotion extends Spine.Unity.SkeletonRootMotionBase{
+            
+            public mecanimLayerFlags: number;
+            public get SkeletonMecanim(): Spine.Unity.SkeletonMecanim;
+            
             
             
             public constructor();
@@ -5200,33 +6580,402 @@ declare module 'csharp' {
         }
         
         
-        class BaseFont extends System.Object{
+        class SkeletonRootMotionBase extends UnityEngine.MonoBehaviour{
             
-            public name: string;
-            public mainTexture: FairyGUI.NTexture;
-            public canTint: boolean;
-            public customBold: boolean;
-            public customBoldAndItalic: boolean;
-            public customOutline: boolean;
-            public shader: string;
-            public keepCrisp: boolean;
-            public version: number;
+            public transformPositionX: boolean;
+            public transformPositionY: boolean;
+            public rigidBody2D: UnityEngine.Rigidbody2D;
+            public rigidBody: UnityEngine.Rigidbody;
+            public get UsesRigidbody(): boolean;
             
-            public UpdateGraphics($graphics: FairyGUI.NGraphics):void;
             
-            public SetFormat($format: FairyGUI.TextFormat, $fontSizeScale: number):void;
             
-            public PrepareCharacters($text: string):void;
+            public SetRootMotionBone($name: string):void;
             
-            public GetGlyph($ch: number, $width: $Ref<number>, $height: $Ref<number>, $baseline: $Ref<number>):boolean;
+        }
+        
+        
+        class SkeletonMecanim extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.ISkeletonAnimation{
             
-            public DrawGlyph($x: number, $y: number, $vertList: System.Collections.Generic.List$1<UnityEngine.Vector3>, $uvList: System.Collections.Generic.List$1<UnityEngine.Vector2>, $uv2List: System.Collections.Generic.List$1<UnityEngine.Vector2>, $colList: System.Collections.Generic.List$1<UnityEngine.Color32>):number;
+            public get Translator(): Spine.Unity.SkeletonMecanim.MecanimTranslator;
             
-            public DrawLine($x: number, $y: number, $width: number, $fontSize: number, $type: number, $vertList: System.Collections.Generic.List$1<UnityEngine.Vector3>, $uvList: System.Collections.Generic.List$1<UnityEngine.Vector2>, $uv2List: System.Collections.Generic.List$1<UnityEngine.Vector2>, $colList: System.Collections.Generic.List$1<UnityEngine.Color32>):number;
             
-            public HasCharacter($ch: number):boolean;
             
-            public GetLineHeight($size: number):number;
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public Update():void;
+            
+            public constructor();
+            
+            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
+            
+        }
+        
+        
+        class SkeletonRootMotion extends Spine.Unity.SkeletonRootMotionBase{
+            
+            public animationTrackFlags: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        type UpdateBonesDelegate = (animated: Spine.Unity.ISkeletonAnimation) => void;
+        var UpdateBonesDelegate: {new (func: (animated: Spine.Unity.ISkeletonAnimation) => void): UpdateBonesDelegate;}
+        
+        
+        enum UpdateMode{ Nothing = 0, OnlyAnimationStatus = 1, EverythingExceptMesh = 2, FullUpdate = 3 }
+        
+        
+        class MeshGenerator extends System.Object{
+            
+            public settings: Spine.Unity.MeshGenerator.Settings;
+            public get VertexCount(): number;
+            
+            
+            public get Buffers(): Spine.Unity.MeshGeneratorBuffers;
+            
+            
+            
+            public static GenerateSingleSubmeshInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $material: UnityEngine.Material):void;
+            
+            public static RequiresMultipleSubmeshesByDrawOrder($skeleton: Spine.Skeleton):boolean;
+            
+            public static GenerateSkeletonRendererInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $customSlotMaterials: System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>, $separatorSlots: System.Collections.Generic.List$1<Spine.Slot>, $generateMeshOverride: boolean, $immutableTriangles?: boolean):void;
+            
+            public static TryReplaceMaterials($workingSubmeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $customMaterialOverride: System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>):void;
+            
+            public Begin():void;
+            
+            public AddSubmesh($instruction: Spine.Unity.SubmeshInstruction, $updateTriangles?: boolean):void;
+            
+            public BuildMesh($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
+            
+            public BuildMeshWithArrays($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
+            
+            public ScaleVertexData($scale: number):void;
+            
+            public FillVertexData($mesh: UnityEngine.Mesh):void;
+            
+            public FillLateVertexData($mesh: UnityEngine.Mesh):void;
+            
+            public FillTriangles($mesh: UnityEngine.Mesh):void;
+            
+            public EnsureVertexCapacity($minimumVertexCount: number, $inlcudeTintBlack?: boolean, $includeTangents?: boolean, $includeNormals?: boolean):void;
+            
+            public TrimExcess():void;
+            
+            public static FillMeshLocal($mesh: UnityEngine.Mesh, $regionAttachment: Spine.RegionAttachment):void;
+            
+            public static FillMeshLocal($mesh: UnityEngine.Mesh, $meshAttachment: Spine.MeshAttachment, $skeletonData: Spine.SkeletonData):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        type MeshGeneratorDelegate = (buffers: Spine.Unity.MeshGeneratorBuffers) => void;
+        var MeshGeneratorDelegate: {new (func: (buffers: Spine.Unity.MeshGeneratorBuffers) => void): MeshGeneratorDelegate;}
+        
+        
+        class MeshGeneratorBuffers extends System.ValueType{
+            
+            public vertexCount: number;
+            public vertexBuffer: System.Array$1<UnityEngine.Vector3>;
+            public uvBuffer: System.Array$1<UnityEngine.Vector2>;
+            public colorBuffer: System.Array$1<UnityEngine.Color32>;
+            public meshGenerator: Spine.Unity.MeshGenerator;
+            
+        }
+        
+        
+        class SkeletonPartsRenderer extends UnityEngine.MonoBehaviour{
+            
+            public get MeshGenerator(): Spine.Unity.MeshGenerator;
+            
+            
+            public get MeshRenderer(): UnityEngine.MeshRenderer;
+            
+            
+            public get MeshFilter(): UnityEngine.MeshFilter;
+            
+            
+            
+            public ClearMesh():void;
+            
+            public RenderParts($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
+            
+            public SetPropertyBlock($block: UnityEngine.MaterialPropertyBlock):void;
+            
+            public static NewPartsRendererGameObject($parent: UnityEngine.Transform, $name: string, $sortingOrder?: number):Spine.Unity.SkeletonPartsRenderer;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SubmeshInstruction extends System.ValueType{
+            
+            public skeleton: Spine.Skeleton;
+            public startSlot: number;
+            public endSlot: number;
+            public material: UnityEngine.Material;
+            public forceSeparate: boolean;
+            public preActiveClippingSlotSource: number;
+            public rawTriangleCount: number;
+            public rawVertexCount: number;
+            public rawFirstVertexIndex: number;
+            public hasClipping: boolean;
+            public get SlotCount(): number;
+            
+            
+            
+        }
+        
+        
+        class SkeletonRenderSeparator extends UnityEngine.MonoBehaviour{
+            
+            public static DefaultSortingOrderIncrement: number;
+            public copyPropertyBlock: boolean;
+            public copyMeshRendererFlags: boolean;
+            public partsRenderers: System.Collections.Generic.List$1<Spine.Unity.SkeletonPartsRenderer>;
+            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
+            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
+            
+            
+            public static AddToSkeletonRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer, $sortingLayerID?: number, $extraPartsRenderers?: number, $sortingOrderIncrement?: number, $baseSortingOrder?: number, $addMinimumPartsRenderers?: boolean):Spine.Unity.SkeletonRenderSeparator;
+            
+            public AddPartsRenderer($sortingOrderIncrement?: number, $name?: string):Spine.Unity.SkeletonPartsRenderer;
+            
+            public OnEnable():void;
+            
+            public OnDisable():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRendererInstruction extends System.Object{
+            
+            public submeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>;
+            public immutableTriangles: boolean;
+            public hasActiveClipping: boolean;
+            public rawVertexCount: number;
+            public attachments: Spine.ExposedList$1<Spine.Attachment>;
+            
+            public Clear():void;
+            
+            public Dispose():void;
+            
+            public SetWithSubset($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
+            
+            public Set($other: Spine.Unity.SkeletonRendererInstruction):void;
+            
+            public static GeometryNotEqual($a: Spine.Unity.SkeletonRendererInstruction, $b: Spine.Unity.SkeletonRendererInstruction):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonGraphicCustomMaterials extends UnityEngine.MonoBehaviour{
+            
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonRendererCustomMaterials extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            
+            public constructor();
+            
+        }
+        
+        
+        class ActivateBasedOnFlipDirection extends UnityEngine.MonoBehaviour{
+            
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public activeOnNormalX: UnityEngine.GameObject;
+            public activeOnFlippedX: UnityEngine.GameObject;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowLocationRigidbody extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowLocationRigidbody2D extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            public followFlippedX: boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FollowSkeletonUtilityRootRotation extends UnityEngine.MonoBehaviour{
+            
+            public reference: UnityEngine.Transform;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtility extends UnityEngine.MonoBehaviour{
+            
+            public boneRoot: UnityEngine.Transform;
+            public flipBy180DegreeRotation: boolean;
+            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
+            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
+            public skeletonAnimation: Spine.Unity.ISkeletonAnimation;
+            public boneComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityBone>;
+            public constraintComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityConstraint>;
+            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get IsValid(): boolean;
+            
+            
+            public get PositionScale(): number;
+            
+            
+            
+            public static AddBoundingBoxGameObject($skeleton: Spine.Skeleton, $skinName: string, $slotName: string, $attachmentName: string, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static AddBoundingBoxGameObject($name: string, $box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static AddBoundingBoxAsComponent($box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $gameObject: UnityEngine.GameObject, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
+            
+            public static SetColliderPointsLocal($collider: UnityEngine.PolygonCollider2D, $slot: Spine.Slot, $box: Spine.BoundingBoxAttachment):void;
+            
+            public static GetBoundingBoxBounds($boundingBox: Spine.BoundingBoxAttachment, $depth?: number):UnityEngine.Bounds;
+            
+            public static AddBoneRigidbody2D($gameObject: UnityEngine.GameObject, $isKinematic?: boolean, $gravityScale?: number):UnityEngine.Rigidbody2D;
+            
+            public add_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
+            
+            public remove_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
+            
+            public ResubscribeEvents():void;
+            
+            public RegisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
+            
+            public UnregisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
+            
+            public RegisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
+            
+            public UnregisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
+            
+            public CollectBones():void;
+            
+            public GetBoneRoot():UnityEngine.Transform;
+            
+            public SpawnRoot($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnHierarchy($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnBoneRecursively($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public SpawnBone($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtilityBone extends UnityEngine.MonoBehaviour{
+            
+            public boneName: string;
+            public parentReference: UnityEngine.Transform;
+            public mode: Spine.Unity.SkeletonUtilityBone.Mode;
+            public position: boolean;
+            public rotation: boolean;
+            public scale: boolean;
+            public zPosition: boolean;
+            public overrideAlpha: number;
+            public hierarchy: Spine.Unity.SkeletonUtility;
+            public bone: Spine.Bone;
+            public transformLerpComplete: boolean;
+            public valid: boolean;
+            public get IncompatibleTransformMode(): boolean;
+            
+            
+            
+            public Reset():void;
+            
+            public DoUpdate($phase: Spine.Unity.SkeletonUtilityBone.UpdatePhase):void;
+            
+            public static BoneTransformModeIncompatible($bone: Spine.Bone):boolean;
+            
+            public AddBoundingBox($skinName: string, $slotName: string, $attachmentName: string):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonUtilityConstraint extends UnityEngine.MonoBehaviour{
+            
+            
+            public DoUpdate():void;
+            
+        }
+        
+        
+        class MeshRendererBuffers extends System.Object implements System.IDisposable{
+            
+            
+            public Initialize():void;
+            
+            public GetUpdatedSharedMaterialsArray():System.Array$1<UnityEngine.Material>;
+            
+            public MaterialsChangedInLastUpdate():boolean;
+            
+            public UpdateSharedMaterials($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>):void;
+            
+            public GetNextMesh():Spine.Unity.MeshRendererBuffers.SmartMesh;
+            
+            public Clear():void;
             
             public Dispose():void;
             
@@ -5235,355 +6984,445 @@ declare module 'csharp' {
         }
         
         
-        class NGraphics extends System.Object implements FairyGUI.IMeshFactory{
-            
-            public blendMode: FairyGUI.BlendMode;
-            public dontClip: boolean;
-            public get gameObject(): UnityEngine.GameObject;
+        class SpineMesh extends System.Object{
             
             
-            public get meshFilter(): UnityEngine.MeshFilter;
+            public static NewSkeletonMesh():UnityEngine.Mesh;
+            
+        }
+        
+        
+        class BlendModeMaterialsAsset extends Spine.Unity.SkeletonDataModifierAsset{
+            
+            public multiplyMaterialTemplate: UnityEngine.Material;
+            public screenMaterialTemplate: UnityEngine.Material;
+            public additiveMaterialTemplate: UnityEngine.Material;
+            public applyAdditiveMaterial: boolean;
+            
+            public static ApplyMaterials($skeletonData: Spine.SkeletonData, $multiplyTemplate: UnityEngine.Material, $screenTemplate: UnityEngine.Material, $additiveTemplate: UnityEngine.Material, $includeAdditiveSlots: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAttributeBase extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
+            
+            public dataField: string;
+            public startsWith: string;
+            public includeNone: boolean;
+            public fallbackToTextField: boolean;
+            
+        }
+        
+        
+        class SpineBone extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
             
             
-            public get meshRenderer(): UnityEngine.MeshRenderer;
+            public static GetBone($boneName: string, $renderer: Spine.Unity.SkeletonRenderer):Spine.Bone;
+            
+            public static GetBoneData($boneName: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.BoneData;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSlot extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public containsBoundingBoxes: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $containsBoundingBoxes?: boolean, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAnimation extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
             
             
-            public get mesh(): UnityEngine.Mesh;
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineEvent extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public audioOnly: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $audioOnly?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineIkConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
             
             
-            public get meshFactory(): FairyGUI.IMeshFactory;
-            public set meshFactory(value: FairyGUI.IMeshFactory);
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
             
-            public get contentRect(): UnityEngine.Rect;
-            public set contentRect(value: UnityEngine.Rect);
+            public constructor();
             
-            public get flip(): FairyGUI.FlipType;
-            public set flip(value: FairyGUI.FlipType);
+        }
+        
+        
+        class SpineTransformConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
             
-            public get texture(): FairyGUI.NTexture;
-            public set texture(value: FairyGUI.NTexture);
             
-            public get shader(): string;
-            public set shader(value: string);
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpinePathConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSkin extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public defaultAsEmptyString: boolean;
+            
+            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $defaultAsEmptyString?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAttachment extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
+            
+            public returnAttachmentPath: boolean;
+            public currentSkinOnly: boolean;
+            public placeholdersOnly: boolean;
+            public skinField: string;
+            public slotField: string;
+            
+            public static GetHierarchy($fullPath: string):Spine.Unity.SpineAttachment.Hierarchy;
+            
+            public static GetAttachment($attachmentPath: string, $skeletonData: Spine.SkeletonData):Spine.Attachment;
+            
+            public static GetAttachment($attachmentPath: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Attachment;
+            
+            public constructor($currentSkinOnly?: boolean, $returnAttachmentPath?: boolean, $placeholdersOnly?: boolean, $slotField?: string, $dataField?: string, $skinField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineAtlasRegion extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
+            
+            public atlasAssetField: string;
+            
+            public constructor($atlasAssetField?: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        class MaterialChecks extends System.Object{
+            
+            public static kPMANotSupportedLinearMessage: string;
+            public static kZSpacingRequiredMessage: string;
+            public static kZSpacingRecommendedMessage: string;
+            public static kAddNormalsRequiredMessage: string;
+            
+            public static IsMaterialSetupProblematic($renderer: Spine.Unity.SkeletonRenderer, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsMaterialSetupProblematic($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsZSpacingRequired($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static IsColorSpaceSupported($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
+            
+            public static UsesSpineShader($material: UnityEngine.Material):boolean;
+            
+            public static IsTextureSetupProblematic($material: UnityEngine.Material, $colorSpace: UnityEngine.ColorSpace, $sRGBTexture: boolean, $mipmapEnabled: boolean, $alphaIsTransparency: boolean, $texturePath: string, $materialPath: string, $errorMessage: $Ref<string>):boolean;
+            
+            public static EnablePMAAtMaterial($material: UnityEngine.Material, $enablePMA: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonExtensions extends System.Object{
+            
+            
+            public static GetColor($s: Spine.Skeleton):UnityEngine.Color;
+            
+            public static GetColor($a: Spine.RegionAttachment):UnityEngine.Color;
+            
+            public static GetColor($a: Spine.MeshAttachment):UnityEngine.Color;
+            
+            public static GetColor($s: Spine.Slot):UnityEngine.Color;
+            
+            public static GetColorTintBlack($s: Spine.Slot):UnityEngine.Color;
+            
+            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color):void;
+            
+            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color):void;
+            
+            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color):void;
+            
+            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color32):void;
+            
+            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color):void;
+            
+            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color32):void;
+            
+            public static SetLocalScale($skeleton: Spine.Skeleton, $scale: UnityEngine.Vector2):void;
+            
+            public static GetMatrix4x4($bone: Spine.Bone):UnityEngine.Matrix4x4;
+            
+            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector2):void;
+            
+            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector3):void;
+            
+            public static GetLocalPosition($bone: Spine.Bone):UnityEngine.Vector2;
+            
+            public static GetSkeletonSpacePosition($bone: Spine.Bone):UnityEngine.Vector2;
+            
+            public static GetSkeletonSpacePosition($bone: Spine.Bone, $boneLocal: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform, $positionScale: number):UnityEngine.Vector3;
+            
+            public static GetQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
+            
+            public static GetLocalQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
+            
+            public static GetLocalScale($skeleton: Spine.Skeleton):UnityEngine.Vector2;
+            
+            public static GetWorldToLocalMatrix($bone: Spine.Bone, $ia: $Ref<number>, $ib: $Ref<number>, $ic: $Ref<number>, $id: $Ref<number>):void;
+            
+            public static WorldToLocal($bone: Spine.Bone, $worldPosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static SetPositionSkeletonSpace($bone: Spine.Bone, $skeletonSpacePosition: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public static GetMaterial($a: Spine.Attachment):UnityEngine.Material;
+            
+            public static GetLocalVertices($va: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            public static GetWorldVertices($a: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            public static GetWorldPosition($attachment: Spine.PointAttachment, $slot: Spine.Slot, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+            public static GetWorldPosition($attachment: Spine.PointAttachment, $bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
+            
+        }
+        
+        
+        class WaitForSpineAnimation extends System.Object implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineAnimationComplete extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean):Spine.Unity.WaitForSpineAnimationComplete;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean);
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineAnimationEnd extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineAnimationEnd;
+            
+            public constructor($trackEntry: Spine.TrackEntry);
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
+            
+            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineEvent extends System.Object implements System.Collections.IEnumerator{
+            
+            public get WillUnsubscribeAfterFiring(): boolean;
+            public set WillUnsubscribeAfterFiring(value: boolean);
+            
+            
+            public NowWaitFor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
+            
+            public NowWaitFor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
+            
+            public constructor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventName: string, $unsubscribeAfterFiring?: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WaitForSpineTrackEntryEnd extends System.Object implements System.Collections.IEnumerator{
+            
+            
+            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineTrackEntryEnd;
+            
+            public constructor($trackEntry: Spine.TrackEntry);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimationFixedTimestep extends UnityEngine.MonoBehaviour{
+            
+            public skeletonAnimation: Spine.Unity.SkeletonAnimation;
+            public frameDeltaTime: number;
+            public maxFrameSkip: number;
+            public frameskipMeshUpdate: boolean;
+            public timeOffset: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonAnimationMulti extends UnityEngine.MonoBehaviour{
+            
+            public initialFlipX: boolean;
+            public initialFlipY: boolean;
+            public initialAnimation: string;
+            public initialLoop: boolean;
+            public skeletonDataAssets: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataAsset>;
+            public meshGeneratorSettings: Spine.Unity.MeshGenerator.Settings;
+            public get AnimationSkeletonTable(): System.Collections.Generic.Dictionary$2<Spine.Animation, Spine.Unity.SkeletonAnimation>;
+            
+            
+            public get AnimationNameTable(): System.Collections.Generic.Dictionary$2<string, Spine.Animation>;
+            
+            
+            public get CurrentSkeletonAnimation(): Spine.Unity.SkeletonAnimation;
+            
+            
+            
+            public Initialize($overwrite: boolean):void;
+            
+            public FindAnimation($animationName: string):Spine.Animation;
+            
+            public SetAnimation($animationName: string, $loop: boolean):Spine.TrackEntry;
+            
+            public SetAnimation($animation: Spine.Animation, $loop: boolean):Spine.TrackEntry;
+            
+            public SetEmptyAnimation($mixDuration: number):void;
+            
+            public ClearAnimation():void;
+            
+            public GetCurrent():Spine.TrackEntry;
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace FairyGUI {
+        
+        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
+            
+            public get spineAnimation(): Spine.Unity.SkeletonAnimation;
+            
+            
+            public get url(): string;
+            public set url(value: string);
+            
+            public get icon(): string;
+            public set icon(value: string);
+            
+            public get align(): FairyGUI.AlignType;
+            public set align(value: FairyGUI.AlignType);
+            
+            public get verticalAlign(): FairyGUI.VertAlignType;
+            public set verticalAlign(value: FairyGUI.VertAlignType);
+            
+            public get fill(): FairyGUI.FillType;
+            public set fill(value: FairyGUI.FillType);
+            
+            public get shrinkOnly(): boolean;
+            public set shrinkOnly(value: boolean);
+            
+            public get autoSize(): boolean;
+            public set autoSize(value: boolean);
+            
+            public get playing(): boolean;
+            public set playing(value: boolean);
+            
+            public get frame(): number;
+            public set frame(value: number);
+            
+            public get timeScale(): number;
+            public set timeScale(value: number);
+            
+            public get ignoreEngineTimeScale(): boolean;
+            public set ignoreEngineTimeScale(value: boolean);
+            
+            public get loop(): boolean;
+            public set loop(value: boolean);
+            
+            public get animationName(): string;
+            public set animationName(value: string);
+            
+            public get skinName(): string;
+            public set skinName(value: string);
             
             public get material(): UnityEngine.Material;
             public set material(value: UnityEngine.Material);
             
-            public get materialKeywords(): System.Array$1<string>;
-            public set materialKeywords(value: System.Array$1<string>);
-            
-            public get enabled(): boolean;
-            public set enabled(value: boolean);
-            
-            public get sortingOrder(): number;
-            public set sortingOrder(value: number);
+            public get shader(): string;
+            public set shader(value: string);
             
             public get color(): UnityEngine.Color;
             public set color(value: UnityEngine.Color);
             
-            public get vertexMatrix(): FairyGUI.NGraphics.VertexMatrix;
-            public set vertexMatrix(value: FairyGUI.NGraphics.VertexMatrix);
+            public get wrapTarget(): UnityEngine.GameObject;
             
-            public get materialPropertyBlock(): UnityEngine.MaterialPropertyBlock;
-            
-            
-            
-            public add_meshModifier($value: System.Action):void;
-            
-            public remove_meshModifier($value: System.Action):void;
-            
-            public SetShaderAndTexture($shader: string, $texture: FairyGUI.NTexture):void;
-            
-            public SetMaterial($material: UnityEngine.Material):void;
-            
-            public ToggleKeyword($keyword: string, $enabled: boolean):void;
-            
-            public Tint():void;
-            
-            public SetMeshDirty():void;
-            
-            public UpdateMesh():boolean;
-            
-            public Dispose():void;
-            
-            public Update($context: FairyGUI.UpdateContext, $alpha: number, $grayed: boolean):void;
-            
-            public OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
-            
-            public constructor($gameObject: UnityEngine.GameObject);
-            
-            public OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        interface IMeshFactory{
-            
-            
-            OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
-            
-        }
-        
-        
-        class TextFormat extends System.Object{
-            
-            public faceDilate: number;
-            public outlineSoftness: number;
-            public underlaySoftness: number;
-            public size: number;
-            public font: string;
-            public color: UnityEngine.Color;
-            public lineSpacing: number;
-            public letterSpacing: number;
-            public bold: boolean;
-            public underline: boolean;
-            public italic: boolean;
-            public strikethrough: boolean;
-            public gradientColor: System.Array$1<UnityEngine.Color32>;
-            public align: FairyGUI.AlignType;
-            public specialStyle: FairyGUI.TextFormat.SpecialStyle;
-            public outline: number;
-            public outlineColor: UnityEngine.Color;
-            public shadowOffset: UnityEngine.Vector2;
-            public shadowColor: UnityEngine.Color;
-            
-            public SetColor($value: number):void;
-            
-            public EqualStyle($aFormat: FairyGUI.TextFormat):boolean;
-            
-            public CopyFrom($source: FairyGUI.TextFormat):void;
-            
-            public FillVertexColors($vertexColors: System.Array$1<UnityEngine.Color32>):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        enum AlignType{ Left = 0, Center = 1, Right = 2 }
-        
-        
-        class BlendModeUtils extends System.Object{
-            
-            public static Factors: System.Array$1<FairyGUI.BlendModeUtils.BlendFactor>;
-            
-            public static Apply($mat: UnityEngine.Material, $blendMode: FairyGUI.BlendMode):void;
-            
-            public static Override($blendMode: FairyGUI.BlendMode, $srcFactor: UnityEngine.Rendering.BlendMode, $dstFactor: UnityEngine.Rendering.BlendMode):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        enum BlendMode{ Normal = 0, None = 1, Add = 2, Multiply = 3, Screen = 4, Erase = 5, Mask = 6, Below = 7, Off = 8, One_OneMinusSrcAlpha = 9, Custom1 = 10, Custom2 = 11, Custom3 = 12 }
-        
-        
-        class CaptureCamera extends UnityEngine.MonoBehaviour{
-            
-            public cachedTransform: UnityEngine.Transform;
-            public cachedCamera: UnityEngine.Camera;
-            public static Name: string;
-            public static LayerName: string;
-            public static HiddenLayerName: string;
-            public static get layer(): number;
-            
-            
-            public static get hiddenLayer(): number;
-            
-            
-            
-            public static CheckMain():void;
-            
-            public static CreateRenderTexture($width: number, $height: number, $stencilSupport: boolean):UnityEngine.RenderTexture;
-            
-            public static Capture($target: FairyGUI.DisplayObject, $texture: UnityEngine.RenderTexture, $contentHeight: number, $offset: UnityEngine.Vector2):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class DisplayObject extends FairyGUI.EventDispatcher implements FairyGUI.IEventDispatcher{
-            
-            public name: string;
-            public gOwner: FairyGUI.GObject;
-            public id: number;
-            public get parent(): FairyGUI.Container;
-            
-            
-            public get gameObject(): UnityEngine.GameObject;
-            
-            
-            public get cachedTransform(): UnityEngine.Transform;
-            
-            
-            public get graphics(): FairyGUI.NGraphics;
-            
-            
-            public get paintingGraphics(): FairyGUI.NGraphics;
-            
-            
-            public get onClick(): FairyGUI.EventListener;
-            
-            
-            public get onRightClick(): FairyGUI.EventListener;
-            
-            
-            public get onTouchBegin(): FairyGUI.EventListener;
-            
-            
-            public get onTouchMove(): FairyGUI.EventListener;
-            
-            
-            public get onTouchEnd(): FairyGUI.EventListener;
-            
-            
-            public get onRollOver(): FairyGUI.EventListener;
-            
-            
-            public get onRollOut(): FairyGUI.EventListener;
-            
-            
-            public get onMouseWheel(): FairyGUI.EventListener;
-            
-            
-            public get onAddedToStage(): FairyGUI.EventListener;
-            
-            
-            public get onRemovedFromStage(): FairyGUI.EventListener;
-            
-            
-            public get onKeyDown(): FairyGUI.EventListener;
-            
-            
-            public get onClickLink(): FairyGUI.EventListener;
-            
-            
-            public get onFocusIn(): FairyGUI.EventListener;
-            
-            
-            public get onFocusOut(): FairyGUI.EventListener;
-            
-            
-            public get alpha(): number;
-            public set alpha(value: number);
-            
-            public get grayed(): boolean;
-            public set grayed(value: boolean);
-            
-            public get visible(): boolean;
-            public set visible(value: boolean);
-            
-            public get x(): number;
-            public set x(value: number);
-            
-            public get y(): number;
-            public set y(value: number);
-            
-            public get z(): number;
-            public set z(value: number);
-            
-            public get xy(): UnityEngine.Vector2;
-            public set xy(value: UnityEngine.Vector2);
-            
-            public get position(): UnityEngine.Vector3;
-            public set position(value: UnityEngine.Vector3);
-            
-            public get pixelPerfect(): boolean;
-            public set pixelPerfect(value: boolean);
-            
-            public get width(): number;
-            public set width(value: number);
-            
-            public get height(): number;
-            public set height(value: number);
-            
-            public get size(): UnityEngine.Vector2;
-            public set size(value: UnityEngine.Vector2);
-            
-            public get scaleX(): number;
-            public set scaleX(value: number);
-            
-            public get scaleY(): number;
-            public set scaleY(value: number);
-            
-            public get scale(): UnityEngine.Vector2;
-            public set scale(value: UnityEngine.Vector2);
-            
-            public get rotation(): number;
-            public set rotation(value: number);
-            
-            public get rotationX(): number;
-            public set rotationX(value: number);
-            
-            public get rotationY(): number;
-            public set rotationY(value: number);
-            
-            public get skew(): UnityEngine.Vector2;
-            public set skew(value: UnityEngine.Vector2);
-            
-            public get perspective(): boolean;
-            public set perspective(value: boolean);
-            
-            public get focalLength(): number;
-            public set focalLength(value: number);
-            
-            public get pivot(): UnityEngine.Vector2;
-            public set pivot(value: UnityEngine.Vector2);
-            
-            public get location(): UnityEngine.Vector3;
-            public set location(value: UnityEngine.Vector3);
-            
-            public get material(): UnityEngine.Material;
-            public set material(value: UnityEngine.Material);
-            
-            public get shader(): string;
-            public set shader(value: string);
-            
-            public get renderingOrder(): number;
-            public set renderingOrder(value: number);
-            
-            public get layer(): number;
-            public set layer(value: number);
-            
-            public get focusable(): boolean;
-            public set focusable(value: boolean);
-            
-            public get tabStop(): boolean;
-            public set tabStop(value: boolean);
-            
-            public get focused(): boolean;
-            
-            
-            public get cursor(): string;
-            public set cursor(value: string);
-            
-            public get isDisposed(): boolean;
-            
-            
-            public get topmost(): FairyGUI.Container;
-            
-            
-            public get stage(): FairyGUI.Stage;
-            
-            
-            public get worldSpaceContainer(): FairyGUI.Container;
-            
-            
-            public get touchable(): boolean;
-            public set touchable(value: boolean);
-            
-            public get touchDisabled(): boolean;
-            
-            
-            public get paintingMode(): boolean;
-            
-            
-            public get cacheAsBitmap(): boolean;
-            public set cacheAsBitmap(value: boolean);
             
             public get filter(): FairyGUI.IFilter;
             public set filter(value: FairyGUI.IFilter);
@@ -5591,145 +7430,18 @@ declare module 'csharp' {
             public get blendMode(): FairyGUI.BlendMode;
             public set blendMode(value: FairyGUI.BlendMode);
             
-            public get home(): UnityEngine.Transform;
-            public set home(value: UnityEngine.Transform);
             
+            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2):void;
             
-            public add_onPaint($value: System.Action):void;
+            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2, $cloneMaterial: boolean):void;
             
-            public remove_onPaint($value: System.Action):void;
+            public Advance($time: number):void;
             
-            public SetXY($xv: number, $yv: number):void;
-            
-            public SetPosition($xv: number, $yv: number, $zv: number):void;
-            
-            public SetSize($wv: number, $hv: number):void;
-            
-            public EnsureSizeCorrect():void;
-            
-            public SetScale($xv: number, $yv: number):void;
-            
-            public EnterPaintingMode():void;
-            
-            public EnterPaintingMode($requestorId: number, $extend: System.Nullable$1<FairyGUI.Margin>):void;
-            
-            public EnterPaintingMode($requestorId: number, $extend: System.Nullable$1<FairyGUI.Margin>, $scale: number):void;
-            
-            public LeavePaintingMode($requestorId: number):void;
-            
-            public GetScreenShot($extend: System.Nullable$1<FairyGUI.Margin>, $scale: number):UnityEngine.Texture2D;
-            
-            public GetBounds($targetSpace: FairyGUI.DisplayObject):UnityEngine.Rect;
-            
-            public GlobalToLocal($point: UnityEngine.Vector2):UnityEngine.Vector2;
-            
-            public LocalToGlobal($point: UnityEngine.Vector2):UnityEngine.Vector2;
-            
-            public WorldToLocal($worldPoint: UnityEngine.Vector3, $direction: UnityEngine.Vector3):UnityEngine.Vector3;
-            
-            public LocalToWorld($localPoint: UnityEngine.Vector3):UnityEngine.Vector3;
-            
-            public TransformPoint($point: UnityEngine.Vector2, $targetSpace: FairyGUI.DisplayObject):UnityEngine.Vector2;
-            
-            public TransformRect($rect: UnityEngine.Rect, $targetSpace: FairyGUI.DisplayObject):UnityEngine.Rect;
-            
-            public RemoveFromParent():void;
-            
-            public InvalidateBatchingState():void;
-            
-            public Update($context: FairyGUI.UpdateContext):void;
-            
-            public Dispose():void;
+            public SetWrapTarget($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number):void;
             
             public constructor();
             
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-        }
-        
-        
-        class EventDispatcher extends System.Object implements FairyGUI.IEventDispatcher{
-            
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddCapture($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveCapture($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListeners():void;
-            
-            public RemoveEventListeners($strType: string):void;
-            
-            public hasEventListeners($strType: string):boolean;
-            
-            public isDispatching($strType: string):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public BubbleEvent($strType: string, $data: any):boolean;
-            
-            public BroadcastEvent($strType: string, $data: any):boolean;
-            
-            public constructor();
+            public Advance($time: number):void;
             
             public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
             
@@ -5746,132 +7458,6 @@ declare module 'csharp' {
             public DispatchEvent($strType: string, $data: any):boolean;
             
             public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-        }
-        
-        
-        interface IEventDispatcher{
-            
-            
-            AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            DispatchEvent($strType: string):boolean;
-            
-            DispatchEvent($strType: string, $data: any):boolean;
-            
-            DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-        }
-        
-        
-        class Container extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher{
-            
-            public renderMode: UnityEngine.RenderMode;
-            public renderCamera: UnityEngine.Camera;
-            public opaque: boolean;
-            public clipSoftness: System.Nullable$1<UnityEngine.Vector4>;
-            public hitArea: FairyGUI.IHitTest;
-            public touchChildren: boolean;
-            public reversedMask: boolean;
-            public get numChildren(): number;
-            
-            
-            public get clipRect(): System.Nullable$1<UnityEngine.Rect>;
-            public set clipRect(value: System.Nullable$1<UnityEngine.Rect>);
-            
-            public get mask(): FairyGUI.DisplayObject;
-            public set mask(value: FairyGUI.DisplayObject);
-            
-            public get fairyBatching(): boolean;
-            public set fairyBatching(value: boolean);
-            
-            public get tabStopChildren(): boolean;
-            public set tabStopChildren(value: boolean);
-            
-            
-            public add_onUpdate($value: System.Action):void;
-            
-            public remove_onUpdate($value: System.Action):void;
-            
-            public AddChild($child: FairyGUI.DisplayObject):FairyGUI.DisplayObject;
-            
-            public AddChildAt($child: FairyGUI.DisplayObject, $index: number):FairyGUI.DisplayObject;
-            
-            public Contains($child: FairyGUI.DisplayObject):boolean;
-            
-            public GetChildAt($index: number):FairyGUI.DisplayObject;
-            
-            public GetChild($name: string):FairyGUI.DisplayObject;
-            
-            public GetChildren():System.Array$1<FairyGUI.DisplayObject>;
-            
-            public GetChildIndex($child: FairyGUI.DisplayObject):number;
-            
-            public RemoveChild($child: FairyGUI.DisplayObject):FairyGUI.DisplayObject;
-            
-            public RemoveChild($child: FairyGUI.DisplayObject, $dispose: boolean):FairyGUI.DisplayObject;
-            
-            public RemoveChildAt($index: number):FairyGUI.DisplayObject;
-            
-            public RemoveChildAt($index: number, $dispose: boolean):FairyGUI.DisplayObject;
-            
-            public RemoveChildren():void;
-            
-            public RemoveChildren($beginIndex: number, $endIndex: number, $dispose: boolean):void;
-            
-            public SetChildIndex($child: FairyGUI.DisplayObject, $index: number):void;
-            
-            public SwapChildren($child1: FairyGUI.DisplayObject, $child2: FairyGUI.DisplayObject):void;
-            
-            public SwapChildrenAt($index1: number, $index2: number):void;
-            
-            public ChangeChildrenOrder($indice: System.Collections.Generic.IList$1<number>, $objs: System.Collections.Generic.IList$1<FairyGUI.DisplayObject>):void;
-            
-            public GetDescendants($backward: boolean):System.Collections.Generic.IEnumerator$1<FairyGUI.DisplayObject>;
-            
-            public CreateGraphics():void;
-            
-            public GetRenderCamera():UnityEngine.Camera;
-            
-            public HitTest($stagePoint: UnityEngine.Vector2, $forTouch: boolean):FairyGUI.DisplayObject;
-            
-            public IsAncestorOf($obj: FairyGUI.DisplayObject):boolean;
-            
-            public InvalidateBatchingState($childrenChanged: boolean):void;
-            
-            public SetChildrenLayer($value: number):void;
-            
-            public constructor();
-            
-            public constructor($gameObjectName: string);
-            
-            public constructor($attachTarget: UnityEngine.GameObject);
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public InvalidateBatchingState():void;
             
             public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
             
@@ -5952,59 +7538,6 @@ declare module 'csharp' {
             public DispatchEvent($strType: string, $data: any):boolean;
             
             public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-        }
-        
-        
-        interface IHitTest{
-            
-            
-            HitTest($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2):boolean;
-            
-        }
-        
-        
-        class UpdateContext extends System.Object{
-            
-            public clipped: boolean;
-            public clipInfo: FairyGUI.UpdateContext.ClipInfo;
-            public renderingOrder: number;
-            public batchingDepth: number;
-            public rectMaskDepth: number;
-            public stencilReferenceValue: number;
-            public stencilCompareValue: number;
-            public alpha: number;
-            public grayed: boolean;
-            public static current: FairyGUI.UpdateContext;
-            public static working: boolean;
-            
-            public static add_OnBegin($value: System.Action):void;
-            
-            public static remove_OnBegin($value: System.Action):void;
-            
-            public static add_OnEnd($value: System.Action):void;
-            
-            public static remove_OnEnd($value: System.Action):void;
-            
-            public Begin():void;
-            
-            public End():void;
-            
-            public EnterClipping($clipId: number, $clipRect: UnityEngine.Rect, $softness: System.Nullable$1<UnityEngine.Vector4>):void;
-            
-            public EnterClipping($clipId: number, $reversedMask: boolean):void;
-            
-            public LeaveClipping():void;
-            
-            public EnterPaintingMode():void;
-            
-            public LeavePaintingMode():void;
-            
-            public ApplyClippingProperties($mat: UnityEngine.Material, $isStdMaterial: boolean):void;
-            
-            public ApplyAlphaMaskProperties($mat: UnityEngine.Material, $erasing: boolean):void;
-            
-            public constructor();
             
         }
         
@@ -6447,6 +7980,865 @@ declare module 'csharp' {
         }
         
         
+        class EventDispatcher extends System.Object implements FairyGUI.IEventDispatcher{
+            
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddCapture($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveCapture($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListeners():void;
+            
+            public RemoveEventListeners($strType: string):void;
+            
+            public hasEventListeners($strType: string):boolean;
+            
+            public isDispatching($strType: string):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public BubbleEvent($strType: string, $data: any):boolean;
+            
+            public BroadcastEvent($strType: string, $data: any):boolean;
+            
+            public constructor();
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+        }
+        
+        
+        interface IEventDispatcher{
+            
+            
+            AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            DispatchEvent($strType: string):boolean;
+            
+            DispatchEvent($strType: string, $data: any):boolean;
+            
+            DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+        }
+        
+        
+        interface IAnimationGear{
+            
+            playing: boolean;
+            frame: number;
+            timeScale: number;
+            ignoreEngineTimeScale: boolean;
+            
+            Advance($time: number):void;
+            
+        }
+        
+        
+        interface IColorGear{
+            
+            color: UnityEngine.Color;
+            
+        }
+        
+        
+        enum AlignType{ Left = 0, Center = 1, Right = 2 }
+        
+        
+        enum VertAlignType{ Top = 0, Middle = 1, Bottom = 2 }
+        
+        
+        enum FillType{ None = 0, Scale = 1, ScaleMatchHeight = 2, ScaleMatchWidth = 3, ScaleFree = 4, ScaleNoBorder = 5 }
+        
+        
+        interface IFilter{
+            
+            target: FairyGUI.DisplayObject;
+            
+            Update():void;
+            
+            Dispose():void;
+            
+        }
+        
+        
+        enum BlendMode{ Normal = 0, None = 1, Add = 2, Multiply = 3, Screen = 4, Erase = 5, Mask = 6, Below = 7, Off = 8, One_OneMinusSrcAlpha = 9, Custom1 = 10, Custom2 = 11, Custom3 = 12, Custom4 = 13 }
+        
+        
+        class TMPFont extends FairyGUI.BaseFont{
+            
+            public get fontAsset(): TMPro.TMP_FontAsset;
+            public set fontAsset(value: TMPro.TMP_FontAsset);
+            
+            public get fontWeight(): TMPro.FontWeight;
+            public set fontWeight(value: TMPro.FontWeight);
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class BaseFont extends System.Object{
+            
+            public name: string;
+            public mainTexture: FairyGUI.NTexture;
+            public canTint: boolean;
+            public customBold: boolean;
+            public customBoldAndItalic: boolean;
+            public customOutline: boolean;
+            public shader: string;
+            public keepCrisp: boolean;
+            public version: number;
+            
+            public UpdateGraphics($graphics: FairyGUI.NGraphics):void;
+            
+            public SetFormat($format: FairyGUI.TextFormat, $fontSizeScale: number):void;
+            
+            public PrepareCharacters($text: string):void;
+            
+            public GetGlyph($ch: number, $width: $Ref<number>, $height: $Ref<number>, $baseline: $Ref<number>):boolean;
+            
+            public DrawGlyph($x: number, $y: number, $vertList: System.Collections.Generic.List$1<UnityEngine.Vector3>, $uvList: System.Collections.Generic.List$1<UnityEngine.Vector2>, $uv2List: System.Collections.Generic.List$1<UnityEngine.Vector2>, $colList: System.Collections.Generic.List$1<UnityEngine.Color32>):number;
+            
+            public DrawLine($x: number, $y: number, $width: number, $fontSize: number, $type: number, $vertList: System.Collections.Generic.List$1<UnityEngine.Vector3>, $uvList: System.Collections.Generic.List$1<UnityEngine.Vector2>, $uv2List: System.Collections.Generic.List$1<UnityEngine.Vector2>, $colList: System.Collections.Generic.List$1<UnityEngine.Color32>):number;
+            
+            public HasCharacter($ch: number):boolean;
+            
+            public GetLineHeight($size: number):number;
+            
+            public Dispose():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class NGraphics extends System.Object implements FairyGUI.IMeshFactory{
+            
+            public blendMode: FairyGUI.BlendMode;
+            public dontClip: boolean;
+            public get gameObject(): UnityEngine.GameObject;
+            
+            
+            public get meshFilter(): UnityEngine.MeshFilter;
+            
+            
+            public get meshRenderer(): UnityEngine.MeshRenderer;
+            
+            
+            public get mesh(): UnityEngine.Mesh;
+            
+            
+            public get meshFactory(): FairyGUI.IMeshFactory;
+            public set meshFactory(value: FairyGUI.IMeshFactory);
+            
+            public get contentRect(): UnityEngine.Rect;
+            public set contentRect(value: UnityEngine.Rect);
+            
+            public get flip(): FairyGUI.FlipType;
+            public set flip(value: FairyGUI.FlipType);
+            
+            public get texture(): FairyGUI.NTexture;
+            public set texture(value: FairyGUI.NTexture);
+            
+            public get shader(): string;
+            public set shader(value: string);
+            
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            
+            public get materialKeywords(): System.Array$1<string>;
+            public set materialKeywords(value: System.Array$1<string>);
+            
+            public get enabled(): boolean;
+            public set enabled(value: boolean);
+            
+            public get sortingOrder(): number;
+            public set sortingOrder(value: number);
+            
+            public get color(): UnityEngine.Color;
+            public set color(value: UnityEngine.Color);
+            
+            public get vertexMatrix(): FairyGUI.NGraphics.VertexMatrix;
+            public set vertexMatrix(value: FairyGUI.NGraphics.VertexMatrix);
+            
+            public get materialPropertyBlock(): UnityEngine.MaterialPropertyBlock;
+            
+            
+            
+            public add_meshModifier($value: System.Action):void;
+            
+            public remove_meshModifier($value: System.Action):void;
+            
+            public SetShaderAndTexture($shader: string, $texture: FairyGUI.NTexture):void;
+            
+            public SetMaterial($material: UnityEngine.Material):void;
+            
+            public ToggleKeyword($keyword: string, $enabled: boolean):void;
+            
+            public Tint():void;
+            
+            public SetMeshDirty():void;
+            
+            public UpdateMesh():boolean;
+            
+            public Dispose():void;
+            
+            public Update($context: FairyGUI.UpdateContext, $alpha: number, $grayed: boolean):void;
+            
+            public OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
+            
+            public constructor($gameObject: UnityEngine.GameObject);
+            
+            public OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface IMeshFactory{
+            
+            
+            OnPopulateMesh($vb: FairyGUI.VertexBuffer):void;
+            
+        }
+        
+        
+        class TextFormat extends System.Object{
+            
+            public faceDilate: number;
+            public outlineSoftness: number;
+            public underlaySoftness: number;
+            public size: number;
+            public font: string;
+            public color: UnityEngine.Color;
+            public lineSpacing: number;
+            public letterSpacing: number;
+            public bold: boolean;
+            public underline: boolean;
+            public italic: boolean;
+            public strikethrough: boolean;
+            public gradientColor: System.Array$1<UnityEngine.Color32>;
+            public align: FairyGUI.AlignType;
+            public specialStyle: FairyGUI.TextFormat.SpecialStyle;
+            public outline: number;
+            public outlineColor: UnityEngine.Color;
+            public shadowOffset: UnityEngine.Vector2;
+            public shadowColor: UnityEngine.Color;
+            
+            public SetColor($value: number):void;
+            
+            public EqualStyle($aFormat: FairyGUI.TextFormat):boolean;
+            
+            public CopyFrom($source: FairyGUI.TextFormat):void;
+            
+            public FillVertexColors($vertexColors: System.Array$1<UnityEngine.Color32>):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class BlendModeUtils extends System.Object{
+            
+            public static Factors: System.Array$1<FairyGUI.BlendModeUtils.BlendFactor>;
+            
+            public static Apply($mat: UnityEngine.Material, $blendMode: FairyGUI.BlendMode):void;
+            
+            public static Override($blendMode: FairyGUI.BlendMode, $srcFactor: UnityEngine.Rendering.BlendMode, $dstFactor: UnityEngine.Rendering.BlendMode):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class CaptureCamera extends UnityEngine.MonoBehaviour{
+            
+            public cachedTransform: UnityEngine.Transform;
+            public cachedCamera: UnityEngine.Camera;
+            public static Name: string;
+            public static LayerName: string;
+            public static HiddenLayerName: string;
+            public static get layer(): number;
+            
+            
+            public static get hiddenLayer(): number;
+            
+            
+            
+            public static CheckMain():void;
+            
+            public static CreateRenderTexture($width: number, $height: number, $stencilSupport: boolean):UnityEngine.RenderTexture;
+            
+            public static Capture($target: FairyGUI.DisplayObject, $texture: UnityEngine.RenderTexture, $contentHeight: number, $offset: UnityEngine.Vector2):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class DisplayObject extends FairyGUI.EventDispatcher implements FairyGUI.IEventDispatcher{
+            
+            public name: string;
+            public gOwner: FairyGUI.GObject;
+            public id: number;
+            public get parent(): FairyGUI.Container;
+            
+            
+            public get gameObject(): UnityEngine.GameObject;
+            
+            
+            public get cachedTransform(): UnityEngine.Transform;
+            
+            
+            public get graphics(): FairyGUI.NGraphics;
+            
+            
+            public get paintingGraphics(): FairyGUI.NGraphics;
+            
+            
+            public get onClick(): FairyGUI.EventListener;
+            
+            
+            public get onRightClick(): FairyGUI.EventListener;
+            
+            
+            public get onTouchBegin(): FairyGUI.EventListener;
+            
+            
+            public get onTouchMove(): FairyGUI.EventListener;
+            
+            
+            public get onTouchEnd(): FairyGUI.EventListener;
+            
+            
+            public get onRollOver(): FairyGUI.EventListener;
+            
+            
+            public get onRollOut(): FairyGUI.EventListener;
+            
+            
+            public get onMouseWheel(): FairyGUI.EventListener;
+            
+            
+            public get onAddedToStage(): FairyGUI.EventListener;
+            
+            
+            public get onRemovedFromStage(): FairyGUI.EventListener;
+            
+            
+            public get onKeyDown(): FairyGUI.EventListener;
+            
+            
+            public get onClickLink(): FairyGUI.EventListener;
+            
+            
+            public get onFocusIn(): FairyGUI.EventListener;
+            
+            
+            public get onFocusOut(): FairyGUI.EventListener;
+            
+            
+            public get alpha(): number;
+            public set alpha(value: number);
+            
+            public get grayed(): boolean;
+            public set grayed(value: boolean);
+            
+            public get visible(): boolean;
+            public set visible(value: boolean);
+            
+            public get x(): number;
+            public set x(value: number);
+            
+            public get y(): number;
+            public set y(value: number);
+            
+            public get z(): number;
+            public set z(value: number);
+            
+            public get xy(): UnityEngine.Vector2;
+            public set xy(value: UnityEngine.Vector2);
+            
+            public get position(): UnityEngine.Vector3;
+            public set position(value: UnityEngine.Vector3);
+            
+            public get pixelPerfect(): boolean;
+            public set pixelPerfect(value: boolean);
+            
+            public get width(): number;
+            public set width(value: number);
+            
+            public get height(): number;
+            public set height(value: number);
+            
+            public get size(): UnityEngine.Vector2;
+            public set size(value: UnityEngine.Vector2);
+            
+            public get scaleX(): number;
+            public set scaleX(value: number);
+            
+            public get scaleY(): number;
+            public set scaleY(value: number);
+            
+            public get scale(): UnityEngine.Vector2;
+            public set scale(value: UnityEngine.Vector2);
+            
+            public get rotation(): number;
+            public set rotation(value: number);
+            
+            public get rotationX(): number;
+            public set rotationX(value: number);
+            
+            public get rotationY(): number;
+            public set rotationY(value: number);
+            
+            public get skew(): UnityEngine.Vector2;
+            public set skew(value: UnityEngine.Vector2);
+            
+            public get perspective(): boolean;
+            public set perspective(value: boolean);
+            
+            public get focalLength(): number;
+            public set focalLength(value: number);
+            
+            public get pivot(): UnityEngine.Vector2;
+            public set pivot(value: UnityEngine.Vector2);
+            
+            public get location(): UnityEngine.Vector3;
+            public set location(value: UnityEngine.Vector3);
+            
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            
+            public get shader(): string;
+            public set shader(value: string);
+            
+            public get renderingOrder(): number;
+            public set renderingOrder(value: number);
+            
+            public get layer(): number;
+            public set layer(value: number);
+            
+            public get focusable(): boolean;
+            public set focusable(value: boolean);
+            
+            public get tabStop(): boolean;
+            public set tabStop(value: boolean);
+            
+            public get focused(): boolean;
+            
+            
+            public get cursor(): string;
+            public set cursor(value: string);
+            
+            public get isDisposed(): boolean;
+            
+            
+            public get topmost(): FairyGUI.Container;
+            
+            
+            public get stage(): FairyGUI.Stage;
+            
+            
+            public get worldSpaceContainer(): FairyGUI.Container;
+            
+            
+            public get touchable(): boolean;
+            public set touchable(value: boolean);
+            
+            public get touchDisabled(): boolean;
+            
+            
+            public get paintingMode(): boolean;
+            
+            
+            public get cacheAsBitmap(): boolean;
+            public set cacheAsBitmap(value: boolean);
+            
+            public get filter(): FairyGUI.IFilter;
+            public set filter(value: FairyGUI.IFilter);
+            
+            public get blendMode(): FairyGUI.BlendMode;
+            public set blendMode(value: FairyGUI.BlendMode);
+            
+            public get home(): UnityEngine.Transform;
+            public set home(value: UnityEngine.Transform);
+            
+            
+            public add_onPaint($value: System.Action):void;
+            
+            public remove_onPaint($value: System.Action):void;
+            
+            public SetXY($xv: number, $yv: number):void;
+            
+            public SetPosition($xv: number, $yv: number, $zv: number):void;
+            
+            public SetSize($wv: number, $hv: number):void;
+            
+            public EnsureSizeCorrect():void;
+            
+            public SetScale($xv: number, $yv: number):void;
+            
+            public EnterPaintingMode():void;
+            
+            public EnterPaintingMode($requestorId: number, $extend: System.Nullable$1<FairyGUI.Margin>):void;
+            
+            public EnterPaintingMode($requestorId: number, $extend: System.Nullable$1<FairyGUI.Margin>, $scale: number):void;
+            
+            public LeavePaintingMode($requestorId: number):void;
+            
+            public GetScreenShot($extend: System.Nullable$1<FairyGUI.Margin>, $scale: number):UnityEngine.Texture2D;
+            
+            public GetBounds($targetSpace: FairyGUI.DisplayObject):UnityEngine.Rect;
+            
+            public GlobalToLocal($point: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public LocalToGlobal($point: UnityEngine.Vector2):UnityEngine.Vector2;
+            
+            public WorldToLocal($worldPoint: UnityEngine.Vector3, $direction: UnityEngine.Vector3):UnityEngine.Vector3;
+            
+            public LocalToWorld($localPoint: UnityEngine.Vector3):UnityEngine.Vector3;
+            
+            public TransformPoint($point: UnityEngine.Vector2, $targetSpace: FairyGUI.DisplayObject):UnityEngine.Vector2;
+            
+            public TransformRect($rect: UnityEngine.Rect, $targetSpace: FairyGUI.DisplayObject):UnityEngine.Rect;
+            
+            public RemoveFromParent():void;
+            
+            public InvalidateBatchingState():void;
+            
+            public Update($context: FairyGUI.UpdateContext):void;
+            
+            public Dispose():void;
+            
+            public constructor();
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+        }
+        
+        
+        class Container extends FairyGUI.DisplayObject implements FairyGUI.IEventDispatcher{
+            
+            public renderMode: UnityEngine.RenderMode;
+            public renderCamera: UnityEngine.Camera;
+            public opaque: boolean;
+            public clipSoftness: System.Nullable$1<UnityEngine.Vector4>;
+            public hitArea: FairyGUI.IHitTest;
+            public touchChildren: boolean;
+            public reversedMask: boolean;
+            public get numChildren(): number;
+            
+            
+            public get clipRect(): System.Nullable$1<UnityEngine.Rect>;
+            public set clipRect(value: System.Nullable$1<UnityEngine.Rect>);
+            
+            public get mask(): FairyGUI.DisplayObject;
+            public set mask(value: FairyGUI.DisplayObject);
+            
+            public get fairyBatching(): boolean;
+            public set fairyBatching(value: boolean);
+            
+            public get tabStopChildren(): boolean;
+            public set tabStopChildren(value: boolean);
+            
+            
+            public add_onUpdate($value: System.Action):void;
+            
+            public remove_onUpdate($value: System.Action):void;
+            
+            public AddChild($child: FairyGUI.DisplayObject):FairyGUI.DisplayObject;
+            
+            public AddChildAt($child: FairyGUI.DisplayObject, $index: number):FairyGUI.DisplayObject;
+            
+            public Contains($child: FairyGUI.DisplayObject):boolean;
+            
+            public GetChildAt($index: number):FairyGUI.DisplayObject;
+            
+            public GetChild($name: string):FairyGUI.DisplayObject;
+            
+            public GetChildren():System.Array$1<FairyGUI.DisplayObject>;
+            
+            public GetChildIndex($child: FairyGUI.DisplayObject):number;
+            
+            public RemoveChild($child: FairyGUI.DisplayObject):FairyGUI.DisplayObject;
+            
+            public RemoveChild($child: FairyGUI.DisplayObject, $dispose: boolean):FairyGUI.DisplayObject;
+            
+            public RemoveChildAt($index: number):FairyGUI.DisplayObject;
+            
+            public RemoveChildAt($index: number, $dispose: boolean):FairyGUI.DisplayObject;
+            
+            public RemoveChildren():void;
+            
+            public RemoveChildren($beginIndex: number, $endIndex: number, $dispose: boolean):void;
+            
+            public SetChildIndex($child: FairyGUI.DisplayObject, $index: number):void;
+            
+            public SwapChildren($child1: FairyGUI.DisplayObject, $child2: FairyGUI.DisplayObject):void;
+            
+            public SwapChildrenAt($index1: number, $index2: number):void;
+            
+            public ChangeChildrenOrder($indice: System.Collections.Generic.IList$1<number>, $objs: System.Collections.Generic.IList$1<FairyGUI.DisplayObject>):void;
+            
+            public GetDescendants($backward: boolean):System.Collections.Generic.IEnumerator$1<FairyGUI.DisplayObject>;
+            
+            public CreateGraphics():void;
+            
+            public GetRenderCamera():UnityEngine.Camera;
+            
+            public HitTest($stagePoint: UnityEngine.Vector2, $forTouch: boolean):FairyGUI.DisplayObject;
+            
+            public IsAncestorOf($obj: FairyGUI.DisplayObject):boolean;
+            
+            public InvalidateBatchingState($childrenChanged: boolean):void;
+            
+            public SetChildrenLayer($value: number):void;
+            
+            public constructor();
+            
+            public constructor($gameObjectName: string);
+            
+            public constructor($attachTarget: UnityEngine.GameObject);
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public InvalidateBatchingState():void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+        }
+        
+        
+        interface IHitTest{
+            
+            
+            HitTest($contentRect: UnityEngine.Rect, $localPoint: UnityEngine.Vector2):boolean;
+            
+        }
+        
+        
+        class UpdateContext extends System.Object{
+            
+            public clipped: boolean;
+            public clipInfo: FairyGUI.UpdateContext.ClipInfo;
+            public renderingOrder: number;
+            public batchingDepth: number;
+            public rectMaskDepth: number;
+            public stencilReferenceValue: number;
+            public stencilCompareValue: number;
+            public alpha: number;
+            public grayed: boolean;
+            public static current: FairyGUI.UpdateContext;
+            public static working: boolean;
+            
+            public static add_OnBegin($value: System.Action):void;
+            
+            public static remove_OnBegin($value: System.Action):void;
+            
+            public static add_OnEnd($value: System.Action):void;
+            
+            public static remove_OnEnd($value: System.Action):void;
+            
+            public Begin():void;
+            
+            public End():void;
+            
+            public EnterClipping($clipId: number, $clipRect: UnityEngine.Rect, $softness: System.Nullable$1<UnityEngine.Vector4>):void;
+            
+            public EnterClipping($clipId: number, $reversedMask: boolean):void;
+            
+            public LeaveClipping():void;
+            
+            public EnterPaintingMode():void;
+            
+            public LeavePaintingMode():void;
+            
+            public ApplyClippingProperties($mat: UnityEngine.Material, $isStdMaterial: boolean):void;
+            
+            public ApplyAlphaMaskProperties($mat: UnityEngine.Material, $erasing: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
         class EventListener extends System.Object{
             
             public get type(): string;
@@ -6811,17 +9203,6 @@ declare module 'csharp' {
         }
         
         
-        interface IFilter{
-            
-            target: FairyGUI.DisplayObject;
-            
-            Update():void;
-            
-            Dispose():void;
-            
-        }
-        
-        
         class DisplayObjectInfo extends UnityEngine.MonoBehaviour{
             
             public displayObject: FairyGUI.DisplayObject;
@@ -6984,6 +9365,9 @@ declare module 'csharp' {
             public constructor();
             
         }
+        
+        
+        enum HitTestMode{ Default = 0, Raycast = 1 }
         
         
         class MeshColliderHitTest extends FairyGUI.ColliderHitTest implements FairyGUI.IHitTest{
@@ -7351,6 +9735,9 @@ declare module 'csharp' {
             public Insert($vb: FairyGUI.VertexBuffer):void;
             
         }
+        
+        
+        enum MaterialFlags{ Clipped = 1, SoftClipped = 2, StencilTest = 4, AlphaMask = 8, Grayed = 16, ColorFilter = 32 }
         
         
         class MaterialManager extends System.Object{
@@ -9286,9 +11673,6 @@ declare module 'csharp' {
         }
         
         
-        enum VertAlignType{ Top = 0, Middle = 1, Bottom = 2 }
-        
-        
         enum AutoSizeType{ None = 0, Both = 1, Height = 2, Shrink = 3 }
         
         
@@ -9336,7 +11720,7 @@ declare module 'csharp' {
         }
         
         
-        class GTextField extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.ITextColorGear{
+        class GTextField extends FairyGUI.GObject implements FairyGUI.IColorGear, FairyGUI.ITextColorGear, FairyGUI.IEventDispatcher{
             
             public get text(): string;
             public set text(value: string);
@@ -9488,13 +11872,6 @@ declare module 'csharp' {
         }
         
         
-        interface IColorGear{
-            
-            color: UnityEngine.Color;
-            
-        }
-        
-        
         interface ITextColorGear extends FairyGUI.IColorGear{
             
             strokeColor: UnityEngine.Color;
@@ -9590,12 +11967,12 @@ declare module 'csharp' {
         }
         
         
-        type EventCallback1 = (context: FairyGUI.EventContext) => void;
-        var EventCallback1: {new (func: (context: FairyGUI.EventContext) => void): EventCallback1;}
-        
-        
         type EventCallback0 = () => void;
         var EventCallback0: {new (func: () => void): EventCallback0;}
+        
+        
+        type EventCallback1 = (context: FairyGUI.EventContext) => void;
+        var EventCallback1: {new (func: (context: FairyGUI.EventContext) => void): EventCallback1;}
         
         
         class BlurFilter extends System.Object implements FairyGUI.IFilter{
@@ -10155,6 +12532,14 @@ declare module 'csharp' {
         enum TweenPropType{ None = 0, X = 1, Y = 2, Z = 3, XY = 4, Position = 5, Width = 6, Height = 7, Size = 8, ScaleX = 9, ScaleY = 10, Scale = 11, Rotation = 12, RotationX = 13, RotationY = 14, Alpha = 15, Progress = 16 }
         
         
+        type GTweenCallback = () => void;
+        var GTweenCallback: {new (func: () => void): GTweenCallback;}
+        
+        
+        type GTweenCallback1 = (tweener: FairyGUI.GTweener) => void;
+        var GTweenCallback1: {new (func: (tweener: FairyGUI.GTweener) => void): GTweenCallback1;}
+        
+        
         interface ITweenListener{
             
             
@@ -10165,14 +12550,6 @@ declare module 'csharp' {
             OnTweenComplete($tweener: FairyGUI.GTweener):void;
             
         }
-        
-        
-        type GTweenCallback = () => void;
-        var GTweenCallback: {new (func: () => void): GTweenCallback;}
-        
-        
-        type GTweenCallback1 = (tweener: FairyGUI.GTweener) => void;
-        var GTweenCallback1: {new (func: (tweener: FairyGUI.GTweener) => void): GTweenCallback1;}
         
         
         class TweenValue extends System.Object{
@@ -10420,7 +12797,7 @@ declare module 'csharp' {
         }
         
         
-        class GLoader extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        class GLoader extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public showErrorSign: boolean;
             public get url(): string;
@@ -10601,18 +12978,6 @@ declare module 'csharp' {
         }
         
         
-        interface IAnimationGear{
-            
-            playing: boolean;
-            frame: number;
-            timeScale: number;
-            ignoreEngineTimeScale: boolean;
-            
-            Advance($time: number):void;
-            
-        }
-        
-        
         interface EMRenderTarget{
             
             EM_sortingOrder: number;
@@ -10649,7 +13014,67 @@ declare module 'csharp' {
         }
         
         
-        class GButton extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        enum PackageItemType{ Image = 0, MovieClip = 1, Sound = 2, Component = 3, Atlas = 4, Font = 5, Swf = 6, Misc = 7, Unknown = 8, Spine = 9, DragoneBones = 10 }
+        
+        
+        enum ObjectType{ Image = 0, MovieClip = 1, Swf = 2, Graph = 3, Loader = 4, Group = 5, Text = 6, RichText = 7, InputText = 8, Component = 9, List = 10, Label = 11, Button = 12, ComboBox = 13, ProgressBar = 14, Slider = 15, ScrollBar = 16, Tree = 17, Loader3D = 18 }
+        
+        
+        enum OverflowType{ Visible = 0, Hidden = 1, Scroll = 2 }
+        
+        
+        enum ScrollType{ Horizontal = 0, Vertical = 1, Both = 2 }
+        
+        
+        enum ScrollBarDisplayType{ Default = 0, Visible = 1, Auto = 2, Hidden = 3 }
+        
+        
+        enum RelationType{ Left_Left = 0, Left_Center = 1, Left_Right = 2, Center_Center = 3, Right_Left = 4, Right_Center = 5, Right_Right = 6, Top_Top = 7, Top_Middle = 8, Top_Bottom = 9, Middle_Middle = 10, Bottom_Top = 11, Bottom_Middle = 12, Bottom_Bottom = 13, Width = 14, Height = 15, LeftExt_Left = 16, LeftExt_Right = 17, RightExt_Left = 18, RightExt_Right = 19, TopExt_Top = 20, TopExt_Bottom = 21, BottomExt_Top = 22, BottomExt_Bottom = 23, Size = 24 }
+        
+        
+        enum ListLayoutType{ SingleColumn = 0, SingleRow = 1, FlowHorizontal = 2, FlowVertical = 3, Pagination = 4 }
+        
+        
+        enum ListSelectionMode{ Single = 0, Multiple = 1, Multiple_SingleClick = 2, None = 3 }
+        
+        
+        enum ProgressTitleType{ Percent = 0, ValueAndMax = 1, Value = 2, Max = 3 }
+        
+        
+        enum ButtonMode{ Common = 0, Check = 1, Radio = 2 }
+        
+        
+        enum TransitionActionType{ XY = 0, Size = 1, Scale = 2, Pivot = 3, Alpha = 4, Rotation = 5, Color = 6, Animation = 7, Visible = 8, Sound = 9, Transition = 10, Shake = 11, ColorFilter = 12, Skew = 13, Text = 14, Icon = 15, Unknown = 16 }
+        
+        
+        enum GroupLayoutType{ None = 0, Horizontal = 1, Vertical = 2 }
+        
+        
+        enum ChildrenRenderOrder{ Ascent = 0, Descent = 1, Arch = 2 }
+        
+        
+        enum PopupDirection{ Auto = 0, Up = 1, Down = 2 }
+        
+        
+        enum OriginHorizontal{ Left = 0, Right = 1 }
+        
+        
+        enum OriginVertical{ Top = 0, Bottom = 1 }
+        
+        
+        enum Origin90{ TopLeft = 0, TopRight = 1, BottomLeft = 2, BottomRight = 3 }
+        
+        
+        enum Origin180{ Top = 0, Bottom = 1, Left = 2, Right = 3 }
+        
+        
+        enum Origin360{ Top = 0, Bottom = 1, Left = 2, Right = 3 }
+        
+        
+        enum FocusRule{ NotFocusable = 0, Focusable = 1, NavigationBase = 2 }
+        
+        
+        class GButton extends FairyGUI.GComponent implements FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public sound: FairyGUI.NAudioClip;
             public soundVolumeScale: number;
@@ -11128,9 +13553,6 @@ declare module 'csharp' {
         }
         
         
-        enum ButtonMode{ Common = 0, Check = 1, Radio = 2 }
-        
-        
         class GComboBox extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher{
             
             public visibleItemCount: number;
@@ -11389,9 +13811,6 @@ declare module 'csharp' {
         }
         
         
-        enum PopupDirection{ Auto = 0, Up = 1, Down = 2 }
-        
-        
         class ScrollPane extends FairyGUI.EventDispatcher implements FairyGUI.IEventDispatcher{
             
             public static TWEEN_TIME_GO: number;
@@ -11618,9 +14037,6 @@ declare module 'csharp' {
         }
         
         
-        enum ChildrenRenderOrder{ Ascent = 0, Descent = 1, Arch = 2 }
-        
-        
         class GGroup extends FairyGUI.GObject implements FairyGUI.IEventDispatcher{
             
             public get layout(): FairyGUI.GroupLayoutType;
@@ -11825,7 +14241,7 @@ declare module 'csharp' {
         }
         
         
-        class GGraph extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        class GGraph extends FairyGUI.GObject implements FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public get color(): UnityEngine.Color;
             public set color(value: UnityEngine.Color);
@@ -11953,10 +14369,7 @@ declare module 'csharp' {
         }
         
         
-        enum GroupLayoutType{ None = 0, Horizontal = 1, Vertical = 2 }
-        
-        
-        class GImage extends FairyGUI.GObject implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        class GImage extends FairyGUI.GObject implements FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public get color(): UnityEngine.Color;
             public set color(value: UnityEngine.Color);
@@ -12087,7 +14500,7 @@ declare module 'csharp' {
         }
         
         
-        class GLabel extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        class GLabel extends FairyGUI.GComponent implements FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public get icon(): string;
             public set icon(value: string);
@@ -12308,6 +14721,14 @@ declare module 'csharp' {
             public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
             
         }
+        
+        
+        type ListItemRenderer = (index: number, item: FairyGUI.GObject) => void;
+        var ListItemRenderer: {new (func: (index: number, item: FairyGUI.GObject) => void): ListItemRenderer;}
+        
+        
+        type ListItemProvider = (index: number) => string;
+        var ListItemProvider: {new (func: (index: number) => string): ListItemProvider;}
         
         
         class GList extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher{
@@ -12625,20 +15046,6 @@ declare module 'csharp' {
         }
         
         
-        enum ListSelectionMode{ Single = 0, Multiple = 1, Multiple_SingleClick = 2, None = 3 }
-        
-        
-        type ListItemRenderer = (index: number, item: FairyGUI.GObject) => void;
-        var ListItemRenderer: {new (func: (index: number, item: FairyGUI.GObject) => void): ListItemRenderer;}
-        
-        
-        type ListItemProvider = (index: number) => string;
-        var ListItemProvider: {new (func: (index: number) => string): ListItemProvider;}
-        
-        
-        enum ListLayoutType{ SingleColumn = 0, SingleRow = 1, FlowHorizontal = 2, FlowVertical = 3, Pagination = 4 }
-        
-        
         class GObjectPool extends System.Object{
             
             public initCallback: FairyGUI.GObjectPool.InitCallbackDelegate;
@@ -12659,180 +15066,7 @@ declare module 'csharp' {
         }
         
         
-        enum FillType{ None = 0, Scale = 1, ScaleMatchHeight = 2, ScaleMatchWidth = 3, ScaleFree = 4, ScaleNoBorder = 5 }
-        
-        
-        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
-            
-            public get url(): string;
-            public set url(value: string);
-            
-            public get icon(): string;
-            public set icon(value: string);
-            
-            public get align(): FairyGUI.AlignType;
-            public set align(value: FairyGUI.AlignType);
-            
-            public get verticalAlign(): FairyGUI.VertAlignType;
-            public set verticalAlign(value: FairyGUI.VertAlignType);
-            
-            public get fill(): FairyGUI.FillType;
-            public set fill(value: FairyGUI.FillType);
-            
-            public get shrinkOnly(): boolean;
-            public set shrinkOnly(value: boolean);
-            
-            public get autoSize(): boolean;
-            public set autoSize(value: boolean);
-            
-            public get playing(): boolean;
-            public set playing(value: boolean);
-            
-            public get frame(): number;
-            public set frame(value: number);
-            
-            public get timeScale(): number;
-            public set timeScale(value: number);
-            
-            public get ignoreEngineTimeScale(): boolean;
-            public set ignoreEngineTimeScale(value: boolean);
-            
-            public get loop(): boolean;
-            public set loop(value: boolean);
-            
-            public get animationName(): string;
-            public set animationName(value: string);
-            
-            public get skinName(): string;
-            public set skinName(value: string);
-            
-            public get material(): UnityEngine.Material;
-            public set material(value: UnityEngine.Material);
-            
-            public get shader(): string;
-            public set shader(value: string);
-            
-            public get color(): UnityEngine.Color;
-            public set color(value: UnityEngine.Color);
-            
-            public get wrapTarget(): UnityEngine.GameObject;
-            
-            
-            public get filter(): FairyGUI.IFilter;
-            public set filter(value: FairyGUI.IFilter);
-            
-            public get blendMode(): FairyGUI.BlendMode;
-            public set blendMode(value: FairyGUI.BlendMode);
-            
-            
-            public Advance($time: number):void;
-            
-            public SetWrapTarget($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number):void;
-            
-            public constructor();
-            
-            public Advance($time: number):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-        }
-        
-        
-        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IEventDispatcher, FairyGUI.IColorGear{
+        class GMovieClip extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
             
             public get onPlayEnd(): FairyGUI.EventListener;
             
@@ -13097,9 +15331,6 @@ declare module 'csharp' {
             public constructor();
             
         }
-        
-        
-        enum RelationType{ Left_Left = 0, Left_Center = 1, Left_Right = 2, Center_Center = 3, Right_Left = 4, Right_Center = 5, Right_Right = 6, Top_Top = 7, Top_Middle = 8, Top_Bottom = 9, Middle_Middle = 10, Bottom_Top = 11, Bottom_Middle = 12, Bottom_Bottom = 13, Width = 14, Height = 15, LeftExt_Left = 16, LeftExt_Right = 17, RightExt_Left = 18, RightExt_Right = 19, TopExt_Top = 20, TopExt_Bottom = 21, BottomExt_Top = 22, BottomExt_Bottom = 23, Size = 24 }
         
         
         class GRoot extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher{
@@ -13844,7 +16075,7 @@ declare module 'csharp' {
         }
         
         
-        class GRichTextField extends FairyGUI.GTextField implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.ITextColorGear{
+        class GRichTextField extends FairyGUI.GTextField implements FairyGUI.IColorGear, FairyGUI.ITextColorGear, FairyGUI.IEventDispatcher{
             
             public get richTextField(): FairyGUI.RichTextField;
             
@@ -14050,7 +16281,7 @@ declare module 'csharp' {
         }
         
         
-        class GTextInput extends FairyGUI.GTextField implements FairyGUI.IEventDispatcher, FairyGUI.IColorGear, FairyGUI.ITextColorGear{
+        class GTextInput extends FairyGUI.GTextField implements FairyGUI.IColorGear, FairyGUI.ITextColorGear, FairyGUI.IEventDispatcher{
             
             public get inputTextField(): FairyGUI.InputTextField;
             
@@ -14800,9 +17031,6 @@ declare module 'csharp' {
         }
         
         
-        enum ProgressTitleType{ Percent = 0, ValueAndMax = 1, Value = 2, Max = 3 }
-        
-        
         class Window extends FairyGUI.GComponent implements FairyGUI.IEventDispatcher{
             
             public bringToFontOnClick: boolean;
@@ -15383,6 +17611,10 @@ declare module 'csharp' {
         }
         
         
+        type UILoadCallback = () => void;
+        var UILoadCallback: {new (func: () => void): UILoadCallback;}
+        
+        
         interface IUISource{
             
             fileName: string;
@@ -15391,10 +17623,6 @@ declare module 'csharp' {
             Load($callback: FairyGUI.UILoadCallback):void;
             
         }
-        
-        
-        type UILoadCallback = () => void;
-        var UILoadCallback: {new (func: () => void): UILoadCallback;}
         
         
         class UIPackage extends System.Object{
@@ -15508,12 +17736,6 @@ declare module 'csharp' {
             public constructor();
             
         }
-        
-        
-        enum PackageItemType{ Image = 0, MovieClip = 1, Sound = 2, Component = 3, Atlas = 4, Font = 5, Swf = 6, Misc = 7, Unknown = 8, Spine = 9, DragoneBones = 10 }
-        
-        
-        enum ObjectType{ Image = 0, MovieClip = 1, Swf = 2, Graph = 3, Loader = 4, Group = 5, Text = 6, RichText = 7, InputText = 8, Component = 9, List = 10, Label = 11, Button = 12, ComboBox = 13, ProgressBar = 14, Slider = 15, ScrollBar = 16, Tree = 17, Loader3D = 18 }
         
         
         type PlayCompleteCallback = () => void;
@@ -15740,9 +17962,6 @@ declare module 'csharp' {
         }
         
         
-        enum ScrollBarDisplayType{ Default = 0, Visible = 1, Auto = 2, Hidden = 3 }
-        
-        
         class UIContentScaler extends UnityEngine.MonoBehaviour{
             
             public scaleMode: FairyGUI.UIContentScaler.ScaleMode;
@@ -15823,6 +18042,9 @@ declare module 'csharp' {
         }
         
         
+        enum FitScreen{ None = 0, FitSize = 1, FitWidthAndSetMiddle = 2, FitHeightAndSetCenter = 3 }
+        
+        
         class UIPanel extends UnityEngine.MonoBehaviour implements FairyGUI.EMRenderTarget{
             
             public packageName: string;
@@ -15866,10 +18088,8 @@ declare module 'csharp' {
         }
         
         
-        enum FitScreen{ None = 0, FitSize = 1, FitWidthAndSetMiddle = 2, FitHeightAndSetCenter = 3 }
-        
-        
-        enum HitTestMode{ Default = 0, Raycast = 1 }
+        type TimerCallback = (param: any) => void;
+        var TimerCallback: {new (func: (param: any) => void): TimerCallback;}
         
         
         class Timers extends System.Object{
@@ -15906,8 +18126,37 @@ declare module 'csharp' {
         }
         
         
-        type TimerCallback = (param: any) => void;
-        var TimerCallback: {new (func: (param: any) => void): TimerCallback;}
+    }
+    namespace FairyGUI.Utils {
+        
+        class ByteBuffer extends System.Object{
+            
+            
+        }
+        
+        
+        interface IHtmlPageContext{
+            
+            
+        }
+        
+        
+        class HtmlParseOptions extends System.Object{
+            
+            
+        }
+        
+        
+        class HtmlElement extends System.Object{
+            
+            
+        }
+        
+        
+        class XML extends System.Object{
+            
+            
+        }
         
         
     }
@@ -15946,39 +18195,6 @@ declare module 'csharp' {
             public constructor($srcFactor: UnityEngine.Rendering.BlendMode, $dstFactor: UnityEngine.Rendering.BlendMode, $pma?: boolean);
             
             public constructor();
-            
-        }
-        
-        
-    }
-    namespace FairyGUI.Utils {
-        
-        class ByteBuffer extends System.Object{
-            
-            
-        }
-        
-        
-        interface IHtmlPageContext{
-            
-            
-        }
-        
-        
-        class HtmlParseOptions extends System.Object{
-            
-            
-        }
-        
-        
-        class HtmlElement extends System.Object{
-            
-            
-        }
-        
-        
-        class XML extends System.Object{
-            
             
         }
         
@@ -16209,108 +18425,1138 @@ declare module 'csharp' {
         
         
     }
-    namespace Spine.Unity {
+    namespace Spine {
         
-        class AnimationReferenceAsset extends UnityEngine.ScriptableObject implements Spine.Unity.IHasSkeletonDataAsset{
+        class Animation extends System.Object{
             
-            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
+            public get Timelines(): Spine.ExposedList$1<Spine.Timeline>;
+            public set Timelines(value: Spine.ExposedList$1<Spine.Timeline>);
+            
+            public get Duration(): number;
+            public set Duration(value: number);
+            
+            public get Name(): string;
+            
+            
+            
+            public HasTimeline($id: number):boolean;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $loop: boolean, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($name: string, $timelines: Spine.ExposedList$1<Spine.Timeline>, $duration: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        interface Animation {
+            
+            SetKeyedItemsToSetupPose($skeleton: Spine.Skeleton):void;
+            
+        }
+        
+        
+        interface Timeline{
+            
+            PropertyId: number;
+            
+            Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+        }
+        
+        
+        class ExposedList$1<T> extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<T>{
+            
+            
+        }
+        
+        
+        class Skeleton extends System.Object{
+            
+            public get Data(): Spine.SkeletonData;
+            
+            
+            public get Bones(): Spine.ExposedList$1<Spine.Bone>;
+            
+            
+            public get UpdateCacheList(): Spine.ExposedList$1<Spine.IUpdatable>;
+            
+            
+            public get Slots(): Spine.ExposedList$1<Spine.Slot>;
+            
+            
+            public get DrawOrder(): Spine.ExposedList$1<Spine.Slot>;
+            
+            
+            public get IkConstraints(): Spine.ExposedList$1<Spine.IkConstraint>;
+            
+            
+            public get PathConstraints(): Spine.ExposedList$1<Spine.PathConstraint>;
+            
+            
+            public get TransformConstraints(): Spine.ExposedList$1<Spine.TransformConstraint>;
+            
+            
+            public get Skin(): Spine.Skin;
+            public set Skin(value: Spine.Skin);
+            
+            public get R(): number;
+            public set R(value: number);
+            
+            public get G(): number;
+            public set G(value: number);
+            
+            public get B(): number;
+            public set B(value: number);
+            
+            public get A(): number;
+            public set A(value: number);
+            
+            public get Time(): number;
+            public set Time(value: number);
+            
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get ScaleX(): number;
+            public set ScaleX(value: number);
+            
+            public get ScaleY(): number;
+            public set ScaleY(value: number);
+            
+            public get RootBone(): Spine.Bone;
+            
+            
+            
+            public UpdateCache():void;
+            
+            public UpdateWorldTransform():void;
+            
+            public UpdateWorldTransform($parent: Spine.Bone):void;
+            
+            public SetToSetupPose():void;
+            
+            public SetBonesToSetupPose():void;
+            
+            public SetSlotsToSetupPose():void;
+            
+            public FindBone($boneName: string):Spine.Bone;
+            
+            public FindBoneIndex($boneName: string):number;
+            
+            public FindSlot($slotName: string):Spine.Slot;
+            
+            public FindSlotIndex($slotName: string):number;
+            
+            public SetSkin($skinName: string):void;
+            
+            public SetSkin($newSkin: Spine.Skin):void;
+            
+            public GetAttachment($slotName: string, $attachmentName: string):Spine.Attachment;
+            
+            public GetAttachment($slotIndex: number, $attachmentName: string):Spine.Attachment;
+            
+            public SetAttachment($slotName: string, $attachmentName: string):void;
+            
+            public FindIkConstraint($constraintName: string):Spine.IkConstraint;
+            
+            public FindTransformConstraint($constraintName: string):Spine.TransformConstraint;
+            
+            public FindPathConstraint($constraintName: string):Spine.PathConstraint;
+            
+            public Update($delta: number):void;
+            
+            public GetBounds($x: $Ref<number>, $y: $Ref<number>, $width: $Ref<number>, $height: $Ref<number>, $vertexBuffer: $Ref<System.Array$1<number>>):void;
+            
+            public constructor($data: Spine.SkeletonData);
+            
+            public constructor();
+            
+        }
+        
+        
+        interface Skeleton {
+            
+            SetDrawOrderToSetupPose():void;
+            
+            SetSlotAttachmentsToSetupPose():void;
+            
+            SetSlotAttachmentToSetupPose($slotIndex: number):void;
+            
+            GetColor():UnityEngine.Color;
+            
+            SetColor($color: UnityEngine.Color):void;
+            
+            SetColor($color: UnityEngine.Color32):void;
+            
+            SetLocalScale($scale: UnityEngine.Vector2):void;
+            
+            GetLocalScale():UnityEngine.Vector2;
+            
+        }
+        
+        
+        class Event extends System.Object{
+            
+            public get Data(): Spine.EventData;
+            
+            
+            public get Time(): number;
+            
+            
+            public get Int(): number;
+            public set Int(value: number);
+            
+            public get Float(): number;
+            public set Float(value: number);
+            
+            public get String(): string;
+            public set String(value: string);
+            
+            public get Volume(): number;
+            public set Volume(value: number);
+            
+            public get Balance(): number;
+            public set Balance(value: number);
+            
+            
+            public constructor($time: number, $data: Spine.EventData);
+            
+            public constructor();
+            
+        }
+        
+        
+        enum MixBlend{ Setup = 0, First = 1, Replace = 2, Add = 3 }
+        
+        
+        enum MixDirection{ In = 0, Out = 1 }
+        
+        
+        interface IBoneTimeline{
+            
+            BoneIndex: number;
+            
+        }
+        
+        
+        interface ISlotTimeline{
+            
+            SlotIndex: number;
+            
+        }
+        
+        
+        class CurveTimeline extends System.Object implements Spine.Timeline{
+            
+            public get FrameCount(): number;
+            
+            
+            public get PropertyId(): number;
+            
+            
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public SetLinear($frameIndex: number):void;
+            
+            public SetStepped($frameIndex: number):void;
+            
+            public GetCurveType($frameIndex: number):number;
+            
+            public SetCurve($frameIndex: number, $cx1: number, $cy1: number, $cx2: number, $cy2: number):void;
+            
+            public GetCurvePercent($frameIndex: number, $percent: number):number;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+        }
+        
+        
+        class RotateTimeline extends Spine.CurveTimeline implements Spine.Timeline, Spine.IBoneTimeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get BoneIndex(): number;
+            public set BoneIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $degrees: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TranslateTimeline extends Spine.CurveTimeline implements Spine.Timeline, Spine.IBoneTimeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get BoneIndex(): number;
+            public set BoneIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $x: number, $y: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class ScaleTimeline extends Spine.TranslateTimeline implements Spine.Timeline, Spine.IBoneTimeline{
+            
+            public get PropertyId(): number;
+            
+            
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public constructor();
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+        }
+        
+        
+        class ShearTimeline extends Spine.TranslateTimeline implements Spine.Timeline, Spine.IBoneTimeline{
+            
+            public get PropertyId(): number;
+            
+            
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public constructor();
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+        }
+        
+        
+        class ColorTimeline extends Spine.CurveTimeline implements Spine.Timeline, Spine.ISlotTimeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get SlotIndex(): number;
+            public set SlotIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $r: number, $g: number, $b: number, $a: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TwoColorTimeline extends Spine.CurveTimeline implements Spine.Timeline, Spine.ISlotTimeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get SlotIndex(): number;
+            public set SlotIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $r: number, $g: number, $b: number, $a: number, $r2: number, $g2: number, $b2: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class AttachmentTimeline extends System.Object implements Spine.Timeline, Spine.ISlotTimeline{
+            
+            public get PropertyId(): number;
+            
+            
+            public get FrameCount(): number;
+            
+            
+            public get SlotIndex(): number;
+            public set SlotIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            public get AttachmentNames(): System.Array$1<string>;
+            public set AttachmentNames(value: System.Array$1<string>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $attachmentName: string):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class DeformTimeline extends Spine.CurveTimeline implements Spine.Timeline, Spine.ISlotTimeline{
+            
+            public get PropertyId(): number;
+            
+            
+            public get SlotIndex(): number;
+            public set SlotIndex(value: number);
+            
+            public get Attachment(): Spine.VertexAttachment;
+            public set Attachment(value: Spine.VertexAttachment);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            public get Vertices(): System.Array$1<System.Array$1<number>>;
+            public set Vertices(value: System.Array$1<System.Array$1<number>>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $vertices: System.Array$1<number>):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class VertexAttachment extends Spine.Attachment{
+            
+            public get Id(): number;
+            
+            
+            public get Bones(): System.Array$1<number>;
+            public set Bones(value: System.Array$1<number>);
+            
+            public get Vertices(): System.Array$1<number>;
+            public set Vertices(value: System.Array$1<number>);
+            
+            public get WorldVerticesLength(): number;
+            public set WorldVerticesLength(value: number);
+            
+            public get DeformAttachment(): Spine.VertexAttachment;
+            public set DeformAttachment(value: Spine.VertexAttachment);
+            
+            
+            public ComputeWorldVertices($slot: Spine.Slot, $worldVertices: System.Array$1<number>):void;
+            
+            public ComputeWorldVertices($slot: Spine.Slot, $start: number, $count: number, $worldVertices: System.Array$1<number>, $offset: number, $stride?: number):void;
+            
+        }
+        
+        
+        interface VertexAttachment {
+            
+            IsWeighted():boolean;
+            
+            GetLocalVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+            GetWorldVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
+            
+        }
+        
+        
+        class Attachment extends System.Object{
+            
+            public get Name(): string;
+            
+            
+            
+            public Copy():Spine.Attachment;
+            
+        }
+        
+        
+        interface Attachment {
+            
+            IsRenderable():boolean;
+            
+            GetMaterial():UnityEngine.Material;
+            
+        }
+        
+        
+        class EventTimeline extends System.Object implements Spine.Timeline{
+            
+            public get PropertyId(): number;
+            
+            
+            public get FrameCount(): number;
+            
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            public get Events(): System.Array$1<Spine.Event>;
+            public set Events(value: System.Array$1<Spine.Event>);
+            
+            
+            public SetFrame($frameIndex: number, $e: Spine.Event):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class DrawOrderTimeline extends System.Object implements Spine.Timeline{
+            
+            public get PropertyId(): number;
+            
+            
+            public get FrameCount(): number;
+            
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            public get DrawOrders(): System.Array$1<System.Array$1<number>>;
+            public set DrawOrders(value: System.Array$1<System.Array$1<number>>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $drawOrder: System.Array$1<number>):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class IkConstraintTimeline extends Spine.CurveTimeline implements Spine.Timeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get IkConstraintIndex(): number;
+            public set IkConstraintIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $mix: number, $softness: number, $bendDirection: number, $compress: boolean, $stretch: boolean):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TransformConstraintTimeline extends Spine.CurveTimeline implements Spine.Timeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get TransformConstraintIndex(): number;
+            public set TransformConstraintIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $rotateMix: number, $translateMix: number, $scaleMix: number, $shearMix: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class PathConstraintPositionTimeline extends Spine.CurveTimeline implements Spine.Timeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get PathConstraintIndex(): number;
+            public set PathConstraintIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $position: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class PathConstraintSpacingTimeline extends Spine.PathConstraintPositionTimeline implements Spine.Timeline{
+            
+            public get PropertyId(): number;
+            
+            
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor($frameCount: number);
+            
+            public constructor();
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+        }
+        
+        
+        class PathConstraintMixTimeline extends Spine.CurveTimeline implements Spine.Timeline{
+            
+            public static ENTRIES: number;
+            public get PropertyId(): number;
+            
+            
+            public get PathConstraintIndex(): number;
+            public set PathConstraintIndex(value: number);
+            
+            public get Frames(): System.Array$1<number>;
+            public set Frames(value: System.Array$1<number>);
+            
+            
+            public SetFrame($frameIndex: number, $time: number, $rotateMix: number, $translateMix: number):void;
+            
+            public constructor($frameCount: number);
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $firedEvents: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public Apply($skeleton: Spine.Skeleton, $lastTime: number, $time: number, $events: Spine.ExposedList$1<Spine.Event>, $alpha: number, $blend: Spine.MixBlend, $direction: Spine.MixDirection):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class AnimationState extends System.Object{
+            
+            public get TimeScale(): number;
+            public set TimeScale(value: number);
+            
+            public get Data(): Spine.AnimationStateData;
+            public set Data(value: Spine.AnimationStateData);
+            
+            public get Tracks(): Spine.ExposedList$1<Spine.TrackEntry>;
+            
+            
+            
+            public add_Start($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Start($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Interrupt($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Interrupt($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_End($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_End($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Dispose($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Dispose($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Complete($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Complete($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Event($value: Spine.AnimationState.TrackEntryEventDelegate):void;
+            
+            public remove_Event($value: Spine.AnimationState.TrackEntryEventDelegate):void;
+            
+            public AssignEventSubscribersFrom($src: Spine.AnimationState):void;
+            
+            public AddEventSubscribersFrom($src: Spine.AnimationState):void;
+            
+            public Update($delta: number):void;
+            
+            public Apply($skeleton: Spine.Skeleton):boolean;
+            
+            public ClearTracks():void;
+            
+            public ClearTrack($trackIndex: number):void;
+            
+            public SetAnimation($trackIndex: number, $animationName: string, $loop: boolean):Spine.TrackEntry;
+            
+            public SetAnimation($trackIndex: number, $animation: Spine.Animation, $loop: boolean):Spine.TrackEntry;
+            
+            public AddAnimation($trackIndex: number, $animationName: string, $loop: boolean, $delay: number):Spine.TrackEntry;
+            
+            public AddAnimation($trackIndex: number, $animation: Spine.Animation, $loop: boolean, $delay: number):Spine.TrackEntry;
+            
+            public SetEmptyAnimation($trackIndex: number, $mixDuration: number):Spine.TrackEntry;
+            
+            public AddEmptyAnimation($trackIndex: number, $mixDuration: number, $delay: number):Spine.TrackEntry;
+            
+            public SetEmptyAnimations($mixDuration: number):void;
+            
+            public GetCurrent($trackIndex: number):Spine.TrackEntry;
+            
+            public ClearListenerNotifications():void;
+            
+            public constructor($data: Spine.AnimationStateData);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TrackEntry extends System.Object implements Spine.Pool$1.IPoolable<Spine.TrackEntry>{
+            
+            public get TrackIndex(): number;
             
             
             public get Animation(): Spine.Animation;
             
             
+            public get Loop(): boolean;
+            public set Loop(value: boolean);
             
-            public Initialize():void;
+            public get Delay(): number;
+            public set Delay(value: number);
             
-            public static op_Implicit($asset: Spine.Unity.AnimationReferenceAsset):Spine.Animation;
+            public get TrackTime(): number;
+            public set TrackTime(value: number);
+            
+            public get TrackEnd(): number;
+            public set TrackEnd(value: number);
+            
+            public get AnimationStart(): number;
+            public set AnimationStart(value: number);
+            
+            public get AnimationEnd(): number;
+            public set AnimationEnd(value: number);
+            
+            public get AnimationLast(): number;
+            public set AnimationLast(value: number);
+            
+            public get AnimationTime(): number;
+            
+            
+            public get TimeScale(): number;
+            public set TimeScale(value: number);
+            
+            public get Alpha(): number;
+            public set Alpha(value: number);
+            
+            public get EventThreshold(): number;
+            public set EventThreshold(value: number);
+            
+            public get AttachmentThreshold(): number;
+            public set AttachmentThreshold(value: number);
+            
+            public get DrawOrderThreshold(): number;
+            public set DrawOrderThreshold(value: number);
+            
+            public get Next(): Spine.TrackEntry;
+            
+            
+            public get IsComplete(): boolean;
+            
+            
+            public get MixTime(): number;
+            public set MixTime(value: number);
+            
+            public get MixDuration(): number;
+            public set MixDuration(value: number);
+            
+            public get MixBlend(): Spine.MixBlend;
+            public set MixBlend(value: Spine.MixBlend);
+            
+            public get MixingFrom(): Spine.TrackEntry;
+            
+            
+            public get MixingTo(): Spine.TrackEntry;
+            
+            
+            public get HoldPrevious(): boolean;
+            public set HoldPrevious(value: boolean);
+            
+            
+            public add_Start($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Start($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Interrupt($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Interrupt($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_End($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_End($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Dispose($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Dispose($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Complete($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public remove_Complete($value: Spine.AnimationState.TrackEntryDelegate):void;
+            
+            public add_Event($value: Spine.AnimationState.TrackEntryEventDelegate):void;
+            
+            public remove_Event($value: Spine.AnimationState.TrackEntryEventDelegate):void;
+            
+            public Reset():void;
+            
+            public ResetRotationDirections():void;
             
             public constructor();
             
-            public static op_Implicit($exists: UnityEngine.Object):boolean;
+        }
+        
+        
+        interface TrackEntry {
+            
+            AllowImmediateQueue():void;
             
         }
         
         
-        interface IHasSkeletonDataAsset{
+        class AnimationStateData extends System.Object{
             
-            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
-            
-        }
-        
-        
-        class SkeletonDataAsset extends UnityEngine.ScriptableObject{
-            
-            public atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>;
-            public scale: number;
-            public skeletonJSON: UnityEngine.TextAsset;
-            public skeletonDataModifiers: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataModifierAsset>;
-            public fromAnimation: System.Array$1<string>;
-            public toAnimation: System.Array$1<string>;
-            public duration: System.Array$1<number>;
-            public defaultMix: number;
-            public controller: UnityEngine.RuntimeAnimatorController;
-            public get IsLoaded(): boolean;
+            public get SkeletonData(): Spine.SkeletonData;
             
             
+            public get DefaultMix(): number;
+            public set DefaultMix(value: number);
             
-            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAsset: Spine.Unity.AtlasAssetBase, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
             
-            public static CreateRuntimeInstance($skeletonDataFile: UnityEngine.TextAsset, $atlasAssets: System.Array$1<Spine.Unity.AtlasAssetBase>, $initialize: boolean, $scale?: number):Spine.Unity.SkeletonDataAsset;
+            public SetMix($fromName: string, $toName: string, $duration: number):void;
             
-            public Clear():void;
+            public SetMix($from: Spine.Animation, $to: Spine.Animation, $duration: number):void;
             
-            public GetAnimationStateData():Spine.AnimationStateData;
+            public GetMix($from: Spine.Animation, $to: Spine.Animation):number;
             
-            public GetSkeletonData($quiet: boolean):Spine.SkeletonData;
-            
-            public FillStateData():void;
+            public constructor($skeletonData: Spine.SkeletonData);
             
             public constructor();
             
         }
         
         
-        class AtlasAssetBase extends UnityEngine.ScriptableObject{
+        class SkeletonData extends System.Object{
             
-            public get PrimaryMaterial(): UnityEngine.Material;
+            public get Name(): string;
+            public set Name(value: string);
             
-            
-            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
-            
-            
-            public get MaterialCount(): number;
+            public get Bones(): Spine.ExposedList$1<Spine.BoneData>;
             
             
-            public get IsLoaded(): boolean;
+            public get Slots(): Spine.ExposedList$1<Spine.SlotData>;
             
             
+            public get Skins(): Spine.ExposedList$1<Spine.Skin>;
+            public set Skins(value: Spine.ExposedList$1<Spine.Skin>);
             
-            public Clear():void;
+            public get DefaultSkin(): Spine.Skin;
+            public set DefaultSkin(value: Spine.Skin);
             
-            public GetAtlas():Spine.Atlas;
+            public get Events(): Spine.ExposedList$1<Spine.EventData>;
+            public set Events(value: Spine.ExposedList$1<Spine.EventData>);
             
-        }
-        
-        
-        class EventDataReferenceAsset extends UnityEngine.ScriptableObject{
+            public get Animations(): Spine.ExposedList$1<Spine.Animation>;
+            public set Animations(value: Spine.ExposedList$1<Spine.Animation>);
             
-            public get EventData(): Spine.EventData;
+            public get IkConstraints(): Spine.ExposedList$1<Spine.IkConstraintData>;
+            public set IkConstraints(value: Spine.ExposedList$1<Spine.IkConstraintData>);
+            
+            public get TransformConstraints(): Spine.ExposedList$1<Spine.TransformConstraintData>;
+            public set TransformConstraints(value: Spine.ExposedList$1<Spine.TransformConstraintData>);
+            
+            public get PathConstraints(): Spine.ExposedList$1<Spine.PathConstraintData>;
+            public set PathConstraints(value: Spine.ExposedList$1<Spine.PathConstraintData>);
+            
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Width(): number;
+            public set Width(value: number);
+            
+            public get Height(): number;
+            public set Height(value: number);
+            
+            public get Version(): string;
+            public set Version(value: string);
+            
+            public get Hash(): string;
+            public set Hash(value: string);
+            
+            public get ImagesPath(): string;
+            public set ImagesPath(value: string);
+            
+            public get AudioPath(): string;
+            public set AudioPath(value: string);
+            
+            public get Fps(): number;
+            public set Fps(value: number);
             
             
+            public FindBone($boneName: string):Spine.BoneData;
             
-            public Initialize():void;
+            public FindBoneIndex($boneName: string):number;
             
-            public static op_Implicit($asset: Spine.Unity.EventDataReferenceAsset):Spine.EventData;
+            public FindSlot($slotName: string):Spine.SlotData;
+            
+            public FindSlotIndex($slotName: string):number;
+            
+            public FindSkin($skinName: string):Spine.Skin;
+            
+            public FindEvent($eventDataName: string):Spine.EventData;
+            
+            public FindAnimation($animationName: string):Spine.Animation;
+            
+            public FindIkConstraint($constraintName: string):Spine.IkConstraintData;
+            
+            public FindTransformConstraint($constraintName: string):Spine.TransformConstraintData;
+            
+            public FindPathConstraint($constraintName: string):Spine.PathConstraintData;
+            
+            public FindPathConstraintIndex($pathConstraintName: string):number;
             
             public constructor();
             
-            public static op_Implicit($exists: UnityEngine.Object):boolean;
+        }
+        
+        
+        class Atlas extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<Spine.AtlasRegion>{
+            
+            
+            public GetEnumerator():System.Collections.Generic.IEnumerator$1<Spine.AtlasRegion>;
+            
+            public FlipV():void;
+            
+            public FindRegion($name: string):Spine.AtlasRegion;
+            
+            public Dispose():void;
+            
+            public constructor($reader: System.IO.TextReader, $dir: string, $textureLoader: Spine.TextureLoader);
+            
+            public constructor($pages: System.Collections.Generic.List$1<Spine.AtlasPage>, $regions: System.Collections.Generic.List$1<Spine.AtlasRegion>);
+            
+            public constructor();
             
         }
         
         
-        class RegionlessAttachmentLoader extends System.Object implements Spine.AttachmentLoader{
+        class AtlasRegion extends System.Object{
             
+            public page: Spine.AtlasPage;
+            public name: string;
+            public x: number;
+            public y: number;
+            public width: number;
+            public height: number;
+            public u: number;
+            public v: number;
+            public u2: number;
+            public v2: number;
+            public offsetX: number;
+            public offsetY: number;
+            public originalWidth: number;
+            public originalHeight: number;
+            public index: number;
+            public rotate: boolean;
+            public degrees: number;
+            public splits: System.Array$1<number>;
+            public pads: System.Array$1<number>;
+            
+            public Clone():Spine.AtlasRegion;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface TextureLoader{
+            
+            
+            Load($page: Spine.AtlasPage, $path: string):void;
+            
+            Unload($texture: any):void;
+            
+        }
+        
+        
+        class AtlasPage extends System.Object{
+            
+            public name: string;
+            public format: Spine.Format;
+            public minFilter: Spine.TextureFilter;
+            public magFilter: Spine.TextureFilter;
+            public uWrap: Spine.TextureWrap;
+            public vWrap: Spine.TextureWrap;
+            public rendererObject: any;
+            public width: number;
+            public height: number;
+            
+            public Clone():Spine.AtlasPage;
+            
+            public constructor();
+            
+        }
+        
+        
+        enum Format{ Alpha = 0, Intensity = 1, LuminanceAlpha = 2, RGB565 = 3, RGBA4444 = 4, RGB888 = 5, RGBA8888 = 6 }
+        
+        
+        enum TextureFilter{ Nearest = 0, Linear = 1, MipMap = 2, MipMapNearestNearest = 3, MipMapLinearNearest = 4, MipMapNearestLinear = 5, MipMapLinearLinear = 6 }
+        
+        
+        enum TextureWrap{ MirroredRepeat = 0, ClampToEdge = 1, Repeat = 2 }
+        
+        
+        class AtlasAttachmentLoader extends System.Object implements Spine.AttachmentLoader{
+            
+            
+            public NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
+            
+            public NewMeshAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.MeshAttachment;
+            
+            public NewBoundingBoxAttachment($skin: Spine.Skin, $name: string):Spine.BoundingBoxAttachment;
+            
+            public NewPathAttachment($skin: Spine.Skin, $name: string):Spine.PathAttachment;
+            
+            public NewPointAttachment($skin: Spine.Skin, $name: string):Spine.PointAttachment;
+            
+            public NewClippingAttachment($skin: Spine.Skin, $name: string):Spine.ClippingAttachment;
+            
+            public FindRegion($name: string):Spine.AtlasRegion;
+            
+            public constructor(...atlasArray: Spine.Atlas[]);
             
             public NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
             
@@ -16329,1372 +19575,107 @@ declare module 'csharp' {
         }
         
         
-        class SkeletonDataModifierAsset extends UnityEngine.ScriptableObject{
-            
-            
-            public Apply($skeletonData: Spine.SkeletonData):void;
-            
-        }
-        
-        
-        class SkeletonDataCompatibility extends System.Object{
-            
-            
-            public static GetVersionInfo($asset: UnityEngine.TextAsset):Spine.Unity.SkeletonDataCompatibility.VersionInfo;
-            
-            public static GetCompatibilityProblemInfo($fileVersion: Spine.Unity.SkeletonDataCompatibility.VersionInfo):Spine.Unity.SkeletonDataCompatibility.CompatibilityProblemInfo;
-            
-            public static DisplayCompatibilityProblem($descriptionString: string, $spineJson: UnityEngine.TextAsset):void;
-            
-        }
-        
-        
-        class SpineAtlasAsset extends Spine.Unity.AtlasAssetBase{
-            
-            public atlasFile: UnityEngine.TextAsset;
-            public materials: System.Array$1<UnityEngine.Material>;
-            public get IsLoaded(): boolean;
-            
-            
-            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
-            
-            
-            public get MaterialCount(): number;
-            
-            
-            public get PrimaryMaterial(): UnityEngine.Material;
-            
-            
-            
-            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
-            
-            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $materialPropertySource: UnityEngine.Material, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
-            
-            public static CreateRuntimeInstance($atlasText: UnityEngine.TextAsset, $textures: System.Array$1<UnityEngine.Texture2D>, $shader: UnityEngine.Shader, $initialize: boolean):Spine.Unity.SpineAtlasAsset;
-            
-            public GenerateMesh($name: string, $mesh: UnityEngine.Mesh, $material: $Ref<UnityEngine.Material>, $scale?: number):UnityEngine.Mesh;
-            
-            public constructor();
-            
-        }
-        
-        
-        class MaterialsTextureLoader extends System.Object implements Spine.TextureLoader{
-            
-            
-            public Load($page: Spine.AtlasPage, $path: string):void;
-            
-            public Unload($texture: any):void;
-            
-            public constructor($atlasAsset: Spine.Unity.SpineAtlasAsset);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineSpriteAtlasAsset extends Spine.Unity.AtlasAssetBase{
-            
-            public spriteAtlasFile: UnityEngine.U2D.SpriteAtlas;
-            public materials: System.Array$1<UnityEngine.Material>;
-            public updateRegionsInPlayMode: boolean;
-            public get IsLoaded(): boolean;
-            
-            
-            public get Materials(): System.Collections.Generic.IEnumerable$1<UnityEngine.Material>;
-            
-            
-            public get MaterialCount(): number;
-            
-            
-            public get PrimaryMaterial(): UnityEngine.Material;
-            
-            
-            public get RegionsNeedLoading(): boolean;
-            
-            
-            
-            public static CreateRuntimeInstance($spriteAtlasFile: UnityEngine.U2D.SpriteAtlas, $materials: System.Array$1<UnityEngine.Material>, $initialize: boolean):Spine.Unity.SpineSpriteAtlasAsset;
-            
-            public static UpdateByStartingEditorPlayMode():void;
-            
-            public static AnySpriteAtlasNeedsRegionsLoaded():boolean;
-            
-            public static UpdateWhenEditorPlayModeStarted():void;
-            
-            public LoadRegionsInEditorPlayMode():void;
-            
-            public static AccessPackedTextureEditor($spriteAtlas: UnityEngine.U2D.SpriteAtlas):UnityEngine.Texture2D;
-            
-            public static AccessPackedTexture($sprites: System.Array$1<UnityEngine.Sprite>):UnityEngine.Texture2D;
-            
-            public static AccessPackedSprites($spriteAtlas: UnityEngine.U2D.SpriteAtlas):System.Array$1<UnityEngine.Sprite>;
-            
-            public constructor();
-            
-        }
-        
-        
-        class BoneFollower extends UnityEngine.MonoBehaviour{
-            
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            public boneName: string;
-            public followXYPosition: boolean;
-            public followZPosition: boolean;
-            public followBoneRotation: boolean;
-            public followSkeletonFlip: boolean;
-            public followLocalScale: boolean;
-            public initializeOnAwake: boolean;
-            public valid: boolean;
-            public bone: Spine.Bone;
-            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
-            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
-            
-            
-            public SetBone($name: string):boolean;
-            
-            public Awake():void;
-            
-            public HandleRebuildRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer):void;
-            
-            public Initialize():void;
-            
-            public LateUpdate():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonRenderer extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent{
-            
-            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
-            public initialSkinName: string;
-            public initialFlipX: boolean;
-            public initialFlipY: boolean;
-            public updateWhenInvisible: Spine.Unity.UpdateMode;
-            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
-            public zSpacing: number;
-            public useClipping: boolean;
-            public immutableTriangles: boolean;
-            public pmaVertexColors: boolean;
-            public clearStateOnDisable: boolean;
-            public tintBlack: boolean;
-            public singleSubmesh: boolean;
-            public fixDrawOrder: boolean;
-            public addNormals: boolean;
-            public calculateTangents: boolean;
-            public maskInteraction: UnityEngine.SpriteMaskInteraction;
-            public maskMaterials: Spine.Unity.SkeletonRenderer.SpriteMaskInteractionMaterials;
-            public static STENCIL_COMP_PARAM_ID: number;
-            public static STENCIL_COMP_MASKINTERACTION_NONE: UnityEngine.Rendering.CompareFunction;
-            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_INSIDE: UnityEngine.Rendering.CompareFunction;
-            public static STENCIL_COMP_MASKINTERACTION_VISIBLE_OUTSIDE: UnityEngine.Rendering.CompareFunction;
-            public disableRenderingOnOverride: boolean;
-            public valid: boolean;
-            public skeleton: Spine.Skeleton;
-            public static SUBMESH_DUMMY_PARAM_ID: number;
-            public get EditorSkipSkinSync(): boolean;
-            public set EditorSkipSkinSync(value: boolean);
-            
-            public get UpdateMode(): Spine.Unity.UpdateMode;
-            public set UpdateMode(value: Spine.Unity.UpdateMode);
-            
-            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>;
-            
-            
-            public get CustomSlotMaterials(): System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>;
-            
-            
-            public get Skeleton(): Spine.Skeleton;
-            
-            
-            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
-            
-            
-            
-            public add_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
-            
-            public remove_GenerateMeshOverride($value: Spine.Unity.SkeletonRenderer.InstructionDelegate):void;
-            
-            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
-            
-            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
-            
-            public add_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
-            
-            public remove_OnRebuild($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
-            
-            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
-            
-            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonRenderer.SkeletonRendererDelegate):void;
-            
-            public SetMeshSettings($settings: Spine.Unity.MeshGenerator.Settings):void;
-            
-            public Awake():void;
-            
-            public ClearState():void;
-            
-            public EnsureMeshGeneratorCapacity($minimumVertexCount: number):void;
-            
-            public Initialize($overwrite: boolean):void;
-            
-            public LateUpdate():void;
-            
-            public OnBecameVisible():void;
-            
-            public OnBecameInvisible():void;
-            
-            public FindAndApplySeparatorSlots($startsWith: string, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
-            
-            public FindAndApplySeparatorSlots($slotNamePredicate: System.Func$2<string, boolean>, $clearExistingSeparators?: boolean, $updateStringArray?: boolean):void;
-            
-            public ReapplySeparatorSlotNames():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        interface ISkeletonComponent{
-            
-            SkeletonDataAsset: Spine.Unity.SkeletonDataAsset;
-            Skeleton: Spine.Skeleton;
-            
-        }
-        
-        
-        class BoneFollowerGraphic extends UnityEngine.MonoBehaviour{
-            
-            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
-            public initializeOnAwake: boolean;
-            public boneName: string;
-            public followBoneRotation: boolean;
-            public followSkeletonFlip: boolean;
-            public followLocalScale: boolean;
-            public followXYPosition: boolean;
-            public followZPosition: boolean;
-            public bone: Spine.Bone;
-            public valid: boolean;
-            public get SkeletonGraphic(): Spine.Unity.SkeletonGraphic;
-            public set SkeletonGraphic(value: Spine.Unity.SkeletonGraphic);
-            
-            
-            public SetBone($name: string):boolean;
-            
-            public Awake():void;
-            
-            public Initialize():void;
-            
-            public LateUpdate():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonGraphic extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable, Spine.Unity.ISkeletonAnimation{
-            
-            public skeletonDataAsset: Spine.Unity.SkeletonDataAsset;
-            public initialSkinName: string;
-            public initialFlipX: boolean;
-            public initialFlipY: boolean;
-            public startingAnimation: string;
-            public startingLoop: boolean;
-            public timeScale: number;
-            public freeze: boolean;
-            public updateWhenInvisible: Spine.Unity.UpdateMode;
-            public unscaledTime: boolean;
-            public allowMultipleCanvasRenderers: boolean;
-            public canvasRenderers: System.Collections.Generic.List$1<UnityEngine.CanvasRenderer>;
-            public static SeparatorPartGameObjectName: string;
-            public separatorSlots: System.Collections.Generic.List$1<Spine.Slot>;
-            public enableSeparatorSlots: boolean;
-            public updateSeparatorPartLocation: boolean;
-            public get SkeletonDataAsset(): Spine.Unity.SkeletonDataAsset;
-            
-            
-            public get UpdateMode(): Spine.Unity.UpdateMode;
-            public set UpdateMode(value: Spine.Unity.UpdateMode);
-            
-            public get SeparatorParts(): System.Collections.Generic.List$1<UnityEngine.Transform>;
-            
-            
-            public get CustomTextureOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Texture>;
-            
-            
-            public get CustomMaterialOverride(): System.Collections.Generic.Dictionary$2<UnityEngine.Texture, UnityEngine.Material>;
-            
-            
-            public get OverrideTexture(): UnityEngine.Texture;
-            public set OverrideTexture(value: UnityEngine.Texture);
-            
-            public get mainTexture(): UnityEngine.Texture;
-            
-            
-            public get Skeleton(): Spine.Skeleton;
-            public set Skeleton(value: Spine.Skeleton);
-            
-            public get SkeletonData(): Spine.SkeletonData;
-            
-            
-            public get IsValid(): boolean;
-            
-            
-            public get AnimationState(): Spine.AnimationState;
-            
-            
-            public get MeshGenerator(): Spine.Unity.MeshGenerator;
-            
-            
-            
-            public static NewSkeletonGraphicGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $parent: UnityEngine.Transform, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
-            
-            public static AddSkeletonGraphicComponent($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset, $material: UnityEngine.Material):Spine.Unity.SkeletonGraphic;
-            
-            public Update():void;
-            
-            public Update($deltaTime: number):void;
-            
-            public LateUpdate():void;
-            
-            public OnBecameVisible():void;
-            
-            public OnBecameInvisible():void;
-            
-            public ReapplySeparatorSlotNames():void;
-            
-            public add_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
-            
-            public remove_OnRebuild($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
-            
-            public add_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
-            
-            public remove_OnMeshAndMaterialsUpdated($value: Spine.Unity.SkeletonGraphic.SkeletonRendererDelegate):void;
-            
-            public GetLastMesh():UnityEngine.Mesh;
-            
-            public MatchRectTransformWithBounds():boolean;
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
-            
-            public remove_OnPostProcessVertices($value: Spine.Unity.MeshGeneratorDelegate):void;
-            
-            public Clear():void;
-            
-            public TrimRenderers():void;
-            
-            public Initialize($overwrite: boolean):void;
-            
-            public UpdateMesh():void;
-            
-            public HasMultipleSubmeshInstructions():boolean;
-            
-            public constructor();
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-        }
-        
-        
-        interface IAnimationStateComponent{
-            
-            AnimationState: Spine.AnimationState;
-            
-        }
-        
-        
-        interface ISkeletonAnimation{
-            
-            Skeleton: Spine.Skeleton;
-            
-            add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-        }
-        
-        
-        class BoundingBoxFollower extends UnityEngine.MonoBehaviour{
-            
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            public slotName: string;
-            public isTrigger: boolean;
-            public clearStateOnDisable: boolean;
-            public colliderTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, UnityEngine.PolygonCollider2D>;
-            public nameTable: System.Collections.Generic.Dictionary$2<Spine.BoundingBoxAttachment, string>;
-            public get Slot(): Spine.Slot;
-            
-            
-            public get CurrentAttachment(): Spine.BoundingBoxAttachment;
-            
-            
-            public get CurrentAttachmentName(): string;
-            
-            
-            public get CurrentCollider(): UnityEngine.PolygonCollider2D;
-            
-            
-            public get IsTrigger(): boolean;
-            
-            
-            
-            public Initialize($overwrite?: boolean):void;
-            
-            public ClearState():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class PointFollower extends UnityEngine.MonoBehaviour implements Spine.Unity.IHasSkeletonRenderer, Spine.Unity.IHasSkeletonComponent{
-            
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            public slotName: string;
-            public pointAttachmentName: string;
-            public followRotation: boolean;
-            public followSkeletonFlip: boolean;
-            public followSkeletonZPosition: boolean;
-            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
-            
-            
-            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
-            
-            
-            public get IsValid(): boolean;
-            
-            
-            
-            public Initialize():void;
-            
-            public LateUpdate():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        interface IHasSkeletonRenderer{
-            
-            SkeletonRenderer: Spine.Unity.SkeletonRenderer;
-            
-        }
-        
-        
-        interface IHasSkeletonComponent{
-            
-            SkeletonComponent: Spine.Unity.ISkeletonComponent;
-            
-        }
-        
-        
-        class SkeletonMecanimRootMotion extends Spine.Unity.SkeletonRootMotionBase{
-            
-            public mecanimLayerFlags: number;
-            public get SkeletonMecanim(): Spine.Unity.SkeletonMecanim;
-            
-            
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonRootMotionBase extends UnityEngine.MonoBehaviour{
-            
-            public transformPositionX: boolean;
-            public transformPositionY: boolean;
-            public rigidBody2D: UnityEngine.Rigidbody2D;
-            public rigidBody: UnityEngine.Rigidbody;
-            public get UsesRigidbody(): boolean;
-            
-            
-            
-            public SetRootMotionBone($name: string):void;
-            
-        }
-        
-        
-        class SkeletonMecanim extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.ISkeletonAnimation{
-            
-            public get Translator(): Spine.Unity.SkeletonMecanim.MecanimTranslator;
-            
-            
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public Update():void;
-            
-            public constructor();
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-        }
-        
-        
-        class SkeletonRootMotion extends Spine.Unity.SkeletonRootMotionBase{
-            
-            public animationTrackFlags: number;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonAnimation extends Spine.Unity.SkeletonRenderer implements Spine.Unity.IHasSkeletonDataAsset, Spine.Unity.ISkeletonComponent, Spine.Unity.IAnimationStateComponent, Spine.Unity.ISkeletonAnimation{
-            
-            public state: Spine.AnimationState;
-            public loop: boolean;
-            public timeScale: number;
-            public get AnimationState(): Spine.AnimationState;
-            
-            
-            public get AnimationName(): string;
-            public set AnimationName(value: string);
-            
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public static AddToGameObject($gameObject: UnityEngine.GameObject, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
-            
-            public static NewSkeletonAnimationGameObject($skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Unity.SkeletonAnimation;
-            
-            public Update($deltaTime: number):void;
-            
-            public constructor();
-            
-            public add_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateLocal($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateWorld($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public add_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-            public remove_UpdateComplete($value: Spine.Unity.UpdateBonesDelegate):void;
-            
-        }
-        
-        
-        type UpdateBonesDelegate = (animated: Spine.Unity.ISkeletonAnimation) => void;
-        var UpdateBonesDelegate: {new (func: (animated: Spine.Unity.ISkeletonAnimation) => void): UpdateBonesDelegate;}
-        
-        
-        enum UpdateMode{ Nothing = 0, OnlyAnimationStatus = 1, EverythingExceptMesh = 2, FullUpdate = 3 }
-        
-        
-        class MeshGenerator extends System.Object{
-            
-            public settings: Spine.Unity.MeshGenerator.Settings;
-            public get VertexCount(): number;
-            
-            
-            public get Buffers(): Spine.Unity.MeshGeneratorBuffers;
-            
-            
-            
-            public static GenerateSingleSubmeshInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $material: UnityEngine.Material):void;
-            
-            public static RequiresMultipleSubmeshesByDrawOrder($skeleton: Spine.Skeleton):boolean;
-            
-            public static GenerateSkeletonRendererInstruction($instructionOutput: Spine.Unity.SkeletonRendererInstruction, $skeleton: Spine.Skeleton, $customSlotMaterials: System.Collections.Generic.Dictionary$2<Spine.Slot, UnityEngine.Material>, $separatorSlots: System.Collections.Generic.List$1<Spine.Slot>, $generateMeshOverride: boolean, $immutableTriangles?: boolean):void;
-            
-            public static TryReplaceMaterials($workingSubmeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $customMaterialOverride: System.Collections.Generic.Dictionary$2<UnityEngine.Material, UnityEngine.Material>):void;
-            
-            public Begin():void;
-            
-            public AddSubmesh($instruction: Spine.Unity.SubmeshInstruction, $updateTriangles?: boolean):void;
-            
-            public BuildMesh($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
-            
-            public BuildMeshWithArrays($instruction: Spine.Unity.SkeletonRendererInstruction, $updateTriangles: boolean):void;
-            
-            public ScaleVertexData($scale: number):void;
-            
-            public FillVertexData($mesh: UnityEngine.Mesh):void;
-            
-            public FillLateVertexData($mesh: UnityEngine.Mesh):void;
-            
-            public FillTriangles($mesh: UnityEngine.Mesh):void;
-            
-            public EnsureVertexCapacity($minimumVertexCount: number, $inlcudeTintBlack?: boolean, $includeTangents?: boolean, $includeNormals?: boolean):void;
-            
-            public TrimExcess():void;
-            
-            public static FillMeshLocal($mesh: UnityEngine.Mesh, $regionAttachment: Spine.RegionAttachment):void;
-            
-            public static FillMeshLocal($mesh: UnityEngine.Mesh, $meshAttachment: Spine.MeshAttachment, $skeletonData: Spine.SkeletonData):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        type MeshGeneratorDelegate = (buffers: Spine.Unity.MeshGeneratorBuffers) => void;
-        var MeshGeneratorDelegate: {new (func: (buffers: Spine.Unity.MeshGeneratorBuffers) => void): MeshGeneratorDelegate;}
-        
-        
-        class MeshGeneratorBuffers extends System.ValueType{
-            
-            public vertexCount: number;
-            public vertexBuffer: System.Array$1<UnityEngine.Vector3>;
-            public uvBuffer: System.Array$1<UnityEngine.Vector2>;
-            public colorBuffer: System.Array$1<UnityEngine.Color32>;
-            public meshGenerator: Spine.Unity.MeshGenerator;
-            
-        }
-        
-        
-        class SkeletonPartsRenderer extends UnityEngine.MonoBehaviour{
-            
-            public get MeshGenerator(): Spine.Unity.MeshGenerator;
-            
-            
-            public get MeshRenderer(): UnityEngine.MeshRenderer;
-            
-            
-            public get MeshFilter(): UnityEngine.MeshFilter;
-            
-            
-            
-            public ClearMesh():void;
-            
-            public RenderParts($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
-            
-            public SetPropertyBlock($block: UnityEngine.MaterialPropertyBlock):void;
-            
-            public static NewPartsRendererGameObject($parent: UnityEngine.Transform, $name: string, $sortingOrder?: number):Spine.Unity.SkeletonPartsRenderer;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SubmeshInstruction extends System.ValueType{
-            
-            public skeleton: Spine.Skeleton;
-            public startSlot: number;
-            public endSlot: number;
-            public material: UnityEngine.Material;
-            public forceSeparate: boolean;
-            public preActiveClippingSlotSource: number;
-            public rawTriangleCount: number;
-            public rawVertexCount: number;
-            public rawFirstVertexIndex: number;
-            public hasClipping: boolean;
-            public get SlotCount(): number;
-            
-            
-            
-        }
-        
-        
-        class SkeletonRenderSeparator extends UnityEngine.MonoBehaviour{
-            
-            public static DefaultSortingOrderIncrement: number;
-            public copyPropertyBlock: boolean;
-            public copyMeshRendererFlags: boolean;
-            public partsRenderers: System.Collections.Generic.List$1<Spine.Unity.SkeletonPartsRenderer>;
-            public get SkeletonRenderer(): Spine.Unity.SkeletonRenderer;
-            public set SkeletonRenderer(value: Spine.Unity.SkeletonRenderer);
-            
-            
-            public static AddToSkeletonRenderer($skeletonRenderer: Spine.Unity.SkeletonRenderer, $sortingLayerID?: number, $extraPartsRenderers?: number, $sortingOrderIncrement?: number, $baseSortingOrder?: number, $addMinimumPartsRenderers?: boolean):Spine.Unity.SkeletonRenderSeparator;
-            
-            public AddPartsRenderer($sortingOrderIncrement?: number, $name?: string):Spine.Unity.SkeletonPartsRenderer;
-            
-            public OnEnable():void;
-            
-            public OnDisable():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonRendererInstruction extends System.Object{
-            
-            public submeshInstructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>;
-            public immutableTriangles: boolean;
-            public hasActiveClipping: boolean;
-            public rawVertexCount: number;
-            public attachments: Spine.ExposedList$1<Spine.Attachment>;
-            
-            public Clear():void;
-            
-            public Dispose():void;
-            
-            public SetWithSubset($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>, $startSubmesh: number, $endSubmesh: number):void;
-            
-            public Set($other: Spine.Unity.SkeletonRendererInstruction):void;
-            
-            public static GeometryNotEqual($a: Spine.Unity.SkeletonRendererInstruction, $b: Spine.Unity.SkeletonRendererInstruction):boolean;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonGraphicCustomMaterials extends UnityEngine.MonoBehaviour{
-            
-            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonRendererCustomMaterials extends UnityEngine.MonoBehaviour{
-            
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            
-            public constructor();
-            
-        }
-        
-        
-        class ActivateBasedOnFlipDirection extends UnityEngine.MonoBehaviour{
-            
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
-            public activeOnNormalX: UnityEngine.GameObject;
-            public activeOnFlippedX: UnityEngine.GameObject;
-            
-            public constructor();
-            
-        }
-        
-        
-        class FollowLocationRigidbody extends UnityEngine.MonoBehaviour{
-            
-            public reference: UnityEngine.Transform;
-            
-            public constructor();
-            
-        }
-        
-        
-        class FollowLocationRigidbody2D extends UnityEngine.MonoBehaviour{
-            
-            public reference: UnityEngine.Transform;
-            public followFlippedX: boolean;
-            
-            public constructor();
-            
-        }
-        
-        
-        class FollowSkeletonUtilityRootRotation extends UnityEngine.MonoBehaviour{
-            
-            public reference: UnityEngine.Transform;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonUtility extends UnityEngine.MonoBehaviour{
-            
-            public boneRoot: UnityEngine.Transform;
-            public flipBy180DegreeRotation: boolean;
-            public skeletonRenderer: Spine.Unity.SkeletonRenderer;
-            public skeletonGraphic: Spine.Unity.SkeletonGraphic;
-            public skeletonAnimation: Spine.Unity.ISkeletonAnimation;
-            public boneComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityBone>;
-            public constraintComponents: System.Collections.Generic.List$1<Spine.Unity.SkeletonUtilityConstraint>;
-            public get SkeletonComponent(): Spine.Unity.ISkeletonComponent;
-            
-            
-            public get Skeleton(): Spine.Skeleton;
-            
-            
-            public get IsValid(): boolean;
-            
-            
-            public get PositionScale(): number;
-            
-            
-            
-            public static AddBoundingBoxGameObject($skeleton: Spine.Skeleton, $skinName: string, $slotName: string, $attachmentName: string, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
-            
-            public static AddBoundingBoxGameObject($name: string, $box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $parent: UnityEngine.Transform, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
-            
-            public static AddBoundingBoxAsComponent($box: Spine.BoundingBoxAttachment, $slot: Spine.Slot, $gameObject: UnityEngine.GameObject, $isTrigger?: boolean):UnityEngine.PolygonCollider2D;
-            
-            public static SetColliderPointsLocal($collider: UnityEngine.PolygonCollider2D, $slot: Spine.Slot, $box: Spine.BoundingBoxAttachment):void;
-            
-            public static GetBoundingBoxBounds($boundingBox: Spine.BoundingBoxAttachment, $depth?: number):UnityEngine.Bounds;
-            
-            public static AddBoneRigidbody2D($gameObject: UnityEngine.GameObject, $isKinematic?: boolean, $gravityScale?: number):UnityEngine.Rigidbody2D;
-            
-            public add_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
-            
-            public remove_OnReset($value: Spine.Unity.SkeletonUtility.SkeletonUtilityDelegate):void;
-            
-            public ResubscribeEvents():void;
-            
-            public RegisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
-            
-            public UnregisterBone($bone: Spine.Unity.SkeletonUtilityBone):void;
-            
-            public RegisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
-            
-            public UnregisterConstraint($constraint: Spine.Unity.SkeletonUtilityConstraint):void;
-            
-            public CollectBones():void;
-            
-            public GetBoneRoot():UnityEngine.Transform;
-            
-            public SpawnRoot($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
-            
-            public SpawnHierarchy($mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
-            
-            public SpawnBoneRecursively($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
-            
-            public SpawnBone($bone: Spine.Bone, $parent: UnityEngine.Transform, $mode: Spine.Unity.SkeletonUtilityBone.Mode, $pos: boolean, $rot: boolean, $sca: boolean):UnityEngine.GameObject;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonUtilityBone extends UnityEngine.MonoBehaviour{
-            
-            public boneName: string;
-            public parentReference: UnityEngine.Transform;
-            public mode: Spine.Unity.SkeletonUtilityBone.Mode;
-            public position: boolean;
-            public rotation: boolean;
-            public scale: boolean;
-            public zPosition: boolean;
-            public overrideAlpha: number;
-            public hierarchy: Spine.Unity.SkeletonUtility;
-            public bone: Spine.Bone;
-            public transformLerpComplete: boolean;
-            public valid: boolean;
-            public get IncompatibleTransformMode(): boolean;
-            
-            
-            
-            public Reset():void;
-            
-            public DoUpdate($phase: Spine.Unity.SkeletonUtilityBone.UpdatePhase):void;
-            
-            public static BoneTransformModeIncompatible($bone: Spine.Bone):boolean;
-            
-            public AddBoundingBox($skinName: string, $slotName: string, $attachmentName: string):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonUtilityConstraint extends UnityEngine.MonoBehaviour{
-            
-            
-            public DoUpdate():void;
-            
-        }
-        
-        
-        class MeshRendererBuffers extends System.Object implements System.IDisposable{
-            
-            
-            public Initialize():void;
-            
-            public GetUpdatedSharedMaterialsArray():System.Array$1<UnityEngine.Material>;
-            
-            public MaterialsChangedInLastUpdate():boolean;
-            
-            public UpdateSharedMaterials($instructions: Spine.ExposedList$1<Spine.Unity.SubmeshInstruction>):void;
-            
-            public GetNextMesh():Spine.Unity.MeshRendererBuffers.SmartMesh;
-            
-            public Clear():void;
-            
-            public Dispose():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineMesh extends System.Object{
-            
-            
-            public static NewSkeletonMesh():UnityEngine.Mesh;
-            
-        }
-        
-        
-        class BlendModeMaterialsAsset extends Spine.Unity.SkeletonDataModifierAsset{
-            
-            public multiplyMaterialTemplate: UnityEngine.Material;
-            public screenMaterialTemplate: UnityEngine.Material;
-            public additiveMaterialTemplate: UnityEngine.Material;
-            public applyAdditiveMaterial: boolean;
-            
-            public static ApplyMaterials($skeletonData: Spine.SkeletonData, $multiplyTemplate: UnityEngine.Material, $screenTemplate: UnityEngine.Material, $additiveTemplate: UnityEngine.Material, $includeAdditiveSlots: boolean):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineAttributeBase extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
-            
-            public dataField: string;
-            public startsWith: string;
-            public includeNone: boolean;
-            public fallbackToTextField: boolean;
-            
-        }
-        
-        
-        class SpineBone extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            
-            public static GetBone($boneName: string, $renderer: Spine.Unity.SkeletonRenderer):Spine.Bone;
-            
-            public static GetBoneData($boneName: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.BoneData;
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineSlot extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            public containsBoundingBoxes: boolean;
-            
-            public constructor($startsWith?: string, $dataField?: string, $containsBoundingBoxes?: boolean, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineAnimation extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineEvent extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            public audioOnly: boolean;
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $audioOnly?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineIkConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineTransformConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpinePathConstraint extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineSkin extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            public defaultAsEmptyString: boolean;
-            
-            public constructor($startsWith?: string, $dataField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean, $defaultAsEmptyString?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineAttachment extends Spine.Unity.SpineAttributeBase implements System.Runtime.InteropServices._Attribute{
-            
-            public returnAttachmentPath: boolean;
-            public currentSkinOnly: boolean;
-            public placeholdersOnly: boolean;
-            public skinField: string;
-            public slotField: string;
-            
-            public static GetHierarchy($fullPath: string):Spine.Unity.SpineAttachment.Hierarchy;
-            
-            public static GetAttachment($attachmentPath: string, $skeletonData: Spine.SkeletonData):Spine.Attachment;
-            
-            public static GetAttachment($attachmentPath: string, $skeletonDataAsset: Spine.Unity.SkeletonDataAsset):Spine.Attachment;
-            
-            public constructor($currentSkinOnly?: boolean, $returnAttachmentPath?: boolean, $placeholdersOnly?: boolean, $slotField?: string, $dataField?: string, $skinField?: string, $includeNone?: boolean, $fallbackToTextField?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SpineAtlasRegion extends UnityEngine.PropertyAttribute implements System.Runtime.InteropServices._Attribute{
-            
-            public atlasAssetField: string;
-            
-            public constructor($atlasAssetField?: string);
-            
-            public constructor();
-            
-        }
-        
-        
-        class MaterialChecks extends System.Object{
-            
-            public static kPMANotSupportedLinearMessage: string;
-            public static kZSpacingRequiredMessage: string;
-            public static kZSpacingRecommendedMessage: string;
-            public static kAddNormalsRequiredMessage: string;
-            
-            public static IsMaterialSetupProblematic($renderer: Spine.Unity.SkeletonRenderer, $errorMessage: $Ref<string>):boolean;
-            
-            public static IsMaterialSetupProblematic($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
-            
-            public static IsZSpacingRequired($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
-            
-            public static IsColorSpaceSupported($material: UnityEngine.Material, $errorMessage: $Ref<string>):boolean;
-            
-            public static UsesSpineShader($material: UnityEngine.Material):boolean;
-            
-            public static IsTextureSetupProblematic($material: UnityEngine.Material, $colorSpace: UnityEngine.ColorSpace, $sRGBTexture: boolean, $mipmapEnabled: boolean, $alphaIsTransparency: boolean, $texturePath: string, $materialPath: string, $errorMessage: $Ref<string>):boolean;
-            
-            public static EnablePMAAtMaterial($material: UnityEngine.Material, $enablePMA: boolean):void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonExtensions extends System.Object{
-            
-            
-            public static GetColor($s: Spine.Skeleton):UnityEngine.Color;
-            
-            public static GetColor($a: Spine.RegionAttachment):UnityEngine.Color;
-            
-            public static GetColor($a: Spine.MeshAttachment):UnityEngine.Color;
-            
-            public static GetColor($s: Spine.Slot):UnityEngine.Color;
-            
-            public static GetColorTintBlack($s: Spine.Slot):UnityEngine.Color;
-            
-            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color):void;
-            
-            public static SetColor($skeleton: Spine.Skeleton, $color: UnityEngine.Color32):void;
-            
-            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color):void;
-            
-            public static SetColor($slot: Spine.Slot, $color: UnityEngine.Color32):void;
-            
-            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color):void;
-            
-            public static SetColor($attachment: Spine.RegionAttachment, $color: UnityEngine.Color32):void;
-            
-            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color):void;
-            
-            public static SetColor($attachment: Spine.MeshAttachment, $color: UnityEngine.Color32):void;
-            
-            public static SetLocalScale($skeleton: Spine.Skeleton, $scale: UnityEngine.Vector2):void;
-            
-            public static GetMatrix4x4($bone: Spine.Bone):UnityEngine.Matrix4x4;
-            
-            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector2):void;
-            
-            public static SetLocalPosition($bone: Spine.Bone, $position: UnityEngine.Vector3):void;
-            
-            public static GetLocalPosition($bone: Spine.Bone):UnityEngine.Vector2;
-            
-            public static GetSkeletonSpacePosition($bone: Spine.Bone):UnityEngine.Vector2;
-            
-            public static GetSkeletonSpacePosition($bone: Spine.Bone, $boneLocal: UnityEngine.Vector2):UnityEngine.Vector2;
-            
-            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
-            
-            public static GetWorldPosition($bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform, $positionScale: number):UnityEngine.Vector3;
-            
-            public static GetQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
-            
-            public static GetLocalQuaternion($bone: Spine.Bone):UnityEngine.Quaternion;
-            
-            public static GetLocalScale($skeleton: Spine.Skeleton):UnityEngine.Vector2;
-            
-            public static GetWorldToLocalMatrix($bone: Spine.Bone, $ia: $Ref<number>, $ib: $Ref<number>, $ic: $Ref<number>, $id: $Ref<number>):void;
-            
-            public static WorldToLocal($bone: Spine.Bone, $worldPosition: UnityEngine.Vector2):UnityEngine.Vector2;
-            
-            public static SetPositionSkeletonSpace($bone: Spine.Bone, $skeletonSpacePosition: UnityEngine.Vector2):UnityEngine.Vector2;
-            
-            public static GetMaterial($a: Spine.Attachment):UnityEngine.Material;
-            
-            public static GetLocalVertices($va: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
-            
-            public static GetWorldVertices($a: Spine.VertexAttachment, $slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
-            
-            public static GetWorldPosition($attachment: Spine.PointAttachment, $slot: Spine.Slot, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
-            
-            public static GetWorldPosition($attachment: Spine.PointAttachment, $bone: Spine.Bone, $spineGameObjectTransform: UnityEngine.Transform):UnityEngine.Vector3;
-            
-        }
-        
-        
-        class WaitForSpineAnimation extends System.Object implements System.Collections.IEnumerator{
-            
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
-            
-            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
-            
-            public constructor();
-            
-        }
-        
-        
-        class WaitForSpineAnimationComplete extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
-            
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean):Spine.Unity.WaitForSpineAnimationComplete;
-            
-            public constructor($trackEntry: Spine.TrackEntry, $includeEndEvent?: boolean);
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
-            
-            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
-            
-            public constructor();
-            
-        }
-        
-        
-        class WaitForSpineAnimationEnd extends Spine.Unity.WaitForSpineAnimation implements System.Collections.IEnumerator{
-            
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineAnimationEnd;
-            
-            public constructor($trackEntry: Spine.TrackEntry);
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes):Spine.Unity.WaitForSpineAnimation;
-            
-            public constructor($trackEntry: Spine.TrackEntry, $eventsToWaitFor: Spine.Unity.WaitForSpineAnimation.AnimationEventTypes);
-            
-            public constructor();
-            
-        }
-        
-        
-        class WaitForSpineEvent extends System.Object implements System.Collections.IEnumerator{
-            
-            public get WillUnsubscribeAfterFiring(): boolean;
-            public set WillUnsubscribeAfterFiring(value: boolean);
-            
-            
-            public NowWaitFor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
-            
-            public NowWaitFor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean):Spine.Unity.WaitForSpineEvent;
-            
-            public constructor($state: Spine.AnimationState, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
-            
-            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventDataReference: Spine.EventData, $unsubscribeAfterFiring?: boolean);
-            
-            public constructor($state: Spine.AnimationState, $eventName: string, $unsubscribeAfterFiring?: boolean);
-            
-            public constructor($skeletonAnimation: Spine.Unity.SkeletonAnimation, $eventName: string, $unsubscribeAfterFiring?: boolean);
-            
-            public constructor();
-            
-        }
-        
-        
-        class WaitForSpineTrackEntryEnd extends System.Object implements System.Collections.IEnumerator{
-            
-            
-            public NowWaitFor($trackEntry: Spine.TrackEntry):Spine.Unity.WaitForSpineTrackEntryEnd;
-            
-            public constructor($trackEntry: Spine.TrackEntry);
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonAnimationFixedTimestep extends UnityEngine.MonoBehaviour{
-            
-            public skeletonAnimation: Spine.Unity.SkeletonAnimation;
-            public frameDeltaTime: number;
-            public maxFrameSkip: number;
-            public frameskipMeshUpdate: boolean;
-            public timeOffset: number;
-            
-            public constructor();
-            
-        }
-        
-        
-        class SkeletonAnimationMulti extends UnityEngine.MonoBehaviour{
-            
-            public initialFlipX: boolean;
-            public initialFlipY: boolean;
-            public initialAnimation: string;
-            public initialLoop: boolean;
-            public skeletonDataAssets: System.Collections.Generic.List$1<Spine.Unity.SkeletonDataAsset>;
-            public meshGeneratorSettings: Spine.Unity.MeshGenerator.Settings;
-            public get AnimationSkeletonTable(): System.Collections.Generic.Dictionary$2<Spine.Animation, Spine.Unity.SkeletonAnimation>;
-            
-            
-            public get AnimationNameTable(): System.Collections.Generic.Dictionary$2<string, Spine.Animation>;
-            
-            
-            public get CurrentSkeletonAnimation(): Spine.Unity.SkeletonAnimation;
-            
-            
-            
-            public Initialize($overwrite: boolean):void;
-            
-            public FindAnimation($animationName: string):Spine.Animation;
-            
-            public SetAnimation($animationName: string, $loop: boolean):Spine.TrackEntry;
-            
-            public SetAnimation($animation: Spine.Animation, $loop: boolean):Spine.TrackEntry;
-            
-            public SetEmptyAnimation($mixDuration: number):void;
-            
-            public ClearAnimation():void;
-            
-            public GetCurrent():Spine.TrackEntry;
-            
-            public constructor();
-            
-        }
-        
-        
-    }
-    namespace Spine {
-        
-        class Animation extends System.Object{
-            
-            
-        }
-        
-        
-        class Atlas extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<Spine.AtlasRegion>{
-            
-            
-        }
-        
-        
-        class AtlasRegion extends System.Object{
-            
-            
-        }
-        
-        
-        class EventData extends System.Object{
-            
-            
-        }
-        
-        
         interface AttachmentLoader{
             
+            
+            NewRegionAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.RegionAttachment;
+            
+            NewMeshAttachment($skin: Spine.Skin, $name: string, $path: string):Spine.MeshAttachment;
+            
+            NewBoundingBoxAttachment($skin: Spine.Skin, $name: string):Spine.BoundingBoxAttachment;
+            
+            NewPathAttachment($skin: Spine.Skin, $name: string):Spine.PathAttachment;
+            
+            NewPointAttachment($skin: Spine.Skin, $name: string):Spine.PointAttachment;
+            
+            NewClippingAttachment($skin: Spine.Skin, $name: string):Spine.ClippingAttachment;
             
         }
         
         
         class RegionAttachment extends Spine.Attachment implements Spine.IHasRendererObject{
             
+            public static BLX: number;
+            public static BLY: number;
+            public static ULX: number;
+            public static ULY: number;
+            public static URX: number;
+            public static URY: number;
+            public static BRX: number;
+            public static BRY: number;
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Rotation(): number;
+            public set Rotation(value: number);
+            
+            public get ScaleX(): number;
+            public set ScaleX(value: number);
+            
+            public get ScaleY(): number;
+            public set ScaleY(value: number);
+            
+            public get Width(): number;
+            public set Width(value: number);
+            
+            public get Height(): number;
+            public set Height(value: number);
+            
+            public get R(): number;
+            public set R(value: number);
+            
+            public get G(): number;
+            public set G(value: number);
+            
+            public get B(): number;
+            public set B(value: number);
+            
+            public get A(): number;
+            public set A(value: number);
+            
+            public get Path(): string;
+            public set Path(value: string);
+            
+            public get RendererObject(): any;
+            public set RendererObject(value: any);
+            
+            public get RegionOffsetX(): number;
+            public set RegionOffsetX(value: number);
+            
+            public get RegionOffsetY(): number;
+            public set RegionOffsetY(value: number);
+            
+            public get RegionWidth(): number;
+            public set RegionWidth(value: number);
+            
+            public get RegionHeight(): number;
+            public set RegionHeight(value: number);
+            
+            public get RegionOriginalWidth(): number;
+            public set RegionOriginalWidth(value: number);
+            
+            public get RegionOriginalHeight(): number;
+            public set RegionOriginalHeight(value: number);
+            
+            public get Offset(): System.Array$1<number>;
+            
+            
+            public get UVs(): System.Array$1<number>;
+            
+            
+            
+            public UpdateOffset():void;
+            
+            public SetUVs($u: number, $v: number, $u2: number, $v2: number, $rotate: boolean):void;
+            
+            public ComputeWorldVertices($bone: Spine.Bone, $worldVertices: System.Array$1<number>, $offset: number, $stride?: number):void;
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
@@ -17710,33 +19691,139 @@ declare module 'csharp' {
         }
         
         
-        class Attachment extends System.Object{
-            
-            
-        }
-        
-        
-        interface Attachment {
-            
-            GetMaterial():UnityEngine.Material;
-            
-        }
-        
-        
         interface IHasRendererObject{
             
+            RendererObject: any;
             
         }
         
         
         class Skin extends System.Object{
             
+            public get Name(): string;
+            
+            
+            public get Attachments(): Spine.Collections.OrderedDictionary$2<Spine.Skin.SkinEntry, Spine.Attachment>;
+            
+            
+            public get Bones(): Spine.ExposedList$1<Spine.BoneData>;
+            
+            
+            public get Constraints(): Spine.ExposedList$1<Spine.ConstraintData>;
+            
+            
+            
+            public SetAttachment($slotIndex: number, $name: string, $attachment: Spine.Attachment):void;
+            
+            public AddSkin($skin: Spine.Skin):void;
+            
+            public CopySkin($skin: Spine.Skin):void;
+            
+            public GetAttachment($slotIndex: number, $name: string):Spine.Attachment;
+            
+            public RemoveAttachment($slotIndex: number, $name: string):void;
+            
+            public GetAttachments():System.Collections.Generic.ICollection$1<Spine.Skin.SkinEntry>;
+            
+            public GetAttachments($slotIndex: number, $attachments: System.Collections.Generic.List$1<Spine.Skin.SkinEntry>):void;
+            
+            public Clear():void;
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
         
         class MeshAttachment extends Spine.VertexAttachment implements Spine.IHasRendererObject{
             
+            public get HullLength(): number;
+            public set HullLength(value: number);
+            
+            public get RegionUVs(): System.Array$1<number>;
+            public set RegionUVs(value: System.Array$1<number>);
+            
+            public get UVs(): System.Array$1<number>;
+            public set UVs(value: System.Array$1<number>);
+            
+            public get Triangles(): System.Array$1<number>;
+            public set Triangles(value: System.Array$1<number>);
+            
+            public get R(): number;
+            public set R(value: number);
+            
+            public get G(): number;
+            public set G(value: number);
+            
+            public get B(): number;
+            public set B(value: number);
+            
+            public get A(): number;
+            public set A(value: number);
+            
+            public get Path(): string;
+            public set Path(value: string);
+            
+            public get RendererObject(): any;
+            public set RendererObject(value: any);
+            
+            public get RegionU(): number;
+            public set RegionU(value: number);
+            
+            public get RegionV(): number;
+            public set RegionV(value: number);
+            
+            public get RegionU2(): number;
+            public set RegionU2(value: number);
+            
+            public get RegionV2(): number;
+            public set RegionV2(value: number);
+            
+            public get RegionRotate(): boolean;
+            public set RegionRotate(value: boolean);
+            
+            public get RegionDegrees(): number;
+            public set RegionDegrees(value: number);
+            
+            public get RegionOffsetX(): number;
+            public set RegionOffsetX(value: number);
+            
+            public get RegionOffsetY(): number;
+            public set RegionOffsetY(value: number);
+            
+            public get RegionWidth(): number;
+            public set RegionWidth(value: number);
+            
+            public get RegionHeight(): number;
+            public set RegionHeight(value: number);
+            
+            public get RegionOriginalWidth(): number;
+            public set RegionOriginalWidth(value: number);
+            
+            public get RegionOriginalHeight(): number;
+            public set RegionOriginalHeight(value: number);
+            
+            public get ParentMesh(): Spine.MeshAttachment;
+            public set ParentMesh(value: Spine.MeshAttachment);
+            
+            public get Edges(): System.Array$1<number>;
+            public set Edges(value: System.Array$1<number>);
+            
+            public get Width(): number;
+            public set Width(value: number);
+            
+            public get Height(): number;
+            public set Height(value: number);
+            
+            
+            public UpdateUVs():void;
+            
+            public NewLinkedMesh():Spine.MeshAttachment;
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
@@ -17752,35 +19839,54 @@ declare module 'csharp' {
         }
         
         
-        class VertexAttachment extends Spine.Attachment{
-            
-            
-        }
-        
-        
-        interface VertexAttachment {
-            
-            GetLocalVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
-            
-            GetWorldVertices($slot: Spine.Slot, $buffer: System.Array$1<UnityEngine.Vector2>):System.Array$1<UnityEngine.Vector2>;
-            
-        }
-        
-        
         class BoundingBoxAttachment extends Spine.VertexAttachment{
             
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
         
         class PathAttachment extends Spine.VertexAttachment{
             
+            public get Lengths(): System.Array$1<number>;
+            public set Lengths(value: System.Array$1<number>);
+            
+            public get Closed(): boolean;
+            public set Closed(value: boolean);
+            
+            public get ConstantSpeed(): boolean;
+            public set ConstantSpeed(value: boolean);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
         
         class PointAttachment extends Spine.Attachment{
             
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Rotation(): number;
+            public set Rotation(value: number);
+            
+            
+            public ComputeWorldPosition($bone: Spine.Bone, $ox: $Ref<number>, $oy: $Ref<number>):void;
+            
+            public ComputeWorldRotation($bone: Spine.Bone):number;
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
@@ -17796,36 +19902,187 @@ declare module 'csharp' {
         
         class ClippingAttachment extends Spine.VertexAttachment{
             
+            public get EndSlot(): Spine.SlotData;
+            public set EndSlot(value: Spine.SlotData);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
             
         }
         
         
-        class AnimationStateData extends System.Object{
-            
-            
-        }
+        enum AttachmentType{ Region = 0, Boundingbox = 1, Mesh = 2, Linkedmesh = 3, Path = 4, Point = 5, Clipping = 6 }
         
         
-        class SkeletonData extends System.Object{
+        class SlotData extends System.Object{
+            
+            public get Index(): number;
             
             
-        }
-        
-        
-        interface TextureLoader{
+            public get Name(): string;
             
             
-        }
-        
-        
-        class AtlasPage extends System.Object{
+            public get BoneData(): Spine.BoneData;
             
+            
+            public get R(): number;
+            public set R(value: number);
+            
+            public get G(): number;
+            public set G(value: number);
+            
+            public get B(): number;
+            public set B(value: number);
+            
+            public get A(): number;
+            public set A(value: number);
+            
+            public get R2(): number;
+            public set R2(value: number);
+            
+            public get G2(): number;
+            public set G2(value: number);
+            
+            public get B2(): number;
+            public set B2(value: number);
+            
+            public get HasSecondColor(): boolean;
+            public set HasSecondColor(value: boolean);
+            
+            public get AttachmentName(): string;
+            public set AttachmentName(value: string);
+            
+            public get BlendMode(): Spine.BlendMode;
+            public set BlendMode(value: Spine.BlendMode);
+            
+            
+            public constructor($index: number, $name: string, $boneData: Spine.BoneData);
+            
+            public constructor();
             
         }
         
         
         class Bone extends System.Object implements Spine.IUpdatable{
             
+            public static yDown: boolean;
+            public get Data(): Spine.BoneData;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get Parent(): Spine.Bone;
+            
+            
+            public get Children(): Spine.ExposedList$1<Spine.Bone>;
+            
+            
+            public get Active(): boolean;
+            
+            
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Rotation(): number;
+            public set Rotation(value: number);
+            
+            public get ScaleX(): number;
+            public set ScaleX(value: number);
+            
+            public get ScaleY(): number;
+            public set ScaleY(value: number);
+            
+            public get ShearX(): number;
+            public set ShearX(value: number);
+            
+            public get ShearY(): number;
+            public set ShearY(value: number);
+            
+            public get AppliedRotation(): number;
+            public set AppliedRotation(value: number);
+            
+            public get AX(): number;
+            public set AX(value: number);
+            
+            public get AY(): number;
+            public set AY(value: number);
+            
+            public get AScaleX(): number;
+            public set AScaleX(value: number);
+            
+            public get AScaleY(): number;
+            public set AScaleY(value: number);
+            
+            public get AShearX(): number;
+            public set AShearX(value: number);
+            
+            public get AShearY(): number;
+            public set AShearY(value: number);
+            
+            public get A(): number;
+            
+            
+            public get B(): number;
+            
+            
+            public get C(): number;
+            
+            
+            public get D(): number;
+            
+            
+            public get WorldX(): number;
+            
+            
+            public get WorldY(): number;
+            
+            
+            public get WorldRotationX(): number;
+            
+            
+            public get WorldRotationY(): number;
+            
+            
+            public get WorldScaleX(): number;
+            
+            
+            public get WorldScaleY(): number;
+            
+            
+            public get WorldToLocalRotationX(): number;
+            
+            
+            public get WorldToLocalRotationY(): number;
+            
+            
+            
+            public Update():void;
+            
+            public UpdateWorldTransform():void;
+            
+            public UpdateWorldTransform($x: number, $y: number, $rotation: number, $scaleX: number, $scaleY: number, $shearX: number, $shearY: number):void;
+            
+            public SetToSetupPose():void;
+            
+            public WorldToLocal($worldX: number, $worldY: number, $localX: $Ref<number>, $localY: $Ref<number>):void;
+            
+            public LocalToWorld($localX: number, $localY: number, $worldX: $Ref<number>, $worldY: $Ref<number>):void;
+            
+            public WorldToLocalRotation($worldRotation: number):number;
+            
+            public LocalToWorldRotation($localRotation: number):number;
+            
+            public RotateWorld($degrees: number):void;
+            
+            public constructor($data: Spine.BoneData, $skeleton: Spine.Skeleton, $parent: Spine.Bone);
+            
+            public constructor();
             
         }
         
@@ -17863,17 +20120,78 @@ declare module 'csharp' {
         
         interface IUpdatable{
             
+            Active: boolean;
+            
+            Update():void;
             
         }
         
         
         class Slot extends System.Object{
             
+            public get Data(): Spine.SlotData;
+            
+            
+            public get Bone(): Spine.Bone;
+            
+            
+            public get Skeleton(): Spine.Skeleton;
+            
+            
+            public get R(): number;
+            public set R(value: number);
+            
+            public get G(): number;
+            public set G(value: number);
+            
+            public get B(): number;
+            public set B(value: number);
+            
+            public get A(): number;
+            public set A(value: number);
+            
+            public get R2(): number;
+            public set R2(value: number);
+            
+            public get G2(): number;
+            public set G2(value: number);
+            
+            public get B2(): number;
+            public set B2(value: number);
+            
+            public get HasSecondColor(): boolean;
+            public set HasSecondColor(value: boolean);
+            
+            public get Attachment(): Spine.Attachment;
+            public set Attachment(value: Spine.Attachment);
+            
+            public get AttachmentTime(): number;
+            public set AttachmentTime(value: number);
+            
+            public get Deform(): Spine.ExposedList$1<number>;
+            public set Deform(value: Spine.ExposedList$1<number>);
+            
+            
+            public ClampColor():void;
+            
+            public ClampSecondColor():void;
+            
+            public SetToSetupPose():void;
+            
+            public constructor($data: Spine.SlotData, $bone: Spine.Bone);
+            
+            public constructor($slot: Spine.Slot, $bone: Spine.Bone);
+            
+            public constructor();
             
         }
         
         
         interface Slot {
+            
+            SetColorToSetupPose():void;
+            
+            SetAttachmentToSetupPose():void;
             
             GetColor():UnityEngine.Color;
             
@@ -17886,52 +20204,693 @@ declare module 'csharp' {
         }
         
         
-        class AnimationState extends System.Object{
-            
-            
-        }
-        
-        
-        class Skeleton extends System.Object{
-            
-            
-        }
-        
-        
-        interface Skeleton {
-            
-            GetColor():UnityEngine.Color;
-            
-            SetColor($color: UnityEngine.Color):void;
-            
-            SetColor($color: UnityEngine.Color32):void;
-            
-            SetLocalScale($scale: UnityEngine.Vector2):void;
-            
-            GetLocalScale():UnityEngine.Vector2;
-            
-        }
-        
-        
-        class ExposedList$1<T> extends System.Object implements System.Collections.IEnumerable, System.Collections.Generic.IEnumerable$1<T>{
-            
-            
-        }
+        enum BlendMode{ Normal = 0, Additive = 1, Multiply = 2, Screen = 3 }
         
         
         class BoneData extends System.Object{
             
+            public get Index(): number;
+            
+            
+            public get Name(): string;
+            
+            
+            public get Parent(): Spine.BoneData;
+            
+            
+            public get Length(): number;
+            public set Length(value: number);
+            
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Rotation(): number;
+            public set Rotation(value: number);
+            
+            public get ScaleX(): number;
+            public set ScaleX(value: number);
+            
+            public get ScaleY(): number;
+            public set ScaleY(value: number);
+            
+            public get ShearX(): number;
+            public set ShearX(value: number);
+            
+            public get ShearY(): number;
+            public set ShearY(value: number);
+            
+            public get TransformMode(): Spine.TransformMode;
+            public set TransformMode(value: Spine.TransformMode);
+            
+            public get SkinRequired(): boolean;
+            public set SkinRequired(value: boolean);
+            
+            
+            public constructor($index: number, $name: string, $parent: Spine.BoneData);
+            
+            public constructor();
             
         }
         
         
-        class TrackEntry extends System.Object implements Spine.Pool$1.IPoolable<Spine.TrackEntry>{
+        enum TransformMode{ Normal = 0, OnlyTranslation = 7, NoRotationOrReflection = 1, NoScale = 2, NoScaleOrReflection = 6 }
+        
+        
+        class ConstraintData extends System.Object{
+            
+            public get Name(): string;
+            
+            
+            public get Order(): number;
+            public set Order(value: number);
+            
+            public get SkinRequired(): boolean;
+            public set SkinRequired(value: boolean);
             
             
         }
         
         
-        enum MixBlend{ Setup = 0, First = 1, Replace = 2, Add = 3 }
+        class EventData extends System.Object{
+            
+            public get Name(): string;
+            
+            
+            public get Int(): number;
+            public set Int(value: number);
+            
+            public get Float(): number;
+            public set Float(value: number);
+            
+            public get String(): string;
+            public set String(value: string);
+            
+            public get AudioPath(): string;
+            public set AudioPath(value: string);
+            
+            public get Volume(): number;
+            public set Volume(value: number);
+            
+            public get Balance(): number;
+            public set Balance(value: number);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        class IkConstraint extends System.Object implements Spine.IUpdatable{
+            
+            public get Bones(): Spine.ExposedList$1<Spine.Bone>;
+            
+            
+            public get Target(): Spine.Bone;
+            public set Target(value: Spine.Bone);
+            
+            public get Mix(): number;
+            public set Mix(value: number);
+            
+            public get Softness(): number;
+            public set Softness(value: number);
+            
+            public get BendDirection(): number;
+            public set BendDirection(value: number);
+            
+            public get Compress(): boolean;
+            public set Compress(value: boolean);
+            
+            public get Stretch(): boolean;
+            public set Stretch(value: boolean);
+            
+            public get Active(): boolean;
+            
+            
+            public get Data(): Spine.IkConstraintData;
+            
+            
+            
+            public Apply():void;
+            
+            public Update():void;
+            
+            public static Apply($bone: Spine.Bone, $targetX: number, $targetY: number, $compress: boolean, $stretch: boolean, $uniform: boolean, $alpha: number):void;
+            
+            public static Apply($parent: Spine.Bone, $child: Spine.Bone, $targetX: number, $targetY: number, $bendDir: number, $stretch: boolean, $softness: number, $alpha: number):void;
+            
+            public constructor($data: Spine.IkConstraintData, $skeleton: Spine.Skeleton);
+            
+            public constructor($constraint: Spine.IkConstraint, $skeleton: Spine.Skeleton);
+            
+            public constructor();
+            
+        }
+        
+        
+        class IkConstraintData extends Spine.ConstraintData{
+            
+            public get Bones(): Spine.ExposedList$1<Spine.BoneData>;
+            
+            
+            public get Target(): Spine.BoneData;
+            public set Target(value: Spine.BoneData);
+            
+            public get Mix(): number;
+            public set Mix(value: number);
+            
+            public get Softness(): number;
+            public set Softness(value: number);
+            
+            public get BendDirection(): number;
+            public set BendDirection(value: number);
+            
+            public get Compress(): boolean;
+            public set Compress(value: boolean);
+            
+            public get Stretch(): boolean;
+            public set Stretch(value: boolean);
+            
+            public get Uniform(): boolean;
+            public set Uniform(value: boolean);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        class Json extends System.Object{
+            
+            
+            public static Deserialize($text: System.IO.TextReader):any;
+            
+        }
+        
+        
+        class MathUtils extends System.Object{
+            
+            public static PI: number;
+            public static PI2: number;
+            public static RadDeg: number;
+            public static DegRad: number;
+            
+            public static Sin($radians: number):number;
+            
+            public static Cos($radians: number):number;
+            
+            public static SinDeg($degrees: number):number;
+            
+            public static CosDeg($degrees: number):number;
+            
+            public static Atan2($y: number, $x: number):number;
+            
+            public static Clamp($value: number, $min: number, $max: number):number;
+            
+            public static RandomTriangle($min: number, $max: number):number;
+            
+            public static RandomTriangle($min: number, $max: number, $mode: number):number;
+            
+        }
+        
+        
+        class IInterpolation extends System.Object{
+            
+            public static Pow2: Spine.IInterpolation;
+            public static Pow2Out: Spine.IInterpolation;
+            
+            public Apply($start: number, $end: number, $a: number):number;
+            
+        }
+        
+        
+        class Pow extends Spine.IInterpolation{
+            
+            public get Power(): number;
+            public set Power(value: number);
+            
+            
+            public constructor($power: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class PowOut extends Spine.Pow{
+            
+            
+            public constructor($power: number);
+            
+            public constructor($power: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class PathConstraint extends System.Object implements Spine.IUpdatable{
+            
+            public get Position(): number;
+            public set Position(value: number);
+            
+            public get Spacing(): number;
+            public set Spacing(value: number);
+            
+            public get RotateMix(): number;
+            public set RotateMix(value: number);
+            
+            public get TranslateMix(): number;
+            public set TranslateMix(value: number);
+            
+            public get Bones(): Spine.ExposedList$1<Spine.Bone>;
+            
+            
+            public get Target(): Spine.Slot;
+            public set Target(value: Spine.Slot);
+            
+            public get Active(): boolean;
+            
+            
+            public get Data(): Spine.PathConstraintData;
+            
+            
+            
+            public Apply():void;
+            
+            public Update():void;
+            
+            public constructor($data: Spine.PathConstraintData, $skeleton: Spine.Skeleton);
+            
+            public constructor($constraint: Spine.PathConstraint, $skeleton: Spine.Skeleton);
+            
+            public constructor();
+            
+        }
+        
+        
+        class PathConstraintData extends Spine.ConstraintData{
+            
+            public get Bones(): Spine.ExposedList$1<Spine.BoneData>;
+            
+            
+            public get Target(): Spine.SlotData;
+            public set Target(value: Spine.SlotData);
+            
+            public get PositionMode(): Spine.PositionMode;
+            public set PositionMode(value: Spine.PositionMode);
+            
+            public get SpacingMode(): Spine.SpacingMode;
+            public set SpacingMode(value: Spine.SpacingMode);
+            
+            public get RotateMode(): Spine.RotateMode;
+            public set RotateMode(value: Spine.RotateMode);
+            
+            public get OffsetRotation(): number;
+            public set OffsetRotation(value: number);
+            
+            public get Position(): number;
+            public set Position(value: number);
+            
+            public get Spacing(): number;
+            public set Spacing(value: number);
+            
+            public get RotateMix(): number;
+            public set RotateMix(value: number);
+            
+            public get TranslateMix(): number;
+            public set TranslateMix(value: number);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        enum PositionMode{ Fixed = 0, Percent = 1 }
+        
+        
+        enum SpacingMode{ Length = 0, Fixed = 1, Percent = 2 }
+        
+        
+        enum RotateMode{ Tangent = 0, Chain = 1, ChainScale = 2 }
+        
+        
+        class TransformConstraint extends System.Object implements Spine.IUpdatable{
+            
+            public get Bones(): Spine.ExposedList$1<Spine.Bone>;
+            
+            
+            public get Target(): Spine.Bone;
+            public set Target(value: Spine.Bone);
+            
+            public get RotateMix(): number;
+            public set RotateMix(value: number);
+            
+            public get TranslateMix(): number;
+            public set TranslateMix(value: number);
+            
+            public get ScaleMix(): number;
+            public set ScaleMix(value: number);
+            
+            public get ShearMix(): number;
+            public set ShearMix(value: number);
+            
+            public get Active(): boolean;
+            
+            
+            public get Data(): Spine.TransformConstraintData;
+            
+            
+            
+            public Apply():void;
+            
+            public Update():void;
+            
+            public constructor($data: Spine.TransformConstraintData, $skeleton: Spine.Skeleton);
+            
+            public constructor($constraint: Spine.TransformConstraint, $skeleton: Spine.Skeleton);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonBinary extends System.Object{
+            
+            public static BONE_ROTATE: number;
+            public static BONE_TRANSLATE: number;
+            public static BONE_SCALE: number;
+            public static BONE_SHEAR: number;
+            public static SLOT_ATTACHMENT: number;
+            public static SLOT_COLOR: number;
+            public static SLOT_TWO_COLOR: number;
+            public static PATH_POSITION: number;
+            public static PATH_SPACING: number;
+            public static PATH_MIX: number;
+            public static CURVE_LINEAR: number;
+            public static CURVE_STEPPED: number;
+            public static CURVE_BEZIER: number;
+            public static TransformModeValues: System.Array$1<Spine.TransformMode>;
+            public get Scale(): number;
+            public set Scale(value: number);
+            
+            
+            public ReadSkeletonData($path: string):Spine.SkeletonData;
+            
+            public static GetVersionString($file: System.IO.Stream):string;
+            
+            public ReadSkeletonData($file: System.IO.Stream):Spine.SkeletonData;
+            
+            public constructor(...atlasArray: Spine.Atlas[]);
+            
+            public constructor($attachmentLoader: Spine.AttachmentLoader);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonBounds extends System.Object{
+            
+            public get BoundingBoxes(): Spine.ExposedList$1<Spine.BoundingBoxAttachment>;
+            
+            
+            public get Polygons(): Spine.ExposedList$1<Spine.Polygon>;
+            
+            
+            public get MinX(): number;
+            public set MinX(value: number);
+            
+            public get MinY(): number;
+            public set MinY(value: number);
+            
+            public get MaxX(): number;
+            public set MaxX(value: number);
+            
+            public get MaxY(): number;
+            public set MaxY(value: number);
+            
+            public get Width(): number;
+            
+            
+            public get Height(): number;
+            
+            
+            
+            public Update($skeleton: Spine.Skeleton, $updateAabb: boolean):void;
+            
+            public AabbContainsPoint($x: number, $y: number):boolean;
+            
+            public AabbIntersectsSegment($x1: number, $y1: number, $x2: number, $y2: number):boolean;
+            
+            public AabbIntersectsSkeleton($bounds: Spine.SkeletonBounds):boolean;
+            
+            public ContainsPoint($polygon: Spine.Polygon, $x: number, $y: number):boolean;
+            
+            public ContainsPoint($x: number, $y: number):Spine.BoundingBoxAttachment;
+            
+            public IntersectsSegment($x1: number, $y1: number, $x2: number, $y2: number):Spine.BoundingBoxAttachment;
+            
+            public IntersectsSegment($polygon: Spine.Polygon, $x1: number, $y1: number, $x2: number, $y2: number):boolean;
+            
+            public GetPolygon($attachment: Spine.BoundingBoxAttachment):Spine.Polygon;
+            
+            public constructor();
+            
+        }
+        
+        
+        class Polygon extends System.Object{
+            
+            public get Vertices(): System.Array$1<number>;
+            public set Vertices(value: System.Array$1<number>);
+            
+            public get Count(): number;
+            public set Count(value: number);
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonClipping extends System.Object{
+            
+            public get ClippedVertices(): Spine.ExposedList$1<number>;
+            
+            
+            public get ClippedTriangles(): Spine.ExposedList$1<number>;
+            
+            
+            public get ClippedUVs(): Spine.ExposedList$1<number>;
+            
+            
+            public get IsClipping(): boolean;
+            
+            
+            
+            public ClipStart($slot: Spine.Slot, $clip: Spine.ClippingAttachment):number;
+            
+            public ClipEnd($slot: Spine.Slot):void;
+            
+            public ClipEnd():void;
+            
+            public ClipTriangles($vertices: System.Array$1<number>, $verticesLength: number, $triangles: System.Array$1<number>, $trianglesLength: number, $uvs: System.Array$1<number>):void;
+            
+            public static MakeClockwise($polygon: Spine.ExposedList$1<number>):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TransformConstraintData extends Spine.ConstraintData{
+            
+            public get Bones(): Spine.ExposedList$1<Spine.BoneData>;
+            
+            
+            public get Target(): Spine.BoneData;
+            public set Target(value: Spine.BoneData);
+            
+            public get RotateMix(): number;
+            public set RotateMix(value: number);
+            
+            public get TranslateMix(): number;
+            public set TranslateMix(value: number);
+            
+            public get ScaleMix(): number;
+            public set ScaleMix(value: number);
+            
+            public get ShearMix(): number;
+            public set ShearMix(value: number);
+            
+            public get OffsetRotation(): number;
+            public set OffsetRotation(value: number);
+            
+            public get OffsetX(): number;
+            public set OffsetX(value: number);
+            
+            public get OffsetY(): number;
+            public set OffsetY(value: number);
+            
+            public get OffsetScaleX(): number;
+            public set OffsetScaleX(value: number);
+            
+            public get OffsetScaleY(): number;
+            public set OffsetScaleY(value: number);
+            
+            public get OffsetShearY(): number;
+            public set OffsetShearY(value: number);
+            
+            public get Relative(): boolean;
+            public set Relative(value: boolean);
+            
+            public get Local(): boolean;
+            public set Local(value: boolean);
+            
+            
+            public constructor($name: string);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SkeletonJson extends System.Object{
+            
+            public get Scale(): number;
+            public set Scale(value: number);
+            
+            
+            public ReadSkeletonData($path: string):Spine.SkeletonData;
+            
+            public ReadSkeletonData($reader: System.IO.TextReader):Spine.SkeletonData;
+            
+            public constructor(...atlasArray: Spine.Atlas[]);
+            
+            public constructor($attachmentLoader: Spine.AttachmentLoader);
+            
+            public constructor();
+            
+        }
+        
+        
+        class Triangulator extends System.Object{
+            
+            
+            public Triangulate($verticesArray: Spine.ExposedList$1<number>):Spine.ExposedList$1<number>;
+            
+            public Decompose($verticesArray: Spine.ExposedList$1<number>, $triangles: Spine.ExposedList$1<number>):Spine.ExposedList$1<Spine.ExposedList$1<number>>;
+            
+            public constructor();
+            
+        }
+        
+        
+        class BoneMatrix extends System.ValueType{
+            
+            public a: number;
+            public b: number;
+            public c: number;
+            public d: number;
+            public x: number;
+            public y: number;
+            
+            public static CalculateSetupWorld($boneData: Spine.BoneData):Spine.BoneMatrix;
+            
+            public TransformMatrix($local: Spine.BoneMatrix):Spine.BoneMatrix;
+            
+            public constructor($boneData: Spine.BoneData);
+            
+            public constructor($bone: Spine.Bone);
+            
+            public constructor();
+            
+        }
+        
+        
+        class SpineSkeletonExtensions extends System.Object{
+            
+            
+            public static IsWeighted($va: Spine.VertexAttachment):boolean;
+            
+            public static IsRenderable($a: Spine.Attachment):boolean;
+            
+            public static SetDrawOrderToSetupPose($skeleton: Spine.Skeleton):void;
+            
+            public static SetSlotAttachmentsToSetupPose($skeleton: Spine.Skeleton):void;
+            
+            public static SetColorToSetupPose($slot: Spine.Slot):void;
+            
+            public static SetAttachmentToSetupPose($slot: Spine.Slot):void;
+            
+            public static SetSlotAttachmentToSetupPose($skeleton: Spine.Skeleton, $slotIndex: number):void;
+            
+            public static SetKeyedItemsToSetupPose($animation: Spine.Animation, $skeleton: Spine.Skeleton):void;
+            
+            public static AllowImmediateQueue($trackEntry: Spine.TrackEntry):void;
+            
+        }
+        
+        
+    }
+    namespace Spine.AnimationState {
+        
+        type TrackEntryDelegate = (trackEntry: Spine.TrackEntry) => void;
+        var TrackEntryDelegate: {new (func: (trackEntry: Spine.TrackEntry) => void): TrackEntryDelegate;}
+        
+        
+        type TrackEntryEventDelegate = (trackEntry: Spine.TrackEntry, e: Spine.Event) => void;
+        var TrackEntryEventDelegate: {new (func: (trackEntry: Spine.TrackEntry, e: Spine.Event) => void): TrackEntryEventDelegate;}
+        
+        
+    }
+    namespace Spine.Pool$1 {
+        
+        interface IPoolable<T>{
+            
+            
+        }
+        
+        
+    }
+    namespace Spine.Skin {
+        
+        class SkinEntry extends System.ValueType{
+            
+            public get SlotIndex(): number;
+            
+            
+            public get Name(): string;
+            
+            
+            public get Attachment(): Spine.Attachment;
+            
+            
+            
+            public constructor($slotIndex: number, $name: string, $attachment: Spine.Attachment);
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace Spine.Collections {
+        
+        class OrderedDictionary$2<TKey, TValue> extends System.Object implements System.Collections.Generic.IList$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Collections.IEnumerable, System.Collections.Generic.ICollection$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>, System.Collections.Generic.IDictionary$2<TKey, TValue>, System.Collections.Generic.IEnumerable$1<System.Collections.Generic.KeyValuePair$2<TKey, TValue>>{
+            
+            
+        }
         
         
     }
@@ -18156,18 +21115,33 @@ declare module 'csharp' {
         
         
     }
-    namespace Spine.Pool$1 {
+    namespace Spine.Unity.WaitForSpineAnimation {
         
-        interface IPoolable<T>{
+        enum AnimationEventTypes{ Start = 1, Interrupt = 2, End = 4, Dispose = 8, Complete = 16 }
+        
+        
+    }
+    namespace Spine.AnimationStateData {
+        
+        class AnimationPair extends System.ValueType{
             
+            public a1: Spine.Animation;
+            public a2: Spine.Animation;
+            
+            public constructor($a1: Spine.Animation, $a2: Spine.Animation);
+            
+            public constructor();
             
         }
         
         
-    }
-    namespace Spine.Unity.WaitForSpineAnimation {
-        
-        enum AnimationEventTypes{ Start = 1, Interrupt = 2, End = 4, Dispose = 8, Complete = 16 }
+        class AnimationPairComparer extends System.Object implements System.Collections.Generic.IEqualityComparer$1<Spine.AnimationStateData.AnimationPair>{
+            
+            public static Instance: Spine.AnimationStateData.AnimationPairComparer;
+            
+            public constructor();
+            
+        }
         
         
     }

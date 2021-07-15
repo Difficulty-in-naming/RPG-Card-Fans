@@ -3,21 +3,31 @@ using System.IO;
 using Cysharp.Threading.Tasks;
 using Puerts;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class GameEntry : MonoBehaviour
 {
-    public bool isDebug = false;                    // 是否开启调试
+    public bool IsDeveloper = false;
+    public bool DebugScript = false;                    // 是否开启调试
     public int debugPort = 43990;                   // 调试端口号
     public JsEnv jsEnv;                             // 定义 jsEnv
     public Action JsUpdate;
     public Action JsOnDestroy;
     private PuertsLoader loader;
+    private HotReloadTypeScripts hotReloadComponent;
     public static GameEntry Inst { get; private set; }
-    async void Start()
+    void Start()
     {
         Inst = this;
+        var loop = PlayerLoop.GetCurrentPlayerLoop();
+        PlayerLoopHelper.Initialize(ref loop);
+        UnityLifeCycleKit.Inst = gameObject.AddComponent<UnityBehaviour>();
         loader = new PuertsLoader(Application.streamingAssetsPath);
         jsEnv = new JsEnv(loader,debugPort);        // 实例化 js 虚拟机
+        if (IsDeveloper)
+        {
+            hotReloadComponent = new HotReloadTypeScripts(Application.streamingAssetsPath,jsEnv);
+        }
         RunScript();
     }
 
@@ -33,11 +43,12 @@ public class GameEntry : MonoBehaviour
     
     private async void RunScript()
     {
-        if (isDebug)
+        if (DebugScript)
         {
             // 启用调试
             await jsEnv.WaitDebuggerAsync();
         }
+        jsEnv.Eval("openSourceMap = require('OpenSourceMap.js.txt')");
         jsEnv.Eval("entry = require('MainEntry'); ");
         var files = Directory.GetFiles(Application.streamingAssetsPath, "Entry.js", SearchOption.AllDirectories);
         foreach (var node in files)
@@ -51,25 +62,7 @@ public class GameEntry : MonoBehaviour
     void Update()
     {
         jsEnv.Tick();
+        hotReloadComponent?.Update();
         if (JsUpdate != null) JsUpdate();
     }
-
-    /*public Texture2D cursorTexture;
-    public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 hotSpot = Vector2.zero;
-    public Vector2 CursorSize = new Vector2(16, 16);
-    void Start()
-     
-    {
-        //Cursor.visible = false;
-        //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-        
-    }
-
-    void OnGUI()
-    {
-        GUI.DrawTexture(
-            new Rect(Event.current.mousePosition.x - CursorSize.x,
-                Event.current.mousePosition.y - CursorSize.y, CursorSize.x, CursorSize.y), cursorTexture);
-    }*/
 }

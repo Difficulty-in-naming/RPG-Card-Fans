@@ -36,6 +36,78 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void M_SetSpine(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.GLoader3D;
+                
+                if (paramLen == 4)
+                {
+                    
+                    var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                    var argHelper1 = new Puerts.ArgumentHelper((int)data, isolate, info, 1);
+                    var argHelper2 = new Puerts.ArgumentHelper((int)data, isolate, info, 2);
+                    var argHelper3 = new Puerts.ArgumentHelper((int)data, isolate, info, 3);
+                    
+                    
+                    if (argHelper0.IsMatch(Puerts.JsValueType.NullOrUndefined | Puerts.JsValueType.NativeObject, typeof(Spine.Unity.SkeletonDataAsset), false, false)
+                        && argHelper1.IsMatch(Puerts.JsValueType.Number, null, false, false)
+                        && argHelper2.IsMatch(Puerts.JsValueType.Number, null, false, false)
+                        && argHelper3.IsMatch(Puerts.JsValueType.NativeObject, typeof(UnityEngine.Vector2), false, false))
+                    {
+                        
+                        var Arg0 = argHelper0.Get<Spine.Unity.SkeletonDataAsset>(false);
+                        var Arg1 = argHelper1.GetInt32(false);
+                        var Arg2 = argHelper2.GetInt32(false);
+                        var Arg3 = argHelper3.Get<UnityEngine.Vector2>(false);
+                        obj.SetSpine(Arg0,Arg1,Arg2,Arg3);
+                        
+                        
+                        
+                        return;
+                    }
+                }
+                
+                if (paramLen == 5)
+                {
+                    
+                    var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                    var argHelper1 = new Puerts.ArgumentHelper((int)data, isolate, info, 1);
+                    var argHelper2 = new Puerts.ArgumentHelper((int)data, isolate, info, 2);
+                    var argHelper3 = new Puerts.ArgumentHelper((int)data, isolate, info, 3);
+                    var argHelper4 = new Puerts.ArgumentHelper((int)data, isolate, info, 4);
+                    
+                    
+                    if (argHelper0.IsMatch(Puerts.JsValueType.NullOrUndefined | Puerts.JsValueType.NativeObject, typeof(Spine.Unity.SkeletonDataAsset), false, false)
+                        && argHelper1.IsMatch(Puerts.JsValueType.Number, null, false, false)
+                        && argHelper2.IsMatch(Puerts.JsValueType.Number, null, false, false)
+                        && argHelper3.IsMatch(Puerts.JsValueType.NativeObject, typeof(UnityEngine.Vector2), false, false)
+                        && argHelper4.IsMatch(Puerts.JsValueType.Boolean, null, false, false))
+                    {
+                        
+                        var Arg0 = argHelper0.Get<Spine.Unity.SkeletonDataAsset>(false);
+                        var Arg1 = argHelper1.GetInt32(false);
+                        var Arg2 = argHelper2.GetInt32(false);
+                        var Arg3 = argHelper3.Get<UnityEngine.Vector2>(false);
+                        var Arg4 = argHelper4.GetBoolean(false);
+                        obj.SetSpine(Arg0,Arg1,Arg2,Arg3,Arg4);
+                        
+                        
+                        
+                        return;
+                    }
+                }
+                
+                Puerts.PuertsDLL.ThrowException(isolate, "invalid arguments to SetSpine");
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void M_Dispose(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
@@ -166,6 +238,23 @@ namespace PuertsStaticWrap
                 }
                 
                 
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_spineAnimation(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.GLoader3D;
+                var result = obj.spineAnimation;
+                Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
             catch (Exception e)
             {
@@ -810,6 +899,7 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    { new Puerts.MethodKey {Name = "SetSpine", IsStatic = false},  M_SetSpine },
                     { new Puerts.MethodKey {Name = "Dispose", IsStatic = false},  M_Dispose },
                     { new Puerts.MethodKey {Name = "Advance", IsStatic = false},  M_Advance },
                     { new Puerts.MethodKey {Name = "SetWrapTarget", IsStatic = false},  M_SetWrapTarget },
@@ -818,6 +908,7 @@ namespace PuertsStaticWrap
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    {"spineAnimation", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_spineAnimation, Setter = null} },
                     {"url", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_url, Setter = S_url} },
                     {"icon", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_icon, Setter = S_icon} },
                     {"align", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_align, Setter = S_align} },

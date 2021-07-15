@@ -12,6 +12,15 @@ export default class FileHelper{
     }
     
     public static LoadConfig() : void{
-        ConfigAssetManager.Load("ModTheSpire",UnityEngine.Application.persistentDataPath + "/" + basePath + "DB/Localization.json");
+        ConfigAssetManager.Load("ModTheSpire", UnityEngine.Application.persistentDataPath + "/" + basePath + "DB/Localization.json");
+    }
+    
+    public static FormatPath(file:string) : string
+    {
+        return basePath + "Res/" + file;
+    }
+    
+    public static FormatPath2(file:string):string{
+        return UnityEngine.Application.persistentDataPath + "/" + basePath + "/Res/" + file;
     }
 }

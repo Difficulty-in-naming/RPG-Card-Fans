@@ -121,12 +121,12 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void G_isDebug(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        private static void G_IsDeveloper(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as GameEntry;
-                var result = obj.isDebug;
+                var result = obj.IsDeveloper;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
             catch (Exception e)
@@ -136,13 +136,45 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
-        private static void S_isDebug(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        private static void S_IsDeveloper(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as GameEntry;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
-                obj.isDebug = argHelper.GetBoolean(false);
+                obj.IsDeveloper = argHelper.GetBoolean(false);
+                
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_DebugScript(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as GameEntry;
+                var result = obj.DebugScript;
+                Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void S_DebugScript(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as GameEntry;
+                var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                obj.DebugScript = argHelper.GetBoolean(false);
                 
             }
             catch (Exception e)
@@ -297,7 +329,8 @@ namespace PuertsStaticWrap
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"Inst", new Puerts.PropertyRegisterInfo(){ IsStatic = true, Getter = G_Inst, Setter = null} },
-                    {"isDebug", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_isDebug, Setter = S_isDebug} },
+                    {"IsDeveloper", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_IsDeveloper, Setter = S_IsDeveloper} },
+                    {"DebugScript", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_DebugScript, Setter = S_DebugScript} },
                     {"debugPort", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_debugPort, Setter = S_debugPort} },
                     {"jsEnv", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_jsEnv, Setter = S_jsEnv} },
                     {"JsUpdate", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_JsUpdate, Setter = S_JsUpdate} },

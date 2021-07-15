@@ -9,13 +9,6 @@ export interface IGameAction{
 
 export default class QueueMessageKit
 {
-    private static inst: QueueMessageKit;
-    public static Inst(): QueueMessageKit {
-        if (!QueueMessageKit.inst) {
-            QueueMessageKit.inst = new QueueMessageKit();
-        }
-        return QueueMessageKit.inst;
-    }
     private waiting : boolean; 
     private list : Array<IGameAction> = new Array<IGameAction>();
     private currentRunning : IGameAction;
@@ -34,14 +27,15 @@ export default class QueueMessageKit
 
     public async Update()
     {
-        if(this.waiting)
+        if(this.waiting && this.currentRunning) {
+            this.currentRunning += TimeKit.DeltaTime;
             return;
+        }
         let action = this.currentRunning == undefined ? this.list.pop() : this.currentRunning;
         if(action){
             if(this.currentRunning != action){
                 action.Init();
                 this.currentRunning = action;
-                this.currentRunning.Duration += TimeKit.DeltaTime;
             }
             this.waiting = true;
             let result = await action.Update();

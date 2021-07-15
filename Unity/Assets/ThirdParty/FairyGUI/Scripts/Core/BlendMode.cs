@@ -24,7 +24,8 @@ namespace FairyGUI
         One_OneMinusSrcAlpha,
         Custom1,
         Custom2,
-        Custom3
+        Custom3,
+        Custom4,
     }
 
     /// <summary>
@@ -74,7 +75,9 @@ namespace FairyGUI
             //Custom2
             new BlendFactor(NativeBlendMode.SrcAlpha, NativeBlendMode.OneMinusSrcAlpha),
             //Custom3
-            new BlendFactor(NativeBlendMode.SrcAlpha, NativeBlendMode.OneMinusSrcAlpha)
+            new BlendFactor(NativeBlendMode.SrcAlpha, NativeBlendMode.OneMinusSrcAlpha),
+            //Custom3
+            new BlendFactor(NativeBlendMode.SrcColor, NativeBlendMode.One)
         };
 
         /// <summary>
