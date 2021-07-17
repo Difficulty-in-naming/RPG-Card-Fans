@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="64,64" extention="Label">
+  <controller name="Block" pages="" selected="-1"/>
+  <displayList>
+    <image id="n11_yao8" name="n11" src="yao82b" fileName="Texture/block.png" xy="0,0" color="#99edfa"/>
+    <text id="n12_yao8" name="title" xy="17,14" size="30,36" font="ui://rduitwm2kefb3" fontSize="26" color="#fef6e2" strokeColor="#4d4a44" strokeSize="0.2" faceDilate="0.15" text="10">
+      <relation target="n11_yao8" sidePair="center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" target="n11_yao8" tween="true" startValue="0" endValue="1" duration="42"/>
+    <item time="0" type="Alpha" target="n12_yao8" tween="true" startValue="0" endValue="1" duration="42"/>
+    <item time="0" type="XY" target="n11_yao8" tween="true" startValue="-,-48" endValue="-,-24" duration="42" ease="Back.Out"/>
+  </transition>
+</component>

@@ -42,10 +42,12 @@
             jsEnv.AddLazyStaticWrapLoader(typeof(System.Text.Encoding), System_Text_Encoding_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(System.Array), System_Array_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(Cysharp.Threading.Tasks.UniTask), Cysharp_Threading_Tasks_UniTask_Wrap.GetRegisterInfo);
+            jsEnv.AddLazyStaticWrapLoader(typeof(TMPro.TextMeshPro), TMPro_TextMeshPro_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(Panthea.UI.UIKit), Panthea_UI_UIKit_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(GameEntry), GameEntry_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(MediaManager), MediaManager_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(ResourcesManager), ResourcesManager_Wrap.GetRegisterInfo);
+            jsEnv.AddLazyStaticWrapLoader(typeof(DreamLib.Unity.UI.FairyGUIExtension.FairyGUIExtension), DreamLib_Unity_UI_FairyGUIExtension_FairyGUIExtension_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(FairyGUI.GLoader3D), FairyGUI_GLoader3D_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(FairyGUI.TMPFont), FairyGUI_TMPFont_Wrap.GetRegisterInfo);
             jsEnv.AddLazyStaticWrapLoader(typeof(FairyGUI.TextFormat), FairyGUI_TextFormat_Wrap.GetRegisterInfo);

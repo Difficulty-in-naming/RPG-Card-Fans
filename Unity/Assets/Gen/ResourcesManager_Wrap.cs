@@ -36,6 +36,39 @@ namespace PuertsStaticWrap
         }
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void F_LoadPrefabFromInternal(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                
+                
+                
+                {
+                    
+                    var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
+                    
+                    
+                    
+                    {
+                        
+                        var Arg0 = argHelper0.GetString(false);
+                        var result = ResourcesManager.LoadPrefabFromInternal(Arg0);
+                        
+                        Puerts.ResultHelper.Set((int)data, isolate, info, result);
+                        
+                        
+                    }
+                }
+                
+                
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void F_LoadTexture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
@@ -249,6 +282,7 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    { new Puerts.MethodKey {Name = "LoadPrefabFromInternal", IsStatic = true},  F_LoadPrefabFromInternal },
                     { new Puerts.MethodKey {Name = "LoadTexture", IsStatic = true},  F_LoadTexture },
                     { new Puerts.MethodKey {Name = "LoadTextureAsync", IsStatic = true},  F_LoadTextureAsync },
                     { new Puerts.MethodKey {Name = "LoadAudioClip", IsStatic = true},  F_LoadAudioClip },

@@ -2,10 +2,25 @@
 import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
 import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
 import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {Log} from "Core/Module/Log/Log";
-import {View_UnitWrap} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Common";
+import {View_UnitWrap} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Combat";
+import {ViewComponent_HealthBar} from "mods/ModTheSpire/Scripts/UI/ViewComponent/ViewComponent_HealthBar";
 
 export class SpineCharacterDisplay implements IDisplay{
+    get FlipX(): boolean {
+        return this.Self.Skeleton.ScaleX == -1;
+    }
+
+    set FlipX(value: boolean) {
+        value ? this.Self.Skeleton.ScaleX = -1 : 1;
+    }
+
+    get FlipY(): boolean {
+        return this.Self.Skeleton.ScaleY == -1;
+    }
+
+    set FlipY(value: boolean) {
+        value ? this.Self.Skeleton.ScaleY = -1 : 1;
+    }
     get Visible(): boolean {
         return this._Visible;
     }
@@ -90,8 +105,12 @@ export class SpineCharacterDisplay implements IDisplay{
     private _Y: number;
     private _Visible: boolean;
     private _Color: Color;
+    private _FlipX: boolean;
+    private _FlipY: boolean;
     private readonly _Self: Spine.Unity.SkeletonAnimation;
-    private readonly UnitComponent:FairyGUI.GComponent;
+    UnitComponent:FairyGUI.GComponent;
+    HealthComponent: ViewComponent_HealthBar;
+    PowerListComponent: any;
     private readonly _Wrap : FairyGUI.GoWrapper;
     private readonly _CacheGameObject:UnityEngine.GameObject;
     private readonly _CacheTransform:UnityEngine.Transform;
@@ -102,8 +121,9 @@ export class SpineCharacterDisplay implements IDisplay{
         this.UnitComponent = <FairyGUI.GComponent>View_UnitWrap.CreateInstance();
         this._Wrap = new FairyGUI.GoWrapper();
         this._Wrap.SetWrapTarget(animation.gameObject,true);
-        this.UnitComponent.GetChild("Wrap").asGraph.SetNativeObject(this._Wrap);
-        this.Bounds = UIHelper.CreateGGraph();
+        this.UnitComponent.GetChild("ModelLoader").asGraph.SetNativeObject(this._Wrap);
+        this.HealthComponent = new ViewComponent_HealthBar(this.UnitComponent.GetChild("HealthBar").asProgress);
+        this.Bounds = this.UnitComponent.GetChild("Bounds").asGraph;
         this.Bounds.SetPivot(0.5,0.5,true);
         this.Rotation = 0;
         this.ScaleX = 1;
@@ -115,9 +135,13 @@ export class SpineCharacterDisplay implements IDisplay{
         this.Color = Color.White;
     }
 
-    PlayAnimation(animation: string,loop:boolean = false,delay:number = 0) : any {
+    AddAnimation(animation: string, loop?: boolean,delay?:number) {
+        this._Self.AnimationState.AddAnimation(0,animation,loop,delay);
+    }
+
+    SetAnimation(animation: string, loop:boolean = false) : any {
         this._Self.AnimationName = animation;
-        return this._Self.AnimationState.AddAnimation(0,animation,loop,delay);
+        return this._Self.AnimationState.SetAnimation(0,animation,loop);
     }
 
     Dispose() {
@@ -135,14 +159,6 @@ export class SpineCharacterDisplay implements IDisplay{
     PlayFastAttack() {
         if(!(this.UnitComponent.GetTransition("Jump").playing || this.UnitComponent.GetTransition("Hop").playing)) {
             let transition = this.UnitComponent.GetTransition("FastAttack");
-            if(!transition.playing)
-                transition.Play();
-        }
-    }
-
-    PlayFastShake() {
-        if(!(this.UnitComponent.GetTransition("Jump").playing || this.UnitComponent.GetTransition("Hop").playing)){
-            let transition = this.UnitComponent.GetTransition("FastShake");
             if(!transition.playing)
                 transition.Play();
         }
@@ -172,11 +188,20 @@ export class SpineCharacterDisplay implements IDisplay{
         }
     }
 
-    PlaySlowShake() {
+    PlaySlowShake(duration:number) {
         if(!(this.UnitComponent.GetTransition("Jump").playing || this.UnitComponent.GetTransition("Hop").playing)){
             let transition = this.UnitComponent.GetTransition("SlowShake");
+            if(!transition.playing) {
+                transition.Play(duration / 0.1,0,null);
+            }
+        }
+    }
+
+    PlayFastShake(duration:number) {
+        if(!(this.UnitComponent.GetTransition("Jump").playing || this.UnitComponent.GetTransition("Hop").playing)){
+            let transition = this.UnitComponent.GetTransition("FastShake");
             if(!transition.playing)
-                transition.Play();
+                transition.Play(duration / 0.1,0,null);
         }
     }
 

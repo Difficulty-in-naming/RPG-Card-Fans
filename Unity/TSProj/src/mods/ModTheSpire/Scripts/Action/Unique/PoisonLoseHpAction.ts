@@ -41,7 +41,7 @@ export class PoisonLoseHpAction extends AbstractGameAction {
                     DungeonManager.MessageManager.Send(NotifyPowerDescerptionChanged.Id,new NotifyPowerDescerptionChanged(power.Id));
                 }
             }
-            this.AddToTop(new WaitAction(0.1));
+            this.AddToTop(new WaitAction(100));
         }
 
     }

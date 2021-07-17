@@ -1,4 +1,7 @@
 ﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
+import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+import {Mathf} from "Core/Module/Math/Mathf";
+import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
 
 export class MonsterGroup{
     public Monsters = new Array<AbstractMonster>();
@@ -7,11 +10,22 @@ export class MonsterGroup{
     }
 
     public AreMonstersBasicallyDead() : boolean {
+        return this.GetAliveMonstersCount() == 0;
+    }
+    
+    public GetAliveMonstersCount():number{
+        let aliveCount = 0;
         for (let i = 0; i < this.Monsters.length; i++) {
             let m = this.Monsters[i];
             if(m.IsDying || m.IsEscaping) continue;
-            return false;
+            aliveCount++;
         }
-        return true;
+        return aliveCount;
+    }
+    
+    public Random(){
+        let vaildMonster = this.Monsters.filter(t1=>!t1.IsDying && t1.Intent != Intent.ESCAPE && !t1.IsDeadOrEscaped)
+        let random = Mathf.Floor(Mathf.RandomRange(0,vaildMonster.length,DungeonManager.Inst.CurrentDungeon.AIRng));
+        return vaildMonster[random];
     }
 }

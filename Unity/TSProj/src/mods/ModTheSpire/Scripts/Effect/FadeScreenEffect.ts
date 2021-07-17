@@ -13,7 +13,7 @@ export class FadeScreenEffect extends AbstractEffect
         let alpha = toDark ? 1 : 0;
         graph.alpha = alpha;
         graph.sortingOrder = 10;
-        graph.color = Color.Dark.UnityColor();
+        graph.color = Color.Black.UnityColor();
         let t = new Tween.Tween({a:alpha}).to({a:alpha == 0 ? 1 :0}, 1500).easing(Tween.Easing.Sinusoidal.InOut)
             .onUpdate(object => {
                 graph.alpha = object.a;

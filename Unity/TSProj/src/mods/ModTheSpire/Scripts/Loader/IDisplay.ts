@@ -1,7 +1,5 @@
 ﻿import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {Bounds} from "mods/ModTheSpire/Scripts/DataDefine/Bounds";
 import { FairyGUI } from "csharp";
-import {View_UnitWrap} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Common";
 
 export interface IDisplay{
     X:number;
@@ -12,17 +10,21 @@ export interface IDisplay{
     SortingOrder:number;
     Visible:boolean;
     Color:Color;
-    View:View_UnitWrap
+    UnitComponent:any;
     Bounds : FairyGUI.GGraph;
+    HealthComponent : any;
     Self:any;//可以保存自身Object.比如Spine你可以保存SkeletonAnimation.然后在别的地方你可以使用Self做一些特定操作
+    FlipX:boolean;
+    FlipY:boolean;
     Dispose();
     SetParent(object:any);
-    PlayAnimation(animation:string,loop?:boolean,delay?:number) : any;
+    SetAnimation(animation:string, loop?:boolean,delay?:number) : any;
+    AddAnimation(animation:string, loop?:boolean):any;
     PlayFastAttack();
     PlaySlowAttack();
     PlayHop();
     PlayJump();
-    PlayFastShake();
-    PlaySlowShake();
+    PlayFastShake(duration:number);
+    PlaySlowShake(duration:number);
     PlayStagger();
 }

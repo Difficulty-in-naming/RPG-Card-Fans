@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using FairyGUI;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -336,6 +337,8 @@ namespace DefaultNamespace
         public async void Start()
         {
 	        Log.Print(rgba8888ToColor(new Color(),Color) * 255);
+	        /*var text = new TextMeshPro();
+	        text.color*/
         }
 
         void Update()

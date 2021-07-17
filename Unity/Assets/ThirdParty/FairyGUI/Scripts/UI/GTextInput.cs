@@ -19,8 +19,8 @@ namespace FairyGUI
 
         public GTextInput()
         {
-            _textField.autoSize = AutoSizeType.None;
-            _textField.wordWrap = false;
+            TextField.autoSize = AutoSizeType.None;
+            TextField.wordWrap = false;
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace FairyGUI
             inputTextField.gOwner = this;
             displayObject = inputTextField;
 
-            _textField = inputTextField.textField;
+            TextField = inputTextField.textField;
         }
 
         public override void Setup_BeforeAdd(ByteBuffer buffer, int beginPos)

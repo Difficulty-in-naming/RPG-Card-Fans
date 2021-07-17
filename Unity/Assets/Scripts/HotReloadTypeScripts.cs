@@ -43,8 +43,8 @@ public class HotReloadTypeScripts
             if (NeedReload.Count > 0)
             {
                 JsEnv.ClearAllModuleCaches();
-                foreach(var node in NeedReload)
-                    Env.Eval($"require('{node}');");
+                //foreach(var node in NeedReload)
+                //    Env.Eval($"require('{node}');");
                 NeedReload.Clear();
             }
             Tick = 0;

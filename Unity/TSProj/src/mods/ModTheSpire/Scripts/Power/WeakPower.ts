@@ -16,6 +16,7 @@ export class WeakPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/weak.png");
     Id: string = "Weak";
     Name: string = LocalizationProperty.Read("能力-虚弱");
+    
     get Type(){
         return PowerType.Debuff;
     }

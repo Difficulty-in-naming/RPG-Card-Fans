@@ -25,7 +25,7 @@ namespace FairyGUI
             richTextField.gOwner = this;
             displayObject = richTextField;
 
-            _textField = richTextField.textField;
+            TextField = richTextField.textField;
         }
 
         override protected void SetTextFieldText()
@@ -34,7 +34,7 @@ namespace FairyGUI
             if (_templateVars != null)
                 str = ParseTemplate(str);
 
-            _textField.maxWidth = maxWidth;
+            TextField.maxWidth = maxWidth;
             if (_ubbEnabled)
                 richTextField.htmlText = UBBParser.inst.Parse(str);
             else

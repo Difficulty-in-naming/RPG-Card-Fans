@@ -22,7 +22,7 @@ export class CombatRoom extends AbstractRoom
     public CurrentEnergy = 0;
     public MaxEnergy = 0;
     public UsingCard : AbstractCard//点击中的卡牌.准备使用
-    
+    public Round = 1;    
     Enter(){
         let x = UI_BottomScene.CreatePanel();
         let top = UI_TopBar.CreatePanel();

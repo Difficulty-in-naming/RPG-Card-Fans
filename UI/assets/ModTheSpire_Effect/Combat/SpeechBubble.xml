@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="353,250" extention="Label">
+  <displayList>
+    <image id="n0_guw1" name="Bg" src="guw12t" fileName="Texture/speechBubble2.png" xy="0,0" pivot="0.5,0.5"/>
+    <graph id="n2_guw1" name="Holder" xy="179,90" size="0,0"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" target="n0_guw1" tween="true" startValue="0.4" endValue="1" duration="18" ease="Sine.InOut"/>
+    <item time="0" type="Scale" target="n0_guw1" tween="true" startValue="0.4,0.4" endValue="1,1" duration="18" ease="Back.Out"/>
+  </transition>
+</component>

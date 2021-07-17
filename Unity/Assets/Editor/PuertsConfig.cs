@@ -5,10 +5,12 @@ using System.Linq;
 using System.Reflection;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using DreamLib.Unity.UI.FairyGUIExtension;
 using Manager;
 using Panthea.UI;
 using Spine;
 using Spine.Unity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -52,8 +54,11 @@ public class PuertsConfig
                 typeof(UnityEngine.Renderer),
                 typeof(UnityEngine.MaterialPropertyBlock),
                 typeof(UnityEngine.Color),
+                typeof(UnityEngine.Color32),
                 typeof(Screen),
                 typeof(Input),
+                typeof(List<>),
+                typeof(Dictionary<,>),
 
                 //System
                 typeof(System.IO.DirectoryInfo),
@@ -65,18 +70,21 @@ public class PuertsConfig
                 
                 //ThirdParty
                 typeof(UniTask),
-                
+
                 typeof(UIKit),
                 typeof(GameEntry),
                 typeof(MediaManager),
                 typeof(ResourcesManager),
+                typeof(FairyGUIExtension),
+                typeof(SuperText)
             };
 
             List<string> namespaces = new List<string>()
             {
                 "FairyGUI",
                 "Spine",
-                "Spine.Unity"
+                "Spine.Unity",
+                "TMPro"
             };
 
             Assembly[] ass = AppDomain.CurrentDomain.GetAssemblies();

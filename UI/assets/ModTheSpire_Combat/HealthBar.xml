@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="90,24" restrictSize="90,0,24,24" extention="ProgressBar">
+  <controller name="Block" pages="1,FALSE,0,TRUE" selected="1"/>
+  <displayList>
+    <image id="n6_myaq" name="Outside" src="myaq23" fileName="Texture/Bar/HealthBody.png" xy="1,0" size="88,24" alpha="0.2" color="#000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n16_yao8" name="n16" src="myaq1n" fileName="Texture/Bar/BlockBar.png" xy="3,2" size="84,20">
+      <gearDisplay controller="Block" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n7_myaq" name="Background" src="myaq24" fileName="Texture/Bar/HealthBar.png" xy="6,6" size="78,12" alpha="0.75" color="#000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n8_myaq" name="Middle" src="myaq24" fileName="Texture/Bar/HealthBar.png" xy="6,6" size="0,12" color="#ff8000"/>
+    <image id="n9_myaq" name="bar" src="myaq24" fileName="Texture/Bar/HealthBar.png" xy="6,6" size="78,12" color="#ff0d0d">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n11_myaq" name="DisplayText" xy="10,-6" size="69,36" font="ui://rduitwm2kefb3" fontSize="26" color="#ffffff" strokeColor="#3f3f3f" strokeSize="0.2" faceDilate="0.15" text="88/88">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+    <component id="n10_myaq" name="Block" src="yao82d" fileName="Block.xml" xy="-35,-24">
+      <gearDisplay controller="Block" pages="0"/>
+    </component>
+  </displayList>
+  <ProgressBar titleType="valueAndmax"/>
+</component>

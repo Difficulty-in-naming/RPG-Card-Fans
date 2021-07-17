@@ -7,6 +7,8 @@
     <image id="st1o1" name="spike.png" path="/Texture/" exported="true"/>
     <component id="st1o2" name="PowerBuffEffect.xml" path="/Combat/" exported="true"/>
     <component id="st1o4" name="PowerDebuffEffect.xml" path="/Combat/" exported="true"/>
+    <image id="guw12t" name="speechBubble2.png" path="/Texture/" exported="true" scale9grid="0,0,-159,-262"/>
+    <component id="guw12u" name="SpeechBubble.xml" path="/Combat/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

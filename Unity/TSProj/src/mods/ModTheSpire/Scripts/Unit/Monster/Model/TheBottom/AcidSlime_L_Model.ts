@@ -7,6 +7,7 @@ import {Mathf} from "Core/Module/Math/Mathf";
 import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
 import {SplitPower} from "mods/ModTheSpire/Scripts/Power/SplitPower";
 import {PoisonPower} from "mods/ModTheSpire/Scripts/Power/PoisonPower";
+import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
 
 export class AcidSlime_L_Model extends MonsterInfo{
     public static Id = "AcidSlime_L"
@@ -24,6 +25,6 @@ export class AcidSlime_L_Model extends MonsterInfo{
         return this.loader ?? (this.loader = new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.png")));
     }
     get Name(): string {
-        return AcidSlime_L_Model.Id;
+        return LocalizationProperty.Read("酸液史莱姆（大）");
     }
 }

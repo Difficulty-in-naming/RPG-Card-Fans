@@ -207,6 +207,23 @@ namespace PuertsStaticWrap
         
         
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
+        private static void G_TextField(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
+        {
+            try
+            {
+                var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.GTextField;
+                var result = obj.TextField;
+                Puerts.ResultHelper.Set((int)data, isolate, info, result);
+            }
+            catch (Exception e)
+            {
+                Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
+            }
+        }
+        
+        
+        
+        [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_text(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
@@ -643,6 +660,7 @@ namespace PuertsStaticWrap
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    {"TextField", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_TextField, Setter = null} },
                     {"text", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_text, Setter = S_text} },
                     {"templateVars", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_templateVars, Setter = S_templateVars} },
                     {"textFormat", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_textFormat, Setter = S_textFormat} },

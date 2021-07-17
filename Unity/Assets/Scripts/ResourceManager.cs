@@ -21,6 +21,12 @@ public class ResourcesManager
         }
         return null;
     }
+
+    public static GameObject LoadPrefabFromInternal(string path)
+    {
+        var x =  Object.Instantiate(Resources.Load<GameObject>(path));
+        return x;
+    }
     
     public static Texture2D LoadTexture(string path)
     {
@@ -30,7 +36,7 @@ public class ResourcesManager
         var tex = new Texture2D(0,0);
         tex.alphaIsTransparency = true;
         var bytes = File.ReadAllBytes(path);
-        tex.LoadRawTextureData(bytes);
+        tex.LoadImage(bytes);
         tex.Apply(false, false);
         Cache[path] = tex;
         return tex;

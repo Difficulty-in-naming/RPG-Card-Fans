@@ -1,9 +1,9 @@
-﻿import {FairyGUI} from "csharp";
+﻿import {FairyGUI, ResourcesManager, SuperText, TMPro, UnityEngine} from "csharp";
 import {UI_Tooltips} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Tooltips";
 import AbstractCard, {CardColor, CardType} from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
 import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-
+import * as puerts from "puerts";
 export default class {
     public static CreateGLoader() : FairyGUI.GLoader
     {
@@ -34,6 +34,11 @@ export default class {
         tooltips.View.visible = true;
         tooltips.View.touchable = false;
         return tooltips;
+    }
+    public static CreateSuperText():SuperText{
+        let gameObject = ResourcesManager.LoadPrefabFromInternal("TMP")
+        let tmp = <SuperText>gameObject.GetComponent(puerts.$typeof(TMPro.TextMeshPro));
+        return tmp;
     }
     public static HideToolTips(){
         UI_Tooltips.GetInstance().View.visible = false;

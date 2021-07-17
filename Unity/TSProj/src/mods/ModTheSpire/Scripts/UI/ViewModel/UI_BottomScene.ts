@@ -88,9 +88,10 @@ export class UI_BottomScene extends View_BottomScene implements IScene
         this.CeilingMod6.visible = Mathf.Random() > 0.5;
         this.RandomizeTorch();
         let graph = UIHelper.CreateGGraph();
+        graph.color = new Color(Mathf.RandomRange(0,14),Mathf.RandomRange(0,52),Mathf.RandomRange(0,52)).UnityColor();
         this.View.AddChild(graph);
         graph.SetPosition(0,0,0);
-        graph.blendMode = FairyGUI.BlendMode.Custom4;
+        graph.blendMode = FairyGUI.BlendMode.Add;
         graph.MakeFullScreen();
     }
     
@@ -150,7 +151,7 @@ export class UI_BottomScene extends View_BottomScene implements IScene
         player.Y = 774;
         player.ScaleX = 110;
         player.ScaleY = 110;
-        player.DisplayObject.PlayAnimation("Idle",true);
+        player.DisplayObject.SetAnimation("Idle",true);
     }
     
     OnUpdate() {

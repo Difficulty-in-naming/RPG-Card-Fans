@@ -24,6 +24,12 @@ export default class DamageInfo
     public readonly Origin : WrapDamage;
     //伤害修改列表
     public Modify = new Array<DamageModification>();
+    public get DamageType() : DamageType{
+        return this.Modify.last().Damage.Type;
+    }
+    public get Source():any{
+        return this.Modify.last().Damage.Source;
+    }
     public get TotalDamage(){
         let num:number = 0;
         this.Modify.forEach(t1=>num += t1.Damage.Damage);

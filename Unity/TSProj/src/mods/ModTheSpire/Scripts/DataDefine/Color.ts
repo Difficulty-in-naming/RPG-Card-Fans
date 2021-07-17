@@ -5,7 +5,7 @@ export default class Color{
     public static Red = new Color(255, 0, 0,255);
     public static Chartreuse = new Color(128, 255, 0,255);
     public static White = new Color(255, 255, 255,255);
-    public static Dark = new Color(0, 0, 0,255);
+    public static Black = new Color(0, 0, 0,255);
     public static Gray = new Color(127, 127, 127,255);
     public static FireBrick = new Color(0,0,0,153);
     public static TwoThirdsTransparentBlackColor = new Color(0,0,0,166);
@@ -16,6 +16,10 @@ export default class Color{
     public static BlueText = new Color(135,206,235,255);
     public static GoldText = new Color(239,200,81,255);
     public static PurpleText = new Color(238,130,238,255);
+    public static RedHpBarColor = new Color(204,13,13,255);
+    public static GreenHpBarColor = new Color(120,190,60,255);
+    public static BlueHpBarColor = new Color(49,86,140,255);
+    public static OrangeHbBarColor = new Color(255,128,0,255);
     public R : number;
     public G : number;
     public B : number;
@@ -46,7 +50,7 @@ export default class Color{
     }
 
     public UnityColor32() : UnityEngine.Color32{
-        return new UnityEngine.Color(this.R,this.G,this.B,this.A);
+        return new UnityEngine.Color32(this.R,this.G,this.B,this.A);
     }
     
     public ToHex():string{

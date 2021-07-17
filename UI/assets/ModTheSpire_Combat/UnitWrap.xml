@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="0,0">
+<component size="200,270">
+  <controller name="HPVisible" pages="2,TRUE,3,FALSE" selected="0"/>
   <displayList>
     <graph id="n1_myaq" name="Bounds" xy="0,0" size="0,0" lineSize="0"/>
-    <graph id="n0_myaq" name="Holder" xy="0,0" size="0,0" lineSize="0"/>
+    <graph id="n0_myaq" name="ModelLoader" xy="0,0" size="0,0" lineSize="0"/>
+    <loader id="n2_myaq" name="ImageLoader" xy="0,0" size="0,0"/>
+    <component id="n8_myaq" name="HealthBar" src="myaq1z" fileName="HealthBar.xml" xy="-42,247" size="244,24">
+      <gearLook controller="HPVisible" pages="3" values="0,0,0,1" default="1,0,0,1" tween="true" ease="Sine.InOut" duration=".25"/>
+      <ProgressBar value="100" max="100"/>
+    </component>
+    <loader id="n11_myaq" name="PowerList" xy="-37,281" size="50,50"/>
+    <component id="n12_myaq" name="DisplayName" src="yao829" fileName="DisplayName.xml" xy="-100,236"/>
   </displayList>
+  <transition name="SlowAttack">
+    <item time="0" type="XY" tween="true" startValue="0,-" endValue="90,-" duration="12" ease="Quart.Out"/>
+    <item time="12" type="XY" tween="true" startValue="90,-" endValue="0,-" duration="12" ease="Sine.InOut"/>
+  </transition>
+  <transition name="FastAttack">
+    <item time="0" type="XY" tween="true" startValue="0,-" endValue="90,-" duration="6" ease="Cubic.In"/>
+    <item time="6" type="XY" tween="true" startValue="90,-" endValue="0,-" duration="6" ease="Sine.InOut"/>
+  </transition>
+  <transition name="Jump" frameRate="30">
+    <item time="0" type="XY" tween="true" startValue="-,0" endValue="-,-120" duration="11" ease="Expo.Out"/>
+    <item time="11" type="XY" tween="true" startValue="-,-120" endValue="-,0" duration="10" ease="Expo.In"/>
+  </transition>
+  <transition name="Hop">
+    <item time="0" type="XY" tween="true" startValue="-,0" endValue="-,-88" duration="11" ease="Expo.Out"/>
+    <item time="11" type="XY" tween="true" startValue="-,-88" endValue="-,0" duration="10" ease="Expo.In"/>
+  </transition>
+  <transition name="FastShake" frameRate="60">
+    <item time="0" type="XY" tween="true" startValue="0,-" endValue="4,-" duration="2" ease="Linear"/>
+    <item time="2" type="XY" tween="true" startValue="4,-" endValue="-4,-" duration="2" ease="Linear"/>
+    <item time="4" type="XY" tween="true" startValue="-4,-" endValue="0,-" duration="2" ease="Linear"/>
+  </transition>
+  <transition name="SlowShake" frameRate="60">
+    <item time="0" type="XY" tween="true" startValue="0,-" endValue="8,-" duration="2" ease="Linear"/>
+    <item time="2" type="XY" tween="true" startValue="8,-" endValue="-8,-" duration="2" ease="Linear"/>
+    <item time="4" type="XY" tween="true" startValue="-8,-" endValue="0,-" duration="2" ease="Linear"/>
+  </transition>
+  <transition name="Stagger" frameRate="60">
+    <item time="0" type="XY" tween="true" startValue="0,0" endValue="20,0" duration="18" ease="Quad.InOut"/>
+  </transition>
+  <transition name="DisplayName">
+    <item time="0" type="XY" target="n12_myaq" tween="true" startValue="-100,236" endValue="-100,236" duration="6"/>
+  </transition>
 </component>

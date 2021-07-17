@@ -909,6 +909,9 @@ declare module 'csharp' {
         type Action$2<T1, T2> = (arg1: T1, arg2: T2) => void;
         
         
+        type Func$3<T1, T2, TResult> = (arg1: T1, arg2: T2) => TResult;
+        
+        
     }
     namespace System.Collections {
         
@@ -1237,6 +1240,13 @@ declare module 'csharp' {
             public static Equals($objA: any, $objB: any):boolean;
             
             public constructor();
+            
+        }
+        
+        /** Representation of 3D vectors and points. */
+        interface Vector3 {
+            
+            Compare($v2: UnityEngine.Vector3, $accuracy: number):boolean;
             
         }
         
@@ -1906,6 +1916,13 @@ declare module 'csharp' {
             
         }
         
+        /** Quaternions are used to represent rotations. */
+        interface Quaternion {
+            
+            Compare($q2: UnityEngine.Quaternion, $accuracy: number):boolean;
+            
+        }
+        
         /** A standard 4x4 transformation matrix. */
         class Matrix4x4 extends System.ValueType implements System.IEquatable$1<UnityEngine.Matrix4x4>, System.IFormattable{
             
@@ -2367,7 +2384,52 @@ declare module 'csharp' {
         
         /** Representation of RGBA colors in 32 bit format. */
         class Color32 extends System.ValueType implements System.IFormattable{
+            /** Red component of the color. */
+            public r: number;/** Green component of the color. */
+            public g: number;/** Blue component of the color. */
+            public b: number;/** Alpha component of the color. */
+            public a: number;
             
+            public static op_Implicit($c: UnityEngine.Color):UnityEngine.Color32;
+            
+            public static op_Implicit($c: UnityEngine.Color32):UnityEngine.Color;
+            /** Linearly interpolates between colors a and b by t. */
+            public static Lerp($a: UnityEngine.Color32, $b: UnityEngine.Color32, $t: number):UnityEngine.Color32;
+            /** Linearly interpolates between colors a and b by t. */
+            public static LerpUnclamped($a: UnityEngine.Color32, $b: UnityEngine.Color32, $t: number):UnityEngine.Color32;
+            
+            public get_Item($index: number):number;
+            
+            public set_Item($index: number, $value: number):void;
+            
+            public ToString():string;
+            /** Returns a formatted string for this color. * @param format A numeric format string.
+             * @param formatProvider An object that specifies culture-specific formatting.
+             */
+            public ToString($format: string):string;
+            /** Returns a formatted string for this color. * @param format A numeric format string.
+             * @param formatProvider An object that specifies culture-specific formatting.
+             */
+            public ToString($format: string, $formatProvider: System.IFormatProvider):string;
+            
+            public constructor($r: number, $g: number, $b: number, $a: number);
+            
+            public constructor();
+            
+        }
+        
+        /** Representation of RGBA colors in 32 bit format. */
+        interface Color32 {
+            
+            Compare($b: UnityEngine.Color32):boolean;
+            
+            CompareRGB($b: UnityEngine.Color32):boolean;
+            
+            Multiply($c2: UnityEngine.Color32):UnityEngine.Color32;
+            
+            Tint($c2: UnityEngine.Color32):UnityEngine.Color32;
+            
+            Tint($tint: number):UnityEngine.Color32;
             
         }
         
@@ -2500,6 +2562,17 @@ declare module 'csharp' {
             public static Equals($objA: any, $objB: any):boolean;
             
             public constructor();
+            
+        }
+        
+        /** Representation of RGBA colors. */
+        interface Color {
+            
+            Compare($b: UnityEngine.Color):boolean;
+            
+            CompareRGB($b: UnityEngine.Color):boolean;
+            
+            MinAlpha($c2: UnityEngine.Color):UnityEngine.Color;
             
         }
         
@@ -4003,6 +4076,33 @@ declare module 'csharp' {
             
         }
         
+        /** Position, size, anchor and pivot information for a rectangle. */
+        class RectTransform extends UnityEngine.Transform implements System.Collections.IEnumerable{
+            
+            
+        }
+        
+        
+        interface ICanvasRaycastFilter{
+            
+            
+        }
+        
+        
+        interface ISerializationCallbackReceiver{
+            
+            
+        }
+        
+        /** Enumeration of the different types of supported touchscreen keyboards. */
+        enum TouchScreenKeyboardType{ Default = 0, ASCIICapable = 1, NumbersAndPunctuation = 2, URL = 3, NumberPad = 4, PhonePad = 5, NamePhonePad = 6, EmailAddress = 7, NintendoNetworkAccount = 8, Social = 9, Search = 10, DecimalPad = 11, OneTimeCode = 12 }
+        
+        /** A UnityGUI event. */
+        class Event extends System.Object{
+            
+            
+        }
+        
         
     }
     namespace System.Reflection {
@@ -4455,6 +4555,24 @@ declare module 'csharp' {
         /** Zero argument delegate used by UnityEvents. */
         type UnityAction = () => void;
         var UnityAction: {new (func: () => void): UnityAction;}
+        
+        
+        class UnityEvent$1<T0> extends UnityEngine.Events.UnityEventBase implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+        }
+        
+        /** Abstract base class for UnityEvents. */
+        class UnityEventBase extends System.Object implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+        }
+        
+        
+        class UnityEvent$3<T0, T1, T2> extends UnityEngine.Events.UnityEventBase implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+        }
         
         
     }
@@ -4997,6 +5115,12 @@ declare module 'csharp' {
         
         
         class Encoder extends System.Object{
+            
+            
+        }
+        
+        
+        class StringBuilder extends System.Object implements System.Runtime.Serialization.ISerializable{
             
             
         }
@@ -5840,6 +5964,8 @@ declare module 'csharp' {
         class ResourcesManager extends System.Object{
             
             
+            public static LoadPrefabFromInternal($path: string):UnityEngine.GameObject;
+            
             public static LoadTexture($path: string):UnityEngine.Texture2D;
             
             public static LoadTextureAsync($path: string):System.Threading.Tasks.Task$1<UnityEngine.Texture>;
@@ -5851,6 +5977,29 @@ declare module 'csharp' {
             public static LoadText($path: string):string;
             
             public static LoadData($path: string):System.Array$1<number>;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SuperText extends TMPro.TextMeshPro implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.ILayoutElement, UnityEngine.UI.IClippable{
+            
+            public get Width(): number;
+            public set Width(value: number);
+            
+            public get Height(): number;
+            public set Height(value: number);
+            
+            public get X(): number;
+            public set X(value: number);
+            
+            public get Y(): number;
+            public set Y(value: number);
+            
+            public get Z(): number;
+            public set Z(value: number);
+            
             
             public constructor();
             
@@ -7363,181 +7512,112 @@ declare module 'csharp' {
         
         
     }
+    namespace DreamLib.Unity.UI.FairyGUIExtension {
+        
+        class FairyGUIExtension extends System.Object{
+            
+            public static get MousePosition(): UnityEngine.Vector3;
+            
+            
+            
+            public static TweenResize($obj: FairyGUI.GObject, $width: number, $height: number, $duration: number):FairyGUI.GTweener;
+            
+        }
+        
+        
+    }
     namespace FairyGUI {
         
-        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
+        class GTweener extends System.Object{
             
-            public get spineAnimation(): Spine.Unity.SkeletonAnimation;
-            
-            
-            public get url(): string;
-            public set url(value: string);
-            
-            public get icon(): string;
-            public set icon(value: string);
-            
-            public get align(): FairyGUI.AlignType;
-            public set align(value: FairyGUI.AlignType);
-            
-            public get verticalAlign(): FairyGUI.VertAlignType;
-            public set verticalAlign(value: FairyGUI.VertAlignType);
-            
-            public get fill(): FairyGUI.FillType;
-            public set fill(value: FairyGUI.FillType);
-            
-            public get shrinkOnly(): boolean;
-            public set shrinkOnly(value: boolean);
-            
-            public get autoSize(): boolean;
-            public set autoSize(value: boolean);
-            
-            public get playing(): boolean;
-            public set playing(value: boolean);
-            
-            public get frame(): number;
-            public set frame(value: number);
-            
-            public get timeScale(): number;
-            public set timeScale(value: number);
-            
-            public get ignoreEngineTimeScale(): boolean;
-            public set ignoreEngineTimeScale(value: boolean);
-            
-            public get loop(): boolean;
-            public set loop(value: boolean);
-            
-            public get animationName(): string;
-            public set animationName(value: string);
-            
-            public get skinName(): string;
-            public set skinName(value: string);
-            
-            public get material(): UnityEngine.Material;
-            public set material(value: UnityEngine.Material);
-            
-            public get shader(): string;
-            public set shader(value: string);
-            
-            public get color(): UnityEngine.Color;
-            public set color(value: UnityEngine.Color);
-            
-            public get wrapTarget(): UnityEngine.GameObject;
+            public get delay(): number;
             
             
-            public get filter(): FairyGUI.IFilter;
-            public set filter(value: FairyGUI.IFilter);
-            
-            public get blendMode(): FairyGUI.BlendMode;
-            public set blendMode(value: FairyGUI.BlendMode);
+            public get duration(): number;
             
             
-            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2):void;
+            public get repeat(): number;
             
-            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2, $cloneMaterial: boolean):void;
             
-            public Advance($time: number):void;
+            public get target(): any;
             
-            public SetWrapTarget($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number):void;
+            
+            public get userData(): any;
+            
+            
+            public get startValue(): FairyGUI.TweenValue;
+            
+            
+            public get endValue(): FairyGUI.TweenValue;
+            
+            
+            public get value(): FairyGUI.TweenValue;
+            
+            
+            public get deltaValue(): FairyGUI.TweenValue;
+            
+            
+            public get normalizedTime(): number;
+            
+            
+            public get completed(): boolean;
+            
+            
+            public get allCompleted(): boolean;
+            
+            
+            
+            public SetDelay($value: number):FairyGUI.GTweener;
+            
+            public SetDuration($value: number):FairyGUI.GTweener;
+            
+            public SetBreakpoint($value: number):FairyGUI.GTweener;
+            
+            public SetEase($value: FairyGUI.EaseType):FairyGUI.GTweener;
+            
+            public SetEase($value: FairyGUI.EaseType, $customEase: FairyGUI.CustomEase):FairyGUI.GTweener;
+            
+            public SetEasePeriod($value: number):FairyGUI.GTweener;
+            
+            public SetEaseOvershootOrAmplitude($value: number):FairyGUI.GTweener;
+            
+            public SetRepeat($times: number, $yoyo?: boolean):FairyGUI.GTweener;
+            
+            public SetTimeScale($value: number):FairyGUI.GTweener;
+            
+            public SetIgnoreEngineTimeScale($value: boolean):FairyGUI.GTweener;
+            
+            public SetSnapping($value: boolean):FairyGUI.GTweener;
+            
+            public SetPath($value: FairyGUI.GPath):FairyGUI.GTweener;
+            
+            public SetTarget($value: any):FairyGUI.GTweener;
+            
+            public SetTarget($value: any, $propType: FairyGUI.TweenPropType):FairyGUI.GTweener;
+            
+            public SetUserData($value: any):FairyGUI.GTweener;
+            
+            public OnUpdate($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
+            
+            public OnStart($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
+            
+            public OnComplete($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
+            
+            public OnUpdate($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
+            
+            public OnStart($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
+            
+            public OnComplete($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
+            
+            public SetListener($value: FairyGUI.ITweenListener):FairyGUI.GTweener;
+            
+            public SetPaused($paused: boolean):FairyGUI.GTweener;
+            
+            public Seek($time: number):void;
+            
+            public Kill($complete?: boolean):void;
             
             public constructor();
-            
-            public Advance($time: number):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
-            
-            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($context: FairyGUI.EventContext):boolean;
-            
-            public DispatchEvent($strType: string):boolean;
-            
-            public DispatchEvent($strType: string, $data: any):boolean;
-            
-            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
             
         }
         
@@ -7980,6 +8060,13 @@ declare module 'csharp' {
         }
         
         
+        interface GObject {
+            
+            TweenResize($width: number, $height: number, $duration: number):FairyGUI.GTweener;
+            
+        }
+        
+        
         class EventDispatcher extends System.Object implements FairyGUI.IEventDispatcher{
             
             
@@ -8054,6 +8141,183 @@ declare module 'csharp' {
             DispatchEvent($strType: string, $data: any):boolean;
             
             DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+        }
+        
+        
+        class GLoader3D extends FairyGUI.GObject implements FairyGUI.IAnimationGear, FairyGUI.IColorGear, FairyGUI.IEventDispatcher{
+            
+            public get spineAnimation(): Spine.Unity.SkeletonAnimation;
+            
+            
+            public get url(): string;
+            public set url(value: string);
+            
+            public get icon(): string;
+            public set icon(value: string);
+            
+            public get align(): FairyGUI.AlignType;
+            public set align(value: FairyGUI.AlignType);
+            
+            public get verticalAlign(): FairyGUI.VertAlignType;
+            public set verticalAlign(value: FairyGUI.VertAlignType);
+            
+            public get fill(): FairyGUI.FillType;
+            public set fill(value: FairyGUI.FillType);
+            
+            public get shrinkOnly(): boolean;
+            public set shrinkOnly(value: boolean);
+            
+            public get autoSize(): boolean;
+            public set autoSize(value: boolean);
+            
+            public get playing(): boolean;
+            public set playing(value: boolean);
+            
+            public get frame(): number;
+            public set frame(value: number);
+            
+            public get timeScale(): number;
+            public set timeScale(value: number);
+            
+            public get ignoreEngineTimeScale(): boolean;
+            public set ignoreEngineTimeScale(value: boolean);
+            
+            public get loop(): boolean;
+            public set loop(value: boolean);
+            
+            public get animationName(): string;
+            public set animationName(value: string);
+            
+            public get skinName(): string;
+            public set skinName(value: string);
+            
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            
+            public get shader(): string;
+            public set shader(value: string);
+            
+            public get color(): UnityEngine.Color;
+            public set color(value: UnityEngine.Color);
+            
+            public get wrapTarget(): UnityEngine.GameObject;
+            
+            
+            public get filter(): FairyGUI.IFilter;
+            public set filter(value: FairyGUI.IFilter);
+            
+            public get blendMode(): FairyGUI.BlendMode;
+            public set blendMode(value: FairyGUI.BlendMode);
+            
+            
+            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2):void;
+            
+            public SetSpine($asset: Spine.Unity.SkeletonDataAsset, $width: number, $height: number, $anchor: UnityEngine.Vector2, $cloneMaterial: boolean):void;
+            
+            public Advance($time: number):void;
+            
+            public SetWrapTarget($gameObject: UnityEngine.GameObject, $cloneMaterial: boolean, $width: number, $height: number):void;
+            
+            public constructor();
+            
+            public Advance($time: number):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public AddEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback0):void;
+            
+            public RemoveEventListener($strType: string, $callback: FairyGUI.EventCallback1):void;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($context: FairyGUI.EventContext):boolean;
+            
+            public DispatchEvent($strType: string):boolean;
+            
+            public DispatchEvent($strType: string, $data: any):boolean;
+            
+            public DispatchEvent($strType: string, $data: any, $initiator: any):boolean;
             
         }
         
@@ -11722,6 +11986,9 @@ declare module 'csharp' {
         
         class GTextField extends FairyGUI.GObject implements FairyGUI.IColorGear, FairyGUI.ITextColorGear, FairyGUI.IEventDispatcher{
             
+            public get TextField(): FairyGUI.TextField;
+            
+            
             public get text(): string;
             public set text(value: string);
             
@@ -12429,100 +12696,6 @@ declare module 'csharp' {
             public static GetTween($target: any, $propType: FairyGUI.TweenPropType):FairyGUI.GTweener;
             
             public static Clean():void;
-            
-            public constructor();
-            
-        }
-        
-        
-        class GTweener extends System.Object{
-            
-            public get delay(): number;
-            
-            
-            public get duration(): number;
-            
-            
-            public get repeat(): number;
-            
-            
-            public get target(): any;
-            
-            
-            public get userData(): any;
-            
-            
-            public get startValue(): FairyGUI.TweenValue;
-            
-            
-            public get endValue(): FairyGUI.TweenValue;
-            
-            
-            public get value(): FairyGUI.TweenValue;
-            
-            
-            public get deltaValue(): FairyGUI.TweenValue;
-            
-            
-            public get normalizedTime(): number;
-            
-            
-            public get completed(): boolean;
-            
-            
-            public get allCompleted(): boolean;
-            
-            
-            
-            public SetDelay($value: number):FairyGUI.GTweener;
-            
-            public SetDuration($value: number):FairyGUI.GTweener;
-            
-            public SetBreakpoint($value: number):FairyGUI.GTweener;
-            
-            public SetEase($value: FairyGUI.EaseType):FairyGUI.GTweener;
-            
-            public SetEase($value: FairyGUI.EaseType, $customEase: FairyGUI.CustomEase):FairyGUI.GTweener;
-            
-            public SetEasePeriod($value: number):FairyGUI.GTweener;
-            
-            public SetEaseOvershootOrAmplitude($value: number):FairyGUI.GTweener;
-            
-            public SetRepeat($times: number, $yoyo?: boolean):FairyGUI.GTweener;
-            
-            public SetTimeScale($value: number):FairyGUI.GTweener;
-            
-            public SetIgnoreEngineTimeScale($value: boolean):FairyGUI.GTweener;
-            
-            public SetSnapping($value: boolean):FairyGUI.GTweener;
-            
-            public SetPath($value: FairyGUI.GPath):FairyGUI.GTweener;
-            
-            public SetTarget($value: any):FairyGUI.GTweener;
-            
-            public SetTarget($value: any, $propType: FairyGUI.TweenPropType):FairyGUI.GTweener;
-            
-            public SetUserData($value: any):FairyGUI.GTweener;
-            
-            public OnUpdate($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
-            
-            public OnStart($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
-            
-            public OnComplete($callback: FairyGUI.GTweenCallback):FairyGUI.GTweener;
-            
-            public OnUpdate($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
-            
-            public OnStart($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
-            
-            public OnComplete($callback: FairyGUI.GTweenCallback1):FairyGUI.GTweener;
-            
-            public SetListener($value: FairyGUI.ITweenListener):FairyGUI.GTweener;
-            
-            public SetPaused($paused: boolean):FairyGUI.GTweener;
-            
-            public Seek($time: number):void;
-            
-            public Kill($complete?: boolean):void;
             
             public constructor();
             
@@ -18127,6 +18300,2921 @@ declare module 'csharp' {
         
         
     }
+    namespace TMPro {
+        
+        class TextMeshPro extends TMPro.TMP_Text implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.ILayoutElement, UnityEngine.UI.IClippable{
+            
+            public get sortingLayerID(): number;
+            public set sortingLayerID(value: number);
+            
+            public get sortingOrder(): number;
+            public set sortingOrder(value: number);
+            
+            public get autoSizeTextContainer(): boolean;
+            public set autoSizeTextContainer(value: boolean);
+            
+            public get transform(): UnityEngine.Transform;
+            
+            
+            public get renderer(): UnityEngine.Renderer;
+            
+            
+            public get mesh(): UnityEngine.Mesh;
+            
+            
+            public get meshFilter(): UnityEngine.MeshFilter;
+            
+            
+            public get maskType(): TMPro.MaskingTypes;
+            public set maskType(value: TMPro.MaskingTypes);
+            
+            
+            public SetMask($type: TMPro.MaskingTypes, $maskCoords: UnityEngine.Vector4):void;
+            
+            public SetMask($type: TMPro.MaskingTypes, $maskCoords: UnityEngine.Vector4, $softnessX: number, $softnessY: number):void;
+            
+            public UpdateFontAsset():void;
+            
+            public CalculateLayoutInputHorizontal():void;
+            
+            public CalculateLayoutInputVertical():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_Text extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
+            
+            public get text(): string;
+            public set text(value: string);
+            
+            public get textPreprocessor(): TMPro.ITextPreprocessor;
+            public set textPreprocessor(value: TMPro.ITextPreprocessor);
+            
+            public get isRightToLeftText(): boolean;
+            public set isRightToLeftText(value: boolean);
+            
+            public get font(): TMPro.TMP_FontAsset;
+            public set font(value: TMPro.TMP_FontAsset);
+            
+            public get fontSharedMaterial(): UnityEngine.Material;
+            public set fontSharedMaterial(value: UnityEngine.Material);
+            
+            public get fontSharedMaterials(): System.Array$1<UnityEngine.Material>;
+            public set fontSharedMaterials(value: System.Array$1<UnityEngine.Material>);
+            
+            public get fontMaterial(): UnityEngine.Material;
+            public set fontMaterial(value: UnityEngine.Material);
+            
+            public get fontMaterials(): System.Array$1<UnityEngine.Material>;
+            public set fontMaterials(value: System.Array$1<UnityEngine.Material>);
+            
+            public get color(): UnityEngine.Color;
+            public set color(value: UnityEngine.Color);
+            
+            public get alpha(): number;
+            public set alpha(value: number);
+            
+            public get enableVertexGradient(): boolean;
+            public set enableVertexGradient(value: boolean);
+            
+            public get colorGradient(): TMPro.VertexGradient;
+            public set colorGradient(value: TMPro.VertexGradient);
+            
+            public get colorGradientPreset(): TMPro.TMP_ColorGradient;
+            public set colorGradientPreset(value: TMPro.TMP_ColorGradient);
+            
+            public get spriteAsset(): TMPro.TMP_SpriteAsset;
+            public set spriteAsset(value: TMPro.TMP_SpriteAsset);
+            
+            public get tintAllSprites(): boolean;
+            public set tintAllSprites(value: boolean);
+            
+            public get styleSheet(): TMPro.TMP_StyleSheet;
+            public set styleSheet(value: TMPro.TMP_StyleSheet);
+            
+            public get textStyle(): TMPro.TMP_Style;
+            public set textStyle(value: TMPro.TMP_Style);
+            
+            public get overrideColorTags(): boolean;
+            public set overrideColorTags(value: boolean);
+            
+            public get faceColor(): UnityEngine.Color32;
+            public set faceColor(value: UnityEngine.Color32);
+            
+            public get outlineColor(): UnityEngine.Color32;
+            public set outlineColor(value: UnityEngine.Color32);
+            
+            public get outlineWidth(): number;
+            public set outlineWidth(value: number);
+            
+            public get fontSize(): number;
+            public set fontSize(value: number);
+            
+            public get fontScale(): number;
+            
+            
+            public get fontWeight(): TMPro.FontWeight;
+            public set fontWeight(value: TMPro.FontWeight);
+            
+            public get pixelsPerUnit(): number;
+            
+            
+            public get enableAutoSizing(): boolean;
+            public set enableAutoSizing(value: boolean);
+            
+            public get fontSizeMin(): number;
+            public set fontSizeMin(value: number);
+            
+            public get fontSizeMax(): number;
+            public set fontSizeMax(value: number);
+            
+            public get fontStyle(): TMPro.FontStyles;
+            public set fontStyle(value: TMPro.FontStyles);
+            
+            public get isUsingBold(): boolean;
+            
+            
+            public get horizontalAlignment(): TMPro.HorizontalAlignmentOptions;
+            public set horizontalAlignment(value: TMPro.HorizontalAlignmentOptions);
+            
+            public get verticalAlignment(): TMPro.VerticalAlignmentOptions;
+            public set verticalAlignment(value: TMPro.VerticalAlignmentOptions);
+            
+            public get alignment(): TMPro.TextAlignmentOptions;
+            public set alignment(value: TMPro.TextAlignmentOptions);
+            
+            public get characterSpacing(): number;
+            public set characterSpacing(value: number);
+            
+            public get wordSpacing(): number;
+            public set wordSpacing(value: number);
+            
+            public get lineSpacing(): number;
+            public set lineSpacing(value: number);
+            
+            public get lineSpacingAdjustment(): number;
+            public set lineSpacingAdjustment(value: number);
+            
+            public get paragraphSpacing(): number;
+            public set paragraphSpacing(value: number);
+            
+            public get characterWidthAdjustment(): number;
+            public set characterWidthAdjustment(value: number);
+            
+            public get enableWordWrapping(): boolean;
+            public set enableWordWrapping(value: boolean);
+            
+            public get wordWrappingRatios(): number;
+            public set wordWrappingRatios(value: number);
+            
+            public get overflowMode(): TMPro.TextOverflowModes;
+            public set overflowMode(value: TMPro.TextOverflowModes);
+            
+            public get isTextOverflowing(): boolean;
+            
+            
+            public get firstOverflowCharacterIndex(): number;
+            
+            
+            public get linkedTextComponent(): TMPro.TMP_Text;
+            public set linkedTextComponent(value: TMPro.TMP_Text);
+            
+            public get isTextTruncated(): boolean;
+            
+            
+            public get enableKerning(): boolean;
+            public set enableKerning(value: boolean);
+            
+            public get extraPadding(): boolean;
+            public set extraPadding(value: boolean);
+            
+            public get richText(): boolean;
+            public set richText(value: boolean);
+            
+            public get parseCtrlCharacters(): boolean;
+            public set parseCtrlCharacters(value: boolean);
+            
+            public get isOverlay(): boolean;
+            public set isOverlay(value: boolean);
+            
+            public get isOrthographic(): boolean;
+            public set isOrthographic(value: boolean);
+            
+            public get enableCulling(): boolean;
+            public set enableCulling(value: boolean);
+            
+            public get ignoreVisibility(): boolean;
+            public set ignoreVisibility(value: boolean);
+            
+            public get horizontalMapping(): TMPro.TextureMappingOptions;
+            public set horizontalMapping(value: TMPro.TextureMappingOptions);
+            
+            public get verticalMapping(): TMPro.TextureMappingOptions;
+            public set verticalMapping(value: TMPro.TextureMappingOptions);
+            
+            public get mappingUvLineOffset(): number;
+            public set mappingUvLineOffset(value: number);
+            
+            public get renderMode(): TMPro.TextRenderFlags;
+            public set renderMode(value: TMPro.TextRenderFlags);
+            
+            public get geometrySortingOrder(): TMPro.VertexSortingOrder;
+            public set geometrySortingOrder(value: TMPro.VertexSortingOrder);
+            
+            public get isTextObjectScaleStatic(): boolean;
+            public set isTextObjectScaleStatic(value: boolean);
+            
+            public get vertexBufferAutoSizeReduction(): boolean;
+            public set vertexBufferAutoSizeReduction(value: boolean);
+            
+            public get firstVisibleCharacter(): number;
+            public set firstVisibleCharacter(value: number);
+            
+            public get maxVisibleCharacters(): number;
+            public set maxVisibleCharacters(value: number);
+            
+            public get maxVisibleWords(): number;
+            public set maxVisibleWords(value: number);
+            
+            public get maxVisibleLines(): number;
+            public set maxVisibleLines(value: number);
+            
+            public get useMaxVisibleDescender(): boolean;
+            public set useMaxVisibleDescender(value: boolean);
+            
+            public get pageToDisplay(): number;
+            public set pageToDisplay(value: number);
+            
+            public get margin(): UnityEngine.Vector4;
+            public set margin(value: UnityEngine.Vector4);
+            
+            public get textInfo(): TMPro.TMP_TextInfo;
+            
+            
+            public get havePropertiesChanged(): boolean;
+            public set havePropertiesChanged(value: boolean);
+            
+            public get isUsingLegacyAnimationComponent(): boolean;
+            public set isUsingLegacyAnimationComponent(value: boolean);
+            
+            public get transform(): UnityEngine.Transform;
+            
+            
+            public get rectTransform(): UnityEngine.RectTransform;
+            
+            
+            public get autoSizeTextContainer(): boolean;
+            public set autoSizeTextContainer(value: boolean);
+            
+            public get mesh(): UnityEngine.Mesh;
+            
+            
+            public get isVolumetricText(): boolean;
+            public set isVolumetricText(value: boolean);
+            
+            public get bounds(): UnityEngine.Bounds;
+            
+            
+            public get textBounds(): UnityEngine.Bounds;
+            
+            
+            public get flexibleHeight(): number;
+            
+            
+            public get flexibleWidth(): number;
+            
+            
+            public get minWidth(): number;
+            
+            
+            public get minHeight(): number;
+            
+            
+            public get maxWidth(): number;
+            
+            
+            public get maxHeight(): number;
+            
+            
+            public get preferredWidth(): number;
+            
+            
+            public get preferredHeight(): number;
+            
+            
+            public get renderedWidth(): number;
+            
+            
+            public get renderedHeight(): number;
+            
+            
+            public get layoutPriority(): number;
+            
+            
+            
+            public static add_OnFontAssetRequest($value: System.Func$3<number, string, TMPro.TMP_FontAsset>):void;
+            
+            public static remove_OnFontAssetRequest($value: System.Func$3<number, string, TMPro.TMP_FontAsset>):void;
+            
+            public static add_OnSpriteAssetRequest($value: System.Func$3<number, string, TMPro.TMP_SpriteAsset>):void;
+            
+            public static remove_OnSpriteAssetRequest($value: System.Func$3<number, string, TMPro.TMP_SpriteAsset>):void;
+            
+            public add_OnPreRenderText($value: System.Action$1<TMPro.TMP_TextInfo>):void;
+            
+            public remove_OnPreRenderText($value: System.Action$1<TMPro.TMP_TextInfo>):void;
+            
+            public ForceMeshUpdate($ignoreActiveState?: boolean, $forceTextReparsing?: boolean):void;
+            
+            public UpdateGeometry($mesh: UnityEngine.Mesh, $index: number):void;
+            
+            public UpdateVertexData($flags: TMPro.TMP_VertexDataUpdateFlags):void;
+            
+            public UpdateVertexData():void;
+            
+            public SetVertices($vertices: System.Array$1<UnityEngine.Vector3>):void;
+            
+            public UpdateMeshPadding():void;
+            
+            public SetText($text: string, $syncTextInputBox?: boolean):void;
+            
+            public SetText($text: string, $arg0: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number, $arg3: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number, $arg3: number, $arg4: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number, $arg3: number, $arg4: number, $arg5: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number, $arg3: number, $arg4: number, $arg5: number, $arg6: number):void;
+            
+            public SetText($text: string, $arg0: number, $arg1: number, $arg2: number, $arg3: number, $arg4: number, $arg5: number, $arg6: number, $arg7: number):void;
+            
+            public SetText($text: System.Text.StringBuilder):void;
+            
+            public SetText($text: System.Array$1<number>):void;
+            
+            public SetText($text: System.Array$1<number>, $start: number, $length: number):void;
+            
+            public SetCharArray($sourceText: System.Array$1<number>):void;
+            
+            public SetCharArray($sourceText: System.Array$1<number>, $start: number, $length: number):void;
+            
+            public SetCharArray($sourceText: System.Array$1<number>, $start: number, $length: number):void;
+            
+            public GetPreferredValues():UnityEngine.Vector2;
+            
+            public GetPreferredValues($width: number, $height: number):UnityEngine.Vector2;
+            
+            public GetPreferredValues($text: string):UnityEngine.Vector2;
+            
+            public GetPreferredValues($text: string, $width: number, $height: number):UnityEngine.Vector2;
+            
+            public GetRenderedValues():UnityEngine.Vector2;
+            
+            public GetRenderedValues($onlyVisibleCharacters: boolean):UnityEngine.Vector2;
+            
+            public GetTextInfo($text: string):TMPro.TMP_TextInfo;
+            
+            public ComputeMarginSize():void;
+            
+            public ClearMesh():void;
+            
+            public ClearMesh($uploadGeometry: boolean):void;
+            
+            public GetParsedText():string;
+            
+        }
+        
+        
+        class TMP_FontAsset extends TMPro.TMP_Asset{
+            
+            public atlas: UnityEngine.Texture2D;
+            public normalStyle: number;
+            public normalSpacingOffset: number;
+            public boldStyle: number;
+            public boldSpacing: number;
+            public italicStyle: number;
+            public tabSize: number;
+            public get version(): string;
+            
+            
+            public get sourceFontFile(): UnityEngine.Font;
+            
+            
+            public get atlasPopulationMode(): TMPro.AtlasPopulationMode;
+            public set atlasPopulationMode(value: TMPro.AtlasPopulationMode);
+            
+            public get faceInfo(): UnityEngine.TextCore.FaceInfo;
+            public set faceInfo(value: UnityEngine.TextCore.FaceInfo);
+            
+            public get glyphTable(): System.Collections.Generic.List$1<UnityEngine.TextCore.Glyph>;
+            
+            
+            public get glyphLookupTable(): System.Collections.Generic.Dictionary$2<number, UnityEngine.TextCore.Glyph>;
+            
+            
+            public get characterTable(): System.Collections.Generic.List$1<TMPro.TMP_Character>;
+            
+            
+            public get characterLookupTable(): System.Collections.Generic.Dictionary$2<number, TMPro.TMP_Character>;
+            
+            
+            public get atlasTexture(): UnityEngine.Texture2D;
+            
+            
+            public get atlasTextures(): System.Array$1<UnityEngine.Texture2D>;
+            public set atlasTextures(value: System.Array$1<UnityEngine.Texture2D>);
+            
+            public get atlasTextureCount(): number;
+            
+            
+            public get isMultiAtlasTexturesEnabled(): boolean;
+            public set isMultiAtlasTexturesEnabled(value: boolean);
+            
+            public get atlasWidth(): number;
+            
+            
+            public get atlasHeight(): number;
+            
+            
+            public get atlasPadding(): number;
+            
+            
+            public get atlasRenderMode(): UnityEngine.TextCore.LowLevel.GlyphRenderMode;
+            
+            
+            public get fontFeatureTable(): TMPro.TMP_FontFeatureTable;
+            
+            
+            public get fallbackFontAssetTable(): System.Collections.Generic.List$1<TMPro.TMP_FontAsset>;
+            public set fallbackFontAssetTable(value: System.Collections.Generic.List$1<TMPro.TMP_FontAsset>);
+            
+            public get creationSettings(): TMPro.FontAssetCreationSettings;
+            public set creationSettings(value: TMPro.FontAssetCreationSettings);
+            
+            public get fontWeightTable(): System.Array$1<TMPro.TMP_FontWeightPair>;
+            
+            
+            
+            public static CreateFontAsset($font: UnityEngine.Font):TMPro.TMP_FontAsset;
+            
+            public static CreateFontAsset($font: UnityEngine.Font, $samplingPointSize: number, $atlasPadding: number, $renderMode: UnityEngine.TextCore.LowLevel.GlyphRenderMode, $atlasWidth: number, $atlasHeight: number, $atlasPopulationMode?: TMPro.AtlasPopulationMode, $enableMultiAtlasSupport?: boolean):TMPro.TMP_FontAsset;
+            
+            public ReadFontAssetDefinition():void;
+            
+            public HasCharacter($character: number):boolean;
+            
+            public HasCharacter($character: number, $searchFallbacks?: boolean, $tryAddCharacter?: boolean):boolean;
+            
+            public HasCharacters($text: string, $missingCharacters: $Ref<System.Collections.Generic.List$1<number>>):boolean;
+            
+            public HasCharacters($text: string, $missingCharacters: $Ref<System.Array$1<number>>, $searchFallbacks?: boolean, $tryAddCharacter?: boolean):boolean;
+            
+            public HasCharacters($text: string):boolean;
+            
+            public static GetCharacters($fontAsset: TMPro.TMP_FontAsset):string;
+            
+            public static GetCharactersArray($fontAsset: TMPro.TMP_FontAsset):System.Array$1<number>;
+            
+            public TryAddCharacters($unicodes: System.Array$1<number>, $includeFontFeatures?: boolean):boolean;
+            
+            public TryAddCharacters($unicodes: System.Array$1<number>, $missingUnicodes: $Ref<System.Array$1<number>>, $includeFontFeatures?: boolean):boolean;
+            
+            public TryAddCharacters($characters: string, $includeFontFeatures?: boolean):boolean;
+            
+            public TryAddCharacters($characters: string, $missingCharacters: $Ref<string>, $includeFontFeatures?: boolean):boolean;
+            
+            public ClearFontAssetData($setAtlasSizeToZero?: boolean):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_Asset extends UnityEngine.ScriptableObject{
+            
+            public hashCode: number;
+            public material: UnityEngine.Material;
+            public materialHashCode: number;
+            public get instanceID(): number;
+            
+            
+            
+        }
+        
+        
+        enum FontWeight{ Thin = 100, ExtraLight = 200, Light = 300, Regular = 400, Medium = 500, SemiBold = 600, Bold = 700, Heavy = 800, Black = 900 }
+        
+        
+        class TMP_FontAsset_CreationMenu extends System.Object{
+            
+            
+            public static CreateFontAssetVariant():void;
+            
+            public static CreateFontAsset():void;
+            
+        }
+        
+        
+        class TMP_ProjectConversionUtility extends UnityEditor.EditorWindow{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_PackageUtilities extends UnityEditor.Editor implements UnityEditor.IPreviewable, UnityEditor.IToolModeOwner{
+            
+            
+            public static ImportProjectResourcesMenu():void;
+            
+            public static ImportExamplesContentMenu():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_PostBuildProcessHandler extends System.Object{
+            
+            
+            public static OnPostprocessBuild($target: UnityEditor.BuildTarget, $pathToBuiltProject: string):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_PreBuildProcessor extends System.Object implements UnityEditor.Build.IOrderedCallback, UnityEditor.Build.IPreprocessBuildWithReport{
+            
+            public get callbackOrder(): number;
+            
+            
+            
+            public OnPreprocessBuild($report: UnityEditor.Build.Reporting.BuildReport):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SpriteAssetImporter extends UnityEditor.EditorWindow{
+            
+            
+            public static ShowFontAtlasCreatorWindow():void;
+            
+            public OnGUI():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class SortingLayerHelper extends System.Object{
+            
+            public static get sortingLayerNames(): System.Array$1<string>;
+            
+            
+            
+        }
+        
+        
+        class FastAction extends System.Object{
+            
+            
+            public Add($rhs: System.Action):void;
+            
+            public Remove($rhs: System.Action):void;
+            
+            public Call():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface ITextPreprocessor{
+            
+            
+            PreprocessText($text: string):string;
+            
+        }
+        
+        
+        class MaterialReferenceManager extends System.Object{
+            
+            public static get instance(): TMPro.MaterialReferenceManager;
+            
+            
+            
+            public static AddFontAsset($fontAsset: TMPro.TMP_FontAsset):void;
+            
+            public static AddSpriteAsset($spriteAsset: TMPro.TMP_SpriteAsset):void;
+            
+            public static AddSpriteAsset($hashCode: number, $spriteAsset: TMPro.TMP_SpriteAsset):void;
+            
+            public static AddFontMaterial($hashCode: number, $material: UnityEngine.Material):void;
+            
+            public static AddColorGradientPreset($hashCode: number, $spriteAsset: TMPro.TMP_ColorGradient):void;
+            
+            public Contains($font: TMPro.TMP_FontAsset):boolean;
+            
+            public Contains($sprite: TMPro.TMP_SpriteAsset):boolean;
+            
+            public static TryGetFontAsset($hashCode: number, $fontAsset: $Ref<TMPro.TMP_FontAsset>):boolean;
+            
+            public static TryGetSpriteAsset($hashCode: number, $spriteAsset: $Ref<TMPro.TMP_SpriteAsset>):boolean;
+            
+            public static TryGetColorGradientPreset($hashCode: number, $gradientPreset: $Ref<TMPro.TMP_ColorGradient>):boolean;
+            
+            public static TryGetMaterial($hashCode: number, $material: $Ref<UnityEngine.Material>):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SpriteAsset extends TMPro.TMP_Asset{
+            
+            public spriteSheet: UnityEngine.Texture;
+            public spriteInfoList: System.Collections.Generic.List$1<TMPro.TMP_Sprite>;
+            public fallbackSpriteAssets: System.Collections.Generic.List$1<TMPro.TMP_SpriteAsset>;
+            public get version(): string;
+            
+            
+            public get faceInfo(): UnityEngine.TextCore.FaceInfo;
+            
+            
+            public get spriteCharacterTable(): System.Collections.Generic.List$1<TMPro.TMP_SpriteCharacter>;
+            
+            
+            public get spriteCharacterLookupTable(): System.Collections.Generic.Dictionary$2<number, TMPro.TMP_SpriteCharacter>;
+            
+            
+            public get spriteGlyphTable(): System.Collections.Generic.List$1<TMPro.TMP_SpriteGlyph>;
+            
+            
+            
+            public UpdateLookupTables():void;
+            
+            public GetSpriteIndexFromHashcode($hashCode: number):number;
+            
+            public GetSpriteIndexFromUnicode($unicode: number):number;
+            
+            public GetSpriteIndexFromName($name: string):number;
+            
+            public static SearchForSpriteByUnicode($spriteAsset: TMPro.TMP_SpriteAsset, $unicode: number, $includeFallbacks: boolean, $spriteIndex: $Ref<number>):TMPro.TMP_SpriteAsset;
+            
+            public static SearchForSpriteByHashCode($spriteAsset: TMPro.TMP_SpriteAsset, $hashCode: number, $includeFallbacks: boolean, $spriteIndex: $Ref<number>):TMPro.TMP_SpriteAsset;
+            
+            public SortGlyphTable():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_ColorGradient extends UnityEngine.ScriptableObject{
+            
+            public colorMode: TMPro.ColorMode;
+            public topLeft: UnityEngine.Color;
+            public topRight: UnityEngine.Color;
+            public bottomLeft: UnityEngine.Color;
+            public bottomRight: UnityEngine.Color;
+            
+            public constructor();
+            
+            public constructor($color: UnityEngine.Color);
+            
+            public constructor($color0: UnityEngine.Color, $color1: UnityEngine.Color, $color2: UnityEngine.Color, $color3: UnityEngine.Color);
+            
+        }
+        
+        
+        class TMP_MaterialReference extends System.ValueType{
+            
+            public material: UnityEngine.Material;
+            public referenceCount: number;
+            
+        }
+        
+        
+        class MaterialReference extends System.ValueType{
+            
+            public index: number;
+            public fontAsset: TMPro.TMP_FontAsset;
+            public spriteAsset: TMPro.TMP_SpriteAsset;
+            public material: UnityEngine.Material;
+            public isDefaultMaterial: boolean;
+            public isFallbackMaterial: boolean;
+            public fallbackMaterial: UnityEngine.Material;
+            public padding: number;
+            public referenceCount: number;
+            
+            public static Contains($materialReferences: System.Array$1<TMPro.MaterialReference>, $fontAsset: TMPro.TMP_FontAsset):boolean;
+            
+            public static AddMaterialReference($material: UnityEngine.Material, $fontAsset: TMPro.TMP_FontAsset, $materialReferences: $Ref<System.Array$1<TMPro.MaterialReference>>, $materialReferenceIndexLookup: System.Collections.Generic.Dictionary$2<number, number>):number;
+            
+            public static AddMaterialReference($material: UnityEngine.Material, $spriteAsset: TMPro.TMP_SpriteAsset, $materialReferences: $Ref<System.Array$1<TMPro.MaterialReference>>, $materialReferenceIndexLookup: System.Collections.Generic.Dictionary$2<number, number>):number;
+            
+            public constructor($index: number, $fontAsset: TMPro.TMP_FontAsset, $spriteAsset: TMPro.TMP_SpriteAsset, $material: UnityEngine.Material, $padding: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_Character extends TMPro.TMP_TextElement{
+            
+            
+            public constructor();
+            
+            public constructor($unicode: number, $glyph: UnityEngine.TextCore.Glyph);
+            
+            public constructor($unicode: number, $fontAsset: TMPro.TMP_FontAsset, $glyph: UnityEngine.TextCore.Glyph);
+            
+        }
+        
+        
+        class TMP_TextElement extends System.Object{
+            
+            public get elementType(): TMPro.TextElementType;
+            
+            
+            public get unicode(): number;
+            public set unicode(value: number);
+            
+            public get textAsset(): TMPro.TMP_Asset;
+            public set textAsset(value: TMPro.TMP_Asset);
+            
+            public get glyph(): UnityEngine.TextCore.Glyph;
+            public set glyph(value: UnityEngine.TextCore.Glyph);
+            
+            public get glyphIndex(): number;
+            public set glyphIndex(value: number);
+            
+            public get scale(): number;
+            public set scale(value: number);
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_Vertex extends System.ValueType{
+            
+            public position: UnityEngine.Vector3;
+            public uv: UnityEngine.Vector2;
+            public uv2: UnityEngine.Vector2;
+            public uv4: UnityEngine.Vector2;
+            public color: UnityEngine.Color32;
+            public static get zero(): TMPro.TMP_Vertex;
+            
+            
+            
+        }
+        
+        
+        class TMP_Offset extends System.ValueType{
+            
+            public get left(): number;
+            public set left(value: number);
+            
+            public get right(): number;
+            public set right(value: number);
+            
+            public get top(): number;
+            public set top(value: number);
+            
+            public get bottom(): number;
+            public set bottom(value: number);
+            
+            public get horizontal(): number;
+            public set horizontal(value: number);
+            
+            public get vertical(): number;
+            public set vertical(value: number);
+            
+            public static get zero(): TMPro.TMP_Offset;
+            
+            
+            
+            public static op_Equality($lhs: TMPro.TMP_Offset, $rhs: TMPro.TMP_Offset):boolean;
+            
+            public static op_Inequality($lhs: TMPro.TMP_Offset, $rhs: TMPro.TMP_Offset):boolean;
+            
+            public static op_Multiply($a: TMPro.TMP_Offset, $b: number):TMPro.TMP_Offset;
+            
+            public Equals($obj: any):boolean;
+            
+            public Equals($other: TMPro.TMP_Offset):boolean;
+            
+            public constructor($left: number, $right: number, $top: number, $bottom: number);
+            
+            public constructor($horizontal: number, $vertical: number);
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class HighlightState extends System.ValueType{
+            
+            public color: UnityEngine.Color32;
+            public padding: TMPro.TMP_Offset;
+            
+            public static op_Equality($lhs: TMPro.HighlightState, $rhs: TMPro.HighlightState):boolean;
+            
+            public static op_Inequality($lhs: TMPro.HighlightState, $rhs: TMPro.HighlightState):boolean;
+            
+            public Equals($obj: any):boolean;
+            
+            public Equals($other: TMPro.HighlightState):boolean;
+            
+            public constructor($color: UnityEngine.Color32, $padding: TMPro.TMP_Offset);
+            
+            public Equals($obj: any):boolean;
+            
+            public static Equals($objA: any, $objB: any):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_CharacterInfo extends System.ValueType{
+            
+            public character: number;
+            public index: number;
+            public stringLength: number;
+            public elementType: TMPro.TMP_TextElementType;
+            public textElement: TMPro.TMP_TextElement;
+            public fontAsset: TMPro.TMP_FontAsset;
+            public spriteAsset: TMPro.TMP_SpriteAsset;
+            public spriteIndex: number;
+            public material: UnityEngine.Material;
+            public materialReferenceIndex: number;
+            public isUsingAlternateTypeface: boolean;
+            public pointSize: number;
+            public lineNumber: number;
+            public pageNumber: number;
+            public vertexIndex: number;
+            public vertex_BL: TMPro.TMP_Vertex;
+            public vertex_TL: TMPro.TMP_Vertex;
+            public vertex_TR: TMPro.TMP_Vertex;
+            public vertex_BR: TMPro.TMP_Vertex;
+            public topLeft: UnityEngine.Vector3;
+            public bottomLeft: UnityEngine.Vector3;
+            public topRight: UnityEngine.Vector3;
+            public bottomRight: UnityEngine.Vector3;
+            public origin: number;
+            public xAdvance: number;
+            public ascender: number;
+            public baseLine: number;
+            public descender: number;
+            public aspectRatio: number;
+            public scale: number;
+            public color: UnityEngine.Color32;
+            public underlineColor: UnityEngine.Color32;
+            public underlineVertexIndex: number;
+            public strikethroughColor: UnityEngine.Color32;
+            public strikethroughVertexIndex: number;
+            public highlightColor: UnityEngine.Color32;
+            public highlightState: TMPro.HighlightState;
+            public style: TMPro.FontStyles;
+            public isVisible: boolean;
+            
+        }
+        
+        
+        enum TMP_TextElementType{ Character = 0, Sprite = 1 }
+        
+        
+        enum FontStyles{ Normal = 0, Bold = 1, Italic = 2, Underline = 4, LowerCase = 8, UpperCase = 16, SmallCaps = 32, Strikethrough = 64, Superscript = 128, Subscript = 256, Highlight = 512 }
+        
+        
+        enum ColorMode{ Single = 0, HorizontalGradient = 1, VerticalGradient = 2, FourCornersGradient = 3 }
+        
+        
+        class TMP_Compatibility extends System.Object{
+            
+            
+            public static ConvertTextAlignmentEnumValues($oldValue: TMPro.TextAlignmentOptions):TMPro.TextAlignmentOptions;
+            
+        }
+        
+        
+        enum TextAlignmentOptions{ TopLeft = 257, Top = 258, TopRight = 260, TopJustified = 264, TopFlush = 272, TopGeoAligned = 288, Left = 513, Center = 514, Right = 516, Justified = 520, Flush = 528, CenterGeoAligned = 544, BottomLeft = 1025, Bottom = 1026, BottomRight = 1028, BottomJustified = 1032, BottomFlush = 1040, BottomGeoAligned = 1056, BaselineLeft = 2049, Baseline = 2050, BaselineRight = 2052, BaselineJustified = 2056, BaselineFlush = 2064, BaselineGeoAligned = 2080, MidlineLeft = 4097, Midline = 4098, MidlineRight = 4100, MidlineJustified = 4104, MidlineFlush = 4112, MidlineGeoAligned = 4128, CaplineLeft = 8193, Capline = 8194, CaplineRight = 8196, CaplineJustified = 8200, CaplineFlush = 8208, CaplineGeoAligned = 8224, Converted = 65535 }
+        
+        
+        class TMP_DefaultControls extends System.Object{
+            
+            
+            public static CreateScrollbar($resources: TMPro.TMP_DefaultControls.Resources):UnityEngine.GameObject;
+            
+            public static CreateButton($resources: TMPro.TMP_DefaultControls.Resources):UnityEngine.GameObject;
+            
+            public static CreateText($resources: TMPro.TMP_DefaultControls.Resources):UnityEngine.GameObject;
+            
+            public static CreateInputField($resources: TMPro.TMP_DefaultControls.Resources):UnityEngine.GameObject;
+            
+            public static CreateDropdown($resources: TMPro.TMP_DefaultControls.Resources):UnityEngine.GameObject;
+            
+        }
+        
+        
+        class TMP_Dropdown extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler, UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.ICancelHandler{
+            
+            public get template(): UnityEngine.RectTransform;
+            public set template(value: UnityEngine.RectTransform);
+            
+            public get captionText(): TMPro.TMP_Text;
+            public set captionText(value: TMPro.TMP_Text);
+            
+            public get captionImage(): UnityEngine.UI.Image;
+            public set captionImage(value: UnityEngine.UI.Image);
+            
+            public get placeholder(): UnityEngine.UI.Graphic;
+            public set placeholder(value: UnityEngine.UI.Graphic);
+            
+            public get itemText(): TMPro.TMP_Text;
+            public set itemText(value: TMPro.TMP_Text);
+            
+            public get itemImage(): UnityEngine.UI.Image;
+            public set itemImage(value: UnityEngine.UI.Image);
+            
+            public get options(): System.Collections.Generic.List$1<TMPro.TMP_Dropdown.OptionData>;
+            public set options(value: System.Collections.Generic.List$1<TMPro.TMP_Dropdown.OptionData>);
+            
+            public get onValueChanged(): TMPro.TMP_Dropdown.DropdownEvent;
+            public set onValueChanged(value: TMPro.TMP_Dropdown.DropdownEvent);
+            
+            public get alphaFadeSpeed(): number;
+            public set alphaFadeSpeed(value: number);
+            
+            public get value(): number;
+            public set value(value: number);
+            
+            public get IsExpanded(): boolean;
+            
+            
+            
+            public SetValueWithoutNotify($input: number):void;
+            
+            public RefreshShownValue():void;
+            
+            public AddOptions($options: System.Collections.Generic.List$1<TMPro.TMP_Dropdown.OptionData>):void;
+            
+            public AddOptions($options: System.Collections.Generic.List$1<string>):void;
+            
+            public AddOptions($options: System.Collections.Generic.List$1<UnityEngine.Sprite>):void;
+            
+            public ClearOptions():void;
+            
+            public OnPointerClick($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public OnSubmit($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public OnCancel($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public Show():void;
+            
+            public Hide():void;
+            
+        }
+        
+        
+        class TMP_EditorResourceManager extends System.Object{
+            
+            public static get instance(): TMPro.TMP_EditorResourceManager;
+            
+            
+            
+        }
+        
+        
+        enum AtlasPopulationMode{ Static = 0, Dynamic = 1 }
+        
+        
+        class FaceInfo_Legacy extends System.Object{
+            
+            public Name: string;
+            public PointSize: number;
+            public Scale: number;
+            public CharacterCount: number;
+            public LineHeight: number;
+            public Baseline: number;
+            public Ascender: number;
+            public CapHeight: number;
+            public Descender: number;
+            public CenterLine: number;
+            public SuperscriptOffset: number;
+            public SubscriptOffset: number;
+            public SubSize: number;
+            public Underline: number;
+            public UnderlineThickness: number;
+            public strikethrough: number;
+            public strikethroughThickness: number;
+            public TabWidth: number;
+            public Padding: number;
+            public AtlasWidth: number;
+            public AtlasHeight: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_FontFeatureTable extends System.Object{
+            
+            public get glyphPairAdjustmentRecords(): System.Collections.Generic.List$1<TMPro.TMP_GlyphPairAdjustmentRecord>;
+            public set glyphPairAdjustmentRecords(value: System.Collections.Generic.List$1<TMPro.TMP_GlyphPairAdjustmentRecord>);
+            
+            
+            public SortGlyphPairAdjustmentRecords():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class FontAssetCreationSettings extends System.ValueType{
+            
+            public sourceFontFileName: string;
+            public sourceFontFileGUID: string;
+            public pointSizeSamplingMode: number;
+            public pointSize: number;
+            public padding: number;
+            public packingMode: number;
+            public atlasWidth: number;
+            public atlasHeight: number;
+            public characterSetSelectionMode: number;
+            public characterSequence: string;
+            public referencedFontAssetGUID: string;
+            public referencedTextAssetGUID: string;
+            public fontStyle: number;
+            public fontStyleModifier: number;
+            public renderMode: number;
+            public includeFontFeatures: boolean;
+            
+        }
+        
+        
+        class TMP_FontWeightPair extends System.ValueType{
+            
+            public regularTypeface: TMPro.TMP_FontAsset;
+            public italicTypeface: TMPro.TMP_FontAsset;
+            
+        }
+        
+        
+        class TMP_Glyph extends TMPro.TMP_TextElement_Legacy{
+            
+            
+            public static Clone($source: TMPro.TMP_Glyph):TMPro.TMP_Glyph;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_TextElement_Legacy extends System.Object{
+            
+            public id: number;
+            public x: number;
+            public y: number;
+            public width: number;
+            public height: number;
+            public xOffset: number;
+            public yOffset: number;
+            public xAdvance: number;
+            public scale: number;
+            
+            public constructor();
+            
+        }
+        
+        
+        class KerningPairKey extends System.ValueType{
+            
+            public ascii_Left: number;
+            public ascii_Right: number;
+            public key: number;
+            
+            public constructor($ascii_left: number, $ascii_right: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class GlyphValueRecord_Legacy extends System.ValueType{
+            
+            public xPlacement: number;
+            public yPlacement: number;
+            public xAdvance: number;
+            public yAdvance: number;
+            
+            public static op_Addition($a: TMPro.GlyphValueRecord_Legacy, $b: TMPro.GlyphValueRecord_Legacy):TMPro.GlyphValueRecord_Legacy;
+            
+        }
+        
+        
+        class KerningPair extends System.Object{
+            
+            public xOffset: number;
+            public get firstGlyph(): number;
+            public set firstGlyph(value: number);
+            
+            public get firstGlyphAdjustments(): TMPro.GlyphValueRecord_Legacy;
+            
+            
+            public get secondGlyph(): number;
+            public set secondGlyph(value: number);
+            
+            public get secondGlyphAdjustments(): TMPro.GlyphValueRecord_Legacy;
+            
+            
+            public get ignoreSpacingAdjustments(): boolean;
+            
+            
+            
+            public constructor();
+            
+            public constructor($left: number, $right: number, $offset: number);
+            
+            public constructor($firstGlyph: number, $firstGlyphAdjustments: TMPro.GlyphValueRecord_Legacy, $secondGlyph: number, $secondGlyphAdjustments: TMPro.GlyphValueRecord_Legacy);
+            
+        }
+        
+        
+        class KerningTable extends System.Object{
+            
+            public kerningPairs: System.Collections.Generic.List$1<TMPro.KerningPair>;
+            
+            public AddKerningPair():void;
+            
+            public AddKerningPair($first: number, $second: number, $offset: number):number;
+            
+            public AddGlyphPairAdjustmentRecord($first: number, $firstAdjustments: TMPro.GlyphValueRecord_Legacy, $second: number, $secondAdjustments: TMPro.GlyphValueRecord_Legacy):number;
+            
+            public RemoveKerningPair($left: number, $right: number):void;
+            
+            public RemoveKerningPair($index: number):void;
+            
+            public SortKerningPairs():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_FontUtilities extends System.Object{
+            
+            
+            public static SearchForCharacter($font: TMPro.TMP_FontAsset, $unicode: number, $character: $Ref<TMPro.TMP_Character>):TMPro.TMP_FontAsset;
+            
+            public static SearchForCharacter($fonts: System.Collections.Generic.List$1<TMPro.TMP_FontAsset>, $unicode: number, $character: $Ref<TMPro.TMP_Character>):TMPro.TMP_FontAsset;
+            
+        }
+        
+        
+        class TMP_FontAssetUtilities extends System.Object{
+            
+            public static get instance(): TMPro.TMP_FontAssetUtilities;
+            
+            
+            
+            public static GetCharacterFromFontAsset($unicode: number, $sourceFontAsset: TMPro.TMP_FontAsset, $includeFallbacks: boolean, $fontStyle: TMPro.FontStyles, $fontWeight: TMPro.FontWeight, $isAlternativeTypeface: $Ref<boolean>):TMPro.TMP_Character;
+            
+            public static GetCharacterFromFontAssets($unicode: number, $sourceFontAsset: TMPro.TMP_FontAsset, $fontAssets: System.Collections.Generic.List$1<TMPro.TMP_FontAsset>, $includeFallbacks: boolean, $fontStyle: TMPro.FontStyles, $fontWeight: TMPro.FontWeight, $isAlternativeTypeface: $Ref<boolean>):TMPro.TMP_Character;
+            
+            public static GetSpriteCharacterFromSpriteAsset($unicode: number, $spriteAsset: TMPro.TMP_SpriteAsset, $includeFallbacks: boolean):TMPro.TMP_SpriteCharacter;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SpriteCharacter extends TMPro.TMP_TextElement{
+            
+            public get name(): string;
+            public set name(value: string);
+            
+            public get hashCode(): number;
+            
+            
+            
+            public constructor();
+            
+            public constructor($unicode: number, $glyph: TMPro.TMP_SpriteGlyph);
+            
+            public constructor($unicode: number, $spriteAsset: TMPro.TMP_SpriteAsset, $glyph: TMPro.TMP_SpriteGlyph);
+            
+        }
+        
+        
+        class TMP_GlyphPairAdjustmentRecord extends System.Object{
+            
+            public get firstAdjustmentRecord(): TMPro.TMP_GlyphAdjustmentRecord;
+            public set firstAdjustmentRecord(value: TMPro.TMP_GlyphAdjustmentRecord);
+            
+            public get secondAdjustmentRecord(): TMPro.TMP_GlyphAdjustmentRecord;
+            public set secondAdjustmentRecord(value: TMPro.TMP_GlyphAdjustmentRecord);
+            
+            public get featureLookupFlags(): TMPro.FontFeatureLookupFlags;
+            public set featureLookupFlags(value: TMPro.FontFeatureLookupFlags);
+            
+            
+            public constructor($firstAdjustmentRecord: TMPro.TMP_GlyphAdjustmentRecord, $secondAdjustmentRecord: TMPro.TMP_GlyphAdjustmentRecord);
+            
+            public constructor();
+            
+        }
+        
+        
+        enum FontFeatureLookupFlags{ None = 0, IgnoreLigatures = 4, IgnoreSpacingAdjustments = 256 }
+        
+        
+        class TMP_GlyphValueRecord extends System.ValueType{
+            
+            public get xPlacement(): number;
+            public set xPlacement(value: number);
+            
+            public get yPlacement(): number;
+            public set yPlacement(value: number);
+            
+            public get xAdvance(): number;
+            public set xAdvance(value: number);
+            
+            public get yAdvance(): number;
+            public set yAdvance(value: number);
+            
+            
+            public static op_Addition($a: TMPro.TMP_GlyphValueRecord, $b: TMPro.TMP_GlyphValueRecord):TMPro.TMP_GlyphValueRecord;
+            
+            public constructor($xPlacement: number, $yPlacement: number, $xAdvance: number, $yAdvance: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_GlyphAdjustmentRecord extends System.ValueType{
+            
+            public get glyphIndex(): number;
+            public set glyphIndex(value: number);
+            
+            public get glyphValueRecord(): TMPro.TMP_GlyphValueRecord;
+            public set glyphValueRecord(value: TMPro.TMP_GlyphValueRecord);
+            
+            
+            public constructor($glyphIndex: number, $glyphValueRecord: TMPro.TMP_GlyphValueRecord);
+            
+            public constructor();
+            
+        }
+        
+        
+        class GlyphPairKey extends System.ValueType{
+            
+            public firstGlyphIndex: number;
+            public secondGlyphIndex: number;
+            public key: number;
+            
+            public constructor($firstGlyphIndex: number, $secondGlyphIndex: number);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_InputField extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.IDragHandler, UnityEngine.EventSystems.IEndDragHandler, UnityEngine.EventSystems.IScrollHandler, UnityEngine.UI.ICanvasElement, UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.IUpdateSelectedHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler, UnityEngine.UI.ILayoutElement, UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.IBeginDragHandler{
+            
+            public get shouldHideMobileInput(): boolean;
+            public set shouldHideMobileInput(value: boolean);
+            
+            public get shouldHideSoftKeyboard(): boolean;
+            public set shouldHideSoftKeyboard(value: boolean);
+            
+            public get text(): string;
+            public set text(value: string);
+            
+            public get isFocused(): boolean;
+            
+            
+            public get caretBlinkRate(): number;
+            public set caretBlinkRate(value: number);
+            
+            public get caretWidth(): number;
+            public set caretWidth(value: number);
+            
+            public get textViewport(): UnityEngine.RectTransform;
+            public set textViewport(value: UnityEngine.RectTransform);
+            
+            public get textComponent(): TMPro.TMP_Text;
+            public set textComponent(value: TMPro.TMP_Text);
+            
+            public get placeholder(): UnityEngine.UI.Graphic;
+            public set placeholder(value: UnityEngine.UI.Graphic);
+            
+            public get verticalScrollbar(): UnityEngine.UI.Scrollbar;
+            public set verticalScrollbar(value: UnityEngine.UI.Scrollbar);
+            
+            public get scrollSensitivity(): number;
+            public set scrollSensitivity(value: number);
+            
+            public get caretColor(): UnityEngine.Color;
+            public set caretColor(value: UnityEngine.Color);
+            
+            public get customCaretColor(): boolean;
+            public set customCaretColor(value: boolean);
+            
+            public get selectionColor(): UnityEngine.Color;
+            public set selectionColor(value: UnityEngine.Color);
+            
+            public get onEndEdit(): TMPro.TMP_InputField.SubmitEvent;
+            public set onEndEdit(value: TMPro.TMP_InputField.SubmitEvent);
+            
+            public get onSubmit(): TMPro.TMP_InputField.SubmitEvent;
+            public set onSubmit(value: TMPro.TMP_InputField.SubmitEvent);
+            
+            public get onSelect(): TMPro.TMP_InputField.SelectionEvent;
+            public set onSelect(value: TMPro.TMP_InputField.SelectionEvent);
+            
+            public get onDeselect(): TMPro.TMP_InputField.SelectionEvent;
+            public set onDeselect(value: TMPro.TMP_InputField.SelectionEvent);
+            
+            public get onTextSelection(): TMPro.TMP_InputField.TextSelectionEvent;
+            public set onTextSelection(value: TMPro.TMP_InputField.TextSelectionEvent);
+            
+            public get onEndTextSelection(): TMPro.TMP_InputField.TextSelectionEvent;
+            public set onEndTextSelection(value: TMPro.TMP_InputField.TextSelectionEvent);
+            
+            public get onValueChanged(): TMPro.TMP_InputField.OnChangeEvent;
+            public set onValueChanged(value: TMPro.TMP_InputField.OnChangeEvent);
+            
+            public get onTouchScreenKeyboardStatusChanged(): TMPro.TMP_InputField.TouchScreenKeyboardEvent;
+            public set onTouchScreenKeyboardStatusChanged(value: TMPro.TMP_InputField.TouchScreenKeyboardEvent);
+            
+            public get onValidateInput(): TMPro.TMP_InputField.OnValidateInput;
+            public set onValidateInput(value: TMPro.TMP_InputField.OnValidateInput);
+            
+            public get characterLimit(): number;
+            public set characterLimit(value: number);
+            
+            public get pointSize(): number;
+            public set pointSize(value: number);
+            
+            public get fontAsset(): TMPro.TMP_FontAsset;
+            public set fontAsset(value: TMPro.TMP_FontAsset);
+            
+            public get onFocusSelectAll(): boolean;
+            public set onFocusSelectAll(value: boolean);
+            
+            public get resetOnDeActivation(): boolean;
+            public set resetOnDeActivation(value: boolean);
+            
+            public get restoreOriginalTextOnEscape(): boolean;
+            public set restoreOriginalTextOnEscape(value: boolean);
+            
+            public get isRichTextEditingAllowed(): boolean;
+            public set isRichTextEditingAllowed(value: boolean);
+            
+            public get contentType(): TMPro.TMP_InputField.ContentType;
+            public set contentType(value: TMPro.TMP_InputField.ContentType);
+            
+            public get lineType(): TMPro.TMP_InputField.LineType;
+            public set lineType(value: TMPro.TMP_InputField.LineType);
+            
+            public get lineLimit(): number;
+            public set lineLimit(value: number);
+            
+            public get inputType(): TMPro.TMP_InputField.InputType;
+            public set inputType(value: TMPro.TMP_InputField.InputType);
+            
+            public get keyboardType(): UnityEngine.TouchScreenKeyboardType;
+            public set keyboardType(value: UnityEngine.TouchScreenKeyboardType);
+            
+            public get characterValidation(): TMPro.TMP_InputField.CharacterValidation;
+            public set characterValidation(value: TMPro.TMP_InputField.CharacterValidation);
+            
+            public get inputValidator(): TMPro.TMP_InputValidator;
+            public set inputValidator(value: TMPro.TMP_InputValidator);
+            
+            public get readOnly(): boolean;
+            public set readOnly(value: boolean);
+            
+            public get richText(): boolean;
+            public set richText(value: boolean);
+            
+            public get multiLine(): boolean;
+            
+            
+            public get asteriskChar(): number;
+            public set asteriskChar(value: number);
+            
+            public get wasCanceled(): boolean;
+            
+            
+            public get caretPosition(): number;
+            public set caretPosition(value: number);
+            
+            public get selectionAnchorPosition(): number;
+            public set selectionAnchorPosition(value: number);
+            
+            public get selectionFocusPosition(): number;
+            public set selectionFocusPosition(value: number);
+            
+            public get stringPosition(): number;
+            public set stringPosition(value: number);
+            
+            public get selectionStringAnchorPosition(): number;
+            public set selectionStringAnchorPosition(value: number);
+            
+            public get selectionStringFocusPosition(): number;
+            public set selectionStringFocusPosition(value: number);
+            
+            public get minWidth(): number;
+            
+            
+            public get preferredWidth(): number;
+            
+            
+            public get flexibleWidth(): number;
+            
+            
+            public get minHeight(): number;
+            
+            
+            public get preferredHeight(): number;
+            
+            
+            public get flexibleHeight(): number;
+            
+            
+            public get layoutPriority(): number;
+            
+            
+            
+            public SetTextWithoutNotify($input: string):void;
+            
+            public MoveTextEnd($shift: boolean):void;
+            
+            public MoveTextStart($shift: boolean):void;
+            
+            public MoveToEndOfLine($shift: boolean, $ctrl: boolean):void;
+            
+            public MoveToStartOfLine($shift: boolean, $ctrl: boolean):void;
+            
+            public OnBeginDrag($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public OnDrag($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public OnEndDrag($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public ProcessEvent($e: UnityEngine.Event):void;
+            
+            public OnUpdateSelected($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public OnScroll($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public ForceLabelUpdate():void;
+            
+            public Rebuild($update: UnityEngine.UI.CanvasUpdate):void;
+            
+            public LayoutComplete():void;
+            
+            public GraphicUpdateComplete():void;
+            
+            public ActivateInputField():void;
+            
+            public OnPointerClick($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public OnControlClick():void;
+            
+            public ReleaseSelection():void;
+            
+            public DeactivateInputField($clearSelection?: boolean):void;
+            
+            public OnSubmit($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public CalculateLayoutInputHorizontal():void;
+            
+            public CalculateLayoutInputVertical():void;
+            
+            public SetGlobalPointSize($pointSize: number):void;
+            
+            public SetGlobalFontAsset($fontAsset: TMPro.TMP_FontAsset):void;
+            
+        }
+        
+        
+        class TMP_InputValidator extends UnityEngine.ScriptableObject{
+            
+            
+            public Validate($text: $Ref<string>, $pos: $Ref<number>, $ch: number):number;
+            
+        }
+        
+        
+        class TMP_LineInfo extends System.ValueType{
+            
+            public characterCount: number;
+            public visibleCharacterCount: number;
+            public spaceCount: number;
+            public wordCount: number;
+            public firstCharacterIndex: number;
+            public firstVisibleCharacterIndex: number;
+            public lastCharacterIndex: number;
+            public lastVisibleCharacterIndex: number;
+            public length: number;
+            public lineHeight: number;
+            public ascender: number;
+            public baseline: number;
+            public descender: number;
+            public maxAdvance: number;
+            public width: number;
+            public marginLeft: number;
+            public marginRight: number;
+            public alignment: TMPro.HorizontalAlignmentOptions;
+            public lineExtents: TMPro.Extents;
+            
+        }
+        
+        
+        enum HorizontalAlignmentOptions{ Left = 1, Center = 2, Right = 4, Justified = 8, Flush = 16, Geometry = 32 }
+        
+        
+        class Extents extends System.ValueType{
+            
+            public min: UnityEngine.Vector2;
+            public max: UnityEngine.Vector2;
+            
+            public constructor($min: UnityEngine.Vector2, $max: UnityEngine.Vector2);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_MaterialManager extends System.Object{
+            
+            
+            public static GetStencilMaterial($baseMaterial: UnityEngine.Material, $stencilID: number):UnityEngine.Material;
+            
+            public static ReleaseStencilMaterial($stencilMaterial: UnityEngine.Material):void;
+            
+            public static GetBaseMaterial($stencilMaterial: UnityEngine.Material):UnityEngine.Material;
+            
+            public static SetStencil($material: UnityEngine.Material, $stencilID: number):UnityEngine.Material;
+            
+            public static AddMaskingMaterial($baseMaterial: UnityEngine.Material, $stencilMaterial: UnityEngine.Material, $stencilID: number):void;
+            
+            public static RemoveStencilMaterial($stencilMaterial: UnityEngine.Material):void;
+            
+            public static ReleaseBaseMaterial($baseMaterial: UnityEngine.Material):void;
+            
+            public static ClearMaterials():void;
+            
+            public static GetStencilID($obj: UnityEngine.GameObject):number;
+            
+            public static GetMaterialForRendering($graphic: UnityEngine.UI.MaskableGraphic, $baseMaterial: UnityEngine.Material):UnityEngine.Material;
+            
+            public static GetFallbackMaterial($sourceMaterial: UnityEngine.Material, $targetMaterial: UnityEngine.Material):UnityEngine.Material;
+            
+            public static AddFallbackMaterialReference($targetMaterial: UnityEngine.Material):void;
+            
+            public static RemoveFallbackMaterialReference($targetMaterial: UnityEngine.Material):void;
+            
+            public static CleanupFallbackMaterials():void;
+            
+            public static ReleaseFallbackMaterial($fallackMaterial: UnityEngine.Material):void;
+            
+            public static CopyMaterialPresetProperties($source: UnityEngine.Material, $destination: UnityEngine.Material):void;
+            
+        }
+        
+        
+        enum VertexSortingOrder{ Normal = 0, Reverse = 1 }
+        
+        
+        class TMP_MeshInfo extends System.ValueType{
+            
+            public mesh: UnityEngine.Mesh;
+            public vertexCount: number;
+            public vertices: System.Array$1<UnityEngine.Vector3>;
+            public normals: System.Array$1<UnityEngine.Vector3>;
+            public tangents: System.Array$1<UnityEngine.Vector4>;
+            public uvs0: System.Array$1<UnityEngine.Vector2>;
+            public uvs2: System.Array$1<UnityEngine.Vector2>;
+            public colors32: System.Array$1<UnityEngine.Color32>;
+            public triangles: System.Array$1<number>;
+            public material: UnityEngine.Material;
+            
+            public ResizeMeshInfo($size: number):void;
+            
+            public ResizeMeshInfo($size: number, $isVolumetric: boolean):void;
+            
+            public Clear():void;
+            
+            public Clear($uploadChanges: boolean):void;
+            
+            public ClearUnusedVertices():void;
+            
+            public ClearUnusedVertices($startIndex: number):void;
+            
+            public ClearUnusedVertices($startIndex: number, $updateMesh: boolean):void;
+            
+            public SortGeometry($order: TMPro.VertexSortingOrder):void;
+            
+            public SortGeometry($sortingOrder: System.Collections.Generic.IList$1<number>):void;
+            
+            public SwapVertexData($src: number, $dst: number):void;
+            
+            public constructor($mesh: UnityEngine.Mesh, $size: number);
+            
+            public constructor($mesh: UnityEngine.Mesh, $size: number, $isVolumetric: boolean);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_PackageResourceImporter extends System.Object{
+            
+            
+            public OnDestroy():void;
+            
+            public OnGUI():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_PackageResourceImporterWindow extends UnityEditor.EditorWindow{
+            
+            
+            public static ShowPackageImporterWindow():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_ResourceManager extends System.Object{
+            
+            
+            public static AddFontAsset($fontAsset: TMPro.TMP_FontAsset):void;
+            
+            public static TryGetFontAsset($hashcode: number, $fontAsset: $Ref<TMPro.TMP_FontAsset>):boolean;
+            
+            public constructor();
+            
+        }
+        
+        
+        enum TagValueType{ None = 0, NumericalValue = 1, StringValue = 2, ColorValue = 4 }
+        
+        
+        enum TagUnitType{ Pixels = 0, FontUnits = 1, Percentage = 2 }
+        
+        
+        class TMP_ScrollbarEventHandler extends UnityEngine.MonoBehaviour implements UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerClickHandler{
+            
+            public isSelected: boolean;
+            
+            public OnPointerClick($eventData: UnityEngine.EventSystems.PointerEventData):void;
+            
+            public OnSelect($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public OnDeselect($eventData: UnityEngine.EventSystems.BaseEventData):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SelectionCaret extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_Settings extends UnityEngine.ScriptableObject{
+            
+            public static get version(): string;
+            
+            
+            public static get enableWordWrapping(): boolean;
+            
+            
+            public static get enableKerning(): boolean;
+            
+            
+            public static get enableExtraPadding(): boolean;
+            
+            
+            public static get enableTintAllSprites(): boolean;
+            
+            
+            public static get enableParseEscapeCharacters(): boolean;
+            
+            
+            public static get enableRaycastTarget(): boolean;
+            
+            
+            public static get getFontFeaturesAtRuntime(): boolean;
+            
+            
+            public static get missingGlyphCharacter(): number;
+            public static set missingGlyphCharacter(value: number);
+            
+            public static get warningsDisabled(): boolean;
+            
+            
+            public static get defaultFontAsset(): TMPro.TMP_FontAsset;
+            
+            
+            public static get defaultFontAssetPath(): string;
+            
+            
+            public static get defaultFontSize(): number;
+            
+            
+            public static get defaultTextAutoSizingMinRatio(): number;
+            
+            
+            public static get defaultTextAutoSizingMaxRatio(): number;
+            
+            
+            public static get defaultTextMeshProTextContainerSize(): UnityEngine.Vector2;
+            
+            
+            public static get defaultTextMeshProUITextContainerSize(): UnityEngine.Vector2;
+            
+            
+            public static get autoSizeTextContainer(): boolean;
+            
+            
+            public static get isTextObjectScaleStatic(): boolean;
+            public static set isTextObjectScaleStatic(value: boolean);
+            
+            public static get fallbackFontAssets(): System.Collections.Generic.List$1<TMPro.TMP_FontAsset>;
+            
+            
+            public static get matchMaterialPreset(): boolean;
+            
+            
+            public static get defaultSpriteAsset(): TMPro.TMP_SpriteAsset;
+            
+            
+            public static get defaultSpriteAssetPath(): string;
+            
+            
+            public static get enableEmojiSupport(): boolean;
+            public static set enableEmojiSupport(value: boolean);
+            
+            public static get missingCharacterSpriteUnicode(): number;
+            public static set missingCharacterSpriteUnicode(value: number);
+            
+            public static get defaultColorGradientPresetsPath(): string;
+            
+            
+            public static get defaultStyleSheet(): TMPro.TMP_StyleSheet;
+            
+            
+            public static get styleSheetsResourcePath(): string;
+            
+            
+            public static get leadingCharacters(): UnityEngine.TextAsset;
+            
+            
+            public static get followingCharacters(): UnityEngine.TextAsset;
+            
+            
+            public static get linebreakingRules(): TMPro.TMP_Settings.LineBreakingTable;
+            
+            
+            public static get useModernHangulLineBreakingRules(): boolean;
+            public static set useModernHangulLineBreakingRules(value: boolean);
+            
+            public static get instance(): TMPro.TMP_Settings;
+            
+            
+            
+            public static LoadDefaultSettings():TMPro.TMP_Settings;
+            
+            public static GetSettings():TMPro.TMP_Settings;
+            
+            public static GetFontAsset():TMPro.TMP_FontAsset;
+            
+            public static GetSpriteAsset():TMPro.TMP_SpriteAsset;
+            
+            public static GetStyleSheet():TMPro.TMP_StyleSheet;
+            
+            public static LoadLinebreakingRules():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_StyleSheet extends UnityEngine.ScriptableObject{
+            
+            
+            public GetStyle($hashCode: number):TMPro.TMP_Style;
+            
+            public GetStyle($name: string):TMPro.TMP_Style;
+            
+            public RefreshStyles():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class ShaderUtilities extends System.Object{
+            
+            public static ID_MainTex: number;
+            public static ID_FaceTex: number;
+            public static ID_FaceColor: number;
+            public static ID_FaceDilate: number;
+            public static ID_Shininess: number;
+            public static ID_UnderlayColor: number;
+            public static ID_UnderlayOffsetX: number;
+            public static ID_UnderlayOffsetY: number;
+            public static ID_UnderlayDilate: number;
+            public static ID_UnderlaySoftness: number;
+            public static ID_WeightNormal: number;
+            public static ID_WeightBold: number;
+            public static ID_OutlineTex: number;
+            public static ID_OutlineWidth: number;
+            public static ID_OutlineSoftness: number;
+            public static ID_OutlineColor: number;
+            public static ID_Outline2Color: number;
+            public static ID_Outline2Width: number;
+            public static ID_Padding: number;
+            public static ID_GradientScale: number;
+            public static ID_ScaleX: number;
+            public static ID_ScaleY: number;
+            public static ID_PerspectiveFilter: number;
+            public static ID_Sharpness: number;
+            public static ID_TextureWidth: number;
+            public static ID_TextureHeight: number;
+            public static ID_BevelAmount: number;
+            public static ID_GlowColor: number;
+            public static ID_GlowOffset: number;
+            public static ID_GlowPower: number;
+            public static ID_GlowOuter: number;
+            public static ID_GlowInner: number;
+            public static ID_LightAngle: number;
+            public static ID_EnvMap: number;
+            public static ID_EnvMatrix: number;
+            public static ID_EnvMatrixRotation: number;
+            public static ID_MaskCoord: number;
+            public static ID_ClipRect: number;
+            public static ID_MaskSoftnessX: number;
+            public static ID_MaskSoftnessY: number;
+            public static ID_VertexOffsetX: number;
+            public static ID_VertexOffsetY: number;
+            public static ID_UseClipRect: number;
+            public static ID_StencilID: number;
+            public static ID_StencilOp: number;
+            public static ID_StencilComp: number;
+            public static ID_StencilReadMask: number;
+            public static ID_StencilWriteMask: number;
+            public static ID_ShaderFlags: number;
+            public static ID_ScaleRatio_A: number;
+            public static ID_ScaleRatio_B: number;
+            public static ID_ScaleRatio_C: number;
+            public static Keyword_Bevel: string;
+            public static Keyword_Glow: string;
+            public static Keyword_Underlay: string;
+            public static Keyword_Ratios: string;
+            public static Keyword_MASK_SOFT: string;
+            public static Keyword_MASK_HARD: string;
+            public static Keyword_MASK_TEX: string;
+            public static Keyword_Outline: string;
+            public static ShaderTag_ZTestMode: string;
+            public static ShaderTag_CullMode: string;
+            public static isInitialized: boolean;
+            
+            public static GetShaderPropertyIDs():void;
+            
+            public static UpdateShaderRatios($mat: UnityEngine.Material):void;
+            
+            public static GetFontExtent($material: UnityEngine.Material):UnityEngine.Vector4;
+            
+            public static IsMaskingEnabled($material: UnityEngine.Material):boolean;
+            
+            public static GetPadding($material: UnityEngine.Material, $enableExtraPadding: boolean, $isBold: boolean):number;
+            
+            public static GetPadding($materials: System.Array$1<UnityEngine.Material>, $enableExtraPadding: boolean, $isBold: boolean):number;
+            
+        }
+        
+        
+        class TMP_Sprite extends TMPro.TMP_TextElement_Legacy{
+            
+            public name: string;
+            public hashCode: number;
+            public unicode: number;
+            public pivot: UnityEngine.Vector2;
+            public sprite: UnityEngine.Sprite;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SpriteAnimator extends UnityEngine.MonoBehaviour{
+            
+            
+            public StopAllAnimations():void;
+            
+            public DoSpriteAnimation($currentCharacter: number, $spriteAsset: TMPro.TMP_SpriteAsset, $start: number, $end: number, $framerate: number):void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SpriteGlyph extends UnityEngine.TextCore.Glyph{
+            
+            public sprite: UnityEngine.Sprite;
+            
+            public constructor();
+            
+            public constructor($index: number, $metrics: UnityEngine.TextCore.GlyphMetrics, $glyphRect: UnityEngine.TextCore.GlyphRect, $scale: number, $atlasIndex: number);
+            
+            public constructor($index: number, $metrics: UnityEngine.TextCore.GlyphMetrics, $glyphRect: UnityEngine.TextCore.GlyphRect, $scale: number, $atlasIndex: number, $sprite: UnityEngine.Sprite);
+            
+        }
+        
+        
+        class TMP_Style extends System.Object{
+            
+            public static get NormalStyle(): TMPro.TMP_Style;
+            
+            
+            public get name(): string;
+            public set name(value: string);
+            
+            public get hashCode(): number;
+            public set hashCode(value: number);
+            
+            public get styleOpeningDefinition(): string;
+            
+            
+            public get styleClosingDefinition(): string;
+            
+            
+            public get styleOpeningTagArray(): System.Array$1<number>;
+            
+            
+            public get styleClosingTagArray(): System.Array$1<number>;
+            
+            
+            
+            public RefreshStyle():void;
+            
+        }
+        
+        
+        class TMP_SubMesh extends UnityEngine.MonoBehaviour{
+            
+            public get fontAsset(): TMPro.TMP_FontAsset;
+            public set fontAsset(value: TMPro.TMP_FontAsset);
+            
+            public get spriteAsset(): TMPro.TMP_SpriteAsset;
+            public set spriteAsset(value: TMPro.TMP_SpriteAsset);
+            
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            
+            public get sharedMaterial(): UnityEngine.Material;
+            public set sharedMaterial(value: UnityEngine.Material);
+            
+            public get fallbackMaterial(): UnityEngine.Material;
+            public set fallbackMaterial(value: UnityEngine.Material);
+            
+            public get fallbackSourceMaterial(): UnityEngine.Material;
+            public set fallbackSourceMaterial(value: UnityEngine.Material);
+            
+            public get isDefaultMaterial(): boolean;
+            public set isDefaultMaterial(value: boolean);
+            
+            public get padding(): number;
+            public set padding(value: number);
+            
+            public get renderer(): UnityEngine.Renderer;
+            
+            
+            public get meshFilter(): UnityEngine.MeshFilter;
+            
+            
+            public get mesh(): UnityEngine.Mesh;
+            public set mesh(value: UnityEngine.Mesh);
+            
+            public get textComponent(): TMPro.TMP_Text;
+            
+            
+            
+            public static AddSubTextObject($textComponent: TMPro.TextMeshPro, $materialReference: TMPro.MaterialReference):TMPro.TMP_SubMesh;
+            
+            public DestroySelf():void;
+            
+            public GetPaddingForMaterial():number;
+            
+            public UpdateMeshPadding($isExtraPadding: boolean, $isUsingBold: boolean):void;
+            
+            public SetVerticesDirty():void;
+            
+            public SetMaterialDirty():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_SubMeshUI extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
+            
+            public get fontAsset(): TMPro.TMP_FontAsset;
+            public set fontAsset(value: TMPro.TMP_FontAsset);
+            
+            public get spriteAsset(): TMPro.TMP_SpriteAsset;
+            public set spriteAsset(value: TMPro.TMP_SpriteAsset);
+            
+            public get mainTexture(): UnityEngine.Texture;
+            
+            
+            public get material(): UnityEngine.Material;
+            public set material(value: UnityEngine.Material);
+            
+            public get sharedMaterial(): UnityEngine.Material;
+            public set sharedMaterial(value: UnityEngine.Material);
+            
+            public get fallbackMaterial(): UnityEngine.Material;
+            public set fallbackMaterial(value: UnityEngine.Material);
+            
+            public get fallbackSourceMaterial(): UnityEngine.Material;
+            public set fallbackSourceMaterial(value: UnityEngine.Material);
+            
+            public get materialForRendering(): UnityEngine.Material;
+            
+            
+            public get isDefaultMaterial(): boolean;
+            public set isDefaultMaterial(value: boolean);
+            
+            public get padding(): number;
+            public set padding(value: number);
+            
+            public get mesh(): UnityEngine.Mesh;
+            public set mesh(value: UnityEngine.Mesh);
+            
+            public get textComponent(): TMPro.TMP_Text;
+            
+            
+            
+            public static AddSubTextObject($textComponent: TMPro.TextMeshProUGUI, $materialReference: TMPro.MaterialReference):TMPro.TMP_SubMeshUI;
+            
+            public GetPaddingForMaterial():number;
+            
+            public GetPaddingForMaterial($mat: UnityEngine.Material):number;
+            
+            public UpdateMeshPadding($isExtraPadding: boolean, $isUsingBold: boolean):void;
+            
+            public SetPivotDirty():void;
+            
+            public RefreshMaterial():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        class TextMeshProUGUI extends TMPro.TMP_Text implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.ILayoutElement, UnityEngine.UI.IClippable{
+            
+            public get materialForRendering(): UnityEngine.Material;
+            
+            
+            public get autoSizeTextContainer(): boolean;
+            public set autoSizeTextContainer(value: boolean);
+            
+            public get mesh(): UnityEngine.Mesh;
+            
+            
+            public get canvasRenderer(): UnityEngine.CanvasRenderer;
+            
+            
+            public get maskOffset(): UnityEngine.Vector4;
+            public set maskOffset(value: UnityEngine.Vector4);
+            
+            
+            public CalculateLayoutInputHorizontal():void;
+            
+            public CalculateLayoutInputVertical():void;
+            
+            public UpdateFontAsset():void;
+            
+            public constructor();
+            
+        }
+        
+        
+        interface ITextElement{
+            
+            sharedMaterial: UnityEngine.Material;
+            
+            Rebuild($update: UnityEngine.UI.CanvasUpdate):void;
+            
+            GetInstanceID():number;
+            
+        }
+        
+        
+        enum VerticalAlignmentOptions{ Top = 256, Middle = 512, Bottom = 1024, Baseline = 2048, Geometry = 4096, Capline = 8192 }
+        
+        
+        enum TextRenderFlags{ DontRender = 0, Render = 255 }
+        
+        
+        enum MaskingTypes{ MaskOff = 0, MaskHard = 1, MaskSoft = 2 }
+        
+        
+        enum TextOverflowModes{ Overflow = 0, Ellipsis = 1, Masking = 2, Truncate = 3, ScrollRect = 4, Page = 5, Linked = 6 }
+        
+        
+        enum MaskingOffsetMode{ Percentage = 0, Pixel = 1 }
+        
+        
+        enum TextureMappingOptions{ Character = 0, Line = 1, Paragraph = 2, MatchAspect = 3 }
+        
+        
+        class VertexGradient extends System.ValueType{
+            
+            public topLeft: UnityEngine.Color;
+            public topRight: UnityEngine.Color;
+            public bottomLeft: UnityEngine.Color;
+            public bottomRight: UnityEngine.Color;
+            
+            public constructor($color: UnityEngine.Color);
+            
+            public constructor($color0: UnityEngine.Color, $color1: UnityEngine.Color, $color2: UnityEngine.Color, $color3: UnityEngine.Color);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_TextInfo extends System.Object{
+            
+            public textComponent: TMPro.TMP_Text;
+            public characterCount: number;
+            public spriteCount: number;
+            public spaceCount: number;
+            public wordCount: number;
+            public linkCount: number;
+            public lineCount: number;
+            public pageCount: number;
+            public materialCount: number;
+            public characterInfo: System.Array$1<TMPro.TMP_CharacterInfo>;
+            public wordInfo: System.Array$1<TMPro.TMP_WordInfo>;
+            public linkInfo: System.Array$1<TMPro.TMP_LinkInfo>;
+            public lineInfo: System.Array$1<TMPro.TMP_LineInfo>;
+            public pageInfo: System.Array$1<TMPro.TMP_PageInfo>;
+            public meshInfo: System.Array$1<TMPro.TMP_MeshInfo>;
+            
+            public Clear():void;
+            
+            public ClearMeshInfo($updateMesh: boolean):void;
+            
+            public ClearAllMeshInfo():void;
+            
+            public ResetVertexLayout($isVolumetric: boolean):void;
+            
+            public ClearUnusedVertices($materials: System.Array$1<TMPro.MaterialReference>):void;
+            
+            public ClearLineInfo():void;
+            
+            public CopyMeshInfoVertexData():System.Array$1<TMPro.TMP_MeshInfo>;
+            
+            public constructor();
+            
+            public constructor($textComponent: TMPro.TMP_Text);
+            
+        }
+        
+        
+        enum TMP_VertexDataUpdateFlags{ None = 0, Vertices = 1, Uv0 = 2, Uv2 = 4, Uv4 = 8, Colors32 = 16, All = 255 }
+        
+        
+        enum TextElementType{ Character = 1, Sprite = 2 }
+        
+        
+        class TMP_WordInfo extends System.ValueType{
+            
+            public textComponent: TMPro.TMP_Text;
+            public firstCharacterIndex: number;
+            public lastCharacterIndex: number;
+            public characterCount: number;
+            
+            public GetWord():string;
+            
+        }
+        
+        
+        class TMP_LinkInfo extends System.ValueType{
+            
+            public textComponent: TMPro.TMP_Text;
+            public hashCode: number;
+            public linkIdFirstCharacterIndex: number;
+            public linkIdLength: number;
+            public linkTextfirstCharacterIndex: number;
+            public linkTextLength: number;
+            
+            public GetLinkText():string;
+            
+            public GetLinkID():string;
+            
+        }
+        
+        
+        class TMP_PageInfo extends System.ValueType{
+            
+            public firstCharacterIndex: number;
+            public lastCharacterIndex: number;
+            public ascender: number;
+            public baseLine: number;
+            public descender: number;
+            
+        }
+        
+        
+        class TMP_TextParsingUtilities extends System.Object{
+            
+            public static get instance(): TMPro.TMP_TextParsingUtilities;
+            
+            
+            
+            public static GetHashCode($s: string):number;
+            
+            public static GetHashCodeCaseSensitive($s: string):number;
+            
+            public static ToLowerASCIIFast($c: number):number;
+            
+            public static ToUpperASCIIFast($c: number):number;
+            
+            public static ToUpperASCIIFast($c: number):number;
+            
+            public static ToLowerASCIIFast($c: number):number;
+            
+            public static IsHighSurrogate($c: number):boolean;
+            
+            public static IsLowSurrogate($c: number):boolean;
+            
+            public constructor();
+            
+            public GetHashCode():number;
+            
+        }
+        
+        
+        class TMP_FontStyleStack extends System.ValueType{
+            
+            public bold: number;
+            public italic: number;
+            public underline: number;
+            public strikethrough: number;
+            public highlight: number;
+            public superscript: number;
+            public subscript: number;
+            public uppercase: number;
+            public lowercase: number;
+            public smallcaps: number;
+            
+            public Clear():void;
+            
+            public Add($style: TMPro.FontStyles):number;
+            
+            public Remove($style: TMPro.FontStyles):number;
+            
+        }
+        
+        
+        enum CaretPosition{ None = 0, Left = 1, Right = 2 }
+        
+        
+        class CaretInfo extends System.ValueType{
+            
+            public index: number;
+            public position: TMPro.CaretPosition;
+            
+            public constructor($index: number, $position: TMPro.CaretPosition);
+            
+            public constructor();
+            
+        }
+        
+        
+        class TMP_TextUtilities extends System.Object{
+            
+            
+            public static GetCursorIndexFromPosition($textComponent: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static GetCursorIndexFromPosition($textComponent: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera, $cursor: $Ref<TMPro.CaretPosition>):number;
+            
+            public static FindNearestLine($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static FindNearestCharacterOnLine($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $line: number, $camera: UnityEngine.Camera, $visibleOnly: boolean):number;
+            
+            public static IsIntersectingRectTransform($rectTransform: UnityEngine.RectTransform, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):boolean;
+            
+            public static FindIntersectingCharacter($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera, $visibleOnly: boolean):number;
+            
+            public static FindNearestCharacter($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera, $visibleOnly: boolean):number;
+            
+            public static FindIntersectingWord($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static FindNearestWord($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static FindIntersectingLine($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static FindIntersectingLink($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static FindNearestLink($text: TMPro.TMP_Text, $position: UnityEngine.Vector3, $camera: UnityEngine.Camera):number;
+            
+            public static ScreenPointToWorldPointInRectangle($transform: UnityEngine.Transform, $screenPoint: UnityEngine.Vector2, $cam: UnityEngine.Camera, $worldPoint: $Ref<UnityEngine.Vector3>):boolean;
+            
+            public static DistanceToLine($a: UnityEngine.Vector3, $b: UnityEngine.Vector3, $point: UnityEngine.Vector3):number;
+            
+            public static ToLowerFast($c: number):number;
+            
+            public static ToUpperFast($c: number):number;
+            
+            public static GetHashCode($s: string):number;
+            
+            public static GetSimpleHashCode($s: string):number;
+            
+            public static GetSimpleHashCodeLowercase($s: string):number;
+            
+            public static HexToInt($hex: number):number;
+            
+            public static StringHexToInt($s: string):number;
+            
+            public GetHashCode():number;
+            
+        }
+        
+        
+        class TMP_UpdateManager extends System.Object{
+            
+            
+            public static RegisterTextElementForLayoutRebuild($element: TMPro.TMP_Text):void;
+            
+            public static RegisterTextElementForGraphicRebuild($element: TMPro.TMP_Text):void;
+            
+            public static RegisterTextElementForCullingUpdate($element: TMPro.TMP_Text):void;
+            
+            public static UnRegisterTextElementForRebuild($element: TMPro.TMP_Text):void;
+            
+        }
+        
+        
+        class TMP_UpdateRegistry extends System.Object{
+            
+            public static get instance(): TMPro.TMP_UpdateRegistry;
+            
+            
+            
+            public static RegisterCanvasElementForLayoutRebuild($element: UnityEngine.UI.ICanvasElement):void;
+            
+            public static RegisterCanvasElementForGraphicRebuild($element: UnityEngine.UI.ICanvasElement):void;
+            
+            public static UnRegisterCanvasElementForRebuild($element: UnityEngine.UI.ICanvasElement):void;
+            
+        }
+        
+        
+        enum Compute_DistanceTransform_EventTypes{ Processing = 0, Completed = 1 }
+        
+        
+        class TMPro_EventManager extends System.Object{
+            
+            public static COMPUTE_DT_EVENT: TMPro.FastAction$2<any, TMPro.Compute_DT_EventArgs>;
+            public static MATERIAL_PROPERTY_EVENT: TMPro.FastAction$2<boolean, UnityEngine.Material>;
+            public static FONT_PROPERTY_EVENT: TMPro.FastAction$2<boolean, UnityEngine.Object>;
+            public static SPRITE_ASSET_PROPERTY_EVENT: TMPro.FastAction$2<boolean, UnityEngine.Object>;
+            public static TEXTMESHPRO_PROPERTY_EVENT: TMPro.FastAction$2<boolean, UnityEngine.Object>;
+            public static DRAG_AND_DROP_MATERIAL_EVENT: TMPro.FastAction$3<UnityEngine.GameObject, UnityEngine.Material, UnityEngine.Material>;
+            public static TEXT_STYLE_PROPERTY_EVENT: TMPro.FastAction$1<boolean>;
+            public static COLOR_GRADIENT_PROPERTY_EVENT: TMPro.FastAction$1<UnityEngine.Object>;
+            public static TMP_SETTINGS_PROPERTY_EVENT: TMPro.FastAction;
+            public static RESOURCE_LOAD_EVENT: TMPro.FastAction;
+            public static TEXTMESHPRO_UGUI_PROPERTY_EVENT: TMPro.FastAction$2<boolean, UnityEngine.Object>;
+            public static TEXT_CHANGED_EVENT: TMPro.FastAction$1<UnityEngine.Object>;
+            
+            public static ON_MATERIAL_PROPERTY_CHANGED($isChanged: boolean, $mat: UnityEngine.Material):void;
+            
+            public static ON_FONT_PROPERTY_CHANGED($isChanged: boolean, $obj: UnityEngine.Object):void;
+            
+            public static ON_SPRITE_ASSET_PROPERTY_CHANGED($isChanged: boolean, $obj: UnityEngine.Object):void;
+            
+            public static ON_TEXTMESHPRO_PROPERTY_CHANGED($isChanged: boolean, $obj: UnityEngine.Object):void;
+            
+            public static ON_DRAG_AND_DROP_MATERIAL_CHANGED($sender: UnityEngine.GameObject, $currentMaterial: UnityEngine.Material, $newMaterial: UnityEngine.Material):void;
+            
+            public static ON_TEXT_STYLE_PROPERTY_CHANGED($isChanged: boolean):void;
+            
+            public static ON_COLOR_GRADIENT_PROPERTY_CHANGED($obj: UnityEngine.Object):void;
+            
+            public static ON_TEXT_CHANGED($obj: UnityEngine.Object):void;
+            
+            public static ON_TMP_SETTINGS_CHANGED():void;
+            
+            public static ON_RESOURCES_LOADED():void;
+            
+            public static ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED($isChanged: boolean, $obj: UnityEngine.Object):void;
+            
+            public static ON_COMPUTE_DT_EVENT($Sender: any, $e: TMPro.Compute_DT_EventArgs):void;
+            
+        }
+        
+        
+        class Compute_DT_EventArgs extends System.Object{
+            
+            public EventType: TMPro.Compute_DistanceTransform_EventTypes;
+            public ProgressPercentage: number;
+            public Colors: System.Array$1<UnityEngine.Color>;
+            
+            public constructor($type: TMPro.Compute_DistanceTransform_EventTypes, $progress: number);
+            
+            public constructor($type: TMPro.Compute_DistanceTransform_EventTypes, $colors: System.Array$1<UnityEngine.Color>);
+            
+            public constructor();
+            
+        }
+        
+        
+        class FastAction$2<A, B> extends System.Object{
+            
+            
+        }
+        
+        
+        class FastAction$3<A, B, C> extends System.Object{
+            
+            
+        }
+        
+        
+        class FastAction$1<A> extends System.Object{
+            
+            
+        }
+        
+        
+        class TMPro_ExtensionMethods extends System.Object{
+            
+            
+            public static ArrayToString($chars: System.Array$1<number>):string;
+            
+            public static IntToString($unicodes: System.Array$1<number>):string;
+            
+            public static IntToString($unicodes: System.Array$1<number>, $start: number, $length: number):string;
+            
+            public static FindInstanceID($list: System.Collections.Generic.List$1<T>, $target: UnityEngine.Object):number;
+            
+            public static Compare($a: UnityEngine.Color32, $b: UnityEngine.Color32):boolean;
+            
+            public static CompareRGB($a: UnityEngine.Color32, $b: UnityEngine.Color32):boolean;
+            
+            public static Compare($a: UnityEngine.Color, $b: UnityEngine.Color):boolean;
+            
+            public static CompareRGB($a: UnityEngine.Color, $b: UnityEngine.Color):boolean;
+            
+            public static Multiply($c1: UnityEngine.Color32, $c2: UnityEngine.Color32):UnityEngine.Color32;
+            
+            public static Tint($c1: UnityEngine.Color32, $c2: UnityEngine.Color32):UnityEngine.Color32;
+            
+            public static Tint($c1: UnityEngine.Color32, $tint: number):UnityEngine.Color32;
+            
+            public static MinAlpha($c1: UnityEngine.Color, $c2: UnityEngine.Color):UnityEngine.Color;
+            
+            public static Compare($v1: UnityEngine.Vector3, $v2: UnityEngine.Vector3, $accuracy: number):boolean;
+            
+            public static Compare($q1: UnityEngine.Quaternion, $q2: UnityEngine.Quaternion, $accuracy: number):boolean;
+            
+        }
+        
+        
+        class TMP_Math extends System.Object{
+            
+            public static FLOAT_MAX: number;
+            public static FLOAT_MIN: number;
+            public static INT_MAX: number;
+            public static INT_MIN: number;
+            public static FLOAT_UNSET: number;
+            public static INT_UNSET: number;
+            public static MAX_16BIT: UnityEngine.Vector2;
+            public static MIN_16BIT: UnityEngine.Vector2;
+            
+            public static Approximately($a: number, $b: number):boolean;
+            
+            public static Mod($a: number, $b: number):number;
+            
+        }
+        
+        
+        class TMP_SpriteInfo extends System.ValueType{
+            
+            public spriteIndex: number;
+            public characterIndex: number;
+            public vertexIndex: number;
+            
+        }
+        
+        
+        class Mesh_Extents extends System.ValueType{
+            
+            public min: UnityEngine.Vector2;
+            public max: UnityEngine.Vector2;
+            
+            public constructor($min: UnityEngine.Vector2, $max: UnityEngine.Vector2);
+            
+            public constructor();
+            
+        }
+        
+        
+        class WordWrapState extends System.ValueType{
+            
+            public previous_WordBreak: number;
+            public total_CharacterCount: number;
+            public visible_CharacterCount: number;
+            public visible_SpriteCount: number;
+            public visible_LinkCount: number;
+            public firstCharacterIndex: number;
+            public firstVisibleCharacterIndex: number;
+            public lastCharacterIndex: number;
+            public lastVisibleCharIndex: number;
+            public lineNumber: number;
+            public maxCapHeight: number;
+            public maxAscender: number;
+            public maxDescender: number;
+            public startOfLineAscender: number;
+            public maxLineAscender: number;
+            public maxLineDescender: number;
+            public pageAscender: number;
+            public horizontalAlignment: TMPro.HorizontalAlignmentOptions;
+            public marginLeft: number;
+            public marginRight: number;
+            public xAdvance: number;
+            public preferredWidth: number;
+            public preferredHeight: number;
+            public previousLineScale: number;
+            public wordCount: number;
+            public fontStyle: TMPro.FontStyles;
+            public italicAngle: number;
+            public fontScale: number;
+            public fontScaleMultiplier: number;
+            public currentFontSize: number;
+            public baselineOffset: number;
+            public lineOffset: number;
+            public isDrivenLineSpacing: boolean;
+            public glyphHorizontalAdvanceAdjustment: number;
+            public cSpace: number;
+            public mSpace: number;
+            public textInfo: TMPro.TMP_TextInfo;
+            public lineInfo: TMPro.TMP_LineInfo;
+            public vertexColor: UnityEngine.Color32;
+            public underlineColor: UnityEngine.Color32;
+            public strikethroughColor: UnityEngine.Color32;
+            public highlightColor: UnityEngine.Color32;
+            public basicStyleStack: TMPro.TMP_FontStyleStack;
+            public italicAngleStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public colorStack: TMPro.TMP_TextProcessingStack$1<UnityEngine.Color32>;
+            public underlineColorStack: TMPro.TMP_TextProcessingStack$1<UnityEngine.Color32>;
+            public strikethroughColorStack: TMPro.TMP_TextProcessingStack$1<UnityEngine.Color32>;
+            public highlightColorStack: TMPro.TMP_TextProcessingStack$1<UnityEngine.Color32>;
+            public highlightStateStack: TMPro.TMP_TextProcessingStack$1<TMPro.HighlightState>;
+            public colorGradientStack: TMPro.TMP_TextProcessingStack$1<TMPro.TMP_ColorGradient>;
+            public sizeStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public indentStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public fontWeightStack: TMPro.TMP_TextProcessingStack$1<TMPro.FontWeight>;
+            public styleStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public baselineStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public actionStack: TMPro.TMP_TextProcessingStack$1<number>;
+            public materialReferenceStack: TMPro.TMP_TextProcessingStack$1<TMPro.MaterialReference>;
+            public lineJustificationStack: TMPro.TMP_TextProcessingStack$1<TMPro.HorizontalAlignmentOptions>;
+            public spriteAnimationID: number;
+            public currentFontAsset: TMPro.TMP_FontAsset;
+            public currentSpriteAsset: TMPro.TMP_SpriteAsset;
+            public currentMaterial: UnityEngine.Material;
+            public currentMaterialIndex: number;
+            public meshExtents: TMPro.Extents;
+            public tagNoParsing: boolean;
+            public isNonBreakingSpace: boolean;
+            
+        }
+        
+        
+        class TMP_TextProcessingStack$1<T> extends System.ValueType{
+            
+            
+        }
+        
+        
+        class TagAttribute extends System.ValueType{
+            
+            public startIndex: number;
+            public length: number;
+            public hashCode: number;
+            
+        }
+        
+        
+        class RichTextTagAttribute extends System.ValueType{
+            
+            public nameHashCode: number;
+            public valueHashCode: number;
+            public valueType: TMPro.TagValueType;
+            public valueStartIndex: number;
+            public valueLength: number;
+            public unitType: TMPro.TagUnitType;
+            
+        }
+        
+        
+        class TextContainer extends UnityEngine.EventSystems.UIBehaviour{
+            
+            public get hasChanged(): boolean;
+            public set hasChanged(value: boolean);
+            
+            public get pivot(): UnityEngine.Vector2;
+            public set pivot(value: UnityEngine.Vector2);
+            
+            public get anchorPosition(): TMPro.TextContainerAnchors;
+            public set anchorPosition(value: TMPro.TextContainerAnchors);
+            
+            public get rect(): UnityEngine.Rect;
+            public set rect(value: UnityEngine.Rect);
+            
+            public get size(): UnityEngine.Vector2;
+            public set size(value: UnityEngine.Vector2);
+            
+            public get width(): number;
+            public set width(value: number);
+            
+            public get height(): number;
+            public set height(value: number);
+            
+            public get isDefaultWidth(): boolean;
+            
+            
+            public get isDefaultHeight(): boolean;
+            
+            
+            public get isAutoFitting(): boolean;
+            public set isAutoFitting(value: boolean);
+            
+            public get corners(): System.Array$1<UnityEngine.Vector3>;
+            
+            
+            public get worldCorners(): System.Array$1<UnityEngine.Vector3>;
+            
+            
+            public get margins(): UnityEngine.Vector4;
+            public set margins(value: UnityEngine.Vector4);
+            
+            public get rectTransform(): UnityEngine.RectTransform;
+            
+            
+            public get textMeshPro(): TMPro.TextMeshPro;
+            
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        enum TextContainerAnchors{ TopLeft = 0, Top = 1, TopRight = 2, Left = 3, Middle = 4, Right = 5, BottomLeft = 6, Bottom = 7, BottomRight = 8, Custom = 9 }
+        
+        
+    }
+    namespace UnityEngine.UI {
+        
+        class MaskableGraphic extends UnityEngine.UI.Graphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
+            
+            
+        }
+        
+        
+        class Graphic extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.UI.ICanvasElement{
+            
+            
+        }
+        
+        
+        interface ICanvasElement{
+            
+            
+        }
+        
+        
+        interface IMaterialModifier{
+            
+            
+        }
+        
+        
+        interface IMaskable{
+            
+            
+        }
+        
+        
+        interface IClippable{
+            
+            
+        }
+        
+        
+        interface ILayoutElement{
+            
+            
+        }
+        
+        
+        enum CanvasUpdate{ Prelayout = 0, Layout = 1, PostLayout = 2, PreRender = 3, LatePreRender = 4, MaxUpdateValue = 5 }
+        
+        
+        class Selectable extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler{
+            
+            
+        }
+        
+        
+        class Image extends UnityEngine.UI.MaskableGraphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.ICanvasRaycastFilter, UnityEngine.UI.ICanvasElement, UnityEngine.ISerializationCallbackReceiver, UnityEngine.UI.ILayoutElement, UnityEngine.UI.IClippable{
+            
+            
+        }
+        
+        
+        class Scrollbar extends UnityEngine.UI.Selectable implements UnityEngine.EventSystems.IInitializePotentialDragHandler, UnityEngine.EventSystems.IDragHandler, UnityEngine.UI.ICanvasElement, UnityEngine.EventSystems.IEventSystemHandler, UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.IMoveHandler, UnityEngine.EventSystems.IBeginDragHandler{
+            
+            
+        }
+        
+        
+    }
+    namespace UnityEngine.EventSystems {
+        
+        class UIBehaviour extends UnityEngine.MonoBehaviour{
+            
+            
+        }
+        
+        
+        interface IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IPointerEnterHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface ISelectHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IPointerExitHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IDeselectHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IPointerDownHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IPointerUpHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IMoveHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface ISubmitHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IPointerClickHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface ICancelHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        class PointerEventData extends UnityEngine.EventSystems.BaseEventData{
+            
+            
+        }
+        
+        
+        class BaseEventData extends UnityEngine.EventSystems.AbstractEventData{
+            
+            
+        }
+        
+        
+        class AbstractEventData extends System.Object{
+            
+            
+        }
+        
+        
+        interface IDragHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IEndDragHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IScrollHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IUpdateSelectedHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IBeginDragHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+        interface IInitializePotentialDragHandler extends UnityEngine.EventSystems.IEventSystemHandler{
+            
+            
+        }
+        
+        
+    }
     namespace FairyGUI.Utils {
         
         class ByteBuffer extends System.Object{
@@ -18157,24 +21245,6 @@ declare module 'csharp' {
             
             
         }
-        
-        
-    }
-    namespace TMPro {
-        
-        class TMP_FontAsset extends TMPro.TMP_Asset{
-            
-            
-        }
-        
-        
-        class TMP_Asset extends UnityEngine.ScriptableObject{
-            
-            
-        }
-        
-        
-        enum FontWeight{ Thin = 100, ExtraLight = 200, Light = 300, Regular = 400, Medium = 500, SemiBold = 600, Bold = 700, Heavy = 800, Black = 900 }
         
         
     }
@@ -18422,6 +21492,60 @@ declare module 'csharp' {
         
         
         enum ConfigKey{ DefaultFont = 0, ButtonSound = 1, ButtonSoundVolumeScale = 2, HorizontalScrollBar = 3, VerticalScrollBar = 4, DefaultScrollStep = 5, DefaultScrollBarDisplay = 6, DefaultScrollTouchEffect = 7, DefaultScrollBounceEffect = 8, TouchScrollSensitivity = 9, WindowModalWaiting = 10, GlobalModalWaiting = 11, PopupMenu = 12, PopupMenu_seperator = 13, LoaderErrorSign = 14, TooltipsWin = 15, DefaultComboBoxVisibleItemCount = 16, TouchDragSensitivity = 17, ClickDragSensitivity = 18, ModalLayerColor = 19, RenderingTextBrighterOnDesktop = 20, AllowSoftnessOnTopOrLeftSide = 21, InputCaretSize = 22, InputHighlightColor = 23, EnhancedTextOutlineEffect = 24, DepthSupportForPaintingMode = 25, RichTextRowVerticalAlign = 26, Branch = 27, PleaseSelect = 100 }
+        
+        
+    }
+    namespace UnityEditor {
+        /** Derive from this class to create an editor window. */
+        class EditorWindow extends UnityEngine.ScriptableObject{
+            
+            
+        }
+        
+        /** Derive from this base class to create a custom inspector or editor for your custom object. */
+        class Editor extends UnityEngine.ScriptableObject implements UnityEditor.IPreviewable, UnityEditor.IToolModeOwner{
+            
+            
+        }
+        
+        
+        interface IPreviewable{
+            
+            
+        }
+        
+        
+        interface IToolModeOwner{
+            
+            
+        }
+        
+        /** Target build platform. */
+        enum BuildTarget{ StandaloneOSX = 2, StandaloneOSXUniversal = 3, StandaloneOSXIntel = 4, StandaloneWindows = 5, WebPlayer = 6, WebPlayerStreamed = 7, iOS = 9, PS3 = 10, XBOX360 = 11, Android = 13, StandaloneLinux = 17, StandaloneWindows64 = 19, WebGL = 20, WSAPlayer = 21, StandaloneLinux64 = 24, StandaloneLinuxUniversal = 25, WP8Player = 26, StandaloneOSXIntel64 = 27, BlackBerry = 28, Tizen = 29, PSP2 = 30, PS4 = 31, PSM = 32, XboxOne = 33, SamsungTV = 34, N3DS = 35, WiiU = 36, tvOS = 37, Switch = 38, Lumin = 39, Stadia = 40, CloudRendering = 41, GameCoreScarlett = 42, GameCoreXboxSeries = 42, GameCoreXboxOne = 43, PS5 = 44, iPhone = -1, BB10 = -1, MetroPlayer = -1, NoTarget = -2 }
+        
+        
+    }
+    namespace UnityEditor.Build {
+        
+        interface IOrderedCallback{
+            
+            
+        }
+        
+        
+        interface IPreprocessBuildWithReport extends UnityEditor.Build.IOrderedCallback{
+            
+            
+        }
+        
+        
+    }
+    namespace UnityEditor.Build.Reporting {
+        /** The BuildReport API gives you information about the Unity build process. */
+        class BuildReport extends UnityEngine.Object{
+            
+            
+        }
         
         
     }
@@ -20932,57 +24056,6 @@ declare module 'csharp' {
         
         
     }
-    namespace UnityEngine.UI {
-        
-        class MaskableGraphic extends UnityEngine.UI.Graphic implements UnityEngine.UI.IMaterialModifier, UnityEngine.UI.IMaskable, UnityEngine.UI.ICanvasElement, UnityEngine.UI.IClippable{
-            
-            
-        }
-        
-        
-        class Graphic extends UnityEngine.EventSystems.UIBehaviour implements UnityEngine.UI.ICanvasElement{
-            
-            
-        }
-        
-        
-        interface ICanvasElement{
-            
-            
-        }
-        
-        
-        interface IMaterialModifier{
-            
-            
-        }
-        
-        
-        interface IMaskable{
-            
-            
-        }
-        
-        
-        interface IClippable{
-            
-            
-        }
-        
-        
-        enum CanvasUpdate{ Prelayout = 0, Layout = 1, PostLayout = 2, PreRender = 3, LatePreRender = 4, MaxUpdateValue = 5 }
-        
-        
-    }
-    namespace UnityEngine.EventSystems {
-        
-        class UIBehaviour extends UnityEngine.MonoBehaviour{
-            
-            
-        }
-        
-        
-    }
     namespace Spine.Unity.SkeletonGraphic {
         
         type SkeletonRendererDelegate = (skeletonGraphic: Spine.Unity.SkeletonGraphic) => void;
@@ -21218,6 +24291,181 @@ declare module 'csharp' {
             public static Equals($objA: any, $objB: any):boolean;
             
         }
+        
+        
+    }
+    namespace UnityEngine.TextCore {
+        /** A Glyph is the visual representation of a text element or character. */
+        class Glyph extends System.Object{
+            
+            
+        }
+        
+        /** A structure that contains information about a given typeface and for a specific point size. */
+        class FaceInfo extends System.ValueType{
+            
+            
+        }
+        
+        /** A set of values that define the size, position and spacing of a glyph when performing text layout. */
+        class GlyphMetrics extends System.ValueType implements System.IEquatable$1<UnityEngine.TextCore.GlyphMetrics>{
+            
+            
+        }
+        
+        /** A rectangle that defines the position of a glyph within an atlas texture. */
+        class GlyphRect extends System.ValueType implements System.IEquatable$1<UnityEngine.TextCore.GlyphRect>{
+            
+            
+        }
+        
+        
+    }
+    namespace TMPro.TMP_DefaultControls {
+        
+        class Resources extends System.ValueType{
+            
+            public standard: UnityEngine.Sprite;
+            public background: UnityEngine.Sprite;
+            public inputField: UnityEngine.Sprite;
+            public knob: UnityEngine.Sprite;
+            public checkmark: UnityEngine.Sprite;
+            public dropdown: UnityEngine.Sprite;
+            public mask: UnityEngine.Sprite;
+            
+        }
+        
+        
+    }
+    namespace TMPro.TMP_Dropdown {
+        
+        class OptionData extends System.Object{
+            
+            public get text(): string;
+            public set text(value: string);
+            
+            public get image(): UnityEngine.Sprite;
+            public set image(value: UnityEngine.Sprite);
+            
+            
+            public constructor();
+            
+            public constructor($text: string);
+            
+            public constructor($image: UnityEngine.Sprite);
+            
+            public constructor($text: string, $image: UnityEngine.Sprite);
+            
+        }
+        
+        
+        class DropdownEvent extends UnityEngine.Events.UnityEvent$1<number> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class OptionDataList extends System.Object{
+            
+            public get options(): System.Collections.Generic.List$1<TMPro.TMP_Dropdown.OptionData>;
+            public set options(value: System.Collections.Generic.List$1<TMPro.TMP_Dropdown.OptionData>);
+            
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace UnityEngine.TextCore.LowLevel {
+        /** The rendering modes used by the Font Engine to render glyphs. */
+        enum GlyphRenderMode{ SMOOTH_HINTED = 4121, SMOOTH = 4117, RASTER_HINTED = 4122, RASTER = 4118, SDF = 4134, SDF8 = 8230, SDF16 = 16422, SDF32 = 32806, SDFAA_HINTED = 4169, SDFAA = 4165 }
+        
+        
+    }
+    namespace TMPro.TMP_InputField {
+        
+        class SubmitEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class SelectionEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class TextSelectionEvent extends UnityEngine.Events.UnityEvent$3<string, number, number> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class OnChangeEvent extends UnityEngine.Events.UnityEvent$1<string> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        class TouchScreenKeyboardEvent extends UnityEngine.Events.UnityEvent$1<UnityEngine.TouchScreenKeyboard.Status> implements UnityEngine.ISerializationCallbackReceiver{
+            
+            
+            public constructor();
+            
+        }
+        
+        
+        type OnValidateInput = (text: string, charIndex: number, addedChar: number) => number;
+        var OnValidateInput: {new (func: (text: string, charIndex: number, addedChar: number) => number): OnValidateInput;}
+        
+        
+        enum ContentType{ Standard = 0, Autocorrected = 1, IntegerNumber = 2, DecimalNumber = 3, Alphanumeric = 4, Name = 5, EmailAddress = 6, Password = 7, Pin = 8, Custom = 9 }
+        
+        
+        enum LineType{ SingleLine = 0, MultiLineSubmit = 1, MultiLineNewline = 2 }
+        
+        
+        enum InputType{ Standard = 0, AutoCorrect = 1, Password = 2 }
+        
+        
+        enum CharacterValidation{ None = 0, Digit = 1, Integer = 2, Decimal = 3, Alphanumeric = 4, Name = 5, Regex = 6, EmailAddress = 7, CustomValidator = 8 }
+        
+        
+    }
+    namespace UnityEngine.TouchScreenKeyboard {
+        
+        enum Status{ Visible = 0, Done = 1, Canceled = 2, LostFocus = 3 }
+        
+        
+    }
+    namespace TMPro.TMP_Settings {
+        
+        class LineBreakingTable extends System.Object{
+            
+            public leadingCharacters: System.Collections.Generic.Dictionary$2<number, number>;
+            public followingCharacters: System.Collections.Generic.Dictionary$2<number, number>;
+            
+            public constructor();
+            
+        }
+        
+        
+    }
+    namespace TMPro.TMP_Compatibility {
+        
+        enum AnchorPositions{ TopLeft = 0, Top = 1, TopRight = 2, Left = 3, Center = 4, Right = 5, BottomLeft = 6, Bottom = 7, BottomRight = 8, BaseLine = 9, None = 10 }
         
         
     }

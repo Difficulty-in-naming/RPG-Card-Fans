@@ -374,10 +374,13 @@ export class SoundMaster{
     ["CARD_POWER_IMPACT", FileHelper.FormatPath("Audio/sound/STS_SFX_Power_v1.ogg")],
     ]);
     
-    public static PlayVoice(key:string,pitchVariation:number){
+    public static PlayVoice(key:string,pitchVariation?:number){
         let sound = this.Map.get(key);
         if(sound){
-            MediaManager.PlayVoice(sound,false,1+ Mathf.RandomRange(-pitchVariation,pitchVariation));
+            if(pitchVariation)
+                MediaManager.PlayVoice(sound,false,1+ Mathf.RandomRange(-pitchVariation,pitchVariation));
+            else
+                MediaManager.PlayVoice(sound,false,1);
         }
     }
     public static PlayVoiceA(key:string,pitchAdjust:number){

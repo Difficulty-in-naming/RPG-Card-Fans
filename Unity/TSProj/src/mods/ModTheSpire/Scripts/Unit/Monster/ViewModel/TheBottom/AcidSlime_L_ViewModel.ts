@@ -15,10 +15,16 @@ import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 import {MakeTempCardInDiscardAction} from "mods/ModTheSpire/Scripts/Action/Common/MakeTempCardInDiscardAction";
 import {Slimed} from "mods/ModTheSpire/Scripts/Cards/Status/Slimed";
+import {HideHealthBarAction} from "mods/ModTheSpire/Scripts/Action/Utility/HideHealthBarAction";
+import {SuicideAction} from "mods/ModTheSpire/Scripts/Action/Common/SuicideAction";
+import {WaitAction} from "mods/ModTheSpire/Scripts/Action/Utility/WaitAction";
+import {SpawnMonsterAction} from "mods/ModTheSpire/Scripts/Action/Common/SpawnMonsterAction";
+import {AcidSlime_M_ViewModel} from "mods/ModTheSpire/Scripts/Unit/Monster/ViewModel/TheBottom/AcidSlime_M_ViewModel";
+import {AcidSlime_M_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_M_Model";
 
 export class AcidSlime_L_ViewModel extends AbstractMonster{
     Initialize() {
-        if(DungeonManager.Inst.AdvanceLevel >= 17) {
+        if(DungeonManager.Inst.AdvanceLevel >= 2) {
             this.DamageInfo.push(new DamageInfo(this,12));
             this.DamageInfo.push(new DamageInfo(this,18));
         }else{
@@ -26,7 +32,7 @@ export class AcidSlime_L_ViewModel extends AbstractMonster{
             this.DamageInfo.push(new DamageInfo(this,16));
         }
         
-        let trackEntry = <Spine.TrackEntry>this.PlayAnimation("Idle",true);
+        let trackEntry = <Spine.TrackEntry>this.SetAnimation("Idle",true);
         trackEntry.TrackTime = trackEntry.TrackEnd * Mathf.Random()
         trackEntry.add_Event(SlimeAnimListener);
     }
@@ -39,33 +45,66 @@ export class AcidSlime_L_ViewModel extends AbstractMonster{
     }
 
     GetMove(num:number) {
-        if(num < 40){
+        if(DungeonManager.Inst.AdvanceLevel >= 17){
+            if(num < 40){
+                if(this.LastTwoMoves(1)){
+                    if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.6){
+                        this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1]});
+                    }else{
+                        this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
+                    }
+                } else {
+                    this.SetMove(1,Intent.ATTACK_DEBUFF, {moveName:"腐蚀喷吐",damage:this.DamageInfo[1]});
+                }
+            }else if(num<70){
+                if(this.LastTwoMoves(2)){
+                    if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.6){
+                        this.SetMove(1,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[0]});
+                    }else{
+                        this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
+                    }
+                } else {
+                    this.SetMove(2,Intent.ATTACK, {damage:this.DamageInfo[1]});
+                }
+            } else if(this.LastMove(4)){
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.4){
+                    this.SetMove(1,Intent.ATTACK_DEBUFF,{moveName:"腐蚀喷吐",damage:this.DamageInfo[1]});
+                }else{
+                    this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1]});
+                }
+            }else{
+                this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
+            }
+        } else if(num < 30){
             if(this.LastTwoMoves(1)){
-                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.6){
-                    this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1].Origin.Damage});
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.5){
+                    this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1]});
                 }else{
                     this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
                 }
-                this.SetMove(1,Intent.ATTACK_DEBUFF, {moveName:"腐蚀喷吐",damage:this.DamageInfo[1].Origin.Damage});
+            } else{
+                this.SetMove(1,Intent.ATTACK_DEBUFF, {moveName:"腐蚀喷吐",damage:this.DamageInfo[1]});
             }
         }else if(num<70){
             if(this.LastTwoMoves(2)){
-                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.6){
-                    this.SetMove(1,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[0].Origin.Damage});
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.4){
+                    this.SetMove(1,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[0]});
                 }else{
                     this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
                 }
-                this.SetMove(2,Intent.ATTACK, {damage:this.DamageInfo[1].Origin.Damage});
+            } else{
+                this.SetMove(2,Intent.ATTACK, {damage:this.DamageInfo[1]});
             }
         } else if(this.LastMove(4)){
             if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.4){
-                this.SetMove(1,Intent.ATTACK_DEBUFF,{moveName:"腐蚀喷吐",damage:this.DamageInfo[1].Origin.Damage});
+                this.SetMove(1,Intent.ATTACK_DEBUFF,{moveName:"腐蚀喷吐",damage:this.DamageInfo[1]});
             }else{
-                this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1].Origin.Damage});
+                this.SetMove(2,Intent.ATTACK,{damage:this.DamageInfo[1]});
             }
         }else{
             this.SetMove(4,Intent.DEBUFF,{moveName:"舔舔"});
         }
+        
     }
 
     TakeTurn() {
@@ -93,7 +132,13 @@ export class AcidSlime_L_ViewModel extends AbstractMonster{
             }
             case 4:{
                 this.AddToBot(new AnimateSlowAttackAction(this));
-                
+                this.AddToBot(new HideHealthBarAction());
+                this.AddToBot(new SuicideAction(this,false));
+                this.AddToBot(new WaitAction(1000));
+                this.AddToBot(new SFXAction("SLIME_SPLIT"));
+                this.AddToBot(new SpawnMonsterAction(new AcidSlime_M_ViewModel(new AcidSlime_M_Model(this.X-134,this.Y + Mathf.RandomRange(-4,4))),false));
+                this.AddToBot(new SpawnMonsterAction(new AcidSlime_M_ViewModel(new AcidSlime_M_Model(this.X+134,this.Y + Mathf.RandomRange(-4,4))),false));
+                this.SetMove(3,Intent.UNKNOWN,{moveName:"分裂"});
             }
         }
     }

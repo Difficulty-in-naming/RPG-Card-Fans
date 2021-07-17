@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="363,48">
+  <displayList>
+    <image id="n12_myaq" name="n12" src="myaq28" fileName="Texture/moveNameBg.png" xy="0,0" size="363,48" alpha="0" color="#000000"/>
+    <text id="n13_myaq" name="n13" xy="122,9" pivot="0.5,0.5" size="142,33" alpha="0" font="ui://rduitwm2kefb3" fontSize="23" color="#ffffff" align="center" vAlign="middle" strokeColor="#3f3f3f" strokeSize="0.2" shadowColor="#666666" shadowOffset="0.7,0.7" faceDilate="0.15" autoClearText="true" text="早餐厅第一关"/>
+  </displayList>
+  <transition name="Enter">
+    <item time="0" type="Alpha" target="n12_myaq" tween="true" startValue="0" endValue="0.5" duration="24" ease="Expo.Out"/>
+    <item time="0" type="Alpha" target="n13_myaq" tween="true" startValue="0" endValue="1" duration="12" ease="Expo.Out"/>
+    <item time="0" type="XY" tween="true" startValue="0,0" endValue="-,42" duration="12" ease="Expo.Out"/>
+  </transition>
+</component>

@@ -76,7 +76,6 @@ class TitleCloud{
         }
         this.Loader.SetPosition(this.X,this.Y,0);
     }
-    
     public Dispose(){
         this.Loader.Dispose();
     }

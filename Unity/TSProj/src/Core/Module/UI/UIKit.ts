@@ -1,4 +1,4 @@
-﻿import {FairyGUI,UnityEngine,System,Panthea} from 'csharp'
+﻿import {FairyGUI,UnityEngine,System,Panthea, TMPro} from 'csharp'
 import IOHelper from "../../Utils/IOHelper";
 
 export namespace UI {
@@ -39,7 +39,7 @@ export namespace UI {
             //暂时屏蔽TMP
             let font = new FairyGUI.TMPFont();
             font.name = "MTSFont-Bold"; //这个名字要和编辑器里字体资源的名字一致
-            font.fontAsset = UnityEngine.Resources.Load("Fonts/SourceHanSansHWSC-Bold-TMP");
+            font.fontAsset = <TMPro.TMP_FontAsset>UnityEngine.Resources.Load("Fonts/SourceHanSansHWSC-Bold-TMP");
             FairyGUI.FontManager.RegisterFont(font, "MTSFont-Bold");
             let files = IOHelper.GetFiles(UnityEngine.Application.persistentDataPath, "*_fui.bytes", System.IO.SearchOption.AllDirectories);
             files.forEach(value => {

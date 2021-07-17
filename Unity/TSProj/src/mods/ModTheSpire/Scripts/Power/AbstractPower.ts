@@ -16,6 +16,10 @@ import {OnDamageMessage} from "mods/ModTheSpire/Scripts/Events/OnDamageMessage";
 import {OnFinalDamageMessage} from "mods/ModTheSpire/Scripts/Events/OnFinalDamageMessage";
 import {CalcFinalDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcFinalDamageValueMessage";
 import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
+import {OnDeathMessage} from "mods/ModTheSpire/Scripts/Events/OnDeathMessage";
+import {CalcHurtValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcHurtValueMessage";
+import {CalcFinalHurtValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcFinalHurtValueMessage";
+import {PreApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PreApplyPowerMessage";
 
 export abstract class AbstractPower {
 
@@ -61,6 +65,9 @@ export abstract class AbstractPower {
         DungeonManager.MessageManager.Add(OnDamageMessage.Id,this.OnDamage);
         DungeonManager.MessageManager.Add(OnFinalDamageMessage.Id,this.OnFinalDamage);
         DungeonManager.MessageManager.Add(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
+        DungeonManager.MessageManager.Add(CalcHurtValueMessage.Id,this.CalcHurtValue);
+        DungeonManager.MessageManager.Add(CalcFinalHurtValueMessage.Id,this.CalcFinalHurtValue);
+        DungeonManager.MessageManager.Add(OnDeathMessage.Id,this.OnDeath);
     }
     
     //重载该方法需要调用super.OnRemove();
@@ -72,8 +79,13 @@ export abstract class AbstractPower {
         DungeonManager.MessageManager.Remove(AtStartOfTurnMessage.Id,this.AtStartOfTurn);
         DungeonManager.MessageManager.Remove(CalcDamageValueMessage.Id,this.CalcDamageValue);
         DungeonManager.MessageManager.Remove(OnDamageMessage.Id,this.OnDamage);
-        DungeonManager.MessageManager.Add(OnFinalDamageMessage.Id,this.OnFinalDamage);
-        DungeonManager.MessageManager.Add(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
+        DungeonManager.MessageManager.Remove(OnFinalDamageMessage.Id,this.OnFinalDamage);
+        DungeonManager.MessageManager.Remove(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
+        DungeonManager.MessageManager.Remove(OnFinalDamageMessage.Id,this.OnFinalDamage);
+        DungeonManager.MessageManager.Remove(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
+        DungeonManager.MessageManager.Remove(CalcHurtValueMessage.Id,this.CalcHurtValue);
+        DungeonManager.MessageManager.Remove(CalcFinalHurtValueMessage.Id,this.CalcFinalHurtValue);
+        DungeonManager.MessageManager.Remove(OnDeathMessage.Id,this.OnDeath);
     }
     
     public PlayApplyPowerSfx(){}
@@ -83,6 +95,10 @@ export abstract class AbstractPower {
         EffectKit.Inst().Play(new GainPowerEffect(this,silent));
         EffectKit.Inst().Play(new FlashPowerEffect(this));
     }
+    //该方法仅用于计算伤害.最终伤害由OnHurt结算.
+    protected CalcHurtValue(msg:CalcDamageValueMessage){}
+    //该方法仅用于计算伤害.最终伤害由OnHurt结算.
+    protected CalcFinalHurtValue(msg:CalcDamageValueMessage){}
     //当玩家受到伤害之前
     protected OnHurtBefore(msg:OnHurtBefore){}
     //当玩家受到伤害时
@@ -92,7 +108,7 @@ export abstract class AbstractPower {
     //该方法仅用于计算伤害.最终伤害由OnDamage结算.
     protected CalcDamageValue(msg:CalcDamageValueMessage){}
     //该方法仅用于计算伤害.最终伤害由OnDamage结算.
-    protected CalcFinalDamageValue(msg:CalcDamageValueMessage){}
+    protected CalcFinalDamageValue(msg:CalcFinalDamageValueMessage){}
     //计算最终伤害
     protected OnDamage(msg:OnDamageMessage){}
     //计算最终伤害
@@ -101,6 +117,8 @@ export abstract class AbstractPower {
     protected AtEndOfTurn(msg:AtEndOfTurnMessage){}
     //回合开始时
     protected AtStartOfTurn(msg:AtStartOfTurnMessage){}
+    //死亡时
+    protected OnDeath(msg:OnDeathMessage){}
     protected OnModified(before:number,after:number){
         if(after == 0){
             this.AddToBot(new RemoveSpecificPowerAction(this.Owner,this.Owner,this));

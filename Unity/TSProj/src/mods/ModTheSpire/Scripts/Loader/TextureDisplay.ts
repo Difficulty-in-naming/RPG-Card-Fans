@@ -17,7 +17,7 @@ export class TextureDisplay implements IDisplay {
     Dispose() {
     }
 
-    PlayAnimation(animation: string) {
+    SetAnimation(animation: string) {
     }
 
     SetParent(object: any) {
