@@ -9,6 +9,15 @@
     <component id="st1o4" name="PowerDebuffEffect.xml" path="/Combat/" exported="true"/>
     <image id="guw12t" name="speechBubble2.png" path="/Texture/" exported="true" scale9grid="0,0,-159,-262"/>
     <component id="guw12u" name="SpeechBubble.xml" path="/Combat/" exported="true"/>
+    <component id="eelv2v" name="BiteEffect.xml" path="/Combat/" exported="true"/>
+    <image id="eelv2w" name="biteTop.png" path="/Texture/"/>
+    <image id="eelv2x" name="biteBot.png" path="/Texture/"/>
+    <image id="eelv2y" name="web.png" path="/Texture/"/>
+    <component id="eelv2z" name="WebParticleEffect.xml" path="/Combat/" exported="true"/>
+    <component id="eelv30" name="EntangleEffect.xml" path="/Combat/" exported="true"/>
+    <image id="eelv31" name="borderGlow2.png" path="/Texture/"/>
+    <component id="eelv32" name="BorderFlashEffect.xml" path="/Combat/" exported="true"/>
+    <component id="eelv33" name="MegaSpeechBubble.xml" path="/Combat/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

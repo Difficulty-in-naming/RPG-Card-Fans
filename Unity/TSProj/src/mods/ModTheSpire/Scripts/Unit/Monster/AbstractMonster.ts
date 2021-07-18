@@ -4,7 +4,7 @@ import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
 import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
 import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {OnPreBattleAction} from "mods/ModTheSpire/Scripts/Events/OnPreBattleAction";
+import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
 import * as TWEEN from "Core/Module/Tween";
 import {RoomPhase} from "mods/ModTheSpire/Scripts/Room/AbstractRoom";
 
@@ -69,5 +69,5 @@ export abstract class AbstractMonster extends AbstractCreature
                 DungeonManager.Inst.CurrentRoom.End();
         });
     }
-    PreBattleAction(msg:OnPreBattleAction){};
+    PreBattleAction(msg:OnPreBattleMessage){};
 }

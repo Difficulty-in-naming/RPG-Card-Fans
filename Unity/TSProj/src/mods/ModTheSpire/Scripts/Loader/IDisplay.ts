@@ -1,5 +1,6 @@
 ﻿import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
 import { FairyGUI } from "csharp";
+import {Rect} from "Core/Define/Rect";
 
 export interface IDisplay{
     X:number;
@@ -17,9 +18,11 @@ export interface IDisplay{
     FlipX:boolean;
     FlipY:boolean;
     Dispose();
+    SetHitBox(rect:Rect);
+    GetHitBox():Rect;
     SetParent(object:any);
-    SetAnimation(animation:string, loop?:boolean,delay?:number) : any;
-    AddAnimation(animation:string, loop?:boolean):any;
+    SetAnimation(animation:string, loop?:boolean) : any;
+    AddAnimation(animation:string, loop?:boolean,delay?:number):any;
     PlayFastAttack();
     PlaySlowAttack();
     PlayHop();

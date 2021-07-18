@@ -29,4 +29,7 @@ export class CombatRoom extends AbstractRoom
         let combat = UI_Combat.CreatePanel();
     }
 
+    End() {
+    }
+
 }

@@ -20,6 +20,6 @@ export class BlueSlaver_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("奴隶贩子");
+        return "蓝色奴隶贩子";
     }
 }

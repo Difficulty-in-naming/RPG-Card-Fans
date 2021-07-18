@@ -19,6 +19,6 @@ export class GremlinFat_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return GremlinFat_Model.Id;
+        return "胖地精";
     }
 }

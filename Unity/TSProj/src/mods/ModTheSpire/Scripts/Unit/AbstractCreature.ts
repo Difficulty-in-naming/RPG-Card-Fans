@@ -7,6 +7,7 @@ import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {PowerRemovedMessage} from "mods/ModTheSpire/Scripts/Events/PowerRemovedMessage";
 import {PreModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PreModifyBlockMessage";
 import {PostModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PostModifyBlockMessage";
+import {Rect} from "Core/Define/Rect";
 export default abstract class AbstractCreature{
     //最大生命值
     private _MaxHealth: number;
@@ -91,6 +92,8 @@ export default abstract class AbstractCreature{
     public get NameComponent(){return this.DisplayObject.UnitComponent.GetChild("DisplayName");}
     public SetAnimation(animation:string, loop?:boolean):any{this.DisplayObject.SetAnimation(animation, loop)}
     public AddAnimation(animation:string, loop?:boolean,delay?:number):any{this.DisplayObject.AddAnimation(animation, loop,delay)}
+    public SetHitBox(rect:Rect){this.DisplayObject.SetHitBox(rect);}
+    public GetHitBox():Rect{return this.DisplayObject.GetHitBox()}
     public PlayFastAttack(){this.DisplayObject.PlayFastAttack();}
     public PlaySlowAttack(){this.DisplayObject.PlaySlowAttack();}
     public PlayHop(){this.DisplayObject.PlayHop();}

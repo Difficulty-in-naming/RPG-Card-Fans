@@ -9,7 +9,7 @@ export class Defend extends AbstractCard
 {
     Color: CardColor = CardColor.RED;
     Desc: string = LocalizationProperty.Read("防御描述");
-    Icon: string = FileHelper.FormatPath("cards/red/attack/defend");
+    Icon: string = FileHelper.FormatPath("cards/red/attack/defend.png");
     Name: string = LocalizationProperty.Read("防御");
     Rarity: CardRarity = CardRarity.BASIC;
     Target: CardTarget = CardTarget.SELF;

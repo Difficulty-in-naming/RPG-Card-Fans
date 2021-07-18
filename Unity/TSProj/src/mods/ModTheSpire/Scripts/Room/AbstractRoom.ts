@@ -15,4 +15,5 @@ export abstract class AbstractRoom{
     abstract Phase:RoomPhase;
     abstract Enter();
     abstract End();
+    public AddReward(reward:any){}
 }

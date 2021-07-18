@@ -17,7 +17,7 @@ export class AngerPower extends AbstractPower{
     }
 
     GetDescription(...args: any[]): string {
-        return StringHelper.FormatColorString(LocalizationProperty.Read("能力-激怒")).format(this.Amount);
+        return StringHelper.FormatColorString(LocalizationProperty.Read("能力-激怒描述")).format(this.Amount);
     }
     
     OnInit() {

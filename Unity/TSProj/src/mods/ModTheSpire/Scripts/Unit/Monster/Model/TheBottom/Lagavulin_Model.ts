@@ -4,21 +4,22 @@ import {SpineLoader} from "mods/ModTheSpire/Scripts/Loader/SpineLoader";
 import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
+import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
 
-export class SpikeSlime_L extends MonsterInfo{
-    public static Id = "SpikeSlime_L"
+export class Lagavulin_Model extends MonsterInfo{
+    public static Id = "Lagavulin"
 
     get MaxHealth(): number {
         if(DungeonManager.Inst.AdvanceLevel >= 7)
-            return Mathf.RandomRange(67, 73);
+            return Mathf.RandomRange(112, 115);
         else
-            return Mathf.RandomRange(64, 70);
+            return Mathf.RandomRange(109, 111);
     }
     get Loader(): ILoader {
-        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.png"));
+        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/lagavulin/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/lagavulin/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/lagavulin/skeleton.png"));
     }
 
     get Name(): string {
-        return SpikeSlime_L.Id;
+        return "乐加维林";
     }
 }

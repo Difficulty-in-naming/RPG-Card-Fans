@@ -12,7 +12,7 @@ import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
 import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
 import {AngerPower} from "mods/ModTheSpire/Scripts/Power/AngerPower";
 import {VulnerablePower} from "mods/ModTheSpire/Scripts/Power/VulnerablePower";
-import {OnPreBattleAction} from "mods/ModTheSpire/Scripts/Events/OnPreBattleAction";
+import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
 import {SetMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/SetMoveAction";
 import {SpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/SpeechBubble";
 import {EscapeAction} from "mods/ModTheSpire/Scripts/Action/Common/EscapeAction";
@@ -28,7 +28,7 @@ export class GremlinWarrior_ViewModel extends AbstractMonster{
         trackEntry.TrackTime = trackEntry.TrackEnd * Mathf.Random()
     }
 
-    PreBattleAction(msg: OnPreBattleAction) {
+    PreBattleAction(msg: OnPreBattleMessage) {
         super.PreBattleAction(msg);
         if(DungeonManager.Inst.AdvanceLevel >= 17)
             this.AddToBot(new ApplyPowerAction(this,this,new AngerPower(),2))

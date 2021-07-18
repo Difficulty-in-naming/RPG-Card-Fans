@@ -20,6 +20,6 @@ export class GremlinWizard_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("地精法师");
+        return "地精法师";
     }
 }

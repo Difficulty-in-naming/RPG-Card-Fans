@@ -9,6 +9,9 @@ import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 import {PoisonLoseHpAction} from "mods/ModTheSpire/Scripts/Action/Unique/PoisonLoseHpAction";
 import {AtStartOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtStartOfTurnMessage";
+import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
+import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
+import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
 
 export class PoisonPower extends AbstractPower{
     public static PowerID = "Poison";
@@ -41,5 +44,15 @@ export class PoisonPower extends AbstractPower{
             this.Flash(true);
             this.AddToBot(new PoisonLoseHpAction(this.Owner,this.Source,this.Amount,AttackEffect.POISON));
         }
+    }
+
+    protected AtEndOfTurn(msg: AtEndOfTurnMessage) {
+        super.AtEndOfTurn(msg);
+        if(this.Amount == 0){
+            this.AddToBot(new RemoveSpecificPowerAction(this.Owner,this.Owner,this));
+        }else{
+            this.AddToBot(new ReducePowerAction(this.Owner,this.Owner,this,1));
+        }
+        return;
     }
 }

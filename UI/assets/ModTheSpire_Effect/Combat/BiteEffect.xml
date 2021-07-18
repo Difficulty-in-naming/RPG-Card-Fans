@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="238,280">
+  <displayList>
+    <image id="n0_eelv" name="Top" src="eelv2w" fileName="Texture/biteTop.png" xy="0,0" blend="add"/>
+    <image id="n1_eelv" name="Bot" src="eelv2x" fileName="Texture/biteBot.png" xy="18,175" blend="add"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n0_eelv" tween="true" startValue="0" endValue="1" duration="12" ease="Sine.InOut"/>
+    <item time="0" type="Alpha" target="n1_eelv" tween="true" startValue="0" endValue="1" duration="12" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n0_eelv" tween="true" startValue="-,-0.5" endValue="-,34.5" duration="12" ease="Bounce.Out"/>
+    <item time="0" type="XY" target="n1_eelv" tween="true" startValue="-,175.5" endValue="-,140.5" duration="12" ease="Bounce.Out"/>
+    <item time="12" type="Alpha" target="n0_eelv" tween="true" startValue="1" endValue="0" duration="12" ease="Sine.InOut"/>
+    <item time="12" type="Alpha" target="n1_eelv" tween="true" startValue="1" endValue="0" duration="12" ease="Sine.InOut"/>
+    <item time="12" type="XY" target="n0_eelv" tween="true" startValue="-,34.5" endValue="-,0" duration="12" ease="Sine.InOut"/>
+    <item time="12" type="XY" target="n1_eelv" tween="true" startValue="-,140.5" endValue="-,175" duration="12" ease="Sine.InOut"/>
+  </transition>
+</component>

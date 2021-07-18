@@ -44,5 +44,13 @@ export class TextureDisplay implements IDisplay {
     PlayStagger() {
     }
 
+    FlipX: boolean;
+    FlipY: boolean;
+    HealthComponent: any;
+    UnitComponent: any;
+
+    AddAnimation(animation: string, loop?: boolean): any {
+    }
+
     
 }

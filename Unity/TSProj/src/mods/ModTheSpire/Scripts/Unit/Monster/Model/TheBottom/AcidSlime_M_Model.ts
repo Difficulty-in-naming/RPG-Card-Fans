@@ -20,6 +20,6 @@ export class AcidSlime_M_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("酸液史莱姆（中）");
+        return "酸液史莱姆（中）";
     }
 }

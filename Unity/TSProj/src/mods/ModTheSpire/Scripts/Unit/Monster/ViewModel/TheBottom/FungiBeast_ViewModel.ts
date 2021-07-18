@@ -10,7 +10,7 @@ import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
 import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {OnPreBattleAction} from "mods/ModTheSpire/Scripts/Events/OnPreBattleAction";
+import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
 import {SporeCloudPower} from "mods/ModTheSpire/Scripts/Power/SporeCloudPower";
 import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
 import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
@@ -35,7 +35,7 @@ export class Cultist_ViewModel extends AbstractMonster{
     }
 
 
-    PreBattleAction(msg: OnPreBattleAction) {
+    PreBattleAction(msg: OnPreBattleMessage) {
         super.PreBattleAction(msg);
         this.AddToBot(new ApplyPowerAction(this,this,new SporeCloudPower(2)))
     }

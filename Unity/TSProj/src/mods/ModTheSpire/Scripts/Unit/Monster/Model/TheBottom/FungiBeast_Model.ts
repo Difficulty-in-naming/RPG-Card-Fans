@@ -20,6 +20,6 @@ export class FungiBeast_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("真菌兽");
+        return "真菌兽";
     }
 }

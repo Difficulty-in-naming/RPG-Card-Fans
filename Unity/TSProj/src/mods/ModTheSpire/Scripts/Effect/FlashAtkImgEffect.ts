@@ -24,38 +24,38 @@ export class FlashAtkImgEffect extends AbstractEffect{
     private LoadImage() {
         switch (this.Effect) {
             case AttackEffect.SLASH_DIAGONAL: {
-                return "Vfx/attack/slash_light";
+                return "Vfx/attack/slash_light.png";
             }
             case AttackEffect.SLASH_HEAVY: {
-                return "Vfx/attack/slash_heavy";
+                return "Vfx/attack/slash_heavy.png";
             }
             case AttackEffect.SLASH_HORIZONTAL: {
-                return "Vfx/attack/slash_horizontal";
+                return "Vfx/attack/slash_horizontal.png";
             }
             case AttackEffect.SLASH_VERTICAL: {
-                return "Vfx/attack/slash_vertical";
+                return "Vfx/attack/slash_vertical.png";
             }
             case AttackEffect.BLUNT_LIGHT: {
-                return "Vfx/attack/blunt_light";
+                return "Vfx/attack/blunt_light.png";
             }
             case AttackEffect.BLUNT_HEAVY: {
                 this.Loader.rotation = Mathf.RandomRange(0,360.0);
-                return "Vfx/attack/blunt_heavy";
+                return "Vfx/attack/blunt_heavy.png";
             }
             case AttackEffect.FIRE: {
-                return "Vfx/attack/fire";
+                return "Vfx/attack/fire.png";
             }
             case AttackEffect.POISON: {
-                return "Vfx/attack/poison";
+                return "Vfx/attack/poison.png";
             }
             case AttackEffect.SHIELD: {
-                return "Vfx/attack/shield";
+                return "Vfx/attack/shield.png";
             }
             case AttackEffect.NONE: {
                 return null;
             }
         }
-        return "Vfx/attack/slash_light";
+        return "Vfx/attack/slash_light.png";
     }
 
     private PlaySound() {

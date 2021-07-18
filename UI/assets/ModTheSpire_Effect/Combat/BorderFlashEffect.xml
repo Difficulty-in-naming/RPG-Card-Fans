@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_eelv" name="n0" src="eelv31" fileName="Texture/borderGlow2.png" xy="0,0" size="1920,1080" alpha="0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" target="n0_eelv" tween="true" startValue="0" endValue="1" duration="6" ease="Sine.InOut"/>
+    <item time="6" type="Alpha" target="n0_eelv" tween="true" startValue="1" endValue="0" duration="54"/>
+  </transition>
+</component>

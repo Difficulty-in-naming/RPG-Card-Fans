@@ -4,6 +4,7 @@ import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
 import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
 import {View_UnitWrap} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Combat";
 import {ViewComponent_HealthBar} from "mods/ModTheSpire/Scripts/UI/ViewComponent/ViewComponent_HealthBar";
+import {Rect} from "Core/Define/Rect";
 
 export class SpineCharacterDisplay implements IDisplay{
     get FlipX(): boolean {
@@ -110,7 +111,6 @@ export class SpineCharacterDisplay implements IDisplay{
     private readonly _Self: Spine.Unity.SkeletonAnimation;
     UnitComponent:FairyGUI.GComponent;
     HealthComponent: ViewComponent_HealthBar;
-    PowerListComponent: any;
     private readonly _Wrap : FairyGUI.GoWrapper;
     private readonly _CacheGameObject:UnityEngine.GameObject;
     private readonly _CacheTransform:UnityEngine.Transform;
@@ -135,7 +135,7 @@ export class SpineCharacterDisplay implements IDisplay{
         this.Color = Color.White;
     }
 
-    AddAnimation(animation: string, loop?: boolean,delay?:number) {
+    AddAnimation(animation: string, loop: boolean = false,delay:number = 0) {
         this._Self.AnimationState.AddAnimation(0,animation,loop,delay);
     }
 
@@ -211,5 +211,20 @@ export class SpineCharacterDisplay implements IDisplay{
             if(!transition.playing)
                 transition.Play();
         }
+    }
+
+    SetHitBox(rect:Rect) {
+        if(rect.X)
+            this.Bounds.x = rect.X;
+        if(rect.Y)
+            this.Bounds.y = rect.Y;
+        if(rect.Width)
+            this.Bounds.width = rect.Width;
+        if(rect.Height)
+            this.Bounds.height = rect.Height;
+    }
+
+    GetHitBox():Rect{
+        return new Rect(this.Bounds.x,this.Bounds.y,this.Bounds.width,this.Bounds.height);
     }
 }

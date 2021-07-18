@@ -11,6 +11,7 @@ import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
 import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
 import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
+import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
 
 export class BlueSlaver_ViewModel extends AbstractMonster{
     Initialize() {
@@ -32,13 +33,13 @@ export class BlueSlaver_ViewModel extends AbstractMonster{
         }
         if(DungeonManager.Inst.AdvanceLevel >= 17){
             if(this.LastMove(4)){
-                this.SetMove(4,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[1],moveName:"耙伤"});
+                this.SetMove(4,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[1],moveName:LocalizationProperty.Read(this.Info.Name + "行动1")});
             }else{
                 this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
             }
         }else{
             if(!this.LastMove(4)){
-                this.SetMove(4,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[1],moveName:"耙伤"});
+                this.SetMove(4,Intent.ATTACK_DEBUFF,{damage:this.DamageInfo[1],moveName:LocalizationProperty.Read(this.Info.Name + "行动1")});
             }
             this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
         }

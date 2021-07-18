@@ -3,25 +3,17 @@ import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
 import AbstractCreature from "../../Unit/AbstractCreature";
 import Async from "Core/Async";
 import EffectKit, {EffectOrder} from "mods/ModTheSpire/Scripts/Effect/EffectKit";
+import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 
 export default class VFXAction extends AbstractGameAction
 {
-    private readonly Target: AbstractCreature;
-    private readonly Effect : AbstractEffect
-    private readonly dur : number;
-    //target:目标,damageInfo:伤害数据,effect:伤害特效
-    constructor(target: AbstractCreature, effect: AbstractEffect, duration:number, order = EffectOrder.MID)
-    {
+    constructor(private Effect: AbstractEffect, private Interval:number = 0,private Order = EffectOrder.MID) {
         super();
-        this.Target = target;
-        this.Effect = effect;
-        this.dur = duration;
-        this.Effect.order = order;
     }
 
     async Update(): Promise<boolean> {
-        EffectKit.Inst().Play(this.Effect);
-        await Async.Delay(this.dur);
+        DungeonManager.EffectManager.Play(this.Effect);
+        await Async.Delay(this.Interval);
         return true;
     }
 }

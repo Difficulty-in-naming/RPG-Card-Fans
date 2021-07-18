@@ -20,6 +20,6 @@ export class GremlinNob_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("地精大块头");
+        return "地精大块头";
     }
 }

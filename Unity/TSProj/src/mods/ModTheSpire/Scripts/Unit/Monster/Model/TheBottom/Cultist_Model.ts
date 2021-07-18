@@ -20,6 +20,6 @@ export class Cultist_Model extends MonsterInfo{
     }
     
     get Name(): string {
-        return LocalizationProperty.Read("异教徒");
+        return "异教徒";
     }
 }

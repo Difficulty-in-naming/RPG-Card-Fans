@@ -3,37 +3,42 @@ import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
 import {Mathf} from "Core/Module/Math/Mathf";
 import {Spine} from "csharp";
 import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
 import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
 import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
 import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
-import {FrailPower} from "mods/ModTheSpire/Scripts/Power/FrailPower";
-import {SetMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/SetMoveAction";
-import {SpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/SpeechBubble";
-import {EscapeAction} from "mods/ModTheSpire/Scripts/Action/Common/EscapeAction";
+import {SetAnimationAction} from "mods/ModTheSpire/Scripts/Action/Animations/SetAnimationAction";
+import VFXAction from "mods/ModTheSpire/Scripts/Action/Animations/VFXAction";
+import {BiteEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BiteEffect";
+import {ShakeDur, ShakeIntensity} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
+import {ShakeScreenAction} from "mods/ModTheSpire/Scripts/Action/Animations/ShakeScreenAction";
+import {WaitAction} from "mods/ModTheSpire/Scripts/Action/Utility/WaitAction";
+import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
+import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
+import GainBlockAction from "mods/ModTheSpire/Scripts/Action/Common/GainBlockAction";
+import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
 
 export class GremlinFat_ViewModel extends AbstractMonster{
     private StrAmount:number;
     private BlockAmount:number;
+    private BlockAmount2:number;
     Initialize() {
         if(DungeonManager.Inst.AdvanceLevel >= 17) {
             this.StrAmount = 5;
             this.BlockAmount = 9;
+            this.BlockAmount2 = 5;
         } else if(DungeonManager.Inst.AdvanceLevel >= 2) {
             this.StrAmount = 4;
             this.BlockAmount = 6;
+            this.BlockAmount2 = 5;
             this.DamageInfo.push(new DamageInfo(this,12));
             this.DamageInfo.push(new DamageInfo(this,7));
             this.DamageInfo.push(new DamageInfo(this,5));
         }else{
             this.StrAmount = 3;
             this.BlockAmount = 6;
+            this.BlockAmount2 = 5;
             this.DamageInfo.push(new DamageInfo(this,11));
             this.DamageInfo.push(new DamageInfo(this,7));
             this.DamageInfo.push(new DamageInfo(this,5));
@@ -43,55 +48,70 @@ export class GremlinFat_ViewModel extends AbstractMonster{
     }
 
     GetMove(num: number) {
-        this.SetMove(2,Intent.ATTACK_DEBUFF,{moveName:LocalizationProperty.Read(this.Info.Name + "行动1")})
+        if(DungeonManager.Inst.CurrentRoom.Round == 1){
+            this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
+            return;
+        }
+        if(num < 25){
+            if(this.LastMove(1)){
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.5625)
+                    this.SetMove(2,Intent.DEFEND_BUFF);
+                else
+                    this.SetMove(3,Intent.ATTACK_DEFEND,{damage:this.DamageInfo[1]});                 
+            } else {
+                this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
+            }
+        } else if(num<55){
+            if(this.LastTwoMoves(3)){
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.357)
+                    this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
+                else
+                    this.SetMove(2,Intent.DEFEND_BUFF);
+            } else {
+                this.SetMove(3,Intent.ATTACK_DEFEND,{damage:this.DamageInfo[1]});
+            }
+        } else if(this.LastMove(2)){
+            if(this.LastTwoMoves(3)){
+                if(Mathf.Random(DungeonManager.Inst.CurrentDungeon.AIRng) < 0.357)
+                    this.SetMove(1,Intent.ATTACK,{damage:this.DamageInfo[0]})
+                else
+                    this.SetMove(3,Intent.ATTACK_DEFEND,{damage:this.DamageInfo[1]});
+            }
+        }else {
+            this.SetMove(2,Intent.DEFEND_BUFF);
+        }
+        
     }
 
     TakeTurn() {
         switch(this.MoveIndex){
             case 1:{
-                this.AddToBot(new SetAnimation);
+                this.AddToBot(new SetAnimationAction(this,"chomp"));
+                this.AddToBot(new VFXAction(new BiteEffect(DungeonManager.Inst.Player.X,DungeonManager.Inst.Player.Y),0.3));
+                this.AddToBot(new DamageAction(DungeonManager.Inst.Player,this.DamageInfo[0],AttackEffect.NONE));
+                break;
+            }
+            case 2:{
+                this.AddToBot(new SetAnimationAction(this,"tailslam"));
+                this.AddToBot(new SFXAction("MONSTER_JAW_WORM_BELLOW"));
+                this.AddToBot(new ShakeScreenAction(0.2,ShakeIntensity.MED, ShakeDur.SHORT));
+                this.AddToBot(new WaitAction(0.5));
+                this.AddToBot(new ApplyPowerAction(this,this,new StrengthPower(),2));
+                this.AddToBot(new GainBlockAction(this,this.BlockAmount));
+                break;
+            }
+            case 3:{
+                this.AddToBot(new DoFuncAction(()=>this.PlayHop(),0.25));
                 this.AddToBot(new DamageAction(DungeonManager.Inst.Player,this.DamageInfo[0],AttackEffect.BLUNT_LIGHT));
-                this.AddToBot(new ApplyPowerAction(DungeonManager.Inst.Player,this,new WeakPower(),1));
-                if(DungeonManager.Inst.AdvanceLevel >= 17){
-                    this.AddToBot(new ApplyPowerAction(DungeonManager.Inst.Player,this,new FrailPower(),1));
-                }
-                this.AddToBot(new RollMoveAction(this));
-                break;
-            }
-            case 99:{
-                this.PlaySfx()
-                DungeonManager.EffectManager.Play(new SpeechBubble(this.X - 100,this.Y + 50,LocalizationProperty.Read(this.Info.Name + "对话1"),2.5,true));
-                this.AddToBot(new EscapeAction(this));
-                this.AddToBot(new SetMoveAction(this,99,Intent.ESCAPE));
+                this.AddToBot(new GainBlockAction(this,this.BlockAmount2));
                 break;
             }
         }
-    }
-
-    private PlaySfx(){
-        let roll = Mathf.Floor(Mathf.RandomRange(0,3));
-        if(roll == 0){
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_1A"));
-        } else if(roll == 1){
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_1B"));
-        } else {
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_1C"));
-        }
-    }
-
-    private PlayDeathSfx(){
-        let roll = Mathf.Floor(Mathf.RandomRange(0,3));
-        if(roll == 0){
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_2A"));
-        } else if(roll == 1){
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_2B"));
-        } else {
-            this.AddToBot(new SFXAction("VO_GREMLINFAT_2C"));
-        }
+        this.AddToBot(new RollMoveAction(this));
     }
 
     Die() {
         super.Die();
-        this.PlayDeathSfx();
+        this.AddToBot(new SFXAction("JAW_WORM_DEATH"));
     }
 }

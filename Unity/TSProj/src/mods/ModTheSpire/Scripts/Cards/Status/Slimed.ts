@@ -5,7 +5,7 @@ import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 export class Slimed extends AbstractCard{
     Color: CardColor = CardColor.COLORLESS;
     Desc: string = LocalizationProperty.Read("黏液描述");
-    Icon: string = FileHelper.FormatPath("cards/status/slimed");
+    Icon: string = FileHelper.FormatPath("cards/status/slimed.png");
     Name: string = LocalizationProperty.Read("黏液");
     Rarity: CardRarity = CardRarity.COMMON;
     Target: CardTarget = CardTarget.SELF;

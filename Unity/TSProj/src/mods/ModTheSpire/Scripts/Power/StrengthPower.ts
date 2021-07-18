@@ -4,6 +4,7 @@ import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
 import {CalcDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcDamageValueMessage";
 import {WrapDamage} from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
+import {OnDamageBefore} from "mods/ModTheSpire/Scripts/Events/OnDamageBefore";
 
 export class StrengthPower extends AbstractPower{
     Name: string = LocalizationProperty.Read("能力-力量");
@@ -16,14 +17,14 @@ export class StrengthPower extends AbstractPower{
         }
         return StringHelper.FormatColorString(LocalizationProperty.Read("能力-力量(下降)")).format(this.Amount);
     }
-
+    //TODO
     protected CalcDamageValue(msg: CalcDamageValueMessage) {
         super.CalcDamageValue(msg);
         msg.info.AddModify(new WrapDamage(this,this.Amount))
     }
     
-    protected OnDamage(msg: CalcDamageValueMessage) {
-        super.OnDamage(msg);
+    protected OnDamageBefore(msg: OnDamageBefore) {
+        super.OnDamageBefore(msg);
         msg.info.AddModify(new WrapDamage(this,this.Amount))
     }
 }

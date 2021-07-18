@@ -28,4 +28,8 @@ export class MonsterGroup{
         let random = Mathf.Floor(Mathf.RandomRange(0,vaildMonster.length,DungeonManager.Inst.CurrentDungeon.AIRng));
         return vaildMonster[random];
     }
+    
+    public IndexOf(m : AbstractMonster) : number{
+        return this.Monsters.indexOf(m);
+    }
 }

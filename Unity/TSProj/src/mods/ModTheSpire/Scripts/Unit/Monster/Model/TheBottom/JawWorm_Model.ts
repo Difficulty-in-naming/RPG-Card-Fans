@@ -21,6 +21,6 @@ export class JawWorm_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("大颚虫");
+        return "大颚虫";
     }
 }

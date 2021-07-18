@@ -9,26 +9,26 @@ import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import {MonsterInfo} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterInfo";
 import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
 import {JawWorm_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/JawWorm_Model";
-import {LouseNormal} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/LouseNormal";
-import {LouseDefensive} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/LouseDefensive";
-import {SpikeSlime_S} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_S";
-import {SpikeSlime_M} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_M";
+import {LouseNormal_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/LouseNormal_Model";
+import {LouseDefensive_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/LouseDefensive_Model";
+import {SpikeSlime_S_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_S_Model";
+import {SpikeSlime_M_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_M_Model";
 import {GremlinWizard_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinWizard_Model";
 import {GremlinWarrior_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinWarrior_Model";
 import {GremlinTsundere_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinTsundere_Model";
-import {GremlinFat} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinFat";
+import {GremlinFat_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinFat_Model";
 import {GremlinThief_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinThief_Model";
-import {Looter} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Looter";
+import {Looter_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Looter_Model";
 import {AcidSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_L_Model";
-import {SpikeSlime_L} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_L";
+import {SpikeSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_L_Model";
 import {RedSlaver} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/RedSlaver";
-import {FungiBeast} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/FungiBeast";
+import {FungiBeast_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/FungiBeast_Model";
 import {GremlinNob_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinNob_Model";
-import {Lagavulin} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Lagavulin";
-import {Sentry} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Sentry";
+import {Lagavulin_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Lagavulin_Model";
+import {Sentry_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Sentry_Model";
 import {TheGuardian} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/TheGuardian";
 import {Hexaghost} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Hexaghost";
-import {SlimeBoss} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SlimeBoss";
+import {SlimeBoss_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SlimeBoss_Model";
 import {Cultist_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Cultist_Model";
 import {AcidSlime_M_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_M_Model";
 import {AcidSlime_S_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_S_Model";
@@ -80,12 +80,12 @@ export class Exordium extends AbstractDungeon{
         enemies.set("Small Slimes",()=>{
             let array = new Array<MonsterInfo>();
             if(Mathf.Random(this.MiscRng) < 0.5) {
-                array.push(new SpikeSlime_S(0,0));
+                array.push(new SpikeSlime_S_Model(0,0));
                 array.push(new AcidSlime_M_Model(0,0));
             }
             else {
                 array.push(new AcidSlime_S_Model(0, 0));
-                array.push(new SpikeSlime_M(0,0));
+                array.push(new SpikeSlime_M_Model(0,0));
             }
             return array;
         });
@@ -106,8 +106,8 @@ export class Exordium extends AbstractDungeon{
             pool.push(GremlinWarrior_Model.Id);
             pool.push(GremlinThief_Model.Id);
             pool.push(GremlinThief_Model.Id);
-            pool.push(GremlinFat.Id);
-            pool.push(GremlinFat.Id);
+            pool.push(GremlinFat_Model.Id);
+            pool.push(GremlinFat_Model.Id);
             pool.push(GremlinTsundere_Model.Id);
             pool.push(GremlinWizard_Model.Id);
             while(result.length <= 4){
@@ -119,8 +119,8 @@ export class Exordium extends AbstractDungeon{
                     result.push(new GremlinWarrior_Model(getPos.x,getPos.y));
                 }else if(key == GremlinThief_Model.Id){
                     result.push(new GremlinThief_Model(getPos.x,getPos.y));
-                }else if(key == GremlinFat.Id){
-                    result.push(new GremlinFat(getPos.x,getPos.y));
+                }else if(key == GremlinFat_Model.Id){
+                    result.push(new GremlinFat_Model(getPos.x,getPos.y));
                 }else if(key == GremlinTsundere_Model.Id){
                     result.push(new GremlinTsundere_Model(getPos.x,getPos.y));
                 }else if(key == GremlinWizard_Model.Id){
@@ -129,12 +129,12 @@ export class Exordium extends AbstractDungeon{
             }
             return result;
         });
-        enemies.set(Looter.Id,()=>new Array(new Looter(0,0)));
+        enemies.set(Looter_Model.Id,()=>new Array(new Looter_Model(0,0)));
         enemies.set("Large Slime",()=>{
             if(Mathf.Random(this.MiscRng) < 0.5){
                 return new Array(new AcidSlime_L_Model(0,0));
             }
-            return new Array(new SpikeSlime_L(0,0));
+            return new Array(new SpikeSlime_L_Model(0,0));
         });
         enemies.set("Lots of Slimes", ()=>{
             let pool = new Array<string>();
@@ -145,9 +145,9 @@ export class Exordium extends AbstractDungeon{
             position.push({x:3,y:3});
             position.push({x:4,y:4});
             position.push({x:5,y:5});
-            pool.push(SpikeSlime_S.Id);
-            pool.push(SpikeSlime_S.Id);
-            pool.push(SpikeSlime_S.Id);
+            pool.push(SpikeSlime_S_Model.Id);
+            pool.push(SpikeSlime_S_Model.Id);
+            pool.push(SpikeSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model.Id);
             while(result.length <= 4){
@@ -155,8 +155,8 @@ export class Exordium extends AbstractDungeon{
                 let key = pool[index];
                 pool.splice(index,1);
                 let getPos = position[result.length];
-                if(key == SpikeSlime_S.Id){
-                    result.push(new SpikeSlime_S(getPos.x,getPos.y));
+                if(key == SpikeSlime_S_Model.Id){
+                    result.push(new SpikeSlime_S_Model(getPos.x,getPos.y));
                 }else if(key == AcidSlime_S_Model.Id){
                     result.push(new AcidSlime_S_Model(getPos.x,getPos.y));
                 }
@@ -183,17 +183,17 @@ export class Exordium extends AbstractDungeon{
             }
             return array;
         });
-        enemies.set("2 Fungi Beasts", ()=> [new FungiBeast(0,0),new FungiBeast(0,0)]);
+        enemies.set("2 Fungi Beasts", ()=> [new FungiBeast_Model(0,0),new FungiBeast_Model(0,0)]);
         //MonsterInfo.NormalizeWeights(enemies);
     }
 
     InitializeElites(enemies:Map<string,()=>Array<MonsterInfo>>) {
         enemies.set(GremlinNob_Model.Id, ()=>new Array(new GremlinNob_Model(0,0)));
-        enemies.set(Lagavulin.Id, ()=>new Array(new Lagavulin(0,0)));
+        enemies.set(Lagavulin_Model.Id, ()=>new Array(new Lagavulin_Model(0,0)));
         enemies.set("3 Sentries", ()=>{
             let array = new Array<MonsterInfo>();
             for(let i = 0;i<3;i++){
-                array.push(new Sentry(0,0));
+                array.push(new Sentry_Model(0,0));
             }
             return array;
         });
@@ -203,7 +203,7 @@ export class Exordium extends AbstractDungeon{
     protected InitializeBoss(enemies: Map<string,()=>Array<MonsterInfo>>) {
         enemies.set(TheGuardian.Id,()=>new Array(new TheGuardian(0,0)));
         enemies.set(Hexaghost.Id,()=>new Array(new Hexaghost(0,0)));
-        enemies.set(SlimeBoss.Id,()=>new Array(new SlimeBoss(0,0)));
+        enemies.set(SlimeBoss_Model.Id,()=>new Array(new SlimeBoss_Model(0,0)));
     }
     
     private GetWeakMonster() : MonsterInfo{
@@ -215,18 +215,18 @@ export class Exordium extends AbstractDungeon{
     
     private GetStrongMonster() : MonsterInfo{
         let pool = new Array<MonsterInfo>();
-        pool.push(new Looter(0,0));
+        pool.push(new Looter_Model(0,0));
         pool.push(new BlueSlaver_Model(0,0));
         pool.push(new RedSlaver(0,0));
-        pool.push(new FungiBeast(0,0));
+        pool.push(new FungiBeast_Model(0,0));
         return pool[Mathf.RandomRange(0,pool.length - 1,this.MiscRng)];
     }
 
     private GetLouse(array: MonsterInfo[]) {
         if (Mathf.Random(this.MiscRng) < 0.5)
-            array.push(new LouseNormal(0, 0));
+            array.push(new LouseNormal_Model(0, 0));
         else
-            array.push(new LouseDefensive(0, 0));
+            array.push(new LouseDefensive_Model(0, 0));
     }
 
     protected InitializeRelicList(relics: Array<string>) {

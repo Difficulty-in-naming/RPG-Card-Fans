@@ -25,6 +25,6 @@ export class AcidSlime_L_Model extends MonsterInfo{
         return this.loader ?? (this.loader = new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/slimeL/skeleton.png")));
     }
     get Name(): string {
-        return LocalizationProperty.Read("酸液史莱姆（大）");
+        return "酸液史莱姆（大）";
     }
 }

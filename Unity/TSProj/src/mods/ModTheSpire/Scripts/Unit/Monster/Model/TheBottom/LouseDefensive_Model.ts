@@ -4,22 +4,23 @@ import {SpineLoader} from "mods/ModTheSpire/Scripts/Loader/SpineLoader";
 import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
+import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
 
-export class LouseNormal extends MonsterInfo{
-    public static Id = "LouseNormal"
+export class LouseDefensive_Model extends MonsterInfo{
+    public static Id = "LouseDefensive"
 
     get MaxHealth(): number {
         if(DungeonManager.Inst.AdvanceLevel >= 7)
-            return Mathf.RandomRange(11,16);
+            return Mathf.RandomRange(12,18);
         else
-            return Mathf.RandomRange(10,15);
+            return Mathf.RandomRange(11,17);
     }
 
     get Loader(): ILoader {
-        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/louseRed/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/louseRed/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/louseRed/skeleton.png"));
+        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/louseGreen/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/louseGreen/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/louseGreen/skeleton.png"));
     }
 
     get Name(): string {
-        return LouseNormal.Id;
+        return "防御型虱虫";
     }
 }

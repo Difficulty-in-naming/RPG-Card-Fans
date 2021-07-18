@@ -13,7 +13,7 @@ import Async from "Core/Async";
 
 export class ApplyPowerAction extends AbstractGameAction{
     private Interval = 0.25;
-    public constructor(public Target:AbstractCreature, public Source:AbstractCreature, public Power:AbstractPower, public StackAmount?:number, public Effect?:AttackEffect) {
+    public constructor(public Target:AbstractCreature, public Source:AbstractCreature, public Power:AbstractPower, public StackAmount:number = 1, public Effect?:AttackEffect) {
         super();
         let msg = new PreApplyPowerMessage(Power,Target,Source,this.StackAmount)
         DungeonManager.MessageManager.Send(PreApplyPowerMessage.Id,msg);

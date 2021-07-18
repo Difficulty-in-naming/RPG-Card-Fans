@@ -20,6 +20,9 @@ export default class Color{
     public static GreenHpBarColor = new Color(120,190,60,255);
     public static BlueHpBarColor = new Color(49,86,140,255);
     public static OrangeHbBarColor = new Color(255,128,0,255);
+    public static Royal = new Color(65, 105, 225, 255);
+    public static Sky = new Color(135, 206, 235, 255);
+    public static Cyan = new Color(0,255,255,255);
     public R : number;
     public G : number;
     public B : number;

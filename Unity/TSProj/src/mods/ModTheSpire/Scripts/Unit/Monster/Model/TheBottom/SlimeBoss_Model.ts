@@ -5,7 +5,7 @@ import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
 
-export class SlimeBoss extends MonsterInfo{
+export class SlimeBoss_Model extends MonsterInfo{
     public static Id = "SlimeBoss"
 
     get MaxHealth(): number {
@@ -19,6 +19,6 @@ export class SlimeBoss extends MonsterInfo{
     }
 
     get Name(): string {
-        return SlimeBoss.Id;
+        return "怪物-史莱姆老大";
     }
 }

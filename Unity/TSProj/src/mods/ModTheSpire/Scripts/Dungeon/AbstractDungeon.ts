@@ -35,6 +35,8 @@ export abstract class AbstractDungeon{
     public MiscRng : Rand;
     //AI种子
     public AIRng : Rand;
+    //怪物HP种子
+    public HPRng : Rand;
     MapInfo : Array<Array<MapRoomNode>>;
     Scene : IScene;
     RoomChance:RoomChance;
@@ -69,6 +71,7 @@ export abstract class AbstractDungeon{
         this.EnemiesRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "Enemies");
         this.MiscRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "Misc");
         this.AIRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "AI");
+        this.HPRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "HP");
         this.MapInfo = MapGenerator.Generate(7,15,6);
         this.InitializeRelicList(this.RelicList);
         this.InitializeEventList(this.EventList);

@@ -2,8 +2,8 @@
 import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
 import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
 
-export class OnDamageMessage implements  IMessage{
-    public static readonly Id = "OnDamage";
+export class OnDamageAfter implements  IMessage{
+    public static readonly Id = "OnDamageAfter";
     public constructor(public info:DamageInfo,public source:AbstractCreature,public target: AbstractCreature) {
     }
 }

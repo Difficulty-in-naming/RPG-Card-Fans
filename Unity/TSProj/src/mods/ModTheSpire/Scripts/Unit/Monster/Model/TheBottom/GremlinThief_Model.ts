@@ -20,6 +20,6 @@ export class GremlinThief_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return LocalizationProperty.Read("卑鄙地精");
+        return "卑鄙地精";
     }
 }

@@ -25,7 +25,7 @@ export class VulnerablePower extends AbstractPower{
         let effect = 25;
         if(DungeonManager.Inst.Player.HasRelic(PaperCrane.Id))
             effect = 40;
-        return StringHelper.FormatColorString(LocalizationProperty.Read("能力-易伤")).format(effect,this.Amount);
+        return StringHelper.FormatColorString(LocalizationProperty.Read("能力-易伤描述")).format(effect,this.Amount);
     }
 
     protected AtEndOfTurn(msg: AtEndOfTurnMessage) {

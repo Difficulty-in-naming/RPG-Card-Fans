@@ -30,6 +30,8 @@ export default abstract class AbstractCard
     public Energy : number = 0;
     //是否消耗
     public Exhaust:boolean = false;
+    //是否虚无
+    public Ethereal:boolean = false;
     //卡牌渲染组件
     public RenderCom = View_Card.Url;
     //伤害

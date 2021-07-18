@@ -11,7 +11,7 @@ export default class Strike extends AbstractCard
 {
     Color: CardColor = CardColor.RED;
     Desc: string = LocalizationProperty.Read("愤怒描述");
-    Icon: string = FileHelper.FormatPath("cards/red/attack/anger")
+    Icon: string = FileHelper.FormatPath("cards/red/attack/anger.png")
     Name: string = LocalizationProperty.Read("愤怒");
     Rarity: CardRarity = CardRarity.COMMON;
     Target: CardTarget = CardTarget.ENEMY;

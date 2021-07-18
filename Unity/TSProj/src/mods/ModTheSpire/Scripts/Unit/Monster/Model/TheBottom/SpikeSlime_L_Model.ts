@@ -5,20 +5,20 @@ import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
 import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
 
-export class Sentry extends MonsterInfo{
-    public static Id = "Sentry"
+export class SpikeSlime_L_Model extends MonsterInfo{
+    public static Id = "SpikeSlime_L"
 
     get MaxHealth(): number {
         if(DungeonManager.Inst.AdvanceLevel >= 7)
-            return Mathf.RandomRange(39, 45);
+            return Mathf.RandomRange(67, 73);
         else
-            return Mathf.RandomRange(38, 42);
+            return Mathf.RandomRange(64, 70);
     }
     get Loader(): ILoader {
-        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/sentry/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/sentry/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/sentry/skeleton.png"));
+        return new SpineLoader(FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.atlas"),FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.json"),FileHelper.FormatPath("Monsters/theBottom/slimeAltL/skeleton.png"));
     }
 
     get Name(): string {
-        return Sentry.Id;
+        return "尖刺史莱姆（大）";
     }
 }
