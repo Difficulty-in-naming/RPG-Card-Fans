@@ -17,7 +17,8 @@
     <component id="eelv30" name="EntangleEffect.xml" path="/Combat/" exported="true"/>
     <image id="eelv31" name="borderGlow2.png" path="/Texture/"/>
     <component id="eelv32" name="BorderFlashEffect.xml" path="/Combat/" exported="true"/>
-    <component id="eelv33" name="MegaSpeechBubble.xml" path="/Combat/"/>
+    <component id="8vy433" name="WeightyImpactEffect.xml" path="/Combat/"/>
+    <image id="8vy434" name="weightyImpact.png" path="/Texture/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

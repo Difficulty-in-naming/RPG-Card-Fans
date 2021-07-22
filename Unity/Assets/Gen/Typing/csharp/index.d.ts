@@ -6000,8 +6000,17 @@ declare module 'csharp' {
             public get Z(): number;
             public set Z(value: number);
             
+            public get Animation(): TextAnimation;
+            
+            
             
             public constructor();
+            
+        }
+        
+        
+        class TextAnimation extends UnityEngine.MonoBehaviour{
+            
             
         }
         

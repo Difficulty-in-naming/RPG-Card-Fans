@@ -11,6 +11,7 @@
     </component>
     <loader id="n11_myaq" name="PowerList" xy="-37,281" size="50,50"/>
     <component id="n12_myaq" name="DisplayName" src="yao829" fileName="DisplayName.xml" xy="-100,236"/>
+    <loader3D id="n13_duc5" name="n13" xy="-26,128" size="100,100" url="ui://qmow4f55myaq27" animation="" skin="" loop="true"/>
   </displayList>
   <transition name="SlowAttack">
     <item time="0" type="XY" tween="true" startValue="0,-" endValue="90,-" duration="12" ease="Quart.Out"/>

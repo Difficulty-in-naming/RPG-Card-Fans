@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="353,250">
-  <displayList>
-    <image id="n0_eelv" name="n0" src="guw12t" fileName="Texture/speechBubble2.png" xy="0,0"/>
-    <graph id="n1_eelv" name="Holder" xy="179,90" size="0,0"/>
-  </displayList>
-</component>

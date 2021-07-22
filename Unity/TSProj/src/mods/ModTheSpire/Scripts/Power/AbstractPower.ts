@@ -45,7 +45,7 @@ export abstract class AbstractPower {
     //该Buff的施法来源
     public Source: AbstractCreature;
     //能力类型(Buff,Debuff)
-    public get Type() : PowerType {return PowerType.Buff;}
+    public abstract get Type() : PowerType;
     get Amount(): number {
         return this._Amount;
     }
@@ -141,5 +141,6 @@ export abstract class AbstractPower {
 
 export enum PowerType{
     Buff,
-    Debuff
+    Debuff,
+    Special
 }

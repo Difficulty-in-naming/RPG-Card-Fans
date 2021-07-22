@@ -192,7 +192,6 @@
      <Compile Include="Assets\ThirdParty\Puerts\Src\PuertsDLL.cs" />
      <Compile Include="Assets\Scripts\Module\Panthea.UI\Framework\IUIModel.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Tree\TreeView.cs" />
-     <Compile Include="Assets\TextAnimation.cs" />
      <Compile Include="Assets\Gen\Spine_Unity_SpineEvent_Wrap.cs" />
      <Compile Include="Assets\Scripts\Module\Panthea.UI\Framework\UIKit.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIObjectFactory.cs" />
@@ -459,6 +458,7 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GLoader.cs" />
      <Compile Include="Assets\Gen\System_IO_FileInfo_Wrap.cs" />
      <Compile Include="Assets\Gen\FairyGUI_SwipeGesture_Wrap.cs" />
+     <Compile Include="Assets\ThirdParty\ThirdPartyExt\TextAnimator\SpeechSizeAppearance.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\MovieClip.cs" />
      <Compile Include="Assets\Gen\FairyGUI_LineMesh_Wrap.cs" />
      <Compile Include="Assets\Gen\FairyGUI_GButton_Wrap.cs" />

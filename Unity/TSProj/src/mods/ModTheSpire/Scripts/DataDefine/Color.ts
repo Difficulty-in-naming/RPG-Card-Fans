@@ -2,27 +2,29 @@
 import {Mathf} from "../../../../Core/Module/Math/Mathf";
 
 export default class Color{
-    public static Red = new Color(255, 0, 0,255);
-    public static Chartreuse = new Color(128, 255, 0,255);
-    public static White = new Color(255, 255, 255,255);
-    public static Black = new Color(0, 0, 0,255);
-    public static Gray = new Color(127, 127, 127,255);
-    public static FireBrick = new Color(0,0,0,153);
-    public static TwoThirdsTransparentBlackColor = new Color(0,0,0,166);
-    public static Cream = new Color(255,246,226,255);
-    public static DiscardColor = new Color(138,118,155,255)
-    public static RedText = new Color(255,101,99,255);
-    public static GreenText = new Color(127,255,0,255);
-    public static BlueText = new Color(135,206,235,255);
-    public static GoldText = new Color(239,200,81,255);
-    public static PurpleText = new Color(238,130,238,255);
-    public static RedHpBarColor = new Color(204,13,13,255);
-    public static GreenHpBarColor = new Color(120,190,60,255);
-    public static BlueHpBarColor = new Color(49,86,140,255);
-    public static OrangeHbBarColor = new Color(255,128,0,255);
-    public static Royal = new Color(65, 105, 225, 255);
-    public static Sky = new Color(135, 206, 235, 255);
-    public static Cyan = new Color(0,255,255,255);
+    public static readonly Red = new Color(255, 0, 0,255);
+    public static readonly Chartreuse = new Color(128, 255, 0,255);
+    public static readonly White = new Color(255, 255, 255,255);
+    public static readonly Black = new Color(0, 0, 0,255);
+    public static readonly Gray = new Color(127, 127, 127,255);
+    public static readonly FireBrick = new Color(0,0,0,153);
+    public static readonly TwoThirdsTransparentBlackColor = new Color(0,0,0,166);
+    public static readonly Cream = new Color(255,246,226,255);
+    public static readonly DiscardColor = new Color(138,118,155,255)
+    public static readonly RedText = new Color(255,101,99,255);
+    public static readonly GreenText = new Color(127,255,0,255);
+    public static readonly BlueText = new Color(135,206,235,255);
+    public static readonly GoldText = new Color(239,200,81,255);
+    public static readonly PurpleText = new Color(238,130,238,255);
+    public static readonly RedHpBarColor = new Color(204,13,13,255);
+    public static readonly GreenHpBarColor = new Color(120,190,60,255);
+    public static readonly BlueHpBarColor = new Color(49,86,140,255);
+    public static readonly OrangeHbBarColor = new Color(255,128,0,255);
+    public static readonly Royal = new Color(65, 105, 225, 255);
+    public static readonly Sky = new Color(135, 206, 235, 255);
+    public static readonly Cyan = new Color(0,255,255,255);
+    public static readonly Orange = new Color(255,165,0,255);
+    public static readonly Goldenrod = new Color(218,165,32,255) 
     public R : number;
     public G : number;
     public B : number;

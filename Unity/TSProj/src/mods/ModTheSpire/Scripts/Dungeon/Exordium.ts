@@ -26,7 +26,7 @@ import {FungiBeast_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheB
 import {GremlinNob_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinNob_Model";
 import {Lagavulin_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Lagavulin_Model";
 import {Sentry_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Sentry_Model";
-import {TheGuardian} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/TheGuardian";
+import {TheGuardian_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/TheGuardian_Model";
 import {Hexaghost} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Hexaghost";
 import {SlimeBoss_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SlimeBoss_Model";
 import {Cultist_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Cultist_Model";
@@ -201,7 +201,7 @@ export class Exordium extends AbstractDungeon{
     }
 
     protected InitializeBoss(enemies: Map<string,()=>Array<MonsterInfo>>) {
-        enemies.set(TheGuardian.Id,()=>new Array(new TheGuardian(0,0)));
+        enemies.set(TheGuardian_Model.Id,()=>new Array(new TheGuardian_Model(0,0)));
         enemies.set(Hexaghost.Id,()=>new Array(new Hexaghost(0,0)));
         enemies.set(SlimeBoss_Model.Id,()=>new Array(new SlimeBoss_Model(0,0)));
     }

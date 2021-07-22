@@ -12,7 +12,7 @@ import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAct
 import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
 
-export class AcidSlime_L_ViewModel extends AbstractMonster{
+export class AcidSlime_S_ViewModel extends AbstractMonster{
     Initialize() {
         if(DungeonManager.Inst.AdvanceLevel >= 2) {
             this.DamageInfo.push(new DamageInfo(this,4));

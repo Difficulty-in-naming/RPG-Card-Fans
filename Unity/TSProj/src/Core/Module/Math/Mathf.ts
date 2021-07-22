@@ -32,6 +32,13 @@ export class Mathf {
         return Mathf.Sin(value * this.Deg2Rad);
     }
     
+    public static Angle(x:number,y:number):number{
+        let angle = this.Atan2(y,x) * this.Rad2Deg;
+        if(angle<0)
+            angle += 360;
+        return angle;
+    }
+    
     public static Asin(value:number):number{
         return Math.asin(value);
     }

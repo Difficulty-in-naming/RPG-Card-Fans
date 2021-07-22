@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10335902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.892157, y: -5, z: 0}
+  m_LocalPosition: {x: 8.898679, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<shake>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</shake>\n<wiggle>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</wiggle>\n<wave>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</wave>\n<slide>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</slide>\n<bounce>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</bounce>\n<rot>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</rot>\n<swing>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</swing>\n<incr>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</incr>\n<rainb>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</rainb>\n<fade>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</fade>\n<dangle>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</dangle>\n<pend>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</pend>\n<expl>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</expl>"
+  m_text: "<shake>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</shake>\n<wiggle>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</wiggle>\n<wave>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</wave>\n<slide>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</slide>\n<bounce>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</bounce>\n<rot>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</rot>\n<swing>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</swing>\n<incr>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</incr>\n<rainb>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</rainb>\n<fade>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</fade>\n<dangle>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</dangle>\n<pend>\u6211\u7684\u529B\u91CF\u65E0\u4EBA\u80FD\u53CA\uFF01</pend>\n{size}{offset}\u529B\u91CF{/offset}{offset}<br>\u91CD\u9524\uFF01\uFF01\uFF01{/offset}{/size}"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 29ff74ce439dd4f499b102b97efba94c, type: 2}
   m_sharedMaterial: {fileID: -7839883625051985929, guid: 29ff74ce439dd4f499b102b97efba94c, type: 2}
@@ -590,12 +590,11 @@ MonoBehaviour:
   triggerAnimPlayerOnChange: 0
   effectIntensityMultiplier: 50
   appearancesContainer:
-    tags:
-    - size
+    tags: []
     values:
       defaults:
         sizeDuration: 0.3
-        sizeAmplitude: 2
+        sizeAmplitude: 0
         fadeDuration: 0.3
         verticalExpandDuration: 0.3
         verticalFromBottom: 0
@@ -603,13 +602,14 @@ MonoBehaviour:
         horizontalExpandStart: 0
         diagonalExpandDuration: 0.3
         diagonalFromBttmLeft: 0
-        offsetDir: {x: 1, y: 1}
+        offsetDir: {x: 0.01, y: -0.01}
         offsetDuration: 0.3
         offsetAmplitude: 1
         rotationDuration: 0.3
         rotationStartAngle: 180
       presets: []
-  tags_fallbackBehaviors: []
+  tags_fallbackBehaviors:
+  - fade
   behaviorValues:
     defaults:
       wiggleAmplitude: 0.001

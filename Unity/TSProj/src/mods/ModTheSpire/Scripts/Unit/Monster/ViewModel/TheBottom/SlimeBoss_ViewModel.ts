@@ -6,7 +6,6 @@ import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
 import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
 import {TextAboveCreatureAction, TextType} from "mods/ModTheSpire/Scripts/Action/Utility/TextAboveCreatureAction";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
 import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
 import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
 import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
@@ -16,10 +15,19 @@ import {HideHealthBarAction} from "mods/ModTheSpire/Scripts/Action/Utility/HideH
 import {SuicideAction} from "mods/ModTheSpire/Scripts/Action/Common/SuicideAction";
 import {WaitAction} from "mods/ModTheSpire/Scripts/Action/Utility/WaitAction";
 import {SpawnMonsterAction} from "mods/ModTheSpire/Scripts/Action/Common/SpawnMonsterAction";
-import {AcidSlime_M_ViewModel} from "mods/ModTheSpire/Scripts/Unit/Monster/ViewModel/TheBottom/AcidSlime_M_ViewModel";
-import {AcidSlime_M_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_M_Model";
 import {SetMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/SetMoveAction";
 import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+import {ShoutAction} from "mods/ModTheSpire/Scripts/Action/Animations/ShoutAction";
+import {ShakeScreenAction} from "mods/ModTheSpire/Scripts/Action/Animations/ShakeScreenAction";
+import {ShakeDur, ShakeIntensity} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
+import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
+import VFXAction from "mods/ModTheSpire/Scripts/Action/Animations/VFXAction";
+import {WeightyImpactEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/WeightyImpactEffect";
+import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+import {AcidSlime_L_ViewModel} from "mods/ModTheSpire/Scripts/Unit/Monster/ViewModel/TheBottom/AcidSlime_L_ViewModel";
+import {SpikeSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_L_Model";
+import {AcidSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_L_Model";
+import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
 
 export class SpikeSlime_L_ViewModel extends AbstractMonster {
     Initialize() {
@@ -31,8 +39,7 @@ export class SpikeSlime_L_ViewModel extends AbstractMonster {
             this.DamageInfo.push(new DamageInfo(this, 35));
         }
 
-        let trackEntry = <Spine.TrackEntry>this.SetAnimation("Idle", true);
-        trackEntry.TrackTime = trackEntry.TrackEnd * Mathf.Random()
+        this.SetAnimation("Idle", true);
     }
 
     Damage(info: DamageInfo) {
@@ -43,30 +50,8 @@ export class SpikeSlime_L_ViewModel extends AbstractMonster {
     }
 
     GetMove(num: number) {
-        if (DungeonManager.Inst.AdvanceLevel >= 17) {
-            if (num < 30) {
-                if (this.LastTwoMoves(1)) {
-                    this.SetMove(4, Intent.DEBUFF, {moveName: "舔舔"});
-                } else {
-                    this.SetMove(1, Intent.ATTACK_DEBUFF, {damage: this.DamageInfo[0]});
-                }
-            } else if (this.LastMove(4)) {
-                this.SetMove(1, Intent.ATTACK_DEBUFF, {damage: this.DamageInfo[0]});
-            } else {
-                this.SetMove(4, Intent.DEBUFF, {moveName: "舔舔"});
-            }
-        } else if (num < 30) {
-            if (this.LastTwoMoves(1)) {
-                this.SetMove(4, Intent.DEBUFF, {moveName: "舔舔"});
-            } else {
-                this.SetMove(1, Intent.ATTACK_DEBUFF, {damage: this.DamageInfo[0]});
-            }
-        }
-        if (this.LastTwoMoves(4)) {
-            this.SetMove(1, Intent.ATTACK_DEBUFF, {damage: this.DamageInfo[0]});
-
-        } else {
-            this.SetMove(4, Intent.DEBUFF, {moveName: "舔舔"});
+        if(DungeonManager.Inst.CurrentRoom.Round == 1){
+            this.SetMove(4,Intent.STRONG_DEBUFF,{moveName:LocalizationProperty.Read(this.Info.Name + "行动4")});
         }
     }
 
@@ -93,13 +78,17 @@ export class SpikeSlime_L_ViewModel extends AbstractMonster {
             }
             case 2:{
                 this.PlaySfx();
-                this.AddToBot(new ShoutAction)
+                this.AddToBot(new ShoutAction(this,LocalizationProperty.Read(this.Info.Name + "对话1"),1,2))
+                this.AddToBot(new ShakeScreenAction(0.3,ShakeIntensity.LOW, ShakeDur.LONG,{Horizontal: true,Vertical: false}));
+                this.SetMove(1,Intent.ATTACK,{moveName:LocalizationProperty.Read(this.Info.Name + "行动1"),damage:this.DamageInfo[0]});
+                break;
             }
             case 1: {
-                this.AddToBot(new AnimateSlowAttackAction(this));
-                this.AddToBot(new DamageAction(DungeonManager.Inst.Player, this.DamageInfo[0], AttackEffect.BLUNT_HEAVY))
-                this.AddToBot(new MakeTempCardInDiscardAction(new Slimed(),2));
-                this.AddToBot(new RollMoveAction(this));
+                this.AddToBot(new DoFuncAction(this.PlayJump,0.25));
+                let playerHitBox = DungeonManager.Inst.Player.GetHitBox();
+                this.AddToBot(new VFXAction(new WeightyImpactEffect(playerHitBox.CX,playerHitBox.CY,new Color(25,25,25,255)),0.8));
+                this.AddToBot(new DamageAction(DungeonManager.Inst.Player, this.DamageInfo[1], AttackEffect.POISON));
+                this.SetMove(4,Intent.STRONG_DEBUFF,{moveName:LocalizationProperty.Read(this.Info.Name + "行动4")});
                 break;
             }
             case 3: {
@@ -108,10 +97,19 @@ export class SpikeSlime_L_ViewModel extends AbstractMonster {
                 this.AddToBot(new SuicideAction(this, false));
                 this.AddToBot(new WaitAction(1000));
                 this.AddToBot(new SFXAction("SLIME_SPLIT"));
-                this.AddToBot(new SpawnMonsterAction(new AcidSlime_M_ViewModel(new AcidSlime_M_Model(this.X - 134, this.Y + Mathf.RandomRange(-4, 4))), false));
-                this.AddToBot(new SpawnMonsterAction(new AcidSlime_M_ViewModel(new AcidSlime_M_Model(this.X + 134, this.Y + Mathf.RandomRange(-4, 4))), false));
+                this.AddToBot(new SpawnMonsterAction(new AcidSlime_L_ViewModel(new AcidSlime_L_Model(this.X - 134, this.Y + Mathf.RandomRange(-4, 4))), false));
+                this.AddToBot(new SpawnMonsterAction(new SpikeSlime_L_ViewModel(new SpikeSlime_L_Model(this.X + 134, this.Y + Mathf.RandomRange(-4, 4))), false));
                 this.SetMove(3, Intent.UNKNOWN, {moveName: "分裂"});
             }
+        }
+    }
+
+
+    Die() {
+        super.Die();
+        SoundMaster.PlayVoice("VO_SLIMEBOSS_2A");
+        if(this.Health <= 0){
+            this.PlayFastShake(5);
         }
     }
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660a23572952a6e43b0cd44370bef593, type: 3}
+  m_Name: Built-in Appearances values
+  m_EditorClassIdentifier: 
+  effectValues:
+    sizeDuration: 0.3
+    sizeAmplitude: 2
+    fadeDuration: 0.3
+    verticalExpandDuration: 0.3
+    verticalFromBottom: 0
+    horizontalExpandDuration: 0.3
+    horizontalExpandStart: 0
+    diagonalExpandDuration: 0.3
+    diagonalFromBttmLeft: 0
+    offsetDir: {x: 1, y: 1}
+    offsetDuration: 0.3
+    offsetAmplitude: 1
+    rotationDuration: 0.3
+    rotationStartAngle: 180
