@@ -30,19 +30,30 @@ namespace Puerts
 
         internal readonly JSObjectFactory jsObjectFactory;
 
-        private readonly ILoader loader;
-
-        public static List<JsEnv> jsEnvs = new List<JsEnv>();
-
         internal IntPtr isolate;
 
         internal ObjectPool objectPool;
 
-        public JsEnv() : this(new DefaultLoader(), -1, IntPtr.Zero, IntPtr.Zero)
+        private readonly ILoader loader;
+
+        public static List<JsEnv> jsEnvs = new List<JsEnv>();
+
+#if UNITY_EDITOR
+        public delegate void JsEnvCreateCallback(JsEnv env, ILoader loader, int debugPort);
+        public delegate void JsEnvDisposeCallback(JsEnv env);
+        public static JsEnvCreateCallback OnJsEnvCreate;
+        public static JsEnvDisposeCallback OnJsEnvDispose;
+
+        public int debugPort;
+#endif
+
+        public JsEnv() 
+            : this(new DefaultLoader(), -1, IntPtr.Zero, IntPtr.Zero)
         {
         }
 
-        public JsEnv(ILoader loader, int debugPort = -1) : this(loader, debugPort, IntPtr.Zero, IntPtr.Zero)
+        public JsEnv(ILoader loader, int debugPort = -1)
+             : this(loader, debugPort, IntPtr.Zero, IntPtr.Zero)
         {
         }
 
@@ -53,15 +64,16 @@ namespace Puerts
 
         public JsEnv(ILoader loader, int debugPort, IntPtr externalRuntime, IntPtr externalContext)
         {
-            const int libVersionExpect = 11;
+            const int libVersionExpect = 14;
             int libVersion = PuertsDLL.GetLibVersion();
             if (libVersion != libVersionExpect)
             {
                 throw new InvalidProgramException("expect lib version " + libVersionExpect + ", but got " + libVersion);
             }
-            //PuertsDLL.SetLogCallback(LogCallback, LogWarningCallback, LogErrorCallback);
+            // PuertsDLL.SetLogCallback(LogCallback, LogWarningCallback, LogErrorCallback);
             this.loader = loader;
-            if (externalRuntime != IntPtr.Zero && externalContext != IntPtr.Zero)
+            
+            if (externalRuntime != IntPtr.Zero)
             {
                 isolate = PuertsDLL.CreateJSEngineWithExternalEnv(externalRuntime, externalContext);
             }
@@ -112,6 +124,7 @@ namespace Puerts
             PuertsDLL.SetGlobalFunction(isolate, "__tgjsGetNestedTypes", StaticCallbacks.JsEnvCallbackWrap, AddCallback(GetNestedTypes));
             PuertsDLL.SetGlobalFunction(isolate, "__tgjsGetLoader", StaticCallbacks.JsEnvCallbackWrap, AddCallback(GetLoader));
 
+            PuertsDLL.SetModuleResolver(isolate, StaticCallbacks.ModuleResolverWrap, Idx);
             //可以DISABLE掉自动注册，通过手动调用PuertsStaticWrap.AutoStaticCodeRegister.Register(jsEnv)来注册
 #if !DISABLE_AUTO_REGISTER
             const string AutoStaticCodeRegisterClassName = "PuertsStaticWrap.AutoStaticCodeRegister";
@@ -136,28 +149,67 @@ namespace Puerts
                 PuertsDLL.CreateInspector(isolate, debugPort);
             }
 
-            ExecuteFile("puerts/init.js");
-            ExecuteFile("puerts/log.js");
-            ExecuteFile("puerts/cjsload.js");
-            ExecuteFile("puerts/modular.js");
-            ExecuteFile("puerts/csharp.js");
-            ExecuteFile("puerts/timer.js");
-            ExecuteFile("puerts/events.js");
-            ExecuteFile("puerts/promises.js");
-            ExecuteFile("puerts/polyfill.js");
+            bool isNode = PuertsDLL.GetLibBackend() == 1;
+            ExecuteModule("puerts/init.mjs");
+            ExecuteModule("puerts/log.mjs");
+            ExecuteModule("puerts/cjsload.mjs");
+            ExecuteModule("puerts/modular.mjs");
+            ExecuteModule("puerts/csharp.mjs");
+            ExecuteModule("puerts/timer.mjs");
+            
+            ExecuteModule("puerts/events.mjs");
+            ExecuteModule("puerts/promises.mjs");
+#if !PUERTS_GENERAL
+            if (!isNode) 
+            {
+#endif
+                ExecuteModule("puerts/polyfill.mjs");
+#if !PUERTS_GENERAL
+            }
+            else
+            {
+                ExecuteModule("puerts/nodepatch.mjs");
+            }
+#endif
+
+#if UNITY_EDITOR
+            if (OnJsEnvCreate != null) 
+            {
+                OnJsEnvCreate(this, loader, debugPort);
+            }
+            this.debugPort = debugPort;
+#endif
         }
 
-        void ExecuteFile(string filename)
+        internal string ResolveModuleContent(string identifer) 
+        {
+            if (!loader.FileExists(identifer)) 
+            {
+                return null;
+            }
+
+            string debugPath;
+            return loader.ReadFile(identifer, out debugPath);
+        }
+
+        public void ExecuteModule(string filename)
         {
             if (loader.FileExists(filename))
             {
-                string debugPath;
-                var context = loader.ReadFile(filename, out debugPath);
-                if (context == null)
+                IntPtr resultInfo = PuertsDLL.ExecuteModule(isolate, filename);
+                if (resultInfo == IntPtr.Zero)
                 {
-                    throw new InvalidProgramException("can not find " + filename);
+                    string exceptionInfo = PuertsDLL.GetLastExceptionInfo(isolate);
+                    throw new Exception(exceptionInfo);
                 }
-                Eval(context, debugPath);
+                PuertsDLL.ResetResult(resultInfo);
+                // string debugPath;
+                // var context = loader.ReadFile(filename, out debugPath);
+                // if (context == null)
+                // {
+                //     throw new InvalidProgramException("can not find " + filename);
+                // }
+                // Eval(context, debugPath);
             }
             else
             {
@@ -527,6 +579,7 @@ namespace Puerts
                 }
 #endif
             }
+            PuertsDLL.LogicTick(isolate);
             tickHandler.ForEach(fn =>
             {
                 IntPtr resultInfo = PuertsDLL.InvokeJSFunction(fn, false);
@@ -562,23 +615,35 @@ namespace Puerts
         }
 #endif
 
-        /*[MonoPInvokeCallback(typeof(LogCallback))]
-        private static void LogCallback(string msg)
-        {
-            UnityEngine.Debug.Log(msg);
-        }
+//         [MonoPInvokeCallback(typeof(LogCallback))]
+//         private static void LogCallback(string msg)
+//         {
+// #if PUERTS_GENERAL || (UNITY_WSA && !UNITY_EDITOR)
+//             System.Console.WriteLine(msg);
+// #else
+//             UnityEngine.Debug.Log(msg);
+// #endif
+//         }
 
-        [MonoPInvokeCallback(typeof(LogCallback))]
-        private static void LogWarningCallback(string msg)
-        {
-            UnityEngine.Debug.LogWarning(msg);
-        }
+//         [MonoPInvokeCallback(typeof(LogCallback))]
+//         private static void LogWarningCallback(string msg)
+//         {
+// #if PUERTS_GENERAL || (UNITY_WSA && !UNITY_EDITOR)
+//             System.Console.WriteLine(msg);
+// #else
+//             UnityEngine.Debug.Log(msg);
+// #endif
+//         }
 
-        [MonoPInvokeCallback(typeof(LogCallback))]
-        private static void LogErrorCallback(string msg)
-        {
-            UnityEngine.Debug.LogError(msg);
-        }*/
+//         [MonoPInvokeCallback(typeof(LogCallback))]
+//         private static void LogErrorCallback(string msg)
+//         {
+// #if PUERTS_GENERAL || (UNITY_WSA && !UNITY_EDITOR)
+//             System.Console.WriteLine(msg);
+// #else
+//             UnityEngine.Debug.Log(msg);
+// #endif
+//         }
 
         ~JsEnv()
         {
@@ -606,6 +671,13 @@ namespace Puerts
 
         protected virtual void Dispose(bool dispose)
         {
+#if UNITY_EDITOR
+            if (OnJsEnvDispose != null) 
+            {
+                OnJsEnvDispose(this);
+            }
+#endif
+
             lock (jsEnvs)
             {
                 if (disposed) return;
