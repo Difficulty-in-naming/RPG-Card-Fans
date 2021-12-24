@@ -8,6 +8,7 @@ import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePo
 import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
 
 export class ModeShiftPower extends AbstractPower{
+    public static Id = "ModeShift"; 
     Icon: string = FileHelper.FormatPath("Powers/modeShift.png");
     Id: string = "ModeShift";
     Name: string = LocalizationProperty.Read("能力-形态转换");

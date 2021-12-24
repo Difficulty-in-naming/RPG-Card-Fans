@@ -21,13 +21,13 @@ import {GremlinThief_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/Th
 import {Looter_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Looter_Model";
 import {AcidSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_L_Model";
 import {SpikeSlime_L_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SpikeSlime_L_Model";
-import {RedSlaver} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/RedSlaver";
+import {RedSlaver_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/RedSlaver_Model";
 import {FungiBeast_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/FungiBeast_Model";
 import {GremlinNob_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/GremlinNob_Model";
 import {Lagavulin_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Lagavulin_Model";
 import {Sentry_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Sentry_Model";
 import {TheGuardian_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/TheGuardian_Model";
-import {Hexaghost} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Hexaghost";
+import {Hexaghost_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Hexaghost_Model";
 import {SlimeBoss_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/SlimeBoss_Model";
 import {Cultist_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/Cultist_Model";
 import {AcidSlime_M_Model} from "mods/ModTheSpire/Scripts/Unit/Monster/Model/TheBottom/AcidSlime_M_Model";
@@ -175,7 +175,7 @@ export class Exordium extends AbstractDungeon{
             result.push(this.GetWeakMonster());
             return result;
         });
-        enemies.set(RedSlaver.Id,()=>new Array(new RedSlaver(0,0)));
+        enemies.set(RedSlaver_Model.Id,()=>new Array(new RedSlaver_Model(0,0)));
         enemies.set("3 Louse", ()=>{
             let array = new Array<MonsterInfo>();
             for(let i = 0;i<3;i++){
@@ -202,7 +202,7 @@ export class Exordium extends AbstractDungeon{
 
     protected InitializeBoss(enemies: Map<string,()=>Array<MonsterInfo>>) {
         enemies.set(TheGuardian_Model.Id,()=>new Array(new TheGuardian_Model(0,0)));
-        enemies.set(Hexaghost.Id,()=>new Array(new Hexaghost(0,0)));
+        enemies.set(Hexaghost_Model.Id,()=>new Array(new Hexaghost_Model(0,0)));
         enemies.set(SlimeBoss_Model.Id,()=>new Array(new SlimeBoss_Model(0,0)));
     }
     
@@ -217,7 +217,7 @@ export class Exordium extends AbstractDungeon{
         let pool = new Array<MonsterInfo>();
         pool.push(new Looter_Model(0,0));
         pool.push(new BlueSlaver_Model(0,0));
-        pool.push(new RedSlaver(0,0));
+        pool.push(new RedSlaver_Model(0,0));
         pool.push(new FungiBeast_Model(0,0));
         return pool[Mathf.RandomRange(0,pool.length - 1,this.MiscRng)];
     }

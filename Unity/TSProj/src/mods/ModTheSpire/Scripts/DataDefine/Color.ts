@@ -14,7 +14,7 @@ export default class Color{
     public static readonly RedText = new Color(255,101,99,255);
     public static readonly GreenText = new Color(127,255,0,255);
     public static readonly BlueText = new Color(135,206,235,255);
-    public static readonly GoldText = new Color(239,200,81,255);
+    public static readonly Gold = new Color(239,200,81,255);
     public static readonly PurpleText = new Color(238,130,238,255);
     public static readonly RedHpBarColor = new Color(204,13,13,255);
     public static readonly GreenHpBarColor = new Color(120,190,60,255);
@@ -24,7 +24,8 @@ export default class Color{
     public static readonly Sky = new Color(135, 206, 235, 255);
     public static readonly Cyan = new Color(0,255,255,255);
     public static readonly Orange = new Color(255,165,0,255);
-    public static readonly Goldenrod = new Color(218,165,32,255) 
+    public static readonly Goldenrod = new Color(218,165,32,255);
+    public static readonly Scarlet = new Color(255,52,28,255)
     public R : number;
     public G : number;
     public B : number;

@@ -1,4 +1,4 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
+﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
 import AbstractCreature from "../../Unit/AbstractCreature";
 import Async from "Core/Async";
 
@@ -7,6 +7,7 @@ export default class GainBlockAction extends AbstractGameAction
     private Target:AbstractCreature;
     private Source:AbstractCreature;
     private Amount:number;
+    Type = ActionType.BLOCK;
     public constructor(target : AbstractCreature, amount : number, source: AbstractCreature = null) {
         super();
         this.Target = target;

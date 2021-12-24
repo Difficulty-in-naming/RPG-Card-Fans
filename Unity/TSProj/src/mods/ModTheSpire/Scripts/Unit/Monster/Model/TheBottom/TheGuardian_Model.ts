@@ -18,6 +18,6 @@ export class TheGuardian_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return TheGuardian_Model.Id;
+        return "怪物-守护者";
     }
 }

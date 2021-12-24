@@ -43,7 +43,7 @@ export class Cultist_ViewModel extends AbstractMonster{
     GetMove(num: number) {
         if(num <60){
             if(this.LastTwoMoves(1)){
-                this.SetMove(2,Intent.BUFF,{moveName:})
+                this.SetMove(2,Intent.BUFF,{moveName:LocalizationProperty.Read("咔咔")})
             }
         }
         if(DungeonManager.Inst.CurrentRoom.Round == 1){

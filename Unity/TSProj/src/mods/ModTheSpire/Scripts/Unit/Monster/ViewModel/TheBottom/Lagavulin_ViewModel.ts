@@ -40,7 +40,7 @@ export class Lagavulin_ViewModel extends AbstractMonster{
         if(!this.Asleep){
             this.IsOut = true;
             trackEntry = <Spine.TrackEntry>this.SetAnimation("Idle_2",true);
-            this.SetHitBox({X:0,Y:-25,Width:320,Height:370});
+            this.SetHitBox(0,-25,320,370);
         } else {
             trackEntry = <Spine.TrackEntry>this.SetAnimation("Idle_1",true);
         }
@@ -129,7 +129,7 @@ export class Lagavulin_ViewModel extends AbstractMonster{
     
     Open(){
         this.IsOut = true;
-        this.SetHitBox({X:0,Y:-25,Width:320,Height:370});
+        this.SetHitBox(0,25,320,370);
         this.AddToBot(new TalkAction(this.X - 170,this.Y-50,LocalizationProperty.Read(this.Info.Name + "对话4"),true,0.5,2));
         this.AddToBot(new ReducePowerAction(this,this,MetallicizePower.Id,8));
         MusicMaster.Play("ELITE");

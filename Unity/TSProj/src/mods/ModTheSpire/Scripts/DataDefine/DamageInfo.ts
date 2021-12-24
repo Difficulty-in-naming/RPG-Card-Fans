@@ -1,7 +1,7 @@
 ﻿import AbstractCreature from "../Unit/AbstractCreature";
 import {DamageType} from "./DamageType";
 export class WrapDamage{
-    public readonly Source : AbstractCreature;
+    public readonly Source : any;
     public readonly Damage : number;
     public readonly Type : DamageType;
 
@@ -20,24 +20,26 @@ export class DamageModification{
 }
 export default class DamageInfo
 {
+    //伤害来源单位
+    public readonly Unit : AbstractCreature;
     //原始伤害
     public readonly Origin : WrapDamage;
     //伤害修改列表
     public Modify = new Array<DamageModification>();
+    //伤害类型
     public get DamageType() : DamageType{
         return this.Modify.last().Damage.Type;
     }
-    public get Source():any{
-        return this.Modify.last().Damage.Source;
-    }
+    //最终伤害
     public get TotalDamage(){
         let num:number = 0;
         this.Modify.forEach(t1=>num += t1.Damage.Damage);
         return num;
     }
-    public constructor(source:any, damage:number, type:DamageType = DamageType.NORMAL)
+    public constructor(unit:AbstractCreature, damage:number, type:DamageType = DamageType.NORMAL)
     {
-        this.Origin = new WrapDamage(source,damage,type);
+        this.Unit = unit;
+        this.Origin = new WrapDamage(unit,damage,type);
         this.Modify.push(new DamageModification(this.Origin));
     }
     

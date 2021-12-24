@@ -4,7 +4,7 @@ import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
 import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
 import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
 
-export class SpeechBubble extends AbstractEffect{
+export class MegaSpeechBubble extends AbstractEffect{
     private Instance : FairyGUI.GComponent;
     private Bg : FairyGUI.GImage;
     private SuperText:SuperText;
@@ -14,13 +14,12 @@ export class SpeechBubble extends AbstractEffect{
         this.Bg = this.Instance.GetChild("Bg").asImage;
         if(FlipX)
             this.Bg.flip = FairyGUI.FlipType.Horizontal;
-        this.Instance.SetPosition(X,Y,0);
         let graph = this.Instance.GetChild("Holder").asGraph;
         this.SuperText = UIHelper.CreateSuperText();
         let wrap = new FairyGUI.GoWrapper(this.SuperText.gameObject);
         wrap.SetScale(100,100)
         this.SuperText.color = Color.Gray.UnityColor();
-        this.SuperText.text = `<shake>${Msg}</shake>`;
+        this.SuperText.text = `{speechsize}{offset}${Msg}{/offset}{/speechsize}`;
         this.SuperText.lineSpacing = -50;
         this.SuperText.Width = 2;
         graph.SetNativeObject(wrap);
@@ -33,3 +32,6 @@ export class SpeechBubble extends AbstractEffect{
             this.IsDone = true;
     }
 }
+
+
+

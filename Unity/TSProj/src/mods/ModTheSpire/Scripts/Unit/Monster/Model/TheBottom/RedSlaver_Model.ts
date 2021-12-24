@@ -6,7 +6,7 @@ import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
 import {Mathf} from "Core/Module/Math/Mathf";
 import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
 
-export class RedSlaver extends MonsterInfo{
+export class RedSlaver_Model extends MonsterInfo{
     public static Id = "RedSlaver"
 
     get MaxHealth(): number {

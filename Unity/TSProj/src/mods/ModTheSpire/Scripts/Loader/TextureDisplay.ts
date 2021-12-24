@@ -1,6 +1,7 @@
 ﻿import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
 import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
 import { FairyGUI } from "csharp";
+import {Rect} from "Core/Define/Rect";
 
 export class TextureDisplay implements IDisplay {
     Bounds: FairyGUI.GGraph;
@@ -50,6 +51,13 @@ export class TextureDisplay implements IDisplay {
     UnitComponent: any;
 
     AddAnimation(animation: string, loop?: boolean): any {
+    }
+
+    GetHitBox(): Rect {
+        return undefined;
+    }
+
+    SetHitBox(rect: Rect) {
     }
 
     

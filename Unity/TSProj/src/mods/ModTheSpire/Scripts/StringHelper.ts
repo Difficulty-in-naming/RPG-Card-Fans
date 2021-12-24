@@ -33,7 +33,7 @@ export class StringHelper{
                 return substring.replace(' #b',`[color=${Color.BlueText.ToHex()}]`) + "[/color]".replace(' ','');
             }
             if(substring.startsWith(' #y')){
-                return substring.replace(' #y',`[color=${Color.GoldText.ToHex()}]`) + "[/color]".replace(' ','');
+                return substring.replace(' #y',`[color=${Color.Gold.ToHex()}]`) + "[/color]".replace(' ','');
             }
             if(substring.startsWith(' #p')){
                 return substring.replace(' #p',`[color=${Color.PurpleText.ToHex()}]`) + "[/color]".replace(' ','');
