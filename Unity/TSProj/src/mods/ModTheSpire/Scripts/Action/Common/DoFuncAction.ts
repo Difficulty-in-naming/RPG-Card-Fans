@@ -1,5 +1,5 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class DoFuncAction extends AbstractGameAction{
     public constructor(private Func:Function,private Interval:number = 0) {

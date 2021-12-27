@@ -1,8 +1,8 @@
-﻿import {View_MasterDeckView} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_MasterDeckView";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import AbstractCard, {CardType} from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+﻿import AbstractCard, { CardType } from "../../Cards/AbstractCard";
+import DungeonManager from "../../DungeonManager";
+import { LocalizationProperty } from "../../Gen/DB/Localization";
+import { View_MasterDeckView } from "../../Gen/View/ModTheSpire_MasterDeckView";
+import UIHelper from "../UIHelper";
 
 export class UI_MasterDeckView extends View_MasterDeckView{
     type = new Map<string, number>();

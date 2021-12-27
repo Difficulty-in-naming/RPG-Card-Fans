@@ -1,11 +1,12 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PreApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PreApplyPowerMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
+﻿import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import DungeonManager from "../DungeonManager";
+import { PreApplyPowerMessage } from "../Events/PreApplyPowerMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
+
 
 export class ArtifactPower extends AbstractPower{
     public static PowerID = "Artifact";

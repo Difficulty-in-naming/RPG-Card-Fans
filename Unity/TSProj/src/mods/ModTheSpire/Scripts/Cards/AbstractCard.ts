@@ -1,17 +1,18 @@
-﻿import QueueMessageKit, {IGameAction} from "../../../../Core/QueueMessageKit";
-import {StringHelper} from "../StringHelper";
-import {UuidTool} from "Core/Module/UUID";
-import {View_Card} from "../Gen/View/ModTheSpire_Common";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+﻿import { UuidTool } from "uuid-tool";
+import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import DungeonManager from "../DungeonManager";
+import { View_Card } from "../Gen/View/ModTheSpire_Common";
+import { StringHelper } from "../StringHelper";
+import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
+import { AbstractMonster } from "../Unit/Monster/AbstractMonster";
+
 export default abstract class AbstractCard
 {
     //唯一ID.用于标志哪些卡牌升级.或者针对某张卡牌做特殊操作
     public UUID : string;
     public abstract Name : string;
     //⚠警告!!不要在外部使用这个变量,这个变量是未被格式化的！,请使用GetDesc()
-    protected abstract Desc : string = "";
+    protected abstract Desc : string;
     //图标
     public abstract Icon : string;
     //卡牌标签(攻击,初始卡牌)

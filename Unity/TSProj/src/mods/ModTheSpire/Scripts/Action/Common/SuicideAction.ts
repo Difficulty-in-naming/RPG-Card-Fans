@@ -1,5 +1,5 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
+﻿import { AbstractMonster } from "../../Unit/Monster/AbstractMonster";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class SuicideAction extends AbstractGameAction{
     Type = ActionType.DAMAGE;

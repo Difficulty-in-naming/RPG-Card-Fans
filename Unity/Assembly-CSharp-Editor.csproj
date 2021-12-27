@@ -52,35 +52,256 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\MorphingPack.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\OriginalUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ColorFilters.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\System\SuperComponent.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\Node.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\AlphaAsAura.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedTwistUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Make3DFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnC64.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\StageCameraEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\SourceGrabPass.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\HdrCreate.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedShakeUV.cs" />
+     <Compile Include="Assets\Editor\01_WrapperGenerate\PuertsFilter.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\FadeToAlpha.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Mask\MaskChannel.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationBlend.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ColorRGBA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\LightingSupport.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\AuraDisplacementPack.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Utilities\Attributes\Editor\MinValueAttributeDrawer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Fire.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Utilities\Attributes\Editor\PositiveValueAttributeDrawer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ShadowLight.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\GrabPassUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\PatternMovementPack.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedRotationUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\MotionBlurFast.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ColorGradients.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Destroyer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnEGA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\SpriteSheetUVAnimPack.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\GrayScale.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\PolarCoordinatesUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\RGBA2Split.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Utilities\Attributes\Editor\CharsDisplayTimeAttributeDrawer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedOffsetUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\RGBA2UV.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Editor\TAnimGlobalDataScriptableDrawer.cs" />
-     <Compile Include="Assets\Editor\PuertsConfig.cs" />
-     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\U2018Compatible.cs" />
+     <Compile Include="Assets\Editor\04_ConsoleRedirect\ConsoleRedirect.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorInputControls.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\GenerateTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\MainTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\DamageIncrustation.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\ScreenUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SpriteSheetAnimationUV.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\Configure.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\WorldParalaxUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorSaveManager.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Utilities\ResourceManager.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\ZoomUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\SubUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeTypes.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_LightningFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Line.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Sharpness.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Xray.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\TiltRightUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\GrabPass.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeCanvas.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\TiltUpUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\PinchUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\AddUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\RGBA_Sub.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Mask\MaskAlpha.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\SaturateUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\GenerateAtlasTextureUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PlasmaLightFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\UniColor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\RGBA_Div.cs" />
+     <Compile Include="Assets\Editor\04_ConsoleRedirect\InjectTool.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\InverseColor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\InnerGlow.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PatternMovementMask.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Utilities\Attributes\Editor\NotZeroAttribute.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\BlurHQ.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Emboss.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\DisplacementUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationMul.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedPingPongOffsetUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\WorldPositionPlusUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedZoomUV.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIConfigEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\TwistUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PatternMovement.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_3DPlanet.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\RGBAAlpha2.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\DistortionUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationAdd.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ClippingLeft.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PremadeGradients.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\PreviewTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedInfiniteZoomUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\EmbossFull.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\FixUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\DisplacementPlusUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\ResizeUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnBlackToAlpha.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\BlurHQPlus.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PlasmaFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationDiv.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ClippingUp.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnCGA2.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorGUI.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\RotationUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SpriteSheetFrameUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\WorldGrass.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Utilities\EditorLoadingControl.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PaletteSwapping2Texture.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPainterEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\NodeEditorWindow.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\PageCurl.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\TiltDownUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Starfield.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\PixelUV.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\PackagesWindow.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\Split2RGBA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Utilities\GUI\GUIScaleUtility.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnGB.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\HolographicParalax.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\ConnectionTypes.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\AlphaIntensity.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SlicedHorizontalBarUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnAlphaToBlack.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\EditorToolSet.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\TiltLeftUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\OutlineFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\GhostFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Mask\Mask2uv.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Donuts.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Circle.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\PositionUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\CircleFade.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\DisplacementPack.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnTransparent.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ClippingDown.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Noise.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\WorldGrassMask.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Shape.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ColorHSV.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Editor\TAnimPlayerBaseDrawer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorState.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnCGA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Mask\MaskRGBA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\SourceRGBA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeKnob.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Utilities\GUI\RTEditorGUI.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\RGBA_Mul.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\GenerateSOFTexture.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Editor\TextAnimatorDrawer.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SimpleDisplacementRotativeUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_3DSphere.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\BurnFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\HumanBreathUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\MultipleUV.cs" />
+     <Compile Include="Assets\Editor\01_WrapperGenerate\PuertsConfig.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\CompressionFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\BuildShader.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\FishEyeUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Spiral.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Desintegration.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Core\Editor\BuiltinEffectsDataScriptableDrawer.cs" />
-     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\Generator.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\RGBAAlpha.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorCallbackReceiver.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\RGBA_Add.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\HdrControlValue.cs" />
      <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\DocResolver.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Utilities\GUI\OverlayGUI.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\SourceNewTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Voronoi.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationLerp.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\LerpUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeInput.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Hologram.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeCanvasManager.cs" />
+     <Compile Include="Assets\Editor\02_AutoUsing\GeneratorUsing.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\SourceMainTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Blur.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\HumanBreathExUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeCanvasSceneSave.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ClippingRight.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIContentScalerEditor.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\DisplayObjectEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\SourceRenderTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Threshold.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Checker.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\FlipUV_V.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\LiquidUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\OffsetUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\FlipUV_H.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorInputSystem.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\DoodleUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Mask\MaskSprite.cs" />
      <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Example\Editor\EffectsTestingCustomEditor.cs" />
-     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\Configure.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPanelEditor.cs" />
-     <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Example\Editor\UsageExampleCustomEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Palette4Swapping.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationSub.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ShinyOnlyFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\RenderedTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\FourGradients.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ShinyFX.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\KaleidoscopeUV.cs" />
      <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\CJSImporter.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeOutput.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\OperationBlendMask.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\Generator.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\WorldPositionUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\SuperGrayScale.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\Saturate.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Framework\NodeEditorUserCache.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ThresholdSmooth.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\AutomaticLerp.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SimpleDisplacementUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\CircleHole.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Pack\MorphingPerfectPack.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\_Initialize\NewTexture.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Simple3DSphere.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnGold.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPanelEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\AnimatedMouvementUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Generate_Pyramid.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Math\DivUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\ColorGradients2.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\DamageIncrustationTint.cs" />
+     <Compile Include="Assets\Editor\03_NodeTSCAndHotReload\NodeTSCAndHotReload.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\PixelXYUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TintRGBA.cs" />
+     <Compile Include="Assets\ThirdParty\Febucci\Text Animator\Example\Editor\UsageExampleCustomEditor.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\TurnMetal.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\Rgba\UV2RGBA.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\UV FX\SlicedVerticalBarUV.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\OutlineEmpty.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Brightness.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Src\Editor\U2018Compatible.cs" />
+     <Compile Include="Assets\ShaderoSprite\Plugins\Editor\Nodes\FX\Darkness.cs" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\generatetextureshader3.shader" />
+     <None Include="Assets\Editor\04_ConsoleRedirect\Plugins\README.txt" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\previewshader2.shader" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\previewshader3.shader" />
      <None Include="Assets\ThirdParty\Puerts\Src\Editor\Resources\puerts\templates\autoreg.tpl.txt" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\generatetextureshader1.shader" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\previewshader4.shader" />
+     <None Include="Assets\Editor\02_AutoUsing\Resources\puerts\templates\autousing.tpl.txt" />
      <None Include="Assets\ThirdParty\Puerts\Src\Editor\Resources\puerts\templates\typing.tpl.txt" />
-     <None Include="Assets\ThirdParty\Puerts\Src\Editor\Resources\puerts\gencode\doT.js.txt" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\ShaderoGeneratedUV.shader" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\previewshader1.shader" />
+     <None Include="Assets\ShaderoSprite\Plugins\Editor\Cache\generatetextureshader2.shader" />
+     <None Include="Assets\Editor\04_ConsoleRedirect\Resources\puerts\puerts-source-map-support.js.txt" />
+     <None Include="Assets\Editor\04_ConsoleRedirect\Resources\puerts\console-track.js.txt" />
      <None Include="Assets\ThirdParty\Puerts\Src\Editor\Resources\puerts\templates\type.tpl.txt" />
-     <None Include="Assets\ThirdParty\Puerts\Src\Editor\Resources\puerts\gencode\main.js.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -330,8 +551,14 @@
  <Reference Include="DOTween">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.demigiant.dotween@1.2.42/DOTween/Plugins/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1-preview.1/Mono.Cecil.dll</HintPath>
+ <Reference Include="Unity.Cecil.Pdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Pdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil.Mdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -702,12 +929,6 @@
  <Reference Include="UnityEditor.CacheServer">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
  </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Searcher.Editor">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
  </Reference>
@@ -732,9 +953,6 @@
  <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Multiplayer.MLAPI.Runtime">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Runtime.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -752,9 +970,6 @@
  </Reference>
  <Reference Include="UniTask.TextMeshPro">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/UniTask.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Multiplayer.MLAPI.Prototyping">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.Multiplayer.MLAPI.Prototyping.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -802,6 +1017,10 @@
       <Project>{5f89c84e-ded7-c085-2d91-582735462c8c}</Project>
       <Name>spine-unity-examples-editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{651b9223-1d49-3552-fade-892e6e843c3f}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="spine-unity.csproj">
       <Project>{4ebdc6d9-b198-4028-cad8-6ae288c4c16e}</Project>
       <Name>spine-unity</Name>
@@ -809,6 +1028,10 @@
     <ProjectReference Include="spine-unity-examples.csproj">
       <Project>{8b54cdd5-3782-72cd-f713-6dfbafbad64c}</Project>
       <Name>spine-unity-examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{dfd7019c-bb86-3498-4973-5d336b1f52ef}</Project>
+      <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="Panthea.Editor.Asset.csproj">
       <Project>{b373b072-9c02-5434-4967-be94f4e96ffe}</Project>
@@ -833,6 +1056,10 @@
     <ProjectReference Include="Panthea.Utils.csproj">
       <Project>{fd394c41-51e6-503c-1715-785bb9cd194a}</Project>
       <Name>Panthea.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="ConsoleRedirect.csproj">
+      <Project>{1d255967-5473-94d9-af01-b632bfa07540}</Project>
+      <Name>ConsoleRedirect</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
-﻿import {Mathf} from "Core/Module/Math/Mathf";
-import { FairyGUI } from "csharp";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import UIHelper from "../../../../UI/UIHelper";
+
 
 export class HexaghostOrb
 {

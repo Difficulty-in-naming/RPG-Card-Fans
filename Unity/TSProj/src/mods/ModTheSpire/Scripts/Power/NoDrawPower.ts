@@ -1,9 +1,9 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import AbstractCreature from "../Unit/AbstractCreature";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class NoDrawPower extends AbstractPower{
     Name: string = LocalizationProperty.Read("能力-无法抽牌");

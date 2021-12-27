@@ -1,10 +1,10 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
+﻿import { FairyGUI, UnityEngine } from "csharp";
+import Async from "../../../../../Core/Async";
+import DungeonManager from "../../DungeonManager";
+import { HpBlockBrokenEffect } from "../../Events/HpBlockBrokenEffect";
 import AbstractCreature from "../../Unit/AbstractCreature";
-import Async from "Core/Async";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {HpBlockBrokenEffect} from "mods/ModTheSpire/Scripts/Events/HpBlockBrokenEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import { FairyGUI, UnityEngine } from "csharp";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
+
 export default class LoseBlockAction extends AbstractGameAction
 {
     private Target:AbstractCreature;

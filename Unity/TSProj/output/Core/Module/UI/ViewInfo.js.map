@@ -1,0 +1,1 @@
+{"version":3,"file":"ViewInfo.js","sourceRoot":"","sources":["../../../../src/Core/Module/UI/ViewInfo.ts"],"names":[],"mappings":";;;AAAA,MAAa,QAAQ;IAGjB,YAAY,GAAU,EAAC,IAAW;QAC9B,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;QACf,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACrB,CAAC;IACM,QAAQ;QACX,OAAO,IAAI,CAAC,GAAG,GAAG,GAAG,GAAG,IAAI,CAAC,IAAI,CAAC;IACtC,CAAC;CACJ;AAVD,4BAUC"}

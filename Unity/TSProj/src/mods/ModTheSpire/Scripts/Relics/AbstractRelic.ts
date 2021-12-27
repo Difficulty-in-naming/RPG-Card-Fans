@@ -1,6 +1,6 @@
-﻿import {UuidTool} from "Core/Module/UUID";
-import {IGameAction} from "Core/QueueMessageKit";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+﻿import { UuidTool } from "uuid-tool";
+import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import DungeonManager from "../DungeonManager";
 
 export default abstract class AbstractRelic{
     public abstract Id :string;

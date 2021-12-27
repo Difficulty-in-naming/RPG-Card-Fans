@@ -1,8 +1,9 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {View_CleaveEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {TimeKit} from "Core/Utils/TimeKit";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import { View_CleaveEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
+
 
 export class CleaveEffect extends AbstractEffect{
     private Loader:FairyGUI.GComponent;

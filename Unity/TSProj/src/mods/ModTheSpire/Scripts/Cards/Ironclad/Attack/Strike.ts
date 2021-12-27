@@ -1,11 +1,11 @@
-﻿import AbstractCard, {CardColor, CardRarity, CardTags, CardTarget, CardType} from "../../AbstractCard";
+﻿import DamageAction from "../../../Action/Common/DamageAction";
+import { AttackEffect } from "../../../DataDefine/AttackEffect";
 import DamageInfo from "../../../DataDefine/DamageInfo";
-import {AttackEffect} from "../../../DataDefine/AttackEffect";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+import FileHelper from "../../../FileHelper";
+import { LocalizationProperty } from "../../../Gen/DB/Localization";
+import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
+import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
+import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
 
 export default class Strike extends AbstractCard
 {

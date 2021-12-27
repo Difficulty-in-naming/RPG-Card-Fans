@@ -1,6 +1,6 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
+﻿import Async from "../../../../../Core/Async";
 import AbstractCreature from "../../Unit/AbstractCreature";
-import Async from "Core/Async";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export default class GainBlockAction extends AbstractGameAction
 {

@@ -1,5 +1,4 @@
 ﻿import {ConfigAssetManager} from "../../../Core/Module/Config/ConfigAssetManager";
-import PathHelper from "../../../Core/Utils/PathHelper";
 import {UnityEngine} from 'csharp';
 
 // @ts-ignore

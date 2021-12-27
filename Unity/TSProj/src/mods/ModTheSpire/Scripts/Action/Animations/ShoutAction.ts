@@ -1,8 +1,8 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {MegaSpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/MegaSpeechBubble";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
+﻿import DungeonManager from "../../DungeonManager";
+import { MegaSpeechBubble } from "../../Effect/Combat/MegaSpeechBubble";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import { AbstractPlayer } from "../../Unit/Character/AbstractPlayer";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class ShoutAction extends AbstractGameAction{
     Type = ActionType.TEXT;

@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class TMPro_TMP_LineInfo_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new TMPro.TMP_LineInfo();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(TMPro.TMP_LineInfo), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,9 +22,6 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_characterCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,7 +36,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_characterCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -67,8 +51,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_visibleCharacterCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -83,7 +65,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_visibleCharacterCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -99,8 +80,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_spaceCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -115,7 +94,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_spaceCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -131,8 +109,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_wordCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -147,7 +123,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_wordCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -163,8 +138,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_firstCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -179,7 +152,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_firstCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -195,8 +167,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_firstVisibleCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -211,7 +181,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_firstVisibleCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -227,8 +196,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_lastCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -243,7 +210,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_lastCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -259,8 +225,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_lastVisibleCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -275,7 +239,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_lastVisibleCharacterIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -291,8 +254,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_length(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -307,7 +268,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_length(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -323,8 +283,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_lineHeight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -339,7 +297,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_lineHeight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -355,8 +312,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_ascender(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -371,7 +326,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_ascender(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -387,8 +341,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_baseline(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -403,7 +355,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_baseline(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -419,8 +370,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_descender(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -435,7 +384,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_descender(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -451,8 +399,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_maxAdvance(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -467,7 +413,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_maxAdvance(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -483,8 +428,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -499,7 +442,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -515,8 +457,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_marginLeft(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -531,7 +471,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_marginLeft(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -547,8 +486,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_marginRight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -563,7 +500,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_marginRight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -579,8 +515,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_alignment(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -595,7 +529,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_alignment(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -611,8 +544,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_lineExtents(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -627,7 +558,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_lineExtents(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -643,10 +573,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -655,7 +581,6 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -678,10 +603,14 @@ namespace PuertsStaticWrap
                     {"marginRight", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_marginRight, Setter = S_marginRight} },
                     {"alignment", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_alignment, Setter = S_alignment} },
                     {"lineExtents", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_lineExtents, Setter = S_lineExtents} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

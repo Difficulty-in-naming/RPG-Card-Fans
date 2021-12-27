@@ -1,10 +1,10 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {Mathf} from "Core/Module/Math/Mathf";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import { FairyGUI } from "csharp";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {TimeKit} from "Core/Utils/TimeKit";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import Color from "../DataDefine/Color";
+import FileHelper from "../FileHelper";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
 
 export class GameDeckGlowEffect extends AbstractEffect{
     private Interval:number = Mathf.RandomRange(2,5);

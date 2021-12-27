@@ -1,6 +1,6 @@
-﻿import AbstractRelic from "./AbstractRelic";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+﻿import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import AbstractRelic from "./AbstractRelic";
 
 export default class BurningBlood extends AbstractRelic
 {

@@ -1,7 +1,7 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {View_BorderFlashEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
-import { FairyGUI } from "csharp";
+﻿import { FairyGUI } from "csharp";
+import Color from "../../DataDefine/Color";
+import { View_BorderFlashEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
 
 export class BorderFlashEffect extends AbstractEffect{
     public Loader:FairyGUI.GComponent

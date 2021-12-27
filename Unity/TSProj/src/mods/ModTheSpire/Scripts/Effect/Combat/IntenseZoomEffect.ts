@@ -1,7 +1,8 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {BorderFlashEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BorderFlashEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+﻿import Color from "../../DataDefine/Color";
+import DungeonManager from "../../DungeonManager";
+import { AbstractEffect } from "../AbstractEffect";
+import { BorderFlashEffect } from "./BorderFlashEffect";
+
 
 export class IntenseZoomEffect extends AbstractEffect{
     public constructor(private _X:number,private _Y:number,private _IsBlack:boolean) {

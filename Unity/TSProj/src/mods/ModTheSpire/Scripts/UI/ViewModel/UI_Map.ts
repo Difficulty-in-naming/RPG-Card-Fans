@@ -1,12 +1,10 @@
-﻿import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import Rand from "Core/Module/RandomGenerator";
-import {View_Map, View_NormalRoom} from "../../Gen/View/ModTheSpire_Map";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {MapRoomNode} from "mods/ModTheSpire/Scripts/Room/MapRoomNode";
-import { FairyGUI, UnityEngine } from "csharp";
-import {Log} from "Core/Module/Log/Log";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+﻿import { FairyGUI, UnityEngine } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import Color from "../../DataDefine/Color";
+import DungeonManager from "../../DungeonManager";
+import { View_NormalRoom,View_Map } from "../../Gen/View/ModTheSpire_Map";
+import { MapRoomNode } from "../../Room/MapRoomNode";
+import UIHelper from "../UIHelper";
 
 export class UI_Map extends View_Map {
     private roomList = new Map<FairyGUI.GComponent,MapRoomNode>();

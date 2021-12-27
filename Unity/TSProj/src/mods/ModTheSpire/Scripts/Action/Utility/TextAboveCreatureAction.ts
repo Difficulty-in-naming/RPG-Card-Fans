@@ -1,8 +1,8 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {TextAboveCreatureEffect} from "mods/ModTheSpire/Scripts/Effect/TextAboveCreatureEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+﻿import Color from "../../DataDefine/Color";
+import EffectKit from "../../Effect/EffectKit";
+import { TextAboveCreatureEffect } from "../../Effect/TextAboveCreatureEffect";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class TextAboveCreatureAction extends AbstractGameAction{
     private Msg:string;

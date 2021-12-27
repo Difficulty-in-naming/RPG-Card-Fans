@@ -1,6 +1,5 @@
-﻿import { MediaManager } from "csharp"
-import {Mathf} from "Core/Module/Math/Mathf";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
+﻿import { MediaManager } from "csharp";
+import FileHelper from "../FileHelper";
 
 export class MusicMaster{
     public static Map:Map<string,string> = new Map<string, string>([

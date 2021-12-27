@@ -1,9 +1,10 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import { FairyGUI, MediaManager } from "csharp";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import {Mathf} from "Core/Module/Math/Mathf";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
+﻿import { FairyGUI, MediaManager } from "csharp";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import { AttackEffect } from "../DataDefine/AttackEffect";
+import FileHelper from "../FileHelper";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export class FlashAtkImgEffect extends AbstractEffect{
     private Interval = 0.6;

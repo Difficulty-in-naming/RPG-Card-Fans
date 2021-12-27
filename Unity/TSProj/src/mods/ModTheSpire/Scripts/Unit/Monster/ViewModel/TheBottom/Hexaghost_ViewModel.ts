@@ -1,9 +1,10 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
-import {HexaghostOrb} from "mods/ModTheSpire/Scripts/Unit/Monster/ViewModel/TheBottom/HexaghostOrb";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { OnPreBattleMessage } from "../../../../Events/OnPreBattleMessage";
+import { AbstractMonster } from "../../AbstractMonster";
+import { HexaghostOrb } from "./HexaghostOrb";
 
 export class Hexaghost_ViewModel extends AbstractMonster{
     private _StrAmount: number;

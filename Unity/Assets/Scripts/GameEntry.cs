@@ -22,7 +22,9 @@ public class GameEntry : MonoBehaviour
         var loop = PlayerLoop.GetCurrentPlayerLoop();
         PlayerLoopHelper.Initialize(ref loop);
         UnityLifeCycleKit.Inst = gameObject.AddComponent<UnityBehaviour>();
-        loader = new PuertsLoader(Application.streamingAssetsPath);
+        var dataPath = Application.dataPath;
+        var path = dataPath.Remove(dataPath.Length - "Assets".Length, "Assets".Length) + "TsProj/output/";
+        loader = new PuertsLoader(path);
         jsEnv = new JsEnv(loader,debugPort);        // 实例化 js 虚拟机
         if (IsDeveloper)
         {
@@ -50,7 +52,7 @@ public class GameEntry : MonoBehaviour
         }
         jsEnv.Eval("openSourceMap = require('OpenSourceMap.js.txt')");
         jsEnv.Eval("entry = require('MainEntry'); ");
-        var files = Directory.GetFiles(Application.streamingAssetsPath, "Entry.js", SearchOption.AllDirectories);
+        var files = Directory.GetFiles(loader.debugRoot, "Entry.js", SearchOption.AllDirectories);
         foreach (var node in files)
         {
             var jsPath =
@@ -62,7 +64,6 @@ public class GameEntry : MonoBehaviour
     void Update()
     {
         jsEnv.Tick();
-        hotReloadComponent?.Update();
         if (JsUpdate != null) JsUpdate();
     }
 }

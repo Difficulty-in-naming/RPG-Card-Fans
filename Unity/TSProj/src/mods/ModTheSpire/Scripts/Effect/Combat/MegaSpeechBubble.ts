@@ -1,8 +1,8 @@
 ﻿import { FairyGUI, SuperText } from "csharp";
-import {View_SpeechBubble} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
+import Color from "../../DataDefine/Color";
+import { View_SpeechBubble } from "../../Gen/View/ModTheSpire_Effect";
+import UIHelper from "../../UI/UIHelper";
+import { AbstractEffect } from "../AbstractEffect";
 
 export class MegaSpeechBubble extends AbstractEffect{
     private Instance : FairyGUI.GComponent;

@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class TMPro_TMP_FontWeightPair_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new TMPro.TMP_FontWeightPair();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(TMPro.TMP_FontWeightPair), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,9 +22,6 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_regularTypeface(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,7 +36,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_regularTypeface(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -67,8 +51,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_italicTypeface(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -83,7 +65,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_italicTypeface(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -99,10 +80,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -111,16 +88,19 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"regularTypeface", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_regularTypeface, Setter = S_regularTypeface} },
                     {"italicTypeface", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_italicTypeface, Setter = S_italicTypeface} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

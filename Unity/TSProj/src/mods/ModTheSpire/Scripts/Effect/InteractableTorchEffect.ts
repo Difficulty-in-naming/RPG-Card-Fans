@@ -1,11 +1,11 @@
 ﻿import { FairyGUI, MediaManager } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {TimeKit} from "Core/Utils/TimeKit";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {TorchParticleEffect} from "mods/ModTheSpire/Scripts/Effect/TorchParticleEffect";
-import {LightFlareEffect} from "mods/ModTheSpire/Scripts/Effect/LightFlareEffect";
+import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import FileHelper from "../FileHelper";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
+import EffectKit from "./EffectKit";
+import { LightFlareEffect } from "./LightFlareEffect";
+import { TorchParticleEffect } from "./TorchParticleEffect";
 
 export class InteractableTorchEffect extends AbstractEffect{
     private Loader : FairyGUI.GLoader;

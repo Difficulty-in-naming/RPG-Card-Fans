@@ -1,5 +1,5 @@
-﻿import QueueMessageKit, {IGameAction} from "../../../../Core/QueueMessageKit";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+﻿import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import DungeonManager from "../../../../mods/ModTheSpire/Scripts/DungeonManager";
 
 export default class AbstractGameAction implements IGameAction{
     Duration: number = 0;

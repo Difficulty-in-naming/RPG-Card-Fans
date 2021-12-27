@@ -1,16 +1,15 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PaperCrane} from "mods/ModTheSpire/Scripts/Relics/PaperCrane";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
-import {CalcDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcDamageValueMessage";
-import {WrapDamage} from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {OnDamageAfter} from "mods/ModTheSpire/Scripts/Events/OnDamageAfter";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import { WrapDamage } from "../DataDefine/DamageInfo";
+import DungeonManager from "../DungeonManager";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
+import { OnDamageAfter } from "../Events/OnDamageAfter";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { PaperCrane } from "../Relics/PaperCrane";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class WeakPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/weak.png");

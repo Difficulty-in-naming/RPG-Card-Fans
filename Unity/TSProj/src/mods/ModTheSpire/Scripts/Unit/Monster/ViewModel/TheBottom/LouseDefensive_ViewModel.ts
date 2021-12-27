@@ -1,23 +1,24 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {CurlUpPower} from "mods/ModTheSpire/Scripts/Power/CurlUpPower";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import VFXAction from "mods/ModTheSpire/Scripts/Action/Animations/VFXAction";
-import {WebEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/WebEffect";
-import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { AnimateSlowAttackAction } from "../../../../Action/Animations/AnimateSlowAttackAction";
+import VFXAction from "../../../../Action/Animations/VFXAction";
+import { ApplyPowerAction } from "../../../../Action/Common/ApplyPowerAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { DoFuncAction } from "../../../../Action/Common/DoFuncAction";
+import { RollMoveAction } from "../../../../Action/Common/RollMoveAction";
+import { SFXAction } from "../../../../Action/Utility/SFXAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import { DamageType } from "../../../../DataDefine/DamageType";
+import DungeonManager from "../../../../DungeonManager";
+import { WebEffect } from "../../../../Effect/Combat/WebEffect";
+import { OnPreBattleMessage } from "../../../../Events/OnPreBattleMessage";
+import { LocalizationProperty } from "../../../../Gen/DB/Localization";
+import { CurlUpPower } from "../../../../Power/CurlUpPower";
+import { WeakPower } from "../../../../Power/WeakPower";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
+
 
 export class LouseDefensive_ViewModel extends AbstractMonster{
     private IsOpen = true;

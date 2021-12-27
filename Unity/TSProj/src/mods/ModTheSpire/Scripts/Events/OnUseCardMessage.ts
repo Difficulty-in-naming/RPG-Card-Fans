@@ -1,6 +1,6 @@
-﻿import {IMessage} from "Core/ObserverMessageKit";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import AbstractCard from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
+﻿import { IMessage } from "../../../../Core/ObserverMessageKit";
+import AbstractCard from "../Cards/AbstractCard";
+import AbstractCreature from "../Unit/AbstractCreature";
 
 export class OnUseCardMessage  implements IMessage{
     public static readonly Id = "OnUseCardMessage";

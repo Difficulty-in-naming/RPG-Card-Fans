@@ -1,4 +1,4 @@
-﻿import {IMessage} from "Core/ObserverMessageKit";
+﻿import { IMessage } from "../../../../Core/ObserverMessageKit";
 
 export class PostModifyBlockMessage implements IMessage{
     public static readonly Id = "PostModifyBlockMessage";

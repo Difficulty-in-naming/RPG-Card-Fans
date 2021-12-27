@@ -1,24 +1,18 @@
 {
-  
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "commonjs",
-      "jsx": "react",
-      "sourceMap": true,
-      //"inlineSourceMap": true,
-      "baseUrl": "./src/",
-      "typeRoots": [
-        "../Assets/ThirdParty/Puerts/Typing",
-        "../Assets/Gen/Typing",
-        "./node_modules/@types"
-      ],
-/*      "rootDirs": [
-        "../Assets/ThirdParty/Puerts/Typing",
-        "../Assets/Gen/Typing",
-        "./node_modules/@types"
-      ],*/
-      "outDir": "../Assets/StreamingAssets"
-    },
-    "include": ["src","../Assets/Gen/Typing/","../Assets/ThirdParty/Puerts/Typing/"],
-    "exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "typeRoots": [
+      "../Assets/ThirdParty/Puerts/Typing",
+      "../Assets/Gen/Typing",
+      "./node_modules/@types"
+    ],
+    "outDir": "output"
   }
+}

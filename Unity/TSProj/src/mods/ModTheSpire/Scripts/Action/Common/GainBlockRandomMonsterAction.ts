@@ -1,9 +1,9 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {FlashAtkImgEffect} from "mods/ModTheSpire/Scripts/Effect/FlashAtkImgEffect";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import Async from "Core/Async";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import Async from "../../../../../Core/Async";
+import { AttackEffect } from "../../DataDefine/AttackEffect";
+import DungeonManager from "../../DungeonManager";
+import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class GainBlockRandomMonsterAction extends AbstractGameAction{
     Type = ActionType.BLOCK

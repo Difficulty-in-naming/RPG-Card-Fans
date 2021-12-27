@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class Spine_Unity_MeshGeneratorBuffers_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new Spine.Unity.MeshGeneratorBuffers();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(Spine.Unity.MeshGeneratorBuffers), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,9 +22,6 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_vertexCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,7 +36,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_vertexCount(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -67,8 +51,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_vertexBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -83,7 +65,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_vertexBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -99,8 +80,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_uvBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -115,7 +94,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_uvBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -131,8 +109,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_colorBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -147,7 +123,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_colorBuffer(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -163,8 +138,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_meshGenerator(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -179,7 +152,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_meshGenerator(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -195,10 +167,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -207,7 +175,6 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -216,10 +183,14 @@ namespace PuertsStaticWrap
                     {"uvBuffer", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_uvBuffer, Setter = S_uvBuffer} },
                     {"colorBuffer", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_colorBuffer, Setter = S_colorBuffer} },
                     {"meshGenerator", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_meshGenerator, Setter = S_meshGenerator} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

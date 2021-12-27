@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class UnityEngine_Screen_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new UnityEngine.Screen();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.Screen), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,37 +22,27 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void F_SetResolution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
-                
                 if (paramLen == 4)
                 {
-                    
                     var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                     var argHelper1 = new Puerts.ArgumentHelper((int)data, isolate, info, 1);
                     var argHelper2 = new Puerts.ArgumentHelper((int)data, isolate, info, 2);
                     var argHelper3 = new Puerts.ArgumentHelper((int)data, isolate, info, 3);
-                    
-                    
                     if (argHelper0.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper1.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper2.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper3.IsMatch(Puerts.JsValueType.Number, null, false, false))
                     {
-                        
                         var Arg0 = argHelper0.GetInt32(false);
                         var Arg1 = argHelper1.GetInt32(false);
                         var Arg2 = (UnityEngine.FullScreenMode)argHelper2.GetInt32(false);
                         var Arg3 = argHelper3.GetInt32(false);
                         UnityEngine.Screen.SetResolution(Arg0,Arg1,Arg2,Arg3);
-                        
-                        
-                        
                         return;
                     }
                     if (argHelper0.IsMatch(Puerts.JsValueType.Number, null, false, false)
@@ -72,57 +50,40 @@ namespace PuertsStaticWrap
                         && argHelper2.IsMatch(Puerts.JsValueType.Boolean, null, false, false)
                         && argHelper3.IsMatch(Puerts.JsValueType.Number, null, false, false))
                     {
-                        
                         var Arg0 = argHelper0.GetInt32(false);
                         var Arg1 = argHelper1.GetInt32(false);
                         var Arg2 = argHelper2.GetBoolean(false);
                         var Arg3 = argHelper3.GetInt32(false);
                         UnityEngine.Screen.SetResolution(Arg0,Arg1,Arg2,Arg3);
-                        
-                        
-                        
                         return;
                     }
                 }
-                
                 if (paramLen == 3)
                 {
-                    
                     var argHelper0 = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                     var argHelper1 = new Puerts.ArgumentHelper((int)data, isolate, info, 1);
                     var argHelper2 = new Puerts.ArgumentHelper((int)data, isolate, info, 2);
-                    
-                    
                     if (argHelper0.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper1.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper2.IsMatch(Puerts.JsValueType.Number, null, false, false))
                     {
-                        
                         var Arg0 = argHelper0.GetInt32(false);
                         var Arg1 = argHelper1.GetInt32(false);
                         var Arg2 = (UnityEngine.FullScreenMode)argHelper2.GetInt32(false);
                         UnityEngine.Screen.SetResolution(Arg0,Arg1,Arg2);
-                        
-                        
-                        
                         return;
                     }
                     if (argHelper0.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper1.IsMatch(Puerts.JsValueType.Number, null, false, false)
                         && argHelper2.IsMatch(Puerts.JsValueType.Boolean, null, false, false))
                     {
-                        
                         var Arg0 = argHelper0.GetInt32(false);
                         var Arg1 = argHelper1.GetInt32(false);
                         var Arg2 = argHelper2.GetBoolean(false);
                         UnityEngine.Screen.SetResolution(Arg0,Arg1,Arg2);
-                        
-                        
-                        
                         return;
                     }
                 }
-                
                 Puerts.PuertsDLL.ThrowException(isolate, "invalid arguments to SetResolution");
             }
             catch (Exception e)
@@ -130,15 +91,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.width;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
@@ -147,15 +104,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_height(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.height;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
@@ -164,15 +117,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_dpi(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.dpi;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
@@ -181,15 +130,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_currentResolution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.currentResolution;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
@@ -198,15 +143,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_resolutions(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.resolutions;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
@@ -215,15 +156,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_fullScreen(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.fullScreen;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
@@ -232,30 +169,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_fullScreen(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.fullScreen = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_fullScreenMode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.fullScreenMode;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, (int)result);
             }
@@ -264,30 +195,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_fullScreenMode(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.fullScreenMode = (UnityEngine.FullScreenMode)argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_safeArea(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.safeArea;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
@@ -296,15 +221,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_cutouts(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.cutouts;
                 Puerts.ResultHelper.Set((int)data, isolate, info, result);
             }
@@ -313,15 +234,11 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_autorotateToPortrait(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.autorotateToPortrait;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
@@ -330,30 +247,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_autorotateToPortrait(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.autorotateToPortrait = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_autorotateToPortraitUpsideDown(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.autorotateToPortraitUpsideDown;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
@@ -362,30 +273,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_autorotateToPortraitUpsideDown(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.autorotateToPortraitUpsideDown = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_autorotateToLandscapeLeft(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.autorotateToLandscapeLeft;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
@@ -394,30 +299,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_autorotateToLandscapeLeft(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.autorotateToLandscapeLeft = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_autorotateToLandscapeRight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.autorotateToLandscapeRight;
                 Puerts.PuertsDLL.ReturnBoolean(isolate, info, result);
             }
@@ -426,30 +325,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_autorotateToLandscapeRight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.autorotateToLandscapeRight = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_orientation(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.orientation;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, (int)result);
             }
@@ -458,30 +351,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_orientation(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.orientation = (UnityEngine.ScreenOrientation)argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_sleepTimeout(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.sleepTimeout;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
@@ -490,30 +377,24 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_sleepTimeout(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.sleepTimeout = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_brightness(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var result = UnityEngine.Screen.brightness;
                 Puerts.PuertsDLL.ReturnNumber(isolate, info, result);
             }
@@ -522,26 +403,19 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_brightness(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
-                
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 UnityEngine.Screen.brightness = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -550,8 +424,7 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    { new Puerts.MethodKey {Name = "SetResolution", IsStatic = true},  F_SetResolution },
-                    
+                    { new Puerts.MethodKey {Name = "SetResolution", IsStatic = true}, F_SetResolution },
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -571,10 +444,14 @@ namespace PuertsStaticWrap
                     {"orientation", new Puerts.PropertyRegisterInfo(){ IsStatic = true, Getter = G_orientation, Setter = S_orientation} },
                     {"sleepTimeout", new Puerts.PropertyRegisterInfo(){ IsStatic = true, Getter = G_sleepTimeout, Setter = S_sleepTimeout} },
                     {"brightness", new Puerts.PropertyRegisterInfo(){ IsStatic = true, Getter = G_brightness, Setter = S_brightness} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

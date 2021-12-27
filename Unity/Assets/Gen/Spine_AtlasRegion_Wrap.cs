@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class Spine_AtlasRegion_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new Spine.AtlasRegion();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(Spine.AtlasRegion), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,40 +22,24 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void M_Clone(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = obj.Clone();
-                        
                         Puerts.ResultHelper.Set((int)data, isolate, info, result);
-                        
-                        
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_page(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -82,7 +54,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_page(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -91,15 +62,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.page = argHelper.Get<Spine.AtlasPage>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_name(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -114,7 +82,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_name(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -123,15 +90,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.name = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -146,7 +110,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_x(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -155,15 +118,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.x = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -178,7 +138,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_y(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -187,15 +146,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.y = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -210,7 +166,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -219,15 +174,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.width = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_height(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -242,7 +194,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_height(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -251,15 +202,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.height = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_u(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -274,7 +222,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_u(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -283,15 +230,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.u = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_v(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -306,7 +250,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_v(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -315,15 +258,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.v = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_u2(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -338,7 +278,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_u2(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -347,15 +286,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.u2 = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_v2(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -370,7 +306,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_v2(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -379,15 +314,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.v2 = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_offsetX(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -402,7 +334,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_offsetX(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -411,15 +342,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.offsetX = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_offsetY(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -434,7 +362,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_offsetY(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -443,15 +370,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.offsetY = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_originalWidth(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -466,7 +390,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_originalWidth(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -475,15 +398,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.originalWidth = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_originalHeight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -498,7 +418,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_originalHeight(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -507,15 +426,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.originalHeight = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_index(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -530,7 +446,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_index(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -539,15 +454,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.index = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_rotate(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -562,7 +474,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_rotate(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -571,15 +482,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.rotate = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_degrees(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -594,7 +502,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_degrees(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -603,15 +510,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.degrees = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_splits(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -626,7 +530,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_splits(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -635,15 +538,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.splits = argHelper.Get<int[]>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_pads(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -658,7 +558,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_pads(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -667,17 +566,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.AtlasRegion;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.pads = argHelper.Get<int[]>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -686,8 +580,7 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    { new Puerts.MethodKey {Name = "Clone", IsStatic = false},  M_Clone },
-                    
+                    { new Puerts.MethodKey {Name = "Clone", IsStatic = false}, M_Clone },
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -710,10 +603,14 @@ namespace PuertsStaticWrap
                     {"degrees", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_degrees, Setter = S_degrees} },
                     {"splits", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_splits, Setter = S_splits} },
                     {"pads", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_pads, Setter = S_pads} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

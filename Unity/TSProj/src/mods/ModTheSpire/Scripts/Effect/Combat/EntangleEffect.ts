@@ -1,6 +1,6 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {View_EntangleEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
+import { View_EntangleEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
 
 export class EntangleEffect extends AbstractEffect{
     private Loader: FairyGUI.GComponent;

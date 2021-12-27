@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CircleProgressBar
+  m_Shader: {fileID: 4800000, guid: d96b1119edc96de4baa328c2b7b4a106, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - AuraDisplacementPack_1:
+        m_Texture: {fileID: 2800000, guid: 019b38fc1935ba94d80927dafebbcc42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - DisplacementPack_1:
+        m_Texture: {fileID: 2800000, guid: d205ea28f3bf2e94ea4597cdb871638b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 30a8fd2b2dee8e54090ff5b729909db2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewTex_1:
+        m_Texture: {fileID: 2800000, guid: 1b4bf356de8cf8d41a22c14637999e8b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewTex_2:
+        m_Texture: {fileID: 2800000, guid: 93101f1858424ab4d849aa8c470c5f4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - AnimatedInfiniteZoomUV_Intensity_1: 1
+    - AnimatedInfiniteZoomUV_PosX_1: 0
+    - AnimatedInfiniteZoomUV_PosY_1: 0
+    - AnimatedInfiniteZoomUV_Speed_1: 1
+    - AnimatedInfiniteZoomUV_Zoom_1: 1
+    - AnimatedShakeUV_1_IntenseX_1: 1
+    - AnimatedShakeUV_1_IntenseY_1: 1
+    - AnimatedShakeUV_1_OffsetX_1: 0
+    - AnimatedShakeUV_1_OffsetY_1: 0.009
+    - AnimatedShakeUV_1_Speed_1: -0.072
+    - DistortionUV_DistanceX_1: 0.477
+    - DistortionUV_DistanceY_1: 0.573
+    - DistortionUV_Speed_1: 1
+    - DistortionUV_WaveX_1: 10
+    - DistortionUV_WaveY_1: 10
+    - LiquidUV_DistanceX_1: 0.37
+    - LiquidUV_DistanceY_1: 0.584
+    - LiquidUV_Speed_1: 0.207
+    - LiquidUV_WaveX_1: 2
+    - LiquidUV_WaveY_1: 0.675
+    - PinchUV_Size_1: 0.25
+    - PolarCoordinatesUV_Size_1: 0.317
+    - _Add_Fade_1: 0.465
+    - _AlphaAsAura_Fade_1: 1
+    - _AuraDisplacementPack_Size_1: 0.489
+    - _AuraDisplacementPack_ValueX_1: 0
+    - _AuraDisplacementPack_ValueY_1: -0.186
+    - _BumpScale: 1
+    - _ColorMask: 15
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DisplacementPack_Size_1: 1.946
+    - _DisplacementPack_ValueX_1: -0.051
+    - _DisplacementPack_ValueY_1: 0
+    - _DstBlend: 0
+    - _EnableExternalAlpha: 0
+    - _Generate_Donut_PosX_1: 0.5
+    - _Generate_Donut_PosY_1: 0.5
+    - _Generate_Donut_SizeDonut_1: -0.582
+    - _Generate_Donut_SizeSmooth_1: 0.159
+    - _Generate_Donut_Size_1: 0.618
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _InverseColor_Fade_1: 1
+    - _LerpUV_Fade_1: 0.097
+    - _MaskRGBA_Fade_1: 0
+    - _MaskRGBA_Fade_2: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _Mul_Fade_1: 1
+    - _OcclusionStrength: 1
+    - _OperationBlend_Fade_1: 1
+    - _OperationBlend_Fade_2: 1
+    - _Parallax: 0.02
+    - _PlasmaFX_Fade_1: 0.151
+    - _PlasmaFX_Speed_1: 0.745
+    - _PremadeGradients_Fade_1: 1
+    - _PremadeGradients_Offset_1: 0
+    - _PremadeGradients_Speed_1: 0.496
+    - _RGBA_Mul_Fade_1: 1.275
+    - _ShadowLight_Intensity_1: 1.433
+    - _ShadowLight_NoSprite_1: 0
+    - _ShadowLight_PosX_1: 0
+    - _ShadowLight_PosY_1: -0.069
+    - _ShadowLight_Precision_1: 10.774
+    - _ShadowLight_Size_1: 1.102
+    - _ShinyFX_Intensity_1: 1.218
+    - _ShinyFX_Pos_1: -0.07
+    - _ShinyFX_Size_1: -0.092
+    - _ShinyFX_Smooth_1: 0.25
+    - _ShinyFX_Speed_1: 1.407
+    - _Simple_Displacement_Rotative_Rotation_1: -0.239
+    - _Simple_Displacement_Rotative_Value_1: -0.11
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SpriteFade: 1
+    - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _ThresholdSmooth_Smooth_1: 0.025
+    - _ThresholdSmooth_Value_1: -0.9
+    - _Threshold_Fade_1: 0.569
+    - _TurnAlphaToBlack_Fade_1: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorGradients2_Color1_1: {r: 0.058823466, g: 1, b: 0, a: 1}
+    - _ColorGradients2_Color2_1: {r: 1, g: 0, b: 0, a: 1}
+    - _ColorGradients_Color1_1: {r: 1, g: 0, b: 0, a: 1}
+    - _ColorGradients_Color2_1: {r: 0, g: 0, b: 1, a: 1}
+    - _ColorGradients_Color3_1: {r: 0, g: 1, b: 0, a: 1}
+    - _ColorGradients_Color4_1: {r: 1, g: 1, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FillColor_Color_1: {r: 0.2794118, g: 1, b: 0, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowLight_Color_1: {r: 1, g: 0.77281946, b: 0.17647058, a: 1}
+    - _TintRGBA_Color_1: {r: 0, g: 1, b: 0.37931037, a: 0.609}

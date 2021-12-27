@@ -1,9 +1,8 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import AbstractCreature from "../../Unit/AbstractCreature";
-import Async from "Core/Async";
-import EffectKit, {EffectOrder} from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
+﻿import Async from "../../../../../Core/Async";
+import DungeonManager from "../../DungeonManager";
+import { AbstractEffect } from "../../Effect/AbstractEffect";
+import { EffectOrder } from "../../Effect/EffectKit";
+import AbstractGameAction from "../AbstractGameAction";
 
 export default class VFXAction extends AbstractGameAction
 {

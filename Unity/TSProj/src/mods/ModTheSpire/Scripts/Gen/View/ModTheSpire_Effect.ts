@@ -1,10 +1,9 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
-import {UI} from "../../../../../Core/Module/UI/UIKit";
-import ViewInfo = UI.ViewInfo;
-import UIKit = UI.UIKit;
-import UIBase = UI.UIBase;
+import {UIKit} from "../../../../../Core/Module/UI/UIKit";
 import {FairyGUI} from "csharp";
+import { UIBase } from "../../../../../Core/Module/UI/UIBase";
+import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";
 export class View_BiteEffect extends UIBase
 {
     public Top : FairyGUI.GImage;

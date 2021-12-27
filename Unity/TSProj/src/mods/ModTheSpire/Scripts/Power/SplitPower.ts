@@ -1,7 +1,7 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
+﻿import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class SplitPower extends AbstractPower{
     public static PowerID = "SplitPower";

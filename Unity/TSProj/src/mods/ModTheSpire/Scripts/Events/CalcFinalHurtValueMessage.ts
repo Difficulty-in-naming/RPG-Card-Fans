@@ -1,6 +1,6 @@
-﻿import {IMessage} from "Core/ObserverMessageKit";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import { IMessage } from "../../../../Core/ObserverMessageKit";
+import DamageInfo from "../DataDefine/DamageInfo";
+import AbstractCreature from "../Unit/AbstractCreature";
 
 //计算伤害结束
 export class CalcFinalHurtValueMessage implements  IMessage{

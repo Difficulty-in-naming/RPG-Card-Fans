@@ -1,7 +1,8 @@
 ﻿import { FairyGUI, UnityEngine } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
+import { AbstractPower } from "../Power/AbstractPower";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export class GainPowerEffect extends AbstractEffect{
     public Loader:FairyGUI.GLoader;

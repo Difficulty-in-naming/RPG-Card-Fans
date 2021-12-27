@@ -1,8 +1,8 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
+﻿import Async from "../../../../../Core/Async";
+import { AttackEffect } from "../../DataDefine/AttackEffect";
+import DamageInfo from "../../DataDefine/DamageInfo";
 import AbstractCreature from "../../Unit/AbstractCreature";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import Async from "Core/Async";
+import AbstractGameAction from "../AbstractGameAction";
 
 export default class DamageAction extends AbstractGameAction
 {

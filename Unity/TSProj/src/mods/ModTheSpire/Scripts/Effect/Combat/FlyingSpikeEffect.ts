@@ -1,9 +1,8 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import { FairyGUI } from "csharp";
-import {UI} from "Core/Module/UI/UIKit";
-import {View_FlyingSpikeEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
-import {Mathf} from "Core/Module/Math/Mathf";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import { View_FlyingSpikeEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
+import Color from "../../../../../mods/ModTheSpire/Scripts/DataDefine/Color";
 
 export class FlyingSpikeEffect extends AbstractEffect{
     public Effect:FairyGUI.GComponent

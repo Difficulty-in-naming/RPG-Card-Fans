@@ -345,8 +345,14 @@
  <Reference Include="DOTween">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.demigiant.dotween@1.2.42/DOTween/Plugins/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1-preview.1/Mono.Cecil.dll</HintPath>
+ <Reference Include="Unity.Cecil.Pdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Pdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil.Mdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

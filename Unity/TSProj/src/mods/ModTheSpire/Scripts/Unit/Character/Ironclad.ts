@@ -1,10 +1,9 @@
-﻿import {LocalizationProperty} from "../../Gen/DB/Localization";
+﻿import AbstractCard from "../../Cards/AbstractCard";
+import FileHelper from "../../FileHelper";
+import { LocalizationProperty } from "../../Gen/DB/Localization";
+import { SpineLoader } from "../../Loader/SpineLoader";
 import BurningBlood from "../../Relics/BurningBlood";
-import FileHelper, {basePath} from "../../FileHelper";
-import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
-import {SpineLoader} from "mods/ModTheSpire/Scripts/Loader/SpineLoader";
-import {PlayerInfo} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
-import AbstractCard from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
+import { PlayerInfo } from "./PlayerInfo";
 
 export default class Ironclad implements PlayerInfo
 {

@@ -1,9 +1,9 @@
-﻿import AbstractCard, {CardColor, CardRarity, CardTags, CardTarget, CardType} from "../../AbstractCard";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import GainBlockAction from "mods/ModTheSpire/Scripts/Action/Common/GainBlockAction";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
+﻿import GainBlockAction from "../../../Action/Common/GainBlockAction";
+import FileHelper from "../../../FileHelper";
+import { LocalizationProperty } from "../../../Gen/DB/Localization";
+import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
+import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
+import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
 
 export class Defend extends AbstractCard
 {

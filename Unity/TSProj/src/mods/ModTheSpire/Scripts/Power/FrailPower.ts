@@ -1,12 +1,12 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PreModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PreModifyBlockMessage";
+﻿import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import DungeonManager from "../DungeonManager";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class FrailPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/frail.png");

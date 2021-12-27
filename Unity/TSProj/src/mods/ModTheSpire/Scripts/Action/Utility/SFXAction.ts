@@ -1,5 +1,5 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
+﻿import { SoundMaster } from "../../Audio/SoundMaster";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class SFXAction extends AbstractGameAction{
     public constructor(public path:string, public pitchVar?:number, public pitchAdjust?:boolean) {

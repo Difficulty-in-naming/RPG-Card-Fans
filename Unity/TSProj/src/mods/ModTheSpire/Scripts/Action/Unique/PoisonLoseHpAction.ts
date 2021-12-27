@@ -1,17 +1,17 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {RoomPhase} from "mods/ModTheSpire/Scripts/Room/AbstractRoom";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {FlashAtkImgEffect} from "mods/ModTheSpire/Scripts/Effect/FlashAtkImgEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {PoisonPower} from "mods/ModTheSpire/Scripts/Power/PoisonPower";
-import {ObserverMessageKit} from "Core/ObserverMessageKit";
-import {NotifyPowerDescerptionChanged} from "mods/ModTheSpire/Scripts/Events/NotifyPowerDescerptionChanged";
-import {WaitAction} from "mods/ModTheSpire/Scripts/Action/Utility/WaitAction";
+﻿import { AttackEffect } from "../../DataDefine/AttackEffect";
+import Color from "../../DataDefine/Color";
+import DamageInfo from "../../DataDefine/DamageInfo";
+import { DamageType } from "../../DataDefine/DamageType";
+import DungeonManager from "../../DungeonManager";
+import EffectKit from "../../Effect/EffectKit";
+import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
+import { NotifyPowerDescerptionChanged } from "../../Events/NotifyPowerDescerptionChanged";
+import { PoisonPower } from "../../Power/PoisonPower";
+import { RoomPhase } from "../../Room/AbstractRoom";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction from "../AbstractGameAction";
+import { WaitAction } from "../Utility/WaitAction";
+
 
 export class PoisonLoseHpAction extends AbstractGameAction {
     public constructor(private Target:AbstractCreature,private Source:AbstractCreature,private Amount:number,private Effect:AttackEffect) {

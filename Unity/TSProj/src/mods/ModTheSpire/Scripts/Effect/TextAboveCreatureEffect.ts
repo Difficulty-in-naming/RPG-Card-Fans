@@ -1,7 +1,8 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import { FairyGUI } from "csharp";
-import {View_TextAboveEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
+﻿import { FairyGUI } from "csharp";
+import Color from "../DataDefine/Color";
+import { View_TextAboveEffect } from "../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export class TextAboveCreatureEffect extends AbstractEffect{
     private Interval = 2.2;

@@ -1,9 +1,10 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import {Mathf} from "Core/Module/Math/Mathf";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {TimeKit} from "Core/Utils/TimeKit";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import Color from "../DataDefine/Color";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export class UpgradeShineParticleEffect extends AbstractEffect{
     public Loader:FairyGUI.GLoader[] = new FairyGUI.GLoader[2];

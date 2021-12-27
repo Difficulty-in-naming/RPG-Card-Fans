@@ -1,8 +1,9 @@
-﻿import {FairyGUI} from 'csharp'
-import {View_MainMenuPanel} from "../../Gen/View/ModTheSpire_MainMenuPanel";
-import {LocalizationProperty} from "../../Gen/DB/Localization";
-import {UI_SelectCharacter} from "./UI_SelectCharacter";
-import {UI_Title} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title";
+﻿import { FairyGUI } from "csharp";
+import { LocalizationProperty } from "../../Gen/DB/Localization";
+import { View_MainMenuPanel } from "../../Gen/View/ModTheSpire_MainMenuPanel";
+import { UI_SelectCharacter } from "./UI_SelectCharacter";
+import { UI_Title } from "./UI_Title";
+
 
 export class UI_SelectGameMode extends View_MainMenuPanel
 {

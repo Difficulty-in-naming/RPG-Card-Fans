@@ -1,6 +1,7 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {View_WebParticleEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
+import { View_WebParticleEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
+
 
 export class WebParticleEffect extends AbstractEffect{
     public Loader : FairyGUI.GComponent;

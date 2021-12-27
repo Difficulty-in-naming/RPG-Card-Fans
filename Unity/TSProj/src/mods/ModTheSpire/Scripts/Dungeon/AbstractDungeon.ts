@@ -1,11 +1,10 @@
-﻿import {IScene} from "mods/ModTheSpire/Scripts/Dungeon/IScene";
-import Rand from "Core/Module/RandomGenerator";
-import {MapRoomNode} from "mods/ModTheSpire/Scripts/Room/MapRoomNode";
-import {MapGenerator} from "mods/ModTheSpire/Scripts/Room/MapGenerator";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {MonsterInfo} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
+﻿import Rand from "rand-seed";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../DungeonManager";
+import { MapGenerator } from "../Room/MapGenerator";
+import { MapRoomNode } from "../Room/MapRoomNode";
+import { MonsterInfo } from "../Unit/Monster/MonsterInfo";
+import { IScene } from "./IScene";
 
 export class RoomChance{
     ShopRoomChance : number;

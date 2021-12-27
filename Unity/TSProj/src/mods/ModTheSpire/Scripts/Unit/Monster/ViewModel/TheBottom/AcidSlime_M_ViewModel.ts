@@ -1,18 +1,18 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Spine} from "csharp";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {SlimeAnimListener} from "mods/ModTheSpire/Scripts/Unit/Monster/Helpers/SlimeAnimListener";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {MakeTempCardInDiscardAction} from "mods/ModTheSpire/Scripts/Action/Common/MakeTempCardInDiscardAction";
-import {Slimed} from "mods/ModTheSpire/Scripts/Cards/Status/Slimed";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { AnimateSlowAttackAction } from "../../../../Action/Animations/AnimateSlowAttackAction";
+import { ApplyPowerAction } from "../../../../Action/Common/ApplyPowerAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { MakeTempCardInDiscardAction } from "../../../../Action/Common/MakeTempCardInDiscardAction";
+import { RollMoveAction } from "../../../../Action/Common/RollMoveAction";
+import { Slimed } from "../../../../Cards/Status/Slimed";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { WeakPower } from "../../../../Power/WeakPower";
+import { AbstractMonster } from "../../AbstractMonster";
+import { SlimeAnimListener } from "../../Helpers/SlimeAnimListener";
+import { Intent } from "../../Intent";
 
 export class AcidSlime_M_ViewModel extends AbstractMonster{
     Initialize() {

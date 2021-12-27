@@ -1,4 +1,4 @@
-﻿import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
+﻿import { MonsterGroup } from "../Unit/Monster/MonsterGroup";
 
 export enum RoomPhase{
     Combat,

@@ -1,10 +1,9 @@
-﻿import {FairyGUI, Spine, UnityEngine } from "csharp";
-import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {View_UnitWrap} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Combat";
-import {ViewComponent_HealthBar} from "mods/ModTheSpire/Scripts/UI/ViewComponent/ViewComponent_HealthBar";
-import {Rect} from "Core/Define/Rect";
+﻿import { Spine, FairyGUI, UnityEngine } from "csharp";
+import { Rect } from "../../../../Core/Define/Rect";
+import Color from "../DataDefine/Color";
+import { View_UnitWrap } from "../Gen/View/ModTheSpire_Combat";
+import { ViewComponent_HealthBar } from "../UI/ViewComponent/ViewComponent_HealthBar";
+import { IDisplay } from "./IDisplay";
 
 export class SpineCharacterDisplay implements IDisplay{
     get FlipX(): boolean {

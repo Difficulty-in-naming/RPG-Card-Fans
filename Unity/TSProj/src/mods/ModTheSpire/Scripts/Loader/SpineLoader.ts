@@ -1,6 +1,6 @@
-import {ResourcesManager, Spine} from "csharp";
-import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
-import {SpineCharacterDisplay} from "mods/ModTheSpire/Scripts/Loader/SpineCharacterDisplay";
+import { ResourcesManager, Spine } from "csharp";
+import { ILoader } from "./ILoader";
+import { SpineCharacterDisplay } from "./SpineCharacterDisplay";
 
 //注意该Loader仅支持Json格式的配置文件.无法使用.bytes的配置文件
 export class SpineLoader implements ILoader{

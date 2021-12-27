@@ -1,11 +1,12 @@
-﻿import Color from "../DataDefine/Color";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {Mathf} from "Core/Module/Math/Mathf";
-import { FairyGUI, UnityEngine } from "csharp";
+﻿import { FairyGUI, UnityEngine } from "csharp";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import Color from "../DataDefine/Color";
+import { basePath } from "../FileHelper";
 import UIHelper from "../UI/UIHelper";
-import {TimeKit} from "Core/Utils/TimeKit";
-import Tween from "Core/Module/Tween";
-import {basePath} from "../FileHelper";
+import { AbstractEffect } from "./AbstractEffect";
+import TWEEN from '@tweenjs/tween.js';
+
 export class VerticalAuraParticleEffect extends AbstractEffect
 {
     private Vy: number;
@@ -26,13 +27,13 @@ export class VerticalAuraParticleEffect extends AbstractEffect
         this.Vy = Mathf.RandomRange(-300,300);
         this.Loader.color = color.UnityColor();
         this.Loader.alpha = 0;
-        this.Tween = new Tween.Tween({a:this.Loader.color.a}).to({a:1}, 200).easing(Tween.Easing.Sinusoidal.InOut)
+        this.Tween = new TWEEN.Tween({a:this.Loader.color.a}).to({a:1}, 200).easing(TWEEN.Easing.Sinusoidal.InOut)
             .onUpdate(object => {
                 this.Loader.alpha = object.a;
             })
             .start()
             .onComplete(object => {
-                this.Tween = new Tween.Tween({a:this.Loader.color.a}).to({a:0}, 800).easing(Tween.Easing.Sinusoidal.InOut)
+                this.Tween = new TWEEN.Tween({a:this.Loader.color.a}).to({a:0}, 800).easing(TWEEN.Easing.Sinusoidal.InOut)
                     .onUpdate(object => {
                         this.Loader.alpha = object.a;
                     }).onComplete(()=>{

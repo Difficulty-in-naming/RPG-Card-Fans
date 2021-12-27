@@ -1,5 +1,5 @@
 ﻿import AbstractCard from "./Cards/AbstractCard";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+import Color from "./DataDefine/Color";
 
 export class StringHelper{
     private static formatCard = new RegExp("!([BDM])!","\g");

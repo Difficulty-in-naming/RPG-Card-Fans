@@ -1,5 +1,5 @@
-﻿import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
+﻿import { ILoader } from "../../Loader/ILoader";
+import { AbstractPower } from "../../Power/AbstractPower";
 
 export abstract class MonsterInfo{
     abstract get Loader() : ILoader;

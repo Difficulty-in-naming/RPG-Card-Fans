@@ -1,14 +1,13 @@
 ﻿import AbstractCard from "../../Cards/AbstractCard";
-import {AbstractPotion} from "mods/ModTheSpire/Scripts/Potion/AbstractPotion";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {PlayerInfo} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {ObserverMessageKit} from "Core/ObserverMessageKit";
-import {OnHurt} from "mods/ModTheSpire/Scripts/Events/OnHurt";
-import {OnHurtBefore} from "mods/ModTheSpire/Scripts/Events/OnHurtBefore";
-import {OnHurtAfter} from "mods/ModTheSpire/Scripts/Events/OnHurtAfter";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import AbstractRelic from "mods/ModTheSpire/Scripts/Relics/AbstractRelic";
+import DamageInfo from "../../DataDefine/DamageInfo";
+import DungeonManager from "../../DungeonManager";
+import { OnHurt } from "../../Events/OnHurt";
+import { OnHurtAfter } from "../../Events/OnHurtAfter";
+import { OnHurtBefore } from "../../Events/OnHurtBefore";
+import { AbstractPotion } from "../../Potion/AbstractPotion";
+import AbstractRelic from "../../Relics/AbstractRelic";
+import AbstractCreature from "../AbstractCreature";
+import { PlayerInfo } from "./PlayerInfo";
 
 export class AbstractPlayer extends AbstractCreature
 {

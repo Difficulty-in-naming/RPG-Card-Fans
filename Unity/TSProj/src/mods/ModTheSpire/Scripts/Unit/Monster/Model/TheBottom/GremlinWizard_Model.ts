@@ -1,10 +1,10 @@
-﻿import {MonsterInfo} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterInfo";
-import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
-import {SpineLoader} from "mods/ModTheSpire/Scripts/Loader/SpineLoader";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+﻿import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../../../../DungeonManager";
+import FileHelper from "../../../../FileHelper";
+import { ILoader } from "../../../../Loader/ILoader";
+import { SpineLoader } from "../../../../Loader/SpineLoader";
+import { MonsterInfo } from "../../MonsterInfo";
+
 
 export class GremlinWizard_Model extends MonsterInfo{
     public static Id = "GremlinWizard"

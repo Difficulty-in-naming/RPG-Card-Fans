@@ -1,6 +1,7 @@
-﻿import Color from "../DataDefine/Color";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {TimeKit} from "Core/Utils/TimeKit";
+﻿import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import Color from "../DataDefine/Color";
+import { AbstractEffect } from "./AbstractEffect";
+
 export default class TintEffect extends AbstractEffect
 {
     public From : Color = Color.White.Clone();

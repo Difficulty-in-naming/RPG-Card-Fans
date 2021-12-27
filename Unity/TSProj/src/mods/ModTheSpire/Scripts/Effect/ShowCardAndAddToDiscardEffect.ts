@@ -1,5 +1,6 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import AbstractCard from "../Cards/AbstractCard";
+﻿import AbstractCard from "../Cards/AbstractCard";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export class ShowCardAndAddToDiscardEffect extends AbstractEffect
 {

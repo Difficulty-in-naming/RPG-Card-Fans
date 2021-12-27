@@ -1,32 +1,20 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class FairyGUI_PackageItem_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = new FairyGUI.PackageItem();
-                        
-                        
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(FairyGUI.PackageItem), result);
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
@@ -34,102 +22,60 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void M_Load(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = obj.Load();
-                        
                         Puerts.ResultHelper.Set((int)data, isolate, info, result);
-                        
-                        
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void M_getBranch(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = obj.getBranch();
-                        
                         Puerts.ResultHelper.Set((int)data, isolate, info, result);
-                        
-                        
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void M_getHighResolution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
             try
             {
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
-                
-                
                 {
-                    
-                    
-                    
-                    
                     {
-                        
                         var result = obj.getHighResolution();
-                        
                         Puerts.ResultHelper.Set((int)data, isolate, info, result);
-                        
-                        
                     }
                 }
-                
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_owner(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -144,7 +90,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_owner(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -153,15 +98,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.owner = argHelper.Get<FairyGUI.UIPackage>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_type(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -176,7 +118,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_type(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -185,15 +126,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.type = (FairyGUI.PackageItemType)argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_objectType(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -208,7 +146,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_objectType(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -217,15 +154,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.objectType = (FairyGUI.ObjectType)argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_id(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -240,7 +174,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_id(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -249,15 +182,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.id = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_name(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -272,7 +202,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_name(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -281,15 +210,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.name = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -304,7 +230,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_width(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -313,15 +238,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.width = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_height(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -336,7 +258,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_height(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -345,15 +266,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.height = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_file(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -368,7 +286,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_file(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -377,15 +294,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.file = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_exported(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -400,7 +314,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_exported(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -409,15 +322,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.exported = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_texture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -432,7 +342,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_texture(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -441,15 +350,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.texture = argHelper.Get<FairyGUI.NTexture>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_rawData(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -464,7 +370,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_rawData(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -473,15 +378,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.rawData = argHelper.Get<FairyGUI.Utils.ByteBuffer>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_branches(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -496,7 +398,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_branches(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -505,15 +406,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.branches = argHelper.Get<string[]>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_highResolution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -528,7 +426,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_highResolution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -537,15 +434,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.highResolution = argHelper.Get<string[]>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_scale9Grid(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -560,7 +454,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_scale9Grid(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -569,15 +462,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.scale9Grid = argHelper.Get<System.Nullable<UnityEngine.Rect>>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_scaleByTile(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -592,7 +482,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_scaleByTile(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -601,15 +490,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.scaleByTile = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_tileGridIndice(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -624,7 +510,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_tileGridIndice(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -633,15 +518,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.tileGridIndice = argHelper.GetInt32(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_pixelHitTestData(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -656,7 +538,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_pixelHitTestData(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -665,15 +546,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.pixelHitTestData = argHelper.Get<FairyGUI.PixelHitTestData>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_interval(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -688,7 +566,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_interval(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -697,15 +574,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.interval = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_repeatDelay(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -720,7 +594,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_repeatDelay(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -729,15 +602,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.repeatDelay = argHelper.GetFloat(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_swing(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -752,7 +622,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_swing(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -761,15 +630,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.swing = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_frames(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -784,7 +650,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_frames(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -793,15 +658,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.frames = argHelper.Get<FairyGUI.MovieClip.Frame[]>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_translated(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -816,7 +678,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_translated(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -825,15 +686,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.translated = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_extensionCreator(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -848,7 +706,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_extensionCreator(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -857,15 +714,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.extensionCreator = argHelper.Get<FairyGUI.UIObjectFactory.GComponentCreator>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_bitmapFont(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -880,7 +734,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_bitmapFont(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -889,15 +742,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.bitmapFont = argHelper.Get<FairyGUI.BitmapFont>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_audioClip(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -912,7 +762,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_audioClip(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -921,15 +770,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.audioClip = argHelper.Get<FairyGUI.NAudioClip>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_skeletonAnchor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -944,7 +790,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_skeletonAnchor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -953,15 +798,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.skeletonAnchor = argHelper.Get<UnityEngine.Vector2>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_skeletonAsset(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -976,7 +818,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_skeletonAsset(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -985,17 +826,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as FairyGUI.PackageItem;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.skeletonAsset = argHelper.Get<System.Object>(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -1004,10 +840,9 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    { new Puerts.MethodKey {Name = "Load", IsStatic = false},  M_Load },
-                    { new Puerts.MethodKey {Name = "getBranch", IsStatic = false},  M_getBranch },
-                    { new Puerts.MethodKey {Name = "getHighResolution", IsStatic = false},  M_getHighResolution },
-                    
+                    { new Puerts.MethodKey {Name = "Load", IsStatic = false}, M_Load },
+                    { new Puerts.MethodKey {Name = "getBranch", IsStatic = false}, M_getBranch },
+                    { new Puerts.MethodKey {Name = "getHighResolution", IsStatic = false}, M_getHighResolution },
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -1038,10 +873,14 @@ namespace PuertsStaticWrap
                     {"audioClip", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_audioClip, Setter = S_audioClip} },
                     {"skeletonAnchor", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_skeletonAnchor, Setter = S_skeletonAnchor} },
                     {"skeletonAsset", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_skeletonAsset, Setter = S_skeletonAsset} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

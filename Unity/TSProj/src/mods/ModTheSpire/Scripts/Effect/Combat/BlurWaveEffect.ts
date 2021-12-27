@@ -1,11 +1,12 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {Mathf} from "Core/Module/Math/Mathf";
-import { FairyGUI } from "csharp";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {TimeKit} from "Core/Utils/TimeKit";
-import * as TWEEN from "Core/Module/Tween";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import Color from "../../DataDefine/Color";
+import FileHelper from "../../FileHelper";
+import UIHelper from "../../UI/UIHelper";
+import { AbstractEffect } from "../AbstractEffect";
+import TWEEN from '@tweenjs/tween.js';
+
 export class BlurWaveEffect extends AbstractEffect{
     private _stallTimer:number;
     public Loader:FairyGUI.GLoader;

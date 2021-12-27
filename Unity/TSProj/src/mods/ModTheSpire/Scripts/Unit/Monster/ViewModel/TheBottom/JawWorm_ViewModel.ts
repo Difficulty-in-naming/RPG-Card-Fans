@@ -1,23 +1,24 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import {SetAnimationAction} from "mods/ModTheSpire/Scripts/Action/Animations/SetAnimationAction";
-import VFXAction from "mods/ModTheSpire/Scripts/Action/Animations/VFXAction";
-import {BiteEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BiteEffect";
-import {ShakeDur, ShakeIntensity} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
-import {ShakeScreenAction} from "mods/ModTheSpire/Scripts/Action/Animations/ShakeScreenAction";
-import {WaitAction} from "mods/ModTheSpire/Scripts/Action/Utility/WaitAction";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
-import GainBlockAction from "mods/ModTheSpire/Scripts/Action/Common/GainBlockAction";
-import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { SetAnimationAction } from "../../../../Action/Animations/SetAnimationAction";
+import { ShakeScreenAction } from "../../../../Action/Animations/ShakeScreenAction";
+import VFXAction from "../../../../Action/Animations/VFXAction";
+import { ApplyPowerAction } from "../../../../Action/Common/ApplyPowerAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { DoFuncAction } from "../../../../Action/Common/DoFuncAction";
+import GainBlockAction from "../../../../Action/Common/GainBlockAction";
+import { RollMoveAction } from "../../../../Action/Common/RollMoveAction";
+import { SFXAction } from "../../../../Action/Utility/SFXAction";
+import { WaitAction } from "../../../../Action/Utility/WaitAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { BiteEffect } from "../../../../Effect/Combat/BiteEffect";
+import { ShakeIntensity, ShakeDur } from "../../../../Effect/ShakeScreen";
+import { StrengthPower } from "../../../../Power/StrengthPower";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
+
 
 export class GremlinFat_ViewModel extends AbstractMonster{
     private StrAmount:number;

@@ -1,5 +1,5 @@
-﻿import {IMessage} from "Core/ObserverMessageKit";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
+﻿import { IMessage } from "../../../../Core/ObserverMessageKit";
+import { AbstractMonster } from "../Unit/Monster/AbstractMonster";
 
 export class OnSpawnMonsterMessage implements IMessage{
     public static readonly Id = "OnSpawnMonster";

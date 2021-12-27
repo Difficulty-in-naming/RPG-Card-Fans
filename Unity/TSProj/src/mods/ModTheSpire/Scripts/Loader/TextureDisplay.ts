@@ -1,7 +1,7 @@
-﻿import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import { FairyGUI } from "csharp";
-import {Rect} from "Core/Define/Rect";
+﻿import { FairyGUI } from "csharp";
+import { Rect } from "../../../../Core/Define/Rect";
+import Color from "../DataDefine/Color";
+import { IDisplay } from "./IDisplay";
 
 export class TextureDisplay implements IDisplay {
     Bounds: FairyGUI.GGraph;

@@ -1,7 +1,7 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
+﻿import DamageInfo from "../../DataDefine/DamageInfo";
+import { AbstractMonster } from "../../Unit/Monster/AbstractMonster";
+import { Intent } from "../../Unit/Monster/Intent";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class SetMoveAction extends  AbstractGameAction{
     public constructor(private monster:AbstractMonster,private moveIndex:number,private intent:Intent,private options?:{damage?:DamageInfo,multiplier?:number,moveName?:string}) {

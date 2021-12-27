@@ -1,7 +1,7 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {SmokeBlurEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/SmokeBlurEffect";
+﻿import { SoundMaster } from "../../Audio/SoundMaster";
+import DungeonManager from "../../DungeonManager";
+import { AbstractEffect } from "../AbstractEffect";
+import { SmokeBlurEffect } from "./SmokeBlurEffect";
 
 export class SmokeBombEffect extends AbstractEffect{
     public constructor(private X,private Y) {

@@ -1,5 +1,6 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {TimeKit} from "../../../../Core/Utils/TimeKit";
+﻿import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import { AbstractEffect } from "./AbstractEffect";
+
 
 export default class EffectKit{
     private static inst: EffectKit;

@@ -1,6 +1,6 @@
-﻿import AbstractRelic from "mods/ModTheSpire/Scripts/Relics/AbstractRelic";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
+﻿import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import AbstractRelic from "./AbstractRelic";
 
 export class PaperCrane extends AbstractRelic{
     public static readonly Id = "PaperCrane";

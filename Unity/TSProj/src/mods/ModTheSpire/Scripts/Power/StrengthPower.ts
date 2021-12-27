@@ -1,10 +1,10 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {CalcDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcDamageValueMessage";
-import {WrapDamage} from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {OnDamageBefore} from "mods/ModTheSpire/Scripts/Events/OnDamageBefore";
+﻿import { WrapDamage } from "../DataDefine/DamageInfo";
+import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
+import { OnDamageBefore } from "../Events/OnDamageBefore";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class StrengthPower extends AbstractPower{
     Name: string = LocalizationProperty.Read("能力-力量");

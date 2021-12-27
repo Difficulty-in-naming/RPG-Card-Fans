@@ -1,17 +1,17 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {FairyGUI} from "csharp";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {TimeKit} from "Core/Utils/TimeKit";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {BorderFlashEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BorderFlashEffect";
-import {ShakeDur, ShakeIntensity, ShakeScreen} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
-import {DamageImpactCurvyEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/DamageImpactCurvyEffect";
-import {UpgradeShineParticleEffect} from "mods/ModTheSpire/Scripts/Effect/UpgradeShineParticleEffect";
-import * as TWEEN from "Core/Module/Tween"
+﻿import { FairyGUI } from 'csharp';
+import TWEEN from '@tweenjs/tween.js';
+import { Mathf } from '../../../../../Core/Module/Math/Mathf';
+import { TimeKit } from '../../../../../Core/Utils/TimeKit';
+import { SoundMaster } from '../../Audio/SoundMaster';
+import Color from '../../DataDefine/Color';
+import DungeonManager from '../../DungeonManager';
+import FileHelper from '../../FileHelper';
+import UIHelper from '../../UI/UIHelper';
+import { AbstractEffect } from '../AbstractEffect';
+import { ShakeScreen, ShakeIntensity, ShakeDur } from '../ShakeScreen';
+import { UpgradeShineParticleEffect } from '../UpgradeShineParticleEffect';
+import { BorderFlashEffect } from './BorderFlashEffect';
+import { DamageImpactCurvyEffect } from './DamageImpactCurvyEffect';
 export class WeightyImpactEffect extends AbstractEffect{
     public Loader:FairyGUI.GLoader[] = new FairyGUI.GLoader[3]
     private _TargetY:number;

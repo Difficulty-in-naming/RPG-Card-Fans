@@ -1,10 +1,10 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
+﻿import { ApplyPowerAction } from "../Action/Common/ApplyPowerAction";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
+import { StrengthPower } from "./StrengthPower";
 
 export class RitualPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/ritual.png");

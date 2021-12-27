@@ -1,6 +1,6 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+﻿import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class MinionPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/minion.png");

@@ -1,16 +1,14 @@
-﻿import {View_SelectCharacter} from "../../Gen/View/ModTheSpire_SelectCharacter";
-import {UI_SelectGameMode} from "./UI_SelectGameMode";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {ShakeDur, ShakeIntensity, ShakeScreen} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
-import { Mathf } from "Core/Module/Math/Mathf";
-import {FadeScreenEffect} from "mods/ModTheSpire/Scripts/Effect/FadeScreenEffect";
-import {UI_Title} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import Rand from "Core/Module/RandomGenerator";
-import UI_TopBar from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_TopBar";
-import {AllPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
-import {UI_BottomScene} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_BottomScene";
+﻿import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../../DungeonManager";
+import EffectKit from "../../Effect/EffectKit";
+import { FadeScreenEffect } from "../../Effect/FadeScreenEffect";
+import { ShakeScreen, ShakeIntensity, ShakeDur } from "../../Effect/ShakeScreen";
+import { View_SelectCharacter } from "../../Gen/View/ModTheSpire_SelectCharacter";
+import { AllPlayer } from "../../Unit/Character/PlayerInfo";
+import { UI_BottomScene } from "./UI_BottomScene";
+import { UI_SelectGameMode } from "./UI_SelectGameMode";
+import { UI_Title } from "./UI_Title";
+import UI_TopBar from "./UI_TopBar";
 
 export class UI_SelectCharacter extends View_SelectCharacter
 {

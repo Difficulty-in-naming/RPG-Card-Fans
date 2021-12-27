@@ -1,13 +1,14 @@
-﻿import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import TintEffect from "mods/ModTheSpire/Scripts/Effect/TintEffect";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {IGameAction} from "Core/QueueMessageKit";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PowerRemovedMessage} from "mods/ModTheSpire/Scripts/Events/PowerRemovedMessage";
-import {PreModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PreModifyBlockMessage";
-import {PostModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PostModifyBlockMessage";
-import {Rect} from "Core/Define/Rect";
+﻿import { Rect } from "../../../../Core/Define/Rect";
+import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import DamageInfo from "../DataDefine/DamageInfo";
+import DungeonManager from "../DungeonManager";
+import TintEffect from "../Effect/TintEffect";
+import { PostModifyBlockMessage } from "../Events/PostModifyBlockMessage";
+import { PowerRemovedMessage } from "../Events/PowerRemovedMessage";
+import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
+import { IDisplay } from "../Loader/IDisplay";
+import { AbstractPower } from "../Power/AbstractPower";
+
 export default abstract class AbstractCreature{
     //最大生命值
     private _MaxHealth: number;

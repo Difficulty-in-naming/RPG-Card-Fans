@@ -1,15 +1,15 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PreApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PreApplyPowerMessage";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import {FlashAtkImgEffect} from "mods/ModTheSpire/Scripts/Effect/FlashAtkImgEffect";
-import {PowerBuffEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/PowerBuffEffect";
-import {PowerDebuffEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/PowerDeBuffEffect";
-import {PostApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PostApplyPowerMessage";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import { AttackEffect } from "../../DataDefine/AttackEffect";
+import DungeonManager from "../../DungeonManager";
+import { PowerBuffEffect } from "../../Effect/Combat/PowerBuffEffect";
+import { PowerDebuffEffect } from "../../Effect/Combat/PowerDeBuffEffect";
+import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
+import { PostApplyPowerMessage } from "../../Events/PostApplyPowerMessage";
+import { PreApplyPowerMessage } from "../../Events/PreApplyPowerMessage";
+import { AbstractPower, PowerType } from "../../Power/AbstractPower";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import { AbstractMonster } from "../../Unit/Monster/AbstractMonster";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class ApplyPowerAction extends AbstractGameAction{
     private Interval = 0.25;

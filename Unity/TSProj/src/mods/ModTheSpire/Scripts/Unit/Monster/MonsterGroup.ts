@@ -1,7 +1,7 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
+﻿import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../../DungeonManager";
+import { AbstractMonster } from "./AbstractMonster";
+import { Intent } from "./Intent";
 
 export class MonsterGroup{
     public Monsters = new Array<AbstractMonster>();

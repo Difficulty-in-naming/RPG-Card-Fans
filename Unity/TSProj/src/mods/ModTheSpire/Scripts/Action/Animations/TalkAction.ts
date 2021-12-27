@@ -1,8 +1,7 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {SpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/SpeechBubble";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import DungeonManager from "../../DungeonManager";
+import { SpeechBubble } from "../../Effect/Combat/SpeechBubble";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class TalkAction extends AbstractGameAction{
     Type = ActionType.TEXT;

@@ -1,14 +1,12 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
-import {OnDeathMessage} from "mods/ModTheSpire/Scripts/Events/OnDeathMessage";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
-import {VulnerablePower} from "mods/ModTheSpire/Scripts/Power/VulnerablePower";
+﻿import { ApplyPowerAction } from "../Action/Common/ApplyPowerAction";
+import { SoundMaster } from "../Audio/SoundMaster";
+import DungeonManager from "../DungeonManager";
+import { OnDeathMessage } from "../Events/OnDeathMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
+import { VulnerablePower } from "./VulnerablePower";
 
 export class SporeCloudPower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/sporeCloud.png");

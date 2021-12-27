@@ -1,11 +1,12 @@
 ﻿import { FairyGUI } from "csharp";
-import {View_PowerExpireTextEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {LocalSettings} from "mods/ModTheSpire/Scripts/Saves/LocalSettings";
-import {FlyingSpikeEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/FlyingSpikeEffect";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import Color from "../../DataDefine/Color";
+import DungeonManager from "../../DungeonManager";
+import { View_PowerExpireTextEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { LocalSettings } from "../../Saves/LocalSettings";
+import { AbstractEffect } from "../AbstractEffect";
+import { FlyingSpikeEffect } from "./FlyingSpikeEffect";
+
 
 export class PowerExpireTextEffect extends AbstractEffect{
     private Interval = 2;

@@ -1,9 +1,9 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {OnDeathMessage} from "mods/ModTheSpire/Scripts/Events/OnDeathMessage";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
+﻿import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../DungeonManager";
+import { OnDeathMessage } from "../Events/OnDeathMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class ThieveryPower extends AbstractPower{
     public static Id = "Thievery"; 

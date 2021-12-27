@@ -1,5 +1,5 @@
-import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
-import {IDisplay} from "mods/ModTheSpire/Scripts/Loader/IDisplay";
+import { IDisplay } from "./IDisplay";
+import { ILoader } from "./ILoader";
 
 export class TextureLoader implements ILoader{
     Create(): IDisplay {

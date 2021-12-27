@@ -1,5 +1,6 @@
 ﻿import { FairyGUI, UnityEngine } from "csharp";
-import {Mathf} from "Core/Module/Math/Mathf";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+
 
 export class ViewComponent_HealthBar{
     private _CacheWidth = 0;

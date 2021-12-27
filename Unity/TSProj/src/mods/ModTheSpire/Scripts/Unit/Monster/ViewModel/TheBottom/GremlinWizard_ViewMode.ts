@@ -1,22 +1,18 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
-import {FrailPower} from "mods/ModTheSpire/Scripts/Power/FrailPower";
-import {SetMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/SetMoveAction";
-import {SpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/SpeechBubble";
-import {EscapeAction} from "mods/ModTheSpire/Scripts/Action/Common/EscapeAction";
-import {TextAboveCreatureAction} from "mods/ModTheSpire/Scripts/Action/Utility/TextAboveCreatureAction";
-import {TalkAction} from "mods/ModTheSpire/Scripts/Action/Animations/TalkAction";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { TalkAction } from "../../../../Action/Animations/TalkAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { EscapeAction } from "../../../../Action/Common/EscapeAction";
+import { SetMoveAction } from "../../../../Action/Common/SetMoveAction";
+import { SFXAction } from "../../../../Action/Utility/SFXAction";
+import { TextAboveCreatureAction } from "../../../../Action/Utility/TextAboveCreatureAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { SpeechBubble } from "../../../../Effect/Combat/SpeechBubble";
+import { LocalizationProperty } from "../../../../Gen/DB/Localization";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
 
 export class GremlinWizard_ViewMode extends AbstractMonster{
     private _currentCharge:number = 0;

@@ -1,7 +1,7 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import { AbstractPower } from "../../Power/AbstractPower";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class ReducePowerAction extends AbstractGameAction{
     public constructor(public Target:AbstractCreature,public Source:AbstractCreature,public power:string|AbstractPower,public Amount:number) {

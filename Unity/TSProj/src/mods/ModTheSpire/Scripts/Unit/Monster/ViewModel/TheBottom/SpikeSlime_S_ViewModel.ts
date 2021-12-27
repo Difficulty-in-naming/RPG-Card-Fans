@@ -1,14 +1,14 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Spine} from "csharp";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {SlimeAnimListener} from "mods/ModTheSpire/Scripts/Unit/Monster/Helpers/SlimeAnimListener";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { AnimateSlowAttackAction } from "../../../../Action/Animations/AnimateSlowAttackAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { RollMoveAction } from "../../../../Action/Common/RollMoveAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { AbstractMonster } from "../../AbstractMonster";
+import { SlimeAnimListener } from "../../Helpers/SlimeAnimListener";
+import { Intent } from "../../Intent";
 
 export class SpikeSlime_S_ViewModel extends AbstractMonster{
     Initialize() {

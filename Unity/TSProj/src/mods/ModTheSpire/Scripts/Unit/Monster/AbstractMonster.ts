@@ -1,12 +1,12 @@
-﻿import AbstractCreature from "../AbstractCreature";
-import {MonsterInfo} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterInfo";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
-import * as TWEEN from "Core/Module/Tween";
-import {RoomPhase} from "mods/ModTheSpire/Scripts/Room/AbstractRoom";
+﻿import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import DamageInfo from "../../DataDefine/DamageInfo";
+import DungeonManager from "../../DungeonManager";
+import { OnPreBattleMessage } from "../../Events/OnPreBattleMessage";
+import AbstractCreature from "../AbstractCreature";
+import { Intent } from "./Intent";
+import { MonsterInfo } from "./MonsterInfo";
+import TWEEN from '@tweenjs/tween.js';
+
 
 export abstract class AbstractMonster extends AbstractCreature
 {

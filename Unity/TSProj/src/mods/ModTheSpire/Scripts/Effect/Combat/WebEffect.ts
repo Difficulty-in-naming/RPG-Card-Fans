@@ -1,9 +1,10 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {TimeKit} from "Core/Utils/TimeKit";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {WebLineEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/WebLineEffect";
-import {WebParticleEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/WebParticleEffect";
+﻿import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import DungeonManager from "../../DungeonManager";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import { AbstractEffect } from "../AbstractEffect";
+import { WebLineEffect } from "./WebLineEffect";
+import { WebParticleEffect } from "./WebParticleEffect";
+
 
 export class WebEffect extends  AbstractEffect{
     private _Timer = 0.1;

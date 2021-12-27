@@ -1,16 +1,16 @@
-﻿import AbstractRelic from "mods/ModTheSpire/Scripts/Relics/AbstractRelic";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PreApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PreApplyPowerMessage";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
+﻿import DungeonManager from "../DungeonManager";
+import { PreApplyPowerMessage } from "../Events/PreApplyPowerMessage";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import AbstractRelic from "./AbstractRelic";
 
 export class SnakeSkull extends AbstractRelic{
+    public static Effect = 1;
     Id = "SnakeSkull"
     Name = LocalizationProperty.Read("异蛇头骨");
     Desc: string = StringHelper.FormatColorString(LocalizationProperty.Read("异蛇头骨-效果描述")).format(SnakeSkull.Effect);
     Icon: string;
     Flavor: string = LocalizationProperty.Read("异蛇头骨-特殊描述");
-    public static Effect = 1;
 
     OnObtain() {
         DungeonManager.MessageManager.Add(PreApplyPowerMessage.Id,this.Event_WhenApplyPowerMessage)

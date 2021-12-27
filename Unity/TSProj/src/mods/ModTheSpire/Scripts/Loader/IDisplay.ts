@@ -1,6 +1,6 @@
-﻿import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import { FairyGUI } from "csharp";
-import {Rect} from "Core/Define/Rect";
+﻿import { FairyGUI } from "csharp";
+import { Rect } from "../../../../Core/Define/Rect";
+import Color from "../DataDefine/Color";
 
 export interface IDisplay{
     X:number;

@@ -291,8 +291,14 @@
  <Reference Include="DOTween">
  <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.demigiant.dotween@1.2.42/DOTween/Plugins/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Cecil">
- <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1-preview.1/Mono.Cecil.dll</HintPath>
+ <Reference Include="Unity.Cecil.Pdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Pdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Cecil.Mdb">
+ <HintPath>C:/Dev/Project/RPG-Card-Fans/Unity/Assets/Editor/04_ConsoleRedirect/Plugins/Cecil/Unity.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

@@ -1,6 +1,6 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import { AbstractMonster } from "../../Unit/Monster/AbstractMonster";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class EscapeAction extends AbstractGameAction{
     Type = ActionType.TEXT

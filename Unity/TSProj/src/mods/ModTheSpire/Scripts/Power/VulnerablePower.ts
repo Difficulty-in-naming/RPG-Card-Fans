@@ -1,17 +1,16 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PaperCrane} from "mods/ModTheSpire/Scripts/Relics/PaperCrane";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
-import {OnHurtBefore} from "mods/ModTheSpire/Scripts/Events/OnHurtBefore";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {WrapDamage} from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {CalcDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcDamageValueMessage";
+﻿import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import { WrapDamage } from "../DataDefine/DamageInfo";
+import { DamageType } from "../DataDefine/DamageType";
+import DungeonManager from "../DungeonManager";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { PaperCrane } from "../Relics/PaperCrane";
+import { StringHelper } from "../StringHelper";
+import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class VulnerablePower extends AbstractPower{
     Icon: string = FileHelper.FormatPath("Powers/vulnerable.png");

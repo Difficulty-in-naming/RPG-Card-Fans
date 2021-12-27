@@ -1,9 +1,8 @@
 ﻿import AbstractCard from "../Cards/AbstractCard";
-import {UI_BottomScene} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_BottomScene";
-import UI_TopBar from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_TopBar";
-import {UI_Combat} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Combat";
-import {AbstractRoom, RoomPhase} from "mods/ModTheSpire/Scripts/Room/AbstractRoom";
-import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
+import { UI_BottomScene } from "../UI/ViewModel/UI_BottomScene";
+import { UI_Combat } from "../UI/ViewModel/UI_Combat";
+import UI_TopBar from "../UI/ViewModel/UI_TopBar";
+import { AbstractRoom, RoomPhase } from "./AbstractRoom";
 
 export class CombatRoom extends AbstractRoom
 {

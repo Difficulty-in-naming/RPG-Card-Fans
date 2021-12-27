@@ -1,11 +1,12 @@
-﻿import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import {Mathf} from "Core/Module/Math/Mathf";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {BlurWaveEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BlurWaveEffect";
-import {FairyGUI} from "csharp";
-import {BlurWaveChaoticEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/BlurWaveChaoticEffect";
-import {ShakeDur, ShakeIntensity, ShakeScreen} from "mods/ModTheSpire/Scripts/Effect/ShakeScreen";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import Color from "../../DataDefine/Color";
+import DungeonManager from "../../DungeonManager";
+import { AbstractEffect } from "../AbstractEffect";
+import { ShakeScreen, ShakeIntensity, ShakeDur } from "../ShakeScreen";
+import { BlurWaveChaoticEffect } from "./BlurWaveChaoticEffect";
+import { BlurWaveEffect } from "./BlurWaveEffect";
+
 
 export class ShockWaveEffect extends AbstractEffect{
     public constructor(private _X:number,private _Y:number,private _Color:Color,private _ShockWaveType:ShockWaveType) {

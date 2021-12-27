@@ -1,6 +1,7 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {View_PowerBuffEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
+import { View_PowerBuffEffect } from "../../Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../AbstractEffect";
+
 export class PowerBuffEffect extends AbstractEffect{
     public constructor(public X: number,public Y:number,public Msg:string) {
         super();

@@ -1,23 +1,17 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import {WeakPower} from "mods/ModTheSpire/Scripts/Power/WeakPower";
-import {SetMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/SetMoveAction";
-import {SpeechBubble} from "mods/ModTheSpire/Scripts/Effect/Combat/SpeechBubble";
-import {EscapeAction} from "mods/ModTheSpire/Scripts/Action/Common/EscapeAction";
-import GainBlockAction from "mods/ModTheSpire/Scripts/Action/Common/GainBlockAction";
-import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
-import {GainBlockRandomMonsterAction} from "mods/ModTheSpire/Scripts/Action/Common/GainBlockRandomMonsterAction";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { AnimateSlowAttackAction } from "../../../../Action/Animations/AnimateSlowAttackAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { EscapeAction } from "../../../../Action/Common/EscapeAction";
+import { GainBlockRandomMonsterAction } from "../../../../Action/Common/GainBlockRandomMonsterAction";
+import { SetMoveAction } from "../../../../Action/Common/SetMoveAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { SpeechBubble } from "../../../../Effect/Combat/SpeechBubble";
+import { LocalizationProperty } from "../../../../Gen/DB/Localization";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
 
 export class GremlinTsundere_ViewModel extends AbstractMonster{
     private _blockAmt:number;

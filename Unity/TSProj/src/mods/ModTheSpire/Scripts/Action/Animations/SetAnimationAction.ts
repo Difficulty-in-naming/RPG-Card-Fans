@@ -1,5 +1,5 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class SetAnimationAction extends AbstractGameAction{
     Type = ActionType.WAIT;

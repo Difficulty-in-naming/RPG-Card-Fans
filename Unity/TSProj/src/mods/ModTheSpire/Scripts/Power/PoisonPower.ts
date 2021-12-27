@@ -1,17 +1,17 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {MediaManager} from "csharp";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {PoisonLoseHpAction} from "mods/ModTheSpire/Scripts/Action/Unique/PoisonLoseHpAction";
-import {AtStartOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtStartOfTurnMessage";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {ReducePowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ReducePowerAction";
+﻿import { MediaManager } from "csharp";
+import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import { PoisonLoseHpAction } from "../Action/Unique/PoisonLoseHpAction";
+import { AttackEffect } from "../DataDefine/AttackEffect";
+import DungeonManager from "../DungeonManager";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { AtStartOfTurnMessage } from "../Events/AtStartOfTurnMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import AbstractCreature from "../Unit/AbstractCreature";
+import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class PoisonPower extends AbstractPower{
     public static PowerID = "Poison";

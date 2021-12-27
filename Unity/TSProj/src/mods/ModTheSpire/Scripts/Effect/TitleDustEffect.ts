@@ -1,11 +1,12 @@
-﻿import {Mathf} from "Core/Module/Math/Mathf";
-import FileHelper, {basePath} from "../FileHelper";
-import UIHelper from "../UI/UIHelper";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../Core/Utils/TimeKit";
 import Color from "../DataDefine/Color";
-import { FairyGUI, UnityEngine } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {TimeKit} from "Core/Utils/TimeKit";
-import Tween from "Core/Module/Tween";
+import FileHelper from "../FileHelper";
+import UIHelper from "../UI/UIHelper";
+import { AbstractEffect } from "./AbstractEffect";
+import TWEEN from '@tweenjs/tween.js';
+
 
 export class TitleDustEffect extends AbstractEffect{
     private readonly Vx : number;
@@ -56,7 +57,7 @@ export class TitleDustEffect extends AbstractEffect{
         }
         else if(this.Tween == null)
         {
-            this.Tween = new Tween.Tween({a:0.2}).to({a:0}, this.Dur).easing(Tween.Easing.Sinusoidal.InOut)
+            this.Tween = new TWEEN.Tween({a:0.2}).to({a:0}, this.Dur).easing(TWEEN.Easing.Sinusoidal.InOut)
                 .onUpdate(object => {
                     this.Loader.alpha = object.a;
                 }).start();

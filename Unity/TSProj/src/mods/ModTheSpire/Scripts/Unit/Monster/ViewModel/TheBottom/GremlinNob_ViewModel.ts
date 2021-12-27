@@ -1,19 +1,18 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {SFXAction} from "mods/ModTheSpire/Scripts/Action/Utility/SFXAction";
-import {AnimateSlowAttackAction} from "mods/ModTheSpire/Scripts/Action/Animations/AnimateSlowAttackAction";
-import {TalkAction} from "mods/ModTheSpire/Scripts/Action/Animations/TalkAction";
-import {AngerPower} from "mods/ModTheSpire/Scripts/Power/AngerPower";
-import {VulnerablePower} from "mods/ModTheSpire/Scripts/Power/VulnerablePower";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { AnimateSlowAttackAction } from "../../../../Action/Animations/AnimateSlowAttackAction";
+import { TalkAction } from "../../../../Action/Animations/TalkAction";
+import { ApplyPowerAction } from "../../../../Action/Common/ApplyPowerAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { SFXAction } from "../../../../Action/Utility/SFXAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import DungeonManager from "../../../../DungeonManager";
+import { LocalizationProperty } from "../../../../Gen/DB/Localization";
+import { AngerPower } from "../../../../Power/AngerPower";
+import { VulnerablePower } from "../../../../Power/VulnerablePower";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
 
 export class GremlinNob_ViewModel extends AbstractMonster{
     Initialize() {

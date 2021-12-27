@@ -1,5 +1,4 @@
-﻿import {UI} from "../../../Core/Module/UI/UIKit";
-import UIKit = UI.UIKit;
+﻿import { UIKit } from "../../../Core/Module/UI/UIKit";
 import SaveKit from "./SaveKit";
 
 export class S{

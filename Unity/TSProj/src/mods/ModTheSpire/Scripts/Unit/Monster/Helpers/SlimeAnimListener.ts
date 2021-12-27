@@ -1,5 +1,6 @@
-﻿import {MediaManager, Spine } from "csharp";
-import {Mathf} from "Core/Module/Math/Mathf";
+﻿import { Spine, MediaManager } from "csharp";
+import { Mathf } from "../../../../../../Core/Module/Math/Mathf";
+
 
 export function SlimeAnimListener(trackEntry : Spine.TrackEntry){
     let roll = Mathf.Floor(Mathf.RandomRange(1,5));

@@ -1,6 +1,6 @@
-﻿import {IMessage} from "Core/ObserverMessageKit";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
+﻿import { IMessage } from "../../../../Core/ObserverMessageKit";
+import { AbstractPower } from "../Power/AbstractPower";
+import AbstractCreature from "../Unit/AbstractCreature";
 
 export class PostApplyPowerMessage implements IMessage{
     public static readonly Id = "PostApplyPowerMessage";

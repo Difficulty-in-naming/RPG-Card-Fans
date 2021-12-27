@@ -1,11 +1,10 @@
-﻿import {View_Combat} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Combat";
-import {TimeKit} from "Core/Utils/TimeKit";
-import {ExhaustPileParticle} from "mods/ModTheSpire/Scripts/Effect/ExhaustPileParticle";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {LocalSettings} from "mods/ModTheSpire/Scripts/Saves/LocalSettings";
-import {DustEffect} from "mods/ModTheSpire/Scripts/Effect/DustEffect";
-import {GameDeckGlowEffect} from "mods/ModTheSpire/Scripts/Effect/GameDeckGlowEffect";
-import {DiscardGlowEffect} from "mods/ModTheSpire/Scripts/Effect/DiscardGlowEffect";
+﻿import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import { DiscardGlowEffect } from "../../Effect/DiscardGlowEffect";
+import EffectKit from "../../Effect/EffectKit";
+import { ExhaustPileParticle } from "../../Effect/ExhaustPileParticle";
+import { GameDeckGlowEffect } from "../../Effect/GameDeckGlowEffect";
+import { View_Combat } from "../../Gen/View/ModTheSpire_Combat";
+import { LocalSettings } from "../../Saves/LocalSettings";
 
 export class UI_Combat extends View_Combat{
     private mEnergyVfxTimer : number = 0;

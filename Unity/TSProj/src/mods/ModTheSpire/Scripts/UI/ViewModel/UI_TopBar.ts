@@ -1,8 +1,8 @@
-﻿import {View_TopBar} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_TopBar";
-import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {UI_MasterDeckView} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_MasterDeckView";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PlayerInfo} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
+﻿import DungeonManager from "../../DungeonManager";
+import { View_TopBar } from "../../Gen/View/ModTheSpire_TopBar";
+import { AbstractPlayer } from "../../Unit/Character/AbstractPlayer";
+import { PlayerInfo } from "../../Unit/Character/PlayerInfo";
+import { UI_MasterDeckView } from "./UI_MasterDeckView";
 
 export default class UI_TopBar extends View_TopBar
 {

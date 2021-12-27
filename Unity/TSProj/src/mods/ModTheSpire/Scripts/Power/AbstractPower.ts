@@ -1,28 +1,27 @@
-﻿import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {GainPowerEffect} from "mods/ModTheSpire/Scripts/Effect/GainPowerEffect";
-import {FlashPowerEffect} from "mods/ModTheSpire/Scripts/Effect/FlashPowerEffect";
-import QueueMessageKit, {IGameAction} from "Core/QueueMessageKit";
-import {ObserverMessageKit} from "Core/ObserverMessageKit";
-import {OnHurtBefore} from "mods/ModTheSpire/Scripts/Events/OnHurtBefore";
-import {OnHurtAfter} from "mods/ModTheSpire/Scripts/Events/OnHurtAfter";
-import {OnHurt} from "mods/ModTheSpire/Scripts/Events/OnHurt";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {AtStartOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtStartOfTurnMessage";
-import {PowerModifiedAmountMessage} from "mods/ModTheSpire/Scripts/Events/PowerModifiedAmountMessage";
-import {CalcDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcDamageValueMessage";
-import {OnDamageBefore} from "mods/ModTheSpire/Scripts/Events/OnDamageBefore";
-import {OnDamageAfter} from "mods/ModTheSpire/Scripts/Events/OnDamageAfter";
-import {CalcFinalDamageValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcFinalDamageValueMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import {OnDeathMessage} from "mods/ModTheSpire/Scripts/Events/OnDeathMessage";
-import {CalcHurtValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcHurtValueMessage";
-import {CalcFinalHurtValueMessage} from "mods/ModTheSpire/Scripts/Events/CalcFinalHurtValueMessage";
-import {PreApplyPowerMessage} from "mods/ModTheSpire/Scripts/Events/PreApplyPowerMessage";
-import {AtEndOfTurnPreEndTurnCardsMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnPreEndTurnCardsMessage";
-import {PreModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PreModifyBlockMessage";
-import {OnPreUseCardMessage} from "mods/ModTheSpire/Scripts/Events/OnPreUseCardMessage";
+﻿import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import DungeonManager from "../DungeonManager";
+import EffectKit from "../Effect/EffectKit";
+import { FlashPowerEffect } from "../Effect/FlashPowerEffect";
+import { GainPowerEffect } from "../Effect/GainPowerEffect";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { AtEndOfTurnPreEndTurnCardsMessage } from "../Events/AtEndOfTurnPreEndTurnCardsMessage";
+import { AtStartOfTurnMessage } from "../Events/AtStartOfTurnMessage";
+import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
+import { CalcFinalDamageValueMessage } from "../Events/CalcFinalDamageValueMessage";
+import { CalcFinalHurtValueMessage } from "../Events/CalcFinalHurtValueMessage";
+import { CalcHurtValueMessage } from "../Events/CalcHurtValueMessage";
+import { OnDamageAfter } from "../Events/OnDamageAfter";
+import { OnDamageBefore } from "../Events/OnDamageBefore";
+import { OnDeathMessage } from "../Events/OnDeathMessage";
+import { OnHurt } from "../Events/OnHurt";
+import { OnHurtAfter } from "../Events/OnHurtAfter";
+import { OnHurtBefore } from "../Events/OnHurtBefore";
+import { OnPreUseCardMessage } from "../Events/OnPreUseCardMessage";
+import { PowerModifiedAmountMessage } from "../Events/PowerModifiedAmountMessage";
+import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
+import AbstractCreature from "../Unit/AbstractCreature";
+
 
 export abstract class AbstractPower {
 

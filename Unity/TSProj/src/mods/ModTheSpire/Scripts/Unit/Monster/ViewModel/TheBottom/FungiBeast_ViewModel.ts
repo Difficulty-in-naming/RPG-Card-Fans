@@ -1,20 +1,20 @@
-﻿import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {Mathf} from "Core/Module/Math/Mathf";
-import {Spine} from "csharp";
-import {MonsterInfo} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterInfo";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {ApplyPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/ApplyPowerAction";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
-import {RollMoveAction} from "mods/ModTheSpire/Scripts/Action/Common/RollMoveAction";
-import {Intent} from "mods/ModTheSpire/Scripts/Unit/Monster/Intent";
-import {OnPreBattleMessage} from "mods/ModTheSpire/Scripts/Events/OnPreBattleMessage";
-import {SporeCloudPower} from "mods/ModTheSpire/Scripts/Power/SporeCloudPower";
-import {DoFuncAction} from "mods/ModTheSpire/Scripts/Action/Common/DoFuncAction";
-import {StrengthPower} from "mods/ModTheSpire/Scripts/Power/StrengthPower";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
+﻿import { Spine } from "csharp";
+import { Mathf } from "../../../../../../../Core/Module/Math/Mathf";
+import { ApplyPowerAction } from "../../../../Action/Common/ApplyPowerAction";
+import DamageAction from "../../../../Action/Common/DamageAction";
+import { DoFuncAction } from "../../../../Action/Common/DoFuncAction";
+import { RollMoveAction } from "../../../../Action/Common/RollMoveAction";
+import { AttackEffect } from "../../../../DataDefine/AttackEffect";
+import DamageInfo from "../../../../DataDefine/DamageInfo";
+import { DamageType } from "../../../../DataDefine/DamageType";
+import DungeonManager from "../../../../DungeonManager";
+import { OnPreBattleMessage } from "../../../../Events/OnPreBattleMessage";
+import { LocalizationProperty } from "../../../../Gen/DB/Localization";
+import { SporeCloudPower } from "../../../../Power/SporeCloudPower";
+import { StrengthPower } from "../../../../Power/StrengthPower";
+import { AbstractMonster } from "../../AbstractMonster";
+import { Intent } from "../../Intent";
+import { MonsterInfo } from "../../MonsterInfo";
 
 export class Cultist_ViewModel extends AbstractMonster{
     private StrAmt;

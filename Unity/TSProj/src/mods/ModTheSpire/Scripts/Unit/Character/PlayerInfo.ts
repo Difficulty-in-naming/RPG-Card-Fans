@@ -1,6 +1,6 @@
-﻿import AbstractRelic from "../../Relics/AbstractRelic";
-import AbstractCard from "../../Cards/AbstractCard";
-import {ILoader} from "mods/ModTheSpire/Scripts/Loader/ILoader";
+﻿import AbstractCard from "../../Cards/AbstractCard";
+import { ILoader } from "../../Loader/ILoader";
+import AbstractRelic from "../../Relics/AbstractRelic";
 
 export interface PlayerInfo
 {

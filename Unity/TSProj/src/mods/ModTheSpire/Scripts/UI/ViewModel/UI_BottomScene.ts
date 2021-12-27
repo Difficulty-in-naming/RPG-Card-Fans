@@ -1,16 +1,17 @@
-﻿import {FairyGUI, MediaManager} from "csharp";
-import {View_BottomScene} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_BottomScene";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {DustEffect} from "mods/ModTheSpire/Scripts/Effect/DustEffect";
-import {LocalSettings} from "mods/ModTheSpire/Scripts/Saves/LocalSettings";
-import {TimeKit} from "Core/Utils/TimeKit";
-import {BottomFogEffect} from "mods/ModTheSpire/Scripts/Effect/BottomFogEffect";
-import {InteractableTorchEffect, TorchSize} from "mods/ModTheSpire/Scripts/Effect/InteractableTorchEffect";
-import {Mathf} from "Core/Module/Math/Mathf";
-import Color from "mods/ModTheSpire/Scripts/DataDefine/Color";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {IScene} from "mods/ModTheSpire/Scripts/Dungeon/IScene";
+﻿import { MediaManager, FairyGUI } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import Color from "../../DataDefine/Color";
+import { IScene } from "../../Dungeon/IScene";
+import DungeonManager from "../../DungeonManager";
+import { BottomFogEffect } from "../../Effect/BottomFogEffect";
+import { DustEffect } from "../../Effect/DustEffect";
+import { InteractableTorchEffect, TorchSize } from "../../Effect/InteractableTorchEffect";
+import FileHelper from "../../FileHelper";
+import { View_BottomScene } from "../../Gen/View/ModTheSpire_BottomScene";
+import { LocalSettings } from "../../Saves/LocalSettings";
+import UIHelper from "../UIHelper";
+
 
 export class UI_BottomScene extends View_BottomScene implements IScene
 {

@@ -1,8 +1,8 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCard from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {ShowCardAndAddToDiscardEffect} from "mods/ModTheSpire/Scripts/Effect/ShowCardAndAddToDiscardEffect";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import AbstractCard from "../../Cards/AbstractCard";
+import EffectKit from "../../Effect/EffectKit";
+import { ShowCardAndAddToDiscardEffect } from "../../Effect/ShowCardAndAddToDiscardEffect";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class MakeTempCardInDiscardAction extends AbstractGameAction
 {

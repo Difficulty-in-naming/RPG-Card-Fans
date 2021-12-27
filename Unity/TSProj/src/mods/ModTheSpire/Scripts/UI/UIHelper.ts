@@ -1,9 +1,9 @@
-﻿import {FairyGUI, ResourcesManager, SuperText, TMPro, UnityEngine} from "csharp";
-import {UI_Tooltips} from "mods/ModTheSpire/Scripts/UI/ViewModel/UI_Tooltips";
-import AbstractCard, {CardColor, CardType} from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
+﻿import { FairyGUI, SuperText, ResourcesManager, TMPro } from "csharp";
 import * as puerts from "puerts";
+import AbstractCard, { CardColor, CardType } from "../Cards/AbstractCard";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { UI_Tooltips } from "./ViewModel/UI_Tooltips";
 export default class {
     public static CreateGLoader() : FairyGUI.GLoader
     {

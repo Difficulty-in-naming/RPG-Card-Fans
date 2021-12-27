@@ -1,13 +1,13 @@
-﻿import {UI_SelectGameMode} from "./UI_SelectGameMode";
-import {View_Title} from "../../Gen/View/ModTheSpire_Title";
-import Color from "../../DataDefine/Color";
-import {TimeKit} from "Core/Utils/TimeKit";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
-import {TitleDustEffect} from "mods/ModTheSpire/Scripts/Effect/TitleDustEffect";
-import { FairyGUI } from "csharp";
-import UIHelper from "mods/ModTheSpire/Scripts/UI/UIHelper";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {Mathf} from "Core/Module/Math/Mathf";
+﻿import { FairyGUI } from "csharp";
+import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import EffectKit from "../../Effect/EffectKit";
+import { TitleDustEffect } from "../../Effect/TitleDustEffect";
+import FileHelper from "../../FileHelper";
+import { View_Title } from "../../Gen/View/ModTheSpire_Title";
+import UIHelper from "../UIHelper";
+import { UI_SelectGameMode } from "./UI_SelectGameMode";
+
 export class UI_Title extends View_Title
 {
     private DustTimer = 0.05;

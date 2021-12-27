@@ -1,10 +1,8 @@
-import * as core from 'csharp';
-import {UI} from "Core/Module/UI/UIKit";
-import UIKit = UI.UIKit;
-import QueueMessageKit from "./Core/QueueMessageKit";
-import {TimeKit} from "Core/Utils/TimeKit";
-import * as TWEEN from "Core/Module/Tween";
-import { MediaManager } from 'csharp';
+import { UIKit } from "./Core/Module/UI/UIKit";
+import {TimeKit} from "./Core/Utils/TimeKit";
+import { GameEntry, MediaManager } from 'csharp';
+import { Log } from "./Core/Module/Log/Log";
+import TWEEN from '@tweenjs/tween.js';
 export interface UnityBridge {
     OnUpdate();
     OnDestroy();
@@ -20,8 +18,7 @@ export class MainEntry{
     }
     private constructor() {
         MediaManager.Init();
-        core.GameEntry.Inst.RegisterUpdate(()=>this.onUpdate());
-        //core.GameEntry.Inst.RegisterDestory(()=>this.onDestroy());
+        GameEntry.Inst.RegisterUpdate(()=>this.onUpdate());
     }    
     
     private BridgeList : Set<UnityBridge> = new Set<UnityBridge>();
@@ -43,6 +40,7 @@ export class MainEntry{
             value.OnUpdate();
         });
         UIKit.Inst().OnUpdate();
+        Log.Error("12312321223");
     }
 
 /*    private onDestroy()

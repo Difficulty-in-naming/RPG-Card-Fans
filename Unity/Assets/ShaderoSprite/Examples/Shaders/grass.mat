@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: grass
+  m_Shader: {fileID: 4800000, guid: 844941d5915399d4eb2c7e655a085082, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 30a8fd2b2dee8e54090ff5b729909db2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewTex_1:
+        m_Texture: {fileID: 2800000, guid: 2e52e8594dd87a14e8f10d3c24f48e80, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NewTex_2:
+        m_Texture: {fileID: 2800000, guid: 20f00c12f3c44b34f85207247ed31ff6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SourceNewTex_1:
+        m_Texture: {fileID: 2800000, guid: 2e52e8594dd87a14e8f10d3c24f48e80, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SourceNewTex_2:
+        m_Texture: {fileID: 2800000, guid: 2e52e8594dd87a14e8f10d3c24f48e80, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - AnimatedInfiniteZoomUV_Intensity_1: 1
+    - AnimatedInfiniteZoomUV_PosX_1: 0
+    - AnimatedInfiniteZoomUV_PosY_1: 0
+    - AnimatedInfiniteZoomUV_Speed_1: -3.786
+    - AnimatedInfiniteZoomUV_Zoom_1: 0.491
+    - AnimatedShakeUV_1_IntenseX_1: 1
+    - AnimatedShakeUV_1_IntenseY_1: 0.15
+    - AnimatedShakeUV_1_OffsetX_1: 0
+    - AnimatedShakeUV_1_OffsetY_1: 0.031
+    - AnimatedShakeUV_1_Speed_1: 0.092
+    - LiquidUV_DistanceX_1: 0.217
+    - LiquidUV_DistanceY_1: 0.185
+    - LiquidUV_Speed_1: 0.496
+    - LiquidUV_WaveX_1: 1.12
+    - LiquidUV_WaveY_1: 1.034
+    - PinchUV_Size_1: 0.5
+    - ZoomUV_PosX_1: 0.5
+    - ZoomUV_PosY_1: 0.5
+    - ZoomUV_Zoom_1: 0.857
+    - _Add_Fade_1: 1.35
+    - _BumpScale: 1
+    - _ColorMask: 15
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HumanBreat_Intensity_1: 1.893
+    - _HumanBreat_Speed_1: 1.594
+    - _Mask2uv_Fade_18: 1
+    - _Mask2uv_Fade_22: 1
+    - _Mask2uv_Fade_26: 1
+    - _Mask2uv_Fade_30: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _OperationBlend_Fade_1: 1
+    - _OperationBlend_Fade_2: 0.764
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SpriteFade: 1
+    - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UVSec: 0
+    - _WorldGrassUV_GrassDirection_1: 3
+    - _WorldGrassUV_Shadowintensity_1: 0.55
+    - _WorldGrassUV_Shadowintensity_107: 0.55
+    - _WorldGrassUV_Shadowintensity_110: 0.55
+    - _WorldGrassUV_Shadowintensity_113: 0.55
+    - _WorldGrassUV_Shadowintensity_115: 0.55
+    - _WorldGrassUV_Shadowintensity_117: 0.55
+    - _WorldGrassUV_Shadowintensity_119: 0.55
+    - _WorldGrassUV_Shadowintensity_121: 0.55
+    - _WorldGrassUV_Shadowintensity_123: 0.55
+    - _WorldGrassUV_Shadowintensity_125: 0.55
+    - _WorldGrassUV_Shadowintensity_127: 0.55
+    - _WorldGrassUV_Shadowintensity_129: 0.55
+    - _WorldGrassUV_Shadowintensity_131: 0.55
+    - _WorldGrassUV_Shadowintensity_133: 0.55
+    - _WorldGrassUV_Shadowintensity_135: 0.55
+    - _WorldGrassUV_Shadowintensity_137: 0.55
+    - _WorldGrassUV_Shadowintensity_23: 0.55
+    - _WorldGrassUV_Shadowintensity_25: 0.55
+    - _WorldGrassUV_Shadowintensity_27: 0.55
+    - _WorldGrassUV_Shadowintensity_29: 0.55
+    - _WorldGrassUV_Shadowintensity_31: 0.55
+    - _WorldGrassUV_Shadowintensity_33: 0.55
+    - _WorldGrassUV_Shadowintensity_35: 0.55
+    - _WorldGrassUV_Shadowintensity_37: 0.55
+    - _WorldGrassUV_Shadowintensity_39: 0.55
+    - _WorldGrassUV_Shadowintensity_41: 0.55
+    - _WorldGrassUV_Shadowintensity_43: 0.55
+    - _WorldGrassUV_Shadowintensity_45: 0.55
+    - _WorldGrassUV_Shadowintensity_47: 0.55
+    - _WorldGrassUV_Shadowintensity_49: 0.55
+    - _WorldGrassUV_Shadowintensity_51: 0.55
+    - _WorldGrassUV_Shadowintensity_53: 0.55
+    - _WorldGrassUV_Shadowintensity_55: 0.55
+    - _WorldGrassUV_Shadowintensity_57: 0.55
+    - _WorldGrassUV_Shadowintensity_59: 0.55
+    - _WorldGrassUV_Shadowintensity_61: 0.55
+    - _WorldGrassUV_Shadowintensity_63: 0.55
+    - _WorldGrassUV_Shadowintensity_65: 0.55
+    - _WorldGrassUV_Shadowintensity_67: 0.55
+    - _WorldGrassUV_Shadowintensity_70: 0.55
+    - _WorldGrassUV_Shadowintensity_73: 0.55
+    - _WorldGrassUV_Shadowintensity_75: 0.55
+    - _WorldGrassUV_Shadowintensity_77: 0.55
+    - _WorldGrassUV_Shadowintensity_79: 0.55
+    - _WorldGrassUV_Shadowintensity_82: 0.55
+    - _WorldGrassUV_Shadowintensity_86: 0.55
+    - _WorldGrassUV_Shadowintensity_90: 0.55
+    - _WorldGrassUV_Shadowintensity_94: 0.55
+    - _WorldGrassUV_Shadowintensity_96: 0.55
+    - _WorldGrassUV_Shadowintensity_99: 0.55
+    - _WorldGrassUV_WindDirection_1: -0.5
+    - _WorldGrassUV_WindDirection_107: -1.5
+    - _WorldGrassUV_WindDirection_110: -1.5
+    - _WorldGrassUV_WindDirection_113: -1.5
+    - _WorldGrassUV_WindDirection_115: -1.5
+    - _WorldGrassUV_WindDirection_117: -1.5
+    - _WorldGrassUV_WindDirection_119: -1.5
+    - _WorldGrassUV_WindDirection_121: -1.5
+    - _WorldGrassUV_WindDirection_123: -1.5
+    - _WorldGrassUV_WindDirection_125: -1.5
+    - _WorldGrassUV_WindDirection_127: -1.5
+    - _WorldGrassUV_WindDirection_129: -1.5
+    - _WorldGrassUV_WindDirection_131: -1.5
+    - _WorldGrassUV_WindDirection_133: -1.5
+    - _WorldGrassUV_WindDirection_135: -1.5
+    - _WorldGrassUV_WindDirection_137: -1.5
+    - _WorldGrassUV_WindDirection_23: -1.5
+    - _WorldGrassUV_WindDirection_25: -1.5
+    - _WorldGrassUV_WindDirection_27: -1.5
+    - _WorldGrassUV_WindDirection_29: -1.5
+    - _WorldGrassUV_WindDirection_31: -1.5
+    - _WorldGrassUV_WindDirection_33: -1.5
+    - _WorldGrassUV_WindDirection_35: -1.5
+    - _WorldGrassUV_WindDirection_37: -1.5
+    - _WorldGrassUV_WindDirection_39: -1.5
+    - _WorldGrassUV_WindDirection_41: -1.5
+    - _WorldGrassUV_WindDirection_43: -1.5
+    - _WorldGrassUV_WindDirection_45: -1.5
+    - _WorldGrassUV_WindDirection_47: -1.5
+    - _WorldGrassUV_WindDirection_49: -1.5
+    - _WorldGrassUV_WindDirection_51: -1.5
+    - _WorldGrassUV_WindDirection_53: -1.5
+    - _WorldGrassUV_WindDirection_55: -1.5
+    - _WorldGrassUV_WindDirection_57: -1.5
+    - _WorldGrassUV_WindDirection_59: -1.5
+    - _WorldGrassUV_WindDirection_61: -1.5
+    - _WorldGrassUV_WindDirection_63: -1.5
+    - _WorldGrassUV_WindDirection_65: -1.5
+    - _WorldGrassUV_WindDirection_67: -1.5
+    - _WorldGrassUV_WindDirection_70: -1.5
+    - _WorldGrassUV_WindDirection_73: -1.5
+    - _WorldGrassUV_WindDirection_75: -1.5
+    - _WorldGrassUV_WindDirection_77: -1.5
+    - _WorldGrassUV_WindDirection_79: -1.5
+    - _WorldGrassUV_WindDirection_82: -1.5
+    - _WorldGrassUV_WindDirection_86: -1.5
+    - _WorldGrassUV_WindDirection_90: -1.5
+    - _WorldGrassUV_WindDirection_94: -1.5
+    - _WorldGrassUV_WindDirection_96: -1.5
+    - _WorldGrassUV_WindDirection_99: -1.5
+    - _WorldGrassUV_WindSpeed_1: 1
+    - _WorldGrassUV_WindSpeed_107: 0.42
+    - _WorldGrassUV_WindSpeed_110: 0.42
+    - _WorldGrassUV_WindSpeed_113: 0.42
+    - _WorldGrassUV_WindSpeed_115: 0.42
+    - _WorldGrassUV_WindSpeed_117: 0.42
+    - _WorldGrassUV_WindSpeed_119: 0.42
+    - _WorldGrassUV_WindSpeed_121: 0.42
+    - _WorldGrassUV_WindSpeed_123: 0.42
+    - _WorldGrassUV_WindSpeed_125: 0.42
+    - _WorldGrassUV_WindSpeed_127: 0.42
+    - _WorldGrassUV_WindSpeed_129: 0.42
+    - _WorldGrassUV_WindSpeed_131: 0.42
+    - _WorldGrassUV_WindSpeed_133: 0.42
+    - _WorldGrassUV_WindSpeed_135: 0.42
+    - _WorldGrassUV_WindSpeed_137: 0.42
+    - _WorldGrassUV_WindSpeed_23: 0.42
+    - _WorldGrassUV_WindSpeed_25: 0.42
+    - _WorldGrassUV_WindSpeed_27: 0.42
+    - _WorldGrassUV_WindSpeed_29: 0.42
+    - _WorldGrassUV_WindSpeed_31: 0.42
+    - _WorldGrassUV_WindSpeed_33: 0.42
+    - _WorldGrassUV_WindSpeed_35: 0.42
+    - _WorldGrassUV_WindSpeed_37: 0.42
+    - _WorldGrassUV_WindSpeed_39: 0.42
+    - _WorldGrassUV_WindSpeed_41: 0.42
+    - _WorldGrassUV_WindSpeed_43: 0.42
+    - _WorldGrassUV_WindSpeed_45: 0.42
+    - _WorldGrassUV_WindSpeed_47: 0.42
+    - _WorldGrassUV_WindSpeed_49: 0.42
+    - _WorldGrassUV_WindSpeed_51: 0.42
+    - _WorldGrassUV_WindSpeed_53: 0.42
+    - _WorldGrassUV_WindSpeed_55: 0.42
+    - _WorldGrassUV_WindSpeed_57: 0.42
+    - _WorldGrassUV_WindSpeed_59: 0.42
+    - _WorldGrassUV_WindSpeed_61: 0.42
+    - _WorldGrassUV_WindSpeed_63: 0.42
+    - _WorldGrassUV_WindSpeed_65: 0.42
+    - _WorldGrassUV_WindSpeed_67: 0.42
+    - _WorldGrassUV_WindSpeed_70: 0.42
+    - _WorldGrassUV_WindSpeed_73: 0.42
+    - _WorldGrassUV_WindSpeed_75: 0.42
+    - _WorldGrassUV_WindSpeed_77: 0.42
+    - _WorldGrassUV_WindSpeed_79: 0.42
+    - _WorldGrassUV_WindSpeed_82: 0.42
+    - _WorldGrassUV_WindSpeed_86: 0.42
+    - _WorldGrassUV_WindSpeed_90: 0.42
+    - _WorldGrassUV_WindSpeed_94: 0.42
+    - _WorldGrassUV_WindSpeed_96: 0.42
+    - _WorldGrassUV_WindSpeed_99: 0.42
+    - _WorldGrassUV_Worldsize_1: 2
+    - _WorldGrassUV_Worldsize_107: 2
+    - _WorldGrassUV_Worldsize_110: 2
+    - _WorldGrassUV_Worldsize_113: 2
+    - _WorldGrassUV_Worldsize_115: 2
+    - _WorldGrassUV_Worldsize_117: 2
+    - _WorldGrassUV_Worldsize_119: 2
+    - _WorldGrassUV_Worldsize_121: 2
+    - _WorldGrassUV_Worldsize_123: 2
+    - _WorldGrassUV_Worldsize_125: 2
+    - _WorldGrassUV_Worldsize_127: 2
+    - _WorldGrassUV_Worldsize_129: 2
+    - _WorldGrassUV_Worldsize_131: 2
+    - _WorldGrassUV_Worldsize_133: 2
+    - _WorldGrassUV_Worldsize_135: 2
+    - _WorldGrassUV_Worldsize_137: 2
+    - _WorldGrassUV_Worldsize_23: 2
+    - _WorldGrassUV_Worldsize_25: 2
+    - _WorldGrassUV_Worldsize_27: 2
+    - _WorldGrassUV_Worldsize_29: 2
+    - _WorldGrassUV_Worldsize_31: 2
+    - _WorldGrassUV_Worldsize_33: 2
+    - _WorldGrassUV_Worldsize_35: 2
+    - _WorldGrassUV_Worldsize_37: 2
+    - _WorldGrassUV_Worldsize_39: 2
+    - _WorldGrassUV_Worldsize_41: 2
+    - _WorldGrassUV_Worldsize_43: 2
+    - _WorldGrassUV_Worldsize_45: 2
+    - _WorldGrassUV_Worldsize_47: 2
+    - _WorldGrassUV_Worldsize_49: 2
+    - _WorldGrassUV_Worldsize_51: 2
+    - _WorldGrassUV_Worldsize_53: 2
+    - _WorldGrassUV_Worldsize_55: 2
+    - _WorldGrassUV_Worldsize_57: 2
+    - _WorldGrassUV_Worldsize_59: 2
+    - _WorldGrassUV_Worldsize_61: 2
+    - _WorldGrassUV_Worldsize_63: 2
+    - _WorldGrassUV_Worldsize_65: 2
+    - _WorldGrassUV_Worldsize_67: 2
+    - _WorldGrassUV_Worldsize_70: 2
+    - _WorldGrassUV_Worldsize_73: 2
+    - _WorldGrassUV_Worldsize_75: 2
+    - _WorldGrassUV_Worldsize_77: 2
+    - _WorldGrassUV_Worldsize_79: 2
+    - _WorldGrassUV_Worldsize_82: 2
+    - _WorldGrassUV_Worldsize_86: 2
+    - _WorldGrassUV_Worldsize_90: 2
+    - _WorldGrassUV_Worldsize_94: 2
+    - _WorldGrassUV_Worldsize_96: 2
+    - _WorldGrassUV_Worldsize_99: 2
+    - _WorldGrassUV_Zoom_1: 0.025
+    - _WorldGrassUV_Zoom_107: 0.025
+    - _WorldGrassUV_Zoom_110: 0.025
+    - _WorldGrassUV_Zoom_113: 0.025
+    - _WorldGrassUV_Zoom_115: 0.025
+    - _WorldGrassUV_Zoom_117: 0.025
+    - _WorldGrassUV_Zoom_119: 0.025
+    - _WorldGrassUV_Zoom_121: 0.025
+    - _WorldGrassUV_Zoom_123: 0.025
+    - _WorldGrassUV_Zoom_125: 0.025
+    - _WorldGrassUV_Zoom_127: 0.025
+    - _WorldGrassUV_Zoom_129: 0.025
+    - _WorldGrassUV_Zoom_131: 0.025
+    - _WorldGrassUV_Zoom_133: 0.025
+    - _WorldGrassUV_Zoom_135: 0.025
+    - _WorldGrassUV_Zoom_137: 0.025
+    - _WorldGrassUV_Zoom_23: 0.025
+    - _WorldGrassUV_Zoom_25: 0.025
+    - _WorldGrassUV_Zoom_27: 0.025
+    - _WorldGrassUV_Zoom_29: 0.025
+    - _WorldGrassUV_Zoom_31: 0.025
+    - _WorldGrassUV_Zoom_33: 0.025
+    - _WorldGrassUV_Zoom_35: 0.025
+    - _WorldGrassUV_Zoom_37: 0.025
+    - _WorldGrassUV_Zoom_39: 0.025
+    - _WorldGrassUV_Zoom_41: 0.025
+    - _WorldGrassUV_Zoom_43: 0.025
+    - _WorldGrassUV_Zoom_45: 0.025
+    - _WorldGrassUV_Zoom_47: 0.025
+    - _WorldGrassUV_Zoom_49: 0.025
+    - _WorldGrassUV_Zoom_51: 0.025
+    - _WorldGrassUV_Zoom_53: 0.025
+    - _WorldGrassUV_Zoom_55: 0.025
+    - _WorldGrassUV_Zoom_57: 0.025
+    - _WorldGrassUV_Zoom_59: 0.025
+    - _WorldGrassUV_Zoom_61: 0.025
+    - _WorldGrassUV_Zoom_63: 0.025
+    - _WorldGrassUV_Zoom_65: 0.025
+    - _WorldGrassUV_Zoom_67: 0.025
+    - _WorldGrassUV_Zoom_70: 0.025
+    - _WorldGrassUV_Zoom_73: 0.025
+    - _WorldGrassUV_Zoom_75: 0.025
+    - _WorldGrassUV_Zoom_77: 0.025
+    - _WorldGrassUV_Zoom_79: 0.025
+    - _WorldGrassUV_Zoom_82: 0.025
+    - _WorldGrassUV_Zoom_86: 0.025
+    - _WorldGrassUV_Zoom_90: 0.025
+    - _WorldGrassUV_Zoom_94: 0.025
+    - _WorldGrassUV_Zoom_96: 0.025
+    - _WorldGrassUV_Zoom_99: 0.025
+    - _ZWrite: 1
+    - _addUV_Fade_1: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Palette4Swapping_Color1_1: {r: 0.19215688, g: 0.11764707, b: 0.08627451, a: 1}
+    - _Palette4Swapping_Color2_1: {r: 0.6784314, g: 0.5647059, b: 0.3647059, a: 1}
+    - _Palette4Swapping_Color3_1: {r: 0.2392157, g: 0.63529414, b: 0.2627451, a: 1}
+    - _Palette4Swapping_Color4_1: {r: 1, g: 0.9803922, b: 0.8470589, a: 1}

@@ -1,6 +1,5 @@
-﻿import { UnityHelper } from "Core/Utils/UnityHelper";
-import {FairyGUI, UnityEngine } from "csharp";
-import {View_Tooltips} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Common";
+﻿import { FairyGUI } from "csharp";
+import { View_Tooltips } from "../../Gen/View/ModTheSpire_Common";
 
 export class UI_Tooltips extends View_Tooltips
 {

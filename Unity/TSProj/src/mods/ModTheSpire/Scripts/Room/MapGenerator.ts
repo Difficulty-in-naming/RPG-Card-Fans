@@ -1,6 +1,6 @@
-﻿import {MapRoomNode, RoomType} from "mods/ModTheSpire/Scripts/Room/MapRoomNode";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {Mathf} from "Core/Module/Math/Mathf";
+﻿import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import DungeonManager from "../DungeonManager";
+import { MapRoomNode, RoomType } from "./MapRoomNode";
 
 export class MapGenerator{
     //地图的宽和地图的高,和地图路径密度,密度越大.生成的路径越多

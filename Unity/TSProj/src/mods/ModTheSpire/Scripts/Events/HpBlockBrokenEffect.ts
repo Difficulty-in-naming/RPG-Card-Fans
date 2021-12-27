@@ -1,6 +1,6 @@
 ﻿import { FairyGUI } from "csharp";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
-import {View_HpBlockBrokenEffect} from "mods/ModTheSpire/Scripts/Gen/View/ModTheSpire_Effect";
+import { AbstractEffect } from "../Effect/AbstractEffect";
+import { View_HpBlockBrokenEffect } from "../Gen/View/ModTheSpire_Effect";
 
 export class HpBlockBrokenEffect extends AbstractEffect
 {

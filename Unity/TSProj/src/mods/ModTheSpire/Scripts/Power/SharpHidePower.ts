@@ -1,13 +1,13 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {OnHurtBefore} from "mods/ModTheSpire/Scripts/Events/OnHurtBefore";
-import DamageAction from "mods/ModTheSpire/Scripts/Action/Common/DamageAction";
-import AbstractCard, {CardType} from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
-import DamageInfo from "mods/ModTheSpire/Scripts/DataDefine/DamageInfo";
-import {DamageType} from "mods/ModTheSpire/Scripts/DataDefine/DamageType";
-import {AttackEffect} from "mods/ModTheSpire/Scripts/DataDefine/AttackEffect";
+﻿import DamageAction from "../Action/Common/DamageAction";
+import AbstractCard, { CardType } from "../Cards/AbstractCard";
+import { AttackEffect } from "../DataDefine/AttackEffect";
+import DamageInfo from "../DataDefine/DamageInfo";
+import { DamageType } from "../DataDefine/DamageType";
+import { OnHurtBefore } from "../Events/OnHurtBefore";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
 
 export class SharpHidePower extends AbstractPower{
     public static Id = "Sharp Hide";

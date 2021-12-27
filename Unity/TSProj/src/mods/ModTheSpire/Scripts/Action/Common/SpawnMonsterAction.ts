@@ -1,9 +1,9 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import {AbstractMonster} from "mods/ModTheSpire/Scripts/Unit/Monster/AbstractMonster";
-import Async from "Core/Async";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {OnSpawnMonsterMessage} from "mods/ModTheSpire/Scripts/Events/OnSpawnMonsterMessage";
-import {MinionPower} from "mods/ModTheSpire/Scripts/Power/MinionPower";
+﻿import Async from "../../../../../Core/Async";
+import DungeonManager from "../../DungeonManager";
+import { OnSpawnMonsterMessage } from "../../Events/OnSpawnMonsterMessage";
+import { MinionPower } from "../../Power/MinionPower";
+import { AbstractMonster } from "../../Unit/Monster/AbstractMonster";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class SpawnMonsterAction extends AbstractGameAction{
     public constructor(public monster : AbstractMonster,public isMinion:boolean) {

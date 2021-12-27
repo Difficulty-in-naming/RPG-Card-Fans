@@ -1,9 +1,10 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
-import {PreModifyBlockMessage} from "mods/ModTheSpire/Scripts/Events/PreModifyBlockMessage";
+﻿import { SoundMaster } from "../Audio/SoundMaster";
+import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
+
 
 export class DexterityPower extends AbstractPower{
     Name: string = LocalizationProperty.Read("能力-敏捷");

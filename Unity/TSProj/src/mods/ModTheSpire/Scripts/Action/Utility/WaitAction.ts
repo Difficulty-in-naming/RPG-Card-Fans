@@ -1,5 +1,5 @@
-﻿import AbstractGameAction, {ActionType} from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
 export class WaitAction extends AbstractGameAction{
     Type = ActionType.WAIT;

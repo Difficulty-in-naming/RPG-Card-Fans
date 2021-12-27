@@ -1,14 +1,14 @@
-﻿import {AbstractPlayer} from "mods/ModTheSpire/Scripts/Unit/Character/AbstractPlayer";
-import {PlayerInfo} from "mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo";
-import {AbstractDungeon} from "mods/ModTheSpire/Scripts/Dungeon/AbstractDungeon";
-import {AbstractBlight} from "mods/ModTheSpire/Scripts/Blight/AbstractBlight";
-import {AbstractRoom} from "mods/ModTheSpire/Scripts/Room/AbstractRoom";
-import {MonsterGroup} from "mods/ModTheSpire/Scripts/Unit/Monster/MonsterGroup";
-import QueueMessageKit from "Core/QueueMessageKit";
-import {ObserverMessageKit} from "Core/ObserverMessageKit";
-import EffectKit from "mods/ModTheSpire/Scripts/Effect/EffectKit";
+﻿import QueueMessageKit from "../../../Core/Module/Event/QueueMessageKit";
+import { ObserverMessageKit } from "../../../Core/ObserverMessageKit";
+import { AbstractBlight } from "./Blight/AbstractBlight";
+import { AbstractDungeon } from "./Dungeon/AbstractDungeon";
+import EffectKit from "./Effect/EffectKit";
+import { AbstractRoom } from "./Room/AbstractRoom";
+import { AbstractPlayer } from "./Unit/Character/AbstractPlayer";
+import { PlayerInfo } from "./Unit/Character/PlayerInfo";
 
 //DungeonManager类似于一次游戏的管理器.
+
 //每次开始游戏都会重置局部变量.
 export default class DungeonManager {
     //region 静态变量

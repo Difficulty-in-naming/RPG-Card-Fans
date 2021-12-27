@@ -1,9 +1,9 @@
-﻿import AbstractGameAction from "mods/ModTheSpire/Scripts/Action/AbstractGameAction";
-import AbstractCreature from "mods/ModTheSpire/Scripts/Unit/AbstractCreature";
-import {AbstractPower} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {PowerExpireTextEffect} from "mods/ModTheSpire/Scripts/Effect/Combat/PowerExpireTextEffect";
-import Async from "Core/Async";
+﻿import Async from "../../../../../Core/Async";
+import DungeonManager from "../../DungeonManager";
+import { PowerExpireTextEffect } from "../../Effect/Combat/PowerExpireTextEffect";
+import { AbstractPower } from "../../Power/AbstractPower";
+import AbstractCreature from "../../Unit/AbstractCreature";
+import AbstractGameAction from "../AbstractGameAction";
 
 export class RemoveSpecificPowerAction extends AbstractGameAction{
     public constructor(public Target:AbstractCreature,public Source:AbstractCreature,public power:AbstractPower|string) {

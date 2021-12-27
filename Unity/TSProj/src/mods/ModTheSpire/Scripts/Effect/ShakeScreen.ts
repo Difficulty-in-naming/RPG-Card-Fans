@@ -1,20 +1,19 @@
-﻿import * as core from 'csharp';
-import { UnityEngine } from 'csharp';
-import * as puerts from 'puerts'
-import {Log} from "../../../../Core/Module/Log/Log";
-import {AbstractEffect} from "mods/ModTheSpire/Scripts/Effect/AbstractEffect";
+﻿import { UnityEngine } from "csharp";
+import { AbstractEffect } from "./AbstractEffect";
+import * as puerts from 'puerts';
+
 export class ShakeScreen extends AbstractEffect
 {
     private Intensity : ShakeIntensity;
     private ShakeDur : ShakeDur;
     private Dir : {Vertical : boolean,Horizontal : boolean};
-    private static InitializePos : Array<UnityEngine.Vector3> = new Array<core.UnityEngine.Vector3>()
-    private static Camera : Array<core.UnityEngine.Transform> = new Array<core.UnityEngine.Transform>();
+    private static InitializePos : Array<UnityEngine.Vector3> = new Array<UnityEngine.Vector3>()
+    private static Camera : Array<UnityEngine.Transform> = new Array<UnityEngine.Transform>();
     
     static Initialize(){
-        let temp = core.UnityEngine.Object.FindObjectsOfType(puerts.$typeof(core.UnityEngine.Camera));
+        let temp = UnityEngine.Object.FindObjectsOfType(puerts.$typeof(UnityEngine.Camera));
         for (let i = 0; i < temp.Length; i++) {
-            this.Camera[i] = (<core.UnityEngine.Camera>temp.get_Item(i)).transform;
+            this.Camera[i] = (<UnityEngine.Camera>temp.get_Item(i)).transform;
             this.InitializePos[i] = this.Camera[i].position;
         }
     }
@@ -38,7 +37,7 @@ export class ShakeScreen extends AbstractEffect
         let x = this.Dir.Horizontal ? Math.cos(Math.random() * 5) / this.Intensity : 0;
         let y = this.Dir.Vertical ? Math.cos(Math.random() * 5) / this.Intensity : 0;
         for (let i = 0; i < ShakeScreen.Camera.length; i++) {
-            let vec = new core.UnityEngine.Vector3(ShakeScreen.InitializePos[i].x + x,ShakeScreen.InitializePos[i].y + y,ShakeScreen.InitializePos[i].z);
+            let vec = new UnityEngine.Vector3(ShakeScreen.InitializePos[i].x + x,ShakeScreen.InitializePos[i].y + y,ShakeScreen.InitializePos[i].z);
             ShakeScreen.Camera[i].position = vec;
         }
     }

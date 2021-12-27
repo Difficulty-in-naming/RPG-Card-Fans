@@ -1,16 +1,14 @@
-﻿using System;
-
+﻿
+using System;
 namespace PuertsStaticWrap
 {
     public static class Spine_Unity_SpineAttributeBase_Wrap
     {
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
-                
                 Puerts.PuertsDLL.ThrowException(isolate, "invalid arguments to Spine.Unity.SpineAttributeBase constructor");
             }
             catch (Exception e)
@@ -19,9 +17,6 @@ namespace PuertsStaticWrap
             }
             return IntPtr.Zero;
         }
-        
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_dataField(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -36,7 +31,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_dataField(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -45,15 +39,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.Unity.SpineAttributeBase;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.dataField = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_startsWith(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -68,7 +59,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_startsWith(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -77,15 +67,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.Unity.SpineAttributeBase;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.startsWith = argHelper.GetString(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_includeNone(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -100,7 +87,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_includeNone(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -109,15 +95,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.Unity.SpineAttributeBase;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.includeNone = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_fallbackToTextField(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -132,7 +115,6 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_fallbackToTextField(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -141,17 +123,12 @@ namespace PuertsStaticWrap
                 var obj = Puerts.Utils.GetSelf((int)data, self) as Spine.Unity.SpineAttributeBase;
                 var argHelper = new Puerts.ArgumentHelper((int)data, isolate, info, 0);
                 obj.fallbackToTextField = argHelper.GetBoolean(false);
-                
             }
             catch (Exception e)
             {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
-        
-        
-        
-        
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -160,7 +137,6 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
-                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
@@ -168,10 +144,14 @@ namespace PuertsStaticWrap
                     {"startsWith", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_startsWith, Setter = S_startsWith} },
                     {"includeNone", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_includeNone, Setter = S_includeNone} },
                     {"fallbackToTextField", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_fallbackToTextField, Setter = S_fallbackToTextField} },
-                    
+                },
+                LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
+                {
+                },
+                LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
+                {
                 }
             };
         }
-        
     }
 }

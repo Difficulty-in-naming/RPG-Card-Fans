@@ -1,13 +1,14 @@
-﻿import {AbstractPower, PowerType} from "mods/ModTheSpire/Scripts/Power/AbstractPower";
-import FileHelper from "mods/ModTheSpire/Scripts/FileHelper";
-import {LocalizationProperty} from "mods/ModTheSpire/Scripts/Gen/DB/Localization";
-import {StringHelper} from "mods/ModTheSpire/Scripts/StringHelper";
-import {AtEndOfTurnMessage} from "mods/ModTheSpire/Scripts/Events/AtEndOfTurnMessage";
-import {RemoveSpecificPowerAction} from "mods/ModTheSpire/Scripts/Action/Common/RemoveSpecificPowerAction";
-import DungeonManager from "mods/ModTheSpire/Scripts/DungeonManager";
-import {OnPreUseCardMessage} from "mods/ModTheSpire/Scripts/Events/OnPreUseCardMessage";
-import {SoundMaster} from "mods/ModTheSpire/Scripts/Audio/SoundMaster";
-import {CardType} from "mods/ModTheSpire/Scripts/Cards/AbstractCard";
+﻿import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
+import { SoundMaster } from "../Audio/SoundMaster";
+import { CardType } from "../Cards/AbstractCard";
+import DungeonManager from "../DungeonManager";
+import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
+import { OnPreUseCardMessage } from "../Events/OnPreUseCardMessage";
+import FileHelper from "../FileHelper";
+import { LocalizationProperty } from "../Gen/DB/Localization";
+import { StringHelper } from "../StringHelper";
+import { AbstractPower, PowerType } from "./AbstractPower";
+
 
 export class EntanglePower extends AbstractPower{
     public static readonly Id = "Entangle"
