@@ -1,16 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_MasterDeckView = void 0;
-var AbstractCard_1 = require("../../Cards/AbstractCard");
-var DungeonManager_1 = require("../../DungeonManager");
-var Localization_1 = require("../../Gen/DB/Localization");
-var ModTheSpire_MasterDeckView_1 = require("../../Gen/View/ModTheSpire_MasterDeckView");
-var UIHelper_1 = require("../UIHelper");
+const AbstractCard_1 = require("../../Cards/AbstractCard");
+const DungeonManager_1 = require("../../DungeonManager");
+const Localization_1 = require("../../Gen/DB/Localization");
+const ModTheSpire_MasterDeckView_1 = require("../../Gen/View/ModTheSpire_MasterDeckView");
+const UIHelper_1 = require("../UIHelper");
 class UI_MasterDeckView extends ModTheSpire_MasterDeckView_1.View_MasterDeckView {
-    constructor() {
-        super(...arguments);
-        this.type = new Map();
-    }
+    type = new Map();
     OnInit(...args) {
         let number = 0;
         for (let enumMember in AbstractCard_1.CardType) {
@@ -30,13 +27,13 @@ class UI_MasterDeckView extends ModTheSpire_MasterDeckView_1.View_MasterDeckView
             }
             let cards = new Array();
             if (state) {
-                for (let i = 0; i < Active.Pile.length; i++) {
-                    cards.push(Active.Pile[i]);
+                for (let i = 0; i < Active.MasterDeck.length; i++) {
+                    cards.push(Active.MasterDeck[i]);
                 }
             }
             else {
-                for (let i = Active.Pile.length - 1; i >= 0; i--) {
-                    cards.push(Active.Pile[i]);
+                for (let i = Active.MasterDeck.length - 1; i >= 0; i--) {
+                    cards.push(Active.MasterDeck[i]);
                 }
             }
             this.InitList(cards);
@@ -52,7 +49,7 @@ class UI_MasterDeckView extends ModTheSpire_MasterDeckView_1.View_MasterDeckView
                 controller.selectedIndex = state ? 1 : 0;
             }
             let cards = new Array();
-            Active.Pile.forEach(t1 => cards.push(t1));
+            Active.MasterDeck.forEach(t1 => cards.push(t1));
             if (state) {
                 cards.sort((t1, t2) => this.type[t1.Type] - this.type[t2.Type]);
             }
@@ -72,7 +69,7 @@ class UI_MasterDeckView extends ModTheSpire_MasterDeckView_1.View_MasterDeckView
                 controller.selectedIndex = state ? 1 : 0;
             }
             let cards = new Array();
-            Active.Pile.forEach(t1 => cards.push(t1));
+            Active.MasterDeck.forEach(t1 => cards.push(t1));
             if (state) {
                 cards.sort((t1, t2) => t1.Energy - t2.Energy);
             }

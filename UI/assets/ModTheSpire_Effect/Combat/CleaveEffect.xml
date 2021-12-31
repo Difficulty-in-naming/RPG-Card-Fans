@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="964,100" pivot="0.5,0.5">
+  <displayList>
+    <image id="n0_lqlw" name="n0" src="lqlw38" fileName="Texture/cleave.png" xy="0,0" pivot="0.5,0.5" alpha="0"/>
+    <image id="n1_lqlw" name="n1" src="lqlw38" fileName="Texture/cleave.png" xy="0,0" pivot="0.5,0.5" alpha="0" blend="add"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" target="n0_lqlw" tween="true" startValue="0" endValue="1" duration="3" ease="Sine.InOut"/>
+    <item time="0" type="Alpha" target="n1_lqlw" tween="true" startValue="0" endValue="1" duration="3" ease="Sine.InOut"/>
+    <item time="0" type="XY" target="n0_lqlw" tween="true" startValue="0,-" endValue="44,0" duration="24"/>
+    <item time="0" type="XY" target="n1_lqlw" tween="true" startValue="0,-" endValue="44,0" duration="24"/>
+    <item time="3" type="Alpha" target="n0_lqlw" tween="true" startValue="1" endValue="0" duration="21" ease="Quad.InOut"/>
+    <item time="3" type="Alpha" target="n1_lqlw" tween="true" startValue="1" endValue="0" duration="21" ease="Quad.InOut"/>
+  </transition>
+</component>

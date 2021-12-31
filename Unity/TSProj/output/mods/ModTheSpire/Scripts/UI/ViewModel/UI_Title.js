@@ -1,21 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_Title = void 0;
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-var EffectKit_1 = require("../../Effect/EffectKit");
-var TitleDustEffect_1 = require("../../Effect/TitleDustEffect");
-var FileHelper_1 = require("../../FileHelper");
-var ModTheSpire_Title_1 = require("../../Gen/View/ModTheSpire_Title");
-var UIHelper_1 = require("../UIHelper");
-var UI_SelectGameMode_1 = require("./UI_SelectGameMode");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+const EffectKit_1 = require("../../Effect/EffectKit");
+const TitleDustEffect_1 = require("../../Effect/TitleDustEffect");
+const FileHelper_1 = require("../../FileHelper");
+const ModTheSpire_Title_1 = require("../../Gen/View/ModTheSpire_Title");
+const UIHelper_1 = require("../UIHelper");
+const UI_SelectGameMode_1 = require("./UI_SelectGameMode");
 class UI_Title extends ModTheSpire_Title_1.View_Title {
-    constructor() {
-        super(...arguments);
-        this.DustTimer = 0.05;
-        this.TopCloud = new Array();
-        this.MidCloud = new Array();
-    }
+    DustTimer = 0.05;
+    TopCloud = new Array();
+    MidCloud = new Array();
     OnInit(...args) {
         this.View.MakeFullScreen();
         this.View.Center();
@@ -49,6 +46,11 @@ class UI_Title extends ModTheSpire_Title_1.View_Title {
 }
 exports.UI_Title = UI_Title;
 class TitleCloud {
+    Vx;
+    X;
+    Loader;
+    Vy;
+    Y;
     constructor(path, Vx, X, parent) {
         this.Vx = Vx;
         this.X = X;

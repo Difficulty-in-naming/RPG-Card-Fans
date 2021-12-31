@@ -1,8 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
 class Color {
+    static Red = new Color(255, 0, 0, 255);
+    static Chartreuse = new Color(128, 255, 0, 255);
+    static White = new Color(255, 255, 255, 255);
+    static Black = new Color(0, 0, 0, 255);
+    static Gray = new Color(127, 127, 127, 255);
+    static FireBrick = new Color(0, 0, 0, 153);
+    static TwoThirdsTransparentBlackColor = new Color(0, 0, 0, 166);
+    static Cream = new Color(255, 246, 226, 255);
+    static DiscardColor = new Color(138, 118, 155, 255);
+    static RedText = new Color(255, 101, 99, 255);
+    static GreenText = new Color(127, 255, 0, 255);
+    static BlueText = new Color(135, 206, 235, 255);
+    static Gold = new Color(239, 200, 81, 255);
+    static PurpleText = new Color(238, 130, 238, 255);
+    static RedHpBarColor = new Color(204, 13, 13, 255);
+    static GreenHpBarColor = new Color(120, 190, 60, 255);
+    static BlueHpBarColor = new Color(49, 86, 140, 255);
+    static OrangeHbBarColor = new Color(255, 128, 0, 255);
+    static Royal = new Color(65, 105, 225, 255);
+    static Sky = new Color(135, 206, 235, 255);
+    static Cyan = new Color(0, 255, 255, 255);
+    static Orange = new Color(255, 165, 0, 255);
+    static Goldenrod = new Color(218, 165, 32, 255);
+    static Scarlet = new Color(255, 52, 28, 255);
+    R;
+    G;
+    B;
+    A;
     constructor(R = 255, G = 255, B = 255, A = 255) {
         this.R = R;
         this.G = G;
@@ -43,28 +71,4 @@ class Color {
     }
 }
 exports.default = Color;
-Color.Red = new Color(255, 0, 0, 255);
-Color.Chartreuse = new Color(128, 255, 0, 255);
-Color.White = new Color(255, 255, 255, 255);
-Color.Black = new Color(0, 0, 0, 255);
-Color.Gray = new Color(127, 127, 127, 255);
-Color.FireBrick = new Color(0, 0, 0, 153);
-Color.TwoThirdsTransparentBlackColor = new Color(0, 0, 0, 166);
-Color.Cream = new Color(255, 246, 226, 255);
-Color.DiscardColor = new Color(138, 118, 155, 255);
-Color.RedText = new Color(255, 101, 99, 255);
-Color.GreenText = new Color(127, 255, 0, 255);
-Color.BlueText = new Color(135, 206, 235, 255);
-Color.Gold = new Color(239, 200, 81, 255);
-Color.PurpleText = new Color(238, 130, 238, 255);
-Color.RedHpBarColor = new Color(204, 13, 13, 255);
-Color.GreenHpBarColor = new Color(120, 190, 60, 255);
-Color.BlueHpBarColor = new Color(49, 86, 140, 255);
-Color.OrangeHbBarColor = new Color(255, 128, 0, 255);
-Color.Royal = new Color(65, 105, 225, 255);
-Color.Sky = new Color(135, 206, 235, 255);
-Color.Cyan = new Color(0, 255, 255, 255);
-Color.Orange = new Color(255, 165, 0, 255);
-Color.Goldenrod = new Color(218, 165, 32, 255);
-Color.Scarlet = new Color(255, 52, 28, 255);
 //# sourceMappingURL=Color.js.map

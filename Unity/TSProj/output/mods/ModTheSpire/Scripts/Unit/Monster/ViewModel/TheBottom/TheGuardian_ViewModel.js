@@ -1,36 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TheGuardian_ViewModel = void 0;
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var TalkAction_1 = require("../../../../Action/Animations/TalkAction");
-var VFXAction_1 = require("../../../../Action/Animations/VFXAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
-var GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
-var RemoveSpecificPowerAction_1 = require("../../../../Action/Common/RemoveSpecificPowerAction");
-var LoseBlockAction_1 = require("../../../../Action/Utility/LoseBlockAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var TextAboveCreatureAction_1 = require("../../../../Action/Utility/TextAboveCreatureAction");
-var SoundMaster_1 = require("../../../../Audio/SoundMaster");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var CleaveEffect_1 = require("../../../../Effect/Combat/CleaveEffect");
-var IntenseZoomEffect_1 = require("../../../../Effect/Combat/IntenseZoomEffect");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var ModeShiftPower_1 = require("../../../../Power/ModeShiftPower");
-var SharpHidePower_1 = require("../../../../Power/SharpHidePower");
-var VulnerablePower_1 = require("../../../../Power/VulnerablePower");
-var WeakPower_1 = require("../../../../Power/WeakPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const TalkAction_1 = require("../../../../Action/Animations/TalkAction");
+const VFXAction_1 = require("../../../../Action/Animations/VFXAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
+const GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
+const RemoveSpecificPowerAction_1 = require("../../../../Action/Common/RemoveSpecificPowerAction");
+const LoseBlockAction_1 = require("../../../../Action/Utility/LoseBlockAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const TextAboveCreatureAction_1 = require("../../../../Action/Utility/TextAboveCreatureAction");
+const SoundMaster_1 = require("../../../../Audio/SoundMaster");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const CleaveEffect_1 = require("../../../../Effect/Combat/CleaveEffect");
+const IntenseZoomEffect_1 = require("../../../../Effect/Combat/IntenseZoomEffect");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const ModeShiftPower_1 = require("../../../../Power/ModeShiftPower");
+const SharpHidePower_1 = require("../../../../Power/SharpHidePower");
+const VulnerablePower_1 = require("../../../../Power/VulnerablePower");
+const WeakPower_1 = require("../../../../Power/WeakPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class TheGuardian_ViewModel extends AbstractMonster_1.AbstractMonster {
-    constructor() {
-        super(...arguments);
-        this._DmgThresholdIncrease = 10;
-        this._DefensiveAmount = 20;
-    }
+    _DmgThreshold;
+    _DmgThresholdIncrease = 10;
+    _DefensiveAmount = 20;
+    _AnimationState;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 19) {
             this._DmgThreshold = 40;

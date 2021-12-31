@@ -1,14 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TitleDustEffect = void 0;
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
-var tween_js_1 = require("@tweenjs/tween.js");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const FileHelper_1 = require("../FileHelper");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
+const tween_js_1 = require("@tweenjs/tween.js");
 class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
+    Vx;
+    Vy;
+    Va;
+    Scale;
+    Loader;
+    Vc;
+    Tween;
+    Dur;
     constructor() {
         super();
         this.Loader = UIHelper_1.default.CreateGLoader();

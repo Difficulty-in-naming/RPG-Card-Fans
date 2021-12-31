@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IntenseZoomEffect = void 0;
-var Color_1 = require("../../DataDefine/Color");
-var DungeonManager_1 = require("../../DungeonManager");
-var AbstractEffect_1 = require("../AbstractEffect");
-var BorderFlashEffect_1 = require("./BorderFlashEffect");
+const Color_1 = require("../../DataDefine/Color");
+const DungeonManager_1 = require("../../DungeonManager");
+const AbstractEffect_1 = require("../AbstractEffect");
+const BorderFlashEffect_1 = require("./BorderFlashEffect");
 class IntenseZoomEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    _IsBlack;
     constructor(_X, _Y, _IsBlack) {
         super();
         this._X = _X;

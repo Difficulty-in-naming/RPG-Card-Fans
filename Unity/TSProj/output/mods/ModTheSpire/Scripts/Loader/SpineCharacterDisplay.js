@@ -1,32 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpineCharacterDisplay = void 0;
-var csharp_1 = require("csharp");
-var Rect_1 = require("../../../../Core/Define/Rect");
-var Color_1 = require("../DataDefine/Color");
-var ModTheSpire_Combat_1 = require("../Gen/View/ModTheSpire_Combat");
-var ViewComponent_HealthBar_1 = require("../UI/ViewComponent/ViewComponent_HealthBar");
+const csharp_1 = require("csharp");
+const Rect_1 = require("../../../../Core/Define/Rect");
+const Color_1 = require("../DataDefine/Color");
+const ModTheSpire_Combat_1 = require("../Gen/View/ModTheSpire_Combat");
+const ViewComponent_HealthBar_1 = require("../UI/ViewComponent/ViewComponent_HealthBar");
 class SpineCharacterDisplay {
-    constructor(animation) {
-        this._Self = animation;
-        this._CacheGameObject = animation.gameObject;
-        this._CacheTransform = animation.transform;
-        this.UnitComponent = ModTheSpire_Combat_1.View_UnitWrap.CreateInstance();
-        this._Wrap = new csharp_1.FairyGUI.GoWrapper();
-        this._Wrap.SetWrapTarget(animation.gameObject, true);
-        this.UnitComponent.GetChild("ModelLoader").asGraph.SetNativeObject(this._Wrap);
-        this.HealthComponent = new ViewComponent_HealthBar_1.ViewComponent_HealthBar(this.UnitComponent.GetChild("HealthBar").asProgress);
-        this.Bounds = this.UnitComponent.GetChild("Bounds").asGraph;
-        this.Bounds.SetPivot(0.5, 0.5, true);
-        this.Rotation = 0;
-        this.ScaleX = 1;
-        this.ScaleY = 1;
-        this.SortingOrder = 0;
-        this.X = 0;
-        this.Y = 0;
-        this.Visible = true;
-        this.Color = Color_1.default.White;
-    }
     get FlipX() {
         return this.Self.Skeleton.ScaleX == -1;
     }
@@ -97,6 +77,43 @@ class SpineCharacterDisplay {
     set Color(value) {
         this._Color = value;
         csharp_1.Spine.Unity.SkeletonExtensions.SetColor(this.Self.Skeleton, value.UnityColor());
+    }
+    Bounds;
+    _Rotation;
+    _ScaleX;
+    _ScaleY;
+    _SortingOrder;
+    _X;
+    _Y;
+    _Visible;
+    _Color;
+    _FlipX;
+    _FlipY;
+    _Self;
+    UnitComponent;
+    HealthComponent;
+    _Wrap;
+    _CacheGameObject;
+    _CacheTransform;
+    constructor(animation) {
+        this._Self = animation;
+        this._CacheGameObject = animation.gameObject;
+        this._CacheTransform = animation.transform;
+        this.UnitComponent = ModTheSpire_Combat_1.View_UnitWrap.CreateInstance();
+        this._Wrap = new csharp_1.FairyGUI.GoWrapper();
+        this._Wrap.SetWrapTarget(animation.gameObject, true);
+        this.UnitComponent.GetChild("ModelLoader").asGraph.SetNativeObject(this._Wrap);
+        this.HealthComponent = new ViewComponent_HealthBar_1.ViewComponent_HealthBar(this.UnitComponent.GetChild("HealthBar").asProgress);
+        this.Bounds = this.UnitComponent.GetChild("Bounds").asGraph;
+        this.Bounds.SetPivot(0.5, 0.5, true);
+        this.Rotation = 0;
+        this.ScaleX = 1;
+        this.ScaleY = 1;
+        this.SortingOrder = 0;
+        this.X = 0;
+        this.Y = 0;
+        this.Visible = true;
+        this.Color = Color_1.default.White;
     }
     AddAnimation(animation, loop = false, delay = 0) {
         this._Self.AnimationState.AddAnimation(0, animation, loop, delay);

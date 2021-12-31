@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GainBlockRandomMonsterAction = void 0;
-var Async_1 = require("../../../../../Core/Async");
-var AttackEffect_1 = require("../../DataDefine/AttackEffect");
-var DungeonManager_1 = require("../../DungeonManager");
-var FlashAtkImgEffect_1 = require("../../Effect/FlashAtkImgEffect");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
+const AttackEffect_1 = require("../../DataDefine/AttackEffect");
+const DungeonManager_1 = require("../../DungeonManager");
+const FlashAtkImgEffect_1 = require("../../Effect/FlashAtkImgEffect");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class GainBlockRandomMonsterAction extends AbstractGameAction_1.default {
+    Source;
+    Amount;
+    Type = AbstractGameAction_1.ActionType.BLOCK;
     constructor(Source, Amount) {
         super();
         this.Source = Source;
         this.Amount = Amount;
-        this.Type = AbstractGameAction_1.ActionType.BLOCK;
     }
     async Update() {
         if (this.Duration == 0) {

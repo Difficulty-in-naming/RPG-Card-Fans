@@ -1,14 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TorchParticleEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const FileHelper_1 = require("../FileHelper");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class TorchParticleEffect extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    Interval;
+    Loader;
+    Vy;
+    static RenderGreen;
     constructor(X, Y, parent = null) {
         super();
         this.X = X;

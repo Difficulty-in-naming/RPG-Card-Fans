@@ -6,7 +6,7 @@ import { WebLineEffect } from "./WebLineEffect";
 import { WebParticleEffect } from "./WebParticleEffect";
 
 
-export class WebEffect extends  AbstractEffect{
+export class WebEffect extends AbstractEffect{
     private _Timer = 0.1;
     private _Count = 0;
     public constructor(private _Target:AbstractCreature,private _X:number,private _Y:number) {

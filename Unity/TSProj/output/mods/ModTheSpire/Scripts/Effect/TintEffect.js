@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var AbstractEffect_1 = require("./AbstractEffect");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const AbstractEffect_1 = require("./AbstractEffect");
 class TintEffect extends AbstractEffect_1.AbstractEffect {
-    constructor() {
-        super(...arguments);
-        this.From = Color_1.default.White.Clone();
-    }
+    From = Color_1.default.White.Clone();
+    To;
+    Lerp;
     ChangeColor(to, lerp = 3) {
         this.To = to;
         this.Lerp = lerp;

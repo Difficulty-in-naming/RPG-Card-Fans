@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ActionType = void 0;
-var DungeonManager_1 = require("../../../../mods/ModTheSpire/Scripts/DungeonManager");
+const DungeonManager_1 = require("../../../../mods/ModTheSpire/Scripts/DungeonManager");
 class AbstractGameAction {
-    constructor() {
-        this.Duration = 0;
-    }
+    Duration = 0;
+    Type;
     Init() {
     }
     AddToBot(action) { DungeonManager_1.default.ActionManager.AddToBottom(action); }

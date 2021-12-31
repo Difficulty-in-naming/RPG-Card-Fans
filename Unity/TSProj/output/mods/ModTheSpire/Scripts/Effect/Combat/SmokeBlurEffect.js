@@ -1,14 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SmokeBlurEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-var Color_1 = require("../../DataDefine/Color");
-var FileHelper_1 = require("../../FileHelper");
-var UIHelper_1 = require("../../UI/UIHelper");
-var AbstractEffect_1 = require("../AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+const Color_1 = require("../../DataDefine/Color");
+const FileHelper_1 = require("../../FileHelper");
+const UIHelper_1 = require("../../UI/UIHelper");
+const AbstractEffect_1 = require("../AbstractEffect");
 class SmokeBlurEffect extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    Loader;
+    _Interval;
+    _TargetScale;
+    _Va;
+    _Vy;
     constructor(X, Y) {
         super();
         this.X = X;

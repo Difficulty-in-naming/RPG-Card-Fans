@@ -9,10 +9,10 @@ var RoomPhase;
     RoomPhase[RoomPhase["INCOMPLETE"] = 3] = "INCOMPLETE";
 })(RoomPhase = exports.RoomPhase || (exports.RoomPhase = {}));
 class AbstractRoom {
-    constructor() {
-        //如果要制作怪物房间.请继承该变量为1.
-        this.Round = 0;
-    }
+    //当前房间怪物列表
+    Monsters;
+    //如果要制作怪物房间.请继承该变量为1.
+    Round = 0;
     AddReward(reward) { }
 }
 exports.AbstractRoom = AbstractRoom;

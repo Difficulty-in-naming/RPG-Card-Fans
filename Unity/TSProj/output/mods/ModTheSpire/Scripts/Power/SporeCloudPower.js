@@ -1,24 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SporeCloudPower = void 0;
-var ApplyPowerAction_1 = require("../Action/Common/ApplyPowerAction");
-var SoundMaster_1 = require("../Audio/SoundMaster");
-var DungeonManager_1 = require("../DungeonManager");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var StringHelper_1 = require("../StringHelper");
-var AbstractPower_1 = require("./AbstractPower");
-var VulnerablePower_1 = require("./VulnerablePower");
+const ApplyPowerAction_1 = require("../Action/Common/ApplyPowerAction");
+const SoundMaster_1 = require("../Audio/SoundMaster");
+const DungeonManager_1 = require("../DungeonManager");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const StringHelper_1 = require("../StringHelper");
+const AbstractPower_1 = require("./AbstractPower");
+const VulnerablePower_1 = require("./VulnerablePower");
 class SporeCloudPower extends AbstractPower_1.AbstractPower {
+    amt;
+    Icon = FileHelper_1.default.FormatPath("Powers/sporeCloud.png");
+    Id = "Spore Cloud";
+    Name = Localization_1.LocalizationProperty.Read("能力-孢子云");
+    get Type() {
+        return AbstractPower_1.PowerType.Buff;
+    }
     constructor(amt) {
         super();
         this.amt = amt;
-        this.Icon = FileHelper_1.default.FormatPath("Powers/sporeCloud.png");
-        this.Id = "Spore Cloud";
-        this.Name = Localization_1.LocalizationProperty.Read("能力-孢子云");
-    }
-    get Type() {
-        return AbstractPower_1.PowerType.Buff;
     }
     GetDescription(...args) {
         return StringHelper_1.StringHelper.FormatColorString(Localization_1.LocalizationProperty.Read("能力-孢子云描述")).format(this.Amount);

@@ -1,5 +1,7 @@
-﻿import { UuidTool } from "uuid-tool";
+﻿import { FairyGUI } from "csharp";
+import { UuidTool } from "uuid-tool";
 import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import { UIKit } from "../../../../Core/Module/UI/UIKit";
 import DungeonManager from "../DungeonManager";
 import { View_Card } from "../Gen/View/ModTheSpire_Common";
 import { StringHelper } from "../StringHelper";
@@ -34,18 +36,23 @@ export default abstract class AbstractCard
     //是否虚无
     public Ethereal:boolean = false;
     //卡牌渲染组件
-    public RenderCom = View_Card.Url;
+    public RenderUrl = View_Card.Url;
     //伤害
     public Damage : number = 0;
     //格挡
     public Block : number = 0;
     //特殊值
     public Magic : number = 0;
+    public get View(): FairyGUI.GComponent {
+        
+    }
     public constructor()
     {
         this.UUID = UuidTool.newUuid();
     }
     public Use(player : AbstractPlayer, monster : AbstractMonster){}
+    //可不可以升级
+    public abstract CanUpgrade() : boolean;
     public Upgrade(){}
     public Clone(newUuid : boolean = true) : this
     {
@@ -59,15 +66,17 @@ export default abstract class AbstractCard
     }
     protected AddToBot(action : IGameAction){DungeonManager.ActionManager.AddToBottom(action);}
     protected AddToTop(action : IGameAction){DungeonManager.ActionManager.AddToTop(action);}
-    
     public GetDesc(){
         return StringHelper.FormatCardString(this);
     }
-    
     //是否已经升级
     public IsUpgraded() : boolean
     {
         return this.UpgradeTimes > 0;
+    }
+
+    public SuperFlash(){
+        this.View.GetTransition("SuperFlash").Play();
     }
 }
 

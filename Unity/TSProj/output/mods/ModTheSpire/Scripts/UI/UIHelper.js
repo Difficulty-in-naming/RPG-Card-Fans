@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var csharp_1 = require("csharp");
-var puerts = require("puerts");
-var AbstractCard_1 = require("../Cards/AbstractCard");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var UI_Tooltips_1 = require("./ViewModel/UI_Tooltips");
+const csharp_1 = require("csharp");
+const puerts = require("puerts");
+const AbstractCard_1 = require("../Cards/AbstractCard");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const UI_Tooltips_1 = require("./ViewModel/UI_Tooltips");
 class default_1 {
     static CreateGLoader() {
         let loader = csharp_1.FairyGUI.UIObjectFactory.NewObject(csharp_1.FairyGUI.ObjectType.Loader);

@@ -1,20 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SmallLaserEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var Color_1 = require("../../DataDefine/Color");
-var FileHelper_1 = require("../../FileHelper");
-var UIHelper_1 = require("../../UI/UIHelper");
-var AbstractEffect_1 = require("../AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const Color_1 = require("../../DataDefine/Color");
+const FileHelper_1 = require("../../FileHelper");
+const UIHelper_1 = require("../../UI/UIHelper");
+const AbstractEffect_1 = require("../AbstractEffect");
 class SmallLaserEffect extends AbstractEffect_1.AbstractEffect {
+    _sX;
+    _sY;
+    _dX;
+    _dY;
+    Loader1;
+    Loader2;
+    _rotation;
+    _scale = 1;
     constructor(_sX, _sY, _dX, _dY) {
         super();
         this._sX = _sX;
         this._sY = _sY;
         this._dX = _dX;
         this._dY = _dY;
-        this._scale = 1;
         this.Loader1 = UIHelper_1.default.CreateGLoader();
         this.Loader2 = UIHelper_1.default.CreateGLoader();
         this.Loader1.url = this.Loader2.url = FileHelper_1.default.FormatPath("Vfx/combat/laserThin");

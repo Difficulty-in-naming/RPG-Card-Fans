@@ -17,8 +17,12 @@
     <component id="eelv30" name="EntangleEffect.xml" path="/Combat/" exported="true"/>
     <image id="eelv31" name="borderGlow2.png" path="/Texture/"/>
     <component id="eelv32" name="BorderFlashEffect.xml" path="/Combat/" exported="true"/>
-    <component id="8vy433" name="WeightyImpactEffect.xml" path="/Combat/"/>
     <image id="8vy434" name="weightyImpact.png" path="/Texture/"/>
+    <component id="lqlw35" name="HpBlockBrokenEffect.xml" path="/Combat/" exported="true"/>
+    <image id="lqlw36" name="blockR.png" path="/Texture/" scale9grid="0,0,-28,-9"/>
+    <image id="lqlw37" name="blockL.png" path="/Texture/" scale9grid="0,0,-27,-9"/>
+    <image id="lqlw38" name="cleave.png" path="/Texture/" exported="true"/>
+    <component id="lqlw39" name="CleaveEffect.xml" path="/Combat/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

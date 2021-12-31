@@ -1,17 +1,67 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AbstractDungeon = exports.RoomChance = void 0;
-var rand_seed_1 = require("rand-seed");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../DungeonManager");
-var MapGenerator_1 = require("../Room/MapGenerator");
+const rand_seed_1 = require("rand-seed");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../DungeonManager");
+const MapGenerator_1 = require("../Room/MapGenerator");
 class RoomChance {
+    ShopRoomChance;
+    RestRoomChance;
+    TreasureRoomChance;
+    EventRoomChance;
+    EliteRoomChance;
+    SmallChestChance;
+    MediumChestChance;
+    LargeChestChance;
+    CommonRelicChance;
+    UncommonRelicChance;
+    RareRelicChance;
+    ColorlessRareChance;
+    CardUpgradedChance;
 }
 exports.RoomChance = RoomChance;
 //请使用DungeonManager加载该类型.
 //不要在constructor中修改其他类型的内容.
 //尽量使用Init替代constructor
 class AbstractDungeon {
+    Name;
+    Rng;
+    //怪物随机种子
+    EnemiesRng;
+    //杂项种子
+    MiscRng;
+    //AI种子
+    AIRng;
+    //怪物HP种子
+    HPRng;
+    MapInfo;
+    Scene;
+    RoomChance;
+    //当前章节的所有低难度敌人
+    WeakEnemiesPool;
+    //当前章节的所有高强度敌人
+    StrongEnemiesPool;
+    //当前章节的所有精英敌人
+    ElitePool;
+    //当前章节的所有Boss敌人
+    BossPool;
+    //随机的低难度敌人
+    WeakEnemiesList;
+    //随机的高难度敌人
+    StrongEnemiesList;
+    //随机的精英敌人
+    EliteList;
+    //随机的Boss敌人
+    BossList;
+    //事件列表
+    EventList;
+    //事件列表(唯一)
+    ShrineList;
+    //遗物列表
+    RelicList;
+    //楼层高度,和DungeonManager.Inst.FloorNum不同.这个只计算当前章节的楼层.
+    FloorNum;
     Init() {
         this.Rng = new rand_seed_1.default(DungeonManager_1.default.Inst.Seed + this.ActNum);
         this.EnemiesRng = new rand_seed_1.default(DungeonManager_1.default.Inst.Seed + this.ActNum + "Enemies");

@@ -1,25 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_BottomScene = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-var Color_1 = require("../../DataDefine/Color");
-var DungeonManager_1 = require("../../DungeonManager");
-var BottomFogEffect_1 = require("../../Effect/BottomFogEffect");
-var DustEffect_1 = require("../../Effect/DustEffect");
-var InteractableTorchEffect_1 = require("../../Effect/InteractableTorchEffect");
-var FileHelper_1 = require("../../FileHelper");
-var ModTheSpire_BottomScene_1 = require("../../Gen/View/ModTheSpire_BottomScene");
-var LocalSettings_1 = require("../../Saves/LocalSettings");
-var UIHelper_1 = require("../UIHelper");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+const Color_1 = require("../../DataDefine/Color");
+const DungeonManager_1 = require("../../DungeonManager");
+const BottomFogEffect_1 = require("../../Effect/BottomFogEffect");
+const DustEffect_1 = require("../../Effect/DustEffect");
+const InteractableTorchEffect_1 = require("../../Effect/InteractableTorchEffect");
+const FileHelper_1 = require("../../FileHelper");
+const ModTheSpire_BottomScene_1 = require("../../Gen/View/ModTheSpire_BottomScene");
+const LocalSettings_1 = require("../../Saves/LocalSettings");
+const UIHelper_1 = require("../UIHelper");
 class UI_BottomScene extends ModTheSpire_BottomScene_1.View_BottomScene {
-    constructor() {
-        super(...arguments);
-        this.Dust = new Array();
-        this.Fog = new Array();
-        this.Torches = new Array();
-    }
+    Dust = new Array();
+    Fog = new Array();
+    Torches = new Array();
     OnInit(...args) {
         this.Render();
         this.RenderPlayer();

@@ -1,1 +1,1 @@
-{"version":3,"file":"global.js","sourceRoot":"","sources":["../../../../src/mods/ModTheSpire/Scripts/global.ts"],"names":[],"mappings":";;;AAAC,uDAAsD;AACvD,qCAAgC;AAEhC,MAAa,CAAC;;AAAd,cAGC;AAFiB,OAAK,GAAU,aAAK,CAAC,IAAI,EAAE,CAAC;AAC5B,SAAO,GAAY,iBAAO,CAAC,IAAI,EAAE,CAAC"}
+{"version":3,"file":"global.js","sourceRoot":"","sources":["../../../../src/mods/ModTheSpire/Scripts/global.ts"],"names":[],"mappings":";;;AAAA,yDAAsD;AACtD,uCAAgC;AAEhC,MAAa,CAAC;IACH,MAAM,CAAC,KAAK,GAAU,aAAK,CAAC,IAAI,EAAE,CAAC;IACnC,MAAM,CAAC,OAAO,GAAY,iBAAO,CAAC,IAAI,EAAE,CAAC;;AAFpD,cAGC"}

@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlashPowerEffect = void 0;
-var csharp_1 = require("csharp");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class FlashPowerEffect extends AbstractEffect_1.AbstractEffect {
+    Loader;
     constructor(power) {
         super();
         if (!power.Owner.IsDeadOrEscaped) { }

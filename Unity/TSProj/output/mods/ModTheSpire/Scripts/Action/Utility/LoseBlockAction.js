@@ -1,14 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var csharp_1 = require("csharp");
-var Async_1 = require("../../../../../Core/Async");
-var DungeonManager_1 = require("../../DungeonManager");
-var HpBlockBrokenEffect_1 = require("../../Events/HpBlockBrokenEffect");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const csharp_1 = require("csharp");
+const Async_1 = require("../../../../../Core/Async");
+const DungeonManager_1 = require("../../DungeonManager");
+const HpBlockBrokenEffect_1 = require("../../Events/HpBlockBrokenEffect");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class LoseBlockAction extends AbstractGameAction_1.default {
+    Target;
+    Source;
+    Amount;
+    NoAnimation;
+    Type = AbstractGameAction_1.ActionType.BLOCK;
     constructor(target, amount, noAnimation = false, source = null) {
         super();
-        this.Type = AbstractGameAction_1.ActionType.BLOCK;
         this.Target = target;
         this.NoAnimation = noAnimation;
         if (!source)

@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FadeScreenEffect = void 0;
-var Color_1 = require("../DataDefine/Color");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
-var tween_js_1 = require("@tweenjs/tween.js");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
+const tween_js_1 = require("@tweenjs/tween.js");
 class FadeScreenEffect extends AbstractEffect_1.AbstractEffect {
     constructor(toDark, callback) {
         super();

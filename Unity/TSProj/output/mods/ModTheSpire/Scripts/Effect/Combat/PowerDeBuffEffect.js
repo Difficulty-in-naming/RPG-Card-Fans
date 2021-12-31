@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PowerDebuffEffect = void 0;
-var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-var AbstractEffect_1 = require("../AbstractEffect");
+const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+const AbstractEffect_1 = require("../AbstractEffect");
 class PowerDebuffEffect extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    Msg;
     constructor(X, Y, Msg) {
         super();
         this.X = X;

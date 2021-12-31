@@ -2,10 +2,21 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_Holder = exports.View_Title = void 0;
-var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_Title extends UIBase_1.UIBase {
+    DustHolder;
+    MidCloudHolder;
+    TopCloudHolder;
+    Start;
+    Compendium;
+    Statistics;
+    Settings;
+    Exit;
+    Logo;
+    MainMenuEnter;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Title", "Title");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -41,8 +52,9 @@ class View_Title extends UIBase_1.UIBase {
     }
 }
 exports.View_Title = View_Title;
-View_Title.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Title", "Title");
 class View_Holder extends UIBase_1.UIBase {
+    TopCloudHolder;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Title", "Holder");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -69,5 +81,4 @@ class View_Holder extends UIBase_1.UIBase {
     }
 }
 exports.View_Holder = View_Holder;
-View_Holder.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Title", "Holder");
 //# sourceMappingURL=ModTheSpire_Title.js.map

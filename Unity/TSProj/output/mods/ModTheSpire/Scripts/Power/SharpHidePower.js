@@ -1,22 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharpHidePower = void 0;
-var DamageAction_1 = require("../Action/Common/DamageAction");
-var AbstractCard_1 = require("../Cards/AbstractCard");
-var AttackEffect_1 = require("../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../DataDefine/DamageInfo");
-var DamageType_1 = require("../DataDefine/DamageType");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var StringHelper_1 = require("../StringHelper");
-var AbstractPower_1 = require("./AbstractPower");
+const DamageAction_1 = require("../Action/Common/DamageAction");
+const AbstractCard_1 = require("../Cards/AbstractCard");
+const AttackEffect_1 = require("../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../DataDefine/DamageInfo");
+const DamageType_1 = require("../DataDefine/DamageType");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const StringHelper_1 = require("../StringHelper");
+const AbstractPower_1 = require("./AbstractPower");
 class SharpHidePower extends AbstractPower_1.AbstractPower {
-    constructor() {
-        super(...arguments);
-        this.Icon = FileHelper_1.default.FormatPath("Powers/sharpHide.png");
-        this.Id = "Sharp Hide";
-        this.Name = Localization_1.LocalizationProperty.Read("能力-锋利外壳");
-    }
+    static Id = "Sharp Hide";
+    Icon = FileHelper_1.default.FormatPath("Powers/sharpHide.png");
+    Id = "Sharp Hide";
+    Name = Localization_1.LocalizationProperty.Read("能力-锋利外壳");
     get Type() {
         return AbstractPower_1.PowerType.Buff;
     }
@@ -38,5 +36,4 @@ class SharpHidePower extends AbstractPower_1.AbstractPower {
     }
 }
 exports.SharpHidePower = SharpHidePower;
-SharpHidePower.Id = "Sharp Hide";
 //# sourceMappingURL=SharpHidePower.js.map

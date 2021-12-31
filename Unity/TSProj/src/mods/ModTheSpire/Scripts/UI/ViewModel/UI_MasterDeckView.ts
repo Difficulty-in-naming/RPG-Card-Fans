@@ -26,13 +26,13 @@ export class UI_MasterDeckView extends View_MasterDeckView{
             }
             let cards : Array<AbstractCard> = new Array<AbstractCard>();
             if(state){
-                for (let i = 0; i < Active.Pile.length; i++) {
-                    cards.push(Active.Pile[i]);
+                for (let i = 0; i < Active.MasterDeck.length; i++) {
+                    cards.push(Active.MasterDeck[i]);
                 }                
             }
             else{
-                for (let i = Active.Pile.length - 1; i >= 0 ; i--) {
-                    cards.push(Active.Pile[i]);
+                for (let i = Active.MasterDeck.length - 1; i >= 0 ; i--) {
+                    cards.push(Active.MasterDeck[i]);
                 }
             }
             this.InitList(cards);    
@@ -49,7 +49,7 @@ export class UI_MasterDeckView extends View_MasterDeckView{
                 controller.selectedIndex = state ? 1 : 0;
             }
             let cards : Array<AbstractCard> = new Array<AbstractCard>();
-            Active.Pile.forEach(t1=> cards.push(t1));
+            Active.MasterDeck.forEach(t1=> cards.push(t1));
             if(state){
                 cards.sort((t1,t2) => this.type[t1.Type] - this.type[t2.Type]);
             }
@@ -70,7 +70,7 @@ export class UI_MasterDeckView extends View_MasterDeckView{
                 controller.selectedIndex = state ? 1 : 0;
             }
             let cards : Array<AbstractCard> = new Array<AbstractCard>();
-            Active.Pile.forEach(t1=> cards.push(t1));
+            Active.MasterDeck.forEach(t1=> cards.push(t1));
             if(state){
                 cards.sort((t1,t2) => t1.Energy - t2.Energy);
             }

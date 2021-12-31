@@ -33,4 +33,8 @@ export default class Strike extends AbstractCard
             this.Damage += 3;
         }
     }
+
+    public CanUpgrade(): boolean {
+        return this.IsUpgraded();
+    }
 }

@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Hexaghost_Model = void 0;
-var DungeonManager_1 = require("../../../../DungeonManager");
-var FileHelper_1 = require("../../../../FileHelper");
-var SpineLoader_1 = require("../../../../Loader/SpineLoader");
-var MonsterInfo_1 = require("../../MonsterInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const FileHelper_1 = require("../../../../FileHelper");
+const SpineLoader_1 = require("../../../../Loader/SpineLoader");
+const MonsterInfo_1 = require("../../MonsterInfo");
 class Hexaghost_Model extends MonsterInfo_1.MonsterInfo {
+    static Id = "Hexaghost";
     get MaxHealth() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 9)
             return 264;
@@ -20,5 +21,4 @@ class Hexaghost_Model extends MonsterInfo_1.MonsterInfo {
     }
 }
 exports.Hexaghost_Model = Hexaghost_Model;
-Hexaghost_Model.Id = "Hexaghost";
 //# sourceMappingURL=Hexaghost_Model.js.map

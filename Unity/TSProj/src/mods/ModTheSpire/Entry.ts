@@ -26,17 +26,17 @@ export class Entry implements UnityBridge
     public xxx;
     constructor() 
     {
-/*         this.LoadConfig();
+        this.LoadConfig();
         AllPlayer.push(new Ironclad());
         AllPlayer.push(new Defect());
         AllPlayer.push(new TheSilent());
         AllPlayer.push(new Watcher());
         MainEntry.Inst().RegisterEntry(this);
-        //let hello = UI_Title.CreatePanel();
+        let hello = UI_Title.CreatePanel();
         DungeonManager.NewGame(new Ironclad(),"11")
         DungeonManager.Inst.CurrentDungeon = new Exordium();
         DungeonManager.Inst.CurrentRoom = new CombatRoom();
-        this.Cursor = new Cursor(); */
+        this.Cursor = new Cursor();
         MainEntry.Inst().RegisterEntry(this);
     }
 
@@ -46,12 +46,11 @@ export class Entry implements UnityBridge
     }
     OnUpdate()
     {
-        Log.Print("!hello world")
-       // this.Cursor.Update();
-       // EffectKit.Inst().Update();
-       // if(DungeonManager.Inst){
-       //     DungeonManager.Inst.Update();
-       // }
+       this.Cursor.Update();
+       EffectKit.Inst().Update();
+       if(DungeonManager.Inst){
+           DungeonManager.Inst.Update();
+       }
     }
     OnDestroy() {
     }

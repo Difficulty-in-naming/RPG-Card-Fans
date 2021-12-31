@@ -2090,6 +2090,10 @@
       <Project>{93340cae-54e5-e19e-726b-e4dddf416e69}</Project>
       <Name>Panthea.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="ConsoleRedirect.csproj">
+      <Project>{1d255967-5473-94d9-af01-b632bfa07540}</Project>
+      <Name>ConsoleRedirect</Name>
+    </ProjectReference>
     <ProjectReference Include="Panthea.Asset.csproj">
       <Project>{8f37cb30-8904-f03b-5818-07331ef61a5e}</Project>
       <Name>Panthea.Asset</Name>
@@ -2101,10 +2105,6 @@
     <ProjectReference Include="Panthea.Utils.csproj">
       <Project>{fd394c41-51e6-503c-1715-785bb9cd194a}</Project>
       <Name>Panthea.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="ConsoleRedirect.csproj">
-      <Project>{1d255967-5473-94d9-af01-b632bfa07540}</Project>
-      <Name>ConsoleRedirect</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿import AbstractCard from "../../Cards/AbstractCard";
+import { CardGroup, CardGroupType } from "../../Cards/CardGroup";
 import DamageInfo from "../../DataDefine/DamageInfo";
 import DungeonManager from "../../DungeonManager";
 import { OnHurt } from "../../Events/OnHurt";
@@ -13,8 +14,18 @@ export class AbstractPlayer extends AbstractCreature
 {
     //进阶等级
     public AdvanceLevel : number;
-    //牌堆
-    public Pile : Array<AbstractCard>
+    //我的牌库
+    public MasterDeck = new CardGroup(CardGroupType.MASTER_DECK);
+    //抽牌堆
+    public DrawPile = new CardGroup(CardGroupType.DRAW_PILE);
+    //手牌
+    public Hand = new CardGroup(CardGroupType.HAND);
+    //弃牌堆
+    public DiscardPile = new CardGroup(CardGroupType.HAND);
+    //手牌
+    public Hand = new CardGroup(CardGroupType.HAND);
+    //手牌
+    public Hand = new CardGroup(CardGroupType.HAND);
     //药
     public Potion : Array<AbstractPotion>
     //药槽

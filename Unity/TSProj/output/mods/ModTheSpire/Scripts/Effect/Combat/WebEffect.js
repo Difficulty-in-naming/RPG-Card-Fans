@@ -1,19 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebEffect = void 0;
-var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-var DungeonManager_1 = require("../../DungeonManager");
-var AbstractEffect_1 = require("../AbstractEffect");
-var WebLineEffect_1 = require("./WebLineEffect");
-var WebParticleEffect_1 = require("./WebParticleEffect");
+const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+const DungeonManager_1 = require("../../DungeonManager");
+const AbstractEffect_1 = require("../AbstractEffect");
+const WebLineEffect_1 = require("./WebLineEffect");
+const WebParticleEffect_1 = require("./WebParticleEffect");
 class WebEffect extends AbstractEffect_1.AbstractEffect {
+    _Target;
+    _X;
+    _Y;
+    _Timer = 0.1;
+    _Count = 0;
     constructor(_Target, _X, _Y) {
         super();
         this._Target = _Target;
         this._X = _X;
         this._Y = _Y;
-        this._Timer = 0.1;
-        this._Count = 0;
     }
     Update() {
         this._Timer -= TimeKit_1.TimeKit.DeltaTime;

@@ -1,10 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlyingSpikeEffect = void 0;
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-var AbstractEffect_1 = require("../AbstractEffect");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+const AbstractEffect_1 = require("../AbstractEffect");
 class FlyingSpikeEffect extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    StartingRotation;
+    endX;
+    endY;
+    Color;
+    Effect;
     constructor(parent, X, Y, StartingRotation, endX, endY, Color) {
         super();
         this.X = X;

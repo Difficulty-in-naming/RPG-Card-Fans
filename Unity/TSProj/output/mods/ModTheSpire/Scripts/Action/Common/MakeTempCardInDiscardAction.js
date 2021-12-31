@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MakeTempCardInDiscardAction = void 0;
-var Async_1 = require("../../../../../Core/Async");
-var EffectKit_1 = require("../../Effect/EffectKit");
-var ShowCardAndAddToDiscardEffect_1 = require("../../Effect/ShowCardAndAddToDiscardEffect");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
+const EffectKit_1 = require("../../Effect/EffectKit");
+const ShowCardAndAddToDiscardEffect_1 = require("../../Effect/ShowCardAndAddToDiscardEffect");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class MakeTempCardInDiscardAction extends AbstractGameAction_1.default {
+    card;
+    amount;
+    sameUUID;
     constructor(card, amount = 1, sameUUID = false) {
         super();
         this.card = card;

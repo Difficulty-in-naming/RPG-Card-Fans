@@ -1,19 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Rect_1 = require("../../../../Core/Define/Rect");
-var DungeonManager_1 = require("../DungeonManager");
-var TintEffect_1 = require("../Effect/TintEffect");
-var PostModifyBlockMessage_1 = require("../Events/PostModifyBlockMessage");
-var PowerRemovedMessage_1 = require("../Events/PowerRemovedMessage");
-var PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+const Rect_1 = require("../../../../Core/Define/Rect");
+const DungeonManager_1 = require("../DungeonManager");
+const TintEffect_1 = require("../Effect/TintEffect");
+const PostModifyBlockMessage_1 = require("../Events/PostModifyBlockMessage");
+const PowerRemovedMessage_1 = require("../Events/PowerRemovedMessage");
+const PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
 class AbstractCreature {
-    constructor() {
-        //能力列表
-        this.Powers = new Array();
-        //region重载Display内容
-        //颜色过渡动画
-        this.TintEffect = new TintEffect_1.default();
-    }
+    //最大生命值
+    _MaxHealth;
+    //生命值
+    _Health;
+    //是否是自己操作的角色
+    IsPlayer;
+    //正在死亡
+    IsDying;
+    //已经死亡
+    IsDead;
+    //能力列表
+    Powers = new Array();
+    //格挡
+    _Block;
+    //是否正在离场
+    IsEscaping;
+    //是否已经离场
+    IsEscaped;
     //是否离场或死亡
     get IsDeadOrEscaped() {
         return this.IsEscaped && this.IsDead;
@@ -41,6 +52,10 @@ class AbstractCreature {
         this._Block = msg.block;
         DungeonManager_1.default.MessageManager.Send(PostModifyBlockMessage_1.PostModifyBlockMessage.Id, new PostModifyBlockMessage_1.PostModifyBlockMessage(msg.block));
     }
+    //region重载Display内容
+    //颜色过渡动画
+    TintEffect = new TintEffect_1.default();
+    DisplayObject;
     get X() { return this.DisplayObject.X; }
     set X(value) { this.DisplayObject.X = value; }
     get Y() { return this.DisplayObject.Y; }

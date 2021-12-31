@@ -1,20 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlashAtkImgEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var AttackEffect_1 = require("../DataDefine/AttackEffect");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const AttackEffect_1 = require("../DataDefine/AttackEffect");
+const FileHelper_1 = require("../FileHelper");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class FlashAtkImgEffect extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    Effect;
+    Mute;
+    Interval = 0.6;
+    Loader;
+    BlockSound;
     constructor(X, Y, Effect, Mute = false) {
         super();
         this.X = X;
         this.Y = Y;
         this.Effect = Effect;
         this.Mute = Mute;
-        this.Interval = 0.6;
         this.Loader = UIHelper_1.default.CreateGLoader();
         this.Loader.url = FileHelper_1.default.FormatPath(this.LoadImage());
         this.Loader.SetPosition(X, Y, 0);

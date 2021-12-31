@@ -2,10 +2,14 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_PowerDebuffEffect = exports.View_PowerExpireTextEffect = exports.View_PowerBuffEffect = exports.View_FlyingSpikeEffect = exports.View_TextAboveEffect = exports.View_CleaveEffect = exports.View_HpBlockBrokenEffect = exports.View_SpeechBubble = exports.View_BorderFlashEffect = exports.View_EntangleEffect = exports.View_WebParticleEffect = exports.View_BiteEffect = void 0;
-var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_BiteEffect extends UIBase_1.UIBase {
+    Top;
+    Bot;
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "BiteEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -34,8 +38,9 @@ class View_BiteEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_BiteEffect = View_BiteEffect;
-View_BiteEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "BiteEffect");
 class View_WebParticleEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "WebParticleEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -62,8 +67,9 @@ class View_WebParticleEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_WebParticleEffect = View_WebParticleEffect;
-View_WebParticleEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "WebParticleEffect");
 class View_EntangleEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "EntangleEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -90,8 +96,9 @@ class View_EntangleEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_EntangleEffect = View_EntangleEffect;
-View_EntangleEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "EntangleEffect");
 class View_BorderFlashEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "BorderFlashEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -118,8 +125,11 @@ class View_BorderFlashEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_BorderFlashEffect = View_BorderFlashEffect;
-View_BorderFlashEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "BorderFlashEffect");
 class View_SpeechBubble extends UIBase_1.UIBase {
+    Bg;
+    Holder;
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "SpeechBubble");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -148,8 +158,9 @@ class View_SpeechBubble extends UIBase_1.UIBase {
     }
 }
 exports.View_SpeechBubble = View_SpeechBubble;
-View_SpeechBubble.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "SpeechBubble");
 class View_HpBlockBrokenEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "HpBlockBrokenEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -176,8 +187,9 @@ class View_HpBlockBrokenEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_HpBlockBrokenEffect = View_HpBlockBrokenEffect;
-View_HpBlockBrokenEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "HpBlockBrokenEffect");
 class View_CleaveEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "CleaveEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -204,8 +216,9 @@ class View_CleaveEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_CleaveEffect = View_CleaveEffect;
-View_CleaveEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "CleaveEffect");
 class View_TextAboveEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "TextAboveEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -232,8 +245,9 @@ class View_TextAboveEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_TextAboveEffect = View_TextAboveEffect;
-View_TextAboveEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "TextAboveEffect");
 class View_FlyingSpikeEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "FlyingSpikeEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -260,8 +274,9 @@ class View_FlyingSpikeEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_FlyingSpikeEffect = View_FlyingSpikeEffect;
-View_FlyingSpikeEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "FlyingSpikeEffect");
 class View_PowerBuffEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerBuffEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -288,8 +303,9 @@ class View_PowerBuffEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_PowerBuffEffect = View_PowerBuffEffect;
-View_PowerBuffEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerBuffEffect");
 class View_PowerExpireTextEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerExpireTextEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -316,8 +332,9 @@ class View_PowerExpireTextEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_PowerExpireTextEffect = View_PowerExpireTextEffect;
-View_PowerExpireTextEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerExpireTextEffect");
 class View_PowerDebuffEffect extends UIBase_1.UIBase {
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerDebuffEffect");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -344,5 +361,4 @@ class View_PowerDebuffEffect extends UIBase_1.UIBase {
     }
 }
 exports.View_PowerDebuffEffect = View_PowerDebuffEffect;
-View_PowerDebuffEffect.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Effect", "PowerDebuffEffect");
 //# sourceMappingURL=ModTheSpire_Effect.js.map

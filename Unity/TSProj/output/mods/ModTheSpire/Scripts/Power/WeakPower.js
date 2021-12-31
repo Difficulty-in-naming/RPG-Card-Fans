@@ -1,22 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WeakPower = void 0;
-var ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
-var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-var DamageInfo_1 = require("../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../DungeonManager");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var PaperCrane_1 = require("../Relics/PaperCrane");
-var StringHelper_1 = require("../StringHelper");
-var AbstractPower_1 = require("./AbstractPower");
+const ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
+const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+const DamageInfo_1 = require("../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../DungeonManager");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const PaperCrane_1 = require("../Relics/PaperCrane");
+const StringHelper_1 = require("../StringHelper");
+const AbstractPower_1 = require("./AbstractPower");
 class WeakPower extends AbstractPower_1.AbstractPower {
-    constructor() {
-        super(...arguments);
-        this.Icon = FileHelper_1.default.FormatPath("Powers/weak.png");
-        this.Id = "Weak";
-        this.Name = Localization_1.LocalizationProperty.Read("能力-虚弱");
-    }
+    Icon = FileHelper_1.default.FormatPath("Powers/weak.png");
+    Id = "Weak";
+    Name = Localization_1.LocalizationProperty.Read("能力-虚弱");
     get Type() {
         return AbstractPower_1.PowerType.Debuff;
     }
