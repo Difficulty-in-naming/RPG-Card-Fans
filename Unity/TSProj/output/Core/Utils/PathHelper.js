@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const csharp_1 = require("csharp");
+var csharp_1 = require("csharp");
 class PathHelper {
     //格式化文件路径
     static FormatFilePath(filePath) {

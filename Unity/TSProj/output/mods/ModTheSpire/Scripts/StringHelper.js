@@ -1,10 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StringHelper = void 0;
-const Color_1 = require("./DataDefine/Color");
+var Color_1 = require("./DataDefine/Color");
 class StringHelper {
-    static formatCard = new RegExp("!([BDM])!", "\g");
-    static formatColor = new RegExp("( #[rgbyp]).*?( )", "\g");
     static FormatCardString(card) {
         return card.GetDesc().replace(this.formatCard, (substring, args) => {
             if (args == 'D') {
@@ -41,4 +39,6 @@ class StringHelper {
     }
 }
 exports.StringHelper = StringHelper;
+StringHelper.formatCard = new RegExp("!([BDM])!", "\g");
+StringHelper.formatColor = new RegExp("( #[rgbyp]).*?( )", "\g");
 //# sourceMappingURL=StringHelper.js.map

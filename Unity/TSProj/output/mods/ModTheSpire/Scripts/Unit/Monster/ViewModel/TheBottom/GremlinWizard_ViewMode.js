@@ -1,22 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinWizard_ViewMode = void 0;
-const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-const TalkAction_1 = require("../../../../Action/Animations/TalkAction");
-const DamageAction_1 = require("../../../../Action/Common/DamageAction");
-const EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
-const SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
-const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-const TextAboveCreatureAction_1 = require("../../../../Action/Utility/TextAboveCreatureAction");
-const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-const DungeonManager_1 = require("../../../../DungeonManager");
-const SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
-const Localization_1 = require("../../../../Gen/DB/Localization");
-const AbstractMonster_1 = require("../../AbstractMonster");
-const Intent_1 = require("../../Intent");
+var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+var TalkAction_1 = require("../../../../Action/Animations/TalkAction");
+var DamageAction_1 = require("../../../../Action/Common/DamageAction");
+var EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
+var SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
+var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+var TextAboveCreatureAction_1 = require("../../../../Action/Utility/TextAboveCreatureAction");
+var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+var DungeonManager_1 = require("../../../../DungeonManager");
+var SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
+var Localization_1 = require("../../../../Gen/DB/Localization");
+var AbstractMonster_1 = require("../../AbstractMonster");
+var Intent_1 = require("../../Intent");
 class GremlinWizard_ViewMode extends AbstractMonster_1.AbstractMonster {
-    _currentCharge = 0;
+    constructor() {
+        super(...arguments);
+        this._currentCharge = 0;
+    }
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 2) {
             this.DamageInfo.push(new DamageInfo_1.default(this, 30));

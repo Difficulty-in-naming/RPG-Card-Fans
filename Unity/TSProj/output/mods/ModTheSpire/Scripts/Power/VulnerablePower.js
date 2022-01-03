@@ -1,20 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VulnerablePower = void 0;
-const ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
-const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-const DamageInfo_1 = require("../DataDefine/DamageInfo");
-const DamageType_1 = require("../DataDefine/DamageType");
-const DungeonManager_1 = require("../DungeonManager");
-const FileHelper_1 = require("../FileHelper");
-const Localization_1 = require("../Gen/DB/Localization");
-const PaperCrane_1 = require("../Relics/PaperCrane");
-const StringHelper_1 = require("../StringHelper");
-const AbstractPower_1 = require("./AbstractPower");
+var ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
+var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+var DamageInfo_1 = require("../DataDefine/DamageInfo");
+var DamageType_1 = require("../DataDefine/DamageType");
+var DungeonManager_1 = require("../DungeonManager");
+var FileHelper_1 = require("../FileHelper");
+var Localization_1 = require("../Gen/DB/Localization");
+var PaperCrane_1 = require("../Relics/PaperCrane");
+var StringHelper_1 = require("../StringHelper");
+var AbstractPower_1 = require("./AbstractPower");
 class VulnerablePower extends AbstractPower_1.AbstractPower {
-    Icon = FileHelper_1.default.FormatPath("Powers/vulnerable.png");
-    Id = "Vulnerable";
-    Name = Localization_1.LocalizationProperty.Read("能力-易伤");
+    constructor() {
+        super(...arguments);
+        this.Icon = FileHelper_1.default.FormatPath("Powers/vulnerable.png");
+        this.Id = "Vulnerable";
+        this.Name = Localization_1.LocalizationProperty.Read("能力-易伤");
+    }
     get Type() {
         return AbstractPower_1.PowerType.Debuff;
     }

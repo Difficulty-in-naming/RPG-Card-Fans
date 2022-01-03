@@ -1,16 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThieveryPower = void 0;
-const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-const DungeonManager_1 = require("../DungeonManager");
-const FileHelper_1 = require("../FileHelper");
-const Localization_1 = require("../Gen/DB/Localization");
-const AbstractPower_1 = require("./AbstractPower");
+var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+var DungeonManager_1 = require("../DungeonManager");
+var FileHelper_1 = require("../FileHelper");
+var Localization_1 = require("../Gen/DB/Localization");
+var AbstractPower_1 = require("./AbstractPower");
 class ThieveryPower extends AbstractPower_1.AbstractPower {
-    static Id = "Thievery";
-    Icon = FileHelper_1.default.FormatPath("Powers/thievery.png");
-    Id = "Thievery";
-    Name = Localization_1.LocalizationProperty.Read("能力-偷窃");
+    constructor() {
+        super(...arguments);
+        this.Icon = FileHelper_1.default.FormatPath("Powers/thievery.png");
+        this.Id = "Thievery";
+        this.Name = Localization_1.LocalizationProperty.Read("能力-偷窃");
+    }
     get Type() {
         return AbstractPower_1.PowerType.Buff;
     }
@@ -23,4 +25,5 @@ class ThieveryPower extends AbstractPower_1.AbstractPower {
     }
 }
 exports.ThieveryPower = ThieveryPower;
+ThieveryPower.Id = "Thievery";
 //# sourceMappingURL=ThieveryPower.js.map

@@ -2,11 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreApplyPowerMessage = void 0;
 class PreApplyPowerMessage {
-    Power;
-    Target;
-    Source;
-    StackAmount;
-    static Id = "PreApplyPowerMessage";
     constructor(Power, Target, Source, StackAmount) {
         this.Power = Power;
         this.Target = Target;
@@ -15,4 +10,5 @@ class PreApplyPowerMessage {
     }
 }
 exports.PreApplyPowerMessage = PreApplyPowerMessage;
+PreApplyPowerMessage.Id = "PreApplyPowerMessage";
 //# sourceMappingURL=PreApplyPowerMessage.js.map

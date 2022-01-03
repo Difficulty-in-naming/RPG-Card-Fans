@@ -8,7 +8,7 @@ function onPublish(handler) {
         return;
     handler.genCode = false; //prevent default output
     console.log('Handling gen code in plugin');
-    GenCode_CSharp_1.genCode(handler); //do it myself
+    (0, GenCode_CSharp_1.genCode)(handler); //do it myself
 }
 exports.onPublish = onPublish;
 function onDestroy() {

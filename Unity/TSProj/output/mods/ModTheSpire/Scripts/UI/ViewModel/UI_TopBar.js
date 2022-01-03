@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const DungeonManager_1 = require("../../DungeonManager");
-const ModTheSpire_TopBar_1 = require("../../Gen/View/ModTheSpire_TopBar");
-const UI_MasterDeckView_1 = require("./UI_MasterDeckView");
+var DungeonManager_1 = require("../../DungeonManager");
+var ModTheSpire_TopBar_1 = require("../../Gen/View/ModTheSpire_TopBar");
+var UI_MasterDeckView_1 = require("./UI_MasterDeckView");
 class UI_TopBar extends ModTheSpire_TopBar_1.View_TopBar {
-    CharacterInfo;
-    Player;
     OnInit(...args) {
         super.OnInit(...args);
         this.Player = DungeonManager_1.default.Inst.Player;

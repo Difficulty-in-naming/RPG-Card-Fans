@@ -1,14 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_Map = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const Color_1 = require("../../DataDefine/Color");
-const DungeonManager_1 = require("../../DungeonManager");
-const ModTheSpire_Map_1 = require("../../Gen/View/ModTheSpire_Map");
-const UIHelper_1 = require("../UIHelper");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var Color_1 = require("../../DataDefine/Color");
+var DungeonManager_1 = require("../../DungeonManager");
+var ModTheSpire_Map_1 = require("../../Gen/View/ModTheSpire_Map");
+var UIHelper_1 = require("../UIHelper");
 class UI_Map extends ModTheSpire_Map_1.View_Map {
-    roomList = new Map();
+    constructor() {
+        super(...arguments);
+        this.roomList = new Map();
+    }
     OnInit(...args) {
         super.OnInit(...args);
         let mapInfo = DungeonManager_1.default.Inst.CurrentDungeon.MapInfo;

@@ -1,14 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Async_1 = require("../../../../../Core/Async");
-const AbstractGameAction_1 = require("../AbstractGameAction");
+var Async_1 = require("../../../../../Core/Async");
+var AbstractGameAction_1 = require("../AbstractGameAction");
 class GainBlockAction extends AbstractGameAction_1.default {
-    Target;
-    Source;
-    Amount;
-    Type = AbstractGameAction_1.ActionType.BLOCK;
     constructor(target, amount, source = null) {
         super();
+        this.Type = AbstractGameAction_1.ActionType.BLOCK;
         this.Target = target;
         if (!source)
             this.Source = source;

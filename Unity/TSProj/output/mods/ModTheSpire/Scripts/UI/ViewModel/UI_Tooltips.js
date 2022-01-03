@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_Tooltips = void 0;
-const csharp_1 = require("csharp");
-const ModTheSpire_Common_1 = require("../../Gen/View/ModTheSpire_Common");
+var csharp_1 = require("csharp");
+var ModTheSpire_Common_1 = require("../../Gen/View/ModTheSpire_Common");
 class UI_Tooltips extends ModTheSpire_Common_1.View_Tooltips {
     OnUpdate() {
         super.OnUpdate();

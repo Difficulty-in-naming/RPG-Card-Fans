@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EscapeAction = void 0;
-const Async_1 = require("../../../../../Core/Async");
-const AbstractGameAction_1 = require("../AbstractGameAction");
+var Async_1 = require("../../../../../Core/Async");
+var AbstractGameAction_1 = require("../AbstractGameAction");
 class EscapeAction extends AbstractGameAction_1.default {
-    enemy;
-    Type = AbstractGameAction_1.ActionType.TEXT;
     constructor(enemy) {
         super();
         this.enemy = enemy;
+        this.Type = AbstractGameAction_1.ActionType.TEXT;
     }
     async Update() {
         if (this.Duration == 0) {

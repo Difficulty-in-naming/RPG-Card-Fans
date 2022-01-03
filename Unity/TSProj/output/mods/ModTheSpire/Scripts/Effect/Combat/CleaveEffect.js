@@ -1,16 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CleaveEffect = void 0;
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-const AbstractEffect_1 = require("../AbstractEffect");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+var AbstractEffect_1 = require("../AbstractEffect");
 class CleaveEffect extends AbstractEffect_1.AbstractEffect {
-    _X;
-    _Y;
-    Loader;
-    StallTimer;
-    Scale;
     constructor(_X, _Y) {
         super();
         this._X = _X;

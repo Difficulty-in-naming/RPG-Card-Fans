@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BlueSlaver_Model = void 0;
-const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-const DungeonManager_1 = require("../../../../DungeonManager");
-const FileHelper_1 = require("../../../../FileHelper");
-const SpineLoader_1 = require("../../../../Loader/SpineLoader");
-const MonsterInfo_1 = require("../../MonsterInfo");
+var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+var DungeonManager_1 = require("../../../../DungeonManager");
+var FileHelper_1 = require("../../../../FileHelper");
+var SpineLoader_1 = require("../../../../Loader/SpineLoader");
+var MonsterInfo_1 = require("../../MonsterInfo");
 class BlueSlaver_Model extends MonsterInfo_1.MonsterInfo {
-    static Id = "BlueSlaver";
     get MaxHealth() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 7)
             return Mathf_1.Mathf.RandomRange(48, 52);
@@ -22,4 +21,5 @@ class BlueSlaver_Model extends MonsterInfo_1.MonsterInfo {
     }
 }
 exports.BlueSlaver_Model = BlueSlaver_Model;
+BlueSlaver_Model.Id = "BlueSlaver";
 //# sourceMappingURL=BlueSlaver_Model.js.map

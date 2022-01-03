@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const TimeKit_1 = require("../../Utils/TimeKit");
+var TimeKit_1 = require("../../Utils/TimeKit");
 class QueueMessageKit {
-    waiting;
-    list = new Array();
-    currentRunning;
+    constructor() {
+        this.list = new Array();
+    }
     AddToBottom(func) {
         this.list.splice(0, 0, func);
     }

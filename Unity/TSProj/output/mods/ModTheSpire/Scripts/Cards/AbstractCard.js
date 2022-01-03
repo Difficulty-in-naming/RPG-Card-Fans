@@ -1,33 +1,33 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardTarget = exports.CardRarity = exports.CardType = exports.CardTags = exports.CardColor = void 0;
-const uuid_tool_1 = require("uuid-tool");
-const DungeonManager_1 = require("../DungeonManager");
-const ModTheSpire_Common_1 = require("../Gen/View/ModTheSpire_Common");
-const StringHelper_1 = require("../StringHelper");
+var uuid_tool_1 = require("uuid-tool");
+var DungeonManager_1 = require("../DungeonManager");
+var ModTheSpire_Common_1 = require("../Gen/View/ModTheSpire_Common");
+var global_1 = require("../global");
+var StringHelper_1 = require("../StringHelper");
 class AbstractCard {
-    //唯一ID.用于标志哪些卡牌升级.或者针对某张卡牌做特殊操作
-    UUID;
-    //卡牌标签(攻击,初始卡牌)
-    Tags;
-    //升级次数
-    UpgradeTimes = 0;
-    //消耗能量
-    Energy = 0;
-    //是否消耗
-    Exhaust = false;
-    //是否虚无
-    Ethereal = false;
-    //卡牌渲染组件
-    RenderCom = ModTheSpire_Common_1.View_Card.Url;
-    //伤害
-    Damage = 0;
-    //格挡
-    Block = 0;
-    //特殊值
-    Magic = 0;
     constructor() {
+        //升级次数
+        this.UpgradeTimes = 0;
+        //消耗能量
+        this.Energy = 0;
+        //是否消耗
+        this.Exhaust = false;
+        //是否虚无
+        this.Ethereal = false;
+        //卡牌渲染组件
+        this.RenderUrl = ModTheSpire_Common_1.View_Card.Url;
+        //伤害
+        this.Damage = 0;
+        //格挡
+        this.Block = 0;
+        //特殊值
+        this.Magic = 0;
         this.UUID = uuid_tool_1.UuidTool.newUuid();
+    }
+    get View() {
+        return global_1.S.CommonCardViewPool.Pop();
     }
     Use(player, monster) { }
     Upgrade() { }
@@ -48,6 +48,9 @@ class AbstractCard {
     //是否已经升级
     IsUpgraded() {
         return this.UpgradeTimes > 0;
+    }
+    SuperFlash() {
+        this.View.GetTransition("SuperFlash").Play();
     }
 }
 exports.default = AbstractCard;

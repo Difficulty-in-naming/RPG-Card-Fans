@@ -1,27 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TorchSize = exports.InteractableTorchEffect = void 0;
-const csharp_1 = require("csharp");
-const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-const FileHelper_1 = require("../FileHelper");
-const UIHelper_1 = require("../UI/UIHelper");
-const AbstractEffect_1 = require("./AbstractEffect");
-const EffectKit_1 = require("./EffectKit");
-const LightFlareEffect_1 = require("./LightFlareEffect");
-const TorchParticleEffect_1 = require("./TorchParticleEffect");
+var csharp_1 = require("csharp");
+var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+var FileHelper_1 = require("../FileHelper");
+var UIHelper_1 = require("../UI/UIHelper");
+var AbstractEffect_1 = require("./AbstractEffect");
+var EffectKit_1 = require("./EffectKit");
+var LightFlareEffect_1 = require("./LightFlareEffect");
+var TorchParticleEffect_1 = require("./TorchParticleEffect");
 class InteractableTorchEffect extends AbstractEffect_1.AbstractEffect {
-    X;
-    Y;
-    Size;
-    Loader;
-    Component;
-    Activated = true;
-    ParticleTimer = 0;
     constructor(X, Y, Size = TorchSize.M) {
         super();
         this.X = X;
         this.Y = Y;
         this.Size = Size;
+        this.Activated = true;
+        this.ParticleTimer = 0;
         this.Component = UIHelper_1.default.CreateGComponent();
         this.Loader = UIHelper_1.default.CreateGLoader();
         this.Component.AddChild(this.Loader);

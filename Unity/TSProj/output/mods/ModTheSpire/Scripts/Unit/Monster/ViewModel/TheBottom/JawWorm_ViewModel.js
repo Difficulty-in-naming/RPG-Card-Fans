@@ -1,29 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinFat_ViewModel = void 0;
-const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-const SetAnimationAction_1 = require("../../../../Action/Animations/SetAnimationAction");
-const ShakeScreenAction_1 = require("../../../../Action/Animations/ShakeScreenAction");
-const VFXAction_1 = require("../../../../Action/Animations/VFXAction");
-const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-const DamageAction_1 = require("../../../../Action/Common/DamageAction");
-const DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
-const GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
-const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-const WaitAction_1 = require("../../../../Action/Utility/WaitAction");
-const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-const DungeonManager_1 = require("../../../../DungeonManager");
-const BiteEffect_1 = require("../../../../Effect/Combat/BiteEffect");
-const ShakeScreen_1 = require("../../../../Effect/ShakeScreen");
-const StrengthPower_1 = require("../../../../Power/StrengthPower");
-const AbstractMonster_1 = require("../../AbstractMonster");
-const Intent_1 = require("../../Intent");
+var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+var SetAnimationAction_1 = require("../../../../Action/Animations/SetAnimationAction");
+var ShakeScreenAction_1 = require("../../../../Action/Animations/ShakeScreenAction");
+var VFXAction_1 = require("../../../../Action/Animations/VFXAction");
+var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+var DamageAction_1 = require("../../../../Action/Common/DamageAction");
+var DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
+var GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
+var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+var WaitAction_1 = require("../../../../Action/Utility/WaitAction");
+var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+var DungeonManager_1 = require("../../../../DungeonManager");
+var BiteEffect_1 = require("../../../../Effect/Combat/BiteEffect");
+var ShakeScreen_1 = require("../../../../Effect/ShakeScreen");
+var StrengthPower_1 = require("../../../../Power/StrengthPower");
+var AbstractMonster_1 = require("../../AbstractMonster");
+var Intent_1 = require("../../Intent");
 class GremlinFat_ViewModel extends AbstractMonster_1.AbstractMonster {
-    StrAmount;
-    BlockAmount;
-    BlockAmount2;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 17) {
             this.StrAmount = 5;

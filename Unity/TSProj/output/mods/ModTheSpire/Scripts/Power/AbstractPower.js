@@ -1,39 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PowerType = exports.AbstractPower = void 0;
-const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-const DungeonManager_1 = require("../DungeonManager");
-const EffectKit_1 = require("../Effect/EffectKit");
-const FlashPowerEffect_1 = require("../Effect/FlashPowerEffect");
-const GainPowerEffect_1 = require("../Effect/GainPowerEffect");
-const AtEndOfTurnMessage_1 = require("../Events/AtEndOfTurnMessage");
-const AtEndOfTurnPreEndTurnCardsMessage_1 = require("../Events/AtEndOfTurnPreEndTurnCardsMessage");
-const AtStartOfTurnMessage_1 = require("../Events/AtStartOfTurnMessage");
-const CalcDamageValueMessage_1 = require("../Events/CalcDamageValueMessage");
-const CalcFinalDamageValueMessage_1 = require("../Events/CalcFinalDamageValueMessage");
-const CalcFinalHurtValueMessage_1 = require("../Events/CalcFinalHurtValueMessage");
-const CalcHurtValueMessage_1 = require("../Events/CalcHurtValueMessage");
-const OnDamageAfter_1 = require("../Events/OnDamageAfter");
-const OnDamageBefore_1 = require("../Events/OnDamageBefore");
-const OnDeathMessage_1 = require("../Events/OnDeathMessage");
-const OnHurt_1 = require("../Events/OnHurt");
-const OnHurtAfter_1 = require("../Events/OnHurtAfter");
-const OnHurtBefore_1 = require("../Events/OnHurtBefore");
-const PowerModifiedAmountMessage_1 = require("../Events/PowerModifiedAmountMessage");
-const PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+var DungeonManager_1 = require("../DungeonManager");
+var EffectKit_1 = require("../Effect/EffectKit");
+var FlashPowerEffect_1 = require("../Effect/FlashPowerEffect");
+var GainPowerEffect_1 = require("../Effect/GainPowerEffect");
+var AtEndOfTurnMessage_1 = require("../Events/AtEndOfTurnMessage");
+var AtEndOfTurnPreEndTurnCardsMessage_1 = require("../Events/AtEndOfTurnPreEndTurnCardsMessage");
+var AtStartOfTurnMessage_1 = require("../Events/AtStartOfTurnMessage");
+var CalcDamageValueMessage_1 = require("../Events/CalcDamageValueMessage");
+var CalcFinalDamageValueMessage_1 = require("../Events/CalcFinalDamageValueMessage");
+var CalcFinalHurtValueMessage_1 = require("../Events/CalcFinalHurtValueMessage");
+var CalcHurtValueMessage_1 = require("../Events/CalcHurtValueMessage");
+var OnDamageAfter_1 = require("../Events/OnDamageAfter");
+var OnDamageBefore_1 = require("../Events/OnDamageBefore");
+var OnDeathMessage_1 = require("../Events/OnDeathMessage");
+var OnHurt_1 = require("../Events/OnHurt");
+var OnHurtAfter_1 = require("../Events/OnHurtAfter");
+var OnHurtBefore_1 = require("../Events/OnHurtBefore");
+var PowerModifiedAmountMessage_1 = require("../Events/PowerModifiedAmountMessage");
+var PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
 class AbstractPower {
-    //层数
-    _Amount;
-    //可否叠加
-    CanStack;
-    //可否驱散
-    CanRemove;
-    //结算优先级
-    Priority;
-    //该Buff的拥有者
-    Owner;
-    //该Buff的施法来源
-    Source;
     get Amount() {
         return this._Amount;
     }

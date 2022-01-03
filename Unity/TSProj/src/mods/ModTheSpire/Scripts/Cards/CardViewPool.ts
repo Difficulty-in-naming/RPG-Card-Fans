@@ -4,17 +4,17 @@ import { ViewInfo } from "../../../../Core/Module/UI/ViewInfo";
 
 export class CardViewPool
 {
-   private activeList: Array<any>;
-   private reserveList: Array<any>;
+   private activeList: Array<FairyGUI.GComponent>;
+   private reserveList: Array<FairyGUI.GComponent>;
 
    private numberActive: number;
    private numberReserved: number;
 
-   private func : (view:ViewInfo,url:string)=>any;
-   constructor(reserve: number = 5,callback: (viewInfo:ViewInfo,url: string) => any)
+   private func : ()=>FairyGUI.GComponent;
+   constructor(reserve: number = 5,callback: () => FairyGUI.GComponent)
    {
-       this.activeList = new Array<any>();
-       this.reserveList = new Array<any>();
+       this.activeList = new Array<FairyGUI.GComponent>();
+       this.reserveList = new Array<FairyGUI.GComponent>();
 
        this.numberActive = 0;
        this.numberReserved = 0;
@@ -26,32 +26,30 @@ export class CardViewPool
    {
        for(let i = 0; i < reserve; i++)
        {
-           const ui = func();
-           this.reserveList.push(<T><unknown>ui);
+           const ui = this.func();
+           this.reserveList.push(ui);
        }
    }
 
-   public getGameObject(): FairyGUI.GComponent
+   public Pop(): FairyGUI.GComponent
    {
        if(this.numberReserved == 0)
        {
-        const ui = UIKit.Inst().CreatePanel(viewInfo,UIKit.Inst().Get(url),null);
-        this.reserveList.push(<T><unknown>ui);
+        const ui = this.func();
+        this.reserveList.push(ui);
            this.numberReserved++;
        }
 
-       const gameObject = this.reserveList.pop();
+       const com = this.reserveList.pop();
        this.numberReserved--;
 
-       this.activeList.push(gameObject);
+       this.activeList.push(com);
        this.numberActive++;
 
-       gameObject.clear();
-
-       return gameObject;
+       return com;
    }
 
-   public returnGameObject(gameObject: FairyGUI.GComponent)
+   public Push(gameObject: FairyGUI.GComponent)
    {
        const index = this.activeList.indexOf(gameObject);
        if(index >= 0)

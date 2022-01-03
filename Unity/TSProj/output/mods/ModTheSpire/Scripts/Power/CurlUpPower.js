@@ -1,19 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CurlUpPower = void 0;
-const GainBlockAction_1 = require("../Action/Common/GainBlockAction");
-const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-const DamageType_1 = require("../DataDefine/DamageType");
-const FileHelper_1 = require("../FileHelper");
-const Localization_1 = require("../Gen/DB/Localization");
-const StringHelper_1 = require("../StringHelper");
-const AbstractPower_1 = require("./AbstractPower");
+var GainBlockAction_1 = require("../Action/Common/GainBlockAction");
+var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+var DamageType_1 = require("../DataDefine/DamageType");
+var FileHelper_1 = require("../FileHelper");
+var Localization_1 = require("../Gen/DB/Localization");
+var StringHelper_1 = require("../StringHelper");
+var AbstractPower_1 = require("./AbstractPower");
 class CurlUpPower extends AbstractPower_1.AbstractPower {
-    static Id = "Curl Up";
-    Icon = FileHelper_1.default.FormatPath("Powers/minion.png");
-    Id = "Curl Up";
-    Name = Localization_1.LocalizationProperty.Read("能力-蜷身");
-    Triggered = false;
+    constructor() {
+        super(...arguments);
+        this.Icon = FileHelper_1.default.FormatPath("Powers/minion.png");
+        this.Id = "Curl Up";
+        this.Name = Localization_1.LocalizationProperty.Read("能力-蜷身");
+        this.Triggered = false;
+    }
     get Type() {
         return AbstractPower_1.PowerType.Buff;
     }
@@ -31,4 +33,5 @@ class CurlUpPower extends AbstractPower_1.AbstractPower {
     }
 }
 exports.CurlUpPower = CurlUpPower;
+CurlUpPower.Id = "Curl Up";
 //# sourceMappingURL=CurlUpPower.js.map

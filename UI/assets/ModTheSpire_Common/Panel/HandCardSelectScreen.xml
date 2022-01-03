@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_kmbw" name="n0" xy="-140,-120" size="2148,1311" type="rect" lineSize="0" fillColor="#d8000000"/>
+    <text id="n2_kmbw" name="Title" xy="841,91" pivot="0.5,0.5" size="238,49" font="ui://rduitwm2kefb3" fontSize="36" color="#fef5e1" align="center" vAlign="middle" strokeColor="#3f3f3f" strokeSize="0.2" faceDilate="0.15" text="确认将牌 升级">
+      <relation target="" sidePair="bottom-bottom"/>
+    </text>
+    <component id="n4_kmbw" name="Confirm" src="kmbw2v" fileName="Button/Reward/RewardConfirmButton.xml" xy="819,604" group="n10_kmbw"/>
+    <image id="n5_kmbw" name="n5" src="kmbw2w" fileName="Card/upgradeArrow.png" xy="898,334" pivot="0.5,0.5" anchor="true" group="n10_kmbw" scale="0.8,0.8"/>
+    <image id="n6_kmbw" name="n6" src="kmbw2w" fileName="Card/upgradeArrow.png" xy="962,333" pivot="0.5,0.5" anchor="true" group="n10_kmbw" scale="0.8,0.8"/>
+    <image id="n7_kmbw" name="n7" src="kmbw2w" fileName="Card/upgradeArrow.png" xy="1027,333" pivot="0.5,0.5" anchor="true" group="n10_kmbw" scale="0.8,0.8"/>
+    <component id="n8_kmbw" name="Source" src="gh7d1l" fileName="Card/Card.xml" xy="498,150" group="n10_kmbw" scale="0.5,0.5"/>
+    <component id="n9_kmbw" name="Target" src="gh7d1l" fileName="Card/Card.xml" xy="1079,151" group="n10_kmbw" scale="0.5,0.5"/>
+    <group id="n10_kmbw" name="Group" xy="498,150" size="1256,881" advanced="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1" frameRate="60">
+    <item time="0" type="Scale" target="n5_kmbw" tween="true" startValue="0.8,0.8" endValue="1.05,1.05" duration="24" ease="Sine.InOut"/>
+    <item time="9" type="Scale" target="n6_kmbw" tween="true" startValue="0.8,0.8" endValue="1.05,1.05" duration="24" ease="Sine.InOut"/>
+    <item time="21" type="Scale" target="n7_kmbw" tween="true" startValue="0.8,0.8" endValue="1.05,1.05" duration="24" ease="Sine.InOut"/>
+    <item time="24" type="Scale" target="n5_kmbw" tween="true" startValue="1.05,1.05" endValue="0.8,0.8" duration="24" ease="Sine.InOut"/>
+    <item time="33" type="Scale" target="n6_kmbw" tween="true" startValue="1.05,1.05" endValue="0.8,0.8" duration="24" ease="Sine.InOut"/>
+    <item time="45" type="Scale" target="n7_kmbw" tween="true" startValue="1.05,1.05" endValue="0.8,0.8" duration="24" ease="Sine.InOut"/>
+  </transition>
+</component>

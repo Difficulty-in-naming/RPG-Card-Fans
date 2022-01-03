@@ -2,8 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mathf = void 0;
 class Mathf {
-    static Rad2Deg = 57.29578;
-    static Deg2Rad = 0.01745329;
     static Abs(value) {
         return Math.abs(value);
     }
@@ -153,4 +151,6 @@ class Mathf {
     }
 }
 exports.Mathf = Mathf;
+Mathf.Rad2Deg = 57.29578;
+Mathf.Deg2Rad = 0.01745329;
 //# sourceMappingURL=Mathf.js.map

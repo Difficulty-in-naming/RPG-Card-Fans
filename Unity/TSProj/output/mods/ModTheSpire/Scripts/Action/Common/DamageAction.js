@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Async_1 = require("../../../../../Core/Async");
-const AttackEffect_1 = require("../../DataDefine/AttackEffect");
-const AbstractGameAction_1 = require("../AbstractGameAction");
+var Async_1 = require("../../../../../Core/Async");
+var AttackEffect_1 = require("../../DataDefine/AttackEffect");
+var AbstractGameAction_1 = require("../AbstractGameAction");
 class DamageAction extends AbstractGameAction_1.default {
-    Target;
-    Info;
-    Effect;
     //target:目标,damageInfo:伤害数据,effect:伤害特效
     constructor(target, info, effect) {
         super();

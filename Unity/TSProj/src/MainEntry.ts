@@ -40,7 +40,7 @@ export class MainEntry{
             value.OnUpdate();
         });
         UIKit.Inst().OnUpdate();
-        Log.Error("12312321223");
+        Log.Error("Hello 1111");
     }
 
 /*    private onDestroy()

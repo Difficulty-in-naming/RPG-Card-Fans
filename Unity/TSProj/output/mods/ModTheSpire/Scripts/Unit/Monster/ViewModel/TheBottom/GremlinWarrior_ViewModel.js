@@ -1,21 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinWarrior_ViewModel = void 0;
-const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-const DamageAction_1 = require("../../../../Action/Common/DamageAction");
-const EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
-const SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
-const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-const DungeonManager_1 = require("../../../../DungeonManager");
-const SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
-const Localization_1 = require("../../../../Gen/DB/Localization");
-const AngerPower_1 = require("../../../../Power/AngerPower");
-const AbstractMonster_1 = require("../../AbstractMonster");
-const Intent_1 = require("../../Intent");
+var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+var DamageAction_1 = require("../../../../Action/Common/DamageAction");
+var EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
+var SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
+var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+var DungeonManager_1 = require("../../../../DungeonManager");
+var SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
+var Localization_1 = require("../../../../Gen/DB/Localization");
+var AngerPower_1 = require("../../../../Power/AngerPower");
+var AbstractMonster_1 = require("../../AbstractMonster");
+var Intent_1 = require("../../Intent");
 class GremlinWarrior_ViewModel extends AbstractMonster_1.AbstractMonster {
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 2) {

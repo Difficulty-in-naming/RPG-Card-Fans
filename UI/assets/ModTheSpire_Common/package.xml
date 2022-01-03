@@ -65,6 +65,13 @@
     <image id="cc7c2n" name="largeCircle2.png" path="/Dialog/Texture/" exported="true"/>
     <image id="cc7c2o" name="smallCircle.png" path="/Dialog/Texture/" exported="true"/>
     <image id="cc7c2p" name="speechBubble2.png" path="/Dialog/Texture/" exported="true"/>
+    <component id="kmbw2q" name="HandCardSelectScreen.xml" path="/Panel/" exported="true"/>
+    <image id="kmbw2r" name="peek_button.png" path="/Button/PeekButton/"/>
+    <component id="kmbw2s" name="PeekButton.xml" path="/Button/PeekButton/" exported="true"/>
+    <image id="kmbw2t" name="takeAll.png" path="/Button/Reward/" scale9grid="0,0,-219,-182"/>
+    <image id="kmbw2u" name="takeAllUsed.png" path="/Button/Reward/" scale9grid="0,0,-219,-182"/>
+    <component id="kmbw2v" name="RewardConfirmButton.xml" path="/Button/Reward/" exported="true"/>
+    <image id="kmbw2w" name="upgradeArrow.png" path="/Card/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

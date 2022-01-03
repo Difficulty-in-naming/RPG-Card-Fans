@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MapGenerator = void 0;
-const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-const DungeonManager_1 = require("../DungeonManager");
-const MapRoomNode_1 = require("./MapRoomNode");
+var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+var DungeonManager_1 = require("../DungeonManager");
+var MapRoomNode_1 = require("./MapRoomNode");
 class MapGenerator {
     //地图的宽和地图的高,和地图路径密度,密度越大.生成的路径越多
     static Generate(width, height, pathDensity) {

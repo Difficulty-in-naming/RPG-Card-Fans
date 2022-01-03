@@ -1,24 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AbstractMonster = void 0;
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const DungeonManager_1 = require("../../DungeonManager");
-const AbstractCreature_1 = require("../AbstractCreature");
-const tween_js_1 = require("@tweenjs/tween.js");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var DungeonManager_1 = require("../../DungeonManager");
+var AbstractCreature_1 = require("../AbstractCreature");
+var tween_js_1 = require("@tweenjs/tween.js");
 class AbstractMonster extends AbstractCreature_1.default {
-    Info;
-    MoveName;
-    Gold;
-    MoveIndex;
-    DeathTime;
-    Intent;
-    //行动历史
-    MoveHistory = new Array();
-    //伤害列表,不同难度填充的伤害内容不一样
-    DamageInfo = new Array();
     constructor(Info) {
         super();
         this.Info = Info;
+        //行动历史
+        this.MoveHistory = new Array();
+        //伤害列表,不同难度填充的伤害内容不一样
+        this.DamageInfo = new Array();
         this.DisplayObject = this.Info.Loader.Create();
         this.Initialize();
         this.RollMove();

@@ -1,23 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameDeckGlowEffect = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-const Color_1 = require("../DataDefine/Color");
-const FileHelper_1 = require("../FileHelper");
-const UIHelper_1 = require("../UI/UIHelper");
-const AbstractEffect_1 = require("./AbstractEffect");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+var Color_1 = require("../DataDefine/Color");
+var FileHelper_1 = require("../FileHelper");
+var UIHelper_1 = require("../UI/UIHelper");
+var AbstractEffect_1 = require("./AbstractEffect");
 class GameDeckGlowEffect extends AbstractEffect_1.AbstractEffect {
-    Interval = Mathf_1.Mathf.RandomRange(2, 5);
-    Vx = Mathf_1.Mathf.RandomRange(10, 20);
-    Vy = Mathf_1.Mathf.RandomRange(10, 20);
-    FlipX = Mathf_1.Mathf.Random() < 0.5 ? -1 : 1;
-    FlipY = Mathf_1.Mathf.Random() < 0.5 ? -1 : 1;
-    Vr = Mathf_1.Mathf.RandomRange(-120, 120);
-    Loader;
     constructor() {
         super();
+        this.Interval = Mathf_1.Mathf.RandomRange(2, 5);
+        this.Vx = Mathf_1.Mathf.RandomRange(10, 20);
+        this.Vy = Mathf_1.Mathf.RandomRange(10, 20);
+        this.FlipX = Mathf_1.Mathf.Random() < 0.5 ? -1 : 1;
+        this.FlipY = Mathf_1.Mathf.Random() < 0.5 ? -1 : 1;
+        this.Vr = Mathf_1.Mathf.RandomRange(-120, 120);
         this.Loader = UIHelper_1.default.CreateGLoader();
         let color = Color_1.default.Cream.Clone();
         let darkness = Mathf_1.Mathf.RandomRange(0.1, 0.4);

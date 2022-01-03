@@ -1,17 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VerticalAuraParticleEffect = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-const FileHelper_1 = require("../FileHelper");
-const UIHelper_1 = require("../UI/UIHelper");
-const AbstractEffect_1 = require("./AbstractEffect");
-const tween_js_1 = require("@tweenjs/tween.js");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+var FileHelper_1 = require("../FileHelper");
+var UIHelper_1 = require("../UI/UIHelper");
+var AbstractEffect_1 = require("./AbstractEffect");
+var tween_js_1 = require("@tweenjs/tween.js");
 class VerticalAuraParticleEffect extends AbstractEffect_1.AbstractEffect {
-    Vy;
-    Loader;
-    Tween;
     constructor(c, x, y) {
         super();
         this.Loader = UIHelper_1.default.CreateGLoader();

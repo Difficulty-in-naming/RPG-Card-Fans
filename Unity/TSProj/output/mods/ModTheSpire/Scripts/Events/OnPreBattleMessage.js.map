@@ -1,1 +1,1 @@
-{"version":3,"file":"OnPreBattleMessage.js","sourceRoot":"","sources":["../../../../../src/mods/ModTheSpire/Scripts/Events/OnPreBattleMessage.ts"],"names":[],"mappings":";;;AAEA,MAAa,kBAAkB;IACpB,MAAM,CAAU,EAAE,GAAG,oBAAoB,CAAC;IACjD;IACA,CAAC;;AAHL,gDAIC"}
+{"version":3,"file":"OnPreBattleMessage.js","sourceRoot":"","sources":["../../../../../src/mods/ModTheSpire/Scripts/Events/OnPreBattleMessage.ts"],"names":[],"mappings":";;;AAEA,MAAa,kBAAkB;IAE3B;IACA,CAAC;;AAHL,gDAIC;AAH0B,qBAAE,GAAG,oBAAoB,CAAC"}

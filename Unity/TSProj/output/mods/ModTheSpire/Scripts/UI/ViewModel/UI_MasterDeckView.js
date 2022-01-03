@@ -1,13 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_MasterDeckView = void 0;
-const AbstractCard_1 = require("../../Cards/AbstractCard");
-const DungeonManager_1 = require("../../DungeonManager");
-const Localization_1 = require("../../Gen/DB/Localization");
-const ModTheSpire_MasterDeckView_1 = require("../../Gen/View/ModTheSpire_MasterDeckView");
-const UIHelper_1 = require("../UIHelper");
+var AbstractCard_1 = require("../../Cards/AbstractCard");
+var DungeonManager_1 = require("../../DungeonManager");
+var Localization_1 = require("../../Gen/DB/Localization");
+var ModTheSpire_MasterDeckView_1 = require("../../Gen/View/ModTheSpire_MasterDeckView");
+var UIHelper_1 = require("../UIHelper");
 class UI_MasterDeckView extends ModTheSpire_MasterDeckView_1.View_MasterDeckView {
-    type = new Map();
+    constructor() {
+        super(...arguments);
+        this.type = new Map();
+    }
     OnInit(...args) {
         let number = 0;
         for (let enumMember in AbstractCard_1.CardType) {

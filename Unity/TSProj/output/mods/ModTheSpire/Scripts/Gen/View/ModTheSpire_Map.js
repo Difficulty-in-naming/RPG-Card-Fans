@@ -2,12 +2,10 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_BossRoom = exports.View_Map = exports.View_NormalRoom = exports.View_ScrollPage = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_ScrollPage extends UIBase_1.UIBase {
-    Boss;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "ScrollPage");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -34,10 +32,8 @@ class View_ScrollPage extends UIBase_1.UIBase {
     }
 }
 exports.View_ScrollPage = View_ScrollPage;
+View_ScrollPage.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "ScrollPage");
 class View_NormalRoom extends UIBase_1.UIBase {
-    outline;
-    Down;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "NormalRoom");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -65,11 +61,8 @@ class View_NormalRoom extends UIBase_1.UIBase {
     }
 }
 exports.View_NormalRoom = View_NormalRoom;
+View_NormalRoom.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "NormalRoom");
 class View_Map extends UIBase_1.UIBase {
-    Scroll;
-    Title;
-    List;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "Map");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -98,12 +91,8 @@ class View_Map extends UIBase_1.UIBase {
     }
 }
 exports.View_Map = View_Map;
+View_Map.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "Map");
 class View_BossRoom extends UIBase_1.UIBase {
-    outline;
-    Default;
-    Hover;
-    Down;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "BossRoom");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -133,4 +122,5 @@ class View_BossRoom extends UIBase_1.UIBase {
     }
 }
 exports.View_BossRoom = View_BossRoom;
+View_BossRoom.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Map", "BossRoom");
 //# sourceMappingURL=ModTheSpire_Map.js.map

@@ -1,16 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ViewComponent_HealthBar = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
 class ViewComponent_HealthBar {
-    progress;
-    _CacheWidth = 0;
-    _Background;
-    _Middle;
-    _Bar;
-    _Value;
-    _FirstSet = false;
+    constructor(progress) {
+        this.progress = progress;
+        this._CacheWidth = 0;
+        this._FirstSet = false;
+        this._Middle = this.progress.GetChild("Middle");
+        this._Bar = this.progress.GetChild("bar");
+        this._Middle.width = this._Bar.width;
+        this._Background = this.progress.GetChild("Background");
+        this._Value = this.Max;
+        this.ResetCachePosition();
+    }
     get Max() {
         return this.progress.max;
     }
@@ -47,15 +51,6 @@ class ViewComponent_HealthBar {
     }
     Visible(visible) {
         this.progress.visible = visible;
-    }
-    constructor(progress) {
-        this.progress = progress;
-        this._Middle = this.progress.GetChild("Middle");
-        this._Bar = this.progress.GetChild("bar");
-        this._Middle.width = this._Bar.width;
-        this._Background = this.progress.GetChild("Background");
-        this._Value = this.Max;
-        this.ResetCachePosition();
     }
     ResetCachePosition() {
         this._CacheWidth = Mathf_1.Mathf.Clamp(this._Middle.width, 0, this._Background.width);

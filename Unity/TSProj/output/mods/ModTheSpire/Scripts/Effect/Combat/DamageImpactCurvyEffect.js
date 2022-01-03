@@ -1,30 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DamageImpactCurvyEffect = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-const Color_1 = require("../../DataDefine/Color");
-const UIHelper_1 = require("../../UI/UIHelper");
-const AbstractEffect_1 = require("../AbstractEffect");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+var Color_1 = require("../../DataDefine/Color");
+var UIHelper_1 = require("../../UI/UIHelper");
+var AbstractEffect_1 = require("../AbstractEffect");
 class DamageImpactCurvyEffect extends AbstractEffect_1.AbstractEffect {
-    _X;
-    _Y;
-    _Color;
-    Loader;
-    _Interval;
-    _SpeedStart;
-    _SpeedTarget;
-    _Speed;
-    _WaveIntensity;
-    _WaveSpeed;
-    _Rotation;
-    _Scale = 1;
     constructor(_X, _Y, _Color = Color_1.default.Goldenrod) {
         super();
         this._X = _X;
         this._Y = _Y;
         this._Color = _Color;
+        this._Scale = 1;
         this.Loader = UIHelper_1.default.CreateGLoader();
         this.Loader.url = "Vfx/combat/strikeLine3";
         this._Interval = Mathf_1.Mathf.RandomRange(0.8, 1.1);

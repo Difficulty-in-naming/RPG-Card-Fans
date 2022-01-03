@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HexaghostOrb = void 0;
-const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-const UIHelper_1 = require("../../../../UI/UIHelper");
+var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+var UIHelper_1 = require("../../../../UI/UIHelper");
 class HexaghostOrb {
-    _X;
-    _Y;
-    Loader;
     constructor(_X, _Y, _Index) {
         this._X = _X;
         this._Y = _Y;

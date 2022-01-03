@@ -1,14 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GainPowerEffect = void 0;
-const csharp_1 = require("csharp");
-const UIHelper_1 = require("../UI/UIHelper");
-const AbstractEffect_1 = require("./AbstractEffect");
+var csharp_1 = require("csharp");
+var UIHelper_1 = require("../UI/UIHelper");
+var AbstractEffect_1 = require("./AbstractEffect");
 class GainPowerEffect extends AbstractEffect_1.AbstractEffect {
-    Loader;
-    Interval = 2;
     constructor(power, silent = false) {
         super();
+        this.Interval = 2;
         this.Loader = UIHelper_1.default.CreateGLoader();
         this.Loader.url = power.Icon;
         this.Loader.blendMode = csharp_1.FairyGUI.BlendMode.Add;

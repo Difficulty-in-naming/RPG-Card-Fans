@@ -2,18 +2,10 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_RightButton = exports.View_LeftButton = exports.View_ConfirmButton = exports.View_NoButton = exports.View_YesButton = exports.View_Input = exports.View_CancelButton = exports.View_Animation = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_Animation extends UIBase_1.UIBase {
-    Container;
-    Fall;
-    Rise;
-    ScaleToZero;
-    ScaleToNormal;
-    FadeIn;
-    FadeOut;
-    static Url = new ViewInfo_1.ViewInfo("Common", "Animation");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -46,12 +38,8 @@ class View_Animation extends UIBase_1.UIBase {
     }
 }
 exports.View_Animation = View_Animation;
+View_Animation.Url = new ViewInfo_1.ViewInfo("Common", "Animation");
 class View_CancelButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    t2;
-    Enter;
-    static Url = new ViewInfo_1.ViewInfo("Common", "CancelButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -81,9 +69,8 @@ class View_CancelButton extends UIBase_1.UIBase {
     }
 }
 exports.View_CancelButton = View_CancelButton;
+View_CancelButton.Url = new ViewInfo_1.ViewInfo("Common", "CancelButton");
 class View_Input extends UIBase_1.UIBase {
-    Input;
-    static Url = new ViewInfo_1.ViewInfo("Common", "Input");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -110,10 +97,8 @@ class View_Input extends UIBase_1.UIBase {
     }
 }
 exports.View_Input = View_Input;
+View_Input.Url = new ViewInfo_1.ViewInfo("Common", "Input");
 class View_YesButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("Common", "YesButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -141,10 +126,8 @@ class View_YesButton extends UIBase_1.UIBase {
     }
 }
 exports.View_YesButton = View_YesButton;
+View_YesButton.Url = new ViewInfo_1.ViewInfo("Common", "YesButton");
 class View_NoButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("Common", "NoButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -172,12 +155,8 @@ class View_NoButton extends UIBase_1.UIBase {
     }
 }
 exports.View_NoButton = View_NoButton;
+View_NoButton.Url = new ViewInfo_1.ViewInfo("Common", "NoButton");
 class View_ConfirmButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    t2;
-    Enter;
-    static Url = new ViewInfo_1.ViewInfo("Common", "ConfirmButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -207,10 +186,8 @@ class View_ConfirmButton extends UIBase_1.UIBase {
     }
 }
 exports.View_ConfirmButton = View_ConfirmButton;
+View_ConfirmButton.Url = new ViewInfo_1.ViewInfo("Common", "ConfirmButton");
 class View_LeftButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("Common", "LeftButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -238,10 +215,8 @@ class View_LeftButton extends UIBase_1.UIBase {
     }
 }
 exports.View_LeftButton = View_LeftButton;
+View_LeftButton.Url = new ViewInfo_1.ViewInfo("Common", "LeftButton");
 class View_RightButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("Common", "RightButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -269,4 +244,5 @@ class View_RightButton extends UIBase_1.UIBase {
     }
 }
 exports.View_RightButton = View_RightButton;
+View_RightButton.Url = new ViewInfo_1.ViewInfo("Common", "RightButton");
 //# sourceMappingURL=Common.js.map

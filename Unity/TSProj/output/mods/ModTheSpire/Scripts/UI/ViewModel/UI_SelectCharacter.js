@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_SelectCharacter = void 0;
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const DungeonManager_1 = require("../../DungeonManager");
-const EffectKit_1 = require("../../Effect/EffectKit");
-const FadeScreenEffect_1 = require("../../Effect/FadeScreenEffect");
-const ShakeScreen_1 = require("../../Effect/ShakeScreen");
-const ModTheSpire_SelectCharacter_1 = require("../../Gen/View/ModTheSpire_SelectCharacter");
-const PlayerInfo_1 = require("../../Unit/Character/PlayerInfo");
-const UI_BottomScene_1 = require("./UI_BottomScene");
-const UI_SelectGameMode_1 = require("./UI_SelectGameMode");
-const UI_Title_1 = require("./UI_Title");
-const UI_TopBar_1 = require("./UI_TopBar");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var DungeonManager_1 = require("../../DungeonManager");
+var EffectKit_1 = require("../../Effect/EffectKit");
+var FadeScreenEffect_1 = require("../../Effect/FadeScreenEffect");
+var ShakeScreen_1 = require("../../Effect/ShakeScreen");
+var ModTheSpire_SelectCharacter_1 = require("../../Gen/View/ModTheSpire_SelectCharacter");
+var PlayerInfo_1 = require("../../Unit/Character/PlayerInfo");
+var UI_BottomScene_1 = require("./UI_BottomScene");
+var UI_SelectGameMode_1 = require("./UI_SelectGameMode");
+var UI_Title_1 = require("./UI_Title");
+var UI_TopBar_1 = require("./UI_TopBar");
 class UI_SelectCharacter extends ModTheSpire_SelectCharacter_1.View_SelectCharacter {
     OnEnable(...args) {
         let selectGameMode = UI_SelectGameMode_1.UI_SelectGameMode.GetInstance();

@@ -1,22 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscardGlowEffect = void 0;
-const csharp_1 = require("csharp");
-const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-const Color_1 = require("../DataDefine/Color");
-const FileHelper_1 = require("../FileHelper");
-const UIHelper_1 = require("../UI/UIHelper");
-const AbstractEffect_1 = require("./AbstractEffect");
+var csharp_1 = require("csharp");
+var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+var Color_1 = require("../DataDefine/Color");
+var FileHelper_1 = require("../FileHelper");
+var UIHelper_1 = require("../UI/UIHelper");
+var AbstractEffect_1 = require("./AbstractEffect");
 class DiscardGlowEffect extends AbstractEffect_1.AbstractEffect {
-    IsAbove;
-    Interval = Mathf_1.Mathf.RandomRange(0.4, 0.9);
-    Vy = -Mathf_1.Mathf.RandomRange(30, 60);
-    Vr = Mathf_1.Mathf.RandomRange(-180, 180);
-    Loader;
     constructor(IsAbove) {
         super();
         this.IsAbove = IsAbove;
+        this.Interval = Mathf_1.Mathf.RandomRange(0.4, 0.9);
+        this.Vy = -Mathf_1.Mathf.RandomRange(30, 60);
+        this.Vr = Mathf_1.Mathf.RandomRange(-180, 180);
         this.Loader = UIHelper_1.default.CreateGLoader();
         let color = Color_1.default.DiscardColor.Clone();
         let darkness = Mathf_1.Mathf.RandomRange(0.1, 0.4);

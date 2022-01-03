@@ -4,14 +4,10 @@ exports.LocalizationProperty = void 0;
 /********************************
   该脚本是自动生成的请勿手动修改
 *********************************/
-const PathHelper_1 = require("../../../../../Core/Utils/PathHelper");
-const ConfigAssetManager_1 = require("../../../../../Core/Module/Config/ConfigAssetManager");
-const Settings_1 = require("../../../../../Core/Settings");
+var PathHelper_1 = require("../../../../../Core/Utils/PathHelper");
+var ConfigAssetManager_1 = require("../../../../../Core/Module/Config/ConfigAssetManager");
+var Settings_1 = require("../../../../../Core/Settings");
 class LocalizationProperty {
-    // Id
-    Id;
-    // 中文
-    Chinese;
     static Read(id) {
         // @ts-ignore
         let dirName = __dirname;

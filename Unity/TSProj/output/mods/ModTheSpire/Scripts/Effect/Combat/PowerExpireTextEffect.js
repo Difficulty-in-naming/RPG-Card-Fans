@@ -1,27 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PowerExpireTextEffect = void 0;
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const Color_1 = require("../../DataDefine/Color");
-const DungeonManager_1 = require("../../DungeonManager");
-const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-const LocalSettings_1 = require("../../Saves/LocalSettings");
-const AbstractEffect_1 = require("../AbstractEffect");
-const FlyingSpikeEffect_1 = require("./FlyingSpikeEffect");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var Color_1 = require("../../DataDefine/Color");
+var DungeonManager_1 = require("../../DungeonManager");
+var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+var LocalSettings_1 = require("../../Saves/LocalSettings");
+var AbstractEffect_1 = require("../AbstractEffect");
+var FlyingSpikeEffect_1 = require("./FlyingSpikeEffect");
 class PowerExpireTextEffect extends AbstractEffect_1.AbstractEffect {
-    X;
-    Y;
-    msg;
-    icon;
-    Interval = 2;
-    SpikeEffectTriggered = false;
-    TextEffect;
     constructor(X, Y, msg, icon) {
         super();
         this.X = X;
         this.Y = Y;
         this.msg = msg;
         this.icon = icon;
+        this.Interval = 2;
+        this.SpikeEffectTriggered = false;
         this.TextEffect = ModTheSpire_Effect_1.View_PowerExpireTextEffect.CreateInstance();
         this.TextEffect.GetTransition("t0").Play();
     }

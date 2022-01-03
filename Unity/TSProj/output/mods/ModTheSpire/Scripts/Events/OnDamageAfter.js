@@ -2,10 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OnDamageAfter = void 0;
 class OnDamageAfter {
-    info;
-    source;
-    target;
-    static Id = "OnDamageAfter";
     constructor(info, source, target) {
         this.info = info;
         this.source = source;
@@ -13,4 +9,5 @@ class OnDamageAfter {
     }
 }
 exports.OnDamageAfter = OnDamageAfter;
+OnDamageAfter.Id = "OnDamageAfter";
 //# sourceMappingURL=OnDamageAfter.js.map

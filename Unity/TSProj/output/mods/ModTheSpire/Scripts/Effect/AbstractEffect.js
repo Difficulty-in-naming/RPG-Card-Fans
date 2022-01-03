@@ -1,15 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AbstractEffect = void 0;
-const EffectKit_1 = require("./EffectKit");
+var EffectKit_1 = require("./EffectKit");
 class AbstractEffect {
-    Duration = 0;
-    IsDone = false;
+    constructor() {
+        this.Duration = 0;
+        this.IsDone = false;
+        this.order = EffectKit_1.EffectOrder.MID;
+    }
     Update() { }
     ;
     Dispose() { }
     ;
-    order = EffectKit_1.EffectOrder.MID;
 }
 exports.AbstractEffect = AbstractEffect;
 //# sourceMappingURL=AbstractEffect.js.map

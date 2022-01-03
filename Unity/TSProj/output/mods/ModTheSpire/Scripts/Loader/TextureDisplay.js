@@ -2,16 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextureDisplay = void 0;
 class TextureDisplay {
-    Bounds;
-    Rotation;
-    ScaleX;
-    ScaleY;
-    Self;
-    SortingOrder;
-    Visible;
-    X;
-    Y;
-    Color;
     Dispose() {
     }
     SetAnimation(animation) {
@@ -32,10 +22,6 @@ class TextureDisplay {
     }
     PlayStagger() {
     }
-    FlipX;
-    FlipY;
-    HealthComponent;
-    UnitComponent;
     AddAnimation(animation, loop) {
     }
     GetHitBox() {

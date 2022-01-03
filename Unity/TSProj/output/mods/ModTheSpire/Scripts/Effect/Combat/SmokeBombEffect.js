@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SmokeBombEffect = void 0;
-const SoundMaster_1 = require("../../Audio/SoundMaster");
-const DungeonManager_1 = require("../../DungeonManager");
-const AbstractEffect_1 = require("../AbstractEffect");
-const SmokeBlurEffect_1 = require("./SmokeBlurEffect");
+var SoundMaster_1 = require("../../Audio/SoundMaster");
+var DungeonManager_1 = require("../../DungeonManager");
+var AbstractEffect_1 = require("../AbstractEffect");
+var SmokeBlurEffect_1 = require("./SmokeBlurEffect");
 class SmokeBombEffect extends AbstractEffect_1.AbstractEffect {
-    X;
-    Y;
     constructor(X, Y) {
         super();
         this.X = X;

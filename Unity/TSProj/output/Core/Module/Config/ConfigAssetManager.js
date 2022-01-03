@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConfigAssetManager = void 0;
-const csharp_1 = require("csharp");
+var csharp_1 = require("csharp");
 class ConfigAssetManager {
-    static KeyValue = new Map();
     static Load(uuid, path) {
         let json = null;
         try {
@@ -44,4 +43,5 @@ class ConfigAssetManager {
     }
 }
 exports.ConfigAssetManager = ConfigAssetManager;
+ConfigAssetManager.KeyValue = new Map();
 //# sourceMappingURL=ConfigAssetManager.js.map

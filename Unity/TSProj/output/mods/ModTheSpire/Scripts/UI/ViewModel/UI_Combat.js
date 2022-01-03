@@ -1,18 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_Combat = void 0;
-const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-const DiscardGlowEffect_1 = require("../../Effect/DiscardGlowEffect");
-const EffectKit_1 = require("../../Effect/EffectKit");
-const ExhaustPileParticle_1 = require("../../Effect/ExhaustPileParticle");
-const GameDeckGlowEffect_1 = require("../../Effect/GameDeckGlowEffect");
-const ModTheSpire_Combat_1 = require("../../Gen/View/ModTheSpire_Combat");
-const LocalSettings_1 = require("../../Saves/LocalSettings");
+var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+var DiscardGlowEffect_1 = require("../../Effect/DiscardGlowEffect");
+var EffectKit_1 = require("../../Effect/EffectKit");
+var ExhaustPileParticle_1 = require("../../Effect/ExhaustPileParticle");
+var GameDeckGlowEffect_1 = require("../../Effect/GameDeckGlowEffect");
+var ModTheSpire_Combat_1 = require("../../Gen/View/ModTheSpire_Combat");
+var LocalSettings_1 = require("../../Saves/LocalSettings");
 class UI_Combat extends ModTheSpire_Combat_1.View_Combat {
-    mEnergyVfxTimer = 0;
-    mDeckVfx = new Array();
-    mDiscardVfx = new Array();
-    mDiscardVfx2 = new Array();
+    constructor() {
+        super(...arguments);
+        this.mEnergyVfxTimer = 0;
+        this.mDeckVfx = new Array();
+        this.mDiscardVfx = new Array();
+        this.mDiscardVfx2 = new Array();
+    }
     OnInit(...args) {
         this.EndTurnButton2.visible = false;
     }

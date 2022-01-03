@@ -1,11 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DamageModification = exports.WrapDamage = void 0;
-const DamageType_1 = require("./DamageType");
+var DamageType_1 = require("./DamageType");
 class WrapDamage {
-    Source;
-    Damage;
-    Type;
     constructor(Source, Damage, Type) {
         this.Source = Source;
         this.Damage = Damage;
@@ -14,19 +11,19 @@ class WrapDamage {
 }
 exports.WrapDamage = WrapDamage;
 class DamageModification {
-    Damage;
     constructor(Damage) {
         this.Damage = Damage;
     }
 }
 exports.DamageModification = DamageModification;
 class DamageInfo {
-    //伤害来源单位
-    Unit;
-    //原始伤害
-    Origin;
-    //伤害修改列表
-    Modify = new Array();
+    constructor(unit, damage, type = DamageType_1.DamageType.NORMAL) {
+        //伤害修改列表
+        this.Modify = new Array();
+        this.Unit = unit;
+        this.Origin = new WrapDamage(unit, damage, type);
+        this.Modify.push(new DamageModification(this.Origin));
+    }
     //伤害类型
     get DamageType() {
         return this.Modify.last().Damage.Type;
@@ -36,11 +33,6 @@ class DamageInfo {
         let num = 0;
         this.Modify.forEach(t1 => num += t1.Damage.Damage);
         return num;
-    }
-    constructor(unit, damage, type = DamageType_1.DamageType.NORMAL) {
-        this.Unit = unit;
-        this.Origin = new WrapDamage(unit, damage, type);
-        this.Modify.push(new DamageModification(this.Origin));
     }
     AddModify(damage) {
         this.Modify.push(new DamageModification(damage));

@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EffectOrder = void 0;
-const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
 class EffectKit {
-    static inst;
+    constructor() {
+        this.AsyncEffect = new Array();
+        this.SyncEffect = new Array();
+    }
     static Inst() {
         if (!EffectKit.inst) {
             EffectKit.inst = new EffectKit();
         }
         return EffectKit.inst;
     }
-    waiting;
-    AsyncEffect = new Array();
-    SyncEffect = new Array();
     Play(effect, sync = true) {
         if (sync)
             this.SyncEffect.push(effect);

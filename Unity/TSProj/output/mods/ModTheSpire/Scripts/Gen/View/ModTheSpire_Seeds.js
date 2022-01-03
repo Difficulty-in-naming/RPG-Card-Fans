@@ -2,14 +2,10 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_Seeds = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_Seeds extends UIBase_1.UIBase {
-    Input;
-    Yes;
-    No;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Seeds", "Seeds");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -38,4 +34,5 @@ class View_Seeds extends UIBase_1.UIBase {
     }
 }
 exports.View_Seeds = View_Seeds;
+View_Seeds.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Seeds", "Seeds");
 //# sourceMappingURL=ModTheSpire_Seeds.js.map

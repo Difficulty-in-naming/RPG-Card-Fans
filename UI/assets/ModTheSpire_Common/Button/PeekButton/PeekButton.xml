@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,128" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0">
+    <action type="play_transition" fromPage="" toPage="2" transition="normal"/>
+    <action type="play_transition" fromPage="" toPage="4" transition="over"/>
+    <action type="play_transition" fromPage="" toPage="5" transition="selected"/>
+  </controller>
+  <displayList>
+    <image id="n0_kmbw" name="n0" src="kmbw2r" fileName="Button/PeekButton/peek_button.png" xy="0,0"/>
+    <image id="n1_kmbw" name="n1" src="kmbw2r" fileName="Button/PeekButton/peek_button.png" xy="0,0" blend="add"/>
+  </displayList>
+  <Button mode="Check"/>
+  <transition name="over">
+    <item time="0" type="Alpha" target="n1_kmbw" value="0.4"/>
+    <item time="0" type="Visible" target="n1_kmbw" value="true"/>
+  </transition>
+  <transition name="normal">
+    <item time="0" type="Visible" target="n1_kmbw" value="false"/>
+  </transition>
+  <transition name="selected">
+    <item time="0" type="Alpha" target="n1_kmbw" value="1"/>
+    <item time="0" type="Color" target="n1_kmbw" value="#99ffff"/>
+    <item time="0" type="Visible" target="n1_kmbw" value="true"/>
+  </transition>
+</component>

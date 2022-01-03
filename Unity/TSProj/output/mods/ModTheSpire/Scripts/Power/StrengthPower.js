@@ -1,15 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StrengthPower = void 0;
-const DamageInfo_1 = require("../DataDefine/DamageInfo");
-const FileHelper_1 = require("../FileHelper");
-const Localization_1 = require("../Gen/DB/Localization");
-const StringHelper_1 = require("../StringHelper");
-const AbstractPower_1 = require("./AbstractPower");
+var DamageInfo_1 = require("../DataDefine/DamageInfo");
+var FileHelper_1 = require("../FileHelper");
+var Localization_1 = require("../Gen/DB/Localization");
+var StringHelper_1 = require("../StringHelper");
+var AbstractPower_1 = require("./AbstractPower");
 class StrengthPower extends AbstractPower_1.AbstractPower {
-    Name = Localization_1.LocalizationProperty.Read("能力-力量");
-    Icon = FileHelper_1.default.FormatPath("Powers/strength.png");
-    Id = "Strength";
+    constructor() {
+        super(...arguments);
+        this.Name = Localization_1.LocalizationProperty.Read("能力-力量");
+        this.Icon = FileHelper_1.default.FormatPath("Powers/strength.png");
+        this.Id = "Strength";
+    }
     get Type() { return this.Amount >= 0 ? AbstractPower_1.PowerType.Buff : AbstractPower_1.PowerType.Debuff; }
     GetDescription(...args) {
         if (this.Amount >= 0) {

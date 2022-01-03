@@ -2,21 +2,10 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_BottomScene = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_BottomScene extends UIBase_1.UIBase {
-    midWall;
-    mod1;
-    mod2;
-    CeilingMod6;
-    CeilingMod1;
-    CeilingMod4;
-    CeilingMod5;
-    CeilingMod3;
-    CeilingMod2;
-    DustHolder;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_BottomScene", "BottomScene");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -52,4 +41,5 @@ class View_BottomScene extends UIBase_1.UIBase {
     }
 }
 exports.View_BottomScene = View_BottomScene;
+View_BottomScene.Url = new ViewInfo_1.ViewInfo("ModTheSpire_BottomScene", "BottomScene");
 //# sourceMappingURL=ModTheSpire_BottomScene.js.map

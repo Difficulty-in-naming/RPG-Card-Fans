@@ -1,19 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UIKit = void 0;
-const csharp_1 = require("csharp");
-const IOHelper_1 = require("../../Utils/IOHelper");
+var csharp_1 = require("csharp");
+var IOHelper_1 = require("../../Utils/IOHelper");
 class UIKit {
-    static inst;
-    static Inst() {
-        if (!UIKit.inst) {
-            UIKit.inst = new UIKit();
-        }
-        return UIKit.inst;
-    }
-    Stack = new Array();
-    UIMap = new Map();
     constructor() {
+        this.Stack = new Array();
+        this.UIMap = new Map();
         csharp_1.FairyGUI.GRoot.inst.SetContentScaleFactor(1920, 1080, csharp_1.FairyGUI.UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
         csharp_1.FairyGUI.UIConfig.defaultFont = "SourceHanSansHWSC-Bold";
         //暂时屏蔽TMP
@@ -26,6 +19,12 @@ class UIKit {
             //找到了UI文件.开始加载
             csharp_1.Panthea.UI.UIKit.LoadPackage(value);
         });
+    }
+    static Inst() {
+        if (!UIKit.inst) {
+            UIKit.inst = new UIKit();
+        }
+        return UIKit.inst;
     }
     CreateInstance(view) {
         let obj = csharp_1.FairyGUI.UIPackage.CreateObject(view.pkg, view.name);

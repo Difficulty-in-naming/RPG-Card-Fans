@@ -1,14 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RemoveSpecificPowerAction = void 0;
-const Async_1 = require("../../../../../Core/Async");
-const DungeonManager_1 = require("../../DungeonManager");
-const PowerExpireTextEffect_1 = require("../../Effect/Combat/PowerExpireTextEffect");
-const AbstractGameAction_1 = require("../AbstractGameAction");
+var Async_1 = require("../../../../../Core/Async");
+var DungeonManager_1 = require("../../DungeonManager");
+var PowerExpireTextEffect_1 = require("../../Effect/Combat/PowerExpireTextEffect");
+var AbstractGameAction_1 = require("../AbstractGameAction");
 class RemoveSpecificPowerAction extends AbstractGameAction_1.default {
-    Target;
-    Source;
-    power;
     constructor(Target, Source, power) {
         super();
         this.Target = Target;

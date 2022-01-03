@@ -1,12 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SlimeBoss_Model = void 0;
-const DungeonManager_1 = require("../../../../DungeonManager");
-const FileHelper_1 = require("../../../../FileHelper");
-const SpineLoader_1 = require("../../../../Loader/SpineLoader");
-const MonsterInfo_1 = require("../../MonsterInfo");
+var DungeonManager_1 = require("../../../../DungeonManager");
+var FileHelper_1 = require("../../../../FileHelper");
+var SpineLoader_1 = require("../../../../Loader/SpineLoader");
+var MonsterInfo_1 = require("../../MonsterInfo");
 class SlimeBoss_Model extends MonsterInfo_1.MonsterInfo {
-    static Id = "SlimeBoss";
     get MaxHealth() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 9)
             return 150;
@@ -21,4 +20,5 @@ class SlimeBoss_Model extends MonsterInfo_1.MonsterInfo {
     }
 }
 exports.SlimeBoss_Model = SlimeBoss_Model;
+SlimeBoss_Model.Id = "SlimeBoss";
 //# sourceMappingURL=SlimeBoss_Model.js.map

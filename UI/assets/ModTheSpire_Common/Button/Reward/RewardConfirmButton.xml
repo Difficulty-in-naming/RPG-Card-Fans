@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="293,74" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over" selected="0">
+    <action type="play_transition" fromPage="" toPage="2" transition="normal"/>
+    <action type="play_transition" fromPage="" toPage="3" transition="down"/>
+    <action type="play_transition" fromPage="" toPage="4" transition="over"/>
+  </controller>
+  <displayList>
+    <image id="n0_kmbw" name="n0" src="kmbw2t" fileName="Button/Reward/takeAll.png" xy="0,0"/>
+    <image id="n1_kmbw" name="n1" src="kmbw2t" fileName="Button/Reward/takeAll.png" xy="0,0" alpha="0.3" blend="add"/>
+    <text id="n3_kmbw" name="title" xy="107,14" pivot="0.5,0.5" size="76,49" font="ui://rduitwm2kefb3" fontSize="36" color="#fef5e1" align="center" vAlign="middle" strokeColor="#3f3f3f" strokeSize="0.2" faceDilate="0.15" text="确认">
+      <relation target="" sidePair="bottom-bottom"/>
+    </text>
+  </displayList>
+  <Button/>
+  <transition name="normal">
+    <item time="0" type="Color" target="n0_kmbw" value="#ffffff"/>
+    <item time="0" type="Visible" target="n1_kmbw" value="false"/>
+  </transition>
+  <transition name="over">
+    <item time="0" type="Color" target="n0_kmbw" value="#ffffff"/>
+    <item time="0" type="Visible" target="n1_kmbw" value="true"/>
+  </transition>
+  <transition name="down">
+    <item time="0" type="Color" target="n0_kmbw" value="#bfbfbf"/>
+    <item time="0" type="Visible" target="n1_kmbw" value="false"/>
+  </transition>
+</component>

@@ -1,14 +1,11 @@
 "use strict";
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.View_RightButton = exports.View_LeftButton = exports.View_ConfirmButton = exports.View_NoButton = exports.View_YesButton = exports.View_Input = exports.View_CancelButton = exports.View_MainMenuButton = exports.View_Animation = exports.View_Card = exports.View_Tooltips = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+exports.View_RightButton = exports.View_LeftButton = exports.View_ConfirmButton = exports.View_NoButton = exports.View_YesButton = exports.View_Input = exports.View_RewardConfirmButton = exports.View_PeekButton = exports.View_HandCardSelectScreen = exports.View_CancelButton = exports.View_MainMenuButton = exports.View_Animation = exports.View_Card = exports.View_Tooltips = void 0;
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_Tooltips extends UIBase_1.UIBase {
-    Name;
-    Desc;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Tooltips");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -36,18 +33,8 @@ class View_Tooltips extends UIBase_1.UIBase {
     }
 }
 exports.View_Tooltips = View_Tooltips;
+View_Tooltips.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Tooltips");
 class View_Card extends UIBase_1.UIBase {
-    c1;
-    Bg;
-    icon;
-    Frame;
-    Banner;
-    Orb;
-    Type;
-    Desc;
-    Energy;
-    Name;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Card");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -83,15 +70,8 @@ class View_Card extends UIBase_1.UIBase {
     }
 }
 exports.View_Card = View_Card;
+View_Card.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Card");
 class View_Animation extends UIBase_1.UIBase {
-    Container;
-    Fall;
-    Rise;
-    ScaleToZero;
-    ScaleToNormal;
-    FadeIn;
-    FadeOut;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Animation");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -124,9 +104,8 @@ class View_Animation extends UIBase_1.UIBase {
     }
 }
 exports.View_Animation = View_Animation;
+View_Animation.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Animation");
 class View_MainMenuButton extends UIBase_1.UIBase {
-    Hover;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "MainMenuButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -153,12 +132,8 @@ class View_MainMenuButton extends UIBase_1.UIBase {
     }
 }
 exports.View_MainMenuButton = View_MainMenuButton;
+View_MainMenuButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "MainMenuButton");
 class View_CancelButton extends UIBase_1.UIBase {
-    t0;
-    Hover;
-    Up;
-    Enter;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "CancelButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -188,9 +163,101 @@ class View_CancelButton extends UIBase_1.UIBase {
     }
 }
 exports.View_CancelButton = View_CancelButton;
+View_CancelButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "CancelButton");
+class View_HandCardSelectScreen extends UIBase_1.UIBase {
+    static CreatePanel(...args) {
+        let url = this.Url.toString() + "." + this.name;
+        let panel = UIKit_1.UIKit.Inst().Get(url);
+        if (!panel) {
+            panel = new this;
+            UIKit_1.UIKit.Inst().CreatePanel(this.Url, panel, args);
+        }
+        return panel;
+    }
+    static CreateInstance() {
+        return UIKit_1.UIKit.Inst().CreateInstance(this.Url);
+    }
+    static GetInstance() {
+        let url = View_HandCardSelectScreen.Url.toString() + "." + (this).name;
+        return UIKit_1.UIKit.Inst().Get(url);
+    }
+    CloseMySelf() {
+        let url = View_HandCardSelectScreen.Url.toString() + "." + this.constructor.name;
+        UIKit_1.UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    Construct() {
+        this.Title = this.View.GetChild("Title");
+        this.Confirm = this.View.GetChild("Confirm");
+        this.Source = this.View.GetChild("Source");
+        this.Target = this.View.GetChild("Target");
+        this.Group = this.View.GetChild("Group");
+        this.t0 = this.View.GetTransition("t0");
+    }
+}
+exports.View_HandCardSelectScreen = View_HandCardSelectScreen;
+View_HandCardSelectScreen.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "HandCardSelectScreen");
+class View_PeekButton extends UIBase_1.UIBase {
+    static CreatePanel(...args) {
+        let url = this.Url.toString() + "." + this.name;
+        let panel = UIKit_1.UIKit.Inst().Get(url);
+        if (!panel) {
+            panel = new this;
+            UIKit_1.UIKit.Inst().CreatePanel(this.Url, panel, args);
+        }
+        return panel;
+    }
+    static CreateInstance() {
+        return UIKit_1.UIKit.Inst().CreateInstance(this.Url);
+    }
+    static GetInstance() {
+        let url = View_PeekButton.Url.toString() + "." + (this).name;
+        return UIKit_1.UIKit.Inst().Get(url);
+    }
+    CloseMySelf() {
+        let url = View_PeekButton.Url.toString() + "." + this.constructor.name;
+        UIKit_1.UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    Construct() {
+        this.over = this.View.GetTransition("over");
+        this.normal = this.View.GetTransition("normal");
+        this.selected = this.View.GetTransition("selected");
+    }
+}
+exports.View_PeekButton = View_PeekButton;
+View_PeekButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "PeekButton");
+class View_RewardConfirmButton extends UIBase_1.UIBase {
+    static CreatePanel(...args) {
+        let url = this.Url.toString() + "." + this.name;
+        let panel = UIKit_1.UIKit.Inst().Get(url);
+        if (!panel) {
+            panel = new this;
+            UIKit_1.UIKit.Inst().CreatePanel(this.Url, panel, args);
+        }
+        return panel;
+    }
+    static CreateInstance() {
+        return UIKit_1.UIKit.Inst().CreateInstance(this.Url);
+    }
+    static GetInstance() {
+        let url = View_RewardConfirmButton.Url.toString() + "." + (this).name;
+        return UIKit_1.UIKit.Inst().Get(url);
+    }
+    CloseMySelf() {
+        let url = View_RewardConfirmButton.Url.toString() + "." + this.constructor.name;
+        UIKit_1.UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    Construct() {
+        this.normal = this.View.GetTransition("normal");
+        this.over = this.View.GetTransition("over");
+        this.down = this.View.GetTransition("down");
+    }
+}
+exports.View_RewardConfirmButton = View_RewardConfirmButton;
+View_RewardConfirmButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "RewardConfirmButton");
 class View_Input extends UIBase_1.UIBase {
-    Input;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Input");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -217,10 +284,8 @@ class View_Input extends UIBase_1.UIBase {
     }
 }
 exports.View_Input = View_Input;
+View_Input.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "Input");
 class View_YesButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "YesButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -248,10 +313,8 @@ class View_YesButton extends UIBase_1.UIBase {
     }
 }
 exports.View_YesButton = View_YesButton;
+View_YesButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "YesButton");
 class View_NoButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "NoButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -279,12 +342,8 @@ class View_NoButton extends UIBase_1.UIBase {
     }
 }
 exports.View_NoButton = View_NoButton;
+View_NoButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "NoButton");
 class View_ConfirmButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    t2;
-    Enter;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "ConfirmButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -314,10 +373,8 @@ class View_ConfirmButton extends UIBase_1.UIBase {
     }
 }
 exports.View_ConfirmButton = View_ConfirmButton;
+View_ConfirmButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "ConfirmButton");
 class View_LeftButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "LeftButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -345,10 +402,8 @@ class View_LeftButton extends UIBase_1.UIBase {
     }
 }
 exports.View_LeftButton = View_LeftButton;
+View_LeftButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "LeftButton");
 class View_RightButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "RightButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -376,4 +431,5 @@ class View_RightButton extends UIBase_1.UIBase {
     }
 }
 exports.View_RightButton = View_RightButton;
+View_RightButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Common", "RightButton");
 //# sourceMappingURL=ModTheSpire_Common.js.map

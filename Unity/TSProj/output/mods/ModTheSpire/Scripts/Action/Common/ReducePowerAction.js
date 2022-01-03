@@ -1,13 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReducePowerAction = void 0;
-const Async_1 = require("../../../../../Core/Async");
-const AbstractGameAction_1 = require("../AbstractGameAction");
+var Async_1 = require("../../../../../Core/Async");
+var AbstractGameAction_1 = require("../AbstractGameAction");
 class ReducePowerAction extends AbstractGameAction_1.default {
-    Target;
-    Source;
-    power;
-    Amount;
     constructor(Target, Source, power, Amount) {
         super();
         this.Target = Target;

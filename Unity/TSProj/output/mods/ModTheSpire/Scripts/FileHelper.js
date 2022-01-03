@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.basePath = void 0;
-const ConfigAssetManager_1 = require("../../../Core/Module/Config/ConfigAssetManager");
-const csharp_1 = require("csharp");
+var ConfigAssetManager_1 = require("../../../Core/Module/Config/ConfigAssetManager");
+var csharp_1 = require("csharp");
 // @ts-ignore
 exports.basePath = "mods/ModTheSpire/";
 class FileHelper {

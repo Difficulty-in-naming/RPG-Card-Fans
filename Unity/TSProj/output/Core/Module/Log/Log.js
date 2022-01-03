@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Log = void 0;
-const csharp_1 = require("csharp");
+var csharp_1 = require("csharp");
 var LogType;
 (function (LogType) {
     LogType[LogType["Error"] = 0] = "Error";
@@ -11,7 +11,6 @@ var LogType;
     LogType[LogType["Exception"] = 4] = "Exception";
 })(LogType || (LogType = {}));
 class Log {
-    static unity_log_target = null;
     static getPrintStack(type, showStack, ...args) {
         let message = '';
         for (let i = 0; i < args.length; i++) {
@@ -76,4 +75,5 @@ class Log {
     }
 }
 exports.Log = Log;
+Log.unity_log_target = null;
 //# sourceMappingURL=Log.js.map

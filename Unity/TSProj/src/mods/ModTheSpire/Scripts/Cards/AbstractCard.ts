@@ -4,9 +4,11 @@ import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
 import { UIKit } from "../../../../Core/Module/UI/UIKit";
 import DungeonManager from "../DungeonManager";
 import { View_Card } from "../Gen/View/ModTheSpire_Common";
+import { S } from "../global";
 import { StringHelper } from "../StringHelper";
 import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../Unit/Monster/AbstractMonster";
+import { CardViewPool } from "./CardViewPool";
 
 export default abstract class AbstractCard
 {
@@ -44,7 +46,7 @@ export default abstract class AbstractCard
     //特殊值
     public Magic : number = 0;
     public get View(): FairyGUI.GComponent {
-        
+        return S.CommonCardViewPool.Pop();
     }
     public constructor()
     {

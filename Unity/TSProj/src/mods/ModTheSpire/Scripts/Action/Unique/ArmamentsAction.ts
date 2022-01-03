@@ -28,9 +28,24 @@ export class ArmamentsAction extends AbstractGameAction {
                 if(item.CanUpgrade()){
                     item.Upgrade();
                     item.SuperFlash();
-                    item.ApplyPowers();
                 }
             })
+            return true;
+        }
+        this.p.Hand.Group.forEach((item)=>{
+            if(!item.CanUpgrade()){
+                this.cannotUpgrade.push(item);
+            }
+        });
+        if(this.p.Hand.Group.length - this.cannotUpgrade.length == 1)
+        {
+            this.p.Hand.Group.forEach((item)=>{
+                if(item.CanUpgrade()){
+                    item.Upgrade();
+                    item.SuperFlash();
+                }
+            });
+            return true;
         }
     } 
 }

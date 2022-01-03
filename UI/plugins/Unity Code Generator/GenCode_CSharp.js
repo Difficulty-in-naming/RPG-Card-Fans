@@ -19,10 +19,9 @@ function genCode(handler) {
     let getMemberByName = settings.getMemberByName;
     let classCnt = classes.Count;
     let writer = new CodeWriter_1.default();
-    writer.writeln('import {UI} from "../../../../../Core/Module/UI/UIKit";');
-    writer.writeln('import ViewInfo = UI.ViewInfo;');
-    writer.writeln('import UIKit = UI.UIKit;');
-    writer.writeln('import UIBase = UI.UIBase;');
+    writer.writeln('import {UIKit} from "../../../../../Core/Module/UI/UIKit";');
+    writer.writeln('import { UIBase } from "../../../../../Core/Module/UI/UIBase";');
+    writer.writeln('import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";');
     writer.writeln('import {FairyGUI} from "csharp";');
     for (let i = 0; i < classCnt; i++) {
         let classInfo = classes.get_Item(i);

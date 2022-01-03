@@ -2,18 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardGroupType = exports.CardGroup = void 0;
 class CardGroup {
-    Type;
-    Group = new Array();
-    Queued = new Array();
-    InHand = new Array();
+    constructor(Type) {
+        this.Type = Type;
+        this.Group = new Array();
+        this.Queued = new Array();
+        this.InHand = new Array();
+    }
     get length() {
         return this.Group.length;
     }
     forEach(callbackfn, thisArg) {
         this.Group.forEach(callbackfn);
-    }
-    constructor(Type) {
-        this.Type = Type;
     }
 }
 exports.CardGroup = CardGroup;

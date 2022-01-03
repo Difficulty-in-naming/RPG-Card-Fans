@@ -1,17 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BiteEffect = void 0;
-const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-const Color_1 = require("../../DataDefine/Color");
-const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-const AbstractEffect_1 = require("../AbstractEffect");
+var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+var Color_1 = require("../../DataDefine/Color");
+var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+var AbstractEffect_1 = require("../AbstractEffect");
 class BiteEffect extends AbstractEffect_1.AbstractEffect {
-    X;
-    Y;
-    color;
-    Instance;
-    Top;
-    Bot;
     constructor(X, Y, color) {
         super();
         this.X = X;

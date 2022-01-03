@@ -2,14 +2,10 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_SelectCharacter = exports.View_CharacterButton = void 0;
-const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_CharacterButton extends UIBase_1.UIBase {
-    t0;
-    t1;
-    t2;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_SelectCharacter", "CharacterButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -38,30 +34,8 @@ class View_CharacterButton extends UIBase_1.UIBase {
     }
 }
 exports.View_CharacterButton = View_CharacterButton;
+View_CharacterButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_SelectCharacter", "CharacterButton");
 class View_SelectCharacter extends UIBase_1.UIBase {
-    ShowAdvance;
-    CharBg;
-    Cancel;
-    SelectCharTitle;
-    CharList;
-    Confirm;
-    IsAdvanced;
-    AdvanceTip;
-    Left;
-    Right;
-    Level;
-    AdvanceLevelGroup;
-    AdvanceSettings;
-    CharName;
-    Health;
-    Gold;
-    CharDesc;
-    Relic;
-    RelicName;
-    RelicDesc;
-    UnlockTip;
-    CharGroup;
-    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_SelectCharacter", "SelectCharacter");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -109,4 +83,5 @@ class View_SelectCharacter extends UIBase_1.UIBase {
     }
 }
 exports.View_SelectCharacter = View_SelectCharacter;
+View_SelectCharacter.Url = new ViewInfo_1.ViewInfo("ModTheSpire_SelectCharacter", "SelectCharacter");
 //# sourceMappingURL=ModTheSpire_SelectCharacter.js.map

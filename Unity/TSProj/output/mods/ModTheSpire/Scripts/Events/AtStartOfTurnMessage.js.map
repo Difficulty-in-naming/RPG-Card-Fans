@@ -1,1 +1,1 @@
-{"version":3,"file":"AtStartOfTurnMessage.js","sourceRoot":"","sources":["../../../../../src/mods/ModTheSpire/Scripts/Events/AtStartOfTurnMessage.ts"],"names":[],"mappings":";;;AAEA,MAAa,oBAAoB;IACtB,MAAM,CAAU,EAAE,GAAG,sBAAsB,CAAC;;AADvD,oDAEC"}
+{"version":3,"file":"AtStartOfTurnMessage.js","sourceRoot":"","sources":["../../../../../src/mods/ModTheSpire/Scripts/Events/AtStartOfTurnMessage.ts"],"names":[],"mappings":";;;AAEA,MAAa,oBAAoB;;AAAjC,oDAEC;AAD0B,uBAAE,GAAG,sBAAsB,CAAC"}
