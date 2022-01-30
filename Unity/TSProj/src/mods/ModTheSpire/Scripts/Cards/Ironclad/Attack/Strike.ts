@@ -28,8 +28,9 @@ export default class Strike extends AbstractCard
     Upgrade()
     {
         if(!this.IsUpgraded()){
-            this.Name += "+";
-            this.Damage += 3;
+            this.UpgradeName();
+            this.UpgradeDamage(3);
+            this.UpgradeTimes++;
         }
     }
 }

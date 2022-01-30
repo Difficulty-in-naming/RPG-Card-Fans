@@ -1,14 +1,12 @@
 ﻿import { FairyGUI } from "csharp";
 import { UuidTool } from "uuid-tool";
 import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
-import { UIKit } from "../../../../Core/Module/UI/UIKit";
 import DungeonManager from "../DungeonManager";
 import { View_Card } from "../Gen/View/ModTheSpire_Common";
-import { S } from "../global";
 import { StringHelper } from "../StringHelper";
 import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../Unit/Monster/AbstractMonster";
-import { CardViewPool } from "./CardViewPool";
+import { S } from '../global';
 
 export default abstract class AbstractCard
 {
@@ -54,7 +52,7 @@ export default abstract class AbstractCard
     }
     public Use(player : AbstractPlayer, monster : AbstractMonster){}
     //可不可以升级
-    public abstract CanUpgrade() : boolean;
+    public CanUpgrade() : boolean{return true;}
     public Upgrade(){}
     public Clone(newUuid : boolean = true) : this
     {
@@ -79,6 +77,24 @@ export default abstract class AbstractCard
 
     public SuperFlash(){
         this.View.GetTransition("SuperFlash").Play();
+    }
+    public UpgradeName(){
+        this.Name += "+";
+    }
+
+    public UpgradeDamage(amount : number){
+        this.Damage += amount;
+    }
+
+    public UpgradeMagic(amount : number){
+        this.Magic += amount;
+    }
+
+    public UpgradeBlock(amount : number){
+        this.Block += amount;
+    }
+    public UpgradeEnergy(amount : number){
+        this.Energy += amount;
     }
 }
 

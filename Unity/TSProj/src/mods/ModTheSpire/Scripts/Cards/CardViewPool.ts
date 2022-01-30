@@ -1,6 +1,4 @@
 import { FairyGUI } from "csharp";
-import { UIKit } from '../../../../Core/Module/UI/UIKit';
-import { ViewInfo } from "../../../../Core/Module/UI/ViewInfo";
 
 export class CardViewPool
 {

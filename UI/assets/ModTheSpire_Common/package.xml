@@ -72,6 +72,7 @@
     <image id="kmbw2u" name="takeAllUsed.png" path="/Button/Reward/" scale9grid="0,0,-219,-182"/>
     <component id="kmbw2v" name="RewardConfirmButton.xml" path="/Button/Reward/" exported="true"/>
     <image id="kmbw2w" name="upgradeArrow.png" path="/Card/"/>
+    <component id="k1fp2x" name="Component1.xml" path="/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

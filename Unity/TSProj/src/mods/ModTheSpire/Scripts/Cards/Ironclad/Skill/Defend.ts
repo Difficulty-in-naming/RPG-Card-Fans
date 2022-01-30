@@ -26,8 +26,8 @@ export class Defend extends AbstractCard
     Upgrade()
     {
         if(!this.IsUpgraded()){
-            this.Name += "+";
-            this.Block += 3;
+            this.UpgradeName();
+            this.UpgradeBlock(3);
         }
     }
 }

@@ -5,30 +5,35 @@ import { LocalizationProperty } from "../../../Gen/DB/Localization";
 import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
 import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
+import { ApplyPowerAction } from '../../../Action/Common/ApplyPowerAction';
+import { BarricadePower } from '../../../Power/BarricadePower';
 
-export class Armaments extends AbstractCard
+export class Barricade extends AbstractCard
 {
     Color: CardColor = CardColor.RED;
-    Desc: string = LocalizationProperty.Read("武装描述");
-    Icon: string = FileHelper.FormatPath("cards/red/skill/armaments.png");
-    Name: string = LocalizationProperty.Read("武装");
-    Rarity: CardRarity = CardRarity.COMMON;
+    Desc: string = LocalizationProperty.Read("壁垒描述");
+    Icon: string = FileHelper.FormatPath("cards/red/power/barricade.png");
+    Name: string = LocalizationProperty.Read("壁垒");
+    Rarity: CardRarity = CardRarity.RARE;
     Target: CardTarget = CardTarget.SELF;
-    Type: CardType = CardType.SKILL;
-    Block = 5;
-    Energy = 1;
+    Type: CardType = CardType.POWER;
+    Energy = 3;
     
     Use(player: AbstractPlayer, monster: AbstractMonster) {
         super.Use(player, monster);
-        this.AddToBot(new GainBlockAction(player,this.Block));
-        this.AddToBot(new ArmamentsAction(player));//TODO UI未完成
+        if(player.GetPower(BarricadePower.PowerID))
+        {
+            return;
+        }
+        this.AddToBot(new ApplyPowerAction(player,player,new BarricadePower()))
     }
 
     Upgrade()
     {
         if(!this.IsUpgraded()){
             this.UpgradeName();
-            this.UpgradeBlock(3);
+            this.UpgradeEnergy(-1);
+            this.UpgradeTimes++;
         }
     }
 }
