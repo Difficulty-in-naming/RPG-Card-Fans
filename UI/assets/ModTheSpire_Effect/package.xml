@@ -23,6 +23,7 @@
     <image id="lqlw37" name="blockL.png" path="/Texture/" scale9grid="0,0,-27,-9"/>
     <image id="lqlw38" name="cleave.png" path="/Texture/" exported="true"/>
     <component id="lqlw39" name="CleaveEffect.xml" path="/Combat/" exported="true"/>
+    <image id="i28a3a" name="blurDot.png" path="/Texture/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>
