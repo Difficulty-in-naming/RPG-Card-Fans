@@ -110,11 +110,13 @@ export class Exordium extends AbstractDungeon{
             pool.push(GremlinFat_Model.Id);
             pool.push(GremlinTsundere_Model.Id);
             pool.push(GremlinWizard_Model.Id);
-            while(result.length <= 4){
-                let index = Mathf.RandomRange(0,pool.length - 1,this.MiscRng);
+            for(let i = 0;i<5;i++){
+                let index = Math.trunc(Mathf.RandomRange(0,pool.length - 1,this.MiscRng));
+                let index2 = Math.trunc(Mathf.RandomRange(0,position.length - 1,this.MiscRng));
                 let key = pool[index];
+                let getPos = position[index2];
                 pool.splice(index,1);
-                let getPos = position[result.length];
+                position.splice(index,1);
                 if(key == GremlinWarrior_Model.Id){
                     result.push(new GremlinWarrior_Model(getPos.x,getPos.y));
                 }else if(key == GremlinThief_Model.Id){
@@ -150,11 +152,12 @@ export class Exordium extends AbstractDungeon{
             pool.push(SpikeSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model.Id);
-            while(result.length <= 4){
-                let index = Mathf.RandomRange(0,pool.length - 1,this.MiscRng);
+            for(let i = 0;i<5;i++){
+                let index = Math.trunc(Mathf.RandomRange(0,pool.length - 1,this.MiscRng));
+                let getPos = position[index];
                 let key = pool[index];
                 pool.splice(index,1);
-                let getPos = position[result.length];
+                position.splice(index,1);
                 if(key == SpikeSlime_S_Model.Id){
                     result.push(new SpikeSlime_S_Model(getPos.x,getPos.y));
                 }else if(key == AcidSlime_S_Model.Id){
@@ -210,7 +213,7 @@ export class Exordium extends AbstractDungeon{
         let pool = new Array<MonsterInfo>();
         pool.push(new JawWorm_Model(0,0));
         pool.push(new Cultist_Model(0,0));
-        return pool[Mathf.RandomRange(0,pool.length - 1,this.MiscRng)];
+        return pool[Math.trunc(Mathf.RandomRange(0,pool.length,this.MiscRng))];
     }
     
     private GetStrongMonster() : MonsterInfo{
@@ -219,7 +222,7 @@ export class Exordium extends AbstractDungeon{
         pool.push(new BlueSlaver_Model(0,0));
         pool.push(new RedSlaver_Model(0,0));
         pool.push(new FungiBeast_Model(0,0));
-        return pool[Mathf.RandomRange(0,pool.length - 1,this.MiscRng)];
+        return pool[Math.trunc(Mathf.RandomRange(0,pool.length,this.MiscRng))];
     }
 
     private GetLouse(array: MonsterInfo[]) {

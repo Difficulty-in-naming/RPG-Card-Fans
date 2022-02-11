@@ -1,10 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TimeKit_1 = require("../../Utils/TimeKit");
+const AbstractGameAction_1 = require("../../../mods/ModTheSpire/Scripts/Action/AbstractGameAction");
+const GainBlockAction_1 = require("../../../mods/ModTheSpire/Scripts/Action/Common/GainBlockAction");
+const HealAction_1 = require("../../../mods/ModTheSpire/Scripts/Action/Common/HealAction");
+const UseCardAction_1 = require("../../../mods/ModTheSpire/Scripts/Action/Utility/UseCardAction");
+const TimeKit_1 = require("../../Utils/TimeKit");
 class QueueMessageKit {
-    constructor() {
-        this.list = new Array();
-    }
+    waiting;
+    list = new Array();
+    currentRunning;
     AddToBottom(func) {
         this.list.splice(0, 0, func);
     }
@@ -13,6 +17,14 @@ class QueueMessageKit {
     }
     Remove(func) {
         this.list = this.list.filter(item => item == func);
+    }
+    ClearPostCombatActions() {
+        for (let index = this.list.length - 1; index >= 0; index--) {
+            const e = this.list[index];
+            if (e instanceof HealAction_1.default || e instanceof GainBlockAction_1.default || e instanceof UseCardAction_1.UseCardAction || e.Type == AbstractGameAction_1.ActionType.DAMAGE)
+                continue;
+            this.list.splice(index, 1);
+        }
     }
     async Update() {
         if (this.waiting && this.currentRunning) {

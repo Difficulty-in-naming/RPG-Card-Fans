@@ -1,14 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class SaveKit {
-    constructor() {
-        this.basePath = "ModTheSpire/";
-    }
+    static inst;
     static Inst() {
         if (!SaveKit.inst) {
             SaveKit.inst = new SaveKit();
         }
         return SaveKit.inst;
+    }
+    basePath = "ModTheSpire/";
+    constructor() {
     }
     Save() {
     }

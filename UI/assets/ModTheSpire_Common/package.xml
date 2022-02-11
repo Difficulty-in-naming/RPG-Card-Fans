@@ -40,9 +40,6 @@
     <image id="gh7d1m" name="bg_power_colorless.png" path="/Card/Texture/" exported="true"/>
     <image id="gh7d1n" name="bg_skill_colorless.png" path="/Card/Texture/" exported="true"/>
     <image id="gh7d1o" name="bg_attack_colorless.png" path="/Card/Texture/" exported="true"/>
-    <image id="gh7d1p" name="barricade.png" path="/Card/Texture/" exported="true"/>
-    <image id="gh7d1q" name="anger.png" path="/Card/Texture/" exported="true"/>
-    <image id="gh7d1r" name="armaments.png" path="/Card/Texture/" exported="true"/>
     <image id="gh7d1s" name="frame_power_common.png" path="/Card/Texture/" exported="true"/>
     <image id="gh7d1t" name="banner_common.png" path="/Card/Texture/" exported="true"/>
     <image id="gh7d1u" name="card_red_orb.png" path="/Card/Texture/" exported="true"/>
@@ -73,6 +70,30 @@
     <component id="kmbw2v" name="RewardConfirmButton.xml" path="/Button/Reward/" exported="true"/>
     <image id="kmbw2w" name="upgradeArrow.png" path="/Card/"/>
     <component id="k1fp2x" name="Component1.xml" path="/"/>
+    <image id="joqm2y" name="bg_attack_red.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm2z" name="card_blue_orb.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm30" name="card_green_orb.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm31" name="card_purple_orb.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm32" name="bg_skill_green.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm33" name="bg_attack_green.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm34" name="bg_attack_purple.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm35" name="bg_power_blue.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm36" name="bg_power_gray.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm37" name="bg_power_green.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm38" name="banner_uncommon.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm39" name="bg_attack_blue.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3a" name="bg_power_purple.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3b" name="bg_power_red.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3c" name="bg_skill_blue.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3d" name="bg_skill_red.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3f" name="frame_attack_rare.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3g" name="frame_attack_uncommon.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3h" name="frame_skill_rare.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3i" name="banner_rare.png" path="/Card/Texture/"/>
+    <image id="joqm3k" name="frame_power_rare.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3q" name="bg_skill_purple.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3r" name="card_colorless_orb.png" path="/Card/Texture/" exported="true"/>
+    <image id="joqm3u" name="strike.png" path="/Card/Texture/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

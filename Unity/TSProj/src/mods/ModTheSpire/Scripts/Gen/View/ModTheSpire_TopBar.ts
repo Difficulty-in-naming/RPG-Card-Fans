@@ -1,9 +1,9 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import {UIKit} from "../../../../../Core/Module/UI/UIKit";
-import {FairyGUI} from "csharp";
 import { UIBase } from "../../../../../Core/Module/UI/UIBase";
 import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";
+import {FairyGUI} from "csharp";
 export class View_KeySlots extends UIBase
 {
     public Green : FairyGUI.GImage;
@@ -281,5 +281,42 @@ export class View_Settings extends UIBase
     {
         this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
         this.t1 = this.View.GetTransition("t1") as FairyGUI.Transition;
+    }
+}
+export class View_HeartCom extends UIBase
+{
+    public button : FairyGUI.Controller;
+    public Heal : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_TopBar","HeartCom")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_HeartCom.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_HeartCom.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.button = this.View.GetController("button") as FairyGUI.Controller;
+        this.Heal = this.View.GetTransition("Heal") as FairyGUI.Transition;
     }
 }

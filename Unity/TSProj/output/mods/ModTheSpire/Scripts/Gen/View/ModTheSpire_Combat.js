@@ -1,11 +1,18 @@
 "use strict";
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.View_Block = exports.View_DisplayName = exports.View_HealthBar = exports.View_UnitWrap = exports.View_EnergyOrb = exports.View_Button2 = exports.View_Button = exports.View_Combat = void 0;
-var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+exports.View_Block = exports.View_DisplayName = exports.View_Card = exports.View_XuanZhongKuang = exports.View_HealthBar = exports.View_UnitWrap = exports.View_EnergyOrb = exports.View_Button2 = exports.View_Button = exports.View_Combat = void 0;
+const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_Combat extends UIBase_1.UIBase {
+    Deck;
+    Discard;
+    Exhaust;
+    EndTurnButton1;
+    EndTurnButton2;
+    ReticleCorner;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Combat");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -33,11 +40,13 @@ class View_Combat extends UIBase_1.UIBase {
         this.Exhaust = this.View.GetChild("Exhaust");
         this.EndTurnButton1 = this.View.GetChild("EndTurnButton1");
         this.EndTurnButton2 = this.View.GetChild("EndTurnButton2");
+        this.ReticleCorner = this.View.GetChild("ReticleCorner");
     }
 }
 exports.View_Combat = View_Combat;
-View_Combat.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Combat");
 class View_Button extends UIBase_1.UIBase {
+    EndTurn;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Button");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -64,8 +73,10 @@ class View_Button extends UIBase_1.UIBase {
     }
 }
 exports.View_Button = View_Button;
-View_Button.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Button");
 class View_Button2 extends UIBase_1.UIBase {
+    LightOver;
+    EndTurn;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Button2");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -93,8 +104,19 @@ class View_Button2 extends UIBase_1.UIBase {
     }
 }
 exports.View_Button2 = View_Button2;
-View_Button2.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Button2");
 class View_EnergyOrb extends UIBase_1.UIBase {
+    IsEnable;
+    Layer1;
+    Layer1D;
+    Layer2;
+    Layer2D;
+    Layer3;
+    Layer3D;
+    Layer4;
+    Layer4D;
+    Layer5;
+    Layer5D;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "EnergyOrb");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -131,8 +153,23 @@ class View_EnergyOrb extends UIBase_1.UIBase {
     }
 }
 exports.View_EnergyOrb = View_EnergyOrb;
-View_EnergyOrb.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "EnergyOrb");
 class View_UnitWrap extends UIBase_1.UIBase {
+    HPVisible;
+    Bounds;
+    ModelLoader;
+    ImageLoader;
+    HealthBar;
+    PowerList;
+    DisplayName;
+    SlowAttack;
+    FastAttack;
+    Jump;
+    Hop;
+    FastShake;
+    SlowShake;
+    Stagger;
+    DisplayName_2;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "UnitWrap");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -173,8 +210,14 @@ class View_UnitWrap extends UIBase_1.UIBase {
     }
 }
 exports.View_UnitWrap = View_UnitWrap;
-View_UnitWrap.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "UnitWrap");
 class View_HealthBar extends UIBase_1.UIBase {
+    Block;
+    Outside;
+    Background;
+    Middle;
+    DisplayText;
+    Block_2;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "HealthBar");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -206,8 +249,87 @@ class View_HealthBar extends UIBase_1.UIBase {
     }
 }
 exports.View_HealthBar = View_HealthBar;
-View_HealthBar.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "HealthBar");
+class View_XuanZhongKuang extends UIBase_1.UIBase {
+    LeftTopShadow;
+    LeftBottomShadow;
+    RightTopShadow;
+    RightBottomShadow;
+    LeftTop;
+    LeftBottom;
+    RightTop;
+    RightBottom;
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "选中框");
+    static CreatePanel(...args) {
+        let url = this.Url.toString() + "." + this.name;
+        let panel = UIKit_1.UIKit.Inst().Get(url);
+        if (!panel) {
+            panel = new this;
+            UIKit_1.UIKit.Inst().CreatePanel(this.Url, panel, args);
+        }
+        return panel;
+    }
+    static CreateInstance() {
+        return UIKit_1.UIKit.Inst().CreateInstance(this.Url);
+    }
+    static GetInstance() {
+        let url = View_XuanZhongKuang.Url.toString() + "." + (this).name;
+        return UIKit_1.UIKit.Inst().Get(url);
+    }
+    CloseMySelf() {
+        let url = View_XuanZhongKuang.Url.toString() + "." + this.constructor.name;
+        UIKit_1.UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    Construct() {
+        this.LeftTopShadow = this.View.GetChild("LeftTopShadow");
+        this.LeftBottomShadow = this.View.GetChild("LeftBottomShadow");
+        this.RightTopShadow = this.View.GetChild("RightTopShadow");
+        this.RightBottomShadow = this.View.GetChild("RightBottomShadow");
+        this.LeftTop = this.View.GetChild("LeftTop");
+        this.LeftBottom = this.View.GetChild("LeftBottom");
+        this.RightTop = this.View.GetChild("RightTop");
+        this.RightBottom = this.View.GetChild("RightBottom");
+        this.t0 = this.View.GetTransition("t0");
+    }
+}
+exports.View_XuanZhongKuang = View_XuanZhongKuang;
+class View_Card extends UIBase_1.UIBase {
+    Position;
+    Main;
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Card");
+    static CreatePanel(...args) {
+        let url = this.Url.toString() + "." + this.name;
+        let panel = UIKit_1.UIKit.Inst().Get(url);
+        if (!panel) {
+            panel = new this;
+            UIKit_1.UIKit.Inst().CreatePanel(this.Url, panel, args);
+        }
+        return panel;
+    }
+    static CreateInstance() {
+        return UIKit_1.UIKit.Inst().CreateInstance(this.Url);
+    }
+    static GetInstance() {
+        let url = View_Card.Url.toString() + "." + (this).name;
+        return UIKit_1.UIKit.Inst().Get(url);
+    }
+    CloseMySelf() {
+        let url = View_Card.Url.toString() + "." + this.constructor.name;
+        UIKit_1.UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    Construct() {
+        this.Position = this.View.GetController("Position");
+        this.Main = this.View.GetChild("Main");
+        this.t0 = this.View.GetTransition("t0");
+    }
+}
+exports.View_Card = View_Card;
 class View_DisplayName extends UIBase_1.UIBase {
+    Enter;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "DisplayName");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -234,8 +356,10 @@ class View_DisplayName extends UIBase_1.UIBase {
     }
 }
 exports.View_DisplayName = View_DisplayName;
-View_DisplayName.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "DisplayName");
 class View_Block extends UIBase_1.UIBase {
+    Block;
+    t0;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Block");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -263,5 +387,4 @@ class View_Block extends UIBase_1.UIBase {
     }
 }
 exports.View_Block = View_Block;
-View_Block.Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Block");
 //# sourceMappingURL=ModTheSpire_Combat.js.map

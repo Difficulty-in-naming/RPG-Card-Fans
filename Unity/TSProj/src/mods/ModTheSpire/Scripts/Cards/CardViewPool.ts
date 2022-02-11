@@ -9,7 +9,7 @@ export class CardViewPool
    private numberReserved: number;
 
    private func : ()=>FairyGUI.GComponent;
-   constructor(reserve: number = 5,callback: () => FairyGUI.GComponent)
+   constructor(callback: () => FairyGUI.GComponent)
    {
        this.activeList = new Array<FairyGUI.GComponent>();
        this.reserveList = new Array<FairyGUI.GComponent>();
@@ -17,7 +17,6 @@ export class CardViewPool
        this.numberActive = 0;
        this.numberReserved = 0;
        this.func = callback;
-       this.initializeReserve(reserve);
    }
 
    private initializeReserve(reserve: number)

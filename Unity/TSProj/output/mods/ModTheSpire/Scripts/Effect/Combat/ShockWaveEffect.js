@@ -1,14 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShockWaveType = exports.ShockWaveEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../../DungeonManager");
-var AbstractEffect_1 = require("../AbstractEffect");
-var ShakeScreen_1 = require("../ShakeScreen");
-var BlurWaveChaoticEffect_1 = require("./BlurWaveChaoticEffect");
-var BlurWaveEffect_1 = require("./BlurWaveEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../../DungeonManager");
+const AbstractEffect_1 = require("../AbstractEffect");
+const ShakeScreen_1 = require("../ShakeScreen");
+const BlurWaveChaoticEffect_1 = require("./BlurWaveChaoticEffect");
+const BlurWaveEffect_1 = require("./BlurWaveEffect");
 class ShockWaveEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    _Color;
+    _ShockWaveType;
     constructor(_X, _Y, _Color, _ShockWaveType) {
         super();
         this._X = _X;

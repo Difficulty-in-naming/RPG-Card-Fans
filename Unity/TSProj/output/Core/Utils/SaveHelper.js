@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var core = require("csharp");
+const core = require("csharp");
 class SaveHelper {
     static Save(obj, path) {
         let serialize = JSON.stringify(obj);

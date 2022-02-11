@@ -1,19 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Rect_1 = require("../../../../Core/Define/Rect");
-var DungeonManager_1 = require("../DungeonManager");
-var TintEffect_1 = require("../Effect/TintEffect");
-var PostModifyBlockMessage_1 = require("../Events/PostModifyBlockMessage");
-var PowerRemovedMessage_1 = require("../Events/PowerRemovedMessage");
-var PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+const Rect_1 = require("../../../../Core/Define/Rect");
+const DungeonManager_1 = require("../DungeonManager");
+const HealEffect_1 = require("../Effect/Combat/HealEffect");
+const TintEffect_1 = require("../Effect/TintEffect");
+const OnHealAfterMessage_1 = require("../Events/OnHealAfterMessage");
+const OnHealBeforeMessage_1 = require("../Events/OnHealBeforeMessage");
+const OnHealToFullHpMessage_1 = require("../Events/OnHealToFullHpMessage");
+const PostModifyBlockMessage_1 = require("../Events/PostModifyBlockMessage");
+const PowerRemovedMessage_1 = require("../Events/PowerRemovedMessage");
+const PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+const UI_TopBar_1 = require("../UI/ViewModel/UI_TopBar");
 class AbstractCreature {
-    constructor() {
-        //能力列表
-        this.Powers = new Array();
-        //region重载Display内容
-        //颜色过渡动画
-        this.TintEffect = new TintEffect_1.default();
-    }
+    //最大生命值
+    _MaxHealth;
+    //生命值
+    _Health;
+    //是否是自己操作的角色
+    IsPlayer;
+    //正在死亡
+    IsDying;
+    //已经死亡
+    IsDead;
+    //能力列表
+    Powers = new Array();
+    //格挡
+    _Block;
+    //是否正在离场
+    IsEscaping;
+    //是否已经离场
+    IsEscaped;
     //是否离场或死亡
     get IsDeadOrEscaped() {
         return this.IsEscaped && this.IsDead;
@@ -41,6 +57,10 @@ class AbstractCreature {
         this._Block = msg.block;
         DungeonManager_1.default.MessageManager.Send(PostModifyBlockMessage_1.PostModifyBlockMessage.Id, new PostModifyBlockMessage_1.PostModifyBlockMessage(msg.block));
     }
+    //region重载Display内容
+    //颜色过渡动画
+    TintEffect = new TintEffect_1.default();
+    DisplayObject;
     get X() { return this.DisplayObject.X; }
     set X(value) { this.DisplayObject.X = value; }
     get Y() { return this.DisplayObject.Y; }
@@ -81,6 +101,31 @@ class AbstractCreature {
     //受到伤害
     Damage(info) { }
     ;
+    //回復生命
+    Heal(amount, showEffect = true) {
+        if (DungeonManager_1.default.Inst.IsEndless && this.IsPlayer && DungeonManager_1.default.Inst.Player.HasBlight("FullBelly") && (amount /= 2) < 1) {
+            amount = 1;
+        }
+        if (this.IsDying) {
+            return;
+        }
+        var message = new OnHealBeforeMessage_1.OnHealBeforeMessage(this, amount);
+        DungeonManager_1.default.MessageManager.Send(OnHealBeforeMessage_1.OnHealBeforeMessage.Id, message);
+        this.Health += message.Amount;
+        if (this.Health > this.MaxHealth) {
+            this.Health = this.MaxHealth;
+            DungeonManager_1.default.MessageManager.Send(OnHealToFullHpMessage_1.OnHealToFullHpMessage.Id, message);
+        }
+        if (amount > 0) {
+            if (showEffect && this.IsPlayer) {
+                UI_TopBar_1.default.GetInstance().View.GetChild("Health").asCom.GetChild("n0").asCom.GetTransition("Heal").Play();
+                let x = this.DisplayObject.Bounds.x + this.DisplayObject.Bounds.width / 2;
+                let y = this.DisplayObject.Bounds.y + this.DisplayObject.Bounds.height;
+                DungeonManager_1.default.EffectManager.Play(new HealEffect_1.HealEffect(x, y, message.Amount));
+            }
+        }
+        DungeonManager_1.default.MessageManager.Send(OnHealAfterMessage_1.OnHealAfterMessage.Id, message);
+    }
     //获取Power的实例
     GetPower(id) {
         let result = this.Powers.find((t1) => t1.Id == id);

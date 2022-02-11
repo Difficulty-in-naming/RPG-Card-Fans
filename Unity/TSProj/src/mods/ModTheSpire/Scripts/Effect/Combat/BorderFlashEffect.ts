@@ -10,7 +10,7 @@ export class BorderFlashEffect extends AbstractEffect{
         this.Loader = <FairyGUI.GComponent>View_BorderFlashEffect.CreateInstance();
         this.Loader.GetTransition("t0").Play();
         let image = this.Loader.GetChild("n0").asImage;
-        image.color = _Color.UnityColor();
+        image.color = _Color.UnityColor;
         if(_Additive == true)
             image.blendMode = FairyGUI.BlendMode.Add;
     }

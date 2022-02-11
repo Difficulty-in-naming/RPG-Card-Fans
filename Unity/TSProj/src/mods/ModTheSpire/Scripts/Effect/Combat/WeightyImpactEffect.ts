@@ -1,7 +1,7 @@
 ﻿import { FairyGUI } from 'csharp';
-import TWEEN from '@tweenjs/tween.js';
 import { Mathf } from '../../../../../Core/Module/Math/Mathf';
 import { TimeKit } from '../../../../../Core/Utils/TimeKit';
+import TWEEN from '../../../../../ThirdParty/@tweenjs/tween';
 import { SoundMaster } from '../../Audio/SoundMaster';
 import Color from '../../DataDefine/Color';
 import DungeonManager from '../../DungeonManager';
@@ -35,7 +35,7 @@ export class WeightyImpactEffect extends AbstractEffect{
         this.Loader[i].SetPivot(0.5,0.5,true);
         this.Loader[i].SetPosition(this._X,this._InitY,0);
         this.Loader[i].rotation = Mathf.RandomRange(-1,1);
-        this.Loader[i].color = this._Color.UnityColor();
+        this.Loader[i].color = this._Color.UnityColor;
         this.Loader[i].alpha = 0.6;
         this.Loader[i].TweenFade(0,0.2).SetEase(FairyGUI.EaseType.SineInOut).SetDelay(0.8);
         this.Loader[i].TweenFade(0.2,0.8).SetEase(FairyGUI.EaseType.QuadInOut);

@@ -5,9 +5,7 @@ import Color from "../DataDefine/Color";
 import FileHelper from "../FileHelper";
 import UIHelper from "../UI/UIHelper";
 import { AbstractEffect } from "./AbstractEffect";
-import TWEEN from '@tweenjs/tween.js';
-
-
+import * as TWEEN from "../../../../ThirdParty/@tweenjs/tween"
 export class TitleDustEffect extends AbstractEffect{
     private readonly Vx : number;
     private readonly Vy : number;
@@ -20,7 +18,7 @@ export class TitleDustEffect extends AbstractEffect{
     public constructor() {
         super();
         this.Loader = UIHelper.CreateGLoader();
-        this.Loader.url = FileHelper.FormatPath(`Vfx/env/smoke${Mathf.Floor(Mathf.RandomRange(1,4))}.png`);
+        this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf.Floor(Mathf.RandomRange(1,4));
         this.Loader.SetPivot(0.5,0.5,true);
         this.Loader.touchable = false;
         this.Scale = Mathf.RandomRange(6,8);
@@ -38,7 +36,7 @@ export class TitleDustEffect extends AbstractEffect{
         b = tmp;
         a = 255;
         this.Vc = new Color(r,g,b,a);
-        this.Loader.color = this.Vc.UnityColor();
+        this.Loader.color = this.Vc.UnityColor;
         this.Loader.alpha = 0.2;
         this.Dur = Mathf.Floor(Mathf.RandomRange(2000,3000));
     }

@@ -59,9 +59,8 @@ public class PuertsLoader : ILoader{
     public string ReadFile(string filePath,out string debugPath){
         bool isPuerts = IsPuertsModule(filePath);
         debugPath = isPuerts ? GetPuertsModulePath(filePath) : PathUnified(debugRoot, filePath);
-
         // Puerts 本身调用的 Js 存放在 Resource 目录下，所以可以直接用 Resources.Load 获取
-        return isPuerts ? Resources.Load<TextAsset>(filePath).text : File.ReadAllText(debugPath);
+        return isPuerts ? Resources.Load<TextAsset>(Path.ChangeExtension(filePath,null)).text : File.ReadAllText(debugPath);
     }
 
     /// <summary>

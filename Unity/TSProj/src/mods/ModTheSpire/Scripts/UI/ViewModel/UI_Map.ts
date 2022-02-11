@@ -48,7 +48,7 @@ export class UI_Map extends View_Map {
                     let loader = UIHelper.CreateGLoader();
                     loader.touchable = false;
                     loader.autoSize = true;
-                    loader.color = new Color(87,87,87,255).UnityColor();
+                    loader.color = new Color(87,87,87,255).UnityColor;
                     key.AddChild(loader);
                     loader.url = "ui://ModTheSpire_Map/dot1";
                     loader.SetPosition(x,y,0);

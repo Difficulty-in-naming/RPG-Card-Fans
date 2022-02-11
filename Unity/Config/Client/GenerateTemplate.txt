@@ -11,16 +11,12 @@ export class [@Class]Property
 	public [@Name] : [@Type];}
 	public static Read(id : [@KeyType]) : [@Class]Property
 	{
-		// @ts-ignore
-		let dirName = __dirname;
-		return ConfigAssetManager.Read(PathHelper.GetModName(dirName),id);
+		return ConfigAssetManager.Read("ModTheSpire_[@Class]",id);
 	}
 
 	public static ReadDict() : Map<[@KeyType], [@Class]Property>
 	{
-		// @ts-ignore
-		let dirName = __dirname;
-		return ConfigAssetManager.ReadDict(PathHelper.GetModName(dirName));
+		return ConfigAssetManager.ReadDict("ModTheSpire_[@Class]");
 	}
 }
 }

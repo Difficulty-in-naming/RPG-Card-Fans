@@ -10,20 +10,53 @@
     <image id="guw12t" name="speechBubble2.png" path="/Texture/" exported="true" scale9grid="0,0,-159,-262"/>
     <component id="guw12u" name="SpeechBubble.xml" path="/Combat/" exported="true"/>
     <component id="eelv2v" name="BiteEffect.xml" path="/Combat/" exported="true"/>
-    <image id="eelv2w" name="biteTop.png" path="/Texture/"/>
-    <image id="eelv2x" name="biteBot.png" path="/Texture/"/>
-    <image id="eelv2y" name="web.png" path="/Texture/"/>
+    <image id="eelv2w" name="biteTop.png" path="/Texture/" exported="true"/>
+    <image id="eelv2x" name="biteBot.png" path="/Texture/" exported="true"/>
+    <image id="eelv2y" name="web.png" path="/Texture/" exported="true"/>
     <component id="eelv2z" name="WebParticleEffect.xml" path="/Combat/" exported="true"/>
     <component id="eelv30" name="EntangleEffect.xml" path="/Combat/" exported="true"/>
-    <image id="eelv31" name="borderGlow2.png" path="/Texture/"/>
+    <image id="eelv31" name="borderGlow2.png" path="/Texture/" exported="true"/>
     <component id="eelv32" name="BorderFlashEffect.xml" path="/Combat/" exported="true"/>
-    <image id="8vy434" name="weightyImpact.png" path="/Texture/"/>
+    <image id="8vy434" name="weightyImpact.png" path="/Texture/" exported="true"/>
     <component id="lqlw35" name="HpBlockBrokenEffect.xml" path="/Combat/" exported="true"/>
-    <image id="lqlw36" name="blockR.png" path="/Texture/" scale9grid="0,0,-28,-9"/>
-    <image id="lqlw37" name="blockL.png" path="/Texture/" scale9grid="0,0,-27,-9"/>
+    <image id="lqlw36" name="blockR.png" path="/Texture/" exported="true" scale9grid="0,0,-28,-9"/>
+    <image id="lqlw37" name="blockL.png" path="/Texture/" exported="true" scale9grid="0,0,-27,-9"/>
     <image id="lqlw38" name="cleave.png" path="/Texture/" exported="true"/>
     <component id="lqlw39" name="CleaveEffect.xml" path="/Combat/" exported="true"/>
     <image id="i28a3a" name="blurDot.png" path="/Texture/" exported="true"/>
+    <image id="o9r63b" name="strikeLine2.png" path="/Texture/" exported="true"/>
+    <image id="o9r63c" name="strikeLine3.png" path="/Texture/" exported="true"/>
+    <image id="o9r63d" name="smallBlur.png" path="/Texture/" exported="true"/>
+    <image id="o9r63e" name="wavy.png" path="/Texture/" exported="true"/>
+    <image id="o9r63f" name="bigBlur.png" path="/Texture/" exported="true"/>
+    <image id="o9r63g" name="dust1.png" path="/Texture/env/" exported="true"/>
+    <image id="o9r63h" name="dust2.png" path="/Texture/env/" exported="true"/>
+    <image id="o9r63i" name="dust3.png" path="/Texture/env/" exported="true"/>
+    <image id="o9r63j" name="dust4.png" path="/Texture/env/" exported="true"/>
+    <image id="o9r63k" name="dust5.png" path="/Texture/env/" exported="true"/>
+    <image id="o9r63l" name="dust6.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3m" name="smoke1.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3n" name="smoke2.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3o" name="smoke3.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3p" name="p5.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3q" name="p1.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3r" name="p2.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3s" name="p3.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3t" name="p4.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3u" name="p6.png" path="/Texture/ui/" exported="true"/>
+    <image id="joqm3v" name="lightFlare2.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3w" name="lightFlare1.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3x" name="dustCloud.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3y" name="fire1.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm3z" name="fire2.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm40" name="fire3.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm41" name="torch.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm42" name="death1.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm43" name="death2.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm44" name="death3.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm45" name="death4.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm46" name="death5.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm47" name="death6.png" path="/Texture/env/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

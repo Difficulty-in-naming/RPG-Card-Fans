@@ -2,13 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardViewPool = void 0;
 class CardViewPool {
-    constructor(reserve = 5, callback) {
+    activeList;
+    reserveList;
+    numberActive;
+    numberReserved;
+    func;
+    constructor(callback) {
         this.activeList = new Array();
         this.reserveList = new Array();
         this.numberActive = 0;
         this.numberReserved = 0;
         this.func = callback;
-        this.initializeReserve(reserve);
     }
     initializeReserve(reserve) {
         for (let i = 0; i < reserve; i++) {

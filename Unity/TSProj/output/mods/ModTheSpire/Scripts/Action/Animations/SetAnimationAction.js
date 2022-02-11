@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SetAnimationAction = void 0;
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class SetAnimationAction extends AbstractGameAction_1.default {
+    Owner;
+    AnimationName;
+    Type = AbstractGameAction_1.ActionType.WAIT;
     constructor(Owner, AnimationName) {
         super();
         this.Owner = Owner;
         this.AnimationName = AnimationName;
-        this.Type = AbstractGameAction_1.ActionType.WAIT;
     }
     async Update() {
         this.Owner.SetAnimation(this.AnimationName, false);

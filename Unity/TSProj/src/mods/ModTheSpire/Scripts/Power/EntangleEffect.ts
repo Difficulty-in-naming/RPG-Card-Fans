@@ -3,7 +3,8 @@ import { SoundMaster } from "../Audio/SoundMaster";
 import { CardType } from "../Cards/AbstractCard";
 import DungeonManager from "../DungeonManager";
 import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
-import { OnPreUseCardMessage } from "../Events/OnPreUseCardMessage";
+import { OnUseCardAfterMessage } from "../Events/OnUseCardAfterMessage";
+import { OnUseCardBeforeMessage } from "../Events/OnUseCardBeforeMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { StringHelper } from "../StringHelper";
@@ -21,12 +22,12 @@ export class EntanglePower extends AbstractPower{
 
     OnInit() {
         super.OnInit();
-        DungeonManager.MessageManager.Add(OnPreUseCardMessage.Id,this.PreUseCard)
+        DungeonManager.MessageManager.Add(OnUseCardBeforeMessage.Id,this.PreUseCard)
     }
     
     OnRemove() {
         super.OnRemove();
-        DungeonManager.MessageManager.Remove(OnPreUseCardMessage.Id,this.PreUseCard)
+        DungeonManager.MessageManager.Remove(OnUseCardBeforeMessage.Id,this.PreUseCard)
     }
 
     GetDescription(...args: any[]): string {
@@ -37,7 +38,7 @@ export class EntanglePower extends AbstractPower{
         SoundMaster.PlayVoice("POWER_ENTANGLED",0.05);
     }
     
-    PreUseCard(msg: OnPreUseCardMessage) {
+    PreUseCard(msg: OnUseCardBeforeMessage) {
         if(msg.Card.Type == CardType.ATTACK)
             msg.CanUse = false;
     }

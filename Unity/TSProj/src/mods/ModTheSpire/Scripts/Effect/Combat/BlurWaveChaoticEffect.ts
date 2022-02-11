@@ -1,11 +1,11 @@
 ﻿import { FairyGUI } from "csharp";
 import { Mathf } from "../../../../../Core/Module/Math/Mathf";
 import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+import TWEEN from "../../../../../ThirdParty/@tweenjs/tween";
 import Color from "../../DataDefine/Color";
 import FileHelper from "../../FileHelper";
 import UIHelper from "../../UI/UIHelper";
 import { AbstractEffect } from "../AbstractEffect";
-import TWEEN from '@tweenjs/tween.js';
 
 export class BlurWaveChaoticEffect extends AbstractEffect{
     private _stallTimer:number;
@@ -24,7 +24,7 @@ export class BlurWaveChaoticEffect extends AbstractEffect{
         this.Loader.rotation = this._rotation;
         this._scale = Mathf.RandomRange(0.5,0.9);
         this.Loader.SetPivot(0.5,0.5,true);
-        this.Loader.color = _Color.UnityColor();
+        this.Loader.color = _Color.UnityColor;
         this.Loader.alpha = 0;
         this.Loader.TweenFade(0.7,0.5).SetEase(FairyGUI.EaseType.SineInOut);
         this.Loader.TweenFade(0,1).SetEase(FairyGUI.EaseType.SineInOut).SetDelay(1.5);

@@ -1,26 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cultist_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var TalkAction_1 = require("../../../../Action/Animations/TalkAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var RitualPower_1 = require("../../../../Power/RitualPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const TalkAction_1 = require("../../../../Action/Animations/TalkAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const RitualPower_1 = require("../../../../Power/RitualPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class Cultist_ViewModel extends AbstractMonster_1.AbstractMonster {
+    talk;
+    SaidPower = false;
     constructor(monster, talk) {
         super(monster);
         this.talk = talk;
-        this.SaidPower = false;
     }
     Initialize() {
         this.DamageInfo.push(new DamageInfo_1.default(this, 6));

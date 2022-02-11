@@ -20,7 +20,7 @@ export class SpeechBubble extends AbstractEffect{
         this.SuperText = UIHelper.CreateSuperText();
         let wrap = new FairyGUI.GoWrapper(this.SuperText.gameObject);
         wrap.SetScale(100,100)
-        this.SuperText.color = Color.Gray.UnityColor();
+        this.SuperText.color = Color.Gray.UnityColor;
         this.SuperText.text = `<shake>${Msg}</shake>`;
         this.SuperText.lineSpacing = -50;
         this.SuperText.Width = 2;

@@ -1,19 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BlueSlaver_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var WeakPower_1 = require("../../../../Power/WeakPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const WeakPower_1 = require("../../../../Power/WeakPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class BlueSlaver_ViewModel extends AbstractMonster_1.AbstractMonster {
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel) {

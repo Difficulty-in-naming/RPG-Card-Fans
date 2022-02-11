@@ -1,31 +1,28 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinWizard_ViewMode = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var VFXAction_1 = require("../../../../Action/Animations/VFXAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
-var MakeTempCardInDiscardAction_1 = require("../../../../Action/Common/MakeTempCardInDiscardAction");
-var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var Dazed_1 = require("../../../../Cards/Status/Dazed");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var Color_1 = require("../../../../DataDefine/Color");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DamageType_1 = require("../../../../DataDefine/DamageType");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var BorderFlashEffect_1 = require("../../../../Effect/Combat/BorderFlashEffect");
-var ShockWaveEffect_1 = require("../../../../Effect/Combat/ShockWaveEffect");
-var SmallLaserEffect_1 = require("../../../../Effect/Combat/SmallLaserEffect");
-var ArtifactPower_1 = require("../../../../Power/ArtifactPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const VFXAction_1 = require("../../../../Action/Animations/VFXAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
+const MakeTempCardInDiscardAction_1 = require("../../../../Action/Common/MakeTempCardInDiscardAction");
+const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const Dazed_1 = require("../../../../Cards/Status/Dazed");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const Color_1 = require("../../../../DataDefine/Color");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DamageType_1 = require("../../../../DataDefine/DamageType");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const BorderFlashEffect_1 = require("../../../../Effect/Combat/BorderFlashEffect");
+const ShockWaveEffect_1 = require("../../../../Effect/Combat/ShockWaveEffect");
+const SmallLaserEffect_1 = require("../../../../Effect/Combat/SmallLaserEffect");
+const ArtifactPower_1 = require("../../../../Power/ArtifactPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class GremlinWizard_ViewMode extends AbstractMonster_1.AbstractMonster {
-    constructor() {
-        super(...arguments);
-        this._dazedAmt = 0;
-    }
+    _dazedAmt = 0;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 18) {
             this._dazedAmt = 3;

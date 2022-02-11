@@ -1,13 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AcidSlime_L_Model = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var FileHelper_1 = require("../../../../FileHelper");
-var SpineLoader_1 = require("../../../../Loader/SpineLoader");
-var SplitPower_1 = require("../../../../Power/SplitPower");
-var MonsterInfo_1 = require("../../MonsterInfo");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const FileHelper_1 = require("../../../../FileHelper");
+const SpineLoader_1 = require("../../../../Loader/SpineLoader");
+const SplitPower_1 = require("../../../../Power/SplitPower");
+const MonsterInfo_1 = require("../../MonsterInfo");
 class AcidSlime_L_Model extends MonsterInfo_1.MonsterInfo {
+    static Id = "AcidSlime_L";
+    loader;
     get InitPower() {
         return new Array(new SplitPower_1.SplitPower());
     }
@@ -25,5 +27,4 @@ class AcidSlime_L_Model extends MonsterInfo_1.MonsterInfo {
     }
 }
 exports.AcidSlime_L_Model = AcidSlime_L_Model;
-AcidSlime_L_Model.Id = "AcidSlime_L";
 //# sourceMappingURL=AcidSlime_L_Model.js.map

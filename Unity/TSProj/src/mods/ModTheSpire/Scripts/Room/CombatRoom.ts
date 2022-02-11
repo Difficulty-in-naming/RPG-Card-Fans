@@ -23,6 +23,11 @@ export class CombatRoom extends AbstractRoom
     public UsingCard : AbstractCard//点击中的卡牌.准备使用
     public Round = 1;    
     Enter(){
+        this.HandPile = new Array<AbstractCard>();
+        this.DrawPile = new Array<AbstractCard>();
+        this.ExhaustPile = new Array<AbstractCard>();
+        this.DiscardPile = new Array<AbstractCard>();
+        this.SpecialPile = new Array<AbstractCard>();
         let x = UI_BottomScene.CreatePanel();
         let top = UI_TopBar.CreatePanel();
         let combat = UI_Combat.CreatePanel();

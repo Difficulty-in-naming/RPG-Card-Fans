@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FadeScreenEffect = void 0;
-var Color_1 = require("../DataDefine/Color");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
-var tween_js_1 = require("@tweenjs/tween.js");
+const tween_1 = require("../../../../ThirdParty/@tweenjs/tween");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class FadeScreenEffect extends AbstractEffect_1.AbstractEffect {
     constructor(toDark, callback) {
         super();
@@ -14,8 +14,8 @@ class FadeScreenEffect extends AbstractEffect_1.AbstractEffect {
         let alpha = toDark ? 1 : 0;
         graph.alpha = alpha;
         graph.sortingOrder = 10;
-        graph.color = Color_1.default.Black.UnityColor();
-        let t = new tween_js_1.default.Tween({ a: alpha }).to({ a: alpha == 0 ? 1 : 0 }, 1500).easing(tween_js_1.default.Easing.Sinusoidal.InOut)
+        graph.color = Color_1.default.Black.UnityColor;
+        let t = new tween_1.default.Tween({ a: alpha }).to({ a: alpha == 0 ? 1 : 0 }, 1500).easing(tween_1.default.Easing.Sinusoidal.InOut)
             .onUpdate(object => {
             graph.alpha = object.a;
             this.IsDone = true;

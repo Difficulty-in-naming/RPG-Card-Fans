@@ -1,29 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LouseDefensive_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var VFXAction_1 = require("../../../../Action/Animations/VFXAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
-var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DamageType_1 = require("../../../../DataDefine/DamageType");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var WebEffect_1 = require("../../../../Effect/Combat/WebEffect");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var CurlUpPower_1 = require("../../../../Power/CurlUpPower");
-var WeakPower_1 = require("../../../../Power/WeakPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const VFXAction_1 = require("../../../../Action/Animations/VFXAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
+const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DamageType_1 = require("../../../../DataDefine/DamageType");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const WebEffect_1 = require("../../../../Effect/Combat/WebEffect");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const CurlUpPower_1 = require("../../../../Power/CurlUpPower");
+const WeakPower_1 = require("../../../../Power/WeakPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class LouseDefensive_ViewModel extends AbstractMonster_1.AbstractMonster {
-    constructor() {
-        super(...arguments);
-        this.IsOpen = true;
-    }
+    IsOpen = true;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 2)
             this.DamageInfo.push(new DamageInfo_1.default(this, Mathf_1.Mathf.RandomRange(6, 8, DungeonManager_1.default.Inst.CurrentDungeon.HPRng)));

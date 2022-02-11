@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var uuid_tool_1 = require("uuid-tool");
-var DungeonManager_1 = require("../DungeonManager");
+const uuid_tool_1 = require("../../../../ThirdParty/uuid-tool");
+const DungeonManager_1 = require("../DungeonManager");
 class AbstractRelic {
     //获得一份数值上完全一样的该类复制
     Clone(newUuid = true) {

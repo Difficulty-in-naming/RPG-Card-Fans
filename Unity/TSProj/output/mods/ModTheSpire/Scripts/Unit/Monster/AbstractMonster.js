@@ -1,18 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AbstractMonster = void 0;
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../../DungeonManager");
-var AbstractCreature_1 = require("../AbstractCreature");
-var tween_js_1 = require("@tweenjs/tween.js");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const tween_1 = require("../../../../../ThirdParty/@tweenjs/tween");
+const DungeonManager_1 = require("../../DungeonManager");
+const AbstractCreature_1 = require("../AbstractCreature");
 class AbstractMonster extends AbstractCreature_1.default {
+    Info;
+    MoveName;
+    Gold;
+    MoveIndex;
+    DeathTime;
+    Intent;
+    //行动历史
+    MoveHistory = new Array();
+    //伤害列表,不同难度填充的伤害内容不一样
+    DamageInfo = new Array();
     constructor(Info) {
         super();
         this.Info = Info;
-        //行动历史
-        this.MoveHistory = new Array();
-        //伤害列表,不同难度填充的伤害内容不一样
-        this.DamageInfo = new Array();
         this.DisplayObject = this.Info.Loader.Create();
         this.Initialize();
         this.RollMove();
@@ -50,7 +56,7 @@ class AbstractMonster extends AbstractCreature_1.default {
         this.HealthComponent.Visible = false;
         this.IsEscaping = true;
         this.DisplayObject.FlipX = true;
-        new tween_js_1.default.Tween({ x: this.X }).to({ x: this.X + 400 }).easing(tween_js_1.default.Easing.Linear.None).duration(3000).start().onComplete(() => {
+        new tween_1.default.Tween({ x: this.X }).to({ x: this.X + 400 }).easing(tween_1.default.Easing.Linear.None).duration(3000).start().onComplete(() => {
             this.IsEscaped = true;
             if (DungeonManager_1.default.Inst.CurrentRoom.Monsters.AreMonstersBasicallyDead())
                 DungeonManager_1.default.Inst.CurrentRoom.End();

@@ -1,7 +1,7 @@
 ﻿import { FairyGUI, UnityEngine } from "csharp";
 import Async from "../../../../../Core/Async";
 import DungeonManager from "../../DungeonManager";
-import { HpBlockBrokenEffect } from "../../Events/HpBlockBrokenEffect";
+import { HpBlockBrokenEffect } from "../../Effect/HpBlockBrokenEffect";
 import AbstractCreature from "../../Unit/AbstractCreature";
 import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 

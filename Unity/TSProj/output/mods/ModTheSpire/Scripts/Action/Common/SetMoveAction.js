@@ -1,8 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SetMoveAction = void 0;
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class SetMoveAction extends AbstractGameAction_1.default {
+    monster;
+    moveIndex;
+    intent;
+    options;
     constructor(monster, moveIndex, intent, options) {
         super();
         this.monster = monster;

@@ -1,21 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cultist_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
-var RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DamageType_1 = require("../../../../DataDefine/DamageType");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var SporeCloudPower_1 = require("../../../../Power/SporeCloudPower");
-var StrengthPower_1 = require("../../../../Power/StrengthPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const DoFuncAction_1 = require("../../../../Action/Common/DoFuncAction");
+const RollMoveAction_1 = require("../../../../Action/Common/RollMoveAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DamageType_1 = require("../../../../DataDefine/DamageType");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const SporeCloudPower_1 = require("../../../../Power/SporeCloudPower");
+const StrengthPower_1 = require("../../../../Power/StrengthPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class Cultist_ViewModel extends AbstractMonster_1.AbstractMonster {
+    StrAmt;
     constructor(monster) {
         super(monster);
     }

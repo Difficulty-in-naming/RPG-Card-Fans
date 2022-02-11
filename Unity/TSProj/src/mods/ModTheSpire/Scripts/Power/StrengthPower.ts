@@ -1,6 +1,6 @@
 ﻿import { WrapDamage } from "../DataDefine/DamageInfo";
 import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
-import { OnDamageBefore } from "../Events/OnDamageBefore";
+import { OnDamageBeforeMessage } from "../Events/OnDamageBeforeMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { StringHelper } from "../StringHelper";
@@ -23,7 +23,7 @@ export class StrengthPower extends AbstractPower{
         msg.info.AddModify(new WrapDamage(this,this.Amount))
     }
     
-    protected OnDamageBefore(msg: OnDamageBefore) {
+    protected OnDamageBefore(msg: OnDamageBeforeMessage) {
         super.OnDamageBefore(msg);
         msg.info.AddModify(new WrapDamage(this,this.Amount))
     }

@@ -6,13 +6,16 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "baseUrl": "src",
+    "rootDir": "src",
     "moduleResolution": "node",
     "downlevelIteration": true,
     "typeRoots": [
       "../Assets/ThirdParty/Puerts/Typing",
       "../Assets/Gen/Typing",
-      "./node_modules/@types"
     ],
     "outDir": "output"
-  }
+  },
+  "exclude": [
+      "client/node_modules/"
+  ]
 }

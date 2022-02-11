@@ -16,8 +16,8 @@ export class BiteEffect extends AbstractEffect{
         if(!color) {
             this.color = new Color(179,230,255,255); 
         }
-        this.Top.color = color.UnityColor();
-        this.Bot.color = color.UnityColor();
+        this.Top.color = color.UnityColor;
+        this.Bot.color = color.UnityColor;
     }
     
     Update() {

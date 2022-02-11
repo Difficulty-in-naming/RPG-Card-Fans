@@ -25,7 +25,7 @@ export class UpgradeShineParticleEffect extends AbstractEffect{
         this.Loader[i] = UIHelper.CreateGLoader();
         this._Interval = Mathf.RandomRange(0.5,1);
         this.Loader[i].SetPivot(0.5,0.5,true);
-        this.Loader[i].color = new Color(Mathf.RandomRange(127,255),Mathf.RandomRange(102, 153),Mathf.RandomRange(0, 51),255).UnityColor();
+        this.Loader[i].color = new Color(Mathf.RandomRange(127,255),Mathf.RandomRange(102, 153),Mathf.RandomRange(0, 51),255).UnityColor;
         if(this._Interval > 0.9)
             this.Loader[i].alpha = 0;
         else

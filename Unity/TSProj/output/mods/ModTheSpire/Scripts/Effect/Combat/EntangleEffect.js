@@ -1,9 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntangleEffect = void 0;
-var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-var AbstractEffect_1 = require("../AbstractEffect");
+const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+const AbstractEffect_1 = require("../AbstractEffect");
 class EntangleEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    _TargetX;
+    _TargetY;
+    Loader;
     constructor(_X, _Y, _TargetX, _TargetY) {
         super();
         this._X = _X;

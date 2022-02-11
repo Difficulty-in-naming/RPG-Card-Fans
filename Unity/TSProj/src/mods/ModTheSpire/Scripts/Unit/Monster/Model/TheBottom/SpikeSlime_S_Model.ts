@@ -19,6 +19,6 @@ export class SpikeSlime_S_Model extends MonsterInfo{
     }
 
     get Name(): string {
-        return "尖刺史莱姆（大）";
+        return "尖刺史莱姆（小）";
     }
 }

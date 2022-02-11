@@ -20,7 +20,7 @@ export class BottomFogEffect extends AbstractEffect{
         this.Loader = UIHelper.CreateGLoader();
         if(parent)
             parent.AddChild(this.Loader);
-        this.Loader.url = FileHelper.FormatPath("Vfx/env/smoke" + Mathf.Floor(Mathf.RandomRange(1,4)) + ".png");
+        this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf.Floor(Mathf.RandomRange(1,4));
         this.Loader.touchable = false;
         this.Loader.SetPivot(0.5,0.5,true);
         this.Loader.x = Mathf.RandomRange(-200,2120);
@@ -35,7 +35,7 @@ export class BottomFogEffect extends AbstractEffect{
         this.Scale = Mathf.RandomRange(4,6);
         this.FlipX = Mathf.Random() >= 0.5 ?1 : -1;
         this.FlipY = Mathf.Random() >= 0.5 ?1 : -1;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.alpha = 0;
         this.Loader.SetScale(this.Scale * this.FlipX,this.Scale * this.FlipY);
         this.Loader.TweenFade(0.3,this.Interval / 2).SetEase(FairyGUI.EaseType.SineInOut).OnComplete(()=>{

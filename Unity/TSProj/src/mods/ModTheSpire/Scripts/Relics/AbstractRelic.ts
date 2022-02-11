@@ -1,5 +1,5 @@
-﻿import { UuidTool } from "uuid-tool";
-import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+﻿import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import { UuidTool } from "../../../../ThirdParty/uuid-tool";
 import DungeonManager from "../DungeonManager";
 
 export default abstract class AbstractRelic{

@@ -37,6 +37,7 @@ public class ResourcesManager
         tex.alphaIsTransparency = true;
         var bytes = File.ReadAllBytes(path);
         tex.LoadImage(bytes);
+        tex.filterMode = FilterMode.Trilinear;
         tex.Apply(false, false);
         Cache[path] = tex;
         return tex;

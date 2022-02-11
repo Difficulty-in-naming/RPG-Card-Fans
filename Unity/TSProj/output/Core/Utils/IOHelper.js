@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var PathHelper_1 = require("./PathHelper");
-var csharp_1 = require("csharp");
+const PathHelper_1 = require("./PathHelper");
+const csharp_1 = require("csharp");
 class IOHelper {
     static GetFiles(dir, searchPattern, searchOption) {
         let array = new Array();

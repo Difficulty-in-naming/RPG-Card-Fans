@@ -5,7 +5,7 @@ import { DamageType } from "../../DataDefine/DamageType";
 import DungeonManager from "../../DungeonManager";
 import EffectKit from "../../Effect/EffectKit";
 import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
-import { NotifyPowerDescerptionChanged } from "../../Events/NotifyPowerDescerptionChanged";
+import { NotifyPowerDescerptionChangedMessage } from "../../Events/NotifyPowerDescerptionChangedMessage";
 import { PoisonPower } from "../../Power/PoisonPower";
 import { RoomPhase } from "../../Room/AbstractRoom";
 import AbstractCreature from "../../Unit/AbstractCreature";
@@ -38,7 +38,7 @@ export class PoisonLoseHpAction extends AbstractGameAction {
                     this.Target.RemovePower(PoisonPower.PowerID);
                 }
                 else{
-                    DungeonManager.MessageManager.Send(NotifyPowerDescerptionChanged.Id,new NotifyPowerDescerptionChanged(power.Id));
+                    DungeonManager.MessageManager.Send(NotifyPowerDescerptionChangedMessage.Id,new NotifyPowerDescerptionChangedMessage(power.Id));
                 }
             }
             this.AddToTop(new WaitAction(100));

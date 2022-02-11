@@ -1,16 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Hexaghost_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var HexaghostOrb_1 = require("./HexaghostOrb");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const HexaghostOrb_1 = require("./HexaghostOrb");
 class Hexaghost_ViewModel extends AbstractMonster_1.AbstractMonster {
-    constructor() {
-        super(...arguments);
-        this._Orbs = new Array();
-    }
+    _StrAmount;
+    _SearBurnCount;
+    _FireTackleDmg;
+    _InfernoDmg;
+    _SearDmg;
+    _Orbs = new Array();
     GetMove(num) {
     }
     Initialize() {

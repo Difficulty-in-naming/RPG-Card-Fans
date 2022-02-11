@@ -3,6 +3,7 @@ import { Mathf } from "../../../../Core/Module/Math/Mathf";
 import { TimeKit } from "../../../../Core/Utils/TimeKit";
 import Color from "../DataDefine/Color";
 import FileHelper from "../FileHelper";
+import { ImageMaster } from "../Helpers/ImageMaster";
 import UIHelper from "../UI/UIHelper";
 import { AbstractEffect } from "./AbstractEffect";
 
@@ -14,7 +15,7 @@ export class ExhaustPileParticle extends AbstractEffect
         super();
         this.Loader = UIHelper.CreateGLoader();
         this.Loader.SetPosition(24,24,0);
-        this.Loader.url = FileHelper.FormatPath("Vfx/exhaust/bigBlur.png");
+        this.Loader.url = ImageMaster.EXHAUST_L;
         this.Loader.SetPivot(0.5,0.5,true);
         this.Loader.autoSize = true;
         let scale = Mathf.RandomRange(0.5,0.7);
@@ -22,7 +23,7 @@ export class ExhaustPileParticle extends AbstractEffect
         color.G = Mathf.RandomRange(51,102);
         color.R = color.G + 26;
         color.B = color.R + 26;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.alpha = 0;
         this.Loader.rotation = Mathf.RandomRange(0,360);
         this.Loader.SetScale(scale,scale);

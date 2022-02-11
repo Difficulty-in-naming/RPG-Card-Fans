@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RollMoveAction = void 0;
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class RollMoveAction extends AbstractGameAction_1.default {
+    enemy;
     constructor(enemy) {
         super();
         this.enemy = enemy;

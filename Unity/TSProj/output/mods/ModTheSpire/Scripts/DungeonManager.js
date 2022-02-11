@@ -1,18 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var QueueMessageKit_1 = require("../../../Core/Module/Event/QueueMessageKit");
-var ObserverMessageKit_1 = require("../../../Core/ObserverMessageKit");
-var EffectKit_1 = require("./Effect/EffectKit");
-var AbstractPlayer_1 = require("./Unit/Character/AbstractPlayer");
+const QueueMessageKit_1 = require("../../../Core/Module/Event/QueueMessageKit");
+const ObserverMessageKit_1 = require("../../../Core/ObserverMessageKit");
+const EffectKit_1 = require("./Effect/EffectKit");
+const AbstractPlayer_1 = require("./Unit/Character/AbstractPlayer");
 //DungeonManager类似于一次游戏的管理器.
 //每次开始游戏都会重置局部变量.
 class DungeonManager {
-    constructor() {
-        //本局游戏爬塔楼层
-        this.FloorNum = 0;
-        //进阶等级
-        this.AdvanceLevel = 0;
-    }
+    //region 静态变量
+    static Inst;
+    static ActionManager = new QueueMessageKit_1.default();
+    static MessageManager = new ObserverMessageKit_1.ObserverMessageKit();
+    static EffectManager = new EffectKit_1.default();
+    //endregion
+    //region局部变量
+    //本局游戏操作的角色
+    Player;
+    //本局游戏爬塔楼层
+    FloorNum = 0;
+    //灾祸池
+    BlightPool;
+    //本局游戏种子
+    Seed;
+    //进阶等级
+    AdvanceLevel = 0;
+    //是否是无尽模式
+    _IsEndless;
+    //当前房间
+    _CurrentRoom;
+    //当前章节地牢
+    _CurrentDungeon;
     get CurrentDungeon() {
         return this._CurrentDungeon;
     }
@@ -51,7 +68,4 @@ class DungeonManager {
     }
 }
 exports.default = DungeonManager;
-DungeonManager.ActionManager = new QueueMessageKit_1.default();
-DungeonManager.MessageManager = new ObserverMessageKit_1.ObserverMessageKit();
-DungeonManager.EffectManager = new EffectKit_1.default();
 //# sourceMappingURL=DungeonManager.js.map

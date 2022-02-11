@@ -26,6 +26,8 @@ export default class Color{
     public static readonly Orange = new Color(255,165,0,255);
     public static readonly Goldenrod = new Color(218,165,32,255);
     public static readonly Scarlet = new Color(255,52,28,255)
+    public static readonly DarkGray = new Color(63,63,63,255);
+    public static readonly Coral = new Color(255,127,80,255);
     public R : number;
     public G : number;
     public B : number;
@@ -51,11 +53,11 @@ export default class Color{
         return new Color(this.R,this.G,this.B,this.A);
     }
     
-    public UnityColor() : UnityEngine.Color{
+    public get UnityColor() : UnityEngine.Color{
         return new UnityEngine.Color(this.R / 255,this.G / 255,this.B / 255,this.A / 255);
     }
 
-    public UnityColor32() : UnityEngine.Color32{
+    public get UnityColor32() : UnityEngine.Color32{
         return new UnityEngine.Color32(this.R,this.G,this.B,this.A);
     }
     

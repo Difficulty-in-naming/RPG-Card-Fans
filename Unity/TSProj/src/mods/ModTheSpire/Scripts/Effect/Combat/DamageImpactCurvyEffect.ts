@@ -24,7 +24,7 @@ export class DamageImpactCurvyEffect extends AbstractEffect{
         this.Loader.SetPosition(_X,_Y,0);
         this._SpeedStart = this._Speed = Mathf.RandomRange(400,900);
         this._SpeedTarget = Mathf.RandomRange(0.1,0.5);
-        this.Loader.color = this._Color.UnityColor();
+        this.Loader.color = this._Color.UnityColor;
         this._Rotation = Mathf.RandomRange(0,360);
         this.Loader.rotation = this._Rotation;
         this._WaveIntensity = Mathf.RandomRange(5,30);

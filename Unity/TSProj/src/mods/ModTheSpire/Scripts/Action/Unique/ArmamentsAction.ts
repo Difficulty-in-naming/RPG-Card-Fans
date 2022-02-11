@@ -1,16 +1,7 @@
 import AbstractCard from "../../Cards/AbstractCard";
-import Color from "../../DataDefine/Color";
-import DamageInfo from "../../DataDefine/DamageInfo";
-import { DamageType } from "../../DataDefine/DamageType";
 import DungeonManager from "../../DungeonManager";
-import EffectKit from "../../Effect/EffectKit";
-import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
-import { NotifyPowerDescerptionChanged } from "../../Events/NotifyPowerDescerptionChanged";
-import { PoisonPower } from "../../Power/PoisonPower";
-import { RoomPhase } from "../../Room/AbstractRoom";
 import { AbstractPlayer } from "../../Unit/Character/AbstractPlayer";
 import AbstractGameAction, { ActionType } from "../AbstractGameAction";
-import { WaitAction } from "../Utility/WaitAction";
 
 
 export class ArmamentsAction extends AbstractGameAction {

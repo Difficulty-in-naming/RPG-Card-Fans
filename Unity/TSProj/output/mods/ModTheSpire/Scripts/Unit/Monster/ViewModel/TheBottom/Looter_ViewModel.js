@@ -1,30 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Looter_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var TalkAction_1 = require("../../../../Action/Animations/TalkAction");
-var VFXAction_1 = require("../../../../Action/Animations/VFXAction");
-var ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
-var GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
-var SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
-var SFXAction_1 = require("../../../../Action/Utility/SFXAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var SmokeBombEffect_1 = require("../../../../Effect/Combat/SmokeBombEffect");
-var SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var ThieveryPower_1 = require("../../../../Power/ThieveryPower");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const TalkAction_1 = require("../../../../Action/Animations/TalkAction");
+const VFXAction_1 = require("../../../../Action/Animations/VFXAction");
+const ApplyPowerAction_1 = require("../../../../Action/Common/ApplyPowerAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
+const GainBlockAction_1 = require("../../../../Action/Common/GainBlockAction");
+const SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
+const SFXAction_1 = require("../../../../Action/Utility/SFXAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const SmokeBombEffect_1 = require("../../../../Effect/Combat/SmokeBombEffect");
+const SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const ThieveryPower_1 = require("../../../../Power/ThieveryPower");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class Looter_ViewModel extends AbstractMonster_1.AbstractMonster {
-    constructor() {
-        super(...arguments);
-        this.SlashCount = 0;
-    }
+    SlashCount = 0;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 2) {
             this.DamageInfo.push(new DamageInfo_1.default(this, 11));

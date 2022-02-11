@@ -1,19 +1,27 @@
-﻿import { TimeKit } from "../../../../../Core/Utils/TimeKit";
+﻿import { FairyGUI, UnityEngine } from "csharp";
+import { Rect } from "../../../../../Core/Define/Rect";
+import { Vector2 } from "../../../../../Core/Define/Vector2";
+import { TimeKit } from "../../../../../Core/Utils/TimeKit";
 import { DiscardGlowEffect } from "../../Effect/DiscardGlowEffect";
 import EffectKit from "../../Effect/EffectKit";
 import { ExhaustPileParticle } from "../../Effect/ExhaustPileParticle";
 import { GameDeckGlowEffect } from "../../Effect/GameDeckGlowEffect";
-import { View_Combat } from "../../Gen/View/ModTheSpire_Combat";
+import { GameSettings } from "../../Game/GameSettings";
+import { View_Card, View_Combat } from "../../Gen/View/ModTheSpire_Combat";
 import { LocalSettings } from "../../Saves/LocalSettings";
-
+import {UI_CombatHandLayout} from "./UI_CombatHandLayout"
 export class UI_Combat extends View_Combat{
     private mEnergyVfxTimer : number = 0;
     private mDeckVfx = new Array<GameDeckGlowEffect>();
     private mDiscardVfx = new Array<DiscardGlowEffect>();
     private mDiscardVfx2 = new Array<DiscardGlowEffect>();
-
+    private HandleMode = false;//手柄模式
+    private TargetRect : Rect;
+    private HandLayout : UI_CombatHandLayout;
     OnInit(...args) {
-        this.EndTurnButton2.visible = false;
+        this.View.MakeFullScreen();
+        this.HandLayout = new UI_CombatHandLayout(this);
+        this.HandLayout.Render();
     }
     
     RenderExhaustVfx(){
@@ -67,7 +75,28 @@ export class UI_Combat extends View_Combat{
             this.mDiscardVfx2.push(effect);
         }
     }
-    
+
+
+    RenderReticle(){
+        this.ReticleCorner.visible = true;
+        const leftTop = this.ReticleCorner.GetChild("LeftTop");
+        let llt = this.TargetRect.LeftTop;
+        leftTop.SetXY(llt.X - 9,llt.Y - 9);
+        leftTop.TweenMove(llt.UnityVec,0.9).SetEase(FairyGUI.EaseType.ElasticOut);
+        const leftBottom = this.ReticleCorner.GetChild("LeftBottom");
+        let llb = this.TargetRect.LeftBottom;
+        leftBottom.SetXY(llb.X - 9,llb.Y + 9);
+        leftBottom.TweenMove(llb.UnityVec,0.9).SetEase(FairyGUI.EaseType.ElasticOut);
+        const rightTop = this.ReticleCorner.GetChild("RightTop");
+        let rlt = this.TargetRect.RightTop;
+        rightTop.SetXY(rlt.X - 9,rlt.Y - 9);
+        rightTop.TweenMove(rlt.UnityVec,0.9).SetEase(FairyGUI.EaseType.ElasticOut);
+        const rightBottom = this.ReticleCorner.GetChild("RightBottom");
+        let rlb = this.TargetRect.RightTop;
+        rightBottom.SetXY(rlb.X - 9,rlb.Y - 9);
+        rightBottom.TweenMove(rlb.UnityVec,0.9).SetEase(FairyGUI.EaseType.ElasticOut);
+    }
+
     OnUpdate() {
         super.OnUpdate();
         this.RenderExhaustVfx();

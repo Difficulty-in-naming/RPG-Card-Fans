@@ -15,7 +15,7 @@ export class IntenseZoomParticle extends AbstractEffect{
         this.Loader = UIHelper.CreateGLoader()
         this.Loader.url = FileHelper.FormatPath("Vfx/cone" + (i == 0 ? "8" :(i == 1 ? "5" : "6"))); 
         this.Loader.SetPosition(_X,_Y,0);
-        this.Loader.color = _IsBlack ? Color.Black.UnityColor() : Color.Gold.UnityColor();
+        this.Loader.color = _IsBlack ? Color.Black.UnityColor : Color.Gold.UnityColor;
         if(!_IsBlack)
             this.Loader.blendMode = FairyGUI.BlendMode.Add;
         this.Randomize();

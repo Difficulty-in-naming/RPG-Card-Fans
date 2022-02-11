@@ -1,17 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApplyPowerAction = void 0;
-var Async_1 = require("../../../../../Core/Async");
-var DungeonManager_1 = require("../../DungeonManager");
-var PowerBuffEffect_1 = require("../../Effect/Combat/PowerBuffEffect");
-var PowerDeBuffEffect_1 = require("../../Effect/Combat/PowerDeBuffEffect");
-var FlashAtkImgEffect_1 = require("../../Effect/FlashAtkImgEffect");
-var PostApplyPowerMessage_1 = require("../../Events/PostApplyPowerMessage");
-var PreApplyPowerMessage_1 = require("../../Events/PreApplyPowerMessage");
-var AbstractPower_1 = require("../../Power/AbstractPower");
-var AbstractMonster_1 = require("../../Unit/Monster/AbstractMonster");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
+const DungeonManager_1 = require("../../DungeonManager");
+const PowerBuffEffect_1 = require("../../Effect/Combat/PowerBuffEffect");
+const PowerDeBuffEffect_1 = require("../../Effect/Combat/PowerDeBuffEffect");
+const FlashAtkImgEffect_1 = require("../../Effect/FlashAtkImgEffect");
+const PostApplyPowerMessage_1 = require("../../Events/PostApplyPowerMessage");
+const PreApplyPowerMessage_1 = require("../../Events/PreApplyPowerMessage");
+const AbstractPower_1 = require("../../Power/AbstractPower");
+const AbstractMonster_1 = require("../../Unit/Monster/AbstractMonster");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class ApplyPowerAction extends AbstractGameAction_1.default {
+    Target;
+    Source;
+    Power;
+    StackAmount;
+    Effect;
+    Interval = 0.25;
     constructor(Target, Source, Power, StackAmount = 1, Effect) {
         super();
         this.Target = Target;
@@ -19,7 +25,6 @@ class ApplyPowerAction extends AbstractGameAction_1.default {
         this.Power = Power;
         this.StackAmount = StackAmount;
         this.Effect = Effect;
-        this.Interval = 0.25;
         let msg = new PreApplyPowerMessage_1.PreApplyPowerMessage(Power, Target, Source, this.StackAmount);
         DungeonManager_1.default.MessageManager.Send(PreApplyPowerMessage_1.PreApplyPowerMessage.Id, msg);
         this.StackAmount = msg.StackAmount;

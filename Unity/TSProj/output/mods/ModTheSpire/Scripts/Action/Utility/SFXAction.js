@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SFXAction = void 0;
-var SoundMaster_1 = require("../../Audio/SoundMaster");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const SoundMaster_1 = require("../../Audio/SoundMaster");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class SFXAction extends AbstractGameAction_1.default {
+    path;
+    pitchVar;
+    pitchAdjust;
     constructor(path, pitchVar, pitchAdjust) {
         super();
         this.path = path;

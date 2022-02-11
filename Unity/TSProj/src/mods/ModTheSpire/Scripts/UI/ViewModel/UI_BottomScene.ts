@@ -79,7 +79,7 @@ export class UI_BottomScene extends View_BottomScene implements IScene
             }
         }
         if(this.mod2.visible && (this.midWall.visible || this.mod1.visible)){
-            this.midWall.color = Color.Gray.UnityColor();
+            this.midWall.color = Color.Gray.UnityColor;
         }
         this.CeilingMod1.visible = Mathf.Random() > 0.5;
         this.CeilingMod2.visible = Mathf.Random() > 0.5;
@@ -89,7 +89,7 @@ export class UI_BottomScene extends View_BottomScene implements IScene
         this.CeilingMod6.visible = Mathf.Random() > 0.5;
         this.RandomizeTorch();
         let graph = UIHelper.CreateGGraph();
-        graph.color = new Color(Mathf.RandomRange(0,14),Mathf.RandomRange(0,52),Mathf.RandomRange(0,52)).UnityColor();
+        graph.color = new Color(Mathf.RandomRange(0,14),Mathf.RandomRange(0,52),Mathf.RandomRange(0,52)).UnityColor;
         this.View.AddChild(graph);
         graph.SetPosition(0,0,0);
         graph.blendMode = FairyGUI.BlendMode.Add;

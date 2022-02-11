@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var csharp_1 = require("csharp");
-var puerts_1 = require("puerts");
+const csharp_1 = require("csharp");
+const puerts_1 = require("puerts");
 class Async {
     static async Delay(ms, ignoreTimeScale = false) {
         let task = csharp_1.Cysharp.Threading.Tasks.UniTask.Delay(ms, ignoreTimeScale);

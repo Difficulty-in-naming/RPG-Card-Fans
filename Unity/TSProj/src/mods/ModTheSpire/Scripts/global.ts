@@ -7,5 +7,5 @@ import SaveKit from "./SaveKit";
 export class S{
     public static UIKit = <UIKit>UIKit.Inst();
     public static SaveKit = <SaveKit>SaveKit.Inst();
-    public static CommonCardViewPool = new CardViewPool(20,()=><FairyGUI.GComponent>View_Card.CreateInstance());
+    public static CommonCardViewPool = new CardViewPool(()=><FairyGUI.GComponent>View_Card.CreateInstance());
 }

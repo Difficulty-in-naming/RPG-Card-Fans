@@ -23,7 +23,6 @@ import {SpeechBubble} from "../../mods/ModTheSpire/Scripts/Effect/Combat/SpeechB
 export class Entry implements UnityBridge
 {
     private Cursor:Cursor;
-    public xxx;
     constructor() 
     {
         this.LoadConfig();
@@ -46,11 +45,11 @@ export class Entry implements UnityBridge
     }
     OnUpdate()
     {
-       this.Cursor.Update();
-       EffectKit.Inst().Update();
-       if(DungeonManager.Inst){
-           DungeonManager.Inst.Update();
-       }
+       //this.Cursor.Update();
+       //EffectKit.Inst().Update();
+       //if(DungeonManager.Inst){
+       //    DungeonManager.Inst.Update();
+       //}
     }
     OnDestroy() {
     }

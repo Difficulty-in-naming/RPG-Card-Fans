@@ -1,18 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpgradeShineParticleEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class UpgradeShineParticleEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    Loader = new csharp_1.FairyGUI.GLoader[2];
+    _Interval;
+    _Scale;
+    _Vx;
+    _Vy;
+    _Floor;
+    static _Gravity = 3000;
     constructor(_X, _Y) {
         super();
         this._X = _X;
         this._Y = _Y;
-        this.Loader = new csharp_1.FairyGUI.GLoader[2];
         for (let i = 0; i < 2; i++) {
             this.Create(i);
         }
@@ -21,7 +29,7 @@ class UpgradeShineParticleEffect extends AbstractEffect_1.AbstractEffect {
         this.Loader[i] = UIHelper_1.default.CreateGLoader();
         this._Interval = Mathf_1.Mathf.RandomRange(0.5, 1);
         this.Loader[i].SetPivot(0.5, 0.5, true);
-        this.Loader[i].color = new Color_1.default(Mathf_1.Mathf.RandomRange(127, 255), Mathf_1.Mathf.RandomRange(102, 153), Mathf_1.Mathf.RandomRange(0, 51), 255).UnityColor();
+        this.Loader[i].color = new Color_1.default(Mathf_1.Mathf.RandomRange(127, 255), Mathf_1.Mathf.RandomRange(102, 153), Mathf_1.Mathf.RandomRange(0, 51), 255).UnityColor;
         if (this._Interval > 0.9)
             this.Loader[i].alpha = 0;
         else
@@ -55,5 +63,4 @@ class UpgradeShineParticleEffect extends AbstractEffect_1.AbstractEffect {
     }
 }
 exports.UpgradeShineParticleEffect = UpgradeShineParticleEffect;
-UpgradeShineParticleEffect._Gravity = 3000;
 //# sourceMappingURL=UpgradeShineParticleEffect.js.map

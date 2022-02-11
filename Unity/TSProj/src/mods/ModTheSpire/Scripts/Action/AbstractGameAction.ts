@@ -2,9 +2,8 @@
 import DungeonManager from "../../../../mods/ModTheSpire/Scripts/DungeonManager";
 
 export default class AbstractGameAction implements IGameAction{
+    Type: ActionType;
     Duration: number = 0;
-    Type : ActionType;
-    
     Init() {
     }
 

@@ -1,13 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebLineEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var Color_1 = require("../../DataDefine/Color");
-var FileHelper_1 = require("../../FileHelper");
-var UIHelper_1 = require("../../UI/UIHelper");
-var AbstractEffect_1 = require("../AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const Color_1 = require("../../DataDefine/Color");
+const FileHelper_1 = require("../../FileHelper");
+const UIHelper_1 = require("../../UI/UIHelper");
+const AbstractEffect_1 = require("../AbstractEffect");
 class WebLineEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    Loader;
+    _Scale;
     constructor(_X, _Y, facingLeft) {
         super();
         this._X = _X;
@@ -23,7 +27,7 @@ class WebLineEffect extends AbstractEffect_1.AbstractEffect {
         let g = Mathf_1.Mathf.RandomRange(153, 230);
         let color = new Color_1.default(g, g, g + 26);
         this.Loader.alpha = 0;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.TweenFade(0.8, 0.5).SetEase(csharp_1.FairyGUI.EaseType.SineInOut);
         this.Loader.TweenFade(0.01, 0.5).SetEase(csharp_1.FairyGUI.EaseType.QuartOut).SetDelay(0.5);
         this.Loader.blendMode = csharp_1.FairyGUI.BlendMode.Add;

@@ -1,23 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_Combat = void 0;
-var TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
-var DiscardGlowEffect_1 = require("../../Effect/DiscardGlowEffect");
-var EffectKit_1 = require("../../Effect/EffectKit");
-var ExhaustPileParticle_1 = require("../../Effect/ExhaustPileParticle");
-var GameDeckGlowEffect_1 = require("../../Effect/GameDeckGlowEffect");
-var ModTheSpire_Combat_1 = require("../../Gen/View/ModTheSpire_Combat");
-var LocalSettings_1 = require("../../Saves/LocalSettings");
+const csharp_1 = require("csharp");
+const TimeKit_1 = require("../../../../../Core/Utils/TimeKit");
+const DiscardGlowEffect_1 = require("../../Effect/DiscardGlowEffect");
+const EffectKit_1 = require("../../Effect/EffectKit");
+const ExhaustPileParticle_1 = require("../../Effect/ExhaustPileParticle");
+const GameDeckGlowEffect_1 = require("../../Effect/GameDeckGlowEffect");
+const ModTheSpire_Combat_1 = require("../../Gen/View/ModTheSpire_Combat");
+const LocalSettings_1 = require("../../Saves/LocalSettings");
+const UI_CombatHandLayout_1 = require("./UI_CombatHandLayout");
 class UI_Combat extends ModTheSpire_Combat_1.View_Combat {
-    constructor() {
-        super(...arguments);
-        this.mEnergyVfxTimer = 0;
-        this.mDeckVfx = new Array();
-        this.mDiscardVfx = new Array();
-        this.mDiscardVfx2 = new Array();
-    }
+    mEnergyVfxTimer = 0;
+    mDeckVfx = new Array();
+    mDiscardVfx = new Array();
+    mDiscardVfx2 = new Array();
+    HandleMode = false; //手柄模式
+    TargetRect;
+    HandLayout;
     OnInit(...args) {
-        this.EndTurnButton2.visible = false;
+        this.View.MakeFullScreen();
+        this.HandLayout = new UI_CombatHandLayout_1.UI_CombatHandLayout(this);
+        this.HandLayout.Render();
     }
     RenderExhaustVfx() {
         if ((this.mEnergyVfxTimer -= TimeKit_1.TimeKit.DeltaTime) < 0) {
@@ -66,6 +70,25 @@ class UI_Combat extends ModTheSpire_Combat_1.View_Combat {
             this.Discard.AddChild(effect.Loader);
             this.mDiscardVfx2.push(effect);
         }
+    }
+    RenderReticle() {
+        this.ReticleCorner.visible = true;
+        const leftTop = this.ReticleCorner.GetChild("LeftTop");
+        let llt = this.TargetRect.LeftTop;
+        leftTop.SetXY(llt.X - 9, llt.Y - 9);
+        leftTop.TweenMove(llt.UnityVec, 0.9).SetEase(csharp_1.FairyGUI.EaseType.ElasticOut);
+        const leftBottom = this.ReticleCorner.GetChild("LeftBottom");
+        let llb = this.TargetRect.LeftBottom;
+        leftBottom.SetXY(llb.X - 9, llb.Y + 9);
+        leftBottom.TweenMove(llb.UnityVec, 0.9).SetEase(csharp_1.FairyGUI.EaseType.ElasticOut);
+        const rightTop = this.ReticleCorner.GetChild("RightTop");
+        let rlt = this.TargetRect.RightTop;
+        rightTop.SetXY(rlt.X - 9, rlt.Y - 9);
+        rightTop.TweenMove(rlt.UnityVec, 0.9).SetEase(csharp_1.FairyGUI.EaseType.ElasticOut);
+        const rightBottom = this.ReticleCorner.GetChild("RightBottom");
+        let rlb = this.TargetRect.RightTop;
+        rightBottom.SetXY(rlb.X - 9, rlb.Y - 9);
+        rightBottom.TweenMove(rlb.UnityVec, 0.9).SetEase(csharp_1.FairyGUI.EaseType.ElasticOut);
     }
     OnUpdate() {
         super.OnUpdate();

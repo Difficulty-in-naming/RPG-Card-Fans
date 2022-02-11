@@ -1,12 +1,11 @@
 ﻿import { Mathf } from "../../../../../Core/Module/Math/Mathf";
+import TWEEN from "../../../../../ThirdParty/@tweenjs/tween";
 import DamageInfo from "../../DataDefine/DamageInfo";
 import DungeonManager from "../../DungeonManager";
 import { OnPreBattleMessage } from "../../Events/OnPreBattleMessage";
 import AbstractCreature from "../AbstractCreature";
 import { Intent } from "./Intent";
 import { MonsterInfo } from "./MonsterInfo";
-import TWEEN from '@tweenjs/tween.js';
-
 
 export abstract class AbstractMonster extends AbstractCreature
 {

@@ -1,18 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TitleDustEffect = void 0;
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
-var tween_js_1 = require("@tweenjs/tween.js");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
+const TWEEN = require("../../../../ThirdParty/@tweenjs/tween");
 class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
+    Vx;
+    Vy;
+    Va;
+    Scale;
+    Loader;
+    Vc;
+    Tween;
+    Dur;
     constructor() {
         super();
         this.Loader = UIHelper_1.default.CreateGLoader();
-        this.Loader.url = FileHelper_1.default.FormatPath(`Vfx/env/smoke${Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 4))}.png`);
+        this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 4));
         this.Loader.SetPivot(0.5, 0.5, true);
         this.Loader.touchable = false;
         this.Scale = Mathf_1.Mathf.RandomRange(6, 8);
@@ -30,7 +37,7 @@ class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
         b = tmp;
         a = 255;
         this.Vc = new Color_1.default(r, g, b, a);
-        this.Loader.color = this.Vc.UnityColor();
+        this.Loader.color = this.Vc.UnityColor;
         this.Loader.alpha = 0.2;
         this.Dur = Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(2000, 3000));
     }
@@ -47,7 +54,7 @@ class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
             return;
         }
         else if (this.Tween == null) {
-            this.Tween = new tween_js_1.default.Tween({ a: 0.2 }).to({ a: 0 }, this.Dur).easing(tween_js_1.default.Easing.Sinusoidal.InOut)
+            this.Tween = new TWEEN.Tween({ a: 0.2 }).to({ a: 0 }, this.Dur).easing(TWEEN.Easing.Sinusoidal.InOut)
                 .onUpdate(object => {
                 this.Loader.alpha = object.a;
             }).start();

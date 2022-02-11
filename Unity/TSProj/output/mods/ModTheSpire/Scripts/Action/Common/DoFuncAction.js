@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DoFuncAction = void 0;
-var Async_1 = require("../../../../../Core/Async");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class DoFuncAction extends AbstractGameAction_1.default {
+    Func;
+    Interval;
     constructor(Func, Interval = 0) {
         super();
         this.Func = Func;

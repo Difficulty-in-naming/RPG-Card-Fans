@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CalcHurtValueMessage = void 0;
 //计算伤害
 class CalcHurtValueMessage {
+    info;
+    source;
+    target;
+    static Id = "CalcDamageValueMessage";
     constructor(info, source, target) {
         this.info = info;
         this.source = source;
@@ -10,5 +14,4 @@ class CalcHurtValueMessage {
     }
 }
 exports.CalcHurtValueMessage = CalcHurtValueMessage;
-CalcHurtValueMessage.Id = "CalcDamageValueMessage";
 //# sourceMappingURL=CalcHurtValueMessage.js.map

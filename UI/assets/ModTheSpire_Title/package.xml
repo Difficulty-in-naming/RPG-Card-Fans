@@ -2,36 +2,36 @@
 <packageDescription id="r56y0bvs">
   <resources>
     <component id="8s230" name="Title.xml" path="/" exported="true"/>
-    <image id="kefb1" name="fg.png" path="/Texture/title5/"/>
-    <image id="kefb2" name="midCloud11.png" path="/Texture/title5/"/>
-    <image id="kefb3" name="midCloud5.png" path="/Texture/title5/"/>
-    <image id="kefb4" name="midCloud8.png" path="/Texture/title5/"/>
-    <image id="kefb5" name="logo2.png" path="/Texture/title6/"/>
-    <image id="kefb6" name="mg3TopGlow1.png" path="/Texture/title6/"/>
-    <image id="kefb7" name="mg3TopGlow2.png" path="/Texture/title6/"/>
-    <image id="kefb8" name="midCloud1.png" path="/Texture/title6/"/>
-    <image id="kefb9" name="midCloud10.png" path="/Texture/title6/"/>
-    <image id="kefba" name="midCloud2.png" path="/Texture/title6/"/>
-    <image id="kefbb" name="midCloud3.png" path="/Texture/title6/"/>
-    <image id="kefbc" name="midCloud4.png" path="/Texture/title6/"/>
-    <image id="kefbd" name="midCloud6.png" path="/Texture/title6/"/>
-    <image id="kefbe" name="midCloud7.png" path="/Texture/title6/"/>
-    <image id="kefbf" name="topCloud1.png" path="/Texture/title6/"/>
-    <image id="kefbg" name="topCloud4.png" path="/Texture/title6/"/>
-    <image id="kefbh" name="topCloud5.png" path="/Texture/title6/"/>
-    <image id="kefbi" name="topCloud6.png" path="/Texture/title6/"/>
-    <image id="kefbj" name="mg2.png" path="/Texture/title/"/>
-    <image id="kefbk" name="mg3Bot.png" path="/Texture/title/"/>
-    <image id="kefbl" name="sky.png" path="/Texture/title/jpg/"/>
-    <image id="kefbm" name="mg3Top.png" path="/Texture/title2/"/>
-    <image id="kefbn" name="topCloud7.png" path="/Texture/title2/"/>
-    <image id="kefbo" name="midCloud13.png" path="/Texture/title3/"/>
-    <image id="kefbp" name="midCloud9.png" path="/Texture/title3/"/>
-    <image id="kefbq" name="topCloud2.png" path="/Texture/title3/"/>
-    <image id="kefbr" name="mg1.png" path="/Texture/title4/"/>
-    <image id="kefbs" name="mg3BotGlow.png" path="/Texture/title4/"/>
-    <image id="kefbt" name="midCloud12.png" path="/Texture/title4/"/>
-    <image id="kefbu" name="topCloud3.png" path="/Texture/title4/"/>
+    <image id="kefb1" name="fg.png" path="/Texture/title5/" exported="true"/>
+    <image id="kefb2" name="midCloud11.png" path="/Texture/title5/" exported="true"/>
+    <image id="kefb3" name="midCloud5.png" path="/Texture/title5/" exported="true"/>
+    <image id="kefb4" name="midCloud8.png" path="/Texture/title5/" exported="true"/>
+    <image id="kefb5" name="logo2.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefb6" name="mg3TopGlow1.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefb7" name="mg3TopGlow2.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefb8" name="midCloud1.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefb9" name="midCloud10.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefba" name="midCloud2.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbb" name="midCloud3.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbc" name="midCloud4.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbd" name="midCloud6.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbe" name="midCloud7.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbf" name="topCloud1.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbg" name="topCloud4.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbh" name="topCloud5.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbi" name="topCloud6.png" path="/Texture/title6/" exported="true"/>
+    <image id="kefbj" name="mg2.png" path="/Texture/title/" exported="true"/>
+    <image id="kefbk" name="mg3Bot.png" path="/Texture/title/" exported="true"/>
+    <image id="kefbl" name="sky.png" path="/Texture/title/jpg/" exported="true"/>
+    <image id="kefbm" name="mg3Top.png" path="/Texture/title2/" exported="true"/>
+    <image id="kefbn" name="topCloud7.png" path="/Texture/title2/" exported="true"/>
+    <image id="kefbo" name="midCloud13.png" path="/Texture/title3/" exported="true"/>
+    <image id="kefbp" name="midCloud9.png" path="/Texture/title3/" exported="true"/>
+    <image id="kefbq" name="topCloud2.png" path="/Texture/title3/" exported="true"/>
+    <image id="kefbr" name="mg1.png" path="/Texture/title4/" exported="true"/>
+    <image id="kefbs" name="mg3BotGlow.png" path="/Texture/title4/" exported="true"/>
+    <image id="kefbt" name="midCloud12.png" path="/Texture/title4/" exported="true"/>
+    <image id="kefbu" name="topCloud3.png" path="/Texture/title4/" exported="true"/>
     <component id="fyc6v" name="Holder.xml" path="/"/>
   </resources>
   <publish name="ModTheSpire_Title" genCode="true"/>

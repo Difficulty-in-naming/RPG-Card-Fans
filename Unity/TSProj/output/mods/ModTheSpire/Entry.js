@@ -3,20 +3,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Entry = void 0;
 //这里我们继承UnityBridge这样我们就可以更新我们的游戏逻辑了.也可以不继承
-var MainEntry_1 = require("../../MainEntry");
-var Ironclad_1 = require("./Scripts/Unit/Character/Ironclad");
-var Defect_1 = require("./Scripts/Unit/Character/Defect");
-var TheSilent_1 = require("./Scripts/Unit/Character/TheSilent");
-var Watcher_1 = require("./Scripts/Unit/Character/Watcher");
-var FileHelper_1 = require("./Scripts/FileHelper");
-var EffectKit_1 = require("./Scripts/Effect/EffectKit");
-var Cursor_1 = require("../../mods/ModTheSpire/Scripts/Cursor");
-var DungeonManager_1 = require("../../mods/ModTheSpire/Scripts/DungeonManager");
-var PlayerInfo_1 = require("../../mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo");
-var Exordium_1 = require("../../mods/ModTheSpire/Scripts/Dungeon/Exordium");
-var UI_Title_1 = require("../../mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title");
-var CombatRoom_1 = require("../../mods/ModTheSpire/Scripts/Room/CombatRoom");
+const MainEntry_1 = require("../../MainEntry");
+const Ironclad_1 = require("./Scripts/Unit/Character/Ironclad");
+const Defect_1 = require("./Scripts/Unit/Character/Defect");
+const TheSilent_1 = require("./Scripts/Unit/Character/TheSilent");
+const Watcher_1 = require("./Scripts/Unit/Character/Watcher");
+const FileHelper_1 = require("./Scripts/FileHelper");
+const Cursor_1 = require("../../mods/ModTheSpire/Scripts/Cursor");
+const DungeonManager_1 = require("../../mods/ModTheSpire/Scripts/DungeonManager");
+const PlayerInfo_1 = require("../../mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo");
+const Exordium_1 = require("../../mods/ModTheSpire/Scripts/Dungeon/Exordium");
+const UI_Title_1 = require("../../mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title");
+const CombatRoom_1 = require("../../mods/ModTheSpire/Scripts/Room/CombatRoom");
 class Entry {
+    Cursor;
     constructor() {
         this.LoadConfig();
         PlayerInfo_1.AllPlayer.push(new Ironclad_1.default());
@@ -35,11 +35,11 @@ class Entry {
         FileHelper_1.default.LoadConfig();
     }
     OnUpdate() {
-        this.Cursor.Update();
-        EffectKit_1.default.Inst().Update();
-        if (DungeonManager_1.default.Inst) {
-            DungeonManager_1.default.Inst.Update();
-        }
+        //this.Cursor.Update();
+        //EffectKit.Inst().Update();
+        //if(DungeonManager.Inst){
+        //    DungeonManager.Inst.Update();
+        //}
     }
     OnDestroy() {
     }

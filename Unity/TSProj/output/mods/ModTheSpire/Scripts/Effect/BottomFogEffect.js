@@ -1,21 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BottomFogEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class BottomFogEffect extends AbstractEffect_1.AbstractEffect {
+    Interval;
+    Loader;
+    Scale;
+    FlipX;
+    FlipY;
+    Vx;
+    Vr;
     constructor(parent = null) {
         super();
         this.Interval = Mathf_1.Mathf.RandomRange(10, 12);
         this.Loader = UIHelper_1.default.CreateGLoader();
         if (parent)
             parent.AddChild(this.Loader);
-        this.Loader.url = FileHelper_1.default.FormatPath("Vfx/env/smoke" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 4)) + ".png");
+        this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 4));
         this.Loader.touchable = false;
         this.Loader.SetPivot(0.5, 0.5, true);
         this.Loader.x = Mathf_1.Mathf.RandomRange(-200, 2120);
@@ -30,7 +36,7 @@ class BottomFogEffect extends AbstractEffect_1.AbstractEffect {
         this.Scale = Mathf_1.Mathf.RandomRange(4, 6);
         this.FlipX = Mathf_1.Mathf.Random() >= 0.5 ? 1 : -1;
         this.FlipY = Mathf_1.Mathf.Random() >= 0.5 ? 1 : -1;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.alpha = 0;
         this.Loader.SetScale(this.Scale * this.FlipX, this.Scale * this.FlipY);
         this.Loader.TweenFade(0.3, this.Interval / 2).SetEase(csharp_1.FairyGUI.EaseType.SineInOut).OnComplete(() => {

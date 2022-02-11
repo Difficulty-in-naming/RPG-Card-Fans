@@ -22,10 +22,10 @@ export class UI_Title extends View_Title
             this.MainMenuEnter.PlayReverse(null);
         });
         for (let i = 1; i <= 7; i++) {
-            this.TopCloud.push(new TitleCloud(`Title/topCloud${i}.png`,Mathf.RandomRange(10,50),Mathf.RandomRange(-1920,1920),this.TopCloudHolder));
+            this.TopCloud.push(new TitleCloud(`ui://ModTheSpire_Title/topCloud${i}`,Mathf.RandomRange(10,50),Mathf.RandomRange(-1920,1920),this.TopCloudHolder));
         }
         for (let i = 1; i <= 13; i++) {
-            this.MidCloud.push(new TitleCloud(`Title/midCloud${i}.png`,Mathf.RandomRange(-50,-10),Mathf.RandomRange(-1920,1920),this.MidCloudHolder));
+            this.MidCloud.push(new TitleCloud(`ui://ModTheSpire_Title/midCloud${i}`,Mathf.RandomRange(-50,-10),Mathf.RandomRange(-1920,1920),this.MidCloudHolder));
         }
     }
 
@@ -55,7 +55,7 @@ class TitleCloud{
         parent.AddChild(this.Loader);
         this.Y = -900 + Mathf.RandomRange(-250,250);
         this.Loader.SetPosition(this.X,this.Y,0);
-        this.Loader.url = FileHelper.FormatPath(path);
+        this.Loader.url = path;
         this.Vy = Mathf.RandomRange(-Vx / 10, Vx / 10);
     }
     

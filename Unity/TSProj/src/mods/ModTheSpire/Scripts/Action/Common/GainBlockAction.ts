@@ -1,4 +1,7 @@
 ﻿import Async from "../../../../../Core/Async";
+import { AttackEffect } from "../../DataDefine/AttackEffect";
+import DungeonManager from "../../DungeonManager";
+import { FlashAtkImgEffect } from "../../Effect/FlashAtkImgEffect";
 import AbstractCreature from "../../Unit/AbstractCreature";
 import AbstractGameAction, { ActionType } from "../AbstractGameAction";
 
@@ -20,6 +23,9 @@ export default class GainBlockAction extends AbstractGameAction
     
     async Update(){
         if(this.Target && !this.Target.IsDying && !this.Target.IsDead){
+            var hitbox = this.Target.GetHitBox();
+            DungeonManager.EffectManager.Play(new FlashAtkImgEffect(hitbox.CX,hitbox.CY,AttackEffect.SHIELD))
+            this.Target.Block += this.Amount;
             return true;
         }
         await Async.Delay(250);

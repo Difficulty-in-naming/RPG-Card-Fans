@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebParticleEffect = void 0;
-var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-var AbstractEffect_1 = require("../AbstractEffect");
+const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+const AbstractEffect_1 = require("../AbstractEffect");
 class WebParticleEffect extends AbstractEffect_1.AbstractEffect {
+    _X;
+    _Y;
+    Loader;
     constructor(_X, _Y) {
         super();
         this._X = _X;

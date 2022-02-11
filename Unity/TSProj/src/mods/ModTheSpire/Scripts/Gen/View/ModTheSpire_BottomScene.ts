@@ -1,9 +1,9 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import {UIKit} from "../../../../../Core/Module/UI/UIKit";
-import {FairyGUI} from "csharp";
 import { UIBase } from "../../../../../Core/Module/UI/UIBase";
 import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";
+import {FairyGUI} from "csharp";
 export class View_BottomScene extends UIBase
 {
     public midWall : FairyGUI.GImage;

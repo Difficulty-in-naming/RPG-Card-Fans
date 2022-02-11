@@ -1466,7 +1466,7 @@ namespace TMPro.EditorUtilities
 
                 if (tex.width != m_AtlasWidth || tex.height != m_AtlasHeight)
                 {
-                    tex.Resize(m_AtlasWidth, m_AtlasHeight);
+                    tex.Reinitialize(m_AtlasWidth, m_AtlasHeight);
                     tex.Apply();
                 }
 
@@ -1655,7 +1655,7 @@ namespace TMPro.EditorUtilities
 
                 if (tex.width != m_AtlasWidth || tex.height != m_AtlasHeight)
                 {
-                    tex.Resize(m_AtlasWidth, m_AtlasHeight);
+                    tex.Reinitialize(m_AtlasWidth, m_AtlasHeight);
                     tex.Apply();
                 }
 

@@ -1,27 +1,39 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PowerType = exports.AbstractPower = void 0;
-var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-var DungeonManager_1 = require("../DungeonManager");
-var EffectKit_1 = require("../Effect/EffectKit");
-var FlashPowerEffect_1 = require("../Effect/FlashPowerEffect");
-var GainPowerEffect_1 = require("../Effect/GainPowerEffect");
-var AtEndOfTurnMessage_1 = require("../Events/AtEndOfTurnMessage");
-var AtEndOfTurnPreEndTurnCardsMessage_1 = require("../Events/AtEndOfTurnPreEndTurnCardsMessage");
-var AtStartOfTurnMessage_1 = require("../Events/AtStartOfTurnMessage");
-var CalcDamageValueMessage_1 = require("../Events/CalcDamageValueMessage");
-var CalcFinalDamageValueMessage_1 = require("../Events/CalcFinalDamageValueMessage");
-var CalcFinalHurtValueMessage_1 = require("../Events/CalcFinalHurtValueMessage");
-var CalcHurtValueMessage_1 = require("../Events/CalcHurtValueMessage");
-var OnDamageAfter_1 = require("../Events/OnDamageAfter");
-var OnDamageBefore_1 = require("../Events/OnDamageBefore");
-var OnDeathMessage_1 = require("../Events/OnDeathMessage");
-var OnHurt_1 = require("../Events/OnHurt");
-var OnHurtAfter_1 = require("../Events/OnHurtAfter");
-var OnHurtBefore_1 = require("../Events/OnHurtBefore");
-var PowerModifiedAmountMessage_1 = require("../Events/PowerModifiedAmountMessage");
-var PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+const DungeonManager_1 = require("../DungeonManager");
+const EffectKit_1 = require("../Effect/EffectKit");
+const FlashPowerEffect_1 = require("../Effect/FlashPowerEffect");
+const GainPowerEffect_1 = require("../Effect/GainPowerEffect");
+const AtEndOfTurnMessage_1 = require("../Events/AtEndOfTurnMessage");
+const AtEndOfTurnPreEndTurnCardsMessage_1 = require("../Events/AtEndOfTurnPreEndTurnCardsMessage");
+const AtStartOfTurnMessage_1 = require("../Events/AtStartOfTurnMessage");
+const CalcDamageValueMessage_1 = require("../Events/CalcDamageValueMessage");
+const CalcFinalDamageValueMessage_1 = require("../Events/CalcFinalDamageValueMessage");
+const CalcFinalHurtValueMessage_1 = require("../Events/CalcFinalHurtValueMessage");
+const CalcHurtValueMessage_1 = require("../Events/CalcHurtValueMessage");
+const OnDamageAfterMessage_1 = require("../Events/OnDamageAfterMessage");
+const OnDamageBeforeMessage_1 = require("../Events/OnDamageBeforeMessage");
+const OnDeathMessage_1 = require("../Events/OnDeathMessage");
+const OnHurtMessage_1 = require("../Events/OnHurtMessage");
+const OnHurtAfterMessage_1 = require("../Events/OnHurtAfterMessage");
+const OnHurtBeforeMessage_1 = require("../Events/OnHurtBeforeMessage");
+const PowerModifiedAmountMessage_1 = require("../Events/PowerModifiedAmountMessage");
+const PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
 class AbstractPower {
+    //层数
+    _Amount;
+    //可否叠加
+    CanStack;
+    //可否驱散
+    CanRemove;
+    //结算优先级
+    Priority;
+    //该Buff的拥有者
+    Owner;
+    //该Buff的施法来源
+    Source;
     get Amount() {
         return this._Amount;
     }
@@ -33,14 +45,14 @@ class AbstractPower {
     }
     //重载该方法需要调用super.OnInit();
     OnInit() {
-        DungeonManager_1.default.MessageManager.Add(OnHurtBefore_1.OnHurtBefore.Id, this.OnHurtBefore);
-        DungeonManager_1.default.MessageManager.Add(OnHurt_1.OnHurt.Id, this.OnHurt);
-        DungeonManager_1.default.MessageManager.Add(OnHurtAfter_1.OnHurtAfter.Id, this.OnHurtAfter);
+        DungeonManager_1.default.MessageManager.Add(OnHurtBeforeMessage_1.OnHurtBeforeMessage.Id, this.OnHurtBefore);
+        DungeonManager_1.default.MessageManager.Add(OnHurtMessage_1.OnHurtMessage.Id, this.OnHurt);
+        DungeonManager_1.default.MessageManager.Add(OnHurtAfterMessage_1.OnHurtAfterMessage.Id, this.OnHurtAfter);
         DungeonManager_1.default.MessageManager.Add(AtEndOfTurnMessage_1.AtEndOfTurnMessage.Id, this.AtEndOfTurn);
         DungeonManager_1.default.MessageManager.Add(AtStartOfTurnMessage_1.AtStartOfTurnMessage.Id, this.AtStartOfTurn);
         DungeonManager_1.default.MessageManager.Add(CalcDamageValueMessage_1.CalcDamageValueMessage.Id, this.CalcDamageValue);
-        DungeonManager_1.default.MessageManager.Add(OnDamageBefore_1.OnDamageBefore.Id, this.OnDamageBefore);
-        DungeonManager_1.default.MessageManager.Add(OnDamageAfter_1.OnDamageAfter.Id, this.OnDamageAfter);
+        DungeonManager_1.default.MessageManager.Add(OnDamageBeforeMessage_1.OnDamageBeforeMessage.Id, this.OnDamageBefore);
+        DungeonManager_1.default.MessageManager.Add(OnDamageAfterMessage_1.OnDamageAfterMessage.Id, this.OnDamageAfter);
         DungeonManager_1.default.MessageManager.Add(CalcFinalDamageValueMessage_1.CalcFinalDamageValueMessage.Id, this.CalcFinalDamageValue);
         DungeonManager_1.default.MessageManager.Add(CalcHurtValueMessage_1.CalcHurtValueMessage.Id, this.CalcHurtValue);
         DungeonManager_1.default.MessageManager.Add(CalcFinalHurtValueMessage_1.CalcFinalHurtValueMessage.Id, this.CalcFinalHurtValue);
@@ -50,16 +62,16 @@ class AbstractPower {
     }
     //重载该方法需要调用super.OnRemove();
     OnRemove() {
-        DungeonManager_1.default.MessageManager.Remove(OnHurtBefore_1.OnHurtBefore.Id, this.OnHurtBefore);
-        DungeonManager_1.default.MessageManager.Remove(OnHurt_1.OnHurt.Id, this.OnHurt);
-        DungeonManager_1.default.MessageManager.Remove(OnHurtAfter_1.OnHurtAfter.Id, this.OnHurtAfter);
+        DungeonManager_1.default.MessageManager.Remove(OnHurtBeforeMessage_1.OnHurtBeforeMessage.Id, this.OnHurtBefore);
+        DungeonManager_1.default.MessageManager.Remove(OnHurtMessage_1.OnHurtMessage.Id, this.OnHurt);
+        DungeonManager_1.default.MessageManager.Remove(OnHurtAfterMessage_1.OnHurtAfterMessage.Id, this.OnHurtAfter);
         DungeonManager_1.default.MessageManager.Remove(AtEndOfTurnMessage_1.AtEndOfTurnMessage.Id, this.AtEndOfTurn);
         DungeonManager_1.default.MessageManager.Remove(AtStartOfTurnMessage_1.AtStartOfTurnMessage.Id, this.AtStartOfTurn);
         DungeonManager_1.default.MessageManager.Remove(CalcDamageValueMessage_1.CalcDamageValueMessage.Id, this.CalcDamageValue);
-        DungeonManager_1.default.MessageManager.Remove(OnDamageBefore_1.OnDamageBefore.Id, this.OnDamageBefore);
-        DungeonManager_1.default.MessageManager.Remove(OnDamageAfter_1.OnDamageAfter.Id, this.OnDamageAfter);
+        DungeonManager_1.default.MessageManager.Remove(OnDamageBeforeMessage_1.OnDamageBeforeMessage.Id, this.OnDamageBefore);
+        DungeonManager_1.default.MessageManager.Remove(OnDamageAfterMessage_1.OnDamageAfterMessage.Id, this.OnDamageAfter);
         DungeonManager_1.default.MessageManager.Remove(CalcFinalDamageValueMessage_1.CalcFinalDamageValueMessage.Id, this.CalcFinalDamageValue);
-        DungeonManager_1.default.MessageManager.Remove(OnDamageAfter_1.OnDamageAfter.Id, this.OnDamageAfter);
+        DungeonManager_1.default.MessageManager.Remove(OnDamageAfterMessage_1.OnDamageAfterMessage.Id, this.OnDamageAfter);
         DungeonManager_1.default.MessageManager.Remove(CalcFinalDamageValueMessage_1.CalcFinalDamageValueMessage.Id, this.CalcFinalDamageValue);
         DungeonManager_1.default.MessageManager.Remove(CalcHurtValueMessage_1.CalcHurtValueMessage.Id, this.CalcHurtValue);
         DungeonManager_1.default.MessageManager.Remove(CalcFinalHurtValueMessage_1.CalcFinalHurtValueMessage.Id, this.CalcFinalHurtValue);

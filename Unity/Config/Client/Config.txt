@@ -1,7 +1,7 @@
 ﻿#生成后的脚本存放的位置,如果填写盘符则为绝对路径不填写则为当前活动表格的相对路径
 SaveScriptPath = ["../../../Unity/TSProj/src/mods/ModTheSpire/Scripts/Gen/DB/"]
 #生成后的数据库存放位置,如果填写盘符则为绝对路径不填写则为当前活动表格的相对路径
-SaveDbPath = ["../../../Unity/Assets/StreamingAssets/mods/ModTheSpire/DB/"]
+SaveDbPath = ["C:/Users/70980/AppData/LocalLow/DefaultCompany/RPGCardFans/mods/ModTheSpire/DB/"]
 #文件后缀名带有该后缀名的可以享有该插件的所有能力
 FileSuffix = "_Auto"
 #枚举类型后缀

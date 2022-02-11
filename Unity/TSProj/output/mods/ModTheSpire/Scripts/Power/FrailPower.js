@@ -1,21 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FrailPower = void 0;
-var ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
-var RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
-var DungeonManager_1 = require("../DungeonManager");
-var PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var StringHelper_1 = require("../StringHelper");
-var AbstractPower_1 = require("./AbstractPower");
+const ReducePowerAction_1 = require("../Action/Common/ReducePowerAction");
+const RemoveSpecificPowerAction_1 = require("../Action/Common/RemoveSpecificPowerAction");
+const DungeonManager_1 = require("../DungeonManager");
+const PreModifyBlockMessage_1 = require("../Events/PreModifyBlockMessage");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const StringHelper_1 = require("../StringHelper");
+const AbstractPower_1 = require("./AbstractPower");
 class FrailPower extends AbstractPower_1.AbstractPower {
-    constructor() {
-        super(...arguments);
-        this.Icon = FileHelper_1.default.FormatPath("Powers/frail.png");
-        this.Id = "Frail";
-        this.Name = Localization_1.LocalizationProperty.Read("能力-脆弱");
-    }
+    Icon = FileHelper_1.default.FormatPath("Powers/frail.png");
+    Id = "Frail";
+    Name = Localization_1.LocalizationProperty.Read("能力-脆弱");
     get Type() {
         return AbstractPower_1.PowerType.Debuff;
     }

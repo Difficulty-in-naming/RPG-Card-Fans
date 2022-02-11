@@ -1,4 +1,4 @@
-﻿import Rand from 'rand-seed';
+﻿import Rand from "../../../ThirdParty/rand-seed/";
 
 export class Mathf {
     public static Rad2Deg = 57.29578;
