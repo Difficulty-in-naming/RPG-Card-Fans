@@ -102,5 +102,6 @@ export class UI_Combat extends View_Combat{
         this.RenderExhaustVfx();
         this.RenderDrawPileVfx();
         this.RenderDiscardPileVfx();
+        this.HandLayout.Update();
     }
 }

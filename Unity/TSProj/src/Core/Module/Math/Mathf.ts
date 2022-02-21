@@ -1,4 +1,6 @@
 ﻿import Rand from "../../../ThirdParty/rand-seed/";
+import { Vector2 } from "../../Define/Vector2";
+import { Vector3 } from "../../Define/Vector3";
 
 export class Mathf {
     public static Rad2Deg = 57.29578;
@@ -192,5 +194,27 @@ export class Mathf {
             }
         }
         return this.Random(rng) * (max - min) + min;
+    }
+
+    public static CalculateQuadraticCurve2D(pos0 : Vector2, pos1: Vector2, pos2: Vector2, t:number)
+    {
+        let x = ((1 - t) * (1 - t) * pos0.X) + (2 * (1 - t) * t * pos1.X) + t * t * pos2.X;
+        let y = ((1 - t) * (1 - t) * pos0.Y) + (2 * (1 - t) * t * pos1.Y) + t * t * pos2.Y;
+        return new Vector2(x, y);
+    }
+
+    public static CalculateQubicCurve3D(pos0:Vector3,  pos1:Vector3,  pos2:Vector3,  pos3:Vector3,  t:number)
+    {
+        let x = ((1 - t) * (1 - t) * (1 - t) * pos0.X) + (3 * (1 - t) * (1 - t) * t * pos1.X) + (3 * (1 - t) * (1 - t) * t * pos2.X) + (t * t * t * pos3.X);
+        let y = ((1 - t) * (1 - t) * (1 - t) * pos0.Y) + (3 * (1 - t) * (1 - t) * t * pos1.Y) + (3 * (1 - t) * (1 - t) * t * pos2.Y) + (t * t * t * pos3.Y);
+        let z = ((1 - t) * (1 - t) * (1 - t) * pos0.Z) + (3 * (1 - t) * (1 - t) * t * pos1.Z) + (3 * (1 - t) * (1 - t) * t * pos2.Z) + (t * t * t * pos3.Z);
+        return new Vector3(x,y,z);
+    }
+
+    public static CalculateQubicCurve2D(pos0 : Vector2, pos1: Vector2, pos2: Vector2, pos3: Vector2, t : number)
+    {
+        let x = ((1 - t) * (1 - t) * (1 - t) * pos0.X) + (3 * (1 - t) * (1 - t) * t * pos1.X) + (3 * (1 - t) * (1 - t) * t * pos2.X) + (t * t * t * pos3.X);
+        let y = ((1 - t) * (1 - t) * (1 - t) * pos0.Y) + (3 * (1 - t) * (1 - t) * t * pos1.Y) + (3 * (1 - t) * (1 - t) * t * pos2.Y) + (t * t * t * pos3.Y);
+        return new Vector2(x, y);
     }
 }

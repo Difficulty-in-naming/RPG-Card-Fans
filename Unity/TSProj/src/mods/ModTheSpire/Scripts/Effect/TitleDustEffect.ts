@@ -2,10 +2,8 @@
 import { Mathf } from "../../../../Core/Module/Math/Mathf";
 import { TimeKit } from "../../../../Core/Utils/TimeKit";
 import Color from "../DataDefine/Color";
-import FileHelper from "../FileHelper";
 import UIHelper from "../UI/UIHelper";
 import { AbstractEffect } from "./AbstractEffect";
-import * as TWEEN from "../../../../ThirdParty/@tweenjs/tween"
 export class TitleDustEffect extends AbstractEffect{
     private readonly Vx : number;
     private readonly Vy : number;
@@ -13,8 +11,7 @@ export class TitleDustEffect extends AbstractEffect{
     private Scale : number;
     public Loader : FairyGUI.GLoader;
     private Vc : Color;
-    private Tween;
-    private Dur;
+    private Interval;
     public constructor() {
         super();
         this.Loader = UIHelper.CreateGLoader();
@@ -38,7 +35,8 @@ export class TitleDustEffect extends AbstractEffect{
         this.Vc = new Color(r,g,b,a);
         this.Loader.color = this.Vc.UnityColor;
         this.Loader.alpha = 0.2;
-        this.Dur = Mathf.Floor(Mathf.RandomRange(2000,3000));
+        this.Interval = Mathf.Floor(Mathf.RandomRange(3,4));
+        this.Loader.TweenFade(0,this.Interval).SetEase(FairyGUI.EaseType.SineInOut);
     }
 
     Update() {
@@ -50,19 +48,10 @@ export class TitleDustEffect extends AbstractEffect{
         this.Loader.y += y;
         this.Loader.rotation = this.Va * TimeKit.DeltaTime;
         this.Loader.SetScale(this.Scale,this.Scale);
-        if(this.Duration < 1){
+        if(this.Duration > this.Interval){
+            this.Loader.Dispose();
+            this.IsDone = true;
             return;
         }
-        else if(this.Tween == null)
-        {
-            this.Tween = new TWEEN.Tween({a:0.2}).to({a:0}, this.Dur).easing(TWEEN.Easing.Sinusoidal.InOut)
-                .onUpdate(object => {
-                    this.Loader.alpha = object.a;
-                }).start();
-        }
-        if(this.Tween.isPlaying())
-            return;
-        this.Loader.Dispose();
-        this.IsDone = true;
     }
 }

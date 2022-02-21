@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,600">
+  <displayList>
+    <image id="n0_joqm" name="n0" src="joqm48" fileName="Texture/blurDot2.png" xy="0,0" pivot="0.5,0.5" scale="0.01,0.01" blend="add"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n0_joqm" tween="true" startValue="0" endValue="0.18" duration="12" ease="Sine.InOut"/>
+    <item time="0" type="Scale" target="n0_joqm" tween="true" startValue="5.5,5.5" endValue="0,0" duration="6" ease="Linear"/>
+    <item time="7" type="Scale" target="n0_joqm" tween="true" startValue="5.5,5.5" endValue="0,0" duration="5" ease="Linear"/>
+  </transition>
+</component>

@@ -337,9 +337,12 @@ export class View_XuanZhongKuang extends UIBase
 }
 export class View_Card extends UIBase
 {
-    public Position : FairyGUI.Controller;
+    public c1 : FairyGUI.Controller;
+    public TrailHolder : FairyGUI.GGraph;
     public Main : FairyGUI.GComponent;
-    public t0 : FairyGUI.Transition;
+    public SuperFlash : FairyGUI.Transition;
+    public Flash : FairyGUI.Transition;
+    public Glow : FairyGUI.Transition;
     public static Url = new ViewInfo("ModTheSpire_Combat","Card")
     public static CreatePanel(...args) : UIBase
     {
@@ -369,9 +372,12 @@ export class View_Card extends UIBase
     //不要主动调用这个方法或者修改这个方法
     public Construct()
     {
-        this.Position = this.View.GetController("Position") as FairyGUI.Controller;
+        this.c1 = this.View.GetController("c1") as FairyGUI.Controller;
+        this.TrailHolder = this.View.GetChild("TrailHolder") as FairyGUI.GGraph;
         this.Main = this.View.GetChild("Main") as FairyGUI.GComponent;
-        this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
+        this.SuperFlash = this.View.GetTransition("SuperFlash") as FairyGUI.Transition;
+        this.Flash = this.View.GetTransition("Flash") as FairyGUI.Transition;
+        this.Glow = this.View.GetTransition("Glow") as FairyGUI.Transition;
     }
 }
 export class View_DisplayName extends UIBase

@@ -34,7 +34,7 @@ export class Entry implements UnityBridge
         let hello = UI_Title.CreatePanel();
         DungeonManager.NewGame(new Ironclad(),"11")
         DungeonManager.Inst.CurrentDungeon = new Exordium();
-        DungeonManager.Inst.CurrentRoom = new CombatRoom();
+        //DungeonManager.Inst.CurrentRoom = new CombatRoom();
         this.Cursor = new Cursor();
         MainEntry.Inst().RegisterEntry(this);
     }
@@ -45,11 +45,11 @@ export class Entry implements UnityBridge
     }
     OnUpdate()
     {
-       //this.Cursor.Update();
-       //EffectKit.Inst().Update();
-       //if(DungeonManager.Inst){
-       //    DungeonManager.Inst.Update();
-       //}
+       this.Cursor.Update();
+       EffectKit.Inst().Update();
+       if(DungeonManager.Inst){
+           DungeonManager.Inst.Update();
+       }
     }
     OnDestroy() {
     }

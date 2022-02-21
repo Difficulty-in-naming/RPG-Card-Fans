@@ -295,9 +295,12 @@ class View_XuanZhongKuang extends UIBase_1.UIBase {
 }
 exports.View_XuanZhongKuang = View_XuanZhongKuang;
 class View_Card extends UIBase_1.UIBase {
-    Position;
+    c1;
+    TrailHolder;
     Main;
-    t0;
+    SuperFlash;
+    Flash;
+    Glow;
     static Url = new ViewInfo_1.ViewInfo("ModTheSpire_Combat", "Card");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
@@ -321,9 +324,12 @@ class View_Card extends UIBase_1.UIBase {
     }
     //不要主动调用这个方法或者修改这个方法
     Construct() {
-        this.Position = this.View.GetController("Position");
+        this.c1 = this.View.GetController("c1");
+        this.TrailHolder = this.View.GetChild("TrailHolder");
         this.Main = this.View.GetChild("Main");
-        this.t0 = this.View.GetTransition("t0");
+        this.SuperFlash = this.View.GetTransition("SuperFlash");
+        this.Flash = this.View.GetTransition("Flash");
+        this.Glow = this.View.GetTransition("Glow");
     }
 }
 exports.View_Card = View_Card;

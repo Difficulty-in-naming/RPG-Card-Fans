@@ -9,12 +9,12 @@ const Defect_1 = require("./Scripts/Unit/Character/Defect");
 const TheSilent_1 = require("./Scripts/Unit/Character/TheSilent");
 const Watcher_1 = require("./Scripts/Unit/Character/Watcher");
 const FileHelper_1 = require("./Scripts/FileHelper");
+const EffectKit_1 = require("./Scripts/Effect/EffectKit");
 const Cursor_1 = require("../../mods/ModTheSpire/Scripts/Cursor");
 const DungeonManager_1 = require("../../mods/ModTheSpire/Scripts/DungeonManager");
 const PlayerInfo_1 = require("../../mods/ModTheSpire/Scripts/Unit/Character/PlayerInfo");
 const Exordium_1 = require("../../mods/ModTheSpire/Scripts/Dungeon/Exordium");
 const UI_Title_1 = require("../../mods/ModTheSpire/Scripts/UI/ViewModel/UI_Title");
-const CombatRoom_1 = require("../../mods/ModTheSpire/Scripts/Room/CombatRoom");
 class Entry {
     Cursor;
     constructor() {
@@ -27,7 +27,7 @@ class Entry {
         let hello = UI_Title_1.UI_Title.CreatePanel();
         DungeonManager_1.default.NewGame(new Ironclad_1.default(), "11");
         DungeonManager_1.default.Inst.CurrentDungeon = new Exordium_1.Exordium();
-        DungeonManager_1.default.Inst.CurrentRoom = new CombatRoom_1.CombatRoom();
+        //DungeonManager.Inst.CurrentRoom = new CombatRoom();
         this.Cursor = new Cursor_1.Cursor();
         MainEntry_1.MainEntry.Inst().RegisterEntry(this);
     }
@@ -35,11 +35,11 @@ class Entry {
         FileHelper_1.default.LoadConfig();
     }
     OnUpdate() {
-        //this.Cursor.Update();
-        //EffectKit.Inst().Update();
-        //if(DungeonManager.Inst){
-        //    DungeonManager.Inst.Update();
-        //}
+        this.Cursor.Update();
+        EffectKit_1.default.Inst().Update();
+        if (DungeonManager_1.default.Inst) {
+            DungeonManager_1.default.Inst.Update();
+        }
     }
     OnDestroy() {
     }

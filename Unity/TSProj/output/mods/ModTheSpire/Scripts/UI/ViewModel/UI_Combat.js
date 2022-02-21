@@ -95,6 +95,7 @@ class UI_Combat extends ModTheSpire_Combat_1.View_Combat {
         this.RenderExhaustVfx();
         this.RenderDrawPileVfx();
         this.RenderDiscardPileVfx();
+        this.HandLayout.Update();
     }
 }
 exports.UI_Combat = UI_Combat;

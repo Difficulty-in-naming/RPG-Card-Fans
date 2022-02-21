@@ -17,7 +17,7 @@ export class BottomFogEffect extends AbstractEffect{
     constructor(parent:FairyGUI.GComponent = null) {
         super();
         this.Interval = Mathf.RandomRange(10,12);
-        this.Loader = UIHelper.CreateGLoader();
+        this.Loader = new FairyGUI.GLoader();
         if(parent)
             parent.AddChild(this.Loader);
         this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf.Floor(Mathf.RandomRange(1,4));

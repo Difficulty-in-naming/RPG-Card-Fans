@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TitleDustEffect = void 0;
+const csharp_1 = require("csharp");
 const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
 const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
 const Color_1 = require("../DataDefine/Color");
 const UIHelper_1 = require("../UI/UIHelper");
 const AbstractEffect_1 = require("./AbstractEffect");
-const TWEEN = require("../../../../ThirdParty/@tweenjs/tween");
 class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
     Vx;
     Vy;
@@ -14,8 +14,7 @@ class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
     Scale;
     Loader;
     Vc;
-    Tween;
-    Dur;
+    Interval;
     constructor() {
         super();
         this.Loader = UIHelper_1.default.CreateGLoader();
@@ -39,7 +38,8 @@ class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
         this.Vc = new Color_1.default(r, g, b, a);
         this.Loader.color = this.Vc.UnityColor;
         this.Loader.alpha = 0.2;
-        this.Dur = Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(2000, 3000));
+        this.Interval = Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(3, 4));
+        this.Loader.TweenFade(0, this.Interval).SetEase(csharp_1.FairyGUI.EaseType.SineInOut);
     }
     Update() {
         let x, y;
@@ -50,19 +50,11 @@ class TitleDustEffect extends AbstractEffect_1.AbstractEffect {
         this.Loader.y += y;
         this.Loader.rotation = this.Va * TimeKit_1.TimeKit.DeltaTime;
         this.Loader.SetScale(this.Scale, this.Scale);
-        if (this.Duration < 1) {
+        if (this.Duration > this.Interval) {
+            this.Loader.Dispose();
+            this.IsDone = true;
             return;
         }
-        else if (this.Tween == null) {
-            this.Tween = new TWEEN.Tween({ a: 0.2 }).to({ a: 0 }, this.Dur).easing(TWEEN.Easing.Sinusoidal.InOut)
-                .onUpdate(object => {
-                this.Loader.alpha = object.a;
-            }).start();
-        }
-        if (this.Tween.isPlaying())
-            return;
-        this.Loader.Dispose();
-        this.IsDone = true;
     }
 }
 exports.TitleDustEffect = TitleDustEffect;

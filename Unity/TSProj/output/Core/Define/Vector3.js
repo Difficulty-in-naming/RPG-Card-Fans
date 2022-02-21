@@ -14,6 +14,12 @@ class Vector3 {
     get UnityVec() {
         return new csharp_1.UnityEngine.Vector3(this.X, this.Y, this.Z);
     }
+    Multiply(x) {
+        return new Vector3(this.X * x, this.Y * x, this.Z * x);
+    }
+    Add(x) {
+        return new Vector3(this.X + x.X, this.Y + x.Y, this.Z + x.Z);
+    }
 }
 exports.Vector3 = Vector3;
 //# sourceMappingURL=Vector3.js.map

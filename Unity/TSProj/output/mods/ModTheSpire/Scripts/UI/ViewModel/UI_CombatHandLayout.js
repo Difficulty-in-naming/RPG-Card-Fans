@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UI_CombatHandLayout = void 0;
 const csharp_1 = require("csharp");
+const Vector2_1 = require("../../../../../Core/Define/Vector2");
 const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
 const AbstractCard_1 = require("../../Cards/AbstractCard");
 const Strike_1 = require("../../Cards/Ironclad/Attack/Strike");
@@ -10,6 +11,7 @@ const DungeonManager_1 = require("../../DungeonManager");
 const GameSettings_1 = require("../../Game/GameSettings");
 const Localization_1 = require("../../Gen/DB/Localization");
 const ModTheSpire_Combat_1 = require("../../Gen/View/ModTheSpire_Combat");
+const InputHelper_1 = require("../../Helpers/InputHelper");
 class CardLayoutInfo {
     X;
     Y;
@@ -32,19 +34,39 @@ class HandCardInfo {
 }
 class UI_CombatHandLayout {
     combat;
+    mReticleArrow = new Array();
     mHandCard = new Array();
     HandCardNumber = 0;
     DragCard;
     NeedSelectTargetCard;
+    Room;
     constructor(combat) {
         this.combat = combat;
         //Todo 测试代码
-        let combatRoom = DungeonManager_1.default.Inst.CurrentRoom;
-        combatRoom.HandPile.push(new Strike_1.default());
-        combatRoom.HandPile.push(new Strike_1.default());
-        combatRoom.HandPile.push(new Strike_1.default());
-        combatRoom.HandPile.push(new Defend_1.Defend());
-        combatRoom.HandPile.push(new Defend_1.Defend());
+        this.Room = DungeonManager_1.default.Inst.CurrentRoom;
+        this.Room.HandPile.push(new Strike_1.default());
+        this.Room.HandPile.push(new Strike_1.default());
+        this.Room.HandPile.push(new Strike_1.default());
+        this.Room.HandPile.push(new Defend_1.Defend());
+        this.Room.HandPile.push(new Defend_1.Defend());
+        for (let i = 0; i < 19; i++) {
+            let loader = new csharp_1.FairyGUI.GLoader();
+            loader.url = "ui://ModTheSpire_Combat/reticleBlock";
+            this.combat.View.AddChild(loader);
+            loader.sortingOrder = 1;
+            loader.visible = false;
+            loader.autoSize = true;
+            loader.SetPivot(0.5, 1, true);
+            this.mReticleArrow.push(loader);
+        }
+        let loader = new csharp_1.FairyGUI.GLoader();
+        loader.url = "ui://ModTheSpire_Combat/reticleArrow";
+        this.combat.View.AddChild(loader);
+        loader.sortingOrder = 1;
+        loader.visible = false;
+        loader.autoSize = true;
+        loader.SetPivot(0.5, 1, true);
+        this.mReticleArrow.push(loader);
     }
     GetHandLayout(num) {
         let array = new Array();
@@ -174,6 +196,12 @@ class UI_CombatHandLayout {
             instance.TweenRotate(arr[i].Rot, 0.6);
             instance.data = new HandCardInfo(arr[i], cardInfo);
             instance.draggable = true;
+            let graph = instance.GetChild("TrailHolder").asGraph;
+            let trailWrapper = new csharp_1.FairyGUI.GoWrapper();
+            let obj = csharp_1.UnityEngine.Object.Instantiate(csharp_1.UnityEngine.Resources.Load("Trail"));
+            console.log(obj);
+            trailWrapper.SetWrapTarget(obj, false);
+            graph.SetNativeObject(trailWrapper);
             let main = instance.GetChild("Main").asCom;
             let pageName = "skill";
             if (main.GetController("c1").HasPage(cardInfo.Type)) {
@@ -221,17 +249,7 @@ class UI_CombatHandLayout {
                 if (this.DragCard != null) {
                     return;
                 }
-                csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Scale, false);
-                csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Rotation, false);
-                csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Y, false);
-                obj.TweenScale(new csharp_1.UnityEngine.Vector2(arr[i].Scale, arr[i].Scale), 0.6);
-                obj.TweenRotate(arr[i].Rot, 0.6);
-                obj.TweenMoveY(this.combat.View.height + 80 + arr[i].Y, 0.6);
-                //重新排序
-                for (let j = 0; j < this.mHandCard.length; j++) {
-                    this.combat.View.AddChild(this.mHandCard[j]);
-                    this.mHandCard[j].TweenMoveX(arr[j].X, 0.6);
-                }
+                this.RevertLayout(obj, arr[i]);
             });
             instance.onDragMove.Add((evt) => {
                 let obj = evt.sender;
@@ -240,11 +258,34 @@ class UI_CombatHandLayout {
                 obj.rotation = 0;
                 let info = obj.data;
                 if (Mathf_1.Mathf.Abs(obj.x - info.LayoutInfo.X) > 100 || Mathf_1.Mathf.Abs(obj.y - info.LayoutInfo.Y)) {
+                    if (info.Card.Target == AbstractCard_1.CardTarget.ENEMY) {
+                        this.NeedSelectTargetCard = obj;
+                        this.NeedSelectTargetCard.draggable = false;
+                        csharp_1.FairyGUI.GTween.Kill(obj);
+                        obj.TweenScale(new csharp_1.UnityEngine.Vector2(1.18, 1.18), 0.6);
+                        obj.TweenMoveX(this.combat.View.width / 2, 0.6);
+                        obj.TweenMoveY(this.combat.View.height + 80, 0.6);
+                    }
                 }
             });
             instance.onDragEnd.Add((evt) => {
                 this.DragCard = null;
             });
+        }
+    }
+    RevertLayout(obj, info) {
+        console.log("Revert");
+        csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Scale, false);
+        csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Rotation, false);
+        csharp_1.FairyGUI.GTween.Kill(obj, csharp_1.FairyGUI.TweenPropType.Y, false);
+        obj.TweenScale(new csharp_1.UnityEngine.Vector2(info.Scale, info.Scale), 0.6);
+        obj.TweenRotate(info.Rot, 0.6);
+        obj.TweenMoveY(this.combat.View.height + 80 + info.Y, 0.6);
+        let arr = this.GetHandLayout(this.Room.HandPile.length);
+        //重新排序
+        for (let j = 0; j < this.mHandCard.length; j++) {
+            this.combat.View.AddChild(this.mHandCard[j]);
+            this.mHandCard[j].TweenMoveX(arr[j].X, 0.6);
         }
     }
     HoverCard(i1) {
@@ -275,7 +316,50 @@ class UI_CombatHandLayout {
             pushAmt *= 0.25;
         }
     }
-    ClickCard() {
+    DiscardPile() {
+        for (let i = 0; i < this.mHandCard.length; i++) {
+            let card = this.mHandCard[i];
+            //card.
+        }
+    }
+    PlayedPile() {
+    }
+    Update() {
+        if (this.NeedSelectTargetCard) {
+            let mousePosition = InputHelper_1.InputHelper.MouseUIPoistion;
+            let startPoint = new Vector2_1.Vector2(this.NeedSelectTargetCard.x, this.NeedSelectTargetCard.y - 200);
+            let controlPoint = new Vector2_1.Vector2(this.NeedSelectTargetCard.x - (mousePosition.X - this.NeedSelectTargetCard.x) / 4, mousePosition.Y + (mousePosition.Y - this.NeedSelectTargetCard.y - 200) / 2);
+            let endPoint = mousePosition;
+            console.log(startPoint.toString(), controlPoint.toString(), endPoint.toString());
+            let arr = new Array();
+            for (let i = 0; i < 20; i++) {
+                this.mReticleArrow[i].visible = true;
+                arr.push(Mathf_1.Mathf.CalculateQuadraticCurve2D(startPoint, controlPoint, endPoint, i / 20));
+            }
+            for (let i = 0; i < 20; i++) {
+                let dir;
+                if (i == 19) {
+                    dir = new Vector2_1.Vector2(mousePosition.X - arr[i].X, mousePosition.Y - arr[i].Y);
+                }
+                else {
+                    dir = new Vector2_1.Vector2(arr[i + 1].X - arr[i].X, arr[i + 1].Y - arr[i].Y);
+                }
+                let rot_z = Mathf_1.Mathf.Atan2(dir.Y, dir.X) * Mathf_1.Mathf.Rad2Deg;
+                this.mReticleArrow[i].SetXY(arr[i].X, arr[i].Y);
+                this.mReticleArrow[i].rotation = rot_z + 90;
+            }
+        }
+        if (InputHelper_1.InputHelper.GetMouseButtonUp(1)) {
+            this.DragCard = null;
+            if (this.NeedSelectTargetCard != null) {
+                this.RevertLayout(this.NeedSelectTargetCard, this.NeedSelectTargetCard.data.LayoutInfo);
+                this.NeedSelectTargetCard.draggable = true;
+                this.NeedSelectTargetCard = null;
+                for (let i = 0; i < 20; i++) {
+                    this.mReticleArrow[i].visible = false;
+                }
+            }
+        }
     }
 }
 exports.UI_CombatHandLayout = UI_CombatHandLayout;

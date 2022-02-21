@@ -5,7 +5,6 @@ const csharp_1 = require("csharp");
 const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
 const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
 const Color_1 = require("../DataDefine/Color");
-const UIHelper_1 = require("../UI/UIHelper");
 const AbstractEffect_1 = require("./AbstractEffect");
 class BottomFogEffect extends AbstractEffect_1.AbstractEffect {
     Interval;
@@ -18,7 +17,7 @@ class BottomFogEffect extends AbstractEffect_1.AbstractEffect {
     constructor(parent = null) {
         super();
         this.Interval = Mathf_1.Mathf.RandomRange(10, 12);
-        this.Loader = UIHelper_1.default.CreateGLoader();
+        this.Loader = new csharp_1.FairyGUI.GLoader();
         if (parent)
             parent.AddChild(this.Loader);
         this.Loader.url = "ui://ModTheSpire_Effect/smoke" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 4));

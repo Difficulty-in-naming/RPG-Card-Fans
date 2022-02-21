@@ -42,8 +42,9 @@ class UI_BottomScene extends ModTheSpire_BottomScene_1.View_BottomScene {
         for (let i = length - 1; i >= 0; i--) {
             this.Fog[i].Duration += TimeKit_1.TimeKit.DeltaTime;
             this.Fog[i].Update();
-            if (this.Fog[i].IsDone)
+            if (this.Fog[i].IsDone) {
                 this.Fog.splice(i, 1);
+            }
         }
         if (length < 50 && !LocalSettings_1.LocalSettings.Inst().DisableEffects) {
             this.Fog.push(new BottomFogEffect_1.BottomFogEffect(this.View));

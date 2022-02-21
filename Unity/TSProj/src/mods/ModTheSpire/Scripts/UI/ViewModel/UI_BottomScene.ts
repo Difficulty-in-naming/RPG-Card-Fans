@@ -46,8 +46,9 @@ export class UI_BottomScene extends View_BottomScene implements IScene
         for (let i = length - 1; i >= 0; i--) {
             this.Fog[i].Duration += TimeKit.DeltaTime;
             this.Fog[i].Update();
-            if(this.Fog[i].IsDone)
+            if(this.Fog[i].IsDone){
                 this.Fog.splice(i,1);
+            }
         }
         if(length < 50 && !LocalSettings.Inst().DisableEffects){
             this.Fog.push(new BottomFogEffect(this.View));

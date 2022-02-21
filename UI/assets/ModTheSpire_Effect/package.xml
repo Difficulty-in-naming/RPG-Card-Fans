@@ -57,6 +57,8 @@
     <image id="joqm45" name="death4.png" path="/Texture/env/" exported="true"/>
     <image id="joqm46" name="death5.png" path="/Texture/env/" exported="true"/>
     <image id="joqm47" name="death6.png" path="/Texture/env/" exported="true"/>
+    <image id="joqm48" name="blurDot2.png" path="/Texture/" exported="true"/>
+    <component id="joqm49" name="CardTrailEffect.xml" path="/Combat/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>
