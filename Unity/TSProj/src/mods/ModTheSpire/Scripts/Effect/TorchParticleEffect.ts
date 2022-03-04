@@ -18,7 +18,7 @@ export class TorchParticleEffect extends AbstractEffect{
         this.Loader = UIHelper.CreateGLoader();
         if(parent)
             parent.AddChildAt(this.Loader,0);
-        this.Loader.url = FileHelper.FormatPath(`Vfx/env/fire${Mathf.Floor(Mathf.RandomRange(1,4))}.png`);
+        this.Loader.url = `ui://ModTheSpire_Effect/fire${Mathf.Floor(Mathf.RandomRange(1,4))}`;
         this.Loader.SetPivot(0.5,0.5,true);
         this.Loader.SetPosition(X - Mathf.RandomRange(-3,3) ,Y,0);
         this.Loader.autoSize = true;
@@ -27,8 +27,8 @@ export class TorchParticleEffect extends AbstractEffect{
         this.Vy = Mathf.RandomRange(-100,0);
         this.Loader.rotation = Mathf.RandomRange(-20,20);
         this.Loader.color = TorchParticleEffect.RenderGreen ? 
-            new Color(Mathf.RandomRange(153,255),Mathf.RandomRange(77,153),Mathf.RandomRange(0,77)).UnityColor() :
-            new Color(Mathf.RandomRange(26,77),Mathf.RandomRange(128,230),Mathf.RandomRange(26,77)).UnityColor();
+            new Color(Mathf.RandomRange(153,255),Mathf.RandomRange(77,153),Mathf.RandomRange(0,77)).UnityColor :
+            new Color(Mathf.RandomRange(26,77),Mathf.RandomRange(128,230),Mathf.RandomRange(26,77)).UnityColor;
         this.Loader.TweenFade(0,this.Interval).SetEase(FairyGUI.EaseType.SineInOut);
     }
     Update() {

@@ -13,9 +13,10 @@ export class [@Class]Property
 	public [@Name] : [@Type];}
 	public static Read(id : [@KeyType]) : string
 	{
-		// @ts-ignore
-		let dirName = __dirname;
-		let result = ConfigAssetManager.Read(PathHelper.GetModName(dirName),id)[Settings.Inst().Language];
+		let c = ConfigAssetManager.Read("ModTheSpire_Localization",id);
+		if(!c)
+			return id;
+		let result = c[Settings.Inst().Language];
 		if(!result)
 			return id;
 		return result
@@ -25,7 +26,7 @@ export class [@Class]Property
 	{
 		// @ts-ignore
 		let dirName = __dirname;
-		return ConfigAssetManager.ReadDict(PathHelper.GetModName(dirName));
+		return ConfigAssetManager.ReadDict("ModTheSpire_[@Class]");
 	}
 }
 }

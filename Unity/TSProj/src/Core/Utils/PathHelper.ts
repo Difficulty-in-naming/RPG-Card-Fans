@@ -40,14 +40,4 @@ export default class PathHelper {
         filePath = filePath.substring(0,filePath.lastIndexOf('/'));
         return filePath;
     }
-    
-    public static GetModName(filePath : string) : string
-    {
-        filePath = this.FormatFilePath(filePath);
-        let split = filePath.split('/');
-        if(split.length > 0) {
-            return split[1];
-        }
-        return "";
-    }
 }

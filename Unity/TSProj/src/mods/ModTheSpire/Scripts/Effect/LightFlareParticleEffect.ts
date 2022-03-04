@@ -1,11 +1,11 @@
 import { FairyGUI } from "csharp";
 import { Mathf } from "../../../../Core/Module/Math/Mathf";
 import { TimeKit } from "../../../../Core/Utils/TimeKit";
+import TWEEN from "../../../../ThirdParty/@tweenjs/tween";
 import Color from "../DataDefine/Color";
 import UIHelper from "../UI/UIHelper";
 import { AbstractEffect } from "./AbstractEffect";
 import { EffectOrder } from "./EffectKit";
-import TWEEN from '@tweenjs/tween.js';
 
 export class LightFlareParticleEffect extends AbstractEffect
 {

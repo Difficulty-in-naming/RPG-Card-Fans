@@ -3,6 +3,7 @@ import { Mathf } from "../../../../../Core/Module/Math/Mathf";
 import { TimeKit } from "../../../../../Core/Utils/TimeKit";
 import Color from "../../DataDefine/Color";
 import FileHelper from "../../FileHelper";
+import { ImageMaster } from "../../Helpers/ImageMaster";
 import UIHelper from "../../UI/UIHelper";
 import { AbstractEffect } from "../AbstractEffect";
 
@@ -17,10 +18,10 @@ export class SmokeBlurEffect extends AbstractEffect{
         super();
         this.Loader = UIHelper.CreateGLoader();
         if(Mathf.Random() < 0.5){
-            this.Loader.url = FileHelper.FormatPath(`Vfx/exhaust/bigBlur.png`)
+            this.Loader.url = ImageMaster.EXHAUST_L;
             this._TargetScale = Mathf.RandomRange(0.8,2.2);
         }else{
-            this.Loader.url = FileHelper.FormatPath(`Vfx/exhaust/smallBlur.png`)
+            this.Loader.url = ImageMaster.EXHAUST_S;
             this._TargetScale = Mathf.RandomRange(0.8,1.2);
         }
         this.Loader.SetScale(0.01,0.01);
@@ -29,7 +30,7 @@ export class SmokeBlurEffect extends AbstractEffect{
         color.R = Mathf.RandomRange(128,153)
         color.G = color.R + Mathf.RandomRange(0, 51);
         color.B = 51;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this._Interval = Mathf.Floor(Mathf.RandomRange(2,2.5));
         this.Loader.rotation = Mathf.RandomRange(0,360);
         this._Vy = Mathf.RandomRange(1,5);

@@ -1,27 +1,36 @@
 ﻿
 using System;
+
 namespace PuertsStaticWrap
 {
     public static class UnityEngine_HumanLimit_Wrap
     {
+
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
+
                 {
+            
                     {
+                
                         var result = new UnityEngine.HumanLimit();
+                
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.HumanLimit), result);
+                    
                     }
+                
                 }
-            }
-            catch (Exception e)
-            {
+            
+    
+            } catch (Exception e) {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
             return IntPtr.Zero;
         }
+    
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_useDefaultValues(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -36,6 +45,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_useDefaultValues(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,6 +61,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_min(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -65,6 +76,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_min(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -80,6 +92,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_max(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -94,6 +107,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_max(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -109,6 +123,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_center(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -123,6 +138,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_center(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -138,6 +154,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_axisLength(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -152,6 +169,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_axisLength(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -167,6 +185,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+                
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -175,22 +194,26 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"useDefaultValues", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_useDefaultValues, Setter = S_useDefaultValues} },
-                    {"min", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_min, Setter = S_min} },
-                    {"max", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_max, Setter = S_max} },
-                    {"center", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_center, Setter = S_center} },
-                    {"axisLength", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_axisLength, Setter = S_axisLength} },
+{"min", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_min, Setter = S_min} },
+{"max", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_max, Setter = S_max} },
+{"center", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_center, Setter = S_center} },
+{"axisLength", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_axisLength, Setter = S_axisLength} }
                 },
                 LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    
                 }
             };
         }
+    
     }
 }

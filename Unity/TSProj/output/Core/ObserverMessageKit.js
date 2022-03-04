@@ -2,9 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ObserverMessageKit = void 0;
 class ObserverMessageKit {
-    constructor() {
-        this.map = new Map();
-    }
+    map = new Map();
     Add(key, func) {
         let list = this.map[key];
         if (!list) {

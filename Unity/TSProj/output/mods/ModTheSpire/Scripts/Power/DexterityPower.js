@@ -1,18 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DexterityPower = void 0;
-var SoundMaster_1 = require("../Audio/SoundMaster");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var StringHelper_1 = require("../StringHelper");
-var AbstractPower_1 = require("./AbstractPower");
+const SoundMaster_1 = require("../Audio/SoundMaster");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const StringHelper_1 = require("../StringHelper");
+const AbstractPower_1 = require("./AbstractPower");
 class DexterityPower extends AbstractPower_1.AbstractPower {
-    constructor() {
-        super(...arguments);
-        this.Name = Localization_1.LocalizationProperty.Read("能力-敏捷");
-        this.Icon = FileHelper_1.default.FormatPath("Powers/strength.png");
-        this.Id = "Strength";
-    }
+    Name = Localization_1.LocalizationProperty.Read("能力-敏捷");
+    Icon = FileHelper_1.default.FormatPath("Powers/strength.png");
+    Id = "Strength";
     get Type() { return this.Amount >= 0 ? AbstractPower_1.PowerType.Buff : AbstractPower_1.PowerType.Debuff; }
     GetDescription(...args) {
         if (this.Amount >= 0) {

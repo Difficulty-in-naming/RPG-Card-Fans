@@ -1,17 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalizationProperty = void 0;
-/********************************
-  该脚本是自动生成的请勿手动修改
-*********************************/
-var PathHelper_1 = require("../../../../../Core/Utils/PathHelper");
-var ConfigAssetManager_1 = require("../../../../../Core/Module/Config/ConfigAssetManager");
-var Settings_1 = require("../../../../../Core/Settings");
+const ConfigAssetManager_1 = require("../../../../../Core/Module/Config/ConfigAssetManager");
+const Settings_1 = require("../../../../../Core/Settings");
 class LocalizationProperty {
+    // Id
+    Id;
+    // 中文
+    Chinese;
     static Read(id) {
-        // @ts-ignore
-        let dirName = __dirname;
-        let result = ConfigAssetManager_1.ConfigAssetManager.Read(PathHelper_1.default.GetModName(dirName), id)[Settings_1.default.Inst().Language];
+        let c = ConfigAssetManager_1.ConfigAssetManager.Read("ModTheSpire_Localization", id);
+        if (!c)
+            return id;
+        let result = c[Settings_1.default.Inst().Language];
         if (!result)
             return id;
         return result;
@@ -19,7 +20,7 @@ class LocalizationProperty {
     static ReadDict() {
         // @ts-ignore
         let dirName = __dirname;
-        return ConfigAssetManager_1.ConfigAssetManager.ReadDict(PathHelper_1.default.GetModName(dirName));
+        return ConfigAssetManager_1.ConfigAssetManager.ReadDict("ModTheSpire_Localization");
     }
 }
 exports.LocalizationProperty = LocalizationProperty;

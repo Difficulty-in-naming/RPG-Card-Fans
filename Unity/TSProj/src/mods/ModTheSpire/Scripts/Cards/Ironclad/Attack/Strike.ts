@@ -3,6 +3,7 @@ import { AttackEffect } from "../../../DataDefine/AttackEffect";
 import DamageInfo from "../../../DataDefine/DamageInfo";
 import FileHelper from "../../../FileHelper";
 import { LocalizationProperty } from "../../../Gen/DB/Localization";
+import AbstractCreature from "../../../Unit/AbstractCreature";
 import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
 import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
@@ -20,7 +21,7 @@ export default class Strike extends AbstractCard
     Damage = 6;
     Energy = 1;
     
-    Use(player: AbstractPlayer, monster: AbstractMonster) {
+    Use(player: AbstractPlayer, monster: AbstractCreature) {
         super.Use(player, monster);
         this.AddToBot(new DamageAction(monster,new DamageInfo(player,this.Damage),AttackEffect.SLASH_DIAGONAL))
     }

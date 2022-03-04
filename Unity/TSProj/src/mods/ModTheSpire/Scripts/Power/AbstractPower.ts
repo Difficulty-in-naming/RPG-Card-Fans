@@ -11,13 +11,13 @@ import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
 import { CalcFinalDamageValueMessage } from "../Events/CalcFinalDamageValueMessage";
 import { CalcFinalHurtValueMessage } from "../Events/CalcFinalHurtValueMessage";
 import { CalcHurtValueMessage } from "../Events/CalcHurtValueMessage";
-import { OnDamageAfter } from "../Events/OnDamageAfter";
-import { OnDamageBefore } from "../Events/OnDamageBefore";
+import { OnDamageAfterMessage } from "../Events/OnDamageAfterMessage";
+import { OnDamageBeforeMessage } from "../Events/OnDamageBeforeMessage";
 import { OnDeathMessage } from "../Events/OnDeathMessage";
-import { OnHurt } from "../Events/OnHurt";
-import { OnHurtAfter } from "../Events/OnHurtAfter";
-import { OnHurtBefore } from "../Events/OnHurtBefore";
-import { OnPreUseCardMessage } from "../Events/OnPreUseCardMessage";
+import { OnHurtMessage } from "../Events/OnHurtMessage";
+import { OnHurtAfterMessage } from "../Events/OnHurtAfterMessage";
+import { OnHurtBeforeMessage } from "../Events/OnHurtBeforeMessage";
+import { OnUseCardAfterMessage } from "../Events/OnUseCardAfterMessage";
 import { PowerModifiedAmountMessage } from "../Events/PowerModifiedAmountMessage";
 import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
 import AbstractCreature from "../Unit/AbstractCreature";
@@ -58,14 +58,14 @@ export abstract class AbstractPower {
 
     //重载该方法需要调用super.OnInit();
     public OnInit() {
-        DungeonManager.MessageManager.Add(OnHurtBefore.Id,this.OnHurtBefore)
-        DungeonManager.MessageManager.Add(OnHurt.Id,this.OnHurt)
-        DungeonManager.MessageManager.Add(OnHurtAfter.Id,this.OnHurtAfter)
+        DungeonManager.MessageManager.Add(OnHurtBeforeMessage.Id,this.OnHurtBefore)
+        DungeonManager.MessageManager.Add(OnHurtMessage.Id,this.OnHurt)
+        DungeonManager.MessageManager.Add(OnHurtAfterMessage.Id,this.OnHurtAfter)
         DungeonManager.MessageManager.Add(AtEndOfTurnMessage.Id,this.AtEndOfTurn);
         DungeonManager.MessageManager.Add(AtStartOfTurnMessage.Id,this.AtStartOfTurn);
         DungeonManager.MessageManager.Add(CalcDamageValueMessage.Id,this.CalcDamageValue);
-        DungeonManager.MessageManager.Add(OnDamageBefore.Id,this.OnDamageBefore);
-        DungeonManager.MessageManager.Add(OnDamageAfter.Id,this.OnDamageAfter);
+        DungeonManager.MessageManager.Add(OnDamageBeforeMessage.Id,this.OnDamageBefore);
+        DungeonManager.MessageManager.Add(OnDamageAfterMessage.Id,this.OnDamageAfter);
         DungeonManager.MessageManager.Add(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
         DungeonManager.MessageManager.Add(CalcHurtValueMessage.Id,this.CalcHurtValue);
         DungeonManager.MessageManager.Add(CalcFinalHurtValueMessage.Id,this.CalcFinalHurtValue);
@@ -76,16 +76,16 @@ export abstract class AbstractPower {
     
     //重载该方法需要调用super.OnRemove();
     public OnRemove(){
-        DungeonManager.MessageManager.Remove(OnHurtBefore.Id,this.OnHurtBefore)
-        DungeonManager.MessageManager.Remove(OnHurt.Id,this.OnHurt)
-        DungeonManager.MessageManager.Remove(OnHurtAfter.Id,this.OnHurtAfter)
+        DungeonManager.MessageManager.Remove(OnHurtBeforeMessage.Id,this.OnHurtBefore)
+        DungeonManager.MessageManager.Remove(OnHurtMessage.Id,this.OnHurt)
+        DungeonManager.MessageManager.Remove(OnHurtAfterMessage.Id,this.OnHurtAfter)
         DungeonManager.MessageManager.Remove(AtEndOfTurnMessage.Id,this.AtEndOfTurn);
         DungeonManager.MessageManager.Remove(AtStartOfTurnMessage.Id,this.AtStartOfTurn);
         DungeonManager.MessageManager.Remove(CalcDamageValueMessage.Id,this.CalcDamageValue);
-        DungeonManager.MessageManager.Remove(OnDamageBefore.Id,this.OnDamageBefore);
-        DungeonManager.MessageManager.Remove(OnDamageAfter.Id,this.OnDamageAfter);
+        DungeonManager.MessageManager.Remove(OnDamageBeforeMessage.Id,this.OnDamageBefore);
+        DungeonManager.MessageManager.Remove(OnDamageAfterMessage.Id,this.OnDamageAfter);
         DungeonManager.MessageManager.Remove(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
-        DungeonManager.MessageManager.Remove(OnDamageAfter.Id,this.OnDamageAfter);
+        DungeonManager.MessageManager.Remove(OnDamageAfterMessage.Id,this.OnDamageAfter);
         DungeonManager.MessageManager.Remove(CalcFinalDamageValueMessage.Id,this.CalcFinalDamageValue);
         DungeonManager.MessageManager.Remove(CalcHurtValueMessage.Id,this.CalcHurtValue);
         DungeonManager.MessageManager.Remove(CalcFinalHurtValueMessage.Id,this.CalcFinalHurtValue);
@@ -106,19 +106,19 @@ export abstract class AbstractPower {
     //该方法仅用于计算伤害.最终伤害由OnHurt结算.
     protected CalcFinalHurtValue(msg:CalcDamageValueMessage){}
     //当玩家受到伤害之前
-    protected OnHurtBefore(msg:OnHurtBefore){}
+    protected OnHurtBefore(msg:OnHurtBeforeMessage){}
     //当玩家受到伤害时
-    protected OnHurt(msg:OnHurtBefore){}
+    protected OnHurt(msg:OnHurtBeforeMessage){}
     //当玩家受到伤害后
-    protected OnHurtAfter(msg:OnHurtBefore){}
+    protected OnHurtAfter(msg:OnHurtBeforeMessage){}
     //该方法仅用于计算伤害.最终伤害由OnDamage结算.
     protected CalcDamageValue(msg:CalcDamageValueMessage){}
     //该方法仅用于计算伤害.最终伤害由OnDamage结算.
     protected CalcFinalDamageValue(msg:CalcFinalDamageValueMessage){}
     //造成伤害前
-    protected OnDamageBefore(msg:OnDamageBefore){}
+    protected OnDamageBefore(msg:OnDamageBeforeMessage){}
     //造成伤害后
-    protected OnDamageAfter(msg:OnDamageAfter){}
+    protected OnDamageAfter(msg:OnDamageAfterMessage){}
     //回合结束时
     protected AtEndOfTurn(msg:AtEndOfTurnMessage){}
     //回合开始时
@@ -129,7 +129,7 @@ export abstract class AbstractPower {
     AtEndOfTurnPreEndTurnCards(msg: AtEndOfTurnPreEndTurnCardsMessage) {}
     PreModifyBlock(msg:PreModifyBlockMessage) {}
     //
-    PreUseCard(msg:OnPreUseCardMessage) {}
+    PreUseCard(msg:OnUseCardAfterMessage) {}
 
     protected OnModified(before:number,after:number){
         if(after == 0){

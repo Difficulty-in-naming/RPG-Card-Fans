@@ -1,7 +1,7 @@
 ﻿import GainBlockAction from "../Action/Common/GainBlockAction";
 import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
 import { DamageType } from "../DataDefine/DamageType";
-import { OnDamageAfter } from "../Events/OnDamageAfter";
+import { OnDamageAfterMessage } from "../Events/OnDamageAfterMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { StringHelper } from "../StringHelper";
@@ -22,7 +22,7 @@ export class CurlUpPower extends AbstractPower{
         return StringHelper.FormatColorString(LocalizationProperty.Read("能力-蜷身描述")).format(this.Amount);
     }
 
-    protected OnDamageAfter(msg: OnDamageAfter) {
+    protected OnDamageAfter(msg: OnDamageAfterMessage) {
         super.OnDamageAfter(msg);
         if(!this.Triggered && msg.info.TotalDamage <this.Owner.Health && msg.info.TotalDamage > 0 && msg.info.DamageType == DamageType.NORMAL){
             this.Flash();

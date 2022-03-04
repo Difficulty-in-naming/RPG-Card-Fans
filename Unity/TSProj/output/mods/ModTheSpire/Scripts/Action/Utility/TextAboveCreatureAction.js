@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextType = exports.TextAboveCreatureAction = void 0;
-var Color_1 = require("../../DataDefine/Color");
-var EffectKit_1 = require("../../Effect/EffectKit");
-var TextAboveCreatureEffect_1 = require("../../Effect/TextAboveCreatureEffect");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Color_1 = require("../../DataDefine/Color");
+const EffectKit_1 = require("../../Effect/EffectKit");
+const TextAboveCreatureEffect_1 = require("../../Effect/TextAboveCreatureEffect");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class TextAboveCreatureAction extends AbstractGameAction_1.default {
+    Source;
+    text;
+    Msg;
     constructor(Source, text) {
         super();
         this.Source = Source;

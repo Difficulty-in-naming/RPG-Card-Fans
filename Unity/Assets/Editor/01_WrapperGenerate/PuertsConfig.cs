@@ -4,11 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Text;
 using Cysharp.Threading.Tasks;
 using DreamLib.Unity.UI.FairyGUIExtension;
 using Panthea.UI;
 using Spine;
 using Spine.Unity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -165,6 +167,8 @@ public class PuertsConfig
             return true;
         if (type == typeof(SkeletonExtensions2))
             return true;
+        if (type == typeof(TMPro_ExtensionMethods))
+            return true;
         return IsExcluded(type.BaseType);
     }
     
@@ -271,4 +275,40 @@ public class PuertsConfig
         "UnityEngine.GridBrushBase",
         "UnityEngine.AndroidJavaException",
     };
+    
+    [Filter]
+    static bool FilterMethods(System.Reflection.MemberInfo mb)
+    {
+        // 排除 MonoBehaviour.runInEditMode, 在 Editor 环境下可用发布后不存在
+        if (mb.DeclaringType == typeof(MonoBehaviour) && mb.Name == "runInEditMode") {
+            return true;
+        }
+        if (mb.DeclaringType == typeof(Encoding) && mb.Name is "GetByteCount" or "GetBytes" or "GetCharCount" or "GetChars" or "GetString")
+        {
+            var method = mb as MethodInfo;
+            if (method != null)
+            {
+                var param = method.GetParameters();
+                foreach (var node in param)
+                {
+                    if (node.ParameterType == typeof(ReadOnlySpan<char>) ||
+                        node.ParameterType == typeof(ReadOnlySpan<byte>) ||
+                        node.ParameterType == typeof(Span<char>) ||
+                        node.ParameterType == typeof(Span<byte>))
+                        return true;
+                }
+
+            }
+        }
+        else if (mb.DeclaringType == typeof(Encoding) && mb.Name is "Preamble")
+        {
+            var method = mb as PropertyInfo;
+            if (method != null)
+            {
+                if(method.PropertyType == typeof(ReadOnlySpan<byte>))
+                    return true;
+            }
+        }
+        return false;
+    }
 }

@@ -202,9 +202,8 @@ namespace Puerts
                 if (type.DeclaringType.IsGenericTypeDefinition)
                 {
                     var genericArgumentNames = type.GetGenericArguments()
-                        .Select(GetFriendlyName).ToArray();
-                    return (type.DeclaringType.FullName ?? type.DeclaringType.ToString()).Split('`')[0] + "<" +
-                           string.Join(", ", genericArgumentNames) + ">" + '.' + type.Name;
+                        .Select(x => GetFriendlyName(x)).ToArray();
+                    return type.DeclaringType.FullName.Split('`')[0] + "<" + string.Join(", ", genericArgumentNames) + ">" + '.' + type.Name;
                 }
                 else
                 {
@@ -214,8 +213,8 @@ namespace Puerts
             else if (type.IsGenericType)
             {
                 var genericArgumentNames = type.GetGenericArguments()
-                    .Select(GetFriendlyName).ToArray();
-                return (type.FullName ?? type.ToString()).Split('`')[0] + "<" + string.Join(", ", genericArgumentNames) + ">";
+                    .Select(x => GetFriendlyName(x)).ToArray();
+                return type.FullName.Split('`')[0] + "<" + string.Join(", ", genericArgumentNames) + ">";
             }
             else
                 return type.FullName;

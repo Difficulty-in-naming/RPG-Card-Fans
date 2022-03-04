@@ -1,5 +1,6 @@
 import { ApplyPowerAction } from "../../../Action/Common/ApplyPowerAction";
 import DamageAction from "../../../Action/Common/DamageAction";
+import { DrawCardAction } from "../../../Action/Common/DrawCardAction";
 import { AttackEffect } from "../../../DataDefine/AttackEffect";
 import DamageInfo from "../../../DataDefine/DamageInfo";
 import { DamageType } from "../../../DataDefine/DamageType";
@@ -7,6 +8,7 @@ import FileHelper from "../../../FileHelper";
 import { LocalizationProperty } from "../../../Gen/DB/Localization";
 import { NoDrawPower } from "../../../Power/NoDrawPower";
 import { VulnerablePower } from "../../../Power/VulnerablePower";
+import AbstractCreature from "../../../Unit/AbstractCreature";
 import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
 import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
@@ -21,9 +23,9 @@ export default class BattleTrance extends AbstractCard
     Target: CardTarget = CardTarget.SELF;
     Type: CardType = CardType.SKILL;
     Magic = 3;
-    Use(player: AbstractPlayer, monster: AbstractMonster) {
+    Use(player: AbstractPlayer, monster: AbstractCreature) {
         super.Use(player, monster);
-        this.AddToBot(new DrawCardAction(p, this.magicNumber));
+        this.AddToBot(new DrawCardAction(this.Magic,player));
         this.AddToBot(new ApplyPowerAction(player, player, new NoDrawPower(player)));
     }
 

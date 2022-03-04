@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpawnMonsterAction = void 0;
-var Async_1 = require("../../../../../Core/Async");
-var DungeonManager_1 = require("../../DungeonManager");
-var OnSpawnMonsterMessage_1 = require("../../Events/OnSpawnMonsterMessage");
-var MinionPower_1 = require("../../Power/MinionPower");
-var AbstractGameAction_1 = require("../AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
+const DungeonManager_1 = require("../../DungeonManager");
+const OnSpawnMonsterMessage_1 = require("../../Events/OnSpawnMonsterMessage");
+const MinionPower_1 = require("../../Power/MinionPower");
+const AbstractGameAction_1 = require("../AbstractGameAction");
 class SpawnMonsterAction extends AbstractGameAction_1.default {
+    monster;
+    isMinion;
     constructor(monster, isMinion) {
         super();
         this.monster = monster;

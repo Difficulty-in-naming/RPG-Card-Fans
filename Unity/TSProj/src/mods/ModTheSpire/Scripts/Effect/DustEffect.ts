@@ -21,13 +21,13 @@ export class DustEffect extends AbstractEffect{
         if(parent)
             parent.AddChild(this.Loader);
         this.Loader.touchable = false;
-        this.Loader.url = FileHelper.FormatPath("Vfx/env/dust" + Mathf.Floor(Mathf.RandomRange(1,7)) + ".png");
+        this.Loader.url = "ui://ModTheSpire_Effect/dust" + Mathf.Floor(Mathf.RandomRange(1,7));
         this.Loader.x = Mathf.RandomRange(0,FairyGUI.GRoot.inst.width);
         this.Loader.y = Mathf.RandomRange(500,1080);
         this.Vx = Mathf.RandomRange(-12,12);
         this.Vy = Mathf.RandomRange(-30,12);
         let color = Mathf.Floor(Mathf.RandomRange(26,180));
-        this.Loader.color = new Color(color,color,color,255).UnityColor();
+        this.Loader.color = new Color(color,color,color,255).UnityColor;
         this.Loader.alpha = 0;
         this.BaseAlpha = 1 - (color / 255);
         this.Loader.rotation = Mathf.Floor(Mathf.RandomRange(0,360));

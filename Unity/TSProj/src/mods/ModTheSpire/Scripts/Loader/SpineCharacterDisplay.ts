@@ -93,7 +93,7 @@ export class SpineCharacterDisplay implements IDisplay{
 
     set Color(value: Color) {
         this._Color = value;
-        Spine.Unity.SkeletonExtensions.SetColor(this.Self.Skeleton,value.UnityColor());
+        Spine.Unity.SkeletonExtensions.SetColor(this.Self.Skeleton,value.UnityColor);
     }
     
     public Bounds: FairyGUI.GGraph;

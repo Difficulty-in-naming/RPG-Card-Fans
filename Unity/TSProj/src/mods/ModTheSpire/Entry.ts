@@ -23,7 +23,6 @@ import {SpeechBubble} from "../../mods/ModTheSpire/Scripts/Effect/Combat/SpeechB
 export class Entry implements UnityBridge
 {
     private Cursor:Cursor;
-    public xxx;
     constructor() 
     {
         this.LoadConfig();
@@ -35,7 +34,7 @@ export class Entry implements UnityBridge
         let hello = UI_Title.CreatePanel();
         DungeonManager.NewGame(new Ironclad(),"11")
         DungeonManager.Inst.CurrentDungeon = new Exordium();
-        DungeonManager.Inst.CurrentRoom = new CombatRoom();
+        //DungeonManager.Inst.CurrentRoom = new CombatRoom();
         this.Cursor = new Cursor();
         MainEntry.Inst().RegisterEntry(this);
     }

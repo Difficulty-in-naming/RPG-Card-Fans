@@ -4,7 +4,7 @@ import { WrapDamage } from "../DataDefine/DamageInfo";
 import DungeonManager from "../DungeonManager";
 import { AtEndOfTurnMessage } from "../Events/AtEndOfTurnMessage";
 import { CalcDamageValueMessage } from "../Events/CalcDamageValueMessage";
-import { OnDamageAfter } from "../Events/OnDamageAfter";
+import { OnDamageAfterMessage } from "../Events/OnDamageAfterMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { PaperCrane } from "../Relics/PaperCrane";
@@ -45,7 +45,7 @@ export class WeakPower extends AbstractPower{
         msg.info.AddModify(new WrapDamage(this,-msg.info.TotalDamage * effect));
     }
 
-    protected OnDamageAfter(msg: OnDamageAfter) {
+    protected OnDamageAfter(msg: OnDamageAfterMessage) {
         super.OnDamageAfter(msg);
         let effect = 0.25;
         if(DungeonManager.Inst.Player.HasRelic(PaperCrane.Id))

@@ -20,7 +20,7 @@
     <image id="mdv91a" name="countCircle.png" path="/Texture/"/>
     <component id="mdv91b" name="DiscardButton.xml" path="/" exported="true"/>
     <image id="mdv91c" name="endTurnButton.png" path="/Texture/EndTurnButton/" scale9grid="0,0,-18,-143"/>
-    <image id="mdv91d" name="endTurnButtonGlow.png" path="/Texture/EndTurnButton/"/>
+    <image id="mdv91d" name="endTurnButtonGlow.png" path="/Texture/EndTurnButton/" scale9grid="0,0,-13,-140"/>
     <image id="mdv91e" name="endTurnHover.png" path="/Texture/EndTurnButton/"/>
     <component id="mdv91f" name="Button.xml" path="/Texture/EndTurnButton/" exported="true"/>
     <component id="mdv91g" name="Button2.xml" path="/Texture/EndTurnButton/" exported="true"/>
@@ -40,6 +40,17 @@
     <image id="yao82b" name="block.png" path="/Texture/"/>
     <image id="yao82c" name="blockL.png" path="/Texture/"/>
     <component id="yao82d" name="Block.xml" path="/"/>
+    <image id="o9r62e" name="reticleArrow.png" path="/Texture/" exported="true"/>
+    <image id="o9r62f" name="reticleBlock.png" path="/Texture/" exported="true"/>
+    <image id="o9r62g" name="reticleCorner.png" path="/Texture/"/>
+    <component id="o9r62h" name="选中框.xml" path="/"/>
+    <component id="o9r62i" name="Card.xml" path="/" exported="true"/>
+    <image id="joqm30" name="card_super_shadow.png" path="/Texture/"/>
+    <image id="joqm31" name="bg_power_silhouette.png" path="/Texture/"/>
+    <image id="joqm32" name="bg_skill_silhouette.png" path="/Texture/"/>
+    <image id="joqm33" name="bg_attack_silhouette.png" path="/Texture/"/>
+    <image id="joqm34" name="bg_attack_gray.png" path="/Texture/"/>
+    <image id="joqm35" name="card_flash_vfx.png" path="/Texture/"/>
   </resources>
   <publish name="ModTheSpire_Combat" genCode="true"/>
 </packageDescription>

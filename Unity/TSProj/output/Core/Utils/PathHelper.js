@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var csharp_1 = require("csharp");
+const csharp_1 = require("csharp");
 class PathHelper {
     //格式化文件路径
     static FormatFilePath(filePath) {
@@ -30,14 +30,6 @@ class PathHelper {
         filePath = this.FormatFilePath(filePath);
         filePath = filePath.substring(0, filePath.lastIndexOf('/'));
         return filePath;
-    }
-    static GetModName(filePath) {
-        filePath = this.FormatFilePath(filePath);
-        let split = filePath.split('/');
-        if (split.length > 0) {
-            return split[1];
-        }
-        return "";
     }
 }
 exports.default = PathHelper;

@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnimateSlowAttackAction = void 0;
-var AbstractGameAction_1 = require("../../../../../mods/ModTheSpire/Scripts/Action/AbstractGameAction");
-var Async_1 = require("../../../../../Core/Async");
+const AbstractGameAction_1 = require("../../../../../mods/ModTheSpire/Scripts/Action/AbstractGameAction");
+const Async_1 = require("../../../../../Core/Async");
 class AnimateSlowAttackAction extends AbstractGameAction_1.default {
+    owner;
     constructor(owner) {
         super();
         this.owner = owner;

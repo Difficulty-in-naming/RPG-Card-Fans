@@ -1,22 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShakeIntensity = exports.ShakeDur = exports.ShakeScreen = void 0;
-var csharp_1 = require("csharp");
-var AbstractEffect_1 = require("./AbstractEffect");
-var puerts = require("puerts");
+const csharp_1 = require("csharp");
+const AbstractEffect_1 = require("./AbstractEffect");
+const puerts = require("puerts");
 class ShakeScreen extends AbstractEffect_1.AbstractEffect {
-    constructor(intensity, dur, dir = { Vertical: false, Horizontal: true }) {
-        super();
-        this.Intensity = intensity;
-        this.ShakeDur = dur;
-        this.Dir = dir;
-    }
+    Intensity;
+    ShakeDur;
+    Dir;
+    static InitializePos = new Array();
+    static Camera = new Array();
     static Initialize() {
         let temp = csharp_1.UnityEngine.Object.FindObjectsOfType(puerts.$typeof(csharp_1.UnityEngine.Camera));
         for (let i = 0; i < temp.Length; i++) {
             this.Camera[i] = temp.get_Item(i).transform;
             this.InitializePos[i] = this.Camera[i].position;
         }
+    }
+    constructor(intensity, dur, dir = { Vertical: false, Horizontal: true }) {
+        super();
+        this.Intensity = intensity;
+        this.ShakeDur = dur;
+        this.Dir = dir;
     }
     Update() {
         if (this.Duration > this.ShakeDur) {
@@ -35,8 +40,6 @@ class ShakeScreen extends AbstractEffect_1.AbstractEffect {
     }
 }
 exports.ShakeScreen = ShakeScreen;
-ShakeScreen.InitializePos = new Array();
-ShakeScreen.Camera = new Array();
 ShakeScreen.Initialize();
 var ShakeDur;
 (function (ShakeDur) {

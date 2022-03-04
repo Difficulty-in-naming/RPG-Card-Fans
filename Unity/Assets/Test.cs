@@ -320,6 +320,7 @@ namespace DefaultNamespace
 	public static int GL_INVALID_FRAMEBUFFER_OPERATION = 1286;
 	public static int GL_VERTEX_PROGRAM_POINT_SIZE = 34370;
 
+	private int x = 1061109759;
 	// Extensions
 	public static int GL_COVERAGE_BUFFER_BIT_NV = 32768;
 	public static int GL_TEXTURE_MAX_ANISOTROPY_EXT = 34046;

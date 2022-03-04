@@ -1,5 +1,5 @@
 ﻿import { FairyGUI } from "csharp";
-import { UuidTool } from "uuid-tool";
+import { UuidTool } from "../../../../ThirdParty/uuid-tool";
 import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
 import DungeonManager from "../DungeonManager";
 import { View_Card } from "../Gen/View/ModTheSpire_Common";
@@ -7,6 +7,7 @@ import { StringHelper } from "../StringHelper";
 import { AbstractPlayer } from "../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../Unit/Monster/AbstractMonster";
 import { S } from '../global';
+import AbstractCreature from "../Unit/AbstractCreature";
 
 export default abstract class AbstractCard
 {
@@ -14,7 +15,7 @@ export default abstract class AbstractCard
     public UUID : string;
     public abstract Name : string;
     //⚠警告!!不要在外部使用这个变量,这个变量是未被格式化的！,请使用GetDesc()
-    protected abstract Desc : string;
+    public abstract Desc : string;
     //图标
     public abstract Icon : string;
     //卡牌标签(攻击,初始卡牌)
@@ -43,6 +44,15 @@ export default abstract class AbstractCard
     public Block : number = 0;
     //特殊值
     public Magic : number = 0;
+    //临时卡牌,主要用于双发后.打出的卡牌第二次自动消耗.并且不会进入消耗牌堆中
+    public Temp : boolean = false;
+    //显示能量消耗球
+    public DisplayOrb : boolean = true;
+    //是否可以使用
+    public CantUse :boolean = false;
+    //正在被打出
+    public IsUsed : boolean = false;
+
     public get View(): FairyGUI.GComponent {
         return S.CommonCardViewPool.Pop();
     }
@@ -50,7 +60,7 @@ export default abstract class AbstractCard
     {
         this.UUID = UuidTool.newUuid();
     }
-    public Use(player : AbstractPlayer, monster : AbstractMonster){}
+    public Use(p : AbstractPlayer, t : AbstractCreature){}
     //可不可以升级
     public CanUpgrade() : boolean{return true;}
     public Upgrade(){}
@@ -66,7 +76,7 @@ export default abstract class AbstractCard
     }
     protected AddToBot(action : IGameAction){DungeonManager.ActionManager.AddToBottom(action);}
     protected AddToTop(action : IGameAction){DungeonManager.ActionManager.AddToTop(action);}
-    public GetDesc(){
+    public GetDesc() : string{
         return StringHelper.FormatCardString(this);
     }
     //是否已经升级

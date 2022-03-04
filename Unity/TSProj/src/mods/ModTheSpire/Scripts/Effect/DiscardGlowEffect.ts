@@ -20,8 +20,8 @@ export class DiscardGlowEffect extends AbstractEffect{
         color.R -= darkness;
         color.G -= darkness;
         color.B -= darkness;
-        this.Loader.color = color.UnityColor();
-        this.Loader.url = FileHelper.FormatPath("Vfx/ui/p" + Mathf.Floor(Mathf.RandomRange(1,7)) + ".png");
+        this.Loader.color = color.UnityColor;
+        this.Loader.url = "ui://ModTheSpire_Effect/p" + Mathf.Floor(Mathf.RandomRange(1,7));
         this.Loader.SetPosition(Mathf.RandomRange(35,85),Mathf.RandomRange(35,85),0);
         let scale = Mathf.RandomRange(0.9,1.1);
         this.Loader.SetScale(scale,scale);

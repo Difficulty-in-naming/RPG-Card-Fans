@@ -16,7 +16,7 @@ export class SmallLaserEffect extends AbstractEffect{
         this.Loader2 = UIHelper.CreateGLoader();
         this.Loader1.url = this.Loader2.url = FileHelper.FormatPath("Vfx/combat/laserThin");
         let dst = Mathf.Distance(_sX,_sY,_dX,_dY);
-        this.Loader1.color = this.Loader2.color = Color.Cyan.UnityColor();
+        this.Loader1.color = this.Loader2.color = Color.Cyan.UnityColor;
         this._rotation = Mathf.Atan2(_dX - _sX,_dY - _sY);
         this._rotation *= Mathf.Rad2Deg;
         this._rotation = -this._rotation + 90;

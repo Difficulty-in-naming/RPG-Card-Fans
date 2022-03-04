@@ -1,13 +1,19 @@
 ﻿import { Rect } from "../../../../Core/Define/Rect";
 import { IGameAction } from "../../../../Core/Module/Event/IGameAction";
+import { UIKit } from "../../../../Core/Module/UI/UIKit";
 import DamageInfo from "../DataDefine/DamageInfo";
 import DungeonManager from "../DungeonManager";
+import { HealEffect } from "../Effect/Combat/HealEffect";
 import TintEffect from "../Effect/TintEffect";
+import { OnHealAfterMessage } from "../Events/OnHealAfterMessage";
+import { OnHealBeforeMessage } from "../Events/OnHealBeforeMessage";
+import { OnHealToFullHpMessage } from "../Events/OnHealToFullHpMessage";
 import { PostModifyBlockMessage } from "../Events/PostModifyBlockMessage";
 import { PowerRemovedMessage } from "../Events/PowerRemovedMessage";
 import { PreModifyBlockMessage } from "../Events/PreModifyBlockMessage";
 import { IDisplay } from "../Loader/IDisplay";
 import { AbstractPower } from "../Power/AbstractPower";
+import UI_TopBar from "../UI/ViewModel/UI_TopBar";
 
 export default abstract class AbstractCreature{
     //最大生命值
@@ -107,6 +113,33 @@ export default abstract class AbstractCreature{
     //受到伤害
     public Damage(info : DamageInfo){};
 
+    //回復生命
+    public Heal(amount : number, showEffect : boolean = true) {
+        if (DungeonManager.Inst.IsEndless && this.IsPlayer && DungeonManager.Inst.Player.HasBlight("FullBelly") && (amount /= 2) < 1) 
+        {
+            amount = 1;
+        }
+        if (this.IsDying) {
+            return;
+        }
+        var message = new OnHealBeforeMessage(this,amount);
+        DungeonManager.MessageManager.Send(OnHealBeforeMessage.Id,message);
+        
+        this.Health += message.Amount;
+        if (this.Health > this.MaxHealth) {
+            this.Health = this.MaxHealth;
+            DungeonManager.MessageManager.Send(OnHealToFullHpMessage.Id,message);
+        }
+        if (amount > 0) {
+            if (showEffect && this.IsPlayer) {
+                UI_TopBar.GetInstance().View.GetChild("Health").asCom.GetChild("n0").asCom.GetTransition("Heal").Play();
+                let x = this.DisplayObject.Bounds.x + this.DisplayObject.Bounds.width / 2;
+                let y = this.DisplayObject.Bounds.y + this.DisplayObject.Bounds.height;
+                DungeonManager.EffectManager.Play(new HealEffect(x, y, message.Amount));
+            }
+        }
+        DungeonManager.MessageManager.Send(OnHealAfterMessage.Id,message);
+    }
     //获取Power的实例
     public GetPower(id:string){
         let result = this.Powers.find((t1)=>t1.Id == id)

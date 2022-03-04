@@ -28,7 +28,7 @@ public class GameEntry : MonoBehaviour
         jsEnv = new JsEnv(loader,debugPort);        // 实例化 js 虚拟机
         if (IsDeveloper)
         {
-            hotReloadComponent = new HotReloadTypeScripts(Application.streamingAssetsPath,jsEnv);
+            hotReloadComponent = new HotReloadTypeScripts(path,jsEnv);
         }
         RunScript();
     }

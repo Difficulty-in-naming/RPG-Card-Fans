@@ -1,5 +1,6 @@
-﻿import Rand from "rand-seed";
+﻿import Async from "../../../../Core/Async";
 import { Mathf } from "../../../../Core/Module/Math/Mathf";
+import Rand from "../../../../ThirdParty/rand-seed/rand-seed";
 import DungeonManager from "../DungeonManager";
 import { MapGenerator } from "../Room/MapGenerator";
 import { MapRoomNode } from "../Room/MapRoomNode";
@@ -72,6 +73,18 @@ export abstract class AbstractDungeon{
         this.AIRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "AI");
         this.HPRng = new Rand(DungeonManager.Inst.Seed + this.ActNum + "HP");
         this.MapInfo = MapGenerator.Generate(7,15,6);
+        this.RelicList = new Array<string>();
+        this.EventList = new Array<string>();
+        this.ShrineList = new Array<string>();
+        this.WeakEnemiesList = new Array<Array<MonsterInfo>>();
+        this.StrongEnemiesList = new Array<Array<MonsterInfo>>();
+        this.EliteList = new Array<Array<MonsterInfo>>();
+        this.BossList = new Array<Array<MonsterInfo>>();
+        this.WeakEnemiesPool = new Map<string,()=>Array<MonsterInfo>>();
+        this.StrongEnemiesPool = new Map<string,()=>Array<MonsterInfo>>();
+        this.ElitePool = new Map<string,()=>Array<MonsterInfo>>();
+        this.BossPool = new Map<string,()=>Array<MonsterInfo>>();
+        this.RoomChance = new RoomChance();
         this.InitializeRelicList(this.RelicList);
         this.InitializeEventList(this.EventList);
         this.InitializeShrineList(this.ShrineList);
@@ -105,35 +118,32 @@ export abstract class AbstractDungeon{
     //在Init当中需要调用这个函数.避免玩家走不同路线出现的怪物的次序不一样的问题.
     private InitEnemies(pool:Map<string,()=>Array<MonsterInfo>>,list:Array<Array<MonsterInfo>>){
         let array = Array.from(pool);
-        if(array.length == 1){
-            list.fill(array[0][1](),0,8);
-        }
         let lastKey:string;
-        while(array.length < 8) {
+        for (let index = 0; index < 8; index++) {
             let x = array[Mathf.Floor(Mathf.RandomRange(0,array.length,this.EnemiesRng))]
-            if(!lastKey)
-                lastKey = x[0];
-            if(x[0] != lastKey)
+            if(x[0] != lastKey || array.length == 1){
                 list.push(x[1]());
+            }
+            lastKey = x[0];
         }
     }
-    public GetEnemies(isElite : boolean){
-        if(!isElite){
-            if(this.FloorNum < 6){
-                if(this.WeakEnemiesList.length == 0){
-                    this.InitEnemies(this.WeakEnemiesPool,this.WeakEnemiesList);
-                }
-            }
-            else{
-                if(this.StrongEnemiesList.length == 0){
-                    this.InitEnemies(this.StrongEnemiesPool,this.StrongEnemiesList);
-                }
-            }
-        }
-        else{
-            if(this.EliteList.length == 0){
-                this.InitEnemies(this.ElitePool,this.EliteList);
-            }
-        }
-    }
+    //public GetEnemies(isElite : boolean){
+    //    if(!isElite){
+    //        if(this.FloorNum < 6){
+    //            if(this.WeakEnemiesList.length == 0){
+    //                this.InitEnemies(this.WeakEnemiesPool,this.WeakEnemiesList);
+    //            }
+    //        }
+    //        else{
+    //            if(this.StrongEnemiesList.length == 0){
+    //                this.InitEnemies(this.StrongEnemiesPool,this.StrongEnemiesList);
+    //            }
+    //        }
+    //    }
+    //    else{
+    //        if(this.EliteList.length == 0){
+    //            this.InitEnemies(this.ElitePool,this.EliteList);
+    //        }
+    //    }
+    //}
 }

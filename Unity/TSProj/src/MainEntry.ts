@@ -2,7 +2,8 @@ import { UIKit } from "./Core/Module/UI/UIKit";
 import {TimeKit} from "./Core/Utils/TimeKit";
 import { GameEntry, MediaManager } from 'csharp';
 import { Log } from "./Core/Module/Log/Log";
-import TWEEN from '@tweenjs/tween.js';
+import * as TWEEN from "./ThirdParty/@tweenjs/tween"
+
 export interface UnityBridge {
     OnUpdate();
     OnDestroy();
@@ -40,7 +41,6 @@ export class MainEntry{
             value.OnUpdate();
         });
         UIKit.Inst().OnUpdate();
-        Log.Error("Hello 1111");
     }
 
 /*    private onDestroy()

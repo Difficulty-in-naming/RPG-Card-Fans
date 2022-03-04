@@ -187,6 +187,41 @@ export class View_SpeechBubble extends UIBase
         this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
     }
 }
+export class View_CardTrailEffect extends UIBase
+{
+    public t0 : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_Effect","CardTrailEffect")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_CardTrailEffect.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_CardTrailEffect.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
+    }
+}
 export class View_HpBlockBrokenEffect extends UIBase
 {
     public t0 : FairyGUI.Transition;

@@ -1,4 +1,8 @@
-﻿import {TimeKit} from "../../Utils/TimeKit";
+﻿import { ActionType } from "../../../mods/ModTheSpire/Scripts/Action/AbstractGameAction";
+import GainBlockAction from "../../../mods/ModTheSpire/Scripts/Action/Common/GainBlockAction";
+import HealAction from "../../../mods/ModTheSpire/Scripts/Action/Common/HealAction";
+import { UseCardAction } from "../../../mods/ModTheSpire/Scripts/Action/Utility/UseCardAction";
+import {TimeKit} from "../../Utils/TimeKit";
 import { IGameAction } from "./IGameAction";
 
 
@@ -18,6 +22,14 @@ export default class QueueMessageKit
 
     public Remove(func : IGameAction){
         this.list = this.list.filter(item => item == func);
+    }
+
+    public ClearPostCombatActions() {
+        for (let index = this.list.length - 1; index >= 0 ; index--) {
+            const e = this.list[index];
+            if (e instanceof HealAction || e instanceof GainBlockAction || e instanceof UseCardAction || e.Type == ActionType.DAMAGE) continue;
+            this.list.splice(index,1);
+        }
     }
 
     public async Update()

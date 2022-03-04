@@ -15,9 +15,10 @@ export class LocalizationProperty
 
 	public static Read(id : string) : string
 	{
-		// @ts-ignore
-		let dirName = __dirname;
-		let result = ConfigAssetManager.Read(PathHelper.GetModName(dirName),id)[Settings.Inst().Language];
+		let c = ConfigAssetManager.Read("ModTheSpire_Localization",id);
+		if(!c)
+			return id;
+		let result = c[Settings.Inst().Language];
 		if(!result)
 			return id;
 		return result
@@ -27,7 +28,7 @@ export class LocalizationProperty
 	{
 		// @ts-ignore
 		let dirName = __dirname;
-		return ConfigAssetManager.ReadDict(PathHelper.GetModName(dirName));
+		return ConfigAssetManager.ReadDict("ModTheSpire_Localization");
 	}
 }
 

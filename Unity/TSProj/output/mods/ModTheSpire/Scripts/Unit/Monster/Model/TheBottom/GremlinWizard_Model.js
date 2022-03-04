@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinWizard_Model = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var FileHelper_1 = require("../../../../FileHelper");
-var SpineLoader_1 = require("../../../../Loader/SpineLoader");
-var MonsterInfo_1 = require("../../MonsterInfo");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const FileHelper_1 = require("../../../../FileHelper");
+const SpineLoader_1 = require("../../../../Loader/SpineLoader");
+const MonsterInfo_1 = require("../../MonsterInfo");
 class GremlinWizard_Model extends MonsterInfo_1.MonsterInfo {
+    static Id = "GremlinWizard";
     get MaxHealth() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 7)
             return Mathf_1.Mathf.RandomRange(22, 26);
@@ -21,5 +22,4 @@ class GremlinWizard_Model extends MonsterInfo_1.MonsterInfo {
     }
 }
 exports.GremlinWizard_Model = GremlinWizard_Model;
-GremlinWizard_Model.Id = "GremlinWizard";
 //# sourceMappingURL=GremlinWizard_Model.js.map

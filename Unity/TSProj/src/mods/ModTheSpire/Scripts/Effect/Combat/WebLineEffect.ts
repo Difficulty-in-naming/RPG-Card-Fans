@@ -22,7 +22,7 @@ export class WebLineEffect extends AbstractEffect{
         let g = Mathf.RandomRange(153, 230);
         let color = new Color(g,g,g + 26);
         this.Loader.alpha = 0;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.TweenFade(0.8,0.5).SetEase(FairyGUI.EaseType.SineInOut);
         this.Loader.TweenFade(0.01,0.5).SetEase(FairyGUI.EaseType.QuartOut).SetDelay(0.5);
         this.Loader.blendMode = FairyGUI.BlendMode.Add;

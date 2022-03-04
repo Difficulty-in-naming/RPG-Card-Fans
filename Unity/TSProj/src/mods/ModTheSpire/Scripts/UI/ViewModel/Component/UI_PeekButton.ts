@@ -1,4 +1,8 @@
 import { FairyGUI } from "csharp";
+import { TimeKit } from "../../../../../../Core/Utils/TimeKit";
+import Color from "../../../DataDefine/Color";
+import DungeonManager from "../../../DungeonManager";
+import { LightFlareParticleEffect } from "../../../Effect/LightFlareParticleEffect";
 import { View_PeekButton } from "../../../Gen/View/ModTheSpire_Common";
 
 export class UI_HandCardSelectScreen extends View_PeekButton
@@ -11,11 +15,11 @@ export class UI_HandCardSelectScreen extends View_PeekButton
 
     OnUpdate(): void {
         if(this.ButtonView.selected){
-            this.ParticleTimer -= Gdx.graphics.getDeltaTime();
-            if (this.ParticleTimer < 0.0f) {
-                this.ParticleTimer = 0.2f;
-                AbstractDungeon.effectsQueue.add(new LightFlareParticleEffect(this.hb.cX, this.hb.cY, Color.SKY));
-                AbstractDungeon.effectsQueue.add(new LightFlareParticleEffect(this.hb.cX, this.hb.cY, Color.WHITE));
+            this.ParticleTimer -= TimeKit.DeltaTime;
+            if (this.ParticleTimer < 0.0) {
+                this.ParticleTimer = 0.2;
+                DungeonManager.EffectManager.Play(new LightFlareParticleEffect(this.ButtonView.x, this.ButtonView.y, Color.Sky));
+                DungeonManager.EffectManager.Play(new LightFlareParticleEffect(this.ButtonView.x, this.ButtonView.y, Color.White));
             }
         }
     }

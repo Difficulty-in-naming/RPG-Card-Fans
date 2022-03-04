@@ -7,6 +7,7 @@ import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
 import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
 import { ApplyPowerAction } from '../../../Action/Common/ApplyPowerAction';
 import { BarricadePower } from '../../../Power/BarricadePower';
+import AbstractCreature from "../../../Unit/AbstractCreature";
 
 export class Barricade extends AbstractCard
 {
@@ -19,7 +20,7 @@ export class Barricade extends AbstractCard
     Type: CardType = CardType.POWER;
     Energy = 3;
     
-    Use(player: AbstractPlayer, monster: AbstractMonster) {
+    Use(player: AbstractPlayer, monster: AbstractCreature) {
         super.Use(player, monster);
         if(player.GetPower(BarricadePower.PowerID))
         {

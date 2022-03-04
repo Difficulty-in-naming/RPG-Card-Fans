@@ -1,43 +1,40 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Exordium = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../DungeonManager");
-var FileHelper_1 = require("../FileHelper");
-var Localization_1 = require("../Gen/DB/Localization");
-var UI_BottomScene_1 = require("../UI/ViewModel/UI_BottomScene");
-var AcidSlime_L_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_L_Model");
-var AcidSlime_M_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_M_Model");
-var AcidSlime_S_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_S_Model");
-var BlueSlaver_Model_1 = require("../Unit/Monster/Model/TheBottom/BlueSlaver_Model");
-var Cultist_Model_1 = require("../Unit/Monster/Model/TheBottom/Cultist_Model");
-var FungiBeast_Model_1 = require("../Unit/Monster/Model/TheBottom/FungiBeast_Model");
-var GremlinFat_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinFat_Model");
-var GremlinNob_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinNob_Model");
-var GremlinThief_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinThief_Model");
-var GremlinTsundere_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinTsundere_Model");
-var GremlinWarrior_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinWarrior_Model");
-var GremlinWizard_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinWizard_Model");
-var Hexaghost_Model_1 = require("../Unit/Monster/Model/TheBottom/Hexaghost_Model");
-var JawWorm_Model_1 = require("../Unit/Monster/Model/TheBottom/JawWorm_Model");
-var Lagavulin_Model_1 = require("../Unit/Monster/Model/TheBottom/Lagavulin_Model");
-var Looter_Model_1 = require("../Unit/Monster/Model/TheBottom/Looter_Model");
-var LouseDefensive_Model_1 = require("../Unit/Monster/Model/TheBottom/LouseDefensive_Model");
-var LouseNormal_Model_1 = require("../Unit/Monster/Model/TheBottom/LouseNormal_Model");
-var RedSlaver_Model_1 = require("../Unit/Monster/Model/TheBottom/RedSlaver_Model");
-var Sentry_Model_1 = require("../Unit/Monster/Model/TheBottom/Sentry_Model");
-var SlimeBoss_Model_1 = require("../Unit/Monster/Model/TheBottom/SlimeBoss_Model");
-var SpikeSlime_L_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_L_Model");
-var SpikeSlime_M_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_M_Model");
-var SpikeSlime_S_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_S_Model");
-var TheGuardian_Model_1 = require("../Unit/Monster/Model/TheBottom/TheGuardian_Model");
-var AbstractDungeon_1 = require("./AbstractDungeon");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../DungeonManager");
+const FileHelper_1 = require("../FileHelper");
+const Localization_1 = require("../Gen/DB/Localization");
+const UI_BottomScene_1 = require("../UI/ViewModel/UI_BottomScene");
+const AcidSlime_L_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_L_Model");
+const AcidSlime_M_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_M_Model");
+const AcidSlime_S_Model_1 = require("../Unit/Monster/Model/TheBottom/AcidSlime_S_Model");
+const BlueSlaver_Model_1 = require("../Unit/Monster/Model/TheBottom/BlueSlaver_Model");
+const Cultist_Model_1 = require("../Unit/Monster/Model/TheBottom/Cultist_Model");
+const FungiBeast_Model_1 = require("../Unit/Monster/Model/TheBottom/FungiBeast_Model");
+const GremlinFat_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinFat_Model");
+const GremlinNob_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinNob_Model");
+const GremlinThief_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinThief_Model");
+const GremlinTsundere_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinTsundere_Model");
+const GremlinWarrior_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinWarrior_Model");
+const GremlinWizard_Model_1 = require("../Unit/Monster/Model/TheBottom/GremlinWizard_Model");
+const Hexaghost_Model_1 = require("../Unit/Monster/Model/TheBottom/Hexaghost_Model");
+const JawWorm_Model_1 = require("../Unit/Monster/Model/TheBottom/JawWorm_Model");
+const Lagavulin_Model_1 = require("../Unit/Monster/Model/TheBottom/Lagavulin_Model");
+const Looter_Model_1 = require("../Unit/Monster/Model/TheBottom/Looter_Model");
+const LouseDefensive_Model_1 = require("../Unit/Monster/Model/TheBottom/LouseDefensive_Model");
+const LouseNormal_Model_1 = require("../Unit/Monster/Model/TheBottom/LouseNormal_Model");
+const RedSlaver_Model_1 = require("../Unit/Monster/Model/TheBottom/RedSlaver_Model");
+const Sentry_Model_1 = require("../Unit/Monster/Model/TheBottom/Sentry_Model");
+const SlimeBoss_Model_1 = require("../Unit/Monster/Model/TheBottom/SlimeBoss_Model");
+const SpikeSlime_L_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_L_Model");
+const SpikeSlime_M_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_M_Model");
+const SpikeSlime_S_Model_1 = require("../Unit/Monster/Model/TheBottom/SpikeSlime_S_Model");
+const TheGuardian_Model_1 = require("../Unit/Monster/Model/TheBottom/TheGuardian_Model");
+const AbstractDungeon_1 = require("./AbstractDungeon");
 class Exordium extends AbstractDungeon_1.AbstractDungeon {
-    constructor() {
-        super(...arguments);
-        this.Name = Localization_1.LocalizationProperty.Read("塔底");
-    }
+    Name = Localization_1.LocalizationProperty.Read("塔底");
     Init() {
         super.Init();
         if (DungeonManager_1.default.Inst.IsEndless) {
@@ -109,11 +106,13 @@ class Exordium extends AbstractDungeon_1.AbstractDungeon {
             pool.push(GremlinFat_Model_1.GremlinFat_Model.Id);
             pool.push(GremlinTsundere_Model_1.GremlinTsundere_Model.Id);
             pool.push(GremlinWizard_Model_1.GremlinWizard_Model.Id);
-            while (result.length <= 4) {
-                let index = Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng);
+            for (let i = 0; i < 5; i++) {
+                let index = Math.trunc(Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng));
+                let index2 = Math.trunc(Mathf_1.Mathf.RandomRange(0, position.length - 1, this.MiscRng));
                 let key = pool[index];
+                let getPos = position[index2];
                 pool.splice(index, 1);
-                let getPos = position[result.length];
+                position.splice(index, 1);
                 if (key == GremlinWarrior_Model_1.GremlinWarrior_Model.Id) {
                     result.push(new GremlinWarrior_Model_1.GremlinWarrior_Model(getPos.x, getPos.y));
                 }
@@ -153,11 +152,12 @@ class Exordium extends AbstractDungeon_1.AbstractDungeon {
             pool.push(SpikeSlime_S_Model_1.SpikeSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model_1.AcidSlime_S_Model.Id);
             pool.push(AcidSlime_S_Model_1.AcidSlime_S_Model.Id);
-            while (result.length <= 4) {
-                let index = Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng);
+            for (let i = 0; i < 5; i++) {
+                let index = Math.trunc(Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng));
+                let getPos = position[index];
                 let key = pool[index];
                 pool.splice(index, 1);
-                let getPos = position[result.length];
+                position.splice(index, 1);
                 if (key == SpikeSlime_S_Model_1.SpikeSlime_S_Model.Id) {
                     result.push(new SpikeSlime_S_Model_1.SpikeSlime_S_Model(getPos.x, getPos.y));
                 }
@@ -211,7 +211,7 @@ class Exordium extends AbstractDungeon_1.AbstractDungeon {
         let pool = new Array();
         pool.push(new JawWorm_Model_1.JawWorm_Model(0, 0));
         pool.push(new Cultist_Model_1.Cultist_Model(0, 0));
-        return pool[Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng)];
+        return pool[Math.trunc(Mathf_1.Mathf.RandomRange(0, pool.length, this.MiscRng))];
     }
     GetStrongMonster() {
         let pool = new Array();
@@ -219,7 +219,7 @@ class Exordium extends AbstractDungeon_1.AbstractDungeon {
         pool.push(new BlueSlaver_Model_1.BlueSlaver_Model(0, 0));
         pool.push(new RedSlaver_Model_1.RedSlaver_Model(0, 0));
         pool.push(new FungiBeast_Model_1.FungiBeast_Model(0, 0));
-        return pool[Mathf_1.Mathf.RandomRange(0, pool.length - 1, this.MiscRng)];
+        return pool[Math.trunc(Mathf_1.Mathf.RandomRange(0, pool.length, this.MiscRng))];
     }
     GetLouse(array) {
         if (Mathf_1.Mathf.Random(this.MiscRng) < 0.5)

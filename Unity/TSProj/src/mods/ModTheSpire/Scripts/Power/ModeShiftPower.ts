@@ -1,7 +1,7 @@
 ﻿import { ReducePowerAction } from "../Action/Common/ReducePowerAction";
 import { RemoveSpecificPowerAction } from "../Action/Common/RemoveSpecificPowerAction";
 import { DamageType } from "../DataDefine/DamageType";
-import { OnDamageAfter } from "../Events/OnDamageAfter";
+import { OnDamageAfterMessage } from "../Events/OnDamageAfterMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { StringHelper } from "../StringHelper";
@@ -25,7 +25,7 @@ export class ModeShiftPower extends AbstractPower{
         super();
     }
     
-    protected OnDamageAfter(msg: OnDamageAfter) {
+    protected OnDamageAfter(msg: OnDamageAfterMessage) {
         super.OnDamageAfter(msg);
         if(msg.info.DamageType != DamageType.THORNS) {
             if(this.Amount - msg.info.TotalDamage <= 0){

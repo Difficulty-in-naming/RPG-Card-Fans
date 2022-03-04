@@ -1,27 +1,36 @@
 ﻿
 using System;
+
 namespace PuertsStaticWrap
 {
     public static class UnityEngine_TreeInstance_Wrap
     {
+
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
+
                 {
+            
                     {
+                
                         var result = new UnityEngine.TreeInstance();
+                
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.TreeInstance), result);
+                    
                     }
+                
                 }
-            }
-            catch (Exception e)
-            {
+            
+    
+            } catch (Exception e) {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
             return IntPtr.Zero;
         }
+    
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_position(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -36,6 +45,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_position(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,6 +61,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_widthScale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -65,6 +76,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_widthScale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -80,6 +92,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_heightScale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -94,6 +107,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_heightScale(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -109,6 +123,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_rotation(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -123,6 +138,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_rotation(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -138,6 +154,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_color(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -152,6 +169,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_color(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -167,6 +185,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_lightmapColor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -181,6 +200,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_lightmapColor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -196,6 +216,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_prototypeIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -210,6 +231,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_prototypeIndex(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -225,6 +247,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+                
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -233,24 +256,28 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"position", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_position, Setter = S_position} },
-                    {"widthScale", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_widthScale, Setter = S_widthScale} },
-                    {"heightScale", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_heightScale, Setter = S_heightScale} },
-                    {"rotation", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_rotation, Setter = S_rotation} },
-                    {"color", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_color, Setter = S_color} },
-                    {"lightmapColor", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_lightmapColor, Setter = S_lightmapColor} },
-                    {"prototypeIndex", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_prototypeIndex, Setter = S_prototypeIndex} },
+{"widthScale", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_widthScale, Setter = S_widthScale} },
+{"heightScale", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_heightScale, Setter = S_heightScale} },
+{"rotation", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_rotation, Setter = S_rotation} },
+{"color", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_color, Setter = S_color} },
+{"lightmapColor", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_lightmapColor, Setter = S_lightmapColor} },
+{"prototypeIndex", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_prototypeIndex, Setter = S_prototypeIndex} }
                 },
                 LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    
                 }
             };
         }
+    
     }
 }

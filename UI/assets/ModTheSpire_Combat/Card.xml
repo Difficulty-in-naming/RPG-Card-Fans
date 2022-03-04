@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="256,334" pivot="0.5,1" opaque="false" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over" selected="0"/>
+  <controller name="c1" pages="0,attack,1,power,2,skill" selected="2"/>
+  <displayList>
+    <graph id="n7_joqm" name="TrailHolder" xy="131,290" size="1,1"/>
+    <loader id="n2_joqm" name="n2" xy="-21,-35" pivot="0.5,0.5" size="308,421" scale="0.9,0.9" alpha="0" blend="add" url="ui://qmow4f55joqm32" align="center" vAlign="middle">
+      <gearIcon controller="c1" pages="1,2" values="ui://qmow4f55joqm31|ui://qmow4f55joqm32" default="ui://qmow4f55joqm33"/>
+    </loader>
+    <loader id="n4_joqm" name="n4" xy="-21,-35" pivot="0.5,0.5" size="308,421" scale="0.9,0.9" alpha="0" blend="add" url="ui://qmow4f55joqm32" align="center" vAlign="middle">
+      <gearIcon controller="c1" pages="1,2" values="ui://qmow4f55joqm31|ui://qmow4f55joqm32" default="ui://qmow4f55joqm33"/>
+    </loader>
+    <loader id="n5_joqm" name="n5" xy="-21,-35" pivot="0.5,0.5" size="308,421" scale="0.9,0.9" alpha="0" blend="add" url="ui://qmow4f55joqm32" align="center" vAlign="middle">
+      <gearIcon controller="c1" pages="1,2" values="ui://qmow4f55joqm31|ui://qmow4f55joqm32" default="ui://qmow4f55joqm33"/>
+    </loader>
+    <component id="n0_o9r6" name="Main" src="gh7d1l" fileName="Card/Card.xml" pkg="rduitwm2" xy="-209,-273" pivot="0.5,0.5" scale="0.38,0.38"/>
+  </displayList>
+  <Button/>
+  <transition name="SuperFlash">
+    <item time="0" type="Alpha" target="n2_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Alpha" target="n4_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Alpha" target="n5_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Icon" target="n2_joqm" value="ui://qmow4f55joqm35"/>
+    <item time="0" type="Icon" target="n4_joqm" value="ui://qmow4f55joqm35"/>
+    <item time="0" type="Icon" target="n5_joqm" value="ui://qmow4f55joqm35"/>
+    <item time="0" type="Scale" target="n2_joqm" tween="true" startValue="0.8,0.82" endValue="0.764,0.78" duration="12" ease="Bounce.In"/>
+    <item time="0" type="Scale" target="n4_joqm" tween="true" startValue="0.85,0.88" endValue="0.81,0.84" duration="12" ease="Bounce.In"/>
+    <item time="0" type="Scale" target="n5_joqm" tween="true" startValue="0.89,0.92" endValue="0.85,0.88" duration="12" ease="Bounce.In"/>
+  </transition>
+  <transition name="Flash">
+    <item time="0" type="Alpha" target="n2_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Alpha" target="n4_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Alpha" target="n5_joqm" tween="true" startValue="0.5" endValue="0" duration="12" ease="Linear"/>
+    <item time="0" type="Scale" target="n2_joqm" tween="true" startValue="0.8,0.8" endValue="0.764,0.764" duration="12" ease="Bounce.In"/>
+    <item time="0" type="Scale" target="n4_joqm" tween="true" startValue="0.85,0.85" endValue="0.81,0.81" duration="12" ease="Bounce.In"/>
+    <item time="0" type="Scale" target="n5_joqm" tween="true" startValue="0.89,0.89" endValue="0.85,0.85" duration="12" ease="Bounce.In"/>
+  </transition>
+  <transition name="Glow" frameRate="30">
+    <item time="0" type="Alpha" target="n2_joqm" tween="true" startValue="0.6" endValue="0" duration="36"/>
+    <item time="0" type="Scale" target="n2_joqm" value="1.08,1.08"/>
+    <item time="6" type="Scale" target="n2_joqm" tween="true" startValue="1.08,1.08" endValue="1.02,1.02" duration="30" ease="Sine.Out"/>
+  </transition>
+</component>

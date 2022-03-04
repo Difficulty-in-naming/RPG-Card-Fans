@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="78,75">
+  <displayList>
+    <image id="n4_o9r6" name="LeftTopShadow" src="o9r62g" fileName="Texture/reticleCorner.png" xy="2,2" pivot="0.5,0.5" alpha="0.25" color="#000000">
+      <relation target="n0_o9r6" sidePair="center-center,middle-middle"/>
+    </image>
+    <image id="n5_o9r6" name="LeftBottomShadow" src="o9r62g" fileName="Texture/reticleCorner.png" xy="2,37" pivot="0.5,0.5" scale="1,-1" alpha="0.25" color="#000000">
+      <relation target="n1_o9r6" sidePair="center-center,middle-middle"/>
+    </image>
+    <image id="n6_o9r6" name="RightTopShadow" src="o9r62g" fileName="Texture/reticleCorner.png" xy="40,2" pivot="0.5,0.5" scale="-1,1" alpha="0.25" color="#000000">
+      <relation target="n2_o9r6" sidePair="center-center,middle-middle"/>
+    </image>
+    <image id="n7_o9r6" name="RightBottomShadow" src="o9r62g" fileName="Texture/reticleCorner.png" xy="40,37" pivot="0.5,0.5" scale="-1,-1" alpha="0.25" color="#000000">
+      <relation target="n3_o9r6" sidePair="center-center,middle-middle"/>
+    </image>
+    <image id="n0_o9r6" name="LeftTop" src="o9r62g" fileName="Texture/reticleCorner.png" xy="0,0" pivot="0.5,0.5"/>
+    <image id="n1_o9r6" name="LeftBottom" src="o9r62g" fileName="Texture/reticleCorner.png" xy="0,39" pivot="0.5,0.5" scale="1,-1"/>
+    <image id="n2_o9r6" name="RightTop" src="o9r62g" fileName="Texture/reticleCorner.png" xy="42,0" pivot="0.5,0.5" scale="-1,1"/>
+    <image id="n3_o9r6" name="RightBottom" src="o9r62g" fileName="Texture/reticleCorner.png" xy="42,39" pivot="0.5,0.5" scale="-1,-1"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" tween="true" startValue="0" endValue="1" duration="36" ease="Linear"/>
+    <item time="0" type="XY" target="n0_o9r6" tween="true" startValue="-15,-15" endValue="0,0" duration="60" ease="Elastic.Out"/>
+    <item time="0" type="XY" target="n1_o9r6" tween="true" startValue="-15,54" endValue="0,39" duration="60" label2="LeftBottomFlag" ease="Elastic.Out"/>
+    <item time="0" type="XY" target="n2_o9r6" tween="true" startValue="57,-15" endValue="42,0" duration="60" ease="Elastic.Out"/>
+    <item time="0" type="XY" target="n3_o9r6" tween="true" startValue="57,54" endValue="42,39" duration="60" ease="Elastic.Out"/>
+  </transition>
+</component>

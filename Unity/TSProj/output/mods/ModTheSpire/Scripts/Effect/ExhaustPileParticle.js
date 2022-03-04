@@ -1,20 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExhaustPileParticle = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const ImageMaster_1 = require("../Helpers/ImageMaster");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class ExhaustPileParticle extends AbstractEffect_1.AbstractEffect {
+    Loader;
+    Interval = 2;
     constructor() {
         super();
-        this.Interval = 2;
         this.Loader = UIHelper_1.default.CreateGLoader();
         this.Loader.SetPosition(24, 24, 0);
-        this.Loader.url = FileHelper_1.default.FormatPath("Vfx/exhaust/bigBlur.png");
+        this.Loader.url = ImageMaster_1.ImageMaster.EXHAUST_L;
         this.Loader.SetPivot(0.5, 0.5, true);
         this.Loader.autoSize = true;
         let scale = Mathf_1.Mathf.RandomRange(0.5, 0.7);
@@ -22,7 +23,7 @@ class ExhaustPileParticle extends AbstractEffect_1.AbstractEffect {
         color.G = Mathf_1.Mathf.RandomRange(51, 102);
         color.R = color.G + 26;
         color.B = color.R + 26;
-        this.Loader.color = color.UnityColor();
+        this.Loader.color = color.UnityColor;
         this.Loader.alpha = 0;
         this.Loader.rotation = Mathf_1.Mathf.RandomRange(0, 360);
         this.Loader.SetScale(scale, scale);

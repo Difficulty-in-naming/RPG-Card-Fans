@@ -1,9 +1,9 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 import {UIKit} from "../../../../../Core/Module/UI/UIKit";
-import {FairyGUI} from "csharp";
 import { UIBase } from "../../../../../Core/Module/UI/UIBase";
 import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";
+import {FairyGUI} from "csharp";
 export class View_Combat extends UIBase
 {
     public Deck : FairyGUI.GButton;
@@ -11,6 +11,7 @@ export class View_Combat extends UIBase
     public Exhaust : FairyGUI.GButton;
     public EndTurnButton1 : FairyGUI.GComponent;
     public EndTurnButton2 : FairyGUI.GComponent;
+    public ReticleCorner : FairyGUI.GComponent;
     public static Url = new ViewInfo("ModTheSpire_Combat","Combat")
     public static CreatePanel(...args) : UIBase
     {
@@ -45,6 +46,7 @@ export class View_Combat extends UIBase
         this.Exhaust = this.View.GetChild("Exhaust") as FairyGUI.GButton;
         this.EndTurnButton1 = this.View.GetChild("EndTurnButton1") as FairyGUI.GComponent;
         this.EndTurnButton2 = this.View.GetChild("EndTurnButton2") as FairyGUI.GComponent;
+        this.ReticleCorner = this.View.GetChild("ReticleCorner") as FairyGUI.GComponent;
     }
 }
 export class View_Button extends UIBase
@@ -280,6 +282,102 @@ export class View_HealthBar extends UIBase
         this.Middle = this.View.GetChild("Middle") as FairyGUI.GImage;
         this.DisplayText = this.View.GetChild("DisplayText") as FairyGUI.GTextField;
         this.Block_2 = this.View.GetChild("Block") as FairyGUI.GComponent;
+    }
+}
+export class View_XuanZhongKuang extends UIBase
+{
+    public LeftTopShadow : FairyGUI.GImage;
+    public LeftBottomShadow : FairyGUI.GImage;
+    public RightTopShadow : FairyGUI.GImage;
+    public RightBottomShadow : FairyGUI.GImage;
+    public LeftTop : FairyGUI.GImage;
+    public LeftBottom : FairyGUI.GImage;
+    public RightTop : FairyGUI.GImage;
+    public RightBottom : FairyGUI.GImage;
+    public t0 : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_Combat","选中框")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_XuanZhongKuang.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_XuanZhongKuang.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.LeftTopShadow = this.View.GetChild("LeftTopShadow") as FairyGUI.GImage;
+        this.LeftBottomShadow = this.View.GetChild("LeftBottomShadow") as FairyGUI.GImage;
+        this.RightTopShadow = this.View.GetChild("RightTopShadow") as FairyGUI.GImage;
+        this.RightBottomShadow = this.View.GetChild("RightBottomShadow") as FairyGUI.GImage;
+        this.LeftTop = this.View.GetChild("LeftTop") as FairyGUI.GImage;
+        this.LeftBottom = this.View.GetChild("LeftBottom") as FairyGUI.GImage;
+        this.RightTop = this.View.GetChild("RightTop") as FairyGUI.GImage;
+        this.RightBottom = this.View.GetChild("RightBottom") as FairyGUI.GImage;
+        this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
+    }
+}
+export class View_Card extends UIBase
+{
+    public c1 : FairyGUI.Controller;
+    public TrailHolder : FairyGUI.GGraph;
+    public Main : FairyGUI.GComponent;
+    public SuperFlash : FairyGUI.Transition;
+    public Flash : FairyGUI.Transition;
+    public Glow : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_Combat","Card")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_Card.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_Card.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.c1 = this.View.GetController("c1") as FairyGUI.Controller;
+        this.TrailHolder = this.View.GetChild("TrailHolder") as FairyGUI.GGraph;
+        this.Main = this.View.GetChild("Main") as FairyGUI.GComponent;
+        this.SuperFlash = this.View.GetTransition("SuperFlash") as FairyGUI.Transition;
+        this.Flash = this.View.GetTransition("Flash") as FairyGUI.Transition;
+        this.Glow = this.View.GetTransition("Glow") as FairyGUI.Transition;
     }
 }
 export class View_DisplayName extends UIBase

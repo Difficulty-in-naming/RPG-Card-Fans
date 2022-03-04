@@ -2,6 +2,7 @@ import GainBlockAction from "../../../Action/Common/GainBlockAction";
 import { ArmamentsAction } from "../../../Action/Unique/ArmamentsAction";
 import FileHelper from "../../../FileHelper";
 import { LocalizationProperty } from "../../../Gen/DB/Localization";
+import AbstractCreature from "../../../Unit/AbstractCreature";
 import { AbstractPlayer } from "../../../Unit/Character/AbstractPlayer";
 import { AbstractMonster } from "../../../Unit/Monster/AbstractMonster";
 import AbstractCard, { CardColor, CardRarity, CardTarget, CardType, CardTags } from "../../AbstractCard";
@@ -18,10 +19,10 @@ export class Armaments extends AbstractCard
     Block = 5;
     Energy = 1;
     
-    Use(player: AbstractPlayer, monster: AbstractMonster) {
+    Use(player: AbstractPlayer, monster: AbstractCreature) {
         super.Use(player, monster);
         this.AddToBot(new GainBlockAction(player,this.Block));
-        this.AddToBot(new ArmamentsAction(player));//TODO UI未完成
+        this.AddToBot(new ArmamentsAction(this.IsUpgraded()));//TODO UI未完成
     }
 
     Upgrade()

@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConfigAssetManager = void 0;
-var csharp_1 = require("csharp");
+const csharp_1 = require("csharp");
 class ConfigAssetManager {
+    static KeyValue = new Map();
     static Load(uuid, path) {
         let json = null;
         try {
             json = csharp_1.System.IO.File.ReadAllText(path, csharp_1.System.Text.Encoding.UTF8);
+            console.log(json);
             if (!json) {
                 return;
             }
@@ -17,7 +19,8 @@ class ConfigAssetManager {
         let map = new Map();
         let deserialize = JSON.parse(json);
         for (let key in deserialize) {
-            map.set(key, deserialize[key]);
+            let x = deserialize[key];
+            map.set(key, x);
         }
         this.KeyValue.set(uuid, map);
     }
@@ -43,5 +46,4 @@ class ConfigAssetManager {
     }
 }
 exports.ConfigAssetManager = ConfigAssetManager;
-ConfigAssetManager.KeyValue = new Map();
 //# sourceMappingURL=ConfigAssetManager.js.map

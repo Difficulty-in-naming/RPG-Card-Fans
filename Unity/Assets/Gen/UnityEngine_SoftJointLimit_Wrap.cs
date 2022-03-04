@@ -1,27 +1,36 @@
 ﻿
 using System;
+
 namespace PuertsStaticWrap
 {
     public static class UnityEngine_SoftJointLimit_Wrap
     {
+
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
+
                 {
+            
                     {
+                
                         var result = new UnityEngine.SoftJointLimit();
+                
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.SoftJointLimit), result);
+                    
                     }
+                
                 }
-            }
-            catch (Exception e)
-            {
+            
+    
+            } catch (Exception e) {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
             return IntPtr.Zero;
         }
+    
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_limit(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -36,6 +45,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_limit(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,6 +61,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_bounciness(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -65,6 +76,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_bounciness(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -80,6 +92,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_contactDistance(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -94,6 +107,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_contactDistance(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -109,6 +123,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+                
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -117,20 +132,24 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"limit", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_limit, Setter = S_limit} },
-                    {"bounciness", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_bounciness, Setter = S_bounciness} },
-                    {"contactDistance", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_contactDistance, Setter = S_contactDistance} },
+{"bounciness", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_bounciness, Setter = S_bounciness} },
+{"contactDistance", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_contactDistance, Setter = S_contactDistance} }
                 },
                 LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    
                 }
             };
         }
+    
     }
 }

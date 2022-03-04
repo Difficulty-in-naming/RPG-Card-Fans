@@ -2,10 +2,16 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.View_Card = exports.View_TitleButton = exports.View_MasterDeckView = void 0;
-var UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
-var UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
-var ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
+const UIKit_1 = require("../../../../../Core/Module/UI/UIKit");
+const UIBase_1 = require("../../../../../Core/Module/UI/UIBase");
+const ViewInfo_1 = require("../../../../../Core/Module/UI/ViewInfo");
 class View_MasterDeckView extends UIBase_1.UIBase {
+    c1;
+    Menu;
+    List;
+    desc;
+    Enter;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "MasterDeckView");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -36,8 +42,10 @@ class View_MasterDeckView extends UIBase_1.UIBase {
     }
 }
 exports.View_MasterDeckView = View_MasterDeckView;
-View_MasterDeckView.Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "MasterDeckView");
 class View_TitleButton extends UIBase_1.UIBase {
+    SortingType;
+    Hover;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "TitleButton");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -65,8 +73,9 @@ class View_TitleButton extends UIBase_1.UIBase {
     }
 }
 exports.View_TitleButton = View_TitleButton;
-View_TitleButton.Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "TitleButton");
 class View_Card extends UIBase_1.UIBase {
+    Inner;
+    static Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "Card");
     static CreatePanel(...args) {
         let url = this.Url.toString() + "." + this.name;
         let panel = UIKit_1.UIKit.Inst().Get(url);
@@ -93,5 +102,4 @@ class View_Card extends UIBase_1.UIBase {
     }
 }
 exports.View_Card = View_Card;
-View_Card.Url = new ViewInfo_1.ViewInfo("ModTheSpire_MasterDeckView", "Card");
 //# sourceMappingURL=ModTheSpire_MasterDeckView.js.map

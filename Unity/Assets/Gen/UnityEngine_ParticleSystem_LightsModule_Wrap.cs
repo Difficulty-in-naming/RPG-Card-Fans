@@ -1,27 +1,36 @@
 ﻿
 using System;
+
 namespace PuertsStaticWrap
 {
     public static class UnityEngine_ParticleSystem_LightsModule_Wrap
     {
+
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8ConstructorCallback))]
         private static IntPtr Constructor(IntPtr isolate, IntPtr info, int paramLen, long data)
         {
             try
             {
+
                 {
+            
                     {
+                
                         var result = new UnityEngine.ParticleSystem.LightsModule();
+                
                         return Puerts.Utils.GetObjectPtr((int)data, typeof(UnityEngine.ParticleSystem.LightsModule), result);
+                    
                     }
+                
                 }
-            }
-            catch (Exception e)
-            {
+            
+    
+            } catch (Exception e) {
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
             return IntPtr.Zero;
         }
+    
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_enabled(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -36,6 +45,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_enabled(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -51,6 +61,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_ratio(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -65,6 +76,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_ratio(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -80,6 +92,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_useRandomDistribution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -94,6 +107,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_useRandomDistribution(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -109,6 +123,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_light(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -123,6 +138,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_light(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -138,6 +154,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_useParticleColor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -152,6 +169,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_useParticleColor(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -167,6 +185,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_sizeAffectsRange(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -181,6 +200,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_sizeAffectsRange(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -196,6 +216,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_alphaAffectsIntensity(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -210,6 +231,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_alphaAffectsIntensity(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -225,6 +247,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_range(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -239,6 +262,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_range(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -254,6 +278,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_rangeMultiplier(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -268,6 +293,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_rangeMultiplier(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -283,6 +309,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_intensity(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -297,6 +324,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_intensity(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -312,6 +340,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_intensityMultiplier(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -326,6 +355,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_intensityMultiplier(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -341,6 +371,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void G_maxLights(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -355,6 +386,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+            
         [Puerts.MonoPInvokeCallback(typeof(Puerts.V8FunctionCallback))]
         private static void S_maxLights(IntPtr isolate, IntPtr info, IntPtr self, int paramLen, long data)
         {
@@ -370,6 +402,7 @@ namespace PuertsStaticWrap
                 Puerts.PuertsDLL.ThrowException(isolate, "c# exception:" + e.Message + ",stack:" + e.StackTrace);
             }
         }
+                
         public static Puerts.TypeRegisterInfo GetRegisterInfo()
         {
             return new Puerts.TypeRegisterInfo()
@@ -378,29 +411,33 @@ namespace PuertsStaticWrap
                 Constructor = Constructor,
                 Methods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 Properties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
                     {"enabled", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_enabled, Setter = S_enabled} },
-                    {"ratio", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_ratio, Setter = S_ratio} },
-                    {"useRandomDistribution", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_useRandomDistribution, Setter = S_useRandomDistribution} },
-                    {"light", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_light, Setter = S_light} },
-                    {"useParticleColor", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_useParticleColor, Setter = S_useParticleColor} },
-                    {"sizeAffectsRange", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_sizeAffectsRange, Setter = S_sizeAffectsRange} },
-                    {"alphaAffectsIntensity", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_alphaAffectsIntensity, Setter = S_alphaAffectsIntensity} },
-                    {"range", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_range, Setter = S_range} },
-                    {"rangeMultiplier", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_rangeMultiplier, Setter = S_rangeMultiplier} },
-                    {"intensity", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_intensity, Setter = S_intensity} },
-                    {"intensityMultiplier", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_intensityMultiplier, Setter = S_intensityMultiplier} },
-                    {"maxLights", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_maxLights, Setter = S_maxLights} },
+{"ratio", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_ratio, Setter = S_ratio} },
+{"useRandomDistribution", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_useRandomDistribution, Setter = S_useRandomDistribution} },
+{"light", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_light, Setter = S_light} },
+{"useParticleColor", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_useParticleColor, Setter = S_useParticleColor} },
+{"sizeAffectsRange", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_sizeAffectsRange, Setter = S_sizeAffectsRange} },
+{"alphaAffectsIntensity", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_alphaAffectsIntensity, Setter = S_alphaAffectsIntensity} },
+{"range", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_range, Setter = S_range} },
+{"rangeMultiplier", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_rangeMultiplier, Setter = S_rangeMultiplier} },
+{"intensity", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_intensity, Setter = S_intensity} },
+{"intensityMultiplier", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_intensityMultiplier, Setter = S_intensityMultiplier} },
+{"maxLights", new Puerts.PropertyRegisterInfo(){ IsStatic = false, Getter = G_maxLights, Setter = S_maxLights} }
                 },
                 LazyMethods = new System.Collections.Generic.Dictionary<Puerts.MethodKey, Puerts.V8FunctionCallback>()
                 {
+                    
                 },
                 LazyProperties = new System.Collections.Generic.Dictionary<string, Puerts.PropertyRegisterInfo>()
                 {
+                    
                 }
             };
         }
+    
     }
 }

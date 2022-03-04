@@ -18,6 +18,8 @@
     <image id="pz5ge" name="key_red.png" path="/Texture/"/>
     <image id="pz5gf" name="key_blue.png" path="/Texture/"/>
     <component id="fq7pg" name="KeySlots.xml" path="/"/>
+    <component id="taydh" name="HeartCom.xml" path="/Component/"/>
+    <image id="taydi" name="panel_heart_white.png" path="/Texture/"/>
   </resources>
   <publish name="ModTheSpire_TopBar" genCode="true"/>
 </packageDescription>

@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MonsterGroup = void 0;
-var Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
-var DungeonManager_1 = require("../../DungeonManager");
-var Intent_1 = require("./Intent");
+const Mathf_1 = require("../../../../../Core/Module/Math/Mathf");
+const DungeonManager_1 = require("../../DungeonManager");
+const Intent_1 = require("./Intent");
 class MonsterGroup {
+    Monsters = new Array();
     constructor(...monsters) {
-        this.Monsters = new Array();
         this.Monsters = monsters;
     }
     AreMonstersBasicallyDead() {

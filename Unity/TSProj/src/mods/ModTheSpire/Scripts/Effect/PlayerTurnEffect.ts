@@ -27,7 +27,7 @@ export class LightFlareParticleEffect extends AbstractEffect
         this.WaveSpeed = Mathf.RandomRange(-20,20);
         this.Scale = Mathf.RandomRange(0.2,1);
         this.Loader = UIHelper.CreateGLoader();
-        this.Loader.url = 
+        //Todo this.Loader.url = 
     }
 
     public Update(): void {

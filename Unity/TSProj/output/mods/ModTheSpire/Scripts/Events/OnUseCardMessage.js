@@ -2,6 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OnUseCardMessage = void 0;
 class OnUseCardMessage {
+    Source;
+    Target;
+    Card;
+    static Id = "OnUseCardMessage";
     constructor(Source, Target, Card) {
         this.Source = Source;
         this.Target = Target;
@@ -9,5 +13,4 @@ class OnUseCardMessage {
     }
 }
 exports.OnUseCardMessage = OnUseCardMessage;
-OnUseCardMessage.Id = "OnUseCardMessage";
 //# sourceMappingURL=OnUseCardMessage.js.map

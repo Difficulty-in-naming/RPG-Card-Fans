@@ -13,9 +13,9 @@ export default class UI_TopBar extends View_TopBar
         this.Player = DungeonManager.Inst.Player;
         this.CharacterInfo = this.Player.CharacterInfo;
         this.ClassName.text = this.CharacterInfo.Name;
-        if(this.Player.AdvanceLevel > 0){
+        if(DungeonManager.Inst.AdvanceLevel > 0){
             this.Advance.visible = true;
-            this.AdvanceLevel.text = this.Player.AdvanceLevel.toString();
+            this.AdvanceLevel.text = DungeonManager.Inst.AdvanceLevel.toString();
         }
         this.Deck.asButton.onClick.Set(()=>{
             if(UI_MasterDeckView.GetInstance())

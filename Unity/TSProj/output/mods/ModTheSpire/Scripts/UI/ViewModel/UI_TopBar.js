@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var DungeonManager_1 = require("../../DungeonManager");
-var ModTheSpire_TopBar_1 = require("../../Gen/View/ModTheSpire_TopBar");
-var UI_MasterDeckView_1 = require("./UI_MasterDeckView");
+const DungeonManager_1 = require("../../DungeonManager");
+const ModTheSpire_TopBar_1 = require("../../Gen/View/ModTheSpire_TopBar");
+const UI_MasterDeckView_1 = require("./UI_MasterDeckView");
 class UI_TopBar extends ModTheSpire_TopBar_1.View_TopBar {
+    CharacterInfo;
+    Player;
     OnInit(...args) {
         super.OnInit(...args);
         this.Player = DungeonManager_1.default.Inst.Player;
         this.CharacterInfo = this.Player.CharacterInfo;
         this.ClassName.text = this.CharacterInfo.Name;
-        if (this.Player.AdvanceLevel > 0) {
+        if (DungeonManager_1.default.Inst.AdvanceLevel > 0) {
             this.Advance.visible = true;
-            this.AdvanceLevel.text = this.Player.AdvanceLevel.toString();
+            this.AdvanceLevel.text = DungeonManager_1.default.Inst.AdvanceLevel.toString();
         }
         this.Deck.asButton.onClick.Set(() => {
             if (UI_MasterDeckView_1.UI_MasterDeckView.GetInstance())

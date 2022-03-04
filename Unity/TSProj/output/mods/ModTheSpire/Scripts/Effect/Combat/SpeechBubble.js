@@ -1,12 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpeechBubble = void 0;
-var csharp_1 = require("csharp");
-var Color_1 = require("../../DataDefine/Color");
-var ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
-var UIHelper_1 = require("../../UI/UIHelper");
-var AbstractEffect_1 = require("../AbstractEffect");
+const csharp_1 = require("csharp");
+const Color_1 = require("../../DataDefine/Color");
+const ModTheSpire_Effect_1 = require("../../Gen/View/ModTheSpire_Effect");
+const UIHelper_1 = require("../../UI/UIHelper");
+const AbstractEffect_1 = require("../AbstractEffect");
 class SpeechBubble extends AbstractEffect_1.AbstractEffect {
+    X;
+    Y;
+    Msg;
+    Interval;
+    FlipX;
+    Instance;
+    Bg;
+    SuperText;
     constructor(X, Y, Msg, Interval, FlipX) {
         super();
         this.X = X;
@@ -23,7 +31,7 @@ class SpeechBubble extends AbstractEffect_1.AbstractEffect {
         this.SuperText = UIHelper_1.default.CreateSuperText();
         let wrap = new csharp_1.FairyGUI.GoWrapper(this.SuperText.gameObject);
         wrap.SetScale(100, 100);
-        this.SuperText.color = Color_1.default.Gray.UnityColor();
+        this.SuperText.color = Color_1.default.Gray.UnityColor;
         this.SuperText.text = `<shake>${Msg}</shake>`;
         this.SuperText.lineSpacing = -50;
         this.SuperText.Width = 2;

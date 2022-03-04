@@ -1,20 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GremlinTsundere_ViewModel = void 0;
-var Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
-var AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
-var DamageAction_1 = require("../../../../Action/Common/DamageAction");
-var EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
-var GainBlockRandomMonsterAction_1 = require("../../../../Action/Common/GainBlockRandomMonsterAction");
-var SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
-var AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
-var DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
-var DungeonManager_1 = require("../../../../DungeonManager");
-var SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
-var Localization_1 = require("../../../../Gen/DB/Localization");
-var AbstractMonster_1 = require("../../AbstractMonster");
-var Intent_1 = require("../../Intent");
+const Mathf_1 = require("../../../../../../../Core/Module/Math/Mathf");
+const AnimateSlowAttackAction_1 = require("../../../../Action/Animations/AnimateSlowAttackAction");
+const DamageAction_1 = require("../../../../Action/Common/DamageAction");
+const EscapeAction_1 = require("../../../../Action/Common/EscapeAction");
+const GainBlockRandomMonsterAction_1 = require("../../../../Action/Common/GainBlockRandomMonsterAction");
+const SetMoveAction_1 = require("../../../../Action/Common/SetMoveAction");
+const AttackEffect_1 = require("../../../../DataDefine/AttackEffect");
+const DamageInfo_1 = require("../../../../DataDefine/DamageInfo");
+const DungeonManager_1 = require("../../../../DungeonManager");
+const SpeechBubble_1 = require("../../../../Effect/Combat/SpeechBubble");
+const Localization_1 = require("../../../../Gen/DB/Localization");
+const AbstractMonster_1 = require("../../AbstractMonster");
+const Intent_1 = require("../../Intent");
 class GremlinTsundere_ViewModel extends AbstractMonster_1.AbstractMonster {
+    _blockAmt;
     Initialize() {
         if (DungeonManager_1.default.Inst.AdvanceLevel >= 17) {
             this._blockAmt = 11;

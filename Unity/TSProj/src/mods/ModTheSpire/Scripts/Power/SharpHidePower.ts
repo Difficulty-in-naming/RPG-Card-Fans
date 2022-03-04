@@ -3,7 +3,7 @@ import AbstractCard, { CardType } from "../Cards/AbstractCard";
 import { AttackEffect } from "../DataDefine/AttackEffect";
 import DamageInfo from "../DataDefine/DamageInfo";
 import { DamageType } from "../DataDefine/DamageType";
-import { OnHurtBefore } from "../Events/OnHurtBefore";
+import { OnHurtBeforeMessage } from "../Events/OnHurtBeforeMessage";
 import FileHelper from "../FileHelper";
 import { LocalizationProperty } from "../Gen/DB/Localization";
 import { StringHelper } from "../StringHelper";
@@ -22,7 +22,7 @@ export class SharpHidePower extends AbstractPower{
         return StringHelper.FormatColorString(LocalizationProperty.Read("能力-锋利外壳描述").format(this.Amount));
     }
 
-    protected OnHurtAfter(msg: OnHurtBefore) {
+    protected OnHurtAfter(msg: OnHurtBeforeMessage) {
         super.OnHurtAfter(msg);
         if(this.Owner.IsDeadOrEscaped || this.Owner.IsDying){
             return;

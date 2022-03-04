@@ -17,7 +17,7 @@ export class InteractableTorchEffect extends AbstractEffect{
         this.Component = UIHelper.CreateGComponent();
         this.Loader = UIHelper.CreateGLoader();
         this.Component.AddChild(this.Loader);
-        this.Loader.url = FileHelper.FormatPath("Vfx/env/torch.png");
+        this.Loader.url = "ui://ModTheSpire_Effect/torch";
         this.Component.EnsureBoundsCorrect()
         this.Component.SetPosition(X,Y,0);
         this.Loader.alpha = 0.4;

@@ -1,14 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DustEffect = void 0;
-var csharp_1 = require("csharp");
-var Mathf_1 = require("../../../../Core/Module/Math/Mathf");
-var TimeKit_1 = require("../../../../Core/Utils/TimeKit");
-var Color_1 = require("../DataDefine/Color");
-var FileHelper_1 = require("../FileHelper");
-var UIHelper_1 = require("../UI/UIHelper");
-var AbstractEffect_1 = require("./AbstractEffect");
+const csharp_1 = require("csharp");
+const Mathf_1 = require("../../../../Core/Module/Math/Mathf");
+const TimeKit_1 = require("../../../../Core/Utils/TimeKit");
+const Color_1 = require("../DataDefine/Color");
+const UIHelper_1 = require("../UI/UIHelper");
+const AbstractEffect_1 = require("./AbstractEffect");
 class DustEffect extends AbstractEffect_1.AbstractEffect {
+    Vx;
+    Vy;
+    BaseAlpha;
+    Vr;
+    Loader;
+    Interval;
     constructor(parent = null) {
         super();
         this.Interval = Mathf_1.Mathf.RandomRange(5, 14);
@@ -16,13 +21,13 @@ class DustEffect extends AbstractEffect_1.AbstractEffect {
         if (parent)
             parent.AddChild(this.Loader);
         this.Loader.touchable = false;
-        this.Loader.url = FileHelper_1.default.FormatPath("Vfx/env/dust" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 7)) + ".png");
+        this.Loader.url = "ui://ModTheSpire_Effect/dust" + Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(1, 7));
         this.Loader.x = Mathf_1.Mathf.RandomRange(0, csharp_1.FairyGUI.GRoot.inst.width);
         this.Loader.y = Mathf_1.Mathf.RandomRange(500, 1080);
         this.Vx = Mathf_1.Mathf.RandomRange(-12, 12);
         this.Vy = Mathf_1.Mathf.RandomRange(-30, 12);
         let color = Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(26, 180));
-        this.Loader.color = new Color_1.default(color, color, color, 255).UnityColor();
+        this.Loader.color = new Color_1.default(color, color, color, 255).UnityColor;
         this.Loader.alpha = 0;
         this.BaseAlpha = 1 - (color / 255);
         this.Loader.rotation = Mathf_1.Mathf.Floor(Mathf_1.Mathf.RandomRange(0, 360));

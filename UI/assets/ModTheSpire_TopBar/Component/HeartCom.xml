@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="38,32">
+  <controller name="button" pages="2,up,4,over" selected="0"/>
+  <displayList>
+    <image id="n0_pz5g" name="n0" src="pz5gu" fileName="Texture/panelHeart.png" pkg="rduitwm2" xy="0,0" pivot="0.5,0.5">
+      <gearSize controller="button" pages="4" values="38,32,1.1,1.1" default="38,32,1,1"/>
+    </image>
+    <image id="n1_tayd" name="n1" src="taydi" fileName="Texture/panel_heart_white.png" xy="-13,-15" pivot="0.5,0.5" alpha="0" blend="add" color="#7fff00"/>
+  </displayList>
+  <transition name="Heal" frameRate="60">
+    <item time="0" type="Alpha" target="n1_tayd" tween="true" startValue="0" endValue="0.6" duration="60" ease="Sine.InOut"/>
+    <item time="0" type="Scale" target="n1_tayd" tween="true" startValue="1.2,1.2" endValue="2,2" duration="90" ease="Quart.In"/>
+    <item time="60" type="Alpha" target="n1_tayd" tween="true" startValue="0.6" endValue="0" duration="30" ease="Quint.In"/>
+  </transition>
+</component>

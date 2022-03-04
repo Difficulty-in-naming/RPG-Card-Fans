@@ -14,7 +14,7 @@ export class TextAboveCreatureEffect extends AbstractEffect{
         this.TextComponent.SetPosition(x,y,0);
         this.TextComponent.text = msg;
         let transition = this.TextComponent.GetTransition("t0");
-        transition.SetValue("FromColor",targetColor.UnityColor());
+        transition.SetValue("FromColor",targetColor.UnityColor);
         transition.Play(1,0,()=>{
             this.IsDone = true;
         });

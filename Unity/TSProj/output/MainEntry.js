@@ -1,23 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MainEntry = void 0;
-var UIKit_1 = require("./Core/Module/UI/UIKit");
-var TimeKit_1 = require("./Core/Utils/TimeKit");
-var csharp_1 = require("csharp");
-var Log_1 = require("./Core/Module/Log/Log");
-var tween_js_1 = require("@tweenjs/tween.js");
+const UIKit_1 = require("./Core/Module/UI/UIKit");
+const TimeKit_1 = require("./Core/Utils/TimeKit");
+const csharp_1 = require("csharp");
+const TWEEN = require("./ThirdParty/@tweenjs/tween");
 class MainEntry {
-    constructor() {
-        this.BridgeList = new Set();
-        csharp_1.MediaManager.Init();
-        csharp_1.GameEntry.Inst.RegisterUpdate(() => this.onUpdate());
-    }
+    static inst;
     static Inst() {
         if (!MainEntry.inst) {
             MainEntry.inst = new MainEntry();
         }
         return MainEntry.inst;
     }
+    constructor() {
+        csharp_1.MediaManager.Init();
+        csharp_1.GameEntry.Inst.RegisterUpdate(() => this.onUpdate());
+    }
+    BridgeList = new Set();
     RegisterEntry(bridge) {
         this.BridgeList.add(bridge);
     }
@@ -26,12 +26,11 @@ class MainEntry {
     }
     onUpdate() {
         TimeKit_1.TimeKit.Update();
-        tween_js_1.default.update();
+        TWEEN.update();
         this.BridgeList.forEach(value => {
             value.OnUpdate();
         });
         UIKit_1.UIKit.Inst().OnUpdate();
-        Log_1.Log.Error("Hello 1111");
     }
 }
 exports.MainEntry = MainEntry;
