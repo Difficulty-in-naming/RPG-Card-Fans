@@ -5,11 +5,11 @@ using UnityEngine;
 namespace ModTheSpire.DataDefine
 {
     public class WrapDamage{
-        public AbstractCreature Source { get; }
+        public object Source { get; }
         public float Damage { get; }
         public DamageType? Type { get; }
 
-        public WrapDamage(AbstractCreature source, float damage, DamageType? type = null)
+        public WrapDamage(object source, float damage, DamageType? type = null)
         {
             Source = source;
             Damage = damage;

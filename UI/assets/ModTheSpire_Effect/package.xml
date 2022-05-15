@@ -62,6 +62,11 @@
     <component id="a9nx4a" name="PlayerTurnEffect.xml" path="/Combat/" exported="true"/>
     <component id="hemu4b" name="CardPoofParticle.xml" path="/Combat/" exported="true"/>
     <component id="etma4c" name="FadeScreen.xml" path="/" exported="true"/>
+    <image id="118674d" name="cone8.png" path="/Texture/" exported="true"/>
+    <image id="118674e" name="cone5.png" path="/Texture/" exported="true"/>
+    <image id="118674f" name="cone6.png" path="/Texture/" exported="true"/>
+    <image id="118674g" name="cone7.png" path="/Texture/" exported="true"/>
+    <image id="118674h" name="cone9.png" path="/Texture/" exported="true"/>
   </resources>
   <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Effect" packageCount="2" genCode="true"/>
 </packageDescription>

@@ -17,5 +17,10 @@
         public static string DUST_6 = "ui://ModTheSpire_Effect/dust6";
         public static string TARGET_UI_ARROW = "ui://ModTheSpire_Combat/reticleArrow";
         public static string TARGET_UI_CIRCLE = "ui://ModTheSpire_Combat/reticleBlock";
+        public static string CONE_1 = "ui://ModTheSpire_Effect/cone7";
+        public static string CONE_2 = "ui://ModTheSpire_Effect/cone8";
+        public static string CONE_3 = "ui://ModTheSpire_Effect/cone9";
+        public static string CONE_4 = "ui://ModTheSpire_Effect/cone5";
+        public static string CONE_5 = "ui://ModTheSpire_Effect/cone6";
     }
 }

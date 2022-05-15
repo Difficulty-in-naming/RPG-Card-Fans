@@ -12,7 +12,7 @@ namespace ModTheSpire.Effect.Other
         public float Duration { get; set; }
 
         public ActionType Type { get; } = ActionType.WAIT;
-        public VFXAction(AbstractEffect effect, int interval, EffectOrder order = EffectOrder.MID)
+        public VFXAction(AbstractEffect effect, int interval = 0, EffectOrder order = EffectOrder.MID)
         {
             mEffect = effect;
             mInterval = interval;
