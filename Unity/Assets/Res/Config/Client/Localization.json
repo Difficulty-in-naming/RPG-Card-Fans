@@ -1,680 +1,1033 @@
 {
-  "ClosePanelDontApply": {
-    "Id": "ClosePanelDontApply",
-    "Chinese": "关闭界面不会应用当前设置",
-    "Chinese_tw": "关闭界面不会应用当前设置",
-    "English": "Closing the interface does not apply the current settings"
-  },
-  "Close": {
-    "Id": "Close",
-    "Chinese": "关闭",
-    "Chinese_tw": "关闭",
-    "English": "Close"
-  },
-  "Cancel": {
-    "Id": "Cancel",
-    "Chinese": "取消",
-    "Chinese_tw": "取消",
-    "English": "Cancel"
-  },
-  "PleaseInputSomething": {
-    "Id": "PleaseInputSomething",
-    "Chinese": "请输入名称",
-    "Chinese_tw": "请输入名称",
-    "English": "请输入名称"
-  },
-  "InputNameMoreThanNum": {
-    "Id": "InputNameMoreThanNum",
-    "Chinese": "名称长度不能大于{0}个字符",
-    "Chinese_tw": "名称长度不能大于{0}个字符",
-    "English": "名称长度不能大于{0}个字符"
-  },
-  "FoodTruck": {
-    "Id": "FoodTruck",
-    "Chinese": "快餐车",
-    "Chinese_tw": "快餐车",
-    "English": "快餐车"
-  },
-  "Breakfast": {
-    "Id": "Breakfast",
-    "Chinese": "早餐厅",
-    "Chinese_tw": "早餐厅",
-    "English": "早餐厅"
-  },
-  "Confirm": {
-    "Id": "Confirm",
-    "Chinese": "确认",
-    "Chinese_tw": "确认",
-    "English": "确认"
-  },
-  "CreateUnionError": {
-    "Id": "CreateUnionError",
-    "Chinese": "创建公会失败",
-    "Chinese_tw": "创建公会失败",
-    "English": "创建公会失败"
-  },
-  "NetworkNotReachable": {
-    "Id": "NetworkNotReachable",
-    "Chinese": "无法连接到互联网",
-    "Chinese_tw": "无法连接到互联网",
-    "English": "无法连接到互联网"
-  },
-  "Level X": {
-    "Id": "Level X",
-    "Chinese": "第{0}关",
-    "Chinese_tw": "第{0}关",
-    "English": "第{0}关"
-  },
-  "K1班尼迪克板": {
-    "Id": "K1班尼迪克板",
-    "Chinese": "班尼迪克板",
-    "Chinese_tw": "班尼迪克板",
-    "English": "班尼迪克板"
-  },
-  "K1咖啡机": {
-    "Id": "K1咖啡机",
-    "Chinese": "咖啡机",
-    "Chinese_tw": "咖啡机",
-    "English": "咖啡机"
-  },
-  "K1切菜板": {
-    "Id": "K1切菜板",
-    "Chinese": "切菜板",
-    "Chinese_tw": "切菜板",
-    "English": "切菜板"
-  },
-  "K1烤盘": {
-    "Id": "K1烤盘",
-    "Chinese": "烤盘",
-    "Chinese_tw": "烤盘",
-    "English": "烤盘"
-  },
-  "K1保鲜柜": {
-    "Id": "K1保鲜柜",
-    "Chinese": "保鲜柜",
-    "Chinese_tw": "保鲜柜",
-    "English": "保鲜柜"
-  },
-  "K1奶昔机": {
-    "Id": "K1奶昔机",
-    "Chinese": "奶昔机",
-    "Chinese_tw": "奶昔机",
-    "English": "奶昔机"
-  },
-  "K1蒸蛋机": {
-    "Id": "K1蒸蛋机",
-    "Chinese": "蒸蛋机",
-    "Chinese_tw": "蒸蛋机",
-    "English": "蒸蛋机"
-  },
-  "K1烤箱": {
-    "Id": "K1烤箱",
-    "Chinese": "烤箱",
-    "Chinese_tw": "烤箱",
-    "English": "烤箱"
-  },
-  "K1平底锅": {
-    "Id": "K1平底锅",
-    "Chinese": "平底锅",
-    "Chinese_tw": "平底锅",
-    "English": "平底锅"
-  },
-  "K1荷包蛋": {
-    "Id": "K1荷包蛋",
-    "Chinese": "荷包蛋",
-    "Chinese_tw": "荷包蛋",
-    "English": "荷包蛋"
-  },
-  "K1高压锅": {
-    "Id": "K1高压锅",
-    "Chinese": "高压锅",
-    "Chinese_tw": "高压锅",
-    "English": "高压锅"
-  },
-  "K1切肉板": {
-    "Id": "K1切肉板",
-    "Chinese": "切肉板",
-    "Chinese_tw": "切肉板",
-    "English": "切肉板"
-  },
-  "K1烤架": {
-    "Id": "K1烤架",
-    "Chinese": "烤架",
-    "Chinese_tw": "烤架",
-    "English": "烤架"
-  },
-  "K1桌布": {
-    "Id": "K1桌布",
-    "Chinese": "桌布",
-    "Chinese_tw": "桌布",
-    "English": "桌布"
-  },
-  "K1面包机": {
-    "Id": "K1面包机",
-    "Chinese": "面包机",
-    "Chinese_tw": "面包机",
-    "English": "面包机"
-  },
-  "K1三明治板": {
-    "Id": "K1三明治板",
-    "Chinese": "三明治板",
-    "Chinese_tw": "三明治板",
-    "English": "三明治板"
-  },
-  "workTime": {
-    "Id": "workTime",
-    "Chinese": "制作时间:{0}",
-    "Chinese_tw": "制作时间:{0}",
-    "English": "制作时间:{0}"
-  },
-  "burnTime": {
-    "Id": "burnTime",
-    "Chinese": "烧焦时间:{0}",
-    "Chinese_tw": "烧焦时间:{0}",
-    "English": "烧焦时间:{0}"
-  },
-  "makeCount": {
-    "Id": "makeCount",
-    "Chinese": "制作数量:{0}",
-    "Chinese_tw": "制作数量:{0}",
-    "English": "制作数量:{0}"
-  },
-  "UnLockAtLevel": {
-    "Id": "UnLockAtLevel",
-    "Chinese": "在{0}关解锁",
-    "Chinese_tw": "在{0}关解锁",
-    "English": "在{0}关解锁"
-  },
-  "Free": {
-    "Id": "Free",
-    "Chinese": "免费",
-    "Chinese_tw": "免费",
-    "English": "免费"
-  },
-  "Buy": {
-    "Id": "Buy",
-    "Chinese": "购买",
-    "Chinese_tw": "购买",
-    "English": "购买"
-  },
-  "Public": {
-    "Id": "Public",
-    "Chinese": "公开",
-    "Chinese_tw": "公开",
-    "English": "公开"
-  },
-  "NotPublic": {
-    "Id": "NotPublic",
-    "Chinese": "不公开",
-    "Chinese_tw": "不公开",
-    "English": "不公开"
-  },
-  "X days ago": {
-    "Id": "X days ago",
-    "Chinese": "{0} 天之前",
-    "Chinese_tw": "{0} 天之前",
-    "English": "{0} 天之前"
-  },
-  "X hours ago": {
-    "Id": "X hours ago",
-    "Chinese": "{0} 小时之前",
-    "Chinese_tw": "{0} 小时之前",
-    "English": "{0} 小时之前"
-  },
-  "A week ago": {
-    "Id": "A week ago",
-    "Chinese": "一个星期以前",
-    "Chinese_tw": "一个星期以前",
-    "English": "一个星期以前"
-  },
-  "A month ago": {
-    "Id": "A month ago",
-    "Chinese": "一个月以前",
-    "Chinese_tw": "一个月以前",
-    "English": "一个月以前"
-  },
-  "Half a year ago": {
-    "Id": "Half a year ago",
-    "Chinese": "半年以前",
-    "Chinese_tw": "半年以前",
-    "English": "半年以前"
-  },
-  "A year ago": {
-    "Id": "A year ago",
-    "Chinese": "一年以前",
-    "Chinese_tw": "一年以前",
-    "English": "一年以前"
-  },
-  "ERR_DuplicateGuildNames": {
-    "Id": "ERR_DuplicateGuildNames",
-    "Chinese": "公会名称已存在",
-    "Chinese_tw": "公会名称已存在",
-    "English": "公会名称已存在"
-  },
-  "ERR_JoinedGuild": {
-    "Id": "ERR_JoinedGuild",
-    "Chinese": "已经加入过公会",
-    "Chinese_tw": "已经加入过公会",
-    "English": "已经加入过公会"
-  },
-  "FreeToGetGem": {
-    "Id": "FreeToGetGem",
-    "Chinese": "免费获得钻石",
-    "Chinese_tw": "免费获得钻石",
-    "English": "免费获得钻石"
-  },
-  "InfiniteEnergry": {
-    "Id": "InfiniteEnergry",
-    "Chinese": "无限体力",
-    "Chinese_tw": "无限体力",
-    "English": "无限体力"
-  },
-  "Gem": {
-    "Id": "Gem",
-    "Chinese": "钻石",
-    "Chinese_tw": "钻石",
-    "English": "钻石"
-  },
-  "Coin": {
-    "Id": "Coin",
-    "Chinese": "金币",
-    "Chinese_tw": "金币",
-    "English": "金币"
-  },
-  "SecondChance": {
-    "Id": "SecondChance",
-    "Chinese": "二次机会",
-    "Chinese_tw": "二次机会",
-    "English": "二次机会"
-  },
-  "Add3Cus": {
-    "Id": "Add3Cus",
-    "Chinese": "额外3名顾客",
-    "Chinese_tw": "额外3名顾客",
-    "English": "额外3名顾客"
-  },
-  "Add30Sec": {
-    "Id": "Add30Sec",
-    "Chinese": "延续关卡30秒",
-    "Chinese_tw": "延续关卡30秒",
-    "English": "延续关卡30秒"
-  },
-  "InfinitePatient": {
-    "Id": "InfinitePatient",
-    "Chinese": "无限耐心",
-    "Chinese_tw": "无限耐心",
-    "English": "无限耐心"
-  },
-  "Unlock": {
-    "Id": "Unlock",
-    "Chinese": "未解锁",
-    "Chinese_tw": "未解锁",
-    "English": "未解锁"
-  },
-  "gem10": {
-    "Id": "gem10",
-    "Chinese": "钻石 x25",
-    "Chinese_tw": "钻石 x25",
-    "English": "钻石 x25"
-  },
-  "gem11": {
-    "Id": "gem11",
-    "Chinese": "钻石 x150",
-    "Chinese_tw": "钻石 x150",
-    "English": "钻石 x150"
-  },
-  "gem12": {
-    "Id": "gem12",
-    "Chinese": "钻石 x250",
-    "Chinese_tw": "钻石 x250",
-    "English": "钻石 x250"
-  },
-  "gem13": {
-    "Id": "gem13",
-    "Chinese": "钻石 x850",
-    "Chinese_tw": "钻石 x850",
-    "English": "钻石 x850"
-  },
-  "gem14": {
-    "Id": "gem14",
-    "Chinese": "钻石 x1750",
-    "Chinese_tw": "钻石 x1750",
-    "English": "钻石 x1750"
-  },
-  "gem15": {
-    "Id": "gem15",
-    "Chinese": "钻石 x3600",
-    "Chinese_tw": "钻石 x3600",
-    "English": "钻石 x3600"
-  },
-  "pack1": {
-    "Id": "pack1",
-    "Chinese": "学徒礼包",
-    "Chinese_tw": "学徒礼包",
-    "English": "学徒礼包"
-  },
-  "pack2": {
-    "Id": "pack2",
-    "Chinese": "入门厨师礼包",
-    "Chinese_tw": "入门厨师礼包",
-    "English": "入门厨师礼包"
-  },
-  "pack3": {
-    "Id": "pack3",
-    "Chinese": "中级厨师礼包",
-    "Chinese_tw": "中级厨师礼包",
-    "English": "中级厨师礼包"
-  },
-  "pack4": {
-    "Id": "pack4",
-    "Chinese": "高级厨师礼包",
-    "Chinese_tw": "高级厨师礼包",
-    "English": "高级厨师礼包"
-  },
-  "starter_pack1": {
-    "Id": "starter_pack1",
-    "Chinese": "新手礼包",
-    "Chinese_tw": "新手礼包",
-    "English": "新手礼包"
-  },
-  "starter_pack2": {
-    "Id": "starter_pack2",
-    "Chinese": "新手礼包",
-    "Chinese_tw": "新手礼包",
-    "English": "新手礼包"
-  },
-  "christmas_pack": {
-    "Id": "christmas_pack",
-    "Chinese": "圣诞节礼包",
-    "Chinese_tw": "圣诞节礼包",
-    "English": "圣诞节礼包"
-  },
-  "灭火器": {
-    "Id": "灭火器",
-    "Chinese": "灭火器",
-    "Chinese_tw": "灭火器",
-    "English": "灭火器"
-  },
-  "双倍金币": {
-    "Id": "双倍金币",
-    "Chinese": "双倍金币",
-    "Chinese_tw": "双倍金币",
-    "English": "双倍金币"
-  },
-  "稳定火力": {
-    "Id": "稳定火力",
-    "Chinese": "稳定火力",
-    "Chinese_tw": "稳定火力",
-    "English": "稳定火力"
-  },
-  "助连器": {
-    "Id": "助连器",
-    "Chinese": "助连器",
-    "Chinese_tw": "助连器",
-    "English": "助连器"
-  },
-  "Minute": {
-    "Id": "Minute",
-    "Chinese": "分钟",
-    "Chinese_tw": "分钟",
-    "English": "分钟"
-  },
-  "achieve_name_1001": {
-    "Id": "achieve_name_1001",
-    "Chinese": "制霸早餐厅",
-    "Chinese_tw": "制霸早餐廳",
-    "English": "Winner of Breakfast restaurant"
-  },
-  "achieve_name_1002": {
-    "Id": "achieve_name_1002",
-    "Chinese": "制霸咖啡馆",
-    "Chinese_tw": "制霸咖啡館",
-    "English": "Winner of Cafe"
-  },
-  "achieve_name_1003": {
-    "Id": "achieve_name_1003",
-    "Chinese": "三连上菜",
-    "Chinese_tw": "三連上菜",
-    "English": "3x combo serving"
-  },
-  "achieve_name_1004": {
-    "Id": "achieve_name_1004",
-    "Chinese": "四连上菜",
-    "Chinese_tw": "四連上菜",
-    "English": "3x combo serving"
-  },
-  "achieve_name_1005": {
-    "Id": "achieve_name_1005",
-    "Chinese": "宾客如云",
-    "Chinese_tw": "賓客如雲",
-    "English": "Full House"
-  },
-  "achieve_name_1006": {
-    "Id": "achieve_name_1006",
-    "Chinese": "万人迷",
-    "Chinese_tw": "萬人迷",
-    "English": "Customer Magnet"
-  },
-  "achieve_name_1007": {
-    "Id": "achieve_name_1007",
-    "Chinese": "挑战--火力掌控",
-    "Chinese_tw": "挑戰--火力掌控",
-    "English": "Challenge-Fire Control"
-  },
-  "achieve_name_1008": {
-    "Id": "achieve_name_1008",
-    "Chinese": "挑战--完美服务",
-    "Chinese_tw": "挑戰--完美服務",
-    "English": "Challenge-Perfect Service"
-  },
-  "achieve_name_1009": {
-    "Id": "achieve_name_1009",
-    "Chinese": "挑战--绝不浪费",
-    "Chinese_tw": "挑戰--絕不浪費",
-    "English": "Challenge-No Waste"
-  },
-  "achieve_name_1010": {
-    "Id": "achieve_name_1010",
-    "Chinese": "挑战--连续通关",
-    "Chinese_tw": "挑戰--連續通關",
-    "English": "Challenge-Combo Clearance"
-  },
-  "achieve_name_1011": {
-    "Id": "achieve_name_1011",
-    "Chinese": "小费达人",
-    "Chinese_tw": "小費達人",
-    "English": "King of Tips"
-  },
-  "achieve_name_1012": {
-    "Id": "achieve_name_1012",
-    "Chinese": "财源滚滚",
-    "Chinese_tw": "財源滾滾",
-    "English": "Cash-Printing Machine"
-  },
-  "achieve_name_1013": {
-    "Id": "achieve_name_1013",
-    "Chinese": "有钱人",
-    "Chinese_tw": "有錢人",
-    "English": "Billionaire Mind"
-  },
-  "achieve_name_1014": {
-    "Id": "achieve_name_1014",
-    "Chinese": "忠实粉丝",
-    "Chinese_tw": "忠實粉絲",
-    "English": "Die-hard Fan"
-  },
-  "achieve_name_1015": {
-    "Id": "achieve_name_1015",
-    "Chinese": "新的开始",
-    "Chinese_tw": "新的开始",
-    "English": "新的开始"
-  },
-  "achieve_name_1016": {
-    "Id": "achieve_name_1016",
-    "Chinese": "联赛狂人",
-    "Chinese_tw": "联赛狂人",
-    "English": "联赛狂人"
-  },
-  "achieve_name_1017": {
-    "Id": "achieve_name_1017",
-    "Chinese": "品味时尚",
-    "Chinese_tw": "品味时尚",
-    "English": "品味时尚"
-  },
-  "achieve_name_1018": {
-    "Id": "achieve_name_1018",
-    "Chinese": "富有爱心",
-    "Chinese_tw": "富有爱心",
-    "English": "富有爱心"
-  },
-  "achieve_des_1001": {
-    "Id": "achieve_des_1001",
-    "Chinese": "通关早餐厅关卡{0}关",
-    "Chinese_tw": "通關早餐廳關卡{0}關",
-    "English": "Finish {0} levels of the Breakfast Resturant"
-  },
-  "achieve_des_1002": {
-    "Id": "achieve_des_1002",
-    "Chinese": "通关咖啡馆关卡{0}关",
-    "Chinese_tw": "通關咖啡館關卡120關",
-    "English": "Finish {0} levels of the Cafe"
-  },
-  "achieve_des_1003": {
-    "Id": "achieve_des_1003",
-    "Chinese": "完成{0}次连连上菜*3",
-    "Chinese_tw": "完成{0}次連連上菜*3",
-    "English": "Make {0} full order x3 combos"
-  },
-  "achieve_des_1004": {
-    "Id": "achieve_des_1004",
-    "Chinese": "完成{0}次连连上菜*4",
-    "Chinese_tw": "完成{0}次連連上菜*4",
-    "English": "Make {0} full order x4 combos"
-  },
-  "achieve_des_1005": {
-    "Id": "achieve_des_1005",
-    "Chinese": "累计服务顾客人数{0}",
-    "Chinese_tw": "累計服務顧客人數{0}",
-    "English": "Serve {0} customers"
-  },
-  "achieve_des_1006": {
-    "Id": "achieve_des_1006",
-    "Chinese": "累计集赞数量{0}",
-    "Chinese_tw": "累計集贊數量{0}",
-    "English": "{0} likes received"
-  },
-  "achieve_des_1007": {
-    "Id": "achieve_des_1007",
-    "Chinese": "连续过{0}关不烧焦",
-    "Chinese_tw": "連續過{0}關不燒焦",
-    "English": "Pass {0} levels consecutively without burning anything"
-  },
-  "achieve_des_1008": {
-    "Id": "achieve_des_1008",
-    "Chinese": "连续过{0}关不流失",
-    "Chinese_tw": "連續過{0}關不流失",
-    "English": "Pass {0} levels consecutively without losing customers"
-  },
-  "achieve_des_1009": {
-    "Id": "achieve_des_1009",
-    "Chinese": "连续过{0}关不丢垃圾",
-    "Chinese_tw": "連續過{0}關不丟垃圾",
-    "English": "Pass {0} levels consecutively without disposing food"
-  },
-  "achieve_des_1010": {
-    "Id": "achieve_des_1010",
-    "Chinese": "连续通关{0}关",
-    "Chinese_tw": "連續通關{0}關",
-    "English": "Pass {0} levels consecutively"
-  },
-  "achieve_des_1011": {
-    "Id": "achieve_des_1011",
-    "Chinese": "累计赚取小费{0}",
-    "Chinese_tw": "累計賺取小費{0}",
-    "English": "Earn {0} coins for tips"
-  },
-  "achieve_des_1012": {
-    "Id": "achieve_des_1012",
-    "Chinese": "累计赚取现金{0}",
-    "Chinese_tw": "累計賺取現金{0}",
-    "English": "Earn {0} coins"
-  },
-  "achieve_des_1013": {
-    "Id": "achieve_des_1013",
-    "Chinese": "累计消耗现金{0}",
-    "Chinese_tw": "累計消耗現金{0}",
-    "English": "Spend {0} coins"
-  },
-  "achieve_des_1014": {
-    "Id": "achieve_des_1014",
-    "Chinese": "连续登录{0}天",
-    "Chinese_tw": "連續登錄{0}天",
-    "English": "Play the game for {0} consecutive days"
-  },
-  "achieve_des_1015": {
-    "Id": "achieve_des_1015",
-    "Chinese": "加入一个公会",
-    "Chinese_tw": "加入一个公会",
-    "English": "加入一个公会"
-  },
-  "achieve_des_1016": {
-    "Id": "achieve_des_1016",
-    "Chinese": "参与{0}次公会联赛",
-    "Chinese_tw": "参与{1}次公会联赛",
-    "English": "参与{0}次公会联赛"
-  },
-  "achieve_des_1017": {
-    "Id": "achieve_des_1017",
-    "Chinese": "拥有{0}套装扮",
-    "Chinese_tw": "拥有{0}套装扮",
-    "English": "拥有{0}套装扮"
-  },
-  "achieve_des_1018": {
-    "Id": "achieve_des_1018",
-    "Chinese": "拥有{0}只宠物",
-    "Chinese_tw": "拥有{0}只宠物",
-    "English": "拥有{0}只宠物"
-  },
-  "解锁餐厅": {
-    "Id": "解锁餐厅",
-    "Chinese": "解锁{0}",
-    "Chinese_tw": "解锁{0}",
-    "English": "解锁{0}"
-  },
-  "无条件": {
-    "Id": "无条件",
-    "Chinese": "无条件",
-    "Chinese_tw": "无条件",
-    "English": "无条件"
-  },
-  "青铜": {
-    "Id": "青铜",
-    "Chinese": "青铜",
-    "Chinese_tw": "青铜",
-    "English": "青铜"
-  },
-  "白银": {
-    "Id": "白银",
-    "Chinese": "白银",
-    "Chinese_tw": "白银",
-    "English": "白银"
-  },
-  "黄金": {
-    "Id": "黄金",
-    "Chinese": "黄金",
-    "Chinese_tw": "黄金",
-    "English": "黄金"
-  },
-  "超出字数上限.公告内容不能超过180个字": {
-    "Id": "超出字数上限.公告内容不能超过180个字",
-    "Chinese": "超出字数上限.公告内容不能超过180个字",
-    "Chinese_tw": "超出字数上限.公告内容不能超过180个字",
-    "English": "超出字数上限.公告内容不能超过180个字"
-  },
-  "刷新公会列表": {
-    "Id": "刷新公会列表",
-    "Chinese": "刷新 ({0}/{1})",
-    "Chinese_tw": "刷新 ({0}/{1})",
-    "English": "刷新 ({0}/{1})"
+  "标准模式": {
+    "Id": "标准模式",
+    "Chinese": "标准模式"
+  },
+  "每日挑战": {
+    "Id": "每日挑战",
+    "Chinese": "每日挑战"
+  },
+  "自定模式": {
+    "Id": "自定模式",
+    "Chinese": "自定模式"
+  },
+  "标准模式描述": {
+    "Id": "标准模式描述",
+    "Chinese": "启程去屠戮这座高塔。"
+  },
+  "每日挑战描述": {
+    "Id": "每日挑战描述",
+    "Chinese": "每天会有一次全新的挑战。\n和其他玩家一起比拼最高分吧"
+  },
+  "自定模式描述": {
+    "Id": "自定模式描述",
+    "Chinese": "进行一局每日挑战游戏来解锁这一模式。"
+  },
+  "开始游戏": {
+    "Id": "开始游戏",
+    "Chinese": "开始游戏"
+  },
+  "百科大全": {
+    "Id": "百科大全",
+    "Chinese": "百科大全"
+  },
+  "统计内容": {
+    "Id": "统计内容",
+    "Chinese": "统计内容"
+  },
+  "设定": {
+    "Id": "设定",
+    "Chinese": "设定"
+  },
+  "退出": {
+    "Id": "退出",
+    "Chinese": "退出"
+  },
+  "卡牌总览": {
+    "Id": "卡牌总览",
+    "Chinese": "卡牌总览"
+  },
+  "遗物收集": {
+    "Id": "遗物收集",
+    "Chinese": "遗物收集"
+  },
+  "药水研究所": {
+    "Id": "药水研究所",
+    "Chinese": "药水研究所"
+  },
+  "卡牌总览描述": {
+    "Id": "卡牌总览描述",
+    "Chinese": "查看你在高塔中遇见过的所有卡牌"
+  },
+  "遗物收集描述": {
+    "Id": "遗物收集描述",
+    "Chinese": "检阅你在游戏中获取过的各种遗物与物件"
+  },
+  "药水研究所描述": {
+    "Id": "药水研究所描述",
+    "Chinese": "查看你在高塔中找到过的各种药水"
+  },
+  "角色数据": {
+    "Id": "角色数据",
+    "Chinese": "角色数据"
+  },
+  "角色数据描述": {
+    "Id": "角色数据描述",
+    "Chinese": "可以在这里看到每名角色的进度和相关数据"
+  },
+  "排行榜": {
+    "Id": "排行榜",
+    "Chinese": "排行榜"
+  },
+  "排行榜描述": {
+    "Id": "排行榜描述",
+    "Chinese": "在这里观看你的分数，和好友与其他玩家比较一番。"
+  },
+  "历史记录": {
+    "Id": "历史记录",
+    "Chinese": "历史记录"
+  },
+  "历史记录描述": {
+    "Id": "历史记录描述",
+    "Chinese": "查看你此前各局游戏的概要。"
+  },
+  "游戏设定": {
+    "Id": "游戏设定",
+    "Chinese": "游戏设定"
+  },
+  "游戏设定描述": {
+    "Id": "游戏设定描述",
+    "Chinese": "改变游戏的分辨率和其他设定。"
+  },
+  "操作设置": {
+    "Id": "操作设置",
+    "Chinese": "操作设置"
+  },
+  "操作设置描述": {
+    "Id": "操作设置描述",
+    "Chinese": "更改操作方式和快捷键。"
+  },
+  "取消": {
+    "Id": "取消",
+    "Chinese": "取消"
+  },
+  "确认": {
+    "Id": "确认",
+    "Chinese": "确认"
+  },
+  "点击编辑": {
+    "Id": "点击编辑",
+    "Chinese": "点击编辑"
+  },
+  "选择你的角色": {
+    "Id": "选择你的角色",
+    "Chinese": "选择你的角色"
+  },
+  "铁甲战士": {
+    "Id": "铁甲战士",
+    "Chinese": "铁甲战士"
+  },
+  "铁甲战士描述": {
+    "Id": "铁甲战士描述",
+    "Chinese": "铁甲军团残留下的士兵。\n他出卖自己的灵魂，获得恶魔的力量。"
+  },
+  "燃烧之血": {
+    "Id": "燃烧之血",
+    "Chinese": "燃烧之血"
+  },
+  "燃烧之血描述": {
+    "Id": "燃烧之血描述",
+    "Chinese": "在战斗结束时，回复[color=#33ccff]6[/color]点生命。"
+  },
+  "静默猎手": {
+    "Id": "静默猎手",
+    "Chinese": "静默猎手"
+  },
+  "静默猎手描述": {
+    "Id": "静默猎手描述",
+    "Chinese": "来自雾霾之地的致命女猎手。\n使用匕首和下毒来消灭敌人。"
+  },
+  "蛇之戒指": {
+    "Id": "蛇之戒指",
+    "Chinese": "蛇之戒指"
+  },
+  "蛇之戒指描述": {
+    "Id": "蛇之戒指描述",
+    "Chinese": "在每场战斗开始时，额外抽[color=#33ccff]2[/color]张牌"
+  },
+  "故障机器人": {
+    "Id": "故障机器人",
+    "Chinese": "故障机器人"
+  },
+  "故障机器人描述": {
+    "Id": "故障机器人描述",
+    "Chinese": "一具产生了自我意识的战斗型机器人。\n它装载的远古科技让它可以操控充能球。"
+  },
+  "破损核心": {
+    "Id": "破损核心",
+    "Chinese": "破损核心"
+  },
+  "破损核心描述": {
+    "Id": "破损核心描述",
+    "Chinese": "在每场战斗开始时，[color=#ebc54f]生成[/color][color=#33ccff]1[/color]个[color=#ebc54f]闪电[/color]充能球"
+  },
+  "观者": {
+    "Id": "观者",
+    "Chinese": "观者"
+  },
+  "观者描述": {
+    "Id": "观者描述",
+    "Chinese": "一名目盲的修行者，前来“评估”高塔。\n掌握运用神圣“姿态”来战斗的方法"
+  },
+  "至纯之水": {
+    "Id": "至纯之水",
+    "Chinese": "至纯之水"
+  },
+  "至纯之水描述": {
+    "Id": "至纯之水描述",
+    "Chinese": "在每场战斗开始时，将一张[color=#ebc54f]奇迹[/color]放入你的手牌。"
+  },
+  "进阶等级": {
+    "Id": "进阶等级",
+    "Chinese": "等级 {0}"
+  },
+  "进阶1描述": {
+    "Id": "进阶1描述",
+    "Chinese": "1. 精英敌人出现更加频繁。"
+  },
+  "进阶2描述": {
+    "Id": "进阶2描述",
+    "Chinese": "2. 普通敌人造成更多伤害。"
+  },
+  "进阶3描述": {
+    "Id": "进阶3描述",
+    "Chinese": "3. 精英敌人造成更多伤害。"
+  },
+  "进阶4描述": {
+    "Id": "进阶4描述",
+    "Chinese": "4. Boss敌人造成更多伤害。"
+  },
+  "进阶5描述": {
+    "Id": "进阶5描述",
+    "Chinese": "5. Boss战后生命恢复减少。"
+  },
+  "进阶6描述": {
+    "Id": "进阶6描述",
+    "Chinese": "6. 开始游戏时受到伤害。"
+  },
+  "进阶7描述": {
+    "Id": "进阶7描述",
+    "Chinese": "7. 普通敌人拥有更多生命。"
+  },
+  "进阶8描述": {
+    "Id": "进阶8描述",
+    "Chinese": "8. 精英敌人拥有更多生命。"
+  },
+  "进阶9描述": {
+    "Id": "进阶9描述",
+    "Chinese": "9. Boss敌人拥有更多生命。"
+  },
+  "进阶10描述": {
+    "Id": "进阶10描述",
+    "Chinese": "10. 初始拥有诅咒。"
+  },
+  "进阶11描述": {
+    "Id": "进阶11描述",
+    "Chinese": "11. 药水栏位变少。"
+  },
+  "进阶12描述": {
+    "Id": "进阶12描述",
+    "Chinese": "12. 升级过的牌出现频率下降。"
+  },
+  "进阶13描述": {
+    "Id": "进阶13描述",
+    "Chinese": "13. Boss变穷。"
+  },
+  "进阶14描述": {
+    "Id": "进阶14描述",
+    "Chinese": "14. 最大生命下降。"
+  },
+  "进阶15描述": {
+    "Id": "进阶15描述",
+    "Chinese": "15. 部分事件变得更加不利。"
+  },
+  "进阶16描述": {
+    "Id": "进阶16描述",
+    "Chinese": "16. 商店要价更高。"
+  },
+  "进阶17描述": {
+    "Id": "进阶17描述",
+    "Chinese": "17. 普通敌人的行动与能力变强。"
+  },
+  "进阶18描述": {
+    "Id": "进阶18描述",
+    "Chinese": "18. 精英敌人的行动与能力变强。"
+  },
+  "进阶19描述": {
+    "Id": "进阶19描述",
+    "Chinese": "19. Boss敌人的行动与能力变强。"
+  },
+  "进阶20描述": {
+    "Id": "进阶20描述",
+    "Chinese": "20. （最大等级） 双重Boss。"
+  },
+  "打击": {
+    "Id": "打击",
+    "Chinese": "打击"
+  },
+  "打击描述": {
+    "Id": "打击描述",
+    "Chinese": "造成 !D! 点伤害。"
+  },
+  "防御": {
+    "Id": "防御",
+    "Chinese": "防御"
+  },
+  "防御描述": {
+    "Id": "防御描述",
+    "Chinese": "获得 !B! 点 格挡 。"
+  },
+  "这些牌将会出现在每一场战斗中": {
+    "Id": "这些牌将会出现在每一场战斗中",
+    "Chinese": "这些牌将会出现在每一场战斗中"
+  },
+  "获得顺序": {
+    "Id": "获得顺序",
+    "Chinese": "获得顺序"
+  },
+  "类型": {
+    "Id": "类型",
+    "Chinese": "类型"
+  },
+  "耗能": {
+    "Id": "耗能",
+    "Chinese": "耗能"
+  },
+  "攻击": {
+    "Id": "攻击",
+    "Chinese": "攻击"
+  },
+  "技能": {
+    "Id": "技能",
+    "Chinese": "技能"
+  },
+  "诅咒": {
+    "Id": "诅咒",
+    "Chinese": "诅咒"
+  },
+  "能力": {
+    "Id": "能力",
+    "Chinese": "能力"
+  },
+  "状态": {
+    "Id": "状态",
+    "Chinese": "状态"
+  },
+  "能力-分裂": {
+    "Id": "能力-分裂",
+    "Chinese": "分裂"
+  },
+  "能力-分裂描述": {
+    "Id": "能力-分裂描述",
+    "Chinese": "当生命值等于或低于 #b50% 时，将会分裂成 #b2 只较小的史莱姆，每只都拥有 {0} 现在的生命值。"
+  },
+  "能力-中毒": {
+    "Id": "能力-中毒",
+    "Chinese": "中毒"
+  },
+  "能力-中毒描述(玩家)": {
+    "Id": "能力-中毒描述(玩家)",
+    "Chinese": "在你的回合开始时，减少 #b{0} 点生命然后将 #y中毒 层数减少 #b1 。"
+  },
+  "能力-中毒描述(敌人)": {
+    "Id": "能力-中毒描述(敌人)",
+    "Chinese": "在其回合开始时，减少 #b{0} 点生命然后将 #y中毒 层数减少 #b1 。"
+  },
+  "舔舔": {
+    "Id": "舔舔",
+    "Chinese": "舔舔"
+  },
+  "分裂": {
+    "Id": "分裂",
+    "Chinese": "分裂"
+  },
+  "腐蚀喷涂": {
+    "Id": "腐蚀喷涂",
+    "Chinese": "腐蚀喷涂"
+  },
+  "打断！": {
+    "Id": "打断！",
+    "Chinese": "打断！"
+  },
+  "击晕！": {
+    "Id": "击晕！",
+    "Chinese": "击晕！"
+  },
+  "抵消": {
+    "Id": "抵消",
+    "Chinese": "抵消"
+  },
+  "免疫": {
+    "Id": "免疫",
+    "Chinese": "免疫"
+  },
+  "无效": {
+    "Id": "无效",
+    "Chinese": "无效"
+  },
+  "下降": {
+    "Id": "下降",
+    "Chinese": "下降"
+  },
+  "异蛇头骨": {
+    "Id": "异蛇头骨",
+    "Chinese": "异蛇头骨"
+  },
+  "异蛇头骨-效果描述": {
+    "Id": "异蛇头骨-效果描述",
+    "Chinese": "每当你给予敌人 #y中毒 状态时，额外给予 #b{0} 层 #y中毒 。"
+  },
+  "异蛇头骨-特殊描述": {
+    "Id": "异蛇头骨-特殊描述",
+    "Chinese": "保存完好的异蛇头骨，十分离奇地非常干净和光滑，任何灰尘和污垢都无法沾上它，这是为什么呢。"
+  },
+  "能力-无法抽牌": {
+    "Id": "能力-无法抽牌",
+    "Chinese": "无法抽牌"
+  },
+  "能力-无法抽牌描述": {
+    "Id": "能力-无法抽牌描述",
+    "Chinese": "你在回合结束前都无法再抽牌。"
+  },
+  "效果结束": {
+    "Id": "效果结束",
+    "Chinese": "效果结束"
+  },
+  "能力-力量": {
+    "Id": "能力-力量",
+    "Chinese": "力量"
+  },
+  "能力-力量(提升)": {
+    "Id": "能力-力量(提升)",
+    "Chinese": "攻击伤害提升 #b{0}"
+  },
+  "能力-力量(下降)": {
+    "Id": "能力-力量(下降)",
+    "Chinese": "攻击伤害降低 #r{0}"
+  },
+  "能力-虚弱": {
+    "Id": "能力-虚弱",
+    "Chinese": "虚弱"
+  },
+  "能力-虚弱描述": {
+    "Id": "能力-虚弱描述",
+    "Chinese": "#y攻击 造成的伤害减少 #b{0}% 。持续时间 #b{1} 回合。"
+  },
+  "关键字-虚弱": {
+    "Id": "关键字-虚弱",
+    "Chinese": "虚弱"
+  },
+  "关键字-虚弱描述": {
+    "Id": "关键字-虚弱描述",
+    "Chinese": "有虚弱效果的生物用攻击造成的伤害减少 #b{0}% 。"
+  },
+  "纸鹤": {
+    "Id": "纸鹤",
+    "Chinese": "纸鹤"
+  },
+  "纸鹤-效果描述": {
+    "Id": "纸鹤-效果描述",
+    "Chinese": "某种过去时代生物的折纸。"
+  },
+  "纸鹤-特殊描述": {
+    "Id": "纸鹤-特殊描述",
+    "Chinese": "有 #y虚弱 状态的敌人造成的伤害降低 #b40% 而非 #b25% 。"
+  },
+  "黏液": {
+    "Id": "黏液",
+    "Chinese": "黏液"
+  },
+  "黏液描述": {
+    "Id": "黏液描述",
+    "Chinese": "消耗 。"
+  },
+  "能力-爪牙": {
+    "Id": "能力-爪牙",
+    "Chinese": "爪牙"
+  },
+  "能力-爪牙描述": {
+    "Id": "能力-爪牙描述",
+    "Chinese": "爪牙会在他们的领导者死亡时放弃战斗。"
+  },
+  "异教徒": {
+    "Id": "异教徒",
+    "Chinese": "异教徒"
+  },
+  "异教徒对话1": {
+    "Id": "异教徒对话1",
+    "Chinese": "<shake>我的力量<br>无人能及！</shake>"
+  },
+  "异教徒对话2": {
+    "Id": "异教徒对话2",
+    "Chinese": "<shake>你不属于<br>这里！</shake>"
+  },
+  "异教徒对话3": {
+    "Id": "异教徒对话3",
+    "Chinese": "<wiggle>我的力量<br>有人能及啊……</wiggle>"
+  },
+  "能力-仪式": {
+    "Id": "能力-仪式",
+    "Chinese": "仪式"
+  },
+  "能力-仪式描述(敌人)": {
+    "Id": "能力-仪式描述(敌人)",
+    "Chinese": "在其回合结束时，获得 #b{0} 点 #y力量 。"
+  },
+  "能力-仪式描述(自己)": {
+    "Id": "能力-仪式描述(自己)",
+    "Chinese": "在你的回合结束时，获得 #b{1} 点 #y力量 。"
+  },
+  "关键字-仪式": {
+    "Id": "关键字-仪式",
+    "Chinese": "仪式"
+  },
+  "关键字-仪式描述": {
+    "Id": "关键字-仪式描述",
+    "Chinese": "在你的回合结束时，获得相应点数的 #y力量 。"
+  },
+  "念咒": {
+    "Id": "念咒",
+    "Chinese": "念咒"
+  },
+  "能力-孢子云": {
+    "Id": "能力-孢子云",
+    "Chinese": "孢子云"
+  },
+  "能力-孢子云描述": {
+    "Id": "能力-孢子云描述",
+    "Chinese": "在死亡时，给予你 #b{0} 回合的 #y易伤 。"
+  },
+  "能力-易伤": {
+    "Id": "能力-易伤",
+    "Chinese": "易伤"
+  },
+  "能力-易伤描述": {
+    "Id": "能力-易伤描述",
+    "Chinese": "从 #y攻击 受到的伤害增加 #b{0}% 。持续时间 #b{1} 回合。"
+  },
+  "关键字-易伤": {
+    "Id": "关键字-易伤",
+    "Chinese": "易伤"
+  },
+  "关键字-易伤描述": {
+    "Id": "关键字-易伤描述",
+    "Chinese": "有易伤效果的生物从攻击中受到的伤害增加 #b50% 。"
+  },
+  "真菌兽": {
+    "Id": "真菌兽",
+    "Chinese": "真菌兽"
+  },
+  "生长": {
+    "Id": "生长",
+    "Chinese": "生长"
+  },
+  "酸液史莱姆（大）": {
+    "Id": "酸液史莱姆（大）",
+    "Chinese": "酸液史莱姆（大）"
+  },
+  "酸液史莱姆（中）": {
+    "Id": "酸液史莱姆（中）",
+    "Chinese": "酸液史莱姆（中）"
+  },
+  "酸液史莱姆（小）": {
+    "Id": "酸液史莱姆（小）",
+    "Chinese": "酸液史莱姆（小）"
+  },
+  "尖刺史莱姆（大）": {
+    "Id": "尖刺史莱姆（大）",
+    "Chinese": "尖刺史莱姆（大）"
+  },
+  "尖刺史莱姆（中）": {
+    "Id": "尖刺史莱姆（中）",
+    "Chinese": "尖刺史莱姆（中）"
+  },
+  "尖刺史莱姆（小）": {
+    "Id": "尖刺史莱姆（小）",
+    "Chinese": "尖刺史莱姆（小）"
+  },
+  "蓝色奴隶贩子": {
+    "Id": "蓝色奴隶贩子",
+    "Chinese": "奴隶贩子"
+  },
+  "蓝色奴隶贩子行动1": {
+    "Id": "蓝色奴隶贩子行动1",
+    "Chinese": "耙伤"
+  },
+  "能力-脆弱": {
+    "Id": "能力-脆弱",
+    "Chinese": "脆弱"
+  },
+  "能力-脆弱描述": {
+    "Id": "能力-脆弱描述",
+    "Chinese": "在 #b{0} 个回合内，从卡牌中获得的 #y格挡 减少 #b25% 。"
+  },
+  "关键字-脆弱": {
+    "Id": "关键字-脆弱",
+    "Chinese": "脆弱"
+  },
+  "关键字-脆弱描述": {
+    "Id": "关键字-脆弱描述",
+    "Chinese": "处于脆弱状态时，你从卡牌中获得的 #y格挡 减少 #b25% 。"
+  },
+  "胖地精": {
+    "Id": "胖地精",
+    "Chinese": "胖地精"
+  },
+  "地精首领": {
+    "Id": "地精首领",
+    "Chinese": "地精首领"
+  },
+  "地精大块头": {
+    "Id": "地精大块头",
+    "Chinese": "地精大块头"
+  },
+  "卑鄙地精": {
+    "Id": "卑鄙地精",
+    "Chinese": "卑鄙地精"
+  },
+  "持盾地精": {
+    "Id": "持盾地精",
+    "Chinese": "持盾地精"
+  },
+  "火大地精": {
+    "Id": "火大地精",
+    "Chinese": "火大地精"
+  },
+  "地精法师": {
+    "Id": "地精法师",
+    "Chinese": "地精法师"
+  },
+  "地精法师行动1": {
+    "Id": "地精法师行动1",
+    "Chinese": "蓄能"
+  },
+  "地精法师行动2": {
+    "Id": "地精法师行动2",
+    "Chinese": "终极大爆炸"
+  },
+  "胖地精行动1": {
+    "Id": "胖地精行动1",
+    "Chinese": "粉碎"
+  },
+  "胖地精对话1": {
+    "Id": "胖地精对话1",
+    "Chinese": "<shake>哦不，<br>哦不、<br>哦！不！</shake>"
+  },
+  "地精首领行动1": {
+    "Id": "地精首领行动1",
+    "Chinese": "集合！"
+  },
+  "地精首领对话1": {
+    "Id": "地精首领对话1",
+    "Chinese": "永远别放弃！"
+  },
+  "地精首领对话2": {
+    "Id": "地精首领对话2",
+    "Chinese": "我们还没完呢！"
+  },
+  "地精首领对话3": {
+    "Id": "地精首领对话3",
+    "Chinese": "小的们，给我上！"
+  },
+  "地精首领对话4": {
+    "Id": "地精首领对话4",
+    "Chinese": "<shake>撤退<br>撤退啊！</shake>"
+  },
+  "地精首领对话5": {
+    "Id": "地精首领对话5",
+    "Chinese": "<shake>逃命哇！</shake>"
+  },
+  "地精大块头行动1": {
+    "Id": "地精大块头行动1",
+    "Chinese": "颅骨重击"
+  },
+  "地精大块头行动2": {
+    "Id": "地精大块头行动2",
+    "Chinese": "蛮牛冲撞"
+  },
+  "地精大块头对话1": {
+    "Id": "地精大块头对话1",
+    "Chinese": "<shake>啊嗷嗷呜嗷！！</shake>"
+  },
+  "卑鄙地精对话1": {
+    "Id": "卑鄙地精对话1",
+    "Chinese": "<shake>我去<br>叫救兵！</shake>"
+  },
+  "卑鄙地精对话2": {
+    "Id": "卑鄙地精对话2",
+    "Chinese": "<shake>什么！？</shake>"
+  },
+  "持盾地精行动1": {
+    "Id": "持盾地精行动1",
+    "Chinese": "保护"
+  },
+  "持盾地精行动2": {
+    "Id": "持盾地精行动2",
+    "Chinese": "盾击"
+  },
+  "持盾地精对话1": {
+    "Id": "持盾地精对话1",
+    "Chinese": "<wiggle>再见……</wiggle>"
+  },
+  "持盾地精对话2": {
+    "Id": "持盾地精对话2",
+    "Chinese": "这可不妙……"
+  },
+  "火大地精行动1": {
+    "Id": "火大地精行动1",
+    "Chinese": "爪挠"
+  },
+  "火大地精对话1": {
+    "Id": "火大地精对话1",
+    "Chinese": "<shake>我去<br>叫援军！</shake>"
+  },
+  "火大地精对话2": {
+    "Id": "火大地精对话2",
+    "Chinese": "溜了溜了！"
+  },
+  "地精法师对话1": {
+    "Id": "地精法师对话1",
+    "Chinese": "在蓄能啦！"
+  },
+  "地精法师对话2": {
+    "Id": "地精法师对话2",
+    "Chinese": "<wiggle>要来咯！！<wiggle>"
+  },
+  "地精法师对话3": {
+    "Id": "地精法师对话3",
+    "Chinese": "<shake>我去……<br>叫援军！</shake>"
+  },
+  "地精法师对话4": {
+    "Id": "地精法师对话4",
+    "Chinese": "<wiggle>太…<br>危险了……<br>走了走了……<wiggle>"
+  },
+  "能力-激怒": {
+    "Id": "能力-激怒",
+    "Chinese": "你每打出一张 #y技能牌 ，获得 #b{0} 点 #y力量 。"
+  },
+  "大颚虫": {
+    "Id": "大颚虫",
+    "Chinese": "大颚虫"
+  },
+  "大颚虫行动1": {
+    "Id": "大颚虫行动1",
+    "Chinese": "咆哮"
+  },
+  "大颚虫行动2": {
+    "Id": "大颚虫行动2",
+    "Chinese": "抽打"
+  },
+  "乐加维林": {
+    "Id": "乐加维林"
+  },
+  "乐加维林对话1": {
+    "Id": "乐加维林对话1",
+    "Chinese": "击晕！"
+  },
+  "乐加维林对话2": {
+    "Id": "乐加维林对话2",
+    "Chinese": "…<br>……"
+  },
+  "乐加维林对话3": {
+    "Id": "乐加维林对话3",
+    "Chinese": "…？<br>……！？"
+  },
+  "乐加维林对话4": {
+    "Id": "乐加维林对话4",
+    "Chinese": "<shake>！！！<br>！？？？</shake>"
+  },
+  "乐加维林行动1": {
+    "Id": "乐加维林行动1",
+    "Chinese": "灵魂吸取"
+  },
+  "能力-金属化": {
+    "Id": "能力-金属化",
+    "Chinese": "金属化"
+  },
+  "能力-金属化描述(敌人)": {
+    "Id": "能力-金属化描述(敌人)",
+    "Chinese": "在其回合结束时获得 #b{0} 点 #y格挡 。"
+  },
+  "能力-金属化描述(自己)": {
+    "Id": "能力-金属化描述(自己)",
+    "Chinese": "在你的回合结束时获得 #b{1} 点 #y格挡 。"
+  },
+  "能力-敏捷": {
+    "Id": "能力-敏捷",
+    "Chinese": "敏捷"
+  },
+  "能力-敏捷(提升)": {
+    "Id": "能力-敏捷(提升)",
+    "Chinese": "从卡牌获得的 #y格挡 增加 #b{0} 。"
+  },
+  "能力-敏捷(下降)": {
+    "Id": "能力-敏捷(下降)",
+    "Chinese": "从卡牌获得的 #y格挡 减少 #b{0} 。"
+  },
+  "能力-偷窃": {
+    "Id": "能力-偷窃",
+    "Chinese": "偷窃"
+  },
+  "能力-偷窃描述": {
+    "Id": "能力-偷窃描述",
+    "Chinese": "在攻击时会偷走 #b{0} #y金币 。"
+  },
+  "抢劫的": {
+    "Id": "抢劫的",
+    "Chinese": "抢劫的"
+  },
+  "抢劫的行动1": {
+    "Id": "抢劫的行动1",
+    "Chinese": "突刺"
+  },
+  "抢劫的行动2": {
+    "Id": "抢劫的行动2",
+    "Chinese": "打劫"
+  },
+  "抢劫的对话1": {
+    "Id": "抢劫的对话1",
+    "Chinese": "把钱交出来！"
+  },
+  "抢劫的对话2": {
+    "Id": "抢劫的对话2",
+    "Chinese": "<shake>不——！</shake>"
+  },
+  "抢劫的对话3": {
+    "Id": "抢劫的对话3",
+    "Chinese": "我的烟雾弹在哪儿呢……我找找……"
+  },
+  "抢劫的对话4": {
+    "Id": "抢劫的对话4",
+    "Chinese": "多谢你的钱啦，嘿嘿"
+  },
+  "防御型虱虫": {
+    "Id": "防御型虱虫",
+    "Chinese": "虱虫"
+  },
+  "普通型虱虫": {
+    "Id": "普通型虱虫",
+    "Chinese": "虱虫"
+  },
+  "防御型虱虫行动1": {
+    "Id": "防御型虱虫行动1",
+    "Chinese": "吐网"
+  },
+  "普通型虱虫行动1": {
+    "Id": "普通型虱虫行动1",
+    "Chinese": "成长"
+  },
+  "能力-蜷身": {
+    "Id": "能力-蜷身",
+    "Chinese": "蜷身"
+  },
+  "能力-蜷身描述": {
+    "Id": "能力-蜷身描述",
+    "Chinese": "当受到 #y攻击 伤害时，蜷起身子并获得 #b{0} 点 #y格挡 。（每场战斗一次）"
+  },
+  "红色奴隶贩子": {
+    "Id": "红色奴隶贩子",
+    "Chinese": "奴隶贩子"
+  },
+  "红色奴隶贩子行动1": {
+    "Id": "红色奴隶贩子行动1",
+    "Chinese": "刮伤"
+  },
+  "红色奴隶贩子行动2": {
+    "Id": "红色奴隶贩子行动2",
+    "Chinese": "丢网"
+  },
+  "能力-缠身": {
+    "Id": "能力-缠身",
+    "Chinese": "缠身"
+  },
+  "能力-缠身描述": {
+    "Id": "能力-缠身描述",
+    "Chinese": "你在这个回合不能打出 #y攻击牌 。"
+  },
+  "哨卫": {
+    "Id": "哨卫",
+    "Chinese": "哨卫"
+  },
+  "哨卫行动1": {
+    "Id": "哨卫行动1",
+    "Chinese": "粉碎"
+  },
+  "能力-人工制品": {
+    "Id": "能力-人工制品",
+    "Chinese": "人工制品"
+  },
+  "能力-人工制品描述": {
+    "Id": "能力-人工制品描述",
+    "Chinese": "免疫 #b{0}  次负面效果。"
+  },
+  "关键字-人工制品": {
+    "Id": "关键字-人工制品",
+    "Chinese": "人工制品"
+  },
+  "关键字-人工制品描述": {
+    "Id": "关键字-人工制品描述",
+    "Chinese": "免疫下一次受到的负面效果。"
+  },
+  "卡牌-晕眩": {
+    "Id": "卡牌-晕眩",
+    "Chinese": "晕眩"
+  },
+  "卡牌-晕眩描述": {
+    "Id": "卡牌-晕眩描述",
+    "Chinese": "不能被打出 。<br> 虚无 。"
+  },
+  "关键字-晕眩": {
+    "Id": "关键字-晕眩",
+    "Chinese": "晕眩"
+  },
+  "关键字-晕眩描述": {
+    "Id": "关键字-晕眩描述",
+    "Chinese": "晕眩是 不能被打出 的 虚无 状态牌。"
+  },
+  "怪物-史莱姆老大": {
+    "Id": "怪物-史莱姆老大",
+    "Chinese": "史莱姆老大"
+  },
+  "怪物-史莱姆老大行动1": {
+    "Id": "怪物-史莱姆老大行动1",
+    "Chinese": "猛撞"
+  },
+  "怪物-史莱姆老大行动2": {
+    "Id": "怪物-史莱姆老大行动2",
+    "Chinese": "准备"
+  },
+  "怪物-史莱姆老大行动3": {
+    "Id": "怪物-史莱姆老大行动3",
+    "Chinese": "分裂"
+  },
+  "怪物-史莱姆老大行动4": {
+    "Id": "怪物-史莱姆老大行动4",
+    "Chinese": "黏液喷射"
+  },
+  "怪物-史莱姆老大对话1": {
+    "Id": "怪物-史莱姆老大对话1",
+    "Chinese": "史莱姆……<br> #r撞击！！"
+  },
+  "怪物-史莱姆老大对话2": {
+    "Id": "怪物-史莱姆老大对话2",
+    "Chinese": "打断！"
+  },
+  "能力-形态转换": {
+    "Id": "能力-形态转换",
+    "Chinese": "形态转换"
+  },
+  "能力-形态转换描述": {
+    "Id": "能力-形态转换描述",
+    "Chinese": "受到 #b{0} 点伤害后，会变成防御形态。"
+  },
+  "能力-锋利外壳": {
+    "Id": "能力-锋利外壳",
+    "Chinese": "锋利外壳"
+  },
+  "能力-锋利外壳描述": {
+    "Id": "能力-锋利外壳描述",
+    "Chinese": "你每受到一次 #y攻击牌 的伤害 ，就对伤害来源造成 #b{0} 点伤害。"
+  },
+  "怪物-六火亡魂": {
+    "Id": "怪物-六火亡魂",
+    "Chinese": "六火亡魂"
+  },
+  "怪物-六火亡魂行动1": {
+    "Id": "怪物-六火亡魂行动1",
+    "Chinese": "高热"
+  },
+  "怪物-六火亡魂行动2": {
+    "Id": "怪物-六火亡魂行动2",
+    "Chinese": "灼烧"
+  },
+  "怪物-六火亡魂行动3": {
+    "Id": "怪物-六火亡魂行动3",
+    "Chinese": "地狱火"
+  },
+  "怪物-守护者": {
+    "Id": "怪物-守护者",
+    "Chinese": "守护者"
+  },
+  "怪物-守护者对话1": {
+    "Id": "怪物-守护者对话1",
+    "Chinese": "#b <wiggle>冷却……<br> #b…中… </wiggle>"
+  },
+  "怪物-守护者对话2": {
+    "Id": "怪物-守护者对话2",
+    "Chinese": "防御……"
+  },
+  "怪物-守护者对话3": {
+    "Id": "怪物-守护者对话3",
+    "Chinese": "<shake> #r摧毁<br>摧毁<br>摧毁 </shake>"
+  },
+  "怪物-守护者对话4": {
+    "Id": "怪物-守护者对话4",
+    "Chinese": "<shake> #r危险<br>危险<br>危险 </shake>"
+  },
+  "怪物-守护者行动1": {
+    "Id": "怪物-守护者行动1",
+    "Chinese": "防御模式"
+  },
+  "怪物-守护者行动2": {
+    "Id": "怪物-守护者行动2",
+    "Chinese": "猛烈痛击"
+  },
+  "怪物-守护者行动3": {
+    "Id": "怪物-守护者行动3",
+    "Chinese": "滚动"
+  },
+  "怪物-守护者行动4": {
+    "Id": "怪物-守护者行动4",
+    "Chinese": "双斩"
+  },
+  "怪物-守护者行动5": {
+    "Id": "怪物-守护者行动5",
+    "Chinese": "旋风"
+  },
+  "怪物-守护者行动6": {
+    "Id": "怪物-守护者行动6",
+    "Chinese": "蓄能"
+  },
+  "怪物-守护者行动7": {
+    "Id": "怪物-守护者行动7",
+    "Chinese": "蒸汽喷射"
+  },
+  "attack": {
+    "Id": "attack",
+    "Chinese": "攻击"
+  },
+  "skill": {
+    "Id": "skill",
+    "Chinese": "技能"
+  },
+  "power": {
+    "Id": "power",
+    "Chinese": "能力"
+  },
+  "玩家回合": {
+    "Id": "玩家回合",
+    "Chinese": "玩家回合"
+  },
+  "第几回合": {
+    "Id": "第几回合",
+    "Chinese": "{0} 回合"
+  },
+  "第一阶段": {
+    "Id": "第一阶段",
+    "Chinese": "第一阶段"
+  },
+  "塔底": {
+    "Id": "塔底",
+    "Chinese": "塔底"
   }
 }

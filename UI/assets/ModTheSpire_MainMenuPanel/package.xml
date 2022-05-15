@@ -23,5 +23,5 @@
     <image id="kefbj" name="standard.jpg" path="/Texture/" exported="true"/>
     <component id="c4swk" name="Component1.xml" path="/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_MainMenuPanel" packageCount="2" genCode="true"/>
 </packageDescription>

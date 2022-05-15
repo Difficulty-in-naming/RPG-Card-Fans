@@ -4,6 +4,45 @@ import {UIKit} from "../../../../../Core/Module/UI/UIKit";
 import { UIBase } from "../../../../../Core/Module/UI/UIBase";
 import { ViewInfo } from "../../../../../Core/Module/UI/ViewInfo";
 import {FairyGUI} from "csharp";
+export class View_PlayerTurnEffect extends UIBase
+{
+    public Banner : FairyGUI.GTextField;
+    public TurnMessage : FairyGUI.GTextField;
+    public t0 : FairyGUI.Transition;
+    public static Url = new ViewInfo("ModTheSpire_Effect","PlayerTurnEffect")
+    public static CreatePanel(...args) : UIBase
+    {
+        let url : string = this.Url.toString() + "." + this.name;
+        let panel : UIBase = UIKit.Inst().Get(url);
+        if(!panel)
+        {
+            panel = new this;
+            UIKit.Inst().CreatePanel(this.Url,panel,args);
+        }
+        return panel;
+    }
+    public static CreateInstance() : FairyGUI.GObject
+    {
+        return UIKit.Inst().CreateInstance(this.Url);
+    }
+    public static GetInstance() : UIBase
+    {
+        let url : string = View_PlayerTurnEffect.Url.toString() + "." + (this).name;
+        return UIKit.Inst().Get(url);
+    }
+    public CloseMySelf()
+    {
+        let url : string = View_PlayerTurnEffect.Url.toString() + "." + (<any>this).constructor.name;
+        UIKit.Inst().Destroy(url);
+    }
+    //不要主动调用这个方法或者修改这个方法
+    public Construct()
+    {
+        this.Banner = this.View.GetChild("Banner") as FairyGUI.GTextField;
+        this.TurnMessage = this.View.GetChild("TurnMessage") as FairyGUI.GTextField;
+        this.t0 = this.View.GetTransition("t0") as FairyGUI.Transition;
+    }
+}
 export class View_BiteEffect extends UIBase
 {
     public Top : FairyGUI.GImage;

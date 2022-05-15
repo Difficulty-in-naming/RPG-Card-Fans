@@ -13,5 +13,5 @@
     <font id="fq7pb" name="SourceHanSansHWSC-Bold-TMP.otf" path="/" renderMode="sdfaa" samplePointSize="36"/>
     <component id="fq7pc" name="Card.xml" path="/" exported="true"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_MasterDeckView" packageCount="2" genCode="true"/>
 </packageDescription>

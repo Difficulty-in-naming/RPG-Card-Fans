@@ -21,5 +21,5 @@
     <component id="taydh" name="HeartCom.xml" path="/Component/"/>
     <image id="taydi" name="panel_heart_white.png" path="/Texture/"/>
   </resources>
-  <publish name="ModTheSpire_TopBar" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_TopBar" packageCount="2" genCode="true"/>
 </packageDescription>

@@ -95,5 +95,5 @@
     <image id="joqm3r" name="card_colorless_orb.png" path="/Card/Texture/" exported="true"/>
     <image id="joqm3u" name="strike.png" path="/Card/Texture/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Common" packageCount="2" genCode="true"/>
 </packageDescription>

@@ -339,55 +339,55 @@ namespace TMPro.EditorUtilities
 
             // LEFT HANDLE
             Vector3 oldLeft = (m_HandlePoints[0] + m_HandlePoints[1]) * 0.5f;
-            var fmh_342_63_637799259701653461 = Quaternion.identity; Vector3 newLeft = Handles.FreeMoveHandle(oldLeft, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
+            Vector3 newLeft = Handles.FreeMoveHandle(oldLeft, Quaternion.identity, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
             bool hasChanged = false;
             if (oldLeft != newLeft)
             {
                 oldLeft = matrix.MultiplyPoint(oldLeft);
                 newLeft = matrix.MultiplyPoint(newLeft);
-
+            
                 float delta = oldLeft.x - newLeft.x;
                 marginOffset.x += -delta / lossyScale.x;
                 //Debug.Log("Left Margin H0:" + handlePoints[0] + "  H1:" + handlePoints[1]);
                 hasChanged = true;
             }
-
+            
             // TOP HANDLE
             Vector3 oldTop = (m_HandlePoints[1] + m_HandlePoints[2]) * 0.5f;
-            var fmh_357_61_637799259701704492 = Quaternion.identity; Vector3 newTop = Handles.FreeMoveHandle(oldTop, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
+            Vector3 newTop = Handles.FreeMoveHandle(oldTop, Quaternion.identity, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
             if (oldTop != newTop)
             {
                 oldTop = matrix.MultiplyPoint(oldTop);
                 newTop = matrix.MultiplyPoint(newTop);
-
+            
                 float delta = oldTop.y - newTop.y;
                 marginOffset.y += delta / lossyScale.y;
                 //Debug.Log("Top Margin H1:" + handlePoints[1] + "  H2:" + handlePoints[2]);
                 hasChanged = true;
             }
-
+            
             // RIGHT HANDLE
             Vector3 oldRight = (m_HandlePoints[2] + m_HandlePoints[3]) * 0.5f;
-            var fmh_371_65_637799259701712711 = Quaternion.identity; Vector3 newRight = Handles.FreeMoveHandle(oldRight, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
+            Vector3 newRight = Handles.FreeMoveHandle(oldRight, Quaternion.identity, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
             if (oldRight != newRight)
             {
                 oldRight = matrix.MultiplyPoint(oldRight);
                 newRight = matrix.MultiplyPoint(newRight);
-
+            
                 float delta = oldRight.x - newRight.x;
                 marginOffset.z += delta / lossyScale.x;
                 hasChanged = true;
                 //Debug.Log("Right Margin H2:" + handlePoints[2] + "  H3:" + handlePoints[3]);
             }
-
+            
             // BOTTOM HANDLE
             Vector3 oldBottom = (m_HandlePoints[3] + m_HandlePoints[0]) * 0.5f;
-            var fmh_385_67_637799259701720208 = Quaternion.identity; Vector3 newBottom = Handles.FreeMoveHandle(oldBottom, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
+            Vector3 newBottom = Handles.FreeMoveHandle(oldBottom, Quaternion.identity, HandleUtility.GetHandleSize(m_RectTransform.position) * 0.05f, Vector3.zero, Handles.DotHandleCap);
             if (oldBottom != newBottom)
             {
                 oldBottom = matrix.MultiplyPoint(oldBottom);
                 newBottom = matrix.MultiplyPoint(newBottom);
-
+            
                 float delta = oldBottom.y - newBottom.y;
                 marginOffset.w += -delta / lossyScale.y;
                 hasChanged = true;

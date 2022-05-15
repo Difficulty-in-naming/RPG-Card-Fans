@@ -5,7 +5,9 @@
     <graph id="n2_kefb" name="n2" xy="-246,-164" size="2397,1473" type="rect" lineSize="0" lineColor="#4f000000" fillColor="#b2000000">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
-    <loader id="n19_pz5g" name="CharBg" xy="0,0" size="1920,1200" visible="false" url="ui://7jdrar2vpz5go" clearOnPublish="true"/>
+    <loader id="n19_pz5g" name="CharBg" xy="0,0" size="1920,1200" visible="false" url="ui://7jdrar2vpz5go" fill="scaleFree" clearOnPublish="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
     <component id="n0_kefb" name="Cancel" src="kefb7" fileName="Button/CancelButton.xml" pkg="rduitwm2" xy="0,840">
       <relation target="" sidePair="left-left,bottom-bottom"/>
     </component>
@@ -25,19 +27,19 @@
     <component id="n10_pz5g" name="IsAdvanced" src="pz5go" fileName="Button/Toggle2.xml" pkg="rduitwm2" xy="756,949" group="n17_pz5g">
       <Button controller="ShowAdvance" page="0"/>
     </component>
-    <text id="n15_pz5g" name="AdvanceTip" xy="776,1022" size="382,39" group="n17_pz5g" fontSize="28" color="#ffffff" shadowColor="#000000" shadowOffset="1,1" text="20. （最大等级） 双重Boss。">
+    <text id="n15_pz5g" name="AdvanceTip" xy="776,1022" size="382,39" group="n17_pz5g" fontSize="28" color="#ffffff" shadowColor="#000000" shadowOffset="1,1" autoClearText="true" text="20. （最大等级） 双重Boss。">
       <gearDisplay controller="ShowAdvance" pages="0"/>
     </text>
     <component id="n11_pz5g" name="Left" src="pz5gs" fileName="Button/LeftButton.xml" pkg="rduitwm2" xy="1025,955" group="n16_pz5g" scale="0.8,0.8"/>
     <component id="n12_pz5g" name="Right" src="pz5gt" fileName="Button/RightButton.xml" pkg="rduitwm2" xy="1198,955" group="n16_pz5g" scale="0.8,0.8"/>
-    <text id="n13_pz5g" name="Level" xy="1073,948" size="102,39" group="n16_pz5g" fontSize="28" color="#72b5d1" strokeColor="#4d4a44" strokeSize="3" text="等级 20"/>
+    <text id="n13_pz5g" name="Level" xy="1073,948" size="88,39" group="n16_pz5g" fontSize="28" color="#72b5d1" strokeColor="#4d4a44" strokeSize="3" autoClearText="true" text="等级 1"/>
     <group id="n16_pz5g" name="AdvanceLevelGroup" xy="1025,948" size="201,39" group="n17_pz5g" advanced="true">
       <gearDisplay controller="ShowAdvance" pages="0"/>
     </group>
     <group id="n17_pz5g" name="AdvanceSettings" xy="756,948" size="470,113" visible="false" advanced="true">
       <relation target="" sidePair="bottom-bottom"/>
     </group>
-    <component id="n30_pz5g" name="n30" src="pz5gw" fileName="Button/FontButton.xml" pkg="rduitwm2" xy="11,978" size="204,40" visible="false">
+    <component id="n30_pz5g" name="SetSeeds" src="pz5gw" fileName="Button/FontButton.xml" pkg="rduitwm2" xy="11,978" size="204,40">
       <relation target="" sidePair="left-left,bottom-bottom"/>
       <Button title="设定种子"/>
     </component>

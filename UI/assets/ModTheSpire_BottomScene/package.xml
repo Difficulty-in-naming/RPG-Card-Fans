@@ -20,5 +20,5 @@
     <image id="cc7cg" name="mod1.png" path="/Texture/scene2/mod/"/>
     <image id="cc7ch" name="mod2.png" path="/Texture/scene2/mod/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_BottomScene" packageCount="2" genCode="true"/>
 </packageDescription>

@@ -59,6 +59,9 @@
     <image id="joqm47" name="death6.png" path="/Texture/env/" exported="true"/>
     <image id="joqm48" name="blurDot2.png" path="/Texture/" exported="true"/>
     <component id="joqm49" name="CardTrailEffect.xml" path="/Combat/" exported="true"/>
+    <component id="a9nx4a" name="PlayerTurnEffect.xml" path="/Combat/" exported="true"/>
+    <component id="hemu4b" name="CardPoofParticle.xml" path="/Combat/" exported="true"/>
+    <component id="etma4c" name="FadeScreen.xml" path="/" exported="true"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Effect" packageCount="2" genCode="true"/>
 </packageDescription>

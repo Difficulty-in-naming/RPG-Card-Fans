@@ -5,5 +5,5 @@
     <sound id="mdv91" name="SOTE_SFX_UIHover_v2.wav" path="/"/>
     <sound id="mdv92" name="SOTE_SFX_UIClick_1_v2.wav" path="/"/>
   </resources>
-  <publish name="ModTheSpire_Sound"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Sound" packageCount="2"/>
 </packageDescription>

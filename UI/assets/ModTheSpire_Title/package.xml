@@ -34,5 +34,5 @@
     <image id="kefbu" name="topCloud3.png" path="/Texture/title4/" exported="true"/>
     <component id="fyc6v" name="Holder.xml" path="/"/>
   </resources>
-  <publish name="ModTheSpire_Title" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Title" packageCount="2" genCode="true"/>
 </packageDescription>

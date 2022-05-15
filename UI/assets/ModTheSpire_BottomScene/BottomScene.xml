@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n0_cc7c" name="n0" src="cc7c2" fileName="Texture/scene/bg.png" xy="0,-76"/>
-    <image id="n2_cc7c" name="n2" src="cc7c6" fileName="Texture/scene/mod/mg.png" xy="0,-56"/>
-    <image id="n4_cc7c" name="midWall" src="cc7cf" fileName="Texture/scene2/mod/midWall.png" xy="883,188"/>
-    <image id="n5_cc7c" name="mod1" src="cc7cg" fileName="Texture/scene2/mod/mod1.png" xy="291,88" visible="false"/>
-    <image id="n6_cc7c" name="mod2" src="cc7ch" fileName="Texture/scene2/mod/mod2.png" xy="609,78" visible="false"/>
-    <image id="n7_cc7c" name="n7" src="cc7c4" fileName="Texture/scene/mod/ceiling.png" xy="0,-53"/>
-    <image id="n8_cc7c" name="CeilingMod6" src="cc7ce" fileName="Texture/scene2/mod/ceilingMod6.png" xy="1562,261"/>
-    <image id="n12_cc7c" name="CeilingMod1" src="cc7c9" fileName="Texture/scene2/mod/ceilingMod1.png" xy="110,62"/>
-    <image id="n13_cc7c" name="CeilingMod4" src="cc7cc" fileName="Texture/scene2/mod/ceilingMod4.png" xy="1301,73" visible="false"/>
-    <image id="n14_cc7c" name="CeilingMod5" src="cc7cd" fileName="Texture/scene2/mod/ceilingMod5.png" xy="632,95"/>
-    <image id="n15_cc7c" name="CeilingMod3" src="cc7cb" fileName="Texture/scene2/mod/ceilingMod3.png" xy="1197,-51"/>
-    <image id="n16_cc7c" name="CeilingMod2" src="cc7ca" fileName="Texture/scene2/mod/ceilingMod2.png" xy="625,51"/>
+    <image id="n0_cc7c" name="n0" src="cc7c2" fileName="Texture/scene/bg.png" xy="0,-76">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2_cc7c" name="n2" src="cc7c6" fileName="Texture/scene/mod/mg.png" xy="0,-56">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n4_cc7c" name="midWall" src="cc7cf" fileName="Texture/scene2/mod/midWall.png" xy="883,188">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n5_cc7c" name="mod1" src="cc7cg" fileName="Texture/scene2/mod/mod1.png" xy="291,88" visible="false">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n6_cc7c" name="mod2" src="cc7ch" fileName="Texture/scene2/mod/mod2.png" xy="609,78" visible="false">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n7_cc7c" name="n7" src="cc7c4" fileName="Texture/scene/mod/ceiling.png" xy="0,-53">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n8_cc7c" name="CeilingMod6" src="cc7ce" fileName="Texture/scene2/mod/ceilingMod6.png" xy="1562,261">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n12_cc7c" name="CeilingMod1" src="cc7c9" fileName="Texture/scene2/mod/ceilingMod1.png" xy="110,62">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n13_cc7c" name="CeilingMod4" src="cc7cc" fileName="Texture/scene2/mod/ceilingMod4.png" xy="1301,73" visible="false">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n14_cc7c" name="CeilingMod5" src="cc7cd" fileName="Texture/scene2/mod/ceilingMod5.png" xy="632,95">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n15_cc7c" name="CeilingMod3" src="cc7cb" fileName="Texture/scene2/mod/ceilingMod3.png" xy="1197,-51">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n16_cc7c" name="CeilingMod2" src="cc7ca" fileName="Texture/scene2/mod/ceilingMod2.png" xy="625,51">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
     <graph id="n18_cc7c" name="DustHolder" xy="0,1080" size="0,0" type="rect"/>
-    <image id="n1_cc7c" name="n1" src="cc7c5" fileName="Texture/scene/mod/fg.png" xy="0,805"/>
+    <image id="n1_cc7c" name="n1" src="cc7c5" fileName="Texture/scene/mod/fg.png" xy="0,805">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
   </displayList>
 </component>

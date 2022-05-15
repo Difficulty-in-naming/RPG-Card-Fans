@@ -1,0 +1,18 @@
+﻿using System;
+
+namespace Core.Utils.Constructor
+{
+    [Serializable]
+    public struct RangeFloat
+    {
+        public float Min;
+        public float Max;
+        public RangeFloat(float min, float max)
+        {
+            Min = min;
+            Max = max;
+        }
+    
+    
+    }
+}

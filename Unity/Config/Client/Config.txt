@@ -1,7 +1,7 @@
 ﻿#生成后的脚本存放的位置,如果填写盘符则为绝对路径不填写则为当前活动表格的相对路径
-SaveScriptPath = ["../../../Unity/TSProj/src/mods/ModTheSpire/Scripts/Gen/DB/"]
+SaveScriptPath = ["../../../Unity/Assets/Scripts/ModTheSpire/Gen/DB/"]
 #生成后的数据库存放位置,如果填写盘符则为绝对路径不填写则为当前活动表格的相对路径
-SaveDbPath = ["C:/Users/70980/AppData/LocalLow/DefaultCompany/RPGCardFans/mods/ModTheSpire/DB/"]
+SaveDbPath = ["../../../Unity/Assets/Res/Config/Client"]
 #文件后缀名带有该后缀名的可以享有该插件的所有能力
 FileSuffix = "_Auto"
 #枚举类型后缀
@@ -11,6 +11,6 @@ GeneratorType = "Json"
 #CSV分隔符
 CSVDelimiters = ["	"]
 #导出代码后缀名
-CodeSuffix = ".ts"
+CodeSuffix = ".cs"
 #是否格式化代码(仅当使用c#的时候才打开)
 FormatCode = false

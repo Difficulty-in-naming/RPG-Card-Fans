@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080" opaque="false">
+  <displayList>
+    <text id="n0_etma" name="Stage" xy="0,200" size="1920,79" font="ui://rduitwm2kefb3" fontSize="55" color="#87ceeb" align="center" leading="0" autoSize="shrink" shadowColor="#252525" shadowOffset="0.25,0.25" text="第一阶段"/>
+    <text id="n2_etma" name="Scene" xy="0,250" size="1920,198" font="ui://rduitwm2kefb3" fontSize="145" color="#ebc54f" align="center" vAlign="middle" leading="0" letterSpacing="5" autoSize="shrink" strokeColor="#000000" strokeSize="0.15" faceDilate="0.15" text="塔底"/>
+  </displayList>
+  <transition name="t0" autoPlay="true">
+    <item time="0" type="Alpha" tween="true" startValue="0" endValue="1" duration="24" ease="Sine.InOut"/>
+    <item time="72" type="Alpha" tween="true" startValue="1" endValue="0" duration="24" ease="Sine.InOut"/>
+  </transition>
+</component>

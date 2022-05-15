@@ -56,5 +56,5 @@
     <component id="cq111h" name="DescLabel.xml" path="/" exported="true"/>
     <image id="cq111i" name="dot1.png" path="/Texture/" exported="true"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Map" packageCount="2" genCode="true"/>
 </packageDescription>

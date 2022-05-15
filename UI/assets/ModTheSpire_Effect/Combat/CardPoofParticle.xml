@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="64,63" extention="Label">
+  <displayList>
+    <loader id="n0_hemu" name="icon" xy="0,0" pivot="0.5,0.5" size="64,63" url="ui://pvapz9l6joqm3m" autoSize="true"/>
+  </displayList>
+  <transition name="t0" frameRate="60">
+    <item time="0" type="Alpha" tween="true" startValue="0.28" endValue="0.49" duration="18" ease="Cubic.Out"/>
+    <item time="0" type="Rotation" target="n0_hemu" tween="true" startValue="0" endValue="0" duration="36" label2="EndRotation" ease="Linear"/>
+    <item time="0" type="Scale" target="n0_hemu" tween="true" startValue="1,1" endValue="5,5" duration="36" label2="EndScale" ease="Linear"/>
+    <item time="0" type="XY" target="n0_hemu" tween="true" startValue="0,0" endValue="0,0" duration="36" label2="EndXY" ease="Linear"/>
+    <item time="18" type="Alpha" tween="true" startValue="0.49" endValue="0" duration="18" ease="Sine.InOut"/>
+  </transition>
+</component>

@@ -5,7 +5,7 @@
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
     <list id="n3_kefb" name="List" xy="0,166" size="1920,736" layout="row" scroll="horizontal" colGap="65" defaultItem="ui://r0i72pqokefb6" align="center" autoClearItems="true">
-      <relation target="" sidePair="middle-middle"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
       <item/>
       <item/>
       <item/>
@@ -16,6 +16,6 @@
     <component id="n6_fq7p" name="Confirm" src="pz5gi" fileName="Button/ConfirmButton.xml" pkg="rduitwm2" xy="1646,840" visible="false"/>
   </displayList>
   <transition name="Close">
-    <item time="0" type="Alpha" tween="true" startValue="1" endValue="0" duration="3" ease="Sine.InOut"/>
+    <item time="0" type="Alpha" tween="true" startValue="1" endValue="0" duration="8" ease="Sine.InOut"/>
   </transition>
 </component>

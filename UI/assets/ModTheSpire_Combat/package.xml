@@ -31,9 +31,6 @@
     <component id="myaq1z" name="HealthBar.xml" path="/" exported="true"/>
     <image id="myaq23" name="HealthBody.png" path="/Texture/Bar/" exported="true" scale="9grid" scale9grid="8,6,16,12" duplicatePadding="true"/>
     <image id="myaq24" name="HealthBar.png" path="/Texture/Bar/" exported="true" scale="9grid" scale9grid="5,3,10,5"/>
-    <image id="myaq25" name="ironclad.png" path="/新建文件夹/"/>
-    <misc id="myaq26" name="skeleton.atlas" path="/新建文件夹/"/>
-    <spine id="myaq27" name="skeleton.json" path="/新建文件夹/" width="100" height="100" require="myaq26,myaq25" atlasNames="ironclad" anchor="100,100"/>
     <image id="myaq28" name="moveNameBg.png" path="/Texture/"/>
     <component id="yao829" name="DisplayName.xml" path="/" exported="true"/>
     <image id="yao82a" name="blockR.png" path="/Texture/"/>
@@ -51,6 +48,7 @@
     <image id="joqm33" name="bg_attack_silhouette.png" path="/Texture/"/>
     <image id="joqm34" name="bg_attack_gray.png" path="/Texture/"/>
     <image id="joqm35" name="card_flash_vfx.png" path="/Texture/"/>
+    <component id="etma36" name="DungeonTransition.xml" path="/Component/" exported="true"/>
   </resources>
-  <publish name="ModTheSpire_Combat" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Res/UI/ModTheSpire_Combat" packageCount="2" genCode="true"/>
 </packageDescription>

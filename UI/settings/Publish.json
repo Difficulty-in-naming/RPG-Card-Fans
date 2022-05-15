@@ -1,5 +1,5 @@
 {
-  "path": "../Unity/Assets/StreamingAssets/mods/ModTheSpire/Res/UI",
+  "path": "../Unity/Assets/Res/UI",
   "branchPath": "",
   "fileExtension": "bytes",
   "packageCount": 2,
@@ -9,7 +9,7 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": true,
-    "codePath": "../Unity/TSProj/src/mods/ModTheSpire/Scripts/Gen/View/",
+    "codePath": "../Unity/Assets/Scripts/ModTheSpire/UI/View",
     "classNamePrefix": "View_",
     "memberNamePrefix": "",
     "packageName": "ModTheSpire",
